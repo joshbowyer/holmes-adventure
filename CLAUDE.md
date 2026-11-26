@@ -36,6 +36,15 @@ must never learn it outside the game.
   - church change-ringing alibis (Dorothy Sayers, *The Nine Tailors*)
   - typewriter identification (canon, *A Case of Identity*); the Underground (*Bruce-Partington*)
 - Canon characters (Holmes, Watson, Mrs Hudson, Lestrade, Mycroft, Wiggins…) are fine to use.
+- The Irregulars are **street urchins**. Don't call them "street Arabs" (the user's request,
+  2026-11-26, even though the canon uses the phrase).
+- **Prose must match the game state** (user feedback on the practice case, 2026-11-26):
+  - When text reveals things found (in a pocket, under a cushion), name only things the
+    player can actually take. No incidental clutter ("a pencil-stub, a cab-ticket") that
+    can't be picked up.
+  - Never narrate an action the player hasn't performed. If the text says Watson pockets
+    something, an effect must really do it; otherwise just describe where it lies and let
+    the player TAKE it.
 
 ## Game structure
 
@@ -47,6 +56,15 @@ must never learn it outside the game.
   are fine, so the Wax Cylinder case stays. Visual tables are fine.
 - **Morse is read, not heard:** in The Operator's Fist the player decodes dots and dashes from
   a telegraph inker's printed paper tape; an operator's "fist" shows as spacing on the tape.
+- **Hints are paid for with coins found by exploring** (user, 2026-11-26). Coins are hidden
+  around each case's scenes; spending one buys a hint from Holmes. Hints must be
+  state-aware: chosen from the player's current inventory, notebook and progress so a coin
+  is never wasted on something already found or solved. Repeated hints on the same step get
+  firmer.
+- **Wrong final answer:** the player sees that answer's bad ending in full, then may resume
+  the case and try again. Wrong attempts are counted and shown on the case-closed screen.
+- **Colour:** ANSI colour and bold used sparingly (room names, items, exits), with a plain
+  mode that turns it off.
 - Deduction cases, each built around a *different* final-puzzle style:
 
 | # | Story | Year | Puzzle style |
@@ -126,6 +144,17 @@ Exploration premises:
   runs anywhere Python already is. Go was considered (single binary, easy ssh hosting) and
   passed over; ssh serving can be done with `sshd` `ForceCommand` or a small wrapper.
 - Data-driven: engine code separate from story content so new cases are data, not code.
+- **Engine built (2026-11-26).** Runtime targets Python 3.10+; the build step needs 3.11+
+  (tomllib). On this Windows dev machine Python is reached as `py` (3.15).
+  - `holmes/engine/`: game loop and verbs (`game.py`), parser, conditions/effects language,
+    state, hints (coins), saves, text/colour. `holmes/puzzles/`: final-puzzle types (only
+    `accuse` so far). `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
+  - Story sources: `spoilers/stories/<id>/*.toml` (all files in a folder are merged).
+    `python -m holmes.build` validates and writes scrambled `holmes/data/<id>.case`.
+  - Each source has a private `[test]` section: `walkthrough` (must solve the case, find
+    every clue, and hit no misfire replies) and optional `wrong_path` (must reach a bad
+    ending). Run `python -m unittest`. Tests never print story text.
+  - Shipped so far: `tutorial`, a small practice case at Baker Street.
 - Puzzle mechanics needed by the lineup: room/inventory/examine parser, notebook of clues,
   "listen at speed" for cylinders, timeline builder, logic-grid/seating input, Morse
   input/codebook, tabular record viewer, delayed-message queue, save/load per story.
@@ -133,6 +162,6 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: agree the engine shape with the user (language is settled: Python),
-  then build the engine and one story end to end (suggest starting with whichever case best
-  exercises the exploration layer) before writing the rest.
+- Next step from here: the user plays the practice case and gives feedback on the parser and
+  feel; then write the first real case end to end (proposed: E1 The Bell-Board at Pelham
+  Square) before the rest.

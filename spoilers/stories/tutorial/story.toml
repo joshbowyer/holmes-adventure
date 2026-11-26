@@ -1,0 +1,679 @@
+# Practice case. Small on purpose: teaches movement, examining, taking, a dark room,
+# a two-item action, asking, showing, pennies and hints, and a two-question accusation.
+#
+# Bible: Dobbs the coal-heaver went down the area steps "for a drink of water" while his
+# mate tipped the coal, reached in at the open kitchen window, took the seed-cake, and
+# ate it in the coal vault under the pavement. Wiggins is the obvious suspect and is
+# innocent. Holmes declined the case as beneath him.
+
+[case]
+id = "tutorial"
+title = "A Penny for His Thoughts"
+subtitle = "a practice case"
+year = 1885
+order = 0
+start = "sitting_room"
+coin_name = "penny"
+coin_plural = "pennies"
+hint_intro = "I laid a penny upon the arm of Holmes's chair. He regarded it gravely, pocketed it, and spoke without opening his eyes."
+hint_none = "Holmes did not so much as open his eyes. \"You have every fact you need, Watson. It wants only the courage to name your man.\""
+hint_broke = "My pockets were empty of coppers. Holmes's thoughts, it seemed, were not to be had on credit; I resolved to search the house more closely."
+intro = """
+It was a raw morning in the March of 1885, and I came down to breakfast to find my friend Sherlock Holmes already in his armchair, his long legs stretched toward a sullen fire and his breakfast untouched upon the tray.
+
+"You find me in disgrace, Watson," said he. "Mrs Hudson has been robbed, and I have declined the case."
+
+"Robbed! Of what?"
+
+"Of a seed-cake. It was left to cool upon her kitchen window-sill at half past eight and was gone by half past nine. She suspects young Wiggins, who has been loitering in the street since dawn awaiting my instructions. I told her that the matter was beneath me." He opened one eye. "It is not, I think, beneath you. You have watched me at my work these four years. Let us see what has rubbed off."
+
+"And if I should come to a stand?"
+
+"Then a penny will buy you my thoughts. I am told the house is liberally sown with lost coppers; Mrs Hudson's lodgers are careless men."
+"""
+intro_note = "[New to this kind of game? Type HELP for the commands. Try EXAMINE on anything that catches your eye, and NOTEBOOK to review what you have learned.]"
+
+[verbs]
+light = ["light", "ignite", "kindle", "strike"]
+
+# ---------------------------------------------------------------- rooms
+
+[rooms.sitting_room]
+name = "The Sitting-Room, 221B"
+aliases = ["sitting room", "sitting-room", "upstairs"]
+description = """
+Our sitting-room was in its customary disorder. The chemical table in the corner was scarred and stained by Holmes's experiments, a litter of papers drifted across the floor, and the fire smoked sullenly in the grate. A battered sofa stood beneath the window, its cushions sagging from long service. The stair led down to the hall.
+"""
+[rooms.sitting_room.exits]
+down = "hall"
+
+[rooms.hall]
+name = "The Hall"
+aliases = ["hall", "hallway"]
+description = """
+The narrow hall smelt of floor-polish and boiled linen. Our seventeen steps climbed to the sitting-room above, and a meaner stair descended to Mrs Hudson's kitchen below. Beside the street door stood the hall-stand, my old army greatcoat hanging upon it where I had flung it the night before.
+"""
+[rooms.hall.exits]
+up = "sitting_room"
+down = "kitchen"
+out = { to = "street", aliases = ["street door", "front door", "door"] }
+
+[rooms.kitchen]
+name = "Mrs Hudson's Kitchen"
+aliases = ["kitchen"]
+description = """
+The kitchen lay half below the level of the street, and was the warmest room in the house. The great black range roared at one end; a scrubbed deal table filled the middle, and a tall dresser of crockery stood against the wall. High in the front wall a window looked out upon the area, its lower sash thrown up to let out the heat of the range. A door beside it gave upon the area itself, and the stair climbed back to the hall.
+"""
+[rooms.kitchen.exits]
+up = "hall"
+out = { to = "area", aliases = ["area door", "door"] }
+
+[rooms.area]
+name = "The Area"
+aliases = ["area", "yard"]
+description = """
+The area was a narrow flagged yard sunk below the pavement, between the kitchen window and the iron railings of Baker Street above. Stone steps climbed to the street. Opposite the kitchen door, set into the wall beneath the pavement, a low plank door led into the coal vault. A drain grating was let into the flags at the foot of the steps.
+"""
+[rooms.area.exits]
+up = { to = "street", aliases = ["steps", "area steps", "street"] }
+in = { to = "kitchen", aliases = ["kitchen door"] }
+north = { to = "coal_vault", aliases = ["vault", "coal vault", "plank door", "cellar"] }
+
+[rooms.coal_vault]
+name = "The Coal Vault"
+aliases = ["vault", "coal vault", "cellar"]
+dark_when = "!flag:candle_lit|!has:candle"
+dark_text = """
+It was as black as the inside of a hat. The air was thick with coal-dust, and I could make out nothing whatever beyond the grey square of the doorway behind me. I should need a light.
+"""
+description = """
+By the light of the candle the vault proved a low, barrel-roofed cellar of sooty brick, running out beneath the pavement. A great heap of fresh coal had spilled from the round hole in its roof, where the morning's delivery had been tipped in from the street. Just inside the door stood an upturned crate.
+"""
+[rooms.coal_vault.exits]
+south = { to = "area", aliases = ["area", "door", "out"] }
+out = "area"
+
+[rooms.street]
+name = "Baker Street"
+aliases = ["street", "baker street", "outside"]
+description = """
+Baker Street lay under a lifting fog, and the traffic of the morning was well begun: cabs, drays and a costermonger's barrow crawling along the greasy road. Before our door a coal-cart stood at the kerb, its horse sunk in patient misery, and an iron coal-plate was set into the pavement. The street door of 221B stood at the top of its step; beside it, the area steps went down behind the railings.
+"""
+[rooms.street.exits]
+in = { to = "hall", aliases = ["street door", "front door", "house", "221b"] }
+down = { to = "area", aliases = ["area steps", "steps", "area"] }
+
+# ---------------------------------------------------------------- items
+
+[items.sofa]
+name = "sofa"
+aliases = ["settee", "couch"]
+location = "sitting_room"
+scenery = true
+description = "A horsehair sofa of great age and no beauty. Its cushions had long since given up the struggle."
+
+[items.cushions]
+name = "sofa cushions"
+aliases = ["cushion", "cushions"]
+article = "the"
+location = "sitting_room"
+scenery = true
+description = "Lumpy, sagging cushions, much sat upon."
+on_examine = [
+  { once = true, text = "Thrusting a hand down between the cushions, my fingers closed on something small and hard. It was a penny.", effects = ["move:penny_sofa:sitting_room"] },
+]
+
+[items.chemical_table]
+name = "chemical table"
+aliases = ["table", "chemistry", "experiments", "corner"]
+location = "sitting_room"
+scenery = true
+description = "A deal table scarred with acid and crowded with retorts and test-tubes. Something in a flask was giving off a smell of bitter almonds, and I thought it wiser not to inquire."
+
+[items.penny_sofa]
+name = "penny"
+aliases = ["coin", "copper"]
+location = "nowhere"
+coin = true
+description = "A worn penny, the old Queen's head rubbed almost smooth."
+
+[items.hall_stand]
+name = "hall-stand"
+aliases = ["hall stand", "stand"]
+location = "hall"
+scenery = true
+description = "A mahogany hall-stand with a mirror, a brass rack of sticks and umbrellas, and my greatcoat hanging upon a peg."
+
+[items.greatcoat]
+name = "greatcoat"
+aliases = ["coat", "overcoat", "army coat", "pockets", "pocket"]
+location = "hall"
+scenery = true
+cant_take = "It was too mild a morning for a greatcoat."
+description = "My old army greatcoat, heavy and serviceable."
+on_examine = [
+  { once = true, text = "I felt in the pockets. In the left one, beneath the flap, lay a penny.", effects = ["move:penny_coat:hall"] },
+]
+
+[items.penny_coat]
+name = "penny"
+aliases = ["coin", "copper"]
+location = "nowhere"
+coin = true
+description = "A penny, slightly bent."
+
+[items.range]
+name = "range"
+aliases = ["stove", "fire", "oven"]
+location = "kitchen"
+scenery = true
+description = "A great black cast-iron range, blazing away and giving out a fierce heat. No wonder the window had been opened."
+
+[items.dresser]
+name = "dresser"
+aliases = ["crockery", "shelves"]
+location = "kitchen"
+scenery = true
+description = "A tall dresser crowded with plates and jugs."
+
+[items.kitchen_window]
+name = "kitchen window"
+aliases = ["window", "sill", "window-sill", "windowsill", "sash"]
+location = "kitchen"
+scenery = true
+clue = "sill_crumbs"
+description = """
+The window was set high in the wall, its sill at about the height of my chin and level, on the outer side, with the flags of the area. The lower sash had been thrown up as far as it would go. Upon the sill lay a large empty plate, scattered with crumbs.
+"""
+details = [
+  { when = "!clue:coal_smudge", text = "On the white paint beside the plate I noticed a dark smudge." },
+]
+
+[items.smudge]
+name = "smudge"
+aliases = ["mark", "smear", "dust", "coal dust", "coal-dust", "stain"]
+location = "kitchen"
+scenery = true
+visible_when = "clue:sill_crumbs"
+clue = "coal_smudge"
+description = "I rubbed it with my fingertip. It was coal-dust beyond question: black, gritty and fresh, as though a sooty hand or sleeve had rested upon the sill not long since."
+
+[items.plate]
+name = "plate"
+aliases = ["crumbs", "empty plate"]
+location = "kitchen"
+scenery = true
+description = "A large blue-and-white plate, empty but for a few crumbs. Whoever had taken the cake had taken all of it."
+
+[items.candle]
+name = "candle"
+aliases = ["candle-end", "candle end", "holder", "candlestick"]
+location = "kitchen"
+description = "A stump of tallow candle in a tin holder."
+details = [
+  { when = "flag:candle_lit", text = "It burned with a smoky yellow flame." },
+]
+
+[items.matches]
+name = "box of vestas"
+aliases = ["matches", "match", "vestas", "vesta", "matchbox", "box"]
+location = "kitchen"
+description = "A small box of wax vestas from the kitchen mantel."
+
+[items.drain]
+name = "drain grating"
+aliases = ["drain", "grating", "grate", "grid"]
+location = "area"
+scenery = true
+description = "An iron grating over the area drain, clogged with leaves."
+on_examine = [
+  { once = true, text = "Something glinted among the leaves. I stooped and worked it free with a finger: a penny, wedged between the bars.", effects = ["move:penny_drain:area"] },
+]
+
+[items.penny_drain]
+name = "penny"
+aliases = ["coin", "copper"]
+location = "nowhere"
+coin = true
+description = "A penny, damp from the drain."
+
+[items.vault_door]
+name = "plank door"
+aliases = ["vault door", "low door"]
+location = "area"
+scenery = true
+description = "A low door of tarred planks, standing ajar. Beyond it was nothing but darkness and the smell of coal."
+
+[items.crate]
+name = "upturned crate"
+aliases = ["crate", "box"]
+location = "coal_vault"
+scenery = true
+clue = "seeds_in_vault"
+description = "An old orange-crate turned on end, of a height to make a seat. On its top, where a man might have rested something, lay a scatter of crumbs and a little drift of seeds."
+
+[items.seeds]
+name = "caraway seeds"
+aliases = ["seeds", "seed", "caraway"]
+article = "some"
+location = "coal_vault"
+listed = false
+clue = "seeds_in_vault"
+take_text = "I gathered a pinch of the seeds into my handkerchief."
+description = "Small, crescent-shaped, ridged seeds with a warm, sharp scent: caraway."
+
+[items.coal]
+name = "coal heap"
+aliases = ["coal", "heap", "coal-hole", "hole"]
+location = "coal_vault"
+scenery = true
+description = "A heap of good Wallsend coal, tumbled down from the round hole in the roof."
+on_examine = [
+  { once = true, text = "At the edge of the heap a penny lay among the slack, dropped, no doubt, by some careless coal-heaver.", effects = ["move:penny_coal:coal_vault"] },
+]
+
+[items.penny_coal]
+name = "penny"
+aliases = ["coin", "copper"]
+location = "nowhere"
+coin = true
+description = "A penny, black with coal-dust."
+
+[items.coal_plate]
+name = "coal-plate"
+aliases = ["coal plate", "plate in the pavement", "iron plate", "coal hole cover"]
+location = "street"
+scenery = true
+cant_take = "It was set firmly into the pavement."
+description = "A round iron plate let into the pavement, cast with the name of a Marylebone foundry. Through it the coal had been tipped into the vault below. It was far too small for a man to pass."
+
+[items.cart]
+name = "coal-cart"
+aliases = ["cart", "coal cart", "horse", "sacks"]
+location = "street"
+scenery = true
+description = "A heavy cart, its sacks now empty and folded, and a sorry horse in the shafts."
+
+# ---------------------------------------------------------------- people
+
+[characters.holmes]
+name = "Holmes"
+aliases = ["sherlock holmes", "sherlock", "mr holmes"]
+location = "sitting_room"
+presence = "Holmes lay in his armchair, his eyes half-closed and his fingertips pressed together."
+description = "He had not shaved, and his dressing-gown was knotted carelessly about him. Yet I knew that look of lazy indifference of old; nothing in the house escaped him."
+unknown_topic = "\"I have declined the case, Watson,\" said Holmes, without opening his eyes. \"I do not propose to conduct it by proxy.\""
+unknown_show = "\"Very interesting, I am sure,\" said Holmes, without looking at it."
+
+[[characters.holmes.greeting]]
+text = "\"Well, Watson? Has the great seed-cake mystery yielded to your methods?\""
+
+[[characters.holmes.topics.cake]]
+aliases = ["seed-cake", "seed cake", "theft", "case", "mystery", "robbery"]
+text = "\"A seed-cake, Watson, on a window-sill, between half past eight and half past nine. Begin where the thing was last seen. It is the only sound beginning.\""
+
+[[characters.holmes.topics.wiggins]]
+aliases = ["irregulars", "boy"]
+text = "\"Wiggins is many things, but he is not a fool, and he knows that I pay better than any seed-cake. Still, do not take my word for it. Look at the boy.\""
+
+[[characters.holmes.topics.hudson]]
+aliases = ["mrs hudson", "landlady"]
+text = "\"Our landlady is the best of women and the worst of witnesses: she sees what she expects to see. Mind you hear what she says, not what she thinks.\""
+
+[[characters.holmes.topics.pennies]]
+aliases = ["penny", "coins", "money", "hints", "hint", "help"]
+text = "\"A penny for my thoughts, Watson. Lay one before me and type HINT, or bid me CONSULT. I shall tell you no more than you need, and I shall not charge you for what you have already found.\""
+
+[[characters.holmes.topics.dobbs]]
+aliases = ["coal-heaver", "coal heaver", "coal man", "coalman", "coal"]
+text = "\"Ah, the coal. Yes, it came this morning. I heard it go in.\" He said no more."
+
+[characters.hudson]
+name = "Mrs Hudson"
+aliases = ["hudson", "landlady", "mrs h"]
+location = "kitchen"
+presence = "Mrs Hudson stood at the table, her arms folded and her cheeks pink with indignation."
+description = "A stout, motherly woman in a black dress and a white cap, flour to the elbows and fury in her eye."
+unknown_topic = "\"I'm sure I couldn't say, Doctor,\" said Mrs Hudson."
+unknown_show = "Mrs Hudson peered at it and shook her head."
+
+[[characters.hudson.greeting]]
+text = "\"Oh, Doctor! Has Mr Holmes sent you? It's a crying shame, a cake I was taking to the chapel bazaar, and that boy loafing about the railings all the morning.\""
+
+[[characters.hudson.topics.cake]]
+aliases = ["seed-cake", "seed cake", "theft", "bazaar"]
+text = "\"I set it on the sill to cool at half past eight, Doctor, same as I always do, with the window up because of the range. I was in and out of the scullery all the morning, and at half past nine I came to cover it and it was gone. Plate and all left behind, as bold as you please.\""
+
+[[characters.hudson.topics.wiggins]]
+aliases = ["boy", "irregulars", "urchin"]
+text = "\"That young imp has been hanging on the railings since seven. Who else would it be? Those boys would eat the paint off a door.\""
+
+[[characters.hudson.topics.dobbs]]
+aliases = ["coal-heaver", "coal heaver", "coal man", "coalman", "coal", "visitors", "caller", "callers", "anyone", "door"]
+text = "\"The coal? Dobbs brought it at nine, same as every month. He tips it in by the plate in the pavement; he's no call to come down here, and he didn't. Nobody came to my door all the morning, Doctor, I'll take my oath on it.\""
+effects = ["clue:hudson_no_caller"]
+
+[[characters.hudson.topics.window]]
+aliases = ["sill", "kitchen window"]
+text = "\"I always put it up when the range is going. Anyone in the area could reach it, I suppose, if they'd the impudence.\""
+
+[[characters.hudson.topics.holmes]]
+aliases = ["mr holmes", "sherlock"]
+text = "\"Beneath him, he says! And him that will spend a week on a lost cigar.\""
+
+[[characters.hudson.shows.seeds]]
+text = "Mrs Hudson unfolded my handkerchief and gave a cry. \"Caraway! That's my seed-cake, Doctor, I'd know it anywhere. There's not another thing in this house with caraway in it, nor ever has been. Wherever did you find them?\""
+effects = ["clue:cake_identified"]
+
+[characters.wiggins]
+name = "Wiggins"
+aliases = ["boy", "urchin", "irregular"]
+location = "street"
+presence = "Wiggins, the leader of Holmes's ragged band of street urchins, was leaning against the railings with his hands in his pockets."
+description = "A sharp-faced boy of twelve or so in a man's cut-down coat, his feet bare despite the raw March morning."
+clue = "wiggins_feet"
+details = [
+  { text = "I looked him over as Holmes would have done. His feet and hands were grey with the mud of the road, but of coal-dust there was no trace on him anywhere." },
+]
+unknown_topic = "\"Dunno nothing about that, Doctor.\""
+unknown_show = "Wiggins squinted at it. \"What's that, then?\""
+
+[[characters.wiggins.greeting]]
+text = "\"Morning, Doctor. Mr Holmes got any work for us yet?\""
+
+[[characters.wiggins.topics.cake]]
+aliases = ["seed-cake", "seed cake", "theft"]
+text = "\"Her cake? I never touched it, Doctor, on my oath. I been up here the whole while, waiting on Mr Holmes. Never been near the area.\""
+
+[[characters.wiggins.topics.dobbs]]
+aliases = ["coal-heaver", "coal heaver", "coal man", "coalman", "coal", "cart", "anyone", "area"]
+text = "\"Dobbs? Him and his mate brung the coal about nine. His mate tipped the sacks down the plate, and Dobbs, he went down the area steps. Said he was after a drink of water. He was down there a good few minutes before he come up again.\""
+effects = ["clue:saw_dobbs"]
+
+[[characters.wiggins.topics.hudson]]
+aliases = ["mrs hudson", "landlady"]
+text = "\"She's been giving me the eye all morning. I ain't done nothing.\""
+
+[characters.dobbs]
+name = "Dobbs"
+aliases = ["coal-heaver", "coal heaver", "coal man", "coalman", "heaver"]
+location = "street"
+presence = "Dobbs the coal-heaver sat on the tail of his cart, filling a short clay pipe."
+description = "A big, slow man, black with coal-dust from his leather fan-tailed hat to his hobnailed boots."
+details = [
+  { when = "clue:seeds_in_vault", text = "I looked more closely at his face. Caught in the black stubble of his chin were one or two small, crescent-shaped seeds." },
+]
+on_examine = [
+  { when = "clue:seeds_in_vault", effects = ["clue:dobbs_seeds"] },
+]
+unknown_topic = "Dobbs took his pipe from his mouth, considered the question, and put it back."
+unknown_show = "Dobbs looked at it and then at me, and said nothing."
+
+[[characters.dobbs.greeting]]
+text = "\"Morning, sir.\" He touched his hat with a black forefinger."
+
+[[characters.dobbs.topics.cake]]
+aliases = ["seed-cake", "seed cake", "theft"]
+text = "\"Cake? Don't know nothing about no cake, sir. Ask that young varmint on the railings.\""
+
+[[characters.dobbs.topics.area]]
+aliases = ["area steps", "steps", "water", "drink", "kitchen"]
+text = "\"Me? Never set foot down there, sir. I tips it in by the plate and I'm off.\""
+
+[[characters.dobbs.topics.coal]]
+aliases = ["delivery", "sacks", "vault"]
+text = "\"Six hundredweight of best Wallsend, sir, same as every month.\""
+
+[[characters.dobbs.topics.wiggins]]
+aliases = ["boy", "urchin"]
+text = "\"That one? Up to no good, I'll be bound.\""
+
+[[characters.dobbs.shows.seeds]]
+text = "Dobbs looked at the seeds a long moment, and something in his broad black face went still. \"Seeds,\" he said at last. \"What of 'em?\""
+
+# ---------------------------------------------------------------- clues
+
+[clues.sill_crumbs]
+text = "The seed-cake was set to cool on the sill of the open kitchen window, which gives upon the area. It vanished between half past eight and half past nine; the plate was left behind."
+
+[clues.coal_smudge]
+text = "A fresh smudge of coal-dust on the white paint of the sill, beside the plate."
+
+[clues.hudson_no_caller]
+text = "Mrs Hudson is sure no one came to the kitchen door all morning. The coal went in through the plate in the pavement, as always."
+
+[clues.wiggins_feet]
+text = "Wiggins is barefoot and grey with street mud, but there is no coal-dust on him anywhere."
+
+[clues.saw_dobbs]
+text = "Wiggins saw Dobbs the coal-heaver go down the area steps at about nine, \"for a drink of water\", while his mate tipped the coal. He was some minutes below."
+
+[clues.seeds_in_vault]
+text = "In the coal vault, on an upturned crate just inside the door: crumbs and a scatter of caraway seeds."
+
+[clues.cake_identified]
+text = "Mrs Hudson knows the caraway at once: her seed-cake was the only thing in the house that had it."
+
+[clues.dobbs_seeds]
+text = "Caught in the stubble of Dobbs's chin: a caraway seed or two."
+
+# ---------------------------------------------------------------- actions
+
+[[actions]]
+id = "light_already"
+verb = ["light", "use"]
+target = ["candle", "matches"]
+when = "flag:candle_lit"
+text = "The candle was burning already."
+
+[[actions]]
+id = "light_in_vault"
+verb = ["light", "use"]
+target = ["candle", "matches"]
+when = ["has:matches", "has:candle", "at:coal_vault"]
+text = "Fumbling in the blackness, I struck a vesta and put it to the wick. The flame wavered, steadied, and the vault came up about me out of the dark."
+effects = ["set:candle_lit", "look"]
+
+[[actions]]
+id = "light_held"
+verb = ["light", "use"]
+target = ["candle", "matches"]
+when = ["has:matches", "has:candle"]
+text = "I struck a vesta and put it to the wick. The candle took with a smoky yellow flame."
+effects = ["set:candle_lit"]
+
+[[actions]]
+id = "light_lying"
+verb = ["light", "use"]
+target = "candle"
+when = "has:matches"
+text = "I took up the candle, struck a vesta and put it to the wick. It took with a smoky yellow flame."
+effects = ["set:candle_lit", "give:candle"]
+
+[[actions]]
+id = "light_no_matches"
+verb = ["light", "use"]
+target = "candle"
+when = "!has:matches"
+text = "I had nothing to light it with."
+
+[[actions]]
+id = "strike_alone"
+verb = ["light", "use"]
+target = "matches"
+when = "has:matches"
+text = "I struck a vesta. It flared, and burned down to my fingers, and went out. It would be more use with something to light."
+
+[[actions]]
+id = "strike_not_held"
+verb = ["light", "use"]
+target = "matches"
+text = "I should have to pick them up first."
+
+[[actions]]
+id = "open_coal_plate"
+verb = ["open", "take"]
+target = "coal_plate"
+text = "It was set firmly into the pavement, and far too small for a man to pass in any case."
+
+# ---------------------------------------------------------------- hints (in order)
+
+[[hints]]
+id = "start"
+done = "clue:sill_crumbs"
+texts = [
+  "\"Where was the cake when last it was seen, Watson? Begin there.\"",
+  "\"Mrs Hudson's kitchen is below the hall. Go DOWN to it twice from here and EXAMINE THE WINDOW.\"",
+]
+
+[[hints]]
+id = "smudge"
+when = "clue:sill_crumbs"
+done = "clue:coal_smudge"
+texts = [
+  "\"You looked at the sill. Did you see everything upon it?\"",
+  "\"EXAMINE THE SMUDGE on the sill.\"",
+]
+
+[[hints]]
+id = "witness"
+when = "clue:coal_smudge"
+done = "clue:saw_dobbs"
+texts = [
+  "\"Who has been in the street since dawn, and sees everything that passes in it?\"",
+  "\"Go up to Baker Street and ASK WIGGINS ABOUT THE COAL-MAN.\"",
+]
+
+[[hints]]
+id = "vault"
+when = "clue:saw_dobbs"
+done = "clue:seeds_in_vault"
+texts = [
+  "\"A man who goes down the area steps has more than one door open to him.\"",
+  "\"There is a coal vault off the area, and it is dark. Take the candle and the vestas from the kitchen, LIGHT THE CANDLE, and EXAMINE THE CRATE inside.\"",
+]
+
+[[hints]]
+id = "identify"
+when = "clue:seeds_in_vault"
+done = "clue:cake_identified"
+texts = [
+  "\"Seeds are seeds. Can anyone say whose these are?\"",
+  "\"TAKE THE SEEDS and SHOW THEM TO MRS HUDSON.\"",
+]
+
+[[hints]]
+id = "suspect"
+when = "clue:cake_identified"
+done = "clue:dobbs_seeds"
+texts = [
+  "\"Have you looked at your suspect with the same care you gave the window-sill?\"",
+  "\"Go up to the street and EXAMINE DOBBS.\"",
+]
+
+[[hints]]
+id = "accuse"
+when = "clue:dobbs_seeds"
+texts = [
+  "\"You have your man and the manner of it. Type ACCUSE.\"",
+]
+
+# ---------------------------------------------------------------- the reckoning
+
+[final]
+type = "accuse"
+when = "clue:sill_crumbs"
+locked_text = "I turned the matter over, but I had not yet so much as looked at the scene of the crime. Holmes would have laughed at me."
+intro = "I went up to the sitting-room and stood before Holmes's chair. \"I have it,\" said I."
+good = "solved"
+default_wrong = "wrong_account"
+
+[[final.questions]]
+id = "who"
+prompt = "Who took Mrs Hudson's seed-cake?"
+options = [
+  { id = "wiggins", label = "Wiggins, the Irregular" },
+  { id = "dobbs", label = "Dobbs, the coal-heaver", when = "visited:street" },
+  { id = "holmes", label = "Sherlock Holmes himself" },
+]
+
+[[final.questions]]
+id = "how"
+prompt = "How did the thief come at the cake?"
+options = [
+  { id = "window", label = "Reached in at the open window from the area" },
+  { id = "house", label = "Came through the house by the street door and the kitchen stair" },
+  { id = "kitchen", label = "Walked into the kitchen while Mrs Hudson was in the scullery" },
+]
+
+[final.solution]
+who = "dobbs"
+how = "window"
+
+[[final.wrong]]
+answers = { who = "wiggins" }
+ending = "wiggins_wronged"
+
+[[final.wrong]]
+answers = { who = "holmes" }
+ending = "holmes_amused"
+
+[endings.solved]
+title = "The Seed-Cake Restored (in Spirit)"
+text = """
+I laid it out for him point by point: the open window level with the flags of the area; the coal-dust on the sill, where no mud-grey urchin had left it; Dobbs's errand for a drink of water at a door that Mrs Hudson swore no one had knocked upon; the crumbs and the caraway on the crate in the vault, where a man might sit unseen and eat his fill; and the seed still caught in his chin.
+
+Holmes heard me out with his eyes closed. When I had done, he opened them.
+
+"Capital, Watson. You found the place, you found the witness, and you found the crumbs, which is more than most of Scotland Yard would have done for a murder. You have earned your breakfast."
+
+Dobbs, confronted on the pavement by a doctor, an indignant landlady and an exceedingly self-righteous Wiggins, owned to the theft with a very ill grace, and paid Mrs Hudson a shilling for the cake. She bought a currant loaf with it, and gave half to Wiggins.
+"""
+
+[endings.wiggins_wronged]
+title = "An Injustice in Baker Street"
+text = """
+"It was the boy," said I. "Who else had the opportunity?"
+
+Holmes said nothing at all, which was worse than anything he could have said.
+
+Mrs Hudson, armed with my verdict, went up the area steps like a ship of the line and boxed Wiggins's ears in full view of Baker Street. The boy took it without a word, gave me one look that I did not soon forget, and went away down the street. For a fortnight afterward not one of the Irregulars could be found when Holmes had need of them.
+
+"You have made an enemy of the only honest witness in the street, Watson," said Holmes at last, "and on the strength of nothing better than his bare feet."
+"""
+
+[endings.holmes_amused]
+title = "The Detective Detected?"
+text = """
+"It was you, Holmes," said I triumphantly. "You have not touched your breakfast, and you declined the case because you could not well investigate yourself."
+
+Holmes laughed until he coughed. "My dear Watson! I have not left this chair since six o'clock, as the ash on the hearth and the state of my slippers would tell you if you looked at them. I have not eaten because I am thinking, and I am thinking because I am bored. You have accused the one man in London who could not possibly have done it. It is almost a distinction."
+
+Mrs Hudson, when she heard of it, did not speak to either of us until Thursday.
+"""
+
+[endings.wrong_account]
+title = "A Bridge That Would Not Bear"
+text = """
+I gave him my account. Holmes listened with closed eyes, and when I had finished he was silent so long that I thought he had fallen asleep.
+
+"Your conclusion may be right, or it may not," said he at last. "But the road by which you reached it would not bear the weight of a cat. Lay that before Mrs Hudson and the culprit will laugh at you, and he will be quite right to."
+
+I went back to the kitchen with my ears burning.
+"""
+
+# ---------------------------------------------------------------- tests (not shipped)
+
+[test]
+walkthrough = [
+  "examine cushions", "take penny", "d", "examine coat", "take penny", "d",
+  "talk to mrs hudson", "ask hudson about cake", "examine window", "examine smudge",
+  "ask hudson about coal man", "take candle", "take matches", "out",
+  "examine drain", "take penny", "up", "examine wiggins", "ask wiggins about coal man",
+  "d", "n", "light candle", "examine crate", "take seeds", "examine coal", "take penny",
+  "out", "in", "show seeds to hudson", "up", "out", "examine dobbs",
+  "hint", "y", "accuse", "dobbs", "window", "y",
+]
+wrong_path = [
+  "d", "d", "examine window", "accuse", "1", "1", "y", "",
+]
