@@ -1,0 +1,496 @@
+# ================================================================ entrance hall
+
+[items.footman_chair]
+name = "footman's chair"
+aliases = ["chair", "hooded chair", "porter's chair", "footman chair"]
+location = "entrance_hall"
+scenery = true
+description = """
+A tall leather chair with a hood like a sentry-box, to keep the draught of the street door from the footman's neck. From its seat a man commanded the whole of the hall: the street door before one, the foot of the main stair, the doors of the morning-room and the cloakroom, and, to the right, not a dozen feet away, the door of the library.
+"""
+
+[items.umbrella_stand]
+name = "umbrella stand"
+aliases = ["umbrellas", "stand", "sticks"]
+location = "entrance_hall"
+scenery = true
+description = "A brass umbrella stand in the shape of an elephant's foot, full of sticks and umbrellas."
+on_examine = [
+  { once = true, text = "In the drip-tray at the bottom, among the sticks, a sixpence glinted.", effects = ["move:sixpence_hall:entrance_hall"] },
+]
+
+[items.sixpence_hall]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence."
+
+[items.main_stair_walls]
+name = "stair paper"
+aliases = ["wallpaper", "paper", "walls", "wall"]
+location = "first_landing"
+scenery = true
+description = "A figured paper of red and gold, smooth and costly. I passed my hand over it; nothing came away."
+
+[items.street_door]
+name = "street door"
+aliases = ["front door", "door"]
+location = "entrance_hall"
+scenery = true
+description = "A heavy door of black-painted oak with a fanlight above. A constable stood on the step outside."
+
+# ================================================================ library
+
+[items.body]
+name = "body of Lionel Brand"
+aliases = ["body", "brand", "lionel brand", "mr brand", "corpse", "dead man"]
+article = "the"
+location = "library"
+scenery = true
+cant_take = "Lestrade would have had something to say to that, and so would my own sense of decency."
+description = """
+Brand lay on his face beneath the speaking tube, one arm flung out above his head towards the wall as though he had been reaching up when he fell. He had been struck on the back of the head, a single heavy blow, and death must have followed very quickly. He was in his evening clothes still: black coat, white waistcoat, his watch-chain across it. I had examined him at half past ten, when Vane raised the alarm, and judged that he had then been dead perhaps half an hour or a little more.
+"""
+
+[items.waistcoat]
+name = "Brand's waistcoat"
+aliases = ["waistcoat", "pockets", "pocket", "coat", "brand's pockets", "evening clothes"]
+location = "library"
+scenery = true
+description = "A white evening waistcoat, now sadly stained. Lestrade had already been through the outer pockets of the coat and found only a cigar-case and a handkerchief."
+on_examine = [
+  { once = true, text = "I knelt and felt in the waistcoat pockets, which Lestrade had overlooked. In the left one was a slim leather pocketbook; tucked behind the watch, in the right, a folded slip of newspaper.", effects = ["move:pocketbook:library", "move:cutting:library"] },
+]
+
+[items.pocketbook]
+name = "pocketbook"
+aliases = ["pocket-book", "pocket book", "notecase", "iou"]
+location = "nowhere"
+clue = "orme_debt"
+description = """
+A slim pocketbook of black morocco. Among visiting cards and a few banknotes was a half-sheet of paper:
+
+| "I.O.U. Six Hundred Pounds. H. Orme. 2nd March, '88."
+
+Across the foot, in Brand's hand, was pencilled: "No hurry — L.B."
+"""
+
+[items.cutting]
+name = "newspaper cutting"
+aliases = ["cutting", "newspaper", "slip", "clipping", "newspaper cutting"]
+location = "nowhere"
+clue = "cutting"
+description = """
+A paragraph cut from a newspaper, yellow with years and worn soft at the folds. Someone had written above it in ink: "Bath Chronicle, Oct. 1879."
+
+| "QUARTER SESSIONS. Clara Dunn, 23, lady's maid, was indicted
+| for stealing a diamond brooch, the property of her mistress,
+| Mrs Ashcombe, of Lansdown Crescent. The evidence being wholly
+| circumstantial, the jury, after a short deliberation, returned
+| a verdict of Not Guilty, and the prisoner was discharged."
+"""
+
+[items.speaking_tube]
+name = "speaking tube"
+aliases = ["tube", "mouthpiece", "whistle", "brass mouthpiece", "speaking-tube"]
+location = "library"
+scenery = true
+clue = "tube_plug"
+description = """
+A brass mouthpiece set into the wall at about the height of a man's chin, with a little hinged whistle that stops it when not in use. The whistle was not in its place. It hung down by its short chain against the wall, swinging a little in the draught, just above Brand's outflung hand. To summon a servant one pulled the whistle out and blew into the tube, so that it sounded at the other end; Brand, then, had been in the act of calling below stairs when he was struck.
+"""
+
+[items.poker]
+name = "poker"
+aliases = ["fire-irons", "fire irons", "irons", "fender", "brass poker"]
+location = "library"
+scenery = true
+clue = "weapon"
+cant_take = "Lestrade had forbidden anyone to touch it, and for once he was right."
+description = """
+The fire-irons stood in their rack: tongs, shovel and a heavy brass-headed poker. The poker had been put back with its head to the wall, the wrong way about from the others. Turning it to the light without lifting it, I saw that the brass knob had been wiped, but not well enough. There were two or three short grey hairs in the angle of the collar.
+"""
+
+[items.grate]
+name = "fireplace"
+aliases = ["grate", "fire", "hearth", "ashes"]
+location = "library"
+scenery = true
+description = "The fire had sunk to embers. Among the ashes at the front of the grate, where the heat had not quite reached, were the curled black remains of several sheets of paper."
+
+[items.fragments]
+name = "charred fragments"
+aliases = ["fragments", "charred paper", "burnt paper", "burned paper", "letter", "remains"]
+location = "library"
+scenery = true
+clue = "burnt_letter"
+description = """
+They were too far gone to lift, but by bending close with the lamp I could make out, here and there, a few words in a firm, sloping hand upon the browned edges of the sheets:
+
+| "...My dear Vane... ...cannot in honour keep silent...
+| ...my sister has this week... ...at Bath in '79...
+| ...under another name... ...your wife..."
+
+The rest was ash.
+"""
+
+[items.desk]
+name = "writing-desk"
+aliases = ["desk", "writing desk", "drawer", "drawers", "lamp"]
+location = "library"
+scenery = true
+container = true
+openable = true
+open_text = "I drew open the drawer of the desk."
+description = "A handsome kneehole desk of walnut, its lamp still lit. The blotter was fresh and blank, the pen laid down beside the inkstand. There was a drawer beneath."
+
+[items.draft_deed]
+name = "draft deed"
+aliases = ["deed", "draft", "document", "partnership"]
+location = "desk"
+clue = "dissolution"
+description = """
+A lawyer's draft, dated this week: a deed for the dissolution of the partnership of "Vane and Brand, Contractors", by which Lionel Brand withdrew his capital from the firm at the end of the quarter. It was much marked in pencil in Brand's hand.
+"""
+
+[items.library_wallpaper]
+name = "panelling"
+aliases = ["wallpaper", "panelling", "paneling", "dado", "wall", "walls", "bookshelves", "shelves", "books"]
+location = "library"
+scenery = true
+description = "Oak panelling to shoulder height, green flock above it, and books to the ceiling."
+on_examine = [
+  { when = "!flag:jib_known", text = "I went slowly along the panelling, as I had seen Holmes do. To the right of the shelves, where the dado met the bookcase, there was a hair-line in the varnish that ran straight up from the skirting and then across. I pressed the moulding beside it, and with a click a narrow section of the wall swung an inch inward upon darkness and a smell of limewash. A jib door, papered and panelled to match the room, upon the back stair.", effects = ["set:jib_known", "clue:jib_door"] },
+]
+
+[items.library_window]
+name = "library window"
+aliases = ["window", "curtains", "shutters"]
+location = "library"
+scenery = true
+description = "Behind the curtains the shutters were closed and barred on the inside with an iron bar. Lestrade's constable had found them so at half past ten."
+
+# ================================================================ dining-room, servery
+
+[items.dining_table]
+name = "dining table"
+aliases = ["table", "port", "dessert", "epergne", "chairs"]
+location = "dining_room"
+scenery = true
+description = "The long table, the port decanter low, our six places still marked by crumpled napkins."
+on_examine = [
+  { once = true, text = "Beneath the place where Captain Orme had sat, a sixpence lay upon the carpet.", effects = ["move:sixpence_dining:dining_room"] },
+]
+
+[items.sixpence_dining]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence."
+
+[items.dumb_waiter]
+name = "dumb-waiter"
+aliases = ["dumb waiter", "dumbwaiter", "hatch", "ropes", "shaft"]
+location = "servery"
+scenery = true
+description = "A wooden box the size of a tea-chest, which ran up and down its shaft between the kitchen and the servery upon ropes and a pulley. It was a good deal too small for anyone larger than a cat."
+on_examine = [
+  { once = true, text = "On the floor of the box, where it must have rolled from some servant's pocket, lay a sixpence.", effects = ["move:sixpence_servery:servery"] },
+]
+
+[items.sixpence_servery]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence."
+
+[items.kitchen_dumb_waiter]
+name = "dumb-waiter"
+aliases = ["dumb waiter", "dumbwaiter", "hatch", "shaft"]
+location = "kitchen"
+scenery = true
+description = "The bottom of the dumb-waiter's shaft, the box run up to the servery above."
+
+# ================================================================ cloakroom
+
+[items.cloakroom_window]
+name = "cloakroom window"
+aliases = ["window"]
+location = "cloakroom"
+scenery = true
+clue = "cloakroom_window"
+description = "A small window of frosted glass, high in the wall, no more than a foot square. Outside it were fixed three stout iron bars. No one larger than a child could have passed it, and no one at all through the bars. The cloakroom had no other door than the one by which I had come in."
+
+[items.washstand]
+name = "washstand"
+aliases = ["basin", "marble washstand", "soap"]
+location = "cloakroom"
+scenery = true
+description = "A marble washstand with a basin and a cake of Windsor soap."
+on_examine = [
+  { once = true, text = "In the soap-dish, half under the soap, someone had left a sixpence.", effects = ["move:sixpence_cloak:cloakroom"] },
+]
+
+[items.sixpence_cloak]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence, a little soapy."
+
+[items.coats]
+name = "coats"
+aliases = ["hats", "pegs", "coat", "overcoats"]
+location = "cloakroom"
+scenery = true
+description = "Four gentlemen's overcoats and hats, my own among them. I did not care to go through my friends' pockets."
+
+# ================================================================ upstairs
+
+[items.piano]
+name = "piano"
+aliases = ["grand piano", "music", "book of music", "nocturnes"]
+location = "drawing_room"
+scenery = true
+description = "A fine Broadwood grand. The book upon the stand was a volume of Chopin's nocturnes, left open near its end; it is a long book to play straight through."
+
+[items.piano_stool]
+name = "piano stool"
+aliases = ["stool"]
+location = "drawing_room"
+scenery = true
+description = "A tapestry-covered stool whose seat lifted to hold music."
+on_examine = [
+  { once = true, text = "Lifting the seat, I found the stool full of loose music, and on top of it a sixpence.", effects = ["move:sixpence_piano:drawing_room"] },
+]
+
+[items.sixpence_piano]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence."
+
+[items.tea_things]
+name = "tea-things"
+aliases = ["tea", "tea things", "cups", "table", "teapot"]
+article = "the"
+location = "drawing_room"
+scenery = true
+description = "Three cups. One of them, at the end of the table nearest the door, had not been drunk from."
+
+[items.cigar_cabinet]
+name = "cigar cabinet"
+aliases = ["cabinet", "cigars", "cigar case", "cigar-case"]
+location = "dressing_room"
+scenery = true
+description = "A tall cabinet of cedar, its drawers full of Havanas. Each cigar wore a band of red and gold, printed with the name of Vane's own importer in the Haymarket. I had smoked one after dinner."
+
+[items.dressing_table]
+name = "dressing-table"
+aliases = ["dressing table", "brushes", "studs", "tray"]
+location = "dressing_room"
+scenery = true
+description = "Silver-backed brushes, a tray of studs and links, a bottle of bay rum."
+on_examine = [
+  { once = true, text = "Among the studs in the tray lay a sixpence.", effects = ["move:sixpence_dressing:dressing_room"] },
+]
+
+[items.sixpence_dressing]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence."
+
+[items.dressing_bell]
+name = "bell-pull"
+aliases = ["bell pull", "bell", "bellpull", "tapestry"]
+location = "dressing_room"
+scenery = true
+description = "A strip of worked tapestry ending in a brass ring. From it a wire ran up into the wall, to be carried by cranks and pulleys down to the bell-board in the basement."
+
+[items.cradle]
+name = "cradle"
+aliases = ["baby", "child", "infant", "muslin"]
+location = "nursery"
+scenery = true
+description = "The child slept on, flushed and damp about the hair, as children are who have cried themselves to sleep."
+
+[items.nursery_bell]
+name = "bell-pull"
+aliases = ["bell pull", "bell", "bellpull"]
+location = "nursery"
+scenery = true
+description = "A plain bell-pull of red cord beside the chimney-piece."
+
+[items.nursery_tube]
+name = "speaking tube"
+aliases = ["tube", "mouthpiece", "whistle"]
+location = "nursery"
+scenery = true
+description = "The nursery's own speaking tube, stopped with its whistle. Annie told me it ran down to the kitchen, so that Cook might be asked for warm milk at night."
+
+[items.rocking_chair]
+name = "rocking-chair"
+aliases = ["rocking chair", "chair"]
+location = "nursery"
+scenery = true
+description = "A low nursing chair, a shawl thrown over its back."
+
+# ================================================================ back stair
+
+[items.walls_second]
+name = "limewashed walls"
+aliases = ["walls", "wall", "limewash", "whitewash"]
+location = "back_stair_second"
+scenery = true
+clue = "limewash"
+description = "Plain plaster, limewashed white. It was the old-fashioned soft wash that never sets hard, and where I had brushed against it in the narrow turn my coat-sleeve had come away chalky white. I beat it off as best I could, but a faint pale streak remained in the cloth."
+
+[items.walls_first]
+name = "limewashed walls"
+aliases = ["walls", "wall", "limewash", "whitewash"]
+location = "back_stair_first"
+scenery = true
+clue = "limewash"
+description = "Plain plaster, limewashed white. It was the old-fashioned soft wash that never sets hard, and where I had brushed against it on the narrow half-landing my coat-sleeve had come away chalky white. I beat it off as best I could, but a faint pale streak remained in the cloth."
+
+[items.walls_ground]
+name = "limewashed walls"
+aliases = ["walls", "wall", "limewash", "whitewash"]
+location = "back_stair_ground"
+scenery = true
+clue = "limewash"
+description = "Plain plaster, limewashed white. It was the old-fashioned soft wash that never sets hard, and where I had brushed against it on the landing my coat-sleeve had come away chalky white. I beat it off as best I could, but a faint pale streak remained in the cloth."
+
+[items.bell_wires]
+name = "bell-wires"
+aliases = ["wires", "wire", "cranks", "crank", "bell wires"]
+location = "back_stair_first"
+scenery = true
+description = "A dozen thin wires running in parallel along the angle of wall and ceiling, each turning the corner by its own small brass crank, and each, I supposed, going down to its own bell below."
+
+[items.library_door_back]
+name = "narrow door"
+aliases = ["deal door", "painted door", "door", "library door"]
+location = "back_stair_ground"
+scenery = true
+clue = "jib_door"
+description = "A narrow door of painted deal with a plain iron latch. Across its top rail some servant long ago had stencilled a single word: LIBRARY. On this side it was any common door; on the other, I had no doubt, it was disguised as part of the wall."
+on_examine = [
+  { when = "!flag:jib_known", effects = ["set:jib_known"] },
+]
+
+[items.servery_door_back]
+name = "servery door"
+aliases = ["servery door"]
+location = "back_stair_ground"
+scenery = true
+description = "A plain door, propped open with a wedge, through which the dishes go."
+
+[items.sixpence_stair]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "back_stair_second"
+coin = true
+description = "A silver sixpence, dropped on the stair."
+
+[items.cigar_end]
+name = "cigar-end"
+aliases = ["cigar end", "cigar", "stub", "butt", "end"]
+location = "back_stair_basement"
+clue = "cigar_end"
+description = "The stub of a good Havana, perhaps a third smoked and pinched out, with a band of red and gold still about it. It had been pushed into the angle of the bottom stair, where a careless broom would miss it."
+
+# ================================================================ basement
+
+[items.bell_board]
+name = "bell-board"
+aliases = ["bell board", "bells", "board", "bellboard"]
+location = "servants_hall"
+scenery = true
+description = """
+A long board of varnished pine, and upon it a row of brass bells, each hung upon its own coiled spring so that it would go on swinging for some while after it was rung, and show which it had been. Beneath each was a painted label:
+
+| FRONT DOOR    LIBRARY      DINING RM    MORNING RM
+| DRAWING RM    DRESSING RM  MISTRESS     SPARE RM
+| NURSERY       SCHOOL RM
+
+Every bell was still now.
+"""
+
+[items.supper_table]
+name = "supper table"
+aliases = ["table", "supper", "deal table", "bench", "benches"]
+location = "servants_hall"
+scenery = true
+description = "The remains of the servants' supper: cold mutton, bread and cheese, a jug of beer. There were places for eight."
+on_examine = [
+  { once = true, text = "Under the bench, among the crumbs, lay a sixpence.", effects = ["move:sixpence_hall_below:servants_hall"] },
+]
+
+[items.sixpence_hall_below]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence."
+
+[items.servants_clock]
+name = "clock"
+aliases = ["servants' clock"]
+location = "servants_hall"
+scenery = true
+description = "A plain round clock, which Cook assured me she set by the church every Sunday. It agreed with my watch to the minute."
+
+[items.tube_mouthpieces]
+name = "speaking-tube mouthpieces"
+aliases = ["mouthpieces", "tubes", "tube", "speaking tubes", "whistles", "whistle", "mouthpiece"]
+location = "butlers_pantry"
+scenery = true
+description = """
+A row of four brass mouthpieces, each lettered: LIBRARY, DINING RM, DRAWING RM, MASTER. Each was stopped with a little whistle on a chain. When someone upstairs blew into the tube, the whistle at this end shrieked, and the butler would pull it out and answer.
+"""
+
+[items.pantry_clock]
+name = "pantry clock"
+aliases = ["clock"]
+location = "butlers_pantry"
+scenery = true
+description = "A brass-bound clock that struck the hours. Gaunt wound it himself every morning, and it agreed with my watch."
+
+[items.plate_safe]
+name = "plate safe"
+aliases = ["safe", "plate", "silver"]
+location = "butlers_pantry"
+scenery = true
+cant_take = "It was set into the wall."
+description = "An iron safe set into the wall, its door shut and locked."
+
+[items.range]
+name = "range"
+aliases = ["stove", "fire", "oven"]
+location = "kitchen"
+scenery = true
+description = "A great black range, its fire banked down for the night."
+
+[items.kitchen_dresser]
+name = "dresser"
+aliases = ["pans", "copper pans", "kitchen dresser"]
+location = "kitchen"
+scenery = true
+description = "Copper pans in ranks, scoured till they shone."
+on_examine = [
+  { once = true, text = "Behind a saucepan on the lowest shelf lay a sixpence, the forgotten tip of some tradesman.", effects = ["move:sixpence_kitchen:kitchen"] },
+]
+
+[items.sixpence_kitchen]
+name = "sixpence"
+aliases = ["coin", "sixpenny bit"]
+location = "nowhere"
+coin = true
+description = "A silver sixpence."

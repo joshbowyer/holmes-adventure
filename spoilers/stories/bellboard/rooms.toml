@@ -1,0 +1,207 @@
+# ================================================================ family side
+
+[rooms.entrance_hall]
+name = "The Entrance Hall"
+aliases = ["hall", "entrance hall"]
+description = """
+The hall of No. 11 was a lofty, chilly place of black-and-white marble, lit by a gasolier that hissed overhead. The main stair rose on the left beneath a crimson runner. To the right stood the door of the library, a constable posted beside it; to the left, the dining-room. At the back of the hall a door gave upon the morning-room, and beside it a smaller one upon the gentlemen's cloakroom. Against the wall, facing the street door, stood the footman's hooded chair.
+"""
+on_enter = [
+  { once = true, text = "[Before going further I set down in my notebook what I had myself seen and heard at the table that evening.]", effects = ["clue:table_times", "clue:piano", "clue:quarrel"] },
+]
+[rooms.entrance_hall.exits]
+east = { to = "library", aliases = ["library", "library door"] }
+west = { to = "dining_room", aliases = ["dining room", "dining-room"] }
+north = { to = "morning_room", aliases = ["morning room", "morning-room"] }
+northwest = { to = "cloakroom", aliases = ["cloakroom", "cloak room", "cloak-room"] }
+up = { to = "first_landing", aliases = ["stair", "stairs", "main stair", "staircase"] }
+out = { blocked = "A constable stood upon the step outside, and Lestrade had given orders that no one was to leave the house. I had no wish to try his temper.", aliases = ["street door", "front door", "street", "square"] }
+
+[rooms.library]
+name = "The Library"
+aliases = ["library"]
+description = """
+It was a handsome room, panelled to the height of a man's shoulder and papered above in a dark green flock, with books rising to the cornice on three sides. Heavy curtains were drawn across the window. A writing-desk stood near the fire, its lamp still burning; the fire itself had sunk to a red glow behind its fender, the fire-irons standing in their rack beside it. On the wall between the desk and the bookshelves was fixed the brass mouthpiece of a speaking tube.
+
+And beneath it, upon the Turkey carpet, lay Lionel Brand.
+"""
+details = [
+  { when = "flag:jib_known", text = "In the panelling to the right of the shelves, the jib door to the back stair now showed as a thin dark line." },
+]
+[rooms.library.exits]
+west = { to = "entrance_hall", aliases = ["hall", "library door"] }
+northwest = { to = "back_stair_ground", visible_when = "flag:jib_known", aliases = ["jib door", "hidden door", "back stair", "back stairs"], text = "I pressed the catch in the dado, and the section of panelling swung inward upon the back stair." }
+
+[rooms.dining_room]
+name = "The Dining-Room"
+aliases = ["dining room", "dining-room"]
+description = """
+The long table had been cleared of all but the port and the dessert, and the candles in the great silver epergne had burned down to their sockets. Our chairs stood where we had pushed them back when Vane cried out from across the hall. Through the ceiling, earlier in the evening, the sound of Miss Orme's piano had come down to us quite clearly from the drawing-room above. In the far wall a plain door led to the servery.
+"""
+[rooms.dining_room.exits]
+east = { to = "entrance_hall", aliases = ["hall"] }
+north = { to = "servery", aliases = ["servery", "servery door"] }
+
+[rooms.servery]
+name = "The Servery"
+aliases = ["servery"]
+description = """
+A narrow room lined with shelves of plate and glass, where the dishes came up from the kitchen to be set out before they went to table. In one wall was the square wooden hatch of the dumb-waiter, its ropes running down into darkness. A second door, plainer still, opened upon the back stair.
+"""
+[rooms.servery.exits]
+south = { to = "dining_room", aliases = ["dining room", "dining-room"] }
+northeast = { to = "back_stair_ground", aliases = ["back stair", "back stairs", "stair"] }
+
+[rooms.morning_room]
+name = "The Morning-Room"
+aliases = ["morning room", "morning-room"]
+description = """
+A pleasant room by daylight, I do not doubt, all chintz and watercolours; at midnight, with a constable at the door and the curtains drawn, it had the air of a cell. It was here that Lestrade had put the Captain and his sister to wait upon his pleasure.
+"""
+[rooms.morning_room.exits]
+south = { to = "entrance_hall", aliases = ["hall"] }
+
+[rooms.cloakroom]
+name = "The Cloakroom"
+aliases = ["cloakroom", "cloak room", "cloak-room"]
+description = """
+A small, close room smelling of wet wool and Windsor soap. The gentlemen's coats and hats hung in a row upon their pegs; a marble washstand stood in one corner, and a single small window was set high in the outer wall.
+"""
+[rooms.cloakroom.exits]
+southeast = { to = "entrance_hall", aliases = ["hall"] }
+out = { to = "entrance_hall", aliases = ["hall"] }
+
+[rooms.first_landing]
+name = "The First-Floor Landing"
+aliases = ["first floor", "first-floor landing", "landing"]
+description = """
+The main stair turned upon a broad landing carpeted in crimson, the walls hung with a figured paper of red and gold and a pair of indifferent landscapes. Double doors opened upon the drawing-room; a single door, to the right, upon Mr Vane's dressing-room. In the corner, so placed as to be overlooked by any guest, a door covered in green baize led to the servants' quarters. The stair went on up to the floor above.
+"""
+[rooms.first_landing.exits]
+down = { to = "entrance_hall", aliases = ["hall", "main stair"] }
+up = { to = "second_landing", aliases = ["second floor"] }
+north = { to = "drawing_room", aliases = ["drawing room", "drawing-room"] }
+east = { to = "dressing_room", aliases = ["dressing room", "dressing-room"] }
+west = { to = "back_stair_first", aliases = ["baize door", "green door", "back stair", "back stairs"] }
+
+[rooms.drawing_room]
+name = "The Drawing-Room"
+aliases = ["drawing room", "drawing-room"]
+description = """
+The drawing-room ran the whole width of the house, a long, bright room of looking-glass and gilt and pale blue silk. The tea-things still stood upon a low table where the ladies had been served at a quarter past ten. At the far end, near the windows, stood a grand piano, its lid raised and a book of music open upon the stand.
+"""
+[rooms.drawing_room.exits]
+south = { to = "first_landing", aliases = ["landing"] }
+
+[rooms.dressing_room]
+name = "Mr Vane's Dressing-Room"
+aliases = ["dressing room", "dressing-room"]
+description = """
+A plain, masculine room, smelling of bay rum and cigars, with a mahogany wardrobe, a dressing-table set with brushes, and a tall cabinet of cigars against the wall. Beside the fireplace hung a bell-pull of worked tapestry.
+"""
+[rooms.dressing_room.exits]
+west = { to = "first_landing", aliases = ["landing"] }
+
+[rooms.second_landing]
+name = "The Second-Floor Landing"
+aliases = ["second floor", "second-floor landing", "top landing"]
+description = """
+The main stair narrowed as it climbed, and ended upon a modest landing under a skylight black with night. Here were the bedrooms of the family, their doors shut, and at the end the door of the nursery. In the corner a second baize door, worn shabby at the edge where hands pushed it, gave upon the back stair.
+"""
+[rooms.second_landing.exits]
+down = { to = "first_landing", aliases = ["first floor"] }
+north = { to = "nursery", aliases = ["nursery"] }
+west = { to = "back_stair_second", aliases = ["baize door", "back stair", "back stairs"] }
+
+[rooms.nursery]
+name = "The Nursery"
+aliases = ["nursery"]
+description = """
+A warm low room with a high fender before the fire and a rocking-chair beside it. In a cradle hung with muslin a child of some eight or nine months lay asleep at last, his fists flung up beside his head. A bell-pull hung by the chimney-piece, and in the wall by the door was the mouthpiece of a speaking tube, stopped with its whistle.
+"""
+[rooms.nursery.exits]
+south = { to = "second_landing", aliases = ["landing"] }
+
+# ================================================================ servants' side
+
+[rooms.back_stair_second]
+name = "The Back Stair (Second Floor)"
+aliases = ["back stair", "back stairs"]
+description = """
+The back stair began here at the top of the house, a narrow wooden flight boxed in between limewashed walls and lit by a single gas-jet turned low. Its treads were bare and worn hollow in the middle by the passage of maids' feet. A baize door, shabby on this side as on the other, led out to the family's landing.
+"""
+[rooms.back_stair_second.exits]
+east = { to = "second_landing", aliases = ["baize door", "landing"] }
+down = { to = "back_stair_first", aliases = ["first floor"] }
+
+[rooms.back_stair_first]
+name = "The Back Stair (First Floor)"
+aliases = ["back stair", "back stairs"]
+description = """
+A cramped half-landing on the back stair, where the flight doubled back upon itself between its limewashed walls. On this side the baize door to the first-floor landing was nothing but bare deal, with a brass latch. Along the angle of the ceiling ran the bell-wires, a dozen of them, each to its own little crank at the corner, carrying the summons of every room in the house down to the basement.
+"""
+[rooms.back_stair_first.exits]
+east = { to = "first_landing", aliases = ["baize door", "landing"] }
+up = { to = "back_stair_second", aliases = ["second floor"] }
+down = { to = "back_stair_ground", aliases = ["ground floor"] }
+
+[rooms.back_stair_ground]
+name = "The Back Stair (Ground Floor)"
+aliases = ["back stair", "back stairs"]
+description = """
+At the level of the ground floor the back stair widened into a little square landing, its walls limewashed like the rest. Two doors opened from it: to the left, the door to the servery; to the right, a narrow door of painted deal. The flight went on up into the house, and down to the basement.
+"""
+[rooms.back_stair_ground.exits]
+southwest = { to = "servery", aliases = ["servery", "servery door"] }
+southeast = { to = "library", aliases = ["library", "narrow door", "deal door", "painted door"], text = "I lifted the latch of the narrow door and stepped through, and found myself in the library, the door swinging shut behind me flush with the panelling." }
+up = { to = "back_stair_first", aliases = ["first floor"] }
+down = { to = "back_stair_basement", aliases = ["basement"] }
+
+[rooms.back_stair_basement]
+name = "The Foot of the Back Stair"
+aliases = ["foot of the stair", "foot of the back stair", "stair foot"]
+description = """
+The back stair came down at last into the basement beside a stone-flagged passage. It was a dark corner, out of sight of the servants' hall, where the stair turned upon itself. The air here was cold, and smelt of damp stone and, faintly, of something better than either.
+"""
+[rooms.back_stair_basement.exits]
+up = { to = "back_stair_ground", aliases = ["ground floor", "back stair"] }
+east = { to = "basement_passage", aliases = ["passage", "basement passage"] }
+
+[rooms.basement_passage]
+name = "The Basement Passage"
+aliases = ["passage", "basement passage", "basement"]
+description = """
+A long stone-flagged passage ran the length of the basement, lit by gas and whitewashed to the height of a man's head. Doors opened from it on every side: the servants' hall to the north, from which came a murmur of low voices; the kitchen to the east; the butler's pantry to the south. At the western end the back stair went up into the house.
+"""
+[rooms.basement_passage.exits]
+west = { to = "back_stair_basement", aliases = ["back stair", "back stairs", "stair"] }
+north = { to = "servants_hall", aliases = ["servants hall", "servants' hall", "hall"] }
+east = { to = "kitchen", aliases = ["kitchen"] }
+south = { to = "butlers_pantry", aliases = ["pantry", "butler's pantry", "butlers pantry"] }
+
+[rooms.servants_hall]
+name = "The Servants' Hall"
+aliases = ["servants hall", "servants' hall"]
+description = """
+The servants' hall was a long low room with a deal table down its middle, at which the remains of the household's supper had been pushed aside. A clock ticked loudly over the fireplace. High upon the end wall, where every soul at the table could see and hear it, hung the bell-board: a long row of brass bells, each upon its coiled spring.
+"""
+[rooms.servants_hall.exits]
+south = { to = "basement_passage", aliases = ["passage"] }
+
+[rooms.butlers_pantry]
+name = "The Butler's Pantry"
+aliases = ["pantry", "butler's pantry", "butlers pantry"]
+description = """
+A narrow room lined with green baize-covered shelves and glass-fronted cupboards of plate. A sink and a draining-board stood under the barred area window, and the iron door of the plate safe was set into the wall. Beside the door, at the height of a man's mouth, was a row of speaking-tube mouthpieces, each with its whistle hanging upon a little chain, and over them a clock.
+"""
+[rooms.butlers_pantry.exits]
+north = { to = "basement_passage", aliases = ["passage"] }
+
+[rooms.kitchen]
+name = "The Kitchen"
+aliases = ["kitchen"]
+description = """
+A great vaulted kitchen with a range that filled one end of it, its fire banked for the night, and a long dresser of copper pans winking in the gaslight. The smell of the evening's dinner still hung about it. In one corner the shaft of the dumb-waiter came down from the servery above.
+"""
+[rooms.kitchen.exits]
+west = { to = "basement_passage", aliases = ["passage"] }

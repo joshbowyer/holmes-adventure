@@ -22,7 +22,12 @@ MISFIRES = ("I do not quite follow", "I see no ", "You cannot go that way", "Whi
 def play(data, commands):
     shipped = {k: v for k, v in data.items() if k != "test"}
     console = ScriptedConsole(commands)
-    game = Game(Story(shipped), console, autosave=False)
+    story = Story(shipped)
+    game = Game(story, console, autosave=False)
+    # Each character's own "I don't know about that" replies also count as misfires.
+    misfires = list(MISFIRES) + ["Nothing comes of"]
+    for ch in story.characters.values():
+        misfires += [ch[k] for k in ("unknown_topic", "unknown_show") if ch.get(k)]
     game.enter(game.state.room)
     steps = 0
     while console.inputs and not game.finished:
@@ -30,9 +35,11 @@ def play(data, commands):
         mark = len(console.output)
         game.handle(line)
         reply = "".join(console.output[mark:])
-        for m in MISFIRES:
-            if m in reply:
-                raise AssertionError(f"step {steps}: {line!r} misfired ({m.strip()!r})")
+        flat = " ".join(reply.split())
+        for i, m in enumerate(misfires):
+            if " ".join(m.split()) in flat:
+                kind = m.strip() if i < len(MISFIRES) + 1 else "a character's unknown-topic reply"
+                raise AssertionError(f"step {steps}: {line!r} misfired ({kind})")
         steps += 1
     return game
 

@@ -154,7 +154,10 @@ Exploration premises:
   - Each source has a private `[test]` section: `walkthrough` (must solve the case, find
     every clue, and hit no misfire replies) and optional `wrong_path` (must reach a bad
     ending). Run `python -m unittest`. Tests never print story text.
-  - Shipped so far: `tutorial`, a small practice case at Baker Street.
+  - Shipped so far: `tutorial` (practice case, played and approved by the user) and
+    `bellboard` (E1, 19 rooms, 12 people; bible in `spoilers/stories/bellboard/bible.md`).
+  - The walkthrough test also fails on any character's own "unknown topic/show" reply, so
+    every ASK and SHOW in a walkthrough must hit a written answer.
 - Puzzle mechanics needed by the lineup: room/inventory/examine parser, notebook of clues,
   "listen at speed" for cylinders, timeline builder, logic-grid/seating input, Morse
   input/codebook, tabular record viewer, delayed-message queue, save/load per story.
@@ -162,6 +165,6 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays the practice case and gives feedback on the parser and
-  feel; then write the first real case end to end (proposed: E1 The Bell-Board at Pelham
-  Square) before the rest.
+- Next step from here: the user plays The Bell-Board at Pelham Square and gives feedback.
+  Then pick the next case; the deduction cases will need new final-puzzle types in
+  `holmes/puzzles/` (timeline, seating, Morse tape, record tables, telegram queue).

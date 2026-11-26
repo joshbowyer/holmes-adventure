@@ -4,7 +4,8 @@ Story data shape (authored as TOML, shipped encoded as JSON):
 
   case        id, title, year, start, intro, order, coin_name, coin_plural, hint texts
   rooms.ID    name, description, aliases, details[], exits{dir: room | {to, when, blocked,
-              visible_when, aliases}}, dark_when, dark_text, on_enter[]
+              visible_when, aliases, text}}, dark_when, dark_text, on_enter[]
+              (an exit with `blocked` and no `to` is a way that is always barred)
   items.ID    name, aliases, location, description, details[], scenery, portable, listed,
               container, openable, open, coin, visible_when, clue, on_examine[], take_text,
               cant_take, open_text, on_take

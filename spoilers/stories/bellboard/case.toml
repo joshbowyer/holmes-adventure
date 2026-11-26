@@ -1,0 +1,507 @@
+[case]
+id = "bellboard"
+title = "The Bell-Board at Pelham Square"
+year = 1888
+order = 10
+start = "entrance_hall"
+coin_name = "sixpence"
+coin_plural = "sixpences"
+hint_intro = "I laid a sixpence on the newel post beside Holmes's hand. It vanished into his waistcoat pocket, and he spoke without looking at me."
+hint_none = "\"You have everything, Watson,\" said Holmes. \"I can add nothing but the courage to say it. ACCUSE, when you are ready.\""
+hint_broke = "My pockets held no more silver. \"No sixpence, no sermon,\" said Holmes cheerfully. \"The house is full of them, Watson. Look about you.\""
+intro = """
+I have set down elsewhere how often my friend Sherlock Holmes was called into a case by some chance of my own profession, but I recall only one occasion on which I was myself at table when the murder was done, and a guest at the very house.
+
+It was in the February of 1888. Captain Hugh Orme, who had served beside me in the Berkshires and had left his right arm upon the field of Maiwand, had begged me to make up the numbers at a dinner given by Mr Edmund Vane, the contractor, at his house in Pelham Square. We were six at table: our host and his wife; Mr Lionel Brand, Vane's partner of twenty years; Orme and his sister, Miss Letitia Orme; and myself.
+
+It was a heavy, uneasy dinner. Orme had drunk rather more than was wise, and over the soup he said something bitter to Brand about men who lent money to their friends, at which Brand answered him very quietly that they would speak of it tomorrow. The ladies withdrew at twenty minutes to ten, and presently Miss Orme's piano came down to us through the ceiling. A little before ten Brand excused himself to write a letter in the library; Vane went upstairs for his cigars; Orme went out of the room for a few minutes. At half past ten Vane went across the hall to fetch Brand up to the ladies, and we heard him cry out.
+
+Lionel Brand lay dead in the library, struck down from behind. I did what little a doctor could, which was nothing, and while Vane sent for the police I scribbled a wire to Baker Street.
+
+Inspector Lestrade arrived at a quarter past eleven, and Holmes at a quarter to twelve. By midnight Lestrade had made up his mind that the man he wanted was my old comrade Orme.
+"""
+intro_note = "[This case is larger than the practice case, and the house has two sides: the family's rooms and the servants' passages and back stair. NOTEBOOK shows what you know. Sixpences buy hints from Holmes with HINT.]"
+
+[verbs]
+sit = ["sit"]
+pull = ["pull", "ring", "tug", "yank"]
+blow = ["blow", "whistle"]
+
+# ================================================================ clues
+
+[clues.table_times]
+text = "What I saw myself: Brand left the dining-room at 9:48 to write a letter. Vane went up for his cigars at 9:50 and came back at 9:59. Orme went out at 9:55 and came back at 10:02. At ten o'clock Vane and I were together in the dining-room, and a minute later James brought him a note."
+
+[clues.piano]
+text = "Miss Orme's piano came down through the dining-room ceiling from about 9:45 until about 10:20, and I do not remember that it ever stopped."
+
+[clues.quarrel]
+text = "Over the soup Orme spoke bitterly to Brand about money lent to friends. Brand answered quietly that they would speak of it tomorrow."
+
+[clues.tube_plug]
+text = "Brand fell beneath the library speaking tube with its whistle pulled out and hanging by its chain, his hand stretched up toward it. He was calling below stairs when he was struck."
+
+[clues.weapon]
+text = "The weapon was the library poker: wiped, with hairs still in the collar, and put back in the rack the wrong way about."
+
+[clues.burnt_letter]
+text = "Burnt letter in the library grate, in Brand's hand, to Vane: \"cannot in honour keep silent... my sister has this week... at Bath in '79... under another name... your wife...\""
+
+[clues.whistle_ten]
+text = "Gaunt, the butler, heard the library whistle at ten o'clock exactly by the pantry clock. When he answered he heard a catch of breath and a soft fall, then nothing."
+
+[clues.ellen_saw]
+text = "Ellen, the kitchen-maid, was in the pantry at ten and saw Gaunt answer the library whistle there."
+
+[clues.sightline]
+text = "James, the footman, watched the library door from his chair from 9:30. Nobody went in after Brand (9:48) until Vane found him (10:30). He saw Vane go up at 9:50 and come down at 9:59, and Orme in the cloakroom from 9:55 to 10:02. At ten he answered the street door to a messenger, with the library door still in view."
+
+[clues.cloakroom_window]
+text = "The cloakroom has only the one door to the hall. Its single window is a foot square and barred outside."
+
+[clues.parkes_dressing]
+text = "Parkes, the valet, answered Vane's bell at 9:52 by the back stair, and was with him in the dressing-room from 9:54 until Vane went down at 9:58."
+
+[clues.bells_rung]
+text = "Mrs Bale watched the bell-board all evening. Only three bells rang after dinner: the dressing-room at 9:52, the street door at 10:00 and the nursery at 10:05. The library bell never rang."
+
+[clues.jib_door]
+text = "There is a jib door, disguised in the library panelling, opening onto the back stair at the ground-floor landing."
+
+[clues.family_never]
+text = "Gaunt says the family never use the back stair. In twelve years he has never once seen the mistress on it."
+
+[clues.cigar_end]
+text = "At the foot of the back stair: the end of one of Vane's red-and-gold-banded Havanas, smoked about a third of the way down."
+
+[clues.parkes_skirts]
+text = "Parkes was secretly smoking at the foot of the back stair just after ten. He heard a thump overhead, then the latch of a door above him and silk skirts going quickly up the stair, past the first floor and on up."
+
+[clues.cook_supper]
+text = "Mrs Bale says every woman servant was at supper under her eye from 9:45 until after ten. Only Ellen (the jug, at ten) and Annie (the nursery bell, at 10:05) left the table."
+
+[clues.clara_left]
+text = "Miss Orme says Mrs Vane left the drawing-room at 9:55 to see to the baby, and was gone about twenty minutes."
+
+[clues.clara_story]
+text = "Mrs Vane says she went up the main stair to the nursery a little before ten, sat with the baby, rang for Annie, and came down again for tea."
+
+[clues.limewash]
+text = "The back stair is limewashed with an old soft wash that comes off chalky white on any cloth that brushes it. The main stair is papered."
+
+[clues.gown_smear]
+text = "On the right side of Mrs Vane's dark blue silk skirt, at the hip: a faint pale chalky streak that someone has tried to brush away."
+
+[clues.annie_found]
+text = "Annie answered the nursery bell at 10:05 and found Mrs Vane out of breath, her hair coming down, and the baby screaming as if he had been left crying a long while."
+
+[clues.cutting]
+text = "In Brand's waistcoat pocket: a cutting from the Bath Chronicle, October 1879. Clara Dunn, 23, lady's maid to Mrs Ashcombe of Lansdown Crescent, was tried for stealing a brooch and found Not Guilty."
+
+[clues.vane_wife]
+text = "Vane says his wife was Miss Clara Dunn, of Somerset, a companion to an invalid lady at Bath when he met her. She is two-and-thirty."
+
+[clues.orme_debt]
+text = "In Brand's pocketbook: Orme's I.O.U. for six hundred pounds, with \"No hurry - L.B.\" pencilled beneath."
+
+[clues.dissolution]
+text = "In the library desk: a draft deed dissolving the partnership of Vane and Brand at the quarter's end."
+
+# ================================================================ actions
+
+[[actions]]
+id = "sit_chair"
+verb = "sit"
+target = "footman_chair"
+text = "I sat down in the footman's chair. From it I could see the street door, the foot of the stair, the morning-room and cloakroom doors, and the library door not a dozen feet away. Then I got up again; James looked as though he would like it back."
+
+[[actions]]
+id = "sit_anywhere"
+verb = "sit"
+text = "There would be time enough to sit down when this was over."
+
+[[actions]]
+id = "blow_library_tube"
+verb = "blow"
+target = "speaking_tube"
+text = "Lestrade caught my arm. \"Leave that be, Doctor, if you please. It's evidence.\""
+
+[[actions]]
+id = "blow_tubes"
+verb = "blow"
+target = ["tube_mouthpieces", "nursery_tube"]
+text = "I thought better of it. The household had been startled enough for one night."
+
+[[actions]]
+id = "ring_bells"
+verb = "pull"
+target = ["dressing_bell", "nursery_bell"]
+text = "I put my hand to it, and took it away again. A bell ringing below stairs tonight would frighten the whole basement out of its wits."
+
+[[actions]]
+id = "ring_board"
+verb = ["pull", "use"]
+target = ["bell_board", "bell_wires"]
+text = "There was nothing to be learned by setting the bells jangling, and Mrs Bale would not have thanked me."
+
+[[actions]]
+id = "open_street_door"
+verb = "open"
+target = "street_door"
+text = "The constable on the step looked round at me, and I shut it again. Lestrade's orders were that nobody was to leave."
+
+[[actions]]
+id = "move_body"
+verb = ["take", "pull"]
+target = "body"
+text = "Lestrade would have had something to say to that, and so would my own sense of decency."
+
+# ================================================================ hints, in order
+
+[[hints]]
+id = "scene"
+done = "clue:tube_plug"
+texts = [
+  "\"Begin with the dead man, Watson. Where was he, and what was he doing, when the blow fell?\"",
+  "\"Go EAST into the library and EXAMINE THE SPEAKING TUBE above the body.\"",
+]
+
+[[hints]]
+id = "whistle"
+when = "clue:tube_plug"
+done = "clue:whistle_ten"
+texts = [
+  "\"A whistle blown at one end of a tube sounds at the other. Who was at the other end?\"",
+  "\"The library tube runs down to the butler's pantry. Take the back stair to the basement, find Gaunt in his pantry, and ASK GAUNT ABOUT THE WHISTLE.\"",
+]
+
+[[hints]]
+id = "ellen"
+when = "clue:whistle_ten"
+done = "clue:ellen_saw"
+texts = [
+  "\"Gaunt's word is only Gaunt's word. Was anyone with him?\"",
+  "\"The kitchen-maid was about. Go into the kitchen and ASK ELLEN ABOUT GAUNT.\"",
+]
+
+[[hints]]
+id = "hall"
+when = "clue:tube_plug"
+done = "clue:sightline"
+texts = [
+  "\"Somebody sat all evening where he could see the library door.\"",
+  "\"ASK JAMES ABOUT THE LIBRARY DOOR. He is in the entrance hall.\"",
+]
+
+[[hints]]
+id = "cloakroom"
+when = "clue:sightline"
+done = "clue:cloakroom_window"
+texts = [
+  "\"Lestrade's man went into the cloakroom. Is there any other way out of it?\"",
+  "\"Go into the CLOAKROOM, off the hall, and EXAMINE THE WINDOW.\"",
+]
+
+[[hints]]
+id = "dressing"
+when = "clue:sightline"
+done = "clue:parkes_dressing"
+texts = [
+  "\"Your host was upstairs for nine minutes. Was he alone?\"",
+  "\"Vane rang for his valet. Find Parkes in the servants' hall and ASK PARKES ABOUT THE DRESSING-ROOM.\"",
+]
+
+[[hints]]
+id = "bells"
+when = "clue:tube_plug"
+done = "clue:bells_rung"
+texts = [
+  "\"The bell-board in the servants' hall is a kind of diary of the evening, if anyone was reading it.\"",
+  "\"ASK MRS BALE ABOUT THE BELLS. She is the cook, in the servants' hall.\"",
+]
+
+[[hints]]
+id = "jib"
+when = "clue:sightline"
+done = "clue:jib_door"
+texts = [
+  "\"If nobody came in by the door, and the window was barred, then there is another door.\"",
+  "\"EXAMINE THE PANELLING in the library. Or come at it from the other side: the back stair runs past the library on the ground floor.\"",
+]
+
+[[hints]]
+id = "cigar"
+when = "clue:jib_door"
+done = "clue:cigar_end"
+texts = [
+  "\"Somebody else was on the back stair this evening. It still smells of him.\"",
+  "\"Go down the back stair to its very foot, in the basement, and look about you.\"",
+]
+
+[[hints]]
+id = "parkes"
+when = "clue:cigar_end"
+done = "clue:parkes_skirts"
+texts = [
+  "\"Whose cigar is it, and who had the chance to take it?\"",
+  "\"TAKE THE CIGAR-END and SHOW IT TO PARKES.\"",
+]
+
+[[hints]]
+id = "supper"
+when = "clue:parkes_skirts"
+done = "clue:cook_supper"
+texts = [
+  "\"Silk on the servants' stair. Parkes thought it a maid in borrowed finery. Was every maid where she should have been?\"",
+  "\"ASK MRS BALE ABOUT SUPPER.\"",
+]
+
+[[hints]]
+id = "lime"
+when = "clue:jib_door"
+done = "clue:limewash"
+texts = [
+  "\"That stair is very narrow, Watson. Did you brush against anything?\"",
+  "\"EXAMINE THE WALLS of the back stair.\"",
+]
+
+[[hints]]
+id = "ladies"
+when = "clue:parkes_skirts"
+done = "clue:clara_left"
+texts = [
+  "\"There were two ladies in the drawing-room. Where was each of them at ten?\"",
+  "\"Go to the morning-room and ASK MISS ORME ABOUT MRS VANE.\"",
+]
+
+[[hints]]
+id = "gown"
+when = "clue:limewash"
+done = "clue:gown_smear"
+texts = [
+  "\"Limewash comes off on silk as readily as on broadcloth.\"",
+  "\"Go up to the drawing-room and EXAMINE MRS VANE.\"",
+]
+
+[[hints]]
+id = "nursery"
+when = "clue:clara_left"
+done = "clue:annie_found"
+texts = [
+  "\"Mrs Vane says she was in the nursery. The nursery has a witness.\"",
+  "\"Go up to the nursery on the second floor and ASK ANNIE ABOUT THE BELL.\"",
+]
+
+[[hints]]
+id = "motive"
+when = "clue:gown_smear"
+done = "clue:cutting"
+texts = [
+  "\"You have the how, very nearly. For the why, the dead man may still have something to tell you.\"",
+  "\"EXAMINE BRAND'S WAISTCOAT in the library, and then EXAMINE what you find there.\"",
+]
+
+[[hints]]
+id = "name"
+when = "clue:cutting"
+done = "clue:vane_wife"
+texts = [
+  "\"Clara Dunn, of Bath, three-and-twenty in 1879. Who is she now?\"",
+  "\"Go to the dining-room and ASK MR VANE ABOUT HIS WIFE.\"",
+]
+
+[[hints]]
+id = "accuse"
+when = ["clue:vane_wife", "clue:gown_smear", "clue:parkes_skirts", "clue:whistle_ten"]
+texts = [
+  "\"You have it, Watson. All of it. It is not a pleasant truth, but it is the truth. ACCUSE.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "accuse"
+when = "clue:tube_plug"
+locked_text = "I had not yet so much as looked properly at the scene of the crime. I had better begin there."
+intro = "I found Holmes still by the newel post. He took one look at my face, knocked out his pipe, and said, \"Well, Watson?\""
+good = "solved"
+default_wrong = "collapses"
+
+[[final.questions]]
+id = "who"
+prompt = "Who killed Lionel Brand?"
+options = [
+  { id = "orme", label = "Captain Hugh Orme" },
+  { id = "vane", label = "Mr Edmund Vane" },
+  { id = "clara", label = "Mrs Clara Vane" },
+  { id = "letitia", label = "Miss Letitia Orme" },
+  { id = "gaunt", label = "Gaunt, the butler" },
+  { id = "parkes", label = "Parkes, the valet" },
+  { id = "james", label = "James, the footman" },
+]
+
+[[final.questions]]
+id = "route"
+prompt = "How did the murderer come into the library?"
+options = [
+  { id = "hall", label = "By the library door from the entrance hall" },
+  { id = "jib", label = "By the jib door from the back stair", when = "clue:jib_door" },
+  { id = "window", label = "By the library window" },
+]
+
+[[final.questions]]
+id = "time"
+prompt = "When did Brand die?"
+options = [
+  { id = "early", label = "Soon after he went in, at about ten minutes to ten" },
+  { id = "ten", label = "At ten o'clock" },
+  { id = "late", label = "Not long before he was found, at about twenty past ten" },
+]
+
+[[final.questions]]
+id = "why"
+prompt = "Why was he killed?"
+options = [
+  { id = "business", label = "To stop him taking his money out of the firm" },
+  { id = "debt", label = "To be rid of a debt owed to him" },
+  { id = "secret", label = "To stop him revealing a secret from the past" },
+  { id = "robbery", label = "For gain, by robbery" },
+]
+
+[final.solution]
+who = "clara"
+route = "jib"
+time = "ten"
+why = "secret"
+
+[[final.wrong]]
+answers = { who = "orme" }
+ending = "orme_taken"
+
+[[final.wrong]]
+answers = { who = "vane" }
+ending = "vane_taken"
+
+[[final.wrong]]
+answers = { who = "letitia" }
+ending = "letitia_taken"
+
+[[final.wrong]]
+answers = { who = "gaunt" }
+ending = "servant_taken"
+
+[[final.wrong]]
+answers = { who = "parkes" }
+ending = "servant_taken"
+
+[[final.wrong]]
+answers = { who = "james" }
+ending = "servant_taken"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "The Two Houses"
+text = """
+I laid it before him, and he heard me out with his eyes half-closed.
+
+Brand had died at ten o'clock, with his hand on the speaking tube, calling for help that Gaunt heard and did not understand. No one had come to him through the hall: James had watched that door from his chair. At ten o'clock Vane was with me, Orme was shut in a cloakroom with one door and a barred window, Gaunt was at his tube with Ellen beside him, James was at the street door, every maid was at supper under Mrs Bale's eye, and Miss Orme was at her piano, which I had heard myself. But there was another door into the library, a jib door from the back stair, and at a minute past ten Parkes, hiding at the foot of that stair with a stolen cigar, had heard silk skirts go quickly up past him toward the top of the house. The back stair is limewashed, and Mrs Vane's blue silk was marked with lime. She had left the drawing-room at five minutes to ten, and Annie found her in the nursery at seven minutes past, out of breath, with a child that had been crying a long while alone. And in Brand's waistcoat was the reason: Clara Dunn, lady's maid, of Bath, tried in 1879 for a theft and acquitted; and a letter to her husband, burned in the grate.
+
+"Excellent, Watson," said Holmes quietly. "Quite excellent. And quite dreadful."
+
+We went up together to the drawing-room. She was sitting where I had left her, and when she saw our faces she stood up and said, before either of us could speak, "I have been waiting for you, Doctor Watson. I think I have been waiting for you for nine years."
+
+She told it very simply. Brand's sister had seen her at the theatre a week since and known her. Brand had told her before dinner that he would tell her husband that night; he would not, he said, be party to a deception. She had gone down to beg him, only to beg him; and when he turned his back on her to whistle for the butler to have her shown out, she had taken up the poker without, she said, knowing that she did it.
+
+"I did not take Mrs Ashcombe's brooch," she said. "The jury believed me. But no one else would ever have believed me again, and I could not have borne Edmund's face."
+
+Vane, when he was told, sat a long while with his head in his hands. "I would not have cared," he said at last. "God help me, Watson, I would not have cared."
+
+Holmes was silent all the way back to Baker Street in the cab. Only as we turned out of Oxford Street did he say, half to himself, "She killed to keep a secret that was no crime, from a man who would have forgiven it. There is the whole tragedy of the respectable classes, Watson, in a sentence."
+"""
+
+[endings.orme_taken]
+title = "Lestrade's Man"
+text = """
+"It was Orme," I said, and I do not think I have ever said anything harder. "The debt, the quarrel, the seven minutes out of the room."
+
+Holmes looked at me for a long moment, and then away. "Then you had better tell Lestrade," said he, "since you agree with him."
+
+Lestrade was delighted. Hugh Orme was taken to Bow Street before dawn, and committed for trial at the next sessions. The cloakroom, the footman's evidence and the barred window were all brought forward by his counsel; the jury, after three hours, could not agree, and he was discharged. But he resigned his commission, and his clubs, and went abroad with his sister, and I never saw him again.
+
+Holmes never once spoke to me of the case. Years afterward I found among his papers a single sheet headed "Pelham Square", with one line written on it: "W. heard the piano, and never asked who else was not listening."
+"""
+
+[endings.vane_taken]
+title = "The Partner"
+text = """
+"It was Vane," I said. "Brand was taking his money out of the firm. Vane was upstairs, alone, at the very time."
+
+Holmes raised his eyebrows. "Alone, Watson? Was he?"
+
+But I had said it, and Lestrade, who had been ready to take Orme, was every bit as ready to take a rich man if a rich man was offered him. Vane was arrested in his own dining-room. His valet's evidence and mine got him off at the trial, as it was bound to; but the firm did not survive the scandal, and Vane did not long survive the firm. His widow sold the house in Pelham Square and went abroad.
+
+"His widow," said Holmes, when I read him the notice. He said nothing more, and I did not understand him until a long while afterward.
+"""
+
+[endings.letitia_taken]
+title = "The Nocturnes"
+text = """
+"It was Miss Orme," I said. "She was in the drawing-room, close to the stair. She would do anything for her brother."
+
+"My dear Watson," said Holmes, very gently, "what was she doing at ten o'clock?"
+
+I opened my mouth to answer, and heard again in my memory the piano coming down through the dining-room ceiling, unbroken, phrase after phrase, the whole of that long evening. I had sat beneath it and listened to it myself.
+
+Miss Orme was never charged; Lestrade, to his credit, would not hear of it. But the thing had been said, and I had said it; and she never spoke to me again.
+"""
+
+[endings.servant_taken]
+title = "Below Stairs"
+text = """
+I gave Lestrade my servant, and Lestrade, who had his own reasons for preferring that a gentleman should not be guilty of murder in Mayfair, took him gladly.
+
+He was dismissed without a character the next morning, and held at Bow Street for a week, and released when the magistrate found that there was nothing whatever against him. But a servant dismissed without a character from a house where there has been a murder does not find another place. I made what amends I could, which were very few.
+
+"You looked below stairs, Watson," said Holmes, "because that is where the gentry always look. You did not ask yourself who in that house knew the servants' ways better than the servants themselves."
+"""
+
+[endings.collapses]
+title = "A Case That Would Not Hold"
+text = """
+I gave Holmes my account. He listened with closed eyes, and at the end of it he was silent a long while.
+
+"The name may be the right one, Watson," said he at last, "or it may not. But the case you have built around it would not hold together for five minutes before a competent counsel. You have the wrong hour, or the wrong door, or the wrong reason, and any one of them is enough to hang an innocent man or free a guilty one."
+
+The case was never brought to trial. Lestrade let it lie, and in time it was forgotten by everyone but the household at Pelham Square, and me.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "talk to holmes", "examine chair", "sit in chair", "examine umbrella stand", "take sixpence",
+  "ask james about the library door", "ask james about the mistress", "ask james about the back stair",
+  "e", "examine body", "examine speaking tube", "examine poker", "examine grate", "examine fragments",
+  "examine waistcoat", "take pocketbook", "take cutting", "examine pocketbook", "examine cutting",
+  "open desk", "take deed", "examine deed", "ask lestrade about orme",
+  "examine panelling", "nw", "examine walls", "examine narrow door", "d",
+  "examine cigar-end", "take cigar-end", "e", "s", "ask gaunt about the whistle",
+  "ask gaunt about the back stair", "n", "e", "ask ellen about gaunt", "examine dresser", "take sixpence",
+  "w", "n", "ask cook about the bells", "ask cook about supper", "ask cook about parkes",
+  "examine table", "take sixpence", "ask parkes about the dressing room", "show cigar-end to parkes",
+  "s", "w", "up", "sw", "examine dumb-waiter", "take sixpence", "s", "examine table", "take sixpence",
+  "ask vane about the evening", "ask vane about his wife", "show cutting to vane", "e",
+  "nw", "examine window", "examine washstand", "take sixpence", "out",
+  "n", "ask orme about the evening", "show pocketbook to orme", "ask miss orme about mrs vane",
+  "ask miss orme about the piano", "s",
+  "up", "n", "examine piano", "examine stool", "take sixpence", "examine mrs vane",
+  "ask mrs vane about the evening", "show cutting to mrs vane", "s",
+  "e", "examine dressing table", "take sixpence", "examine cabinet", "w",
+  "up", "n", "ask annie about the bell", "s", "w", "take sixpence", "d", "d",
+  "notebook", "hint", "y",
+  "accuse", "clara", "jib", "ten o'clock", "secret", "y",
+]
+wrong_path = [
+  "e", "examine speaking tube", "accuse", "1", "1", "2", "2", "y", "",
+]

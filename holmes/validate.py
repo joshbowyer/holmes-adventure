@@ -54,7 +54,9 @@ def validate(data: dict) -> list[str]:
             ex = {"to": ex} if isinstance(ex, str) else ex
             if d not in DIRECTIONS.values():
                 errs.append(f"room {rid}: exit {d!r} is not a direction")
-            if ex.get("to") not in rooms:
+            if "to" not in ex and "blocked" not in ex:
+                errs.append(f"room {rid}: exit {d} needs 'to' (or 'blocked' for a barred way)")
+            elif "to" in ex and ex["to"] not in rooms:
                 errs.append(f"room {rid}: exit {d} leads to unknown room {ex.get('to')!r}")
             conds.append((f"room {rid} exit {d}.when", ex.get("when")))
             conds.append((f"room {rid} exit {d}.visible_when", ex.get("visible_when")))

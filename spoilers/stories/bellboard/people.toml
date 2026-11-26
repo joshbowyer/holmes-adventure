@@ -1,0 +1,351 @@
+# ================================================================ Holmes and the police
+
+[characters.holmes]
+name = "Holmes"
+aliases = ["sherlock holmes", "sherlock", "mr holmes"]
+location = "entrance_hall"
+presence = "Holmes stood by the newel post of the stair in his long grey travelling-cloak, his keen eyes going everywhere and his hands deep in his pockets."
+description = "He had come straight from Baker Street at my wire, and the cold of the night was still upon him. He wore that look of eager, contained attention I knew so well."
+unknown_topic = "\"It is your case tonight, Watson,\" said Holmes. \"I am merely the gentleman who takes sixpences.\""
+unknown_show = "Holmes glanced at it. \"Yes, I see it. The question is whether you do.\""
+
+[[characters.holmes.greeting]]
+text = "\"You sat at that table, Watson, and you know these people. They will say things to you that they would never say to me. Go where you like, ask what you like, and when you have the truth of it, come and lay it before me. If you come to a stand, a sixpence will buy you my thoughts; I am collecting for the Irregulars' Christmas.\""
+
+[[characters.holmes.topics.case]]
+aliases = ["murder", "brand", "crime", "body", "where to begin", "begin", "start"]
+text = "\"Begin with the room and the body, Watson. They cannot lie, and they cannot be frightened.\""
+
+[[characters.holmes.topics.lestrade]]
+aliases = ["inspector", "police", "orme", "captain orme"]
+text = "\"Lestrade has a debt, a quarrel at dinner and a man who left the room. He has hanged better men on less. It is for you to see whether he is right.\""
+
+[[characters.holmes.topics.sixpence]]
+aliases = ["sixpences", "hint", "hints", "help", "coin", "coins", "money"]
+text = "\"Find them as you go. There are a good many about this house; the rich are careless with small silver. Then lay one before me and say HINT.\""
+
+[[characters.holmes.topics.house]]
+aliases = ["servants", "back stair", "back stairs", "bell-board", "bells"]
+text = "\"A house of this kind is two houses, Watson, one built inside the other. The family live in one and the servants in the other, and each is apt to forget that the other exists.\""
+
+[characters.lestrade]
+name = "Lestrade"
+aliases = ["inspector", "inspector lestrade", "police"]
+location = "library"
+presence = "Inspector Lestrade stood with his back to the fire, his hands clasped behind him, regarding the body with a proprietary air."
+description = "A lean, ferret-like man, sallow and dark-eyed, very much in his element."
+unknown_topic = "\"I've no time for that, Doctor,\" said Lestrade."
+unknown_show = "Lestrade looked at it and sniffed. \"Evidence, is it? We'll see.\""
+
+[[characters.lestrade.greeting]]
+text = "\"Evening, Doctor. Mr Holmes sent you in, I suppose. Well, you'll find it plain enough. I'll have my man by morning.\""
+
+[[characters.lestrade.topics.orme]]
+aliases = ["captain orme", "captain", "suspect", "theory", "culprit", "your man"]
+text = "\"The Captain had words with the dead man at dinner, you'll have heard them yourself. He left the table at five minutes to ten and didn't come back till two minutes past. Seven minutes is plenty of time to cross a hall and use a poker. I'll want more, but I'll get it.\""
+
+[[characters.lestrade.topics.body]]
+aliases = ["brand", "dead man", "corpse", "wound", "blow"]
+text = "\"One blow from behind with the poker, Doctor, as you'll have seen. No robbery: his watch and money on him. The constable found the window barred on the inside, so whoever did it came in by the door from the hall.\""
+
+[[characters.lestrade.topics.poker]]
+aliases = ["weapon", "fire-irons", "fire irons"]
+text = "\"Wiped and put back. Nobody's to touch it until it's been photographed.\""
+
+[[characters.lestrade.topics.window]]
+aliases = ["shutters", "library window"]
+text = "\"Barred inside. My constable saw to that first thing. No, he came in by the door.\""
+
+# ================================================================ the family and guests
+
+[characters.vane]
+name = "Mr Vane"
+aliases = ["vane", "edmund vane", "edmund", "host", "mr edmund vane"]
+location = "dining_room"
+presence = "Edmund Vane sat at the head of his own table with an untouched glass before him, staring at the candles."
+description = "A heavy, florid, self-made man of fifty, who had built half the railways of the Midlands. Tonight he seemed to have shrunk inside his evening clothes. He was perfectly sober, and perfectly bewildered."
+unknown_topic = "Vane passed a hand over his face. \"I can't think about that now, Doctor.\""
+unknown_show = "Vane looked at it without understanding. \"What is it? What does it mean?\""
+
+[[characters.vane.greeting]]
+text = "\"Watson. Thank God it's you and not another policeman. Ask me anything you like. I can't make head or tail of it.\""
+
+[[characters.vane.topics.evening]]
+aliases = ["tonight", "movements", "whereabouts", "cigars", "dressing room", "dressing-room", "alibi", "ten o'clock", "ten"]
+text = "\"I went up for the cigars, as you saw. Couldn't find the case, rang for Parkes, and the two of us turned the room upside down before he found it in my other coat. I came down, and sat with you, and then James brought me that confounded note from the club. At half past ten I went to fetch Brand for the ladies, and...\" He stopped."
+
+[[characters.vane.topics.brand]]
+aliases = ["lionel", "lionel brand", "partner", "partnership", "business", "dissolution", "deed"]
+text = "\"Lionel and I have been partners for twenty years. He was taking his money out at the quarter; said he was tired, wanted to live quietly at Bath with his sister. It would have pinched us, I'll not deny it, but the firm would have weathered it. I didn't grudge it him.\""
+
+[[characters.vane.topics.wife]]
+aliases = ["clara", "mrs vane", "your wife", "his wife", "dunn", "marriage", "married"]
+text = "\"Clara? We've been married three years. She was a Miss Dunn, a clergyman's daughter from Somerset; she was companion to an invalid lady at Bath when I met her there, taking the waters for my liver. Two-and-thirty, and the best wife a rough fellow like me ever had. Why do you ask?\""
+effects = ["clue:vane_wife"]
+
+[[characters.vane.topics.note]]
+aliases = ["club", "message", "messenger"]
+text = "He pulled a crumpled half-sheet from his pocket. \"From my club, about a luncheon tomorrow. Of no consequence whatever.\""
+
+[[characters.vane.topics.orme]]
+aliases = ["captain orme", "captain", "hugh orme"]
+text = "\"Orme? A good fellow. I know he owed Lionel money; Lionel told me so. But Lionel had told him there was no hurry.\""
+
+[[characters.vane.shows.cutting]]
+text = "Vane read it twice. His colour went out of his face. \"Dunn,\" he said. \"Bath. My wife's name was Dunn, Watson, and I met her in Bath.\" He folded the paper very small and gave it back to me. \"Acquitted. It says acquitted.\""
+effects = ["clue:vane_wife"]
+
+[[characters.vane.shows.draft_deed]]
+text = "\"Yes, that's the deed. I've seen it. I told you, Watson: I didn't grudge it him.\""
+
+[[characters.vane.shows.cigar_end]]
+text = "\"That's one of mine. Red and gold, from Fribourg's in the Haymarket. Where the deuce did you find that?\""
+
+[characters.clara]
+name = "Mrs Vane"
+aliases = ["clara", "mrs vane", "clara vane", "hostess", "mistress", "wife", "mrs edmund vane"]
+location = "drawing_room"
+presence = "Mrs Vane sat very upright upon a sofa by the dying fire, quite alone, her hands folded in her lap."
+description = "A tall, handsome woman of thirty or a little more, with a quiet voice and very steady grey eyes, in an evening gown of dark blue silk."
+clue = "gown_smear"
+details = [
+  { text = "As she turned toward the fire I noticed, on the right side of her skirt at about the height of the hip, a faint, pale streak upon the dark silk, as though of chalk, which someone had tried to brush away." },
+]
+unknown_topic = "\"I'm afraid I can't help you there, Doctor Watson.\""
+unknown_show = "Mrs Vane looked at it calmly and shook her head."
+
+[[characters.clara.greeting]]
+text = "\"Doctor Watson. Poor Mr Brand. Edmund is quite broken by it. Is there anything I can tell you?\""
+
+[[characters.clara.topics.evening]]
+aliases = ["tonight", "movements", "whereabouts", "nursery", "baby", "son", "alibi", "ten o'clock", "ten"]
+text = "\"I left Miss Orme at the piano at a little before ten and went up to the nursery. Baby had been fretful all day. I sat with him and he would not settle, so after a while I rang for Annie to bring him some warm milk, and when he was quiet I came down again for tea. I went up and down by this stair, of course,\" with a little gesture toward the landing."
+effects = ["clue:clara_story"]
+
+[[characters.clara.topics.back_stair]]
+aliases = ["back stair", "back stairs", "servants' stair", "baize door", "jib door", "limewash"]
+text = "She raised her eyebrows a little. \"The back stair? I don't believe I have ever set foot on it, Doctor. It is the servants' way.\""
+
+[[characters.clara.topics.brand]]
+aliases = ["lionel brand", "mr brand", "dead man"]
+text = "\"Mr Brand has been my husband's partner since long before I knew either of them. He was always very correct with me.\" She looked at the fire. \"Very correct.\""
+
+[[characters.clara.topics.past]]
+aliases = ["bath", "dunn", "clara dunn", "somerset", "family", "father", "companion", "mrs ashcombe", "ashcombe"]
+text = "For the first time something moved behind the grey eyes. \"My father had the living of a small parish in Somerset. After he died I was a companion to an invalid lady at Bath. It is not an interesting story, Doctor.\""
+
+[[characters.clara.topics.gown]]
+aliases = ["dress", "skirt", "silk", "streak", "smear", "chalk", "mark"]
+text = "She glanced down at her skirt and smoothed it, quite without haste. \"The nursery wall, I expect. The paint is old.\""
+
+[[characters.clara.shows.cutting]]
+text = "She read it without a word. When she looked up her face was perfectly still, but her hands, when she gave it back to me, were not. \"I have nothing to say to you, Doctor Watson,\" she said. \"Nothing at all.\""
+
+[[characters.clara.shows.cigar_end]]
+text = "\"One of my husband's cigars, I think. Why do you show it to me?\""
+
+[characters.orme]
+name = "Captain Orme"
+aliases = ["orme", "captain", "hugh orme", "hugh", "captain hugh orme"]
+location = "morning_room"
+presence = "Captain Hugh Orme stood at the window of the morning-room, his back to the room, his hands clenched behind him."
+description = "My old comrade of the Berkshires: a lean, brown, upright man with an empty sleeve pinned across his chest. He had lost the arm at Maiwand, the same black day that gave me my Jezail bullet. He looked older tonight than I had ever seen him."
+unknown_topic = "\"Can't help you there, Watson.\""
+unknown_show = "Orme shook his head."
+
+[[characters.orme.greeting]]
+text = "\"Watson. That little ferret of an inspector thinks I did it, you know. I'd be obliged if you'd find out who did.\""
+
+[[characters.orme.topics.evening]]
+aliases = ["tonight", "movements", "whereabouts", "cloakroom", "alibi", "ten o'clock", "ten", "out of the room"]
+text = "\"I went to the cloakroom at five minutes to ten. The claret disagrees with me, and I wanted a minute to myself after... after dinner. I splashed some water on my face and stood there like a fool. Came out at two minutes past. The footman saw me go in and come out. There's no other way out of the place.\""
+
+[[characters.orme.topics.quarrel]]
+aliases = ["words", "dinner", "brand", "lionel brand", "argument"]
+text = "\"You heard it. I owe Brand six hundred pounds, Watson. Cards, at the club, last winter. I said something stupid over the soup about men who lend money to their friends, and he told me quietly that we'd speak of it tomorrow. He was decent about it, damn him. He was always decent.\""
+
+[[characters.orme.topics.debt]]
+aliases = ["money", "iou", "six hundred", "cards", "debt"]
+text = "\"Six hundred. I have perhaps half of it. He knew that.\""
+
+[[characters.orme.shows.pocketbook]]
+text = "Orme read the I.O.U., and the pencilled line below it, and for a long moment said nothing. \"'No hurry,'\" he said at last, roughly. \"That's like him. Put it away, Watson.\""
+
+[characters.letitia]
+name = "Miss Orme"
+aliases = ["letitia", "letitia orme", "miss letitia orme", "sister"]
+location = "morning_room"
+presence = "His sister, Miss Letitia Orme, sat by the fire with her hands in her lap."
+description = "A slight, fair woman with her brother's straight back, and long, fine hands made for the keyboard."
+unknown_topic = "\"I'm afraid I don't know, Doctor Watson.\""
+unknown_show = "Miss Orme looked at it and shook her head."
+
+[[characters.letitia.greeting]]
+text = "\"Doctor Watson. Hugh didn't do this. You know he didn't.\""
+
+[[characters.letitia.topics.piano]]
+aliases = ["music", "chopin", "nocturnes", "playing", "evening", "tonight", "movements", "whereabouts", "alibi", "ten o'clock", "ten"]
+text = "\"I played from the moment we went up until the tea came: the nocturnes, straight through, the whole book. I always do when I'm nervous, and Hugh had made me nervous at dinner. I didn't stop once. You must have heard me, downstairs.\""
+
+[[characters.letitia.topics.clara]]
+aliases = ["mrs vane", "clara vane", "hostess", "mistress", "mrs edmund vane"]
+text = "\"Mrs Vane sat with me for a little while, and then she went out to look at the baby. That was at five minutes to ten; I know because I had just turned to the E-flat and I looked at the clock. She was gone, oh, twenty minutes. She came back just before the tea, and she sat down very quietly and didn't drink hers.\""
+effects = ["clue:clara_left"]
+
+[[characters.letitia.topics.hugh]]
+aliases = ["captain orme", "brother", "captain", "orme"]
+text = "\"He came back from the war with one arm and no money, Doctor, and he has been too proud ever since. But he would never hurt anybody. Never.\""
+
+# ================================================================ the servants
+
+[characters.james]
+name = "James"
+aliases = ["footman", "james the footman"]
+location = "entrance_hall"
+presence = "James the footman stood stiffly by his hooded chair, very pale above his white tie."
+description = "A tall, good-looking young man of perhaps twenty, in the house's dark green livery. His hands were not quite steady."
+unknown_topic = "\"I couldn't say, sir.\""
+unknown_show = "\"I don't know anything about that, sir.\""
+
+[[characters.james.greeting]]
+text = "\"Sir.\" He stood a little straighter."
+
+[[characters.james.topics.library]]
+aliases = ["library door", "door", "evening", "tonight", "chair", "hall", "who went in", "anyone", "movements", "alibi", "ten o'clock", "ten"]
+text = "\"I sat here in my chair from half past nine, sir, as I always do when there's company. Mr Brand went into the library at twelve minutes to ten and shut the door, and nobody went in after him, sir, nobody at all, till the master went in at half past ten. I'd swear to it. The master went upstairs at ten to and came down a minute before ten. The Captain went into the cloakroom at five minutes to ten, and came out at two minutes past and went back to the dining-room. At ten the street-door bell went, and it was a boy from the master's club with a note. I answered it, but you can see the library door from the step, sir, plain as I see you. I took the note in to the master straight after.\""
+effects = ["clue:sightline"]
+
+[[characters.james.topics.mistress]]
+aliases = ["mrs vane", "clara", "clara vane", "hostess", "mistress", "ladies", "main stair", "stairs"]
+text = "\"The mistress was upstairs with the ladies, sir. Nobody came down the main stair but the master, between the ladies going up and the master finding Mr Brand.\""
+
+[[characters.james.topics.back_stair]]
+aliases = ["back stair", "back stairs", "servants' stair", "jib door", "baize door"]
+text = "\"The back stair, sir? I don't use it of an evening; I'm in the hall. It comes up from the basement right to the top of the house. There's a door from it into the library, sir, a jib door they call it, but the family never use it. I don't suppose Mr Brand knew it was there.\""
+
+[characters.gaunt]
+name = "Mr Gaunt"
+aliases = ["gaunt", "butler", "mr gaunt"]
+location = "butlers_pantry"
+presence = "Gaunt the butler stood at his pantry table, polishing a glass that was already polished, for the sake of something to do with his hands."
+description = "A grey, dignified, heavy-lidded man of sixty, thirty years in service and twelve in this house. His voice and manner were those of a bishop at a funeral."
+unknown_topic = "\"I really could not say, sir.\""
+unknown_show = "Gaunt inclined his head politely over it and said nothing."
+
+[[characters.gaunt.greeting]]
+text = "\"Doctor Watson, sir. A terrible business. A terrible business.\""
+
+[[characters.gaunt.topics.whistle]]
+aliases = ["tube", "speaking tube", "speaking-tube", "library tube", "evening", "tonight", "ten o'clock", "ten", "movements", "alibi"]
+text = "\"At ten o'clock exactly, sir, the library whistle sounded. I was here at the table; the clock was just striking. I pulled out the whistle and said, 'Yes, sir?' into the tube, and I heard... I can hardly say, sir. A sort of catch of the breath, and then a soft sound like something falling. And then nothing. I said 'Yes, sir?' again, and waited, and there was no reply. Gentlemen do sometimes blow the tube by mistake, sir, leaning on it. I thought no more of it.\" His heavy face worked. \"I shall think of it now, sir. I shall think of it a long while.\""
+effects = ["clue:whistle_ten"]
+
+[[characters.gaunt.topics.back_stair]]
+aliases = ["back stair", "back stairs", "servants' stair", "jib door", "family", "baize door"]
+text = "\"The back stair is for the servants, sir, and the family never use it. Never. In twelve years I don't recall that I've seen the master on it twice, and the mistress not once.\""
+effects = ["clue:family_never"]
+
+[[characters.gaunt.topics.brand]]
+aliases = ["mr brand", "lionel brand", "dead man"]
+text = "\"A very correct gentleman, sir. Very generous with the servants at Christmas.\""
+
+[[characters.gaunt.topics.bells]]
+aliases = ["bell", "bell-board", "bell board", "bells"]
+text = "\"The bell-board is in the servants' hall, sir. Mrs Bale keeps an eye on it of an evening; she'll tell you what rang.\""
+
+[characters.ellen]
+name = "Ellen"
+aliases = ["kitchen-maid", "kitchen maid", "kitchenmaid", "maid", "girl"]
+location = "kitchen"
+presence = "Ellen, the kitchen-maid, sat on a stool by the range with her apron over her knees."
+description = "A rosy, frightened girl of fifteen with her sleeves rolled to the elbow."
+unknown_topic = "\"I don't know, sir, I'm sure.\""
+unknown_show = "Ellen stared at it round-eyed."
+
+[[characters.ellen.greeting]]
+text = "\"Oh, sir. Is it true? About the poor gentleman?\""
+
+[[characters.ellen.topics.gaunt]]
+aliases = ["mr gaunt", "butler", "whistle", "tube", "pantry", "evening", "tonight", "ten o'clock", "ten"]
+text = "\"Mr Gaunt, sir? He was in the pantry. I'd gone in for the jug for the beer, just as the clock was striking ten, and the whistle went off, ever so loud, and Mr Gaunt answered it. 'Yes, sir?' he says, and he listens, and he says it again, and then he shakes his head and puts the whistle back. I took the jug and went to supper.\""
+effects = ["clue:ellen_saw"]
+
+[characters.parkes]
+name = "Parkes"
+aliases = ["valet", "mr parkes"]
+location = "servants_hall"
+presence = "Parkes, Mr Vane's valet, sat at the end of the supper table, smoothing a napkin over and over."
+description = "A neat, narrow, clean-shaven man of forty, the very pattern of a gentleman's gentleman. I fancied he would not meet my eye."
+unknown_topic = "\"I couldn't say, sir.\""
+unknown_show = "\"I don't know what that is, sir.\""
+
+[[characters.parkes.greeting]]
+text = "\"Doctor Watson, sir.\" He rose, and stood with his hands at his sides."
+
+[[characters.parkes.topics.dressing_room]]
+aliases = ["dressing room", "dressing-room", "master", "mr vane", "bell", "cigars", "cigar case", "evening", "tonight", "movements", "alibi"]
+text = "\"The master's bell rang at eight minutes to ten, sir, and I went up by the back stair. I was in the dressing-room by six minutes to, and we hunted high and low for his cigar-case; it was in his other coat. The master went down at two minutes to ten, sir, by the main stair, and I came straight down again by the back.\""
+effects = ["clue:parkes_dressing"]
+
+[[characters.parkes.topics.back_stair]]
+aliases = ["back stair", "back stairs", "stair", "came down", "straight down"]
+text = "\"Straight down, sir. I came straight down.\" He smoothed the napkin."
+
+[[characters.parkes.shows.cigar_end]]
+text = """
+Parkes looked at it, and then at me, and his narrow face went slowly scarlet.
+
+"I took one, sir," he said low. "Out of the master's case, while he was looking the other way. I went down to the bottom of the back stair to smoke it, where Mrs Bale wouldn't smell it. I'd not have said so, sir, only..." He swallowed. "Only I heard something, sir, while I stood there. A bump overhead, like a chair going over, or something falling. And then, a minute after, the latch of a door above me, and someone coming out onto the stair and going up it, quick and quiet. Up past the first floor, sir, and on up. I didn't see them. But it was a lady's skirts, sir. Silk. You can't mistake silk on a stair; it's not like a maid's stuff gown. I thought it must be one of the girls in some finery of her mistress's, larking, and I didn't want to be caught myself, so I kept still till it was gone. Then I pinched out my cigar and came along to supper. That would be a minute or two after ten, sir. I'm very sorry, sir."
+"""
+effects = ["clue:parkes_skirts"]
+
+[characters.cook]
+name = "Mrs Bale"
+aliases = ["cook", "bale", "mrs bale"]
+location = "servants_hall"
+presence = "Mrs Bale, the cook, a vast woman in a vaster apron, presided over the ruins of supper at the head of the table."
+description = "Cook to the household these ten years, and plainly its true ruler below stairs. Very little that happened in the basement escaped her small, sharp eyes."
+unknown_topic = "\"Can't help you there, Doctor.\""
+unknown_show = "Mrs Bale peered at it and shook her head."
+
+[[characters.cook.greeting]]
+text = "\"Sit down, Doctor, and have a cup of tea. You look done up, and no wonder.\""
+
+[[characters.cook.topics.bells]]
+aliases = ["bell", "bell-board", "bell board", "board", "rang", "what rang"]
+text = "\"I always watch the board of an evening, Doctor, with company in the house. After the dinner went up there was only three that rang all the evening. The master's dressing-room at eight minutes to ten: that was Parkes. The street door at ten: that's James's business, not ours. And the nursery at five past ten, and up goes Annie. Nothing from the library, not all night. I'd have heard it.\""
+effects = ["clue:bells_rung"]
+
+[[characters.cook.topics.supper]]
+aliases = ["maids", "girls", "women", "servants", "who was at supper", "evening", "tonight", "ten o'clock", "ten"]
+text = "\"We sat down to supper at a quarter to ten, as soon as the gentlemen had their port. Every one of my girls was at this table, Doctor, under my eye, from the quarter to till gone ten: the two housemaids, Ellen, Annie and the lady's maid. Ellen went across for the beer jug at ten and came straight back. Annie went up when the nursery bell rang. Nobody else stirred. Mr Gaunt was in his pantry, and that Parkes...\" She sniffed. \"Parkes was up with the master.\""
+effects = ["clue:cook_supper"]
+
+[[characters.cook.topics.parkes]]
+aliases = ["valet", "mr parkes", "smell", "cigar"]
+text = "\"Parkes came in to his supper at three minutes past ten, Doctor, and he smelt like a public-house smoking-room. Don't tell me he's not been at the master's cigars.\""
+
+[[characters.cook.topics.annie]]
+aliases = ["nursemaid", "nurse", "nursery"]
+text = "\"Annie's up in the nursery with the baby. She went up at five past ten when the bell rang and she's not been down since.\""
+
+[[characters.cook.topics.mistress]]
+aliases = ["mrs vane", "clara", "clara vane", "hostess", "mistress"]
+text = "\"The mistress? A good mistress, Doctor, and a fair one, and she knows what's what in a kitchen better than most ladies. I'll say that for her.\""
+
+[characters.annie]
+name = "Annie"
+aliases = ["nursemaid", "nurse", "nursery maid", "nanny"]
+location = "nursery"
+presence = "Annie, the nursemaid, sat in the rocking-chair by the cradle, rocking it gently with her foot."
+description = "A capable, freckled young woman of twenty or so, in a print gown and a starched apron."
+unknown_topic = "\"Hush, sir, please. I don't know about that.\""
+unknown_show = "Annie looked at it and shook her head."
+
+[[characters.annie.greeting]]
+text = "\"Softly, sir, please,\" she whispered. \"He's only just off.\""
+
+[[characters.annie.topics.bell]]
+aliases = ["nursery bell", "bell", "mistress", "mrs vane", "clara", "evening", "tonight", "baby", "ten o'clock", "ten", "milk"]
+text = "\"The nursery bell went at five past ten, sir, while I was at supper, and I came up quick as I could. The mistress was here, sir, in this chair, holding baby, and he was screaming fit to break your heart, red in the face, the way they go when they've been left crying a long while. And the mistress was all of a fluster, out of breath like she'd run up, and her hair coming down at the side. She asked for warm milk and I fetched it up, and she went down again presently. I wondered at it, sir, her being so out of breath, sitting still in a chair.\""
+effects = ["clue:annie_found"]

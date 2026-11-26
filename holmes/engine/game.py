@@ -282,7 +282,7 @@ class Game:
         parts = []
         for d, ex in self.exits().items():
             label = d
-            if ex["to"] in self.state.visited:
+            if ex.get("to") in self.state.visited:
                 label += f" ({self.story.rooms[ex['to']]['name']})"
             parts.append(label)
         if parts:
@@ -301,7 +301,9 @@ class Game:
         if key is None:
             words = cmd.obj.replace("-", " ").split()
             for d, ex in exits.items():
-                names = self.story.names_for(ex["to"]) + [a.lower() for a in ex.get("aliases", [])]
+                names = [a.lower() for a in ex.get("aliases", [])]
+                if ex.get("to"):
+                    names += self.story.names_for(ex["to"])
                 vocab = {w for n in names for w in n.replace("-", " ").split()}
                 if cmd.obj in names or (words and all(w in vocab for w in words)):
                     key = d
@@ -313,7 +315,7 @@ class Game:
                 self.say(f"I see no way to {cmd.obj} from here.")
             return
         ex = exits[key]
-        if not check(self.state, ex.get("when")):
+        if not ex.get("to") or not check(self.state, ex.get("when")):
             self.say(ex.get("blocked", "The way is barred."))
             return
         if ex.get("text"):
