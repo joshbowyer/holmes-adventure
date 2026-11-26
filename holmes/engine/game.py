@@ -49,6 +49,7 @@ class Game:
         self.verb_map = build_verb_map(story.verbs)
         self.last: Command | None = None
         self.finished = False
+        self.failed = False
 
     # --- main loop -------------------------------------------------------------------
 
@@ -85,12 +86,15 @@ class Game:
             cmd = self.last
         else:
             self.last = cmd
-        self.state.turns += 1
         if cmd.verb is None:
             self.say(f"I do not quite follow you. (Type HELP for a list of commands.)", "system")
             return
+        self.failed = False
         handler = getattr(self, "do_" + cmd.verb, None)
         (handler or self.do_custom)(cmd)
+        if self.failed:
+            return              # nothing happened, so no time passes
+        self.state.turns += 1
         if cmd.verb not in UNTIMED and not self.finished:
             self.tick()
 
@@ -118,6 +122,11 @@ class Game:
 
     def say(self, text: str, kind: str | None = None) -> None:
         self.io.say(text, kind)
+
+    def fail(self, text: str, kind: str | None = None) -> None:
+        """Say why a command came to nothing. A failed command costs no turn."""
+        self.failed = True
+        self.say(text, kind)
 
     def note(self, text: str) -> None:
         self.io.say(text, "note")
@@ -183,12 +192,12 @@ class Game:
             return found[0]
         if not found:
             if self.is_dark():
-                self.say("It is too dark to make anything out.")
+                self.fail("It is too dark to make anything out.")
             else:
-                self.say(f"I see no {phrase} here.")
+                self.fail(f"I see no {phrase} here.")
             return None
         names = [self.story.article_name(t) for t in found]
-        self.say(f"Which do you mean: {join_list(names).replace(' and ', ' or ')}?")
+        self.fail(f"Which do you mean: {join_list(names).replace(' and ', ' or ')}?")
         return None
 
     # --- events and effects ----------------------------------------------------------
@@ -329,7 +338,7 @@ class Game:
 
     def do_go(self, cmd: Command) -> None:
         if not cmd.obj:
-            self.say("Which way?")
+            self.fail("Which way?")
             return
         exits = self.exits()
         key = cmd.obj if cmd.obj in exits else None
@@ -345,13 +354,13 @@ class Game:
                     break
         if key is None:
             if cmd.obj in DIRECTIONS.values():
-                self.say("You cannot go that way.")
+                self.fail("You cannot go that way.")
             else:
-                self.say(f"I see no way to {cmd.obj} from here.")
+                self.fail(f"I see no way to {cmd.obj} from here.")
             return
         ex = exits[key]
         if not ex.get("to") or not check(self.state, ex.get("when")):
-            self.say(ex.get("blocked", "The way is barred."))
+            self.fail(ex.get("blocked", "The way is barred."))
             return
         if ex.get("text"):
             self.say(ex["text"])
@@ -365,7 +374,7 @@ class Game:
 
     def do_examine(self, cmd: Command) -> None:
         if not cmd.obj:
-            self.say("Examine what?")
+            self.fail("Examine what?")
             return
         if cmd.obj in ("room", "around", "here", "about"):
             self.describe_room()
@@ -397,23 +406,23 @@ class Game:
     def do_take(self, cmd: Command) -> None:
         story, st = self.story, self.state
         if not cmd.obj:
-            self.say("Take what?")
+            self.fail("Take what?")
             return
         if cmd.obj in ("all", "everything"):
-            self.say("One thing at a time, as Holmes would say.")
+            self.fail("One thing at a time, as Holmes would say.")
             return
         tid = self.resolve(cmd.obj)
         if tid is None or self.try_actions("take", tid):
             return
         if story.is_character(tid):
-            self.say(f"You can hardly carry off {story.name(tid)}.")
+            self.fail(f"You can hardly carry off {story.name(tid)}.")
             return
         if st.loc(tid) == "player":
-            self.say("You have it already.")
+            self.fail("You have it already.")
             return
         it = story.items[tid]
         if not story.portable(tid):
-            self.say(it.get("cant_take", "That is not something you can carry off."))
+            self.fail(it.get("cant_take", "That is not something you can carry off."))
             return
         if it.get("coin"):
             st.locations[tid] = "spent"
@@ -429,13 +438,13 @@ class Game:
 
     def do_drop(self, cmd: Command) -> None:
         if not cmd.obj:
-            self.say("Drop what?")
+            self.fail("Drop what?")
             return
         tid = self.resolve(cmd.obj, self.gather("player"))
         if tid is None or self.try_actions("drop", tid):
             return
         if self.state.loc(tid) != "player":
-            self.say("You are not carrying that.")
+            self.fail("You are not carrying that.")
             return
         self.state.locations[tid] = self.state.room
         self.say("Dropped.")
@@ -449,18 +458,18 @@ class Game:
     def _open_close(self, cmd: Command, opening: bool) -> None:
         verb = "open" if opening else "close"
         if not cmd.obj:
-            self.say(f"{verb.capitalize()} what?")
+            self.fail(f"{verb.capitalize()} what?")
             return
         tid = self.resolve(cmd.obj)
         if tid is None or self.try_actions(verb, tid):
             return
         it = self.story.items.get(tid, {})
         if not it.get("openable"):
-            self.say(f"That is not something you can {verb}.")
+            self.fail(f"That is not something you can {verb}.")
             return
         is_open = tid in self.state.opened
         if is_open == opening:
-            self.say(f"It is already {'open' if opening else 'closed'}.")
+            self.fail(f"It is already {'open' if opening else 'closed'}.")
             return
         if opening:
             self.state.opened.add(tid)
@@ -490,13 +499,13 @@ class Game:
             people = self._people_here()
             if len(people) == 1:
                 return people[0]
-            self.say(f"{verb.capitalize()} whom?")
+            self.fail(f"{verb.capitalize()} whom?")
             return None
         tid = self.resolve(phrase)
         if tid is None:
             return None
         if not self.story.is_character(tid):
-            self.say("You receive no answer.")
+            self.fail("You receive no answer.")
             return None
         return tid
 
@@ -518,7 +527,7 @@ class Game:
             # "ask about the cake" parses as obj="", or "ask cake" with nobody named
             who, topic = "", cmd.obj2 or cmd.obj
         if not topic:
-            self.say("Ask about what? (For example: ASK MRS HUDSON ABOUT THE CAKE.)", "system")
+            self.fail("Ask about what? (For example: ASK MRS HUDSON ABOUT THE CAKE.)", "system")
             return
         tid = self._person(who, "ask")
         if tid is None:
@@ -526,7 +535,7 @@ class Game:
         ch = self.story.characters[tid]
         key = self._topic_key(ch, topic)
         if key is None or not self.run_first(ch["topics"][key], f"topic:{tid}:{key}"):
-            self.say(ch.get("unknown_topic") or f"{ch['name']} has nothing to say on that head.")
+            self.fail(ch.get("unknown_topic") or f"{ch['name']} has nothing to say on that head.")
 
     def _topic_key(self, ch: dict, topic: str) -> str | None:
         topic = topic.strip().lower()
@@ -552,7 +561,7 @@ class Game:
 
     def do_show(self, cmd: Command) -> None:
         if not cmd.obj or not cmd.obj2:
-            self.say("Show what to whom? (For example: SHOW THE LETTER TO HOLMES.)", "system")
+            self.fail("Show what to whom? (For example: SHOW THE LETTER TO HOLMES.)", "system")
             return
         item = self.resolve(cmd.obj, self.gather("player"))
         if item is None:
@@ -562,11 +571,11 @@ class Game:
             return
         ch = self.story.characters[tid]
         if not self.run_first(ch["shows"].get(item), f"show:{tid}:{item}"):
-            self.say(ch.get("unknown_show") or f"{ch['name']} glances at it without interest.")
+            self.fail(ch.get("unknown_show") or f"{ch['name']} glances at it without interest.")
 
     def do_use(self, cmd: Command) -> None:
         if not cmd.obj:
-            self.say("Use what?")
+            self.fail("Use what?")
             return
         tid = self.resolve(cmd.obj)
         if tid is None:
@@ -580,7 +589,7 @@ class Game:
             return
         if tid2 and self.try_actions("use", tid2, tid):
             return
-        self.say("Nothing comes of that.")
+        self.fail("Nothing comes of that.")
 
     def do_custom(self, cmd: Command) -> None:
         """A verb the story defines (light, pull, climb...): only actions give it meaning."""
@@ -596,7 +605,7 @@ class Game:
         if self.try_actions(cmd.verb, tid, tid2):
             return
         fail = self.story.case.get("verb_fail", {}).get(cmd.verb)
-        self.say(fail or "Nothing comes of it.")
+        self.fail(fail or "Nothing comes of it.")
 
     def do_wait(self, cmd: Command) -> None:
         """Lets several turns pass (case.wait_turns), stopping early if anything happens."""
@@ -604,7 +613,7 @@ class Game:
         self.say(case.get("wait_text", "Time passes."))
         for i in range(max(1, int(case.get("wait_turns", 1)))):
             if i:
-                self.state.turns += 1
+                self.state.turns += 1   # handle() counts the first
             if self.tick() or self.finished:
                 break
 

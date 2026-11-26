@@ -191,6 +191,9 @@ class GameTests(unittest.TestCase):
         g = Game(Story(data), ScriptedConsole([]), autosave=False)
         g.handle("notebook")                                  # untimed
         self.assertEqual(g.state.counters["tide"], 0)
+        for failed in ("examine unicorn", "east", "take", "pull box", "ask bob about cheese"):
+            g.handle(failed)                                  # came to nothing: free
+        self.assertEqual((g.state.counters["tide"], g.state.turns), (0, 1))
         g.handle("take lamp")
         self.assertEqual(g.state.counters, {"oil": 2, "tide": 1})
         self.assertEqual(g.status_text(), "[Oil: 2]")

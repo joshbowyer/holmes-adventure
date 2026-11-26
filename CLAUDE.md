@@ -165,7 +165,9 @@ Exploration premises:
     `spoilers/stories/<id>/bible.md`.
   - Timed cases (added for E2): `case.counters` (named ints), conditions `lt:/ge:/eq:NAME:N`,
     effects `add:NAME:N` / `setn:NAME:N`, `case.every_turn` events run after each timed
-    command (meta verbs like NOTEBOOK, HINT, LOOK, STATUS are free), `case.status` lines
+    command (meta verbs like NOTEBOOK, HINT, LOOK, STATUS are free, and so is any command
+    that came to nothing: engine refusals go through `Game.fail()`, user's request
+    2026-11-26), `case.status` lines
     shown after each room and by STATUS, and WAIT running `case.wait_turns` turns (stops
     early when something happens). E2 uses these for a tide cycle and lantern oil.
   - A scripted walkthrough must respect the clock: plan the order so tide-gated places are
