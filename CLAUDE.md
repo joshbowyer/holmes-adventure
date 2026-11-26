@@ -4,8 +4,13 @@ A personal hobby project: a single-player Sherlock Holmes text adventure / puzzl
 played entirely in a terminal on Linux (and later over telnet/ssh).
 
 This has nothing to do with the user's day job. Never reference their employer, work repos,
-work GitHub org, or work tooling. This repo has no remote; if one is ever added it will be a
-personal account the user names.
+work GitHub org, or work tooling.
+
+**Remote (added 2026-11-26):** `origin` = `git@github-holmes:joshbowyer/holmes-adventure.git`
+(private, the user's personal account). Pushes go over SSH with a repo-only deploy key
+(`~/.ssh/holmes_deploy`, host alias `github-holmes` in `~/.ssh/config`). Never use `gh` or
+HTTPS for this repo: on this machine `gh` and the credential manager are signed in to the
+user's work account (via `GH_TOKEN`). Commits use the repo-local personal email; keep it.
 
 ## The player is also the audience — spoiler rules
 
