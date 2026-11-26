@@ -1,0 +1,616 @@
+[case]
+id = "bazalgette"
+title = "Below Bazalgette"
+year = 1886
+order = 20
+start = "depot_yard"
+coin_name = "copper"
+coin_plural = "coppers"
+hint_intro = "I dropped a penny into Holmes's palm. He turned it over, as if to see whose head was on it, and pocketed it."
+hint_none = "\"You have all of it, Watson,\" said Holmes, closing his ledger. \"Every drop. ACCUSE, when you are ready.\""
+hint_broke = "My pockets were empty of coppers. \"The Fleet is full of them,\" said Holmes. \"Ask any tosher.\""
+wait_turns = 5
+wait_text = "I waited, stamping my feet against the cold, while the river went about its business."
+intro = """
+Of all the places to which my friend Sherlock Holmes's work has led me, I think none was ever so strange to me as the great sewers of London, which Sir Joseph Bazalgette had built under our feet not twenty years before, and which most of us had the good sense never to think about at all.
+
+It was on the morning of Wednesday, the 10th of November, 1886, a raw grey day with an east wind blowing up the river, that a wire from Inspector Gregson brought us to the Metropolitan Board of Works depot in Water Lane, by Blackfriars. A young engineer of the Board, Mr Edwin Hurrell, had gone down into the Fleet sewer alone a little before midnight. At a quarter past four in the morning a waterman had found him dead in the outfall chamber at the river's edge: a place shut off from the Thames by iron flaps that no man can open from outside, and from the sewer by a weir which, Gregson said, nobody in his senses would go near in the dark.
+
+"Misadventure," said Gregson at the gate, "or a tosher. You'll see." And he went off to see about his tosher.
+
+Holmes looked about the yard, at the boots and the lamps and the grating in the cobbles that breathed up the smell of the Fleet, and then at me.
+"""
+intro_note = "[Half of this case lies underground. Your lantern burns only while you are below, and the tide decides when the river side can be reached. STATUS shows both; WAIT lets time pass. Coppers found while exploring buy hints from Holmes with HINT.]"
+
+counters = { tide = 2, tide_left = 12, oil = 0 }
+
+every_turn = [
+  # 0: the river keeps its own time
+  { effects = ["add:tide_left:-1"] },
+  # 1-4: the tide turns (0 low, 1 flood, 2 high, 3 ebb)
+  { when = ["eq:tide_left:0", "eq:tide:3"], text = "[The tide is out. It is low water.]", effects = ["setn:tide:0", "setn:tide_left:18"] },
+  { when = ["eq:tide_left:0", "eq:tide:0"], text = "[The tide has turned. It is making again.]", effects = ["setn:tide:1", "setn:tide_left:10"] },
+  { when = ["eq:tide_left:0", "eq:tide:1"], text = "[It is high water.]", effects = ["setn:tide:2", "setn:tide_left:14"] },
+  { when = ["eq:tide_left:0", "eq:tide:2"], text = "[The tide has turned. It is ebbing.]", effects = ["setn:tide:3", "setn:tide_left:10"] },
+  # 5-7: the river side at the turn of the tide
+  { when = ["eq:tide:0", "eq:tide_left:3", "at:outfall_chamber|at:foreshore"], text = "The little stream from under the flaps had slackened and almost stopped. Very soon now the tide would be making." },
+  { when = ["eq:tide:1", "at:outfall_chamber"], text = "A tongue of brown river water came sliding in under the flaps, and then another, and the flaps themselves began to stir. I did not wait to see more, but scrambled back up over the weir as fast as I could go.", effects = ["goto:weir_chamber"] },
+  { when = ["eq:tide:1", "at:foreshore"], text = "The river came creeping back over the mud faster than I would have believed, and I retreated before it up the stairs.", effects = ["goto:river_stairs"] },
+  # 8-11: the lantern burns while below ground
+  { when = ["flag:below", "has:lantern", "ge:oil:1"], effects = ["add:oil:-1"] },
+  { when = ["flag:below", "has:lantern", "eq:oil:10"], text = "I noticed that my lantern was burning lower. Through the little window in the reservoir there was not much oil left." },
+  { when = ["flag:below", "has:lantern", "eq:oil:3"], text = "My lantern was guttering. In a very few minutes it would be dry." },
+  { when = ["flag:below", "lt:oil:1", "!at:shaft_foot"], text = "My lantern flickered, flared, and went out, and the darkness came down on me like a sack. I do not care to remember the next quarter of an hour. I groped my way back along the wall, step by step, towards the far grey glimmer of the shaft, and came at last, sweating, to the foot of the rungs. The lantern was dry. Sparrow would have to fill it.", effects = ["goto:shaft_foot"] },
+]
+
+status = [
+  { when = ["has:lantern", "ge:oil:1"], text = "[Lantern: oil for {oil} more turns below ground.]" },
+  { when = ["has:lantern", "lt:oil:1"], text = "[Lantern: dry. Sparrow will fill it.]" },
+  { when = "eq:tide:0", text = "[Tide: low water, for {tide_left} more turns.]" },
+  { when = "eq:tide:1", text = "[Tide: flooding; high water in {tide_left} turns.]" },
+  { when = "eq:tide:2", text = "[Tide: high water, for {tide_left} more turns.]" },
+  { when = "eq:tide:3", text = "[Tide: ebbing; low water in {tide_left} turns.]" },
+]
+
+[verbs]
+blow = ["blow", "sound"]
+turn = ["turn", "wind", "crank", "raise", "lift"]
+fill = ["fill", "refill", "trim"]
+
+# ================================================================ clues
+
+[clues.found]
+text = "Gregson's account: Edwin Hurrell, engineer to the Board, went down into the Fleet alone before midnight. At 4.15 a.m., at low water, a waterman saw his arm hanging out under a flap of the Fleet outfall. Gregson calls it misadventure, or a tosher who was selling a gold watch at six this morning."
+
+[clues.tide_board]
+text = "The depot tide board: low water at Blackfriars was due at 12.20 a.m. last night; high water at 6.35 this morning. Added beneath: \"Wind E., fresh to strong.\""
+
+[clues.flush_log]
+text = "Flushing log: Fleet penstock shut at 10 p.m. to gather head; flushed at 2 a.m. by Dunn, whistle given; \"head at flushing 3 ft 4 in only (usual: full, 7 ft). Cause not known.\" Shut again at 2.20."
+
+[clues.key_book]
+text = "Key book: Hurrell signed out the Farringdon Street side-entrance key at 11.20 p.m. The Board's penstock handle went out to Dunn at 1.30 a.m. and back at 3.10. A second penstock handle was lent to Gaskin & Pell, the contractors, on 3 August."
+
+[clues.fill_rate]
+text = "Coaker: with the gate shut, the pond fills about two feet an hour in dry weather, and is full to the crest (7 ft) well before the 2 a.m. flush."
+
+[clues.handles]
+text = "The Board's penstock handle: a heavy iron crank whose working end is a square socket, about an inch across. There are only two: the Board's, and the contractors'."
+
+[clues.oil_book]
+text = "Sparrow's oil book: lamp No. 7 was filled to the brim and issued to Hurrell at 11.20 p.m."
+
+[clues.lamp_burn]
+text = "A Board's lamp or lantern, filled to the brim, burns about four hours."
+
+[clues.wound]
+text = "Hurrell's body: battered and grazed all over as if rolled down a quarry, but killed by a blow from behind: a square-cornered depressed fracture about an inch across at the back of the skull. Very little froth: he was dead or dying before the water took him."
+
+[clues.nails]
+text = "Under Hurrell's right-hand nails, and on the point of his clasp-knife: hard white grit, cement or render."
+
+[clues.watch_chain]
+text = "Hurrell's watch-chain is still in his buttonhole, but the watch is gone and the last link is dragged open, as by a heavy pull. His purse was untouched. No thief took that watch."
+
+[clues.notebook_entry]
+text = "Hurrell's last note: chains 9 to 14 of the \"new lining\" are half an inch of render over rotten old brick, though certified and paid for in full. He would \"hear what the foreman has to say at the penstock at 12\" before reporting it."
+
+[clues.whistle_rule]
+text = "The Board's rule at the penstock: no gate raised until the ganger has given three blasts on his whistle and waited one minute."
+
+[clues.lamp_found]
+text = "Hurrell's lamp No. 7 was standing unlit on the ledge by the penstock walkway, dry, nearly full of oil, its wick screwed right down."
+
+[clues.lamp_measured]
+text = "Sparrow measured the oil left in lamp No. 7: it burned not above an hour after 11.20, nearer three-quarters. It did not go out by itself; the wick was screwed down by hand."
+
+[clues.dunn_night]
+text = "Dunn: at 2 a.m. the gauge showed only 3 ft 4 in where it should have been full. He blew three blasts and flushed. An unlit lamp stood on the ledge by the walkway; he took it for the contractors'."
+
+[clues.sham_wall]
+text = "In the relined length, at chain 11, someone had scraped away the new lining with a knife. It is a crust of render no thicker than a half-crown over old brick rotten as cheese, and the same at chains 12 and 13."
+
+[clues.weir]
+text = "The storm weir: all the ordinary flow of the Fleet turns aside into the low-level sewer. Only a flood tops the weir and goes down into the outfall chamber. Its iron edge is rough, and rags catch on it."
+
+[clues.flaps]
+text = "The outfall flaps open outward only when the river is lower than the water inside; when the river is higher they are held shut, and the chamber is tide-locked. The scum line stands over a man's head. Something large lay wedged against the left-hand flap."
+
+[clues.pellow_tide]
+text = "Pellow: low water was due at 12.20, but a hard east wind held the tide up. At midnight the river stood nearly at the flood and the flaps were shut tight. It did not fall until after two; true low water was near four."
+
+[clues.mott_flood]
+text = "Mott: a little after a quarter past twelve a flood came down the Fleet with no whistle at all, and something big went past him in the dark and over the weir. At 1 a.m. he found the watch caught by its bow on the iron of the weir. At two came three blasts and the second flush."
+
+[clues.gaskin_alibi]
+text = "Gaskin was at a Masonic banquet at the Cannon Street Hotel from seven until a quarter past one, before forty witnesses (Gregson has checked)."
+
+[clues.sparrow_alibi]
+text = "Sparrow: he and Coaker played cribbage in the lamp-room from 11.30 to 1.30, and Coaker never left. From the window Sparrow watched the lit office door all night; the Board's handle never left its hook until Dunn took it at 1.30."
+
+[clues.coaker_admits]
+text = "Coaker admits he never examined the relining above chain 8. He signed the measurement on Ruddock's word, and Gaskin was \"very good to him at quarter-day\"."
+
+[clues.ladder]
+text = "The contractors' working shaft: every rung above the standing water is smeared with fresh sewer mud, right up to the yard. Someone climbed out of the Fleet that way since the pond last stood low."
+
+[clues.fitch_saw]
+text = "Fitch, the contractors' watchman: at about 12.30 a.m. Ruddock came up out of the working shaft, wet to the thighs, with his dark lantern and the contractors' penstock handle, and told him, \"You never saw me.\""
+
+[clues.ruddock_story]
+text = "Ruddock says he went home to the Borough at six last night and was in bed by ten."
+
+[clues.hut_handle]
+text = "In Ruddock's hut: the contractors' penstock handle, with the same inch-square socket as the Board's, but scoured bright from end to end and still damp at the grip."
+
+[clues.trousers]
+text = "In Ruddock's hut: a pair of corduroy trousers hung to dry behind the stove, soaked and black with Fleet slime up to the thigh."
+
+[clues.tide_card]
+text = "In Ruddock's hut: a London Bridge tide card with \"Low water 12.15 a.m.\" for Tuesday the 9th ringed twice in pencil."
+
+[clues.measure_book]
+text = "The contractors' measurement book: chains 0 to 14 relined in full, \"Measured: J. Ruddock, Foreman. Examined and found correct: A. Coaker, for the Board.\""
+
+# ================================================================ actions
+
+[[actions]]
+id = "blow_whistle_penstock"
+verb = ["blow", "use"]
+target = "whistle"
+when = ["at:penstock_chamber", "!flag:pond_drained"]
+text = "I put the whistle to my lips and blew three long blasts. They went shrieking away down the tunnel and came back to me in echoes, over and over, fainter and fainter. Then I counted sixty, slowly, as the notice bade me."
+effects = ["set:whistled"]
+
+[[actions]]
+id = "blow_whistle"
+verb = ["blow", "use"]
+target = "whistle"
+text = "I blew a blast on the whistle. It shrilled away into the distance and nobody came."
+
+[[actions]]
+id = "wind_no_handle"
+verb = ["turn", "use", "open"]
+target = "penstock"
+when = ["!has:handle", "!has:ruddock_handle", "!flag:pond_drained"]
+text = "The winch spindle ended in a bare square boss. Without a penstock handle I could no more turn it than fly. There was one on the rack in Coaker's office."
+
+[[actions]]
+id = "wind_no_whistle"
+verb = ["turn", "use", "open"]
+target = "penstock"
+when = ["!flag:whistled", "!flag:pond_drained"]
+text = "I had the handle on the boss and my weight on it before I remembered the notice over my head. Seven feet of water stood behind that gate. If any man were below me in the Fleet, a flusher, a contractor's man, an old tosher where he had no business to be, I should drown him. I took my hands off the crank. The whistle first."
+
+[[actions]]
+id = "wind_penstock"
+verb = ["turn", "use", "open"]
+target = "penstock"
+when = "!flag:pond_drained"
+once = true
+text = "I fitted the handle over the boss and wound. It was heavy work at first, and then the gate came free in its grooves with a groan, and the whole black weight of the pond went out from under it at once. The roar of it filled the chamber so that I felt it in my chest rather than heard it: a solid, sliding, foaming wall of water that went thundering away down the Fleet towards the river and was gone. I stood clinging to the rail and watched the gauge-board fall, seven feet, five, three, one, until the water ran past its foot no deeper than a gutter in the rain. To the north the tunnel lay open, streaming. Anything that had been in that pond, I thought, would have gone down with it like a cork."
+effects = ["set:pond_drained"]
+
+[[actions]]
+id = "wind_again"
+verb = ["turn", "use", "open"]
+target = "penstock"
+text = "The gate stood up in its frame and the Fleet ran free beneath it. I left it so."
+
+[[actions]]
+id = "shut_penstock"
+verb = "close"
+target = "penstock"
+text = "I left the gate as it was. Coaker's men could see to their own pond."
+
+[[actions]]
+id = "fill_lantern"
+verb = "fill"
+target = "lantern"
+when = "at:lamp_room"
+text = "Sparrow took my lantern, filled it to the brim, trimmed the wick and gave it back to me alight. \"There you are, sir. Four hours.\""
+effects = ["setn:oil:50"]
+
+[[actions]]
+id = "fill_lantern_away"
+verb = "fill"
+target = "lantern"
+text = "There was no oil to be had nearer than Sparrow's lamp-room in the depot."
+
+[[actions]]
+id = "lift_flaps"
+verb = ["turn", "open"]
+target = "flaps_outside"
+text = "I set my shoulder to the foot of one flap and heaved, and might as well have heaved at the dome of St Paul's."
+
+# ================================================================ hints
+
+[[hints]]
+id = "body"
+done = "clue:wound"
+texts = [
+  "\"You are a medical man, Watson, and there is a dead man in that shed. Begin with him.\"",
+  "\"Go WEST into the shed and EXAMINE THE BODY.\"",
+]
+
+[[hints]]
+id = "pockets"
+when = "clue:wound"
+done = ["clue:nails", "clue:watch_chain", "clue:notebook_entry"]
+texts = [
+  "\"You have looked at his head. Look at the rest of him, and at what he carried.\"",
+  "\"In the shed, EXAMINE his HANDS and his WAISTCOAT, then EXAMINE THE BENCH, TAKE THE NOTEBOOK and EXAMINE it.\"",
+]
+
+[[hints]]
+id = "lantern"
+when = "clue:wound"
+done = "has:lantern"
+texts = [
+  "\"He went below, Watson. You will have to follow him, and you will want a light.\"",
+  "\"Go EAST from the yard to the lamp-room and TAKE THE LANTERN.\"",
+]
+
+[[hints]]
+id = "office"
+when = "clue:notebook_entry"
+done = ["clue:flush_log", "clue:key_book", "clue:tide_board"]
+texts = [
+  "\"The Board keeps very good books. Somebody should read them.\"",
+  "\"Go IN to the foreman's office and EXAMINE the FLUSHING LOG, the KEY BOOK and the TIDE BOARD.\"",
+]
+
+[[hints]]
+id = "lamp"
+when = ["has:lantern", "clue:key_book"]
+done = "clue:lamp_found"
+texts = [
+  "\"He went down with a lamp of the Board's. Where is it?\"",
+  "\"Go NORTH to Farringdon Street, DOWN the side-entrance, and NORTH to the penstock. EXAMINE THE LAMP.\"",
+]
+
+[[hints]]
+id = "dunn"
+when = "visited:shaft_foot"
+done = "clue:dunn_night"
+texts = [
+  "\"There is a man at the foot of that shaft who was down there last night.\"",
+  "\"ASK DUNN ABOUT THE NIGHT.\"",
+]
+
+[[hints]]
+id = "measured"
+when = "clue:lamp_found"
+done = "clue:lamp_measured"
+texts = [
+  "\"A lamp is a clock, Watson, if you know what it held and what it holds.\"",
+  "\"TAKE THE LAMP, and SHOW IT TO SPARROW in the lamp-room. EXAMINE his OIL BOOK while you are there.\"",
+]
+
+[[hints]]
+id = "fill"
+when = "clue:flush_log"
+done = "clue:fill_rate"
+texts = [
+  "\"Three feet four inches at two o'clock. Does that tell you anything? It would, if you knew how fast the pond fills.\"",
+  "\"ASK COAKER ABOUT THE POND.\"",
+]
+
+[[hints]]
+id = "drain"
+when = ["clue:notebook_entry", "visited:penstock_chamber"]
+done = "flag:pond_drained"
+texts = [
+  "\"The length Hurrell went to look at lies under that pond. Let it off, but do it as the Board's men do.\"",
+  "\"TAKE the PENSTOCK HANDLE and the WHISTLE from the rack in the office. At the penstock, BLOW WHISTLE, then USE HANDLE ON PENSTOCK.\"",
+]
+
+[[hints]]
+id = "sham"
+when = "flag:pond_drained"
+done = "clue:sham_wall"
+texts = [
+  "\"Go and see the work that was paid for.\"",
+  "\"Go NORTH from the penstock into the relined length and EXAMINE THE LINING.\"",
+]
+
+[[hints]]
+id = "weir"
+when = "visited:shaft_foot"
+done = ["clue:weir", "clue:flaps"]
+texts = [
+  "\"Follow the water down, Watson, all the way to where he was found. Mind the tide.\"",
+  "\"From the shaft go SOUTH twice to the weir and EXAMINE THE WEIR. At low water go DOWN into the outfall chamber and EXAMINE THE FLAPS.\"",
+]
+
+[[hints]]
+id = "pellow"
+when = ["clue:flaps", "clue:tide_board"]
+done = "clue:pellow_tide"
+texts = [
+  "\"By the board, the flaps stood open at twenty past twelve. Did they? Ask a man of the river.\"",
+  "\"Go SOUTH from the yard to the river stairs and ASK PELLOW ABOUT THE TIDE.\"",
+]
+
+[[hints]]
+id = "mott"
+when = "clue:watch_chain"
+done = "clue:mott_flood"
+texts = [
+  "\"Gregson wants his tosher. You might find him first. He has something to tell you, if you can show him you know he is no thief.\"",
+  "\"At low water go DOWN from the river stairs to the foreshore. ASK MOTT ABOUT THE WATCH, then ASK MOTT ABOUT THE NIGHT.\"",
+]
+
+[[hints]]
+id = "wound_shape"
+when = "clue:wound"
+done = "clue:handles"
+texts = [
+  "\"A square wound, an inch across. What in that depot is square, and an inch across?\"",
+  "\"In the office, EXAMINE THE RACK and then EXAMINE THE PENSTOCK HANDLE.\"",
+]
+
+[[hints]]
+id = "rack_watched"
+when = "clue:handles"
+done = "clue:sparrow_alibi"
+texts = [
+  "\"Who could have taken the Board's handle in the night? Who would have seen them?\"",
+  "\"ASK SPARROW ABOUT THE NIGHT.\"",
+]
+
+[[hints]]
+id = "ladder"
+when = "clue:key_book"
+done = "clue:ladder"
+texts = [
+  "\"The contractors have their own handle, and their own way down. Look at it.\"",
+  "\"Go NORTH to Farringdon Street and EAST into the works yard. EXAMINE THE SHAFT.\"",
+]
+
+[[hints]]
+id = "fitch"
+when = "clue:ladder"
+done = "clue:fitch_saw"
+texts = [
+  "\"A watchman who saw nothing all night, beside a ladder somebody climbed in a hurry.\"",
+  "\"ASK FITCH ABOUT THE LADDER.\"",
+]
+
+[[hints]]
+id = "hut"
+when = "clue:fitch_saw"
+done = "flag:hut_open"
+texts = [
+  "\"That hut wants opening, and you have no crowbar. Gregson has.\"",
+  "\"Go to the shed and ASK GREGSON ABOUT THE HUT.\"",
+]
+
+[[hints]]
+id = "hut_search"
+when = "flag:hut_open"
+done = ["clue:hut_handle", "clue:trousers", "clue:tide_card", "clue:measure_book"]
+texts = [
+  "\"Search that hut thoroughly, Watson.\"",
+  "\"In the hut, EXAMINE the HANDLE, the TROUSERS, the TIDE CARD and the MEASUREMENT BOOK.\"",
+]
+
+[[hints]]
+id = "ruddock"
+when = "clue:fitch_saw"
+done = "clue:ruddock_story"
+texts = [
+  "\"You have heard what Fitch says of Ruddock. What does Ruddock say of himself?\"",
+  "\"ASK RUDDOCK ABOUT THE NIGHT.\"",
+]
+
+[[hints]]
+id = "accuse"
+when = ["clue:lamp_measured", "clue:pellow_tide", "clue:fitch_saw", "clue:sham_wall"]
+texts = [
+  "\"You have followed the water to the end, Watson. ACCUSE.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "accuse"
+when = "clue:wound"
+locked_text = "I had not yet so much as looked at the dead man. A doctor had better begin there."
+intro = "I came up into the yard, filthy and very tired, and found Holmes still on his barrel. He closed the ledger on his finger. \"Well, Watson?\""
+good = "solved"
+default_wrong = "collapses"
+
+[[final.questions]]
+id = "who"
+prompt = "Who killed Edwin Hurrell?"
+options = [
+  { id = "ruddock", label = "Joseph Ruddock, the contractors' foreman" },
+  { id = "coaker", label = "Abel Coaker, the foreman of flushers" },
+  { id = "gaskin", label = "Mr Thomas Gaskin, the contractor" },
+  { id = "mott", label = "Saul Mott, the tosher" },
+  { id = "dunn", label = "Harry Dunn, the ganger" },
+  { id = "nobody", label = "Nobody: it was an accident" },
+]
+
+[[final.questions]]
+id = "how"
+prompt = "How did his body come to the outfall chamber?"
+options = [
+  { id = "fell", label = "He fell into the stream in the dark and was carried down" },
+  { id = "two", label = "He was carried down by Dunn's two o'clock flush" },
+  { id = "early", label = "He was carried down by a flush let go without warning at about a quarter past twelve" },
+  { id = "carried", label = "He was carried there by hand and left" },
+]
+
+[[final.questions]]
+id = "stayed"
+prompt = "Why was he not carried out into the river?"
+options = [
+  { id = "wind", label = "The east wind held the tide up, so the flaps were shut" },
+  { id = "weir", label = "He caught on the weir and only slid down later" },
+  { id = "heavy", label = "The flaps are too heavy for any flush to open" },
+  { id = "wedged", label = "Someone had wedged the flaps shut" },
+]
+
+[[final.questions]]
+id = "why"
+prompt = "Why was he killed?"
+options = [
+  { id = "sham", label = "To stop him reporting that the relining was a sham" },
+  { id = "robbery", label = "For his watch" },
+  { id = "tosher", label = "Because he caught a tosher at work" },
+  { id = "none", label = "He was not killed" },
+]
+
+[final.solution]
+who = "ruddock"
+how = "early"
+stayed = "wind"
+why = "sham"
+
+[[final.wrong]]
+answers = { who = "nobody" }
+ending = "misadventure"
+
+[[final.wrong]]
+answers = { who = "mott" }
+ending = "mott_taken"
+
+[[final.wrong]]
+answers = { who = "coaker" }
+ending = "coaker_taken"
+
+[[final.wrong]]
+answers = { who = "gaskin" }
+ending = "gaskin_taken"
+
+[[final.wrong]]
+answers = { who = "dunn" }
+ending = "dunn_taken"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "Low Water"
+text = """
+I told it him as I had followed it, from the top of the Fleet to the bottom.
+
+Hurrell had gone down at twenty past eleven with lamp No. 7, filled to the brim, to see for himself the work the Board was about to pay for. He found it, at chain 11, with his clasp-knife: half an inch of render over rotten brick. Then he went to the penstock at midnight to hear what the foreman had to say. Not Coaker: Coaker was at his cribbage with Sparrow all night, and Sparrow watched the Board's handle on its hook from his window till Dunn took it at half past one. The foreman who met him came down the contractors' own shaft with the contractors' own handle, and struck him down from behind with the square end of it, and rolled him into the pond. Then he screwed down the wick of the dead man's lamp so that no light should show along the tunnel, and could not find it again in the dark, and wound up the gate with no whistle.
+
+The lamp burned not above an hour. Mott heard the flood come down, with no warning, a little after the quarter past twelve, and saw something go by him over the weir, and found the watch hanging on the weir's iron by its bow. At two o'clock Dunn found the pond with only three foot four in it, which at two feet in the hour is just what it would gather from twenty past twelve. And Ruddock, who says he was abed in the Borough by ten, came up out of the Fleet by his own ladder at half past twelve, wet to the thighs; Fitch saw him; his trousers are behind his stove still, and his handle is scoured bright.
+
+"And the river?" said Holmes softly.
+
+"He meant it to take Hurrell out to sea," said I. "He had low water ringed on his tide card at a quarter past twelve: at low water the flaps stand open, and a body going over the weir on a flood goes out into the Thames, to come ashore a week later at Erith as one more drowned man. But the wind was in the east all night and held the tide up, and the flaps were shut. So Hurrell stayed where he was, in a place nobody could have reached; and at four o'clock, when the river went down at last, he put out his hand."
+
+Holmes was silent for a little. "I have said before that the criminal's greatest enemy is his own ingenuity," said he. "Ruddock's was the Thames. Come, Watson; Gregson will want to hear this from you, and you will want a bath."
+
+Ruddock was taken in his own yard that afternoon. He made no defence, and said only, at the last, that he had never meant it; that he had asked the young man to meet him to beg him, and the young man would not be begged. The Board, I am told, relined chains 9 to 14 at its own expense the following spring. Abel Coaker lost his place, and Gaskin & Pell their contract, and within three years the whole Metropolitan Board of Works had gone the same way, amid such a smell of jobbery that even the Fleet could not have bettered it.
+"""
+
+[endings.misadventure]
+title = "Found Drowned"
+text = """
+"It was an accident," I said. "He went down alone in the dark, and the Fleet took him."
+
+Holmes said nothing at all; and Gregson, when I told him, shook me warmly by the hand.
+
+The coroner's jury at St Bride's found that Edwin Hurrell was accidentally drowned while inspecting the Fleet sewer in the course of his duty, and added a rider about the danger of going below unaccompanied. Gaskin & Pell received their final certificate, signed by another engineer, in December.
+
+In the spring the crown of the Fleet fell in under Farringdon Street at chain 11, and took an omnibus horse with it.
+"""
+
+[endings.mott_taken]
+title = "The Tosher"
+text = """
+"Mott," I said. "He was in the Fleet last night; he had the watch."
+
+"So he had," said Holmes, "and the purse he never touched, and a handle he never owned, and a gate he could not have wound." But I had said it, and Gregson had wanted nothing better from the first.
+
+Saul Mott was committed for trial at the Old Bailey. The evidence of the watch-chain was given, and he was acquitted of murder, and got eighteen months for stealing by finding. He died in the infirmary at Holloway before his time was up, and the man who killed Edwin Hurrell went on measuring sewers for the Board.
+"""
+
+[endings.coaker_taken]
+title = "The Other Foreman"
+text = """
+"Coaker," I said. "The foreman, in Hurrell's own hand. He signed for work he never looked at."
+
+"He did," said Holmes. "And while Hurrell was dying, he was losing four shillings at cribbage to a man who never took his eyes off him. There were two foremen in that case, Watson."
+
+Coaker was arrested that afternoon and held a week, until Sparrow's evidence got him out of it. He lost his place for the measurement, as he would have done in any case. The other foreman, who had known that he would be the first man suspected, read about it in the newspaper in the Borough, and slept well.
+"""
+
+[endings.gaskin_taken]
+title = "Forty Witnesses"
+text = """
+"Gaskin," I said. "The contract was his, and the money."
+
+Holmes looked at me with real pain. "At the Cannon Street Hotel, Watson? With forty Freemasons for a chorus?"
+
+Gregson would not even take the information. He laughed, and the story got about, and for a month I could not show my face at my club without some wag asking me whether I had looked under the banqueting table. The case was entered as misadventure, and the work at chain 11 was paid for in full.
+"""
+
+[endings.dunn_taken]
+title = "Three Blasts"
+text = """
+"Dunn," I said. "He had the handle, and he let the water go."
+
+"At two o'clock," said Holmes, "with three blasts on his whistle, which an old tosher heard. And Hurrell's lamp went out an hour and three-quarters before that. Who let the first water go, Watson?"
+
+Harry Dunn was suspended without pay pending the inquest, and the inquest, hearing Mott, cleared him. But the Board does not like its gangers to be talked about, and he was not taken back. The last I heard of him he had gone to the coal-mines in the North, where, he said, a man at least knew who he was working for.
+"""
+
+[endings.collapses]
+title = "Over the Weir"
+text = """
+I gave Holmes my account. He heard me out with his eyes closed, and at the end of it he was silent so long that I thought he had gone to sleep.
+
+"The name is right, Watson," he said at last, "or it may be. But the way you have it, he could not have done it, or need not have done it, or would not have done it; and any counsel at the Old Bailey would drive a cart and horses through it. You have not followed the water. Go back and follow it."
+
+Gregson, at any rate, was not prepared to arrest anybody on it, and the case lay where it was.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "talk to holmes", "ask holmes about sewer", "examine grating", "take copper", "examine boots",
+  "w", "talk to gregson", "examine body", "examine hands", "examine waistcoat", "examine bench",
+  "examine knife", "take notebook", "examine notebook", "ask gregson about theory",
+  "ask gregson about mott", "ask gregson about gaskin", "e",
+  "e", "talk to sparrow", "examine oil book", "take lantern", "w",
+  "s", "down", "talk to mott", "ask mott about the watch", "ask mott about the night",
+  "examine flaps", "lift flaps", "examine mud", "take copper", "up",
+  "talk to pellow", "ask pellow about the tide", "ask pellow about the body",
+  "ask pellow about mott", "examine skiff", "n",
+  "e", "examine hooks", "examine cribbage", "examine bench", "take copper",
+  "ask sparrow about the night", "ask sparrow about hurrell", "w",
+  "in", "talk to coaker", "ask coaker about hurrell", "ask coaker about the pond",
+  "ask coaker about handles", "ask coaker about the night", "ask coaker about flaps",
+  "ask coaker about whistle", "ask coaker about the lining", "ask coaker about ruddock",
+  "talk to gaskin", "ask gaskin about the night", "ask gaskin about the contract",
+  "show notebook to gaskin", "examine tide board", "examine flushing log", "examine key book",
+  "examine plan", "examine rack", "take handle", "examine handle", "take whistle", "out",
+  "n", "examine plate", "e", "talk to fitch", "talk to ruddock", "ask ruddock about the night",
+  "ask ruddock about the lining", "ask ruddock about the handle", "ask ruddock about hurrell",
+  "examine shaft", "examine trough", "examine bricks", "take copper", "examine hut",
+  "ask fitch about the hut", "ask fitch about the ladder", "w", "s", "w",
+  "ask gregson about the hut", "show watch to gregson", "e", "n", "e", "in",
+  "examine contractors' handle", "take contractors' handle", "examine trousers",
+  "examine tide card", "examine measurement book", "out",
+  "show contractors' handle to ruddock", "w",
+  "down", "talk to dunn", "ask dunn about the night", "ask dunn about the whistle",
+  "examine silt", "take copper", "n", "examine penstock", "examine gauge", "examine notice",
+  "examine walkway", "examine lamp", "take lamp", "turn penstock", "blow whistle",
+  "use penstock handle on penstock", "n", "examine lining", "examine chain marks",
+  "examine benching", "take copper", "s", "s", "show lamp to dunn", "s", "examine holes",
+  "take copper", "s", "examine weir", "examine screen", "e", "w", "down", "examine flaps",
+  "examine slime", "take copper", "up", "n", "n", "up", "s",
+  "e", "show lamp to sparrow", "w", "in", "ask coaker about the lining", "out",
+  "notebook", "hint", "y",
+  "accuse", "ruddock", "quarter past twelve", "wind", "sham", "y",
+]
+wrong_path = [
+  "w", "examine body", "accuse", "4", "2", "2", "2", "y", "",
+]

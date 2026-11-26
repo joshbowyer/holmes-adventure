@@ -1,0 +1,203 @@
+# ================================================================ above ground
+
+[rooms.depot_yard]
+name = "The Flushers' Depot, Water Lane"
+aliases = ["depot", "yard", "depot yard"]
+description = """
+The Board's depot was a cobbled yard behind a pair of tarred gates in Water Lane, a stone's throw from the river, smelling of wet rope, lamp-oil and something worse that came up from a grating in the middle of the cobbles. Long-handled shovels and flushers' rakes stood in a rack against the wall, and a row of thigh-boots hung upside down from pegs to drain. A door with a brass plate gave upon the foreman's office; across the yard the lamp-room window glowed yellow, and in the far corner a whitewashed shed had been given up, for the present, to the dead. The gates opened north upon the lane, and to the south a passage ran down between warehouses to the river stairs.
+"""
+on_enter = [
+  { once = true, text = "[I opened my notebook and set down what Gregson had told us at the gate.]", effects = ["clue:found"] },
+]
+[rooms.depot_yard.exits]
+in = { to = "depot_office", aliases = ["office", "foreman's office", "door"] }
+east = { to = "lamp_room", aliases = ["lamp room", "lamp-room"] }
+west = { to = "dead_house", aliases = ["shed", "dead house", "dead-house", "mortuary"] }
+north = { to = "side_entrance", aliases = ["lane", "water lane", "street", "farringdon street", "gates"] }
+south = { to = "river_stairs", aliases = ["stairs", "river", "river stairs", "passage"] }
+
+[rooms.depot_office]
+name = "The Foreman's Office"
+aliases = ["office", "foreman's office"]
+description = """
+A narrow room with a sloping desk under the window and a stove that roared and did little good. On the wall hung a great linen-backed plan of the Fleet and its branches, all coloured in blue and red; beside it a black board on which the day's tides were chalked, and a rack of iron keys and tackle each upon its numbered hook. The flushing log lay open on the desk beside the key book.
+"""
+[rooms.depot_office.exits]
+out = { to = "depot_yard", aliases = ["yard"] }
+
+[rooms.lamp_room]
+name = "The Lamp-Room"
+aliases = ["lamp room", "lamp-room"]
+description = """
+A low, warm, close room, reeking of colza oil and hot tin. Along one wall ran a bench with a sunken drip-tray, and on it stood the oil cans, the measures and the trimming scissors; above it, on numbered hooks, hung the Board's lamps, each with its number painted on the glass. A cribbage board and a greasy pack of cards lay on an upturned box by the stove. From the window one looked straight across the yard at the office door.
+"""
+[rooms.lamp_room.exits]
+west = { to = "depot_yard", aliases = ["yard"] }
+out = { to = "depot_yard", aliases = ["yard"] }
+
+[rooms.dead_house]
+name = "The Shed"
+aliases = ["shed", "dead house", "dead-house"]
+description = """
+They had laid him on a pair of trestles under a tarpaulin in the whitewashed shed where the flushers kept their spare boots, and a constable stood at the door with his helmet in his hand. The little that had come out of his pockets was set out in a row upon a bench beneath the window.
+"""
+[rooms.dead_house.exits]
+east = { to = "depot_yard", aliases = ["yard"] }
+out = { to = "depot_yard", aliases = ["yard"] }
+
+[rooms.side_entrance]
+name = "Farringdon Street, by the Side-Entrance"
+aliases = ["farringdon street", "side entrance", "side-entrance", "street"]
+description = """
+A few minutes up New Bridge Street, under the shadow of the railway viaduct, the traffic of Farringdon Street went thundering past an iron plate in the footway, which stood propped open with a flusher's bar. Beneath it the iron rungs of a shaft went down into a breath of cold, foul air: the Board's side-entrance to the Fleet. A little way along, behind a hoarding plastered with bills, lay the works yard of Messrs Gaskin & Pell, contractors.
+"""
+on_enter = [ { effects = ["unset:below"] } ]
+[rooms.side_entrance.exits]
+south = { to = "depot_yard", aliases = ["depot", "water lane", "yard"] }
+east = { to = "works_yard", aliases = ["hoarding", "works yard", "contractors' yard", "contractors yard", "gaskin"] }
+down = { to = "shaft_foot", when = "has:lantern", blocked = "I put my foot on the first rung and thought better of it. No man goes into a sewer without a light of his own, and the lamp-room at the depot was the place to get one.", aliases = ["shaft", "side entrance", "side-entrance", "sewer", "rungs"] }
+
+[rooms.works_yard]
+name = "Gaskin & Pell's Works Yard"
+aliases = ["works yard", "contractors' yard", "yard"]
+description = """
+Behind the hoarding lay a yard of trodden mud and stacked bricks, with a crane, a cement-mixing trough, and a heap of sacks of Portland cement under a tarpaulin. In the middle a square timber head-frame stood over the contractors' own working shaft into the sewer. Against the far wall was a tarred wooden hut with a stove-pipe through its roof, a padlock upon its door and a single grimy window.
+"""
+details = [
+  { when = "flag:hut_open", text = "The hut door now stood open, its padlock hanging broken where Gregson's constable had put a crowbar to it." },
+]
+on_enter = [ { effects = ["unset:below"] } ]
+[rooms.works_yard.exits]
+west = { to = "side_entrance", aliases = ["street", "farringdon street", "hoarding"] }
+in = { to = "ruddocks_hut", when = "flag:hut_open", blocked = "The hut was padlocked, and Fitch, when I glanced at him, shook his head: Mr Ruddock kept the only key on his own ring.", aliases = ["hut", "door"] }
+down = { to = "relined_length", when = ["flag:pond_drained", "has:lantern"], blocked = "The contractors' ladder ran down the shaft into black, still water not a dozen feet below me. The whole length beneath was drowned; nobody would go down that way until the pond was let off, and nobody at all without a lantern.", aliases = ["shaft", "working shaft", "ladder"] }
+
+[rooms.ruddocks_hut]
+name = "Ruddock's Hut"
+aliases = ["hut"]
+description = """
+It was a foreman's den: a plank table covered in drawings weighted down with half-bricks, a stool, a cold stove with a pipe through the roof, and a row of nails along the wall for coats and tackle. It smelt of tobacco, of wet cement, and, faintly but quite unmistakably, of the sewer.
+"""
+[rooms.ruddocks_hut.exits]
+out = { to = "works_yard", aliases = ["yard"] }
+
+[rooms.river_stairs]
+name = "Blackfriars Stairs"
+aliases = ["stairs", "river stairs", "blackfriars stairs"]
+description = """
+The passage came out upon a flight of worn stone stairs going down into the Thames beside the great iron arches of Blackfriars Bridge. A raw wind came up the river, and the water was the colour of pea-soup. A little downstream, low in the face of the Embankment wall, I could make out the dark mouth of the Fleet outfall with its iron flaps. A waterman's skiff lay moored at the foot of the stairs.
+"""
+details = [
+  { when = "eq:tide:0", text = "The tide was out. Below the last stair a slope of shingle and black mud ran down to the water, and the outfall mouth stood clear of the river, its flaps hanging a little open and weeping into a channel in the mud." },
+  { when = "eq:tide:1", text = "The tide was making, the water creeping up the stairs a step at a time; the outfall was already half drowned." },
+  { when = "eq:tide:2", text = "It was high water. The river lapped at the upper stairs, and of the outfall nothing showed but a swirl in the brown water against the wall." },
+  { when = "eq:tide:3", text = "The tide was ebbing, but the river still covered the foot of the stairs and the mouth of the outfall." },
+]
+on_enter = [ { effects = ["unset:below"] } ]
+[rooms.river_stairs.exits]
+north = { to = "depot_yard", aliases = ["depot", "passage", "yard"] }
+down = { to = "foreshore", when = "eq:tide:0", blocked = "The river was over the foot of the stairs. Pellow laughed at me. \"You'll want to wait for the ebb, sir, without you mean to swim it.\"", aliases = ["foreshore", "mud", "shingle"] }
+
+[rooms.foreshore]
+name = "The Foreshore under Blackfriars"
+aliases = ["foreshore", "mud"]
+description = """
+At low water the river drew back from the wall and left a strip of shingle and stinking black mud, littered with broken crockery, bones, barrel-hoops and the green-slimed ribs of an old lighter. Before me the Fleet outfall opened in the Embankment wall, a great arch closed by a pair of hinged iron flaps, each taller than a man, hanging from their top bars. They stood a few inches open at the foot, and a thin black stream ran out from beneath them across the mud.
+"""
+[rooms.foreshore.exits]
+up = { to = "river_stairs", aliases = ["stairs"] }
+
+# ================================================================ below ground
+
+[rooms.shaft_foot]
+name = "The Foot of the Side-Entrance"
+aliases = ["shaft foot", "foot of the shaft", "side entrance"]
+description = """
+The rungs brought me down at last onto a brick ledge beside the Fleet. I had expected a drain; I found a cathedral. The sewer ran away north and south in a great egg-shaped tunnel of sooty brick, higher than a man could reach, with a stone benching along one side and the black water sliding past below it, smoking a little in the cold. A grey glimmer of daylight came down the shaft from the street above, and with it the far-off roar of the traffic. Upstream, to the north, lay the penstock; downstream, the long run of the channel towards the river.
+"""
+on_enter = [ { effects = ["set:below"] } ]
+[rooms.shaft_foot.exits]
+up = { to = "side_entrance", aliases = ["shaft", "rungs", "street", "ladder"] }
+north = { to = "penstock_chamber", aliases = ["penstock", "upstream"] }
+south = { to = "fleet_channel", aliases = ["channel", "downstream"] }
+
+[rooms.penstock_chamber]
+name = "The Penstock Chamber"
+aliases = ["penstock chamber", "penstock"]
+description = """
+Here the tunnel widened into a vaulted chamber, and across the channel stood the penstock: a great iron gate in a frame of masonry, raised and lowered by a winch upon an iron walkway above it, whose spindle ended in a square boss to take a handle. A gauge-board painted in feet and inches was fixed to the wall beside the gate. Over the walkway hung an enamelled notice of the Board's.
+"""
+dark_when = "!has:lantern|lt:oil:1"
+dark_text = "The blackness was absolute. I could hear water close below me, and nothing else at all."
+details = [
+  { when = "!flag:pond_drained", text = "The gate was down. Behind it, to the north, the pond stood black and motionless almost to the crown of the tunnel, and a thin sheet of water slid over the crest of the gate and fell with a steady roar into the channel below." },
+  { when = "flag:pond_drained", text = "The gate stood up in its frame, and the channel ran free beneath it; to the north the tunnel lay open, dripping, its benching streaming with slime." },
+]
+[rooms.penstock_chamber.exits]
+south = { to = "shaft_foot", aliases = ["shaft", "downstream"] }
+north = { to = "relined_length", when = "flag:pond_drained", blocked = "Beyond the gate the pond stood black and still to within a foot of the crown of the tunnel. There was no going that way while it stood.", aliases = ["upstream", "pond", "relined length"] }
+
+[rooms.relined_length]
+name = "The Relined Length"
+aliases = ["relined length", "relining", "upstream"]
+description = """
+Above the penstock the Fleet ran on north beneath Farringdon Street, and for a long stretch its lining had a new, bright, almost raw look, the brick white with cement so that my lantern seemed to burn the brighter for it. Numbers were painted on the wall at intervals: chain marks, I supposed, for the measuring. Further up a timber platform and a ladder showed where the contractors' own shaft came down from their yard.
+"""
+dark_when = "!has:lantern|lt:oil:1"
+dark_text = "Without a light I could not see my own hand. Water dripped all about me in the dark."
+on_enter = [ { effects = ["set:below"] } ]
+[rooms.relined_length.exits]
+south = { to = "penstock_chamber", aliases = ["penstock", "downstream"] }
+up = { to = "works_yard", aliases = ["ladder", "shaft", "works shaft", "yard"] }
+
+[rooms.fleet_channel]
+name = "The Fleet Channel"
+aliases = ["channel", "fleet channel", "fleet"]
+description = """
+The tunnel ran on south under New Bridge Street, falling gently towards the river. The benching narrowed here to a ledge no wider than a pavement, and in places the old brick had bellied and dropped, leaving black holes where the rats sat and watched my lantern. Twice I passed the mouths of smaller sewers coming in from either side, each with its own sound of trickling.
+"""
+dark_when = "!has:lantern|lt:oil:1"
+dark_text = "It was black as a mine. I kept one hand upon the wall."
+[rooms.fleet_channel.exits]
+north = { to = "shaft_foot", aliases = ["shaft", "upstream"] }
+south = { to = "weir_chamber", aliases = ["weir", "downstream"] }
+
+[rooms.weir_chamber]
+name = "The Weir Chamber"
+aliases = ["weir chamber", "weir"]
+description = """
+Here, under the Embankment, the Fleet came to its parting of the ways. The whole dry-weather flow of the sewer turned aside through an iron screen into a great tunnel running east, Sir Joseph Bazalgette's low-level sewer, which carries the filth of London away to the outfalls far down the river. Straight ahead, a long stone weir barred the old channel, its crest edged with iron; beyond and below it the tunnel dropped steeply towards the river outfall.
+"""
+dark_when = "!has:lantern|lt:oil:1"
+dark_text = "I could hear water pouring away somewhere below me in the dark, and did not dare take another step."
+details = [
+  { when = "eq:tide:0", text = "Below the weir the floor of the outfall chamber showed wet and glistening, the tide being out." },
+  { when = "!eq:tide:0", text = "Below the weir black water stood in the outfall chamber, rising and falling very slightly, like something breathing." },
+]
+[rooms.weir_chamber.exits]
+north = { to = "fleet_channel", aliases = ["channel", "upstream"] }
+east = { to = "low_level", aliases = ["low-level sewer", "low level sewer", "screen", "interceptor"] }
+down = { to = "outfall_chamber", when = "eq:tide:0", blocked = "Below the weir the outfall chamber was full of standing water, tide-locked behind its flaps. At anything but low water it was a drowning-pit.", aliases = ["outfall", "outfall chamber", "over the weir"] }
+
+[rooms.low_level]
+name = "The Low-Level Sewer"
+aliases = ["low-level sewer", "low level sewer", "interceptor"]
+description = """
+I went a little way along the low-level sewer, on a ledge above a broad, swift, steady stream that ran away east in the dark towards Barking and the sea. It was a newer, cleaner, more businesslike tunnel than the Fleet, and very much louder. There was nothing here but the water and its noise, and presently I came back.
+"""
+dark_when = "!has:lantern|lt:oil:1"
+dark_text = "The roar of the water filled the blackness. I stood stock still."
+[rooms.low_level.exits]
+west = { to = "weir_chamber", aliases = ["weir", "back"] }
+
+[rooms.outfall_chamber]
+name = "The Outfall Chamber"
+aliases = ["outfall chamber", "outfall"]
+description = """
+I lowered myself over the weir into the chamber where Hurrell had been found. It was a short, steep, vaulted tunnel ending in the inside of the great flaps, which hung from their top bars like a pair of iron doors. Through the gap at their foot came a grey river light and a cold breath of wind. Every surface of the place was coated with grey slime, and on the walls, well above my head, ran a dark line of scum and straw.
+"""
+dark_when = "!has:lantern|lt:oil:1"
+dark_text = "A faint grey line of daylight showed under the flaps, and nothing else."
+on_enter = [ { effects = ["set:below"] } ]
+[rooms.outfall_chamber.exits]
+up = { to = "weir_chamber", aliases = ["weir", "back"] }

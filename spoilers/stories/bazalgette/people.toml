@@ -1,0 +1,381 @@
+# ================================================================ Holmes and the police
+
+[characters.holmes]
+name = "Holmes"
+aliases = ["sherlock holmes", "sherlock", "mr holmes"]
+location = "depot_yard"
+description = "Holmes had taken possession of an upturned barrel in the lee of the lamp-room wall, out of the wind, and sat upon it with his coat-collar up and the Board's ledgers open on his knees, as content as if he were in his own armchair."
+presence = "Holmes sat on an upturned barrel in the lee of the lamp-room wall, the Board's ledgers open upon his knees."
+unknown_topic = "\"It is your sewer this morning, Watson, not mine,\" said Holmes without looking up. \"I am the gentleman who sits on the barrel and takes the coppers.\""
+unknown_show = "Holmes glanced up. \"Yes, I see it. The question, as ever, is whether you do.\""
+
+[[characters.holmes.greeting]]
+text = "\"Ah, Watson.\" Holmes turned a page. \"I have the Board's accounts, which are as dark a labyrinth as anything under Farringdon Street, and you have the sewer. You are the medical man; the dead man is yours. And I fancy the Fleet wants a pair of eyes that will believe what they see, rather than what Gregson tells them to.\""
+
+[[characters.holmes.topics.case]]
+aliases = ["hurrell", "murder", "death", "body", "gregson"]
+text = "\"Gregson thinks it an accident, and would like it to be a tosher,\" said Holmes. \"An engineer of the Board goes below at midnight on the Board's business and comes out at four in the morning through a door that does not open. Begin with the man himself, Watson, and then go where he went.\""
+
+[[characters.holmes.topics.sewer]]
+aliases = ["sewers", "fleet", "below", "lantern", "oil", "light"]
+text = "\"Mind your lantern,\" said Holmes. \"It burns only while you are below, but it burns all the while you are below, whether you are looking at anything or not. And mind the tide. Half that place is only to be got at when the river is out.\""
+
+[[characters.holmes.topics.tide]]
+aliases = ["tides", "river", "low water", "high water"]
+text = "\"The Thames comes up past Blackfriars twice a day, Watson, and the sewers must wait upon it like everyone else. The STATUS of the tide is a thing you will want to keep in your head. If you must kill time, WAIT; but kill it somewhere useful.\""
+
+[[characters.holmes.topics.coppers]]
+aliases = ["copper", "coins", "coin", "hint", "pennies"]
+text = "\"Every sewer in London is paved with other men's pennies,\" said Holmes. \"The toshers live on them. Bring me any you find, and I will tell you what I think, a penny a time.\""
+
+[characters.gregson]
+name = "Inspector Gregson"
+aliases = ["gregson", "inspector", "tobias gregson"]
+location = "dead_house"
+description = "Tobias Gregson of Scotland Yard, tall, flaxen and very much pleased with himself, in a long ulster spattered to the knees with Thames mud."
+presence = "Inspector Gregson stood by the trestles, rocking on his heels."
+unknown_topic = "\"Can't help you there, Doctor,\" said Gregson. \"I'm a policeman, not a drainer.\""
+unknown_show = "Gregson looked at it and shrugged. \"If you say so, Doctor.\""
+
+[[characters.gregson.greeting]]
+text = "\"Doctor.\" Gregson nodded to the trestles. \"There he is, poor fellow. You'll tell me he drowned, I hope, and then we may all go home to breakfast. I've a constable out after a certain old tosher who was selling a gold watch in Fleet Lane at six this morning, mind; so if he didn't drown, I daresay I know who helped him.\""
+
+[[characters.gregson.topics.theory]]
+aliases = ["case", "accident", "death", "hurrell", "body", "how"]
+text = "\"Plain as a pikestaff,\" said Gregson. \"He went below alone in the middle of the night, lost his footing in the dark, went into the stream and was carried down over the weir to the outfall. Or else, which I like better, he met old Saul Mott down there, and Mott knocked him on the head for his watch, and the water did the rest.\""
+
+[[characters.gregson.topics.mott]]
+aliases = ["tosher", "saul mott", "saul", "watch"]
+text = "\"Saul Mott. Forty years a tosher, and in and out of Holloway for half of them. Nobody knows how he gets into the Fleet, but he does. He was trying to sell a gentleman's gold hunter to a fence in Fleet Lane at six o'clock this morning, and when the fence wouldn't give him his price he took it away again. My men will have him by noon. He's on the foreshore at low water like a heron, as a rule.\""
+
+[[characters.gregson.topics.gaskin]]
+aliases = ["contractor", "mr gaskin", "alibi"]
+text = "\"Mr Gaskin? I've checked him already, Doctor, since he was so very anxious about his contract. He was at a Masonic banquet at the Cannon Street Hotel from seven o'clock until a quarter past one, with forty gentlemen to swear to him, and went home in a cab from the door.\""
+effects = ["clue:gaskin_alibi"]
+
+[[characters.gregson.topics.notebook]]
+aliases = ["effects", "pockets", "bench", "things"]
+text = "\"Everything we took from him is on the bench,\" said Gregson. \"Help yourself, Doctor. The notebook's past reading, I'd say.\""
+
+[[characters.gregson.topics.hut]]
+aliases = ["ruddock", "joseph ruddock", "foreman", "warrant", "padlock", "fitch"]
+when = "clue:fitch_saw"
+once = true
+text = "I told Gregson what Fitch had seen. He heard me with his mouth growing steadily longer, and then he went out without a word. When I came out after him he had a constable at the gate with a crowbar. \"I'll have that hut open, Doctor,\" said he, \"and I'll have a word with Mr Ruddock while I'm about it. You may look in it as soon as you like.\""
+effects = ["set:hut_open"]
+
+[[characters.gregson.topics.hut]]
+aliases = ["ruddock", "joseph ruddock", "foreman", "warrant", "padlock", "fitch"]
+when = "flag:hut_open"
+text = "\"The hut's open, Doctor,\" said Gregson. \"Look your fill.\""
+
+[[characters.gregson.topics.hut]]
+aliases = ["ruddock", "joseph ruddock", "foreman", "warrant", "padlock", "fitch"]
+text = "\"Ruddock? The contractors' foreman? I've no call to go breaking open his hut, Doctor, without you give me one.\""
+
+[characters.gregson.shows.watch]
+text = "\"Hurrell's watch!\" cried Gregson. \"Where did you have it? From Mott? Then I have him.\" I showed him the bow wrenched half out of the case, and the dead man's chain with its last link dragged open, and he scratched his head and said nothing more about having anybody."
+
+# ================================================================ the depot
+
+[characters.coaker]
+name = "Coaker"
+aliases = ["abel coaker", "mr coaker", "foreman of flushers", "flushers' foreman"]
+location = "depot_office"
+description = "Abel Coaker, the Board's foreman of flushers for the Fleet district: a thick-set, slow-spoken man of fifty, with a seaman's beard and a pair of small, wary eyes."
+presence = "Coaker, the foreman of flushers, sat at the sloping desk with the flushing log under his hand."
+unknown_topic = "Coaker pulled at his beard. \"Couldn't say, sir.\""
+unknown_show = "Coaker looked at it and said nothing."
+
+[[characters.coaker.greeting]]
+text = "\"Doctor.\" Coaker got up heavily. \"Anything in reason, sir. The Board's very much put about. Mr Hurrell was a gentleman, and it's a bad business.\""
+
+[[characters.coaker.topics.hurrell]]
+aliases = ["mr hurrell", "edwin hurrell", "engineer", "key", "side-entrance key"]
+text = "\"He come in at twenty past eleven last night and asked for the Farringdon Street key and a lamp. Said he'd a mind to look at the relining by night, when the flow's down and there's none of the contractors' men about. I said I'd send a man with him and he said no, he'd go alone. He would have his way, Mr Hurrell.\""
+
+[[characters.coaker.topics.pond]]
+aliases = ["penstock", "gate", "head", "gauge", "flush", "flushing", "fill", "head low"]
+text = "\"We shut her at ten o'clock and flush at two, Tuesdays and Fridays,\" said Coaker. \"In dry weather the pond fills up behind the gate about two foot in the hour, near enough, and she's full to the crest, seven foot, a good while before two. Last night Harry Dunn found but three foot four on the gauge at two o'clock. I can't account for it. It's in the log.\""
+effects = ["clue:fill_rate"]
+
+[[characters.coaker.topics.handles]]
+aliases = ["handle", "penstock handle", "crank", "rack"]
+text = "\"There's two penstock handles for the Fleet. The Board's hangs on that rack, and it's signed out in the book every time it leaves it. The other's been lent to the contractors since August, for the works. Mr Ruddock has it.\""
+
+[[characters.coaker.topics.night]]
+aliases = ["last night", "evening", "alibi", "cribbage", "where"]
+text = "\"Me? I was in the lamp-room with Sparrow from half past eleven, playing crib, till Dunn come in for the handle at half past one. Sparrow'll tell you. Then I was in here with the log.\""
+
+[[characters.coaker.topics.flaps]]
+aliases = ["tide", "tides", "outfall", "tide board", "board", "tide-locked"]
+text = "\"The flaps open to the river when the river's lower than what's behind 'em, and shut when it's higher. At low water she runs out free. At high water she's tide-locked, and anything that comes over the weir stops in the outfall chamber till the river goes down. I chalk the tides up every day from the almanac.\""
+
+[[characters.coaker.topics.whistle]]
+aliases = ["whistle", "warning", "rule", "blasts"]
+text = "\"Three blasts and a minute's grace before ever you lift a gate,\" said Coaker. \"There's men below, sir, or there may be: my own men, or the contractors', or a tosher where he's no business to be. A head of water seven foot deep coming down the Fleet will drown a man as quick as look at him.\""
+
+[[characters.coaker.topics.lining]]
+aliases = ["relining", "measurement", "measure", "contract", "work", "works"]
+when = "clue:sham_wall"
+once = true
+text = "I told him what I had found at chain 11. Coaker heard me out without a word, and his face went the colour of putty. \"I never went above chain eight,\" he said at last, very low. \"Mr Ruddock measured it and showed me round, and Mr Gaskin was very good to me at quarter-day, and I signed. God forgive me, sir, I signed. But I never laid a finger on Mr Hurrell. I was at the cards all night.\""
+effects = ["clue:coaker_admits"]
+
+[[characters.coaker.topics.lining]]
+aliases = ["relining", "measurement", "measure", "contract", "work", "works"]
+when = "clue:coaker_admits"
+text = "\"I've told you, sir,\" said Coaker heavily. \"I signed what I never looked at. They'll have my place for it, and they're welcome.\""
+
+[[characters.coaker.topics.lining]]
+aliases = ["relining", "measurement", "measure", "contract", "work", "works"]
+text = "\"The contractors relined the invert from the penstock up to their shaft,\" said Coaker, not looking at me. \"Mr Ruddock measured it, and I examined it for the Board, and it was found correct. That's all I've to say about it, sir.\""
+
+[[characters.coaker.topics.ruddock]]
+aliases = ["joseph ruddock", "mr ruddock", "contractors' foreman"]
+text = "\"Gaskin and Pell's foreman. He knows the Fleet as well as any man of mine; he had a gang down there three months on the relining.\""
+
+[[characters.coaker.topics.mott]]
+aliases = ["tosher", "toshers", "saul mott"]
+text = "\"Old Saul Mott? He's been toshing the Fleet these forty years, and gets in somewhere we've never found. I've no love for him, but he's no murderer.\""
+
+[characters.coaker.shows.lamp7]
+text = "\"That's number seven,\" said Coaker. \"The lamp Mr Hurrell had. Where did you come by it, sir? At the penstock?\" He turned it over in his big hands, and gave it back to me. \"Sparrow's the man for lamps.\""
+
+[characters.gaskin]
+name = "Mr Gaskin"
+aliases = ["gaskin", "thomas gaskin", "contractor"]
+location = "depot_office"
+description = "Mr Thomas Gaskin, of Gaskin & Pell, contractors to the Board: a stout, prosperous, pink-faced man with a white waistcoat and a heavy gold chain, who looked very much as though he had not been to bed."
+presence = "Mr Gaskin, the contractor, stood warming his coat-tails at the stove."
+unknown_topic = "\"I'm sure I couldn't say, Doctor,\" said Gaskin, blowing out his cheeks."
+unknown_show = "Gaskin looked at it and blew out his cheeks. \"I know nothing about that.\""
+
+[[characters.gaskin.greeting]]
+text = "\"Gaskin, of Gaskin and Pell.\" He shook my hand warmly. \"A shocking thing, Doctor. A promising young man. My firm will do anything, anything in its power.\""
+
+[[characters.gaskin.topics.night]]
+aliases = ["last night", "alibi", "where", "banquet", "dinner"]
+text = "\"I was at the Lodge banquet at the Cannon Street Hotel, sir, as the Inspector has already established, until gone one in the morning. I went home in a cab.\""
+effects = ["clue:gaskin_alibi"]
+
+[[characters.gaskin.topics.contract]]
+aliases = ["relining", "lining", "work", "works", "certificate", "measurement"]
+text = "\"The Fleet relining was finished in October,\" said Gaskin, \"and examined by the Board's own foreman. Only Mr Hurrell's signature was wanting for the final certificate. A mere formality.\" He seemed to hear himself say it, and coloured."
+
+[[characters.gaskin.topics.ruddock]]
+aliases = ["joseph ruddock", "foreman", "mr ruddock"]
+text = "\"Ruddock? My works foreman. An excellent man, sir. He has had the whole charge of the Fleet job from the first day.\""
+
+[[characters.gaskin.topics.hurrell]]
+aliases = ["mr hurrell", "edwin hurrell", "engineer"]
+text = "\"A very conscientious young man,\" said Gaskin. \"Very. Perhaps a little too fond of finding fault. But I wouldn't speak ill of him now.\""
+
+[characters.gaskin.shows.hurrell_notebook]
+text = "Gaskin read the last page, and the pink went out of his face. \"I know nothing of this,\" he said, rather too quickly. \"Nothing. Ruddock had the entire charge of the work. I never went below in my life.\""
+
+[characters.sparrow]
+name = "Sparrow"
+aliases = ["enoch sparrow", "lamp-keeper", "lamp keeper", "lampman"]
+location = "lamp_room"
+description = "Enoch Sparrow, the lamp-keeper: a little bent bird of a man in a leather apron, with oil worked into every line of his hands."
+presence = "Sparrow, the lamp-keeper, was trimming wicks at the bench."
+unknown_topic = "\"Lamps is my business, sir,\" said Sparrow. \"Lamps and oil.\""
+unknown_show = "Sparrow peered at it. \"That's not a lamp, sir.\""
+
+[[characters.sparrow.greeting]]
+text = "\"Morning, sir.\" Sparrow did not stop trimming. \"You'll be wanting a light, I daresay, if you're going down.\""
+
+[[characters.sparrow.topics.lamps]]
+aliases = ["lamp", "lantern", "how long", "burning", "four hours"]
+text = "\"A Board's lamp burns four hours full, sir, near enough, and the same for them lanterns. Little window in the reservoir shows you what's left. Bring yours back to me before she's dry and I'll fill her again.\""
+
+[[characters.sparrow.topics.oil]]
+aliases = ["fill", "refill", "more oil"]
+when = "has:lantern"
+text = "Sparrow took my lantern, filled it to the brim, trimmed the wick and gave it back to me alight. \"There you are, sir. Four hours.\""
+effects = ["setn:oil:50"]
+
+[[characters.sparrow.topics.oil]]
+aliases = ["fill", "refill", "more oil"]
+text = "\"Plenty of oil here, sir, when you've a lamp to put it in.\""
+
+[[characters.sparrow.topics.night]]
+aliases = ["last night", "cribbage", "coaker", "alibi", "handle", "rack", "office"]
+text = "\"Mr Coaker and me was at crib in here from half past eleven till Harry Dunn come for the handle at half past one,\" said Sparrow. \"Mr Coaker never stirred, sir, but to put coal on. And I'll tell you another thing, since you ask it: that window looks straight across at the office door, and the lamp was lit in there all night. Nobody went in or out of that office between Mr Hurrell going and Harry coming, and the Board's handle never left its hook till Harry took it.\""
+effects = ["clue:sparrow_alibi"]
+
+[[characters.sparrow.topics.hurrell]]
+aliases = ["mr hurrell", "engineer", "lamp 7", "number seven"]
+text = "\"Number seven, I give him, filled to the brim, at twenty past eleven. It's in the book. Nice-spoken gentleman.\""
+
+[characters.sparrow.shows.lamp7]
+text = "\"Number seven!\" Sparrow took it from me and held it up to the light, then unscrewed the reservoir and poured the oil off into one of his measures, very carefully, to the last drop. \"There,\" said he. \"I filled her to the brim at twenty past eleven, and she's not burnt above the one hour; nearer three-quarters, I'd say. And look here, sir.\" He showed me the wick. \"She never went out of herself. Somebody screwed her right down.\" He filled the reservoir again from the measure and gave her back to me."
+effects = ["clue:lamp_measured"]
+
+[characters.sparrow.shows.lantern]
+text = "Sparrow took my lantern, filled it to the brim, trimmed the wick and gave it back to me alight. \"There you are, sir. Four hours.\""
+effects = ["setn:oil:50"]
+
+[characters.dunn]
+name = "Harry Dunn"
+aliases = ["dunn", "harry", "ganger", "flusher"]
+location = "shaft_foot"
+description = "Harry Dunn, ganger of the Fleet flushers, a long, cheerful, lantern-jawed young man in thigh-boots and a sou'wester, with his lamp hooked to his coat."
+presence = "Harry Dunn, the ganger, sat on the ledge at the foot of the rungs with his lamp beside him, smoking."
+unknown_topic = "Dunn grinned. \"You've got me there, sir.\""
+unknown_show = "Dunn looked at it by his lamp and shook his head."
+
+[[characters.dunn.greeting]]
+text = "\"Mr Coaker said I was to see you safe, sir,\" said Dunn, \"but I'd as soon bide here by the shaft, if it's the same to you, where I can hear you holler. North's the penstock; south's the long run down to the weir and the outfall. Keep to the benching and don't go stepping off it.\""
+
+[[characters.dunn.topics.night]]
+aliases = ["last night", "flush", "flushing", "two o'clock", "head", "gauge", "head low"]
+text = "\"We come down at a quarter to two, three of us, to flush,\" said Dunn. \"Gauge showed three foot four. It ought to have been full, seven foot, after four hours shut; I never saw it so low on a dry night, and I put it in the log. I gave her three on the whistle, same as always, and wound her up, and down she went. There was a lamp standing on the ledge by the walkway, out. I took it for one of the contractors'; they're always leaving their gear about.\""
+effects = ["clue:dunn_night"]
+
+[[characters.dunn.topics.whistle]]
+aliases = ["warning", "blasts", "rule"]
+text = "\"Three blasts and a minute,\" said Dunn. \"Always. There's toshers in the Fleet, whatever Mr Coaker says, and I'd not want to drown one, rogues or no.\""
+
+[[characters.dunn.topics.mott]]
+aliases = ["tosher", "saul mott", "toshers"]
+text = "\"Old Saul? I've seen his light down here many a night, far off, and never once caught him. Harmless old devil.\""
+
+[characters.dunn.shows.lamp7]
+text = "\"That's the lamp!\" said Dunn. \"That's the one stood on the ledge at two o'clock. I took it for a contractors' lamp. Lord, sir, was it his?\""
+
+[characters.dunn.shows.whistle]
+text = "\"That's the one off the rack,\" said Dunn. \"Three blasts, mind, and a minute's grace, and then wind.\""
+
+# ================================================================ the river
+
+[characters.pellow]
+name = "Pellow"
+aliases = ["dick pellow", "waterman", "boatman"]
+location = "river_stairs"
+description = "Dick Pellow, licensed waterman, a broad, weather-blackened man in a pea-jacket and a shiny hat, whose eyes never left the river even when he talked to you."
+presence = "Pellow, the waterman who found the body, sat on the stairs beside his skiff."
+unknown_topic = "Pellow spat into the river. \"Couldn't tell you, sir.\""
+unknown_show = "Pellow gave it a glance. \"Not a thing I know, sir.\""
+
+[[characters.pellow.greeting]]
+text = "\"Morning, sir. You'll be the doctor. I'm the one as found him.\""
+
+[[characters.pellow.topics.tide]]
+aliases = ["wind", "low water", "last night", "flaps", "tides", "almanac", "weather", "gale"]
+text = "\"Low water by the book was twenty past twelve,\" said Pellow, \"but the book never sailed a boat. It was blowing hard out of the east all last night, sir, right up the river, and an east wind holds the tide up. At midnight the water stood near as high as at the flood, and them flaps was shut as tight as a drum. It never fell to speak of till gone two, when the wind dropped; then it ran out like a mill-race, and low water was near on four.\""
+effects = ["clue:pellow_tide"]
+
+[[characters.pellow.topics.body]]
+aliases = ["hurrell", "found", "finding", "arm", "dead man", "outfall"]
+text = "\"A quarter past four, at low water, I was pulling up past the outfall, and my lantern caught a man's arm hanging out under the left-hand flap, white as a fish. I thought it was a sack till I saw the hand. Fetched the river police from the Temple stairs, and they fetched the flushers, and the flushers had him out from the inside.\""
+
+[[characters.pellow.topics.mott]]
+aliases = ["tosher", "saul mott"]
+text = "\"Old Saul's on the foreshore every low water, like a heron. He'll be down there as soon as the river's off it.\""
+
+# Saul Mott can only be reached on the foreshore, so only at low water.
+[characters.mott]
+name = "Saul Mott"
+aliases = ["mott", "saul", "tosher", "old man"]
+location = "foreshore"
+description = "Saul Mott was a little, ancient, leathery man in a velveteen coat with enormous pockets, an apron of canvas, and a long pole with a hoe at the end of it, which he leaned upon like a staff. He looked at me as a fox looks at a terrier."
+presence = "Old Saul Mott, the tosher, was poking about in the mud with his long hoe."
+unknown_topic = "\"Dunno nothing about it,\" said Mott, and spat."
+unknown_show = "Mott eyed it, and me, and said nothing."
+
+[[characters.mott.greeting]]
+text = "\"I know who you are,\" said Mott, without turning round. \"You're with the peelers. I ain't done nothing.\""
+
+[[characters.mott.topics.watch]]
+aliases = ["gold watch", "hunter", "hurrell's watch", "fence"]
+when = ["clue:watch_chain", "!flag:mott_talked"]
+text = "I told him what I had seen on the dead man's chain: the last link dragged open by a weight, as no thief would ever have done it. He looked at me a long time. Then he fished in one of his great pockets and put the watch into my hand. \"Found it,\" said he. \"Caught on the iron at the weir, hanging by its bow, at one o'clock this morning. Finding's my trade. I never touched no dead man.\""
+effects = ["give:watch", "set:mott_talked"]
+
+[[characters.mott.topics.watch]]
+aliases = ["gold watch", "hunter", "hurrell's watch", "fence"]
+when = "flag:mott_talked"
+text = "\"You've got it,\" said Mott. \"I told you where I found it.\""
+
+[[characters.mott.topics.watch]]
+aliases = ["gold watch", "hunter", "hurrell's watch", "fence"]
+text = "\"What watch?\" said Mott, and went on poking in the mud."
+
+[[characters.mott.topics.night]]
+aliases = ["last night", "flood", "flush", "fleet", "sewer", "midnight", "whistle"]
+when = "flag:mott_talked"
+text = "\"I was in the Fleet last night,\" said Mott, \"below the side-entrance, never mind how I come there. A bit after twelve, for St Bride's had gone the quarter not long before, the water come down on me like a train. No whistle. Not a squeak. I got up on the benching by the skin of my teeth, and something big went by me in the dark, rolling over and over, and down over the weir. I took it for a dead dog. Then at two the whistle went, three blasts, regular, and the second lot come down, and I took myself off home.\""
+effects = ["clue:mott_flood"]
+
+[[characters.mott.topics.night]]
+aliases = ["last night", "flood", "flush", "fleet", "sewer", "midnight", "whistle"]
+text = "\"Abed,\" said Mott. \"Like a Christian.\""
+
+# ================================================================ the contractors
+
+[characters.fitch]
+name = "Fitch"
+aliases = ["watchman", "night watchman", "old fitch"]
+location = "works_yard"
+description = "Fitch, the contractors' night watchman, kept on into the morning: an old, red-eyed man in a muffler, sitting on an upturned bucket beside a brazier."
+presence = "Fitch, the night watchman, sat by his brazier on an upturned bucket."
+unknown_topic = "\"Couldn't say, sir,\" said Fitch, warming his hands."
+unknown_show = "Fitch shook his head at it."
+
+[[characters.fitch.greeting]]
+text = "\"Morning, sir.\" Fitch did not get up. \"Nothing here for you, sir. Quiet as the grave all night.\""
+
+[[characters.fitch.topics.ladder]]
+aliases = ["shaft", "working shaft", "rungs", "mud", "last night", "night", "who came up"]
+when = "clue:ladder"
+text = "I told him what I had seen on the ladder: mud on every rung, still wet, from the water to the head-frame. \"Somebody came up out of the Fleet by your shaft last night,\" said I, \"and walked out of this yard past your brazier.\" Fitch looked at the fire a long while. \"I've a wife,\" he said at last. \"It was Mr Ruddock, sir. Half after twelve, near enough. Come up out of the shaft wet to the thighs and stinking, with his dark lantern and that handle of his under his arm. He says, 'You never saw me, Fitch,' and I says, 'No, sir.' And he went in his hut, and out again, and away.\""
+effects = ["clue:fitch_saw"]
+
+[[characters.fitch.topics.ladder]]
+aliases = ["shaft", "working shaft", "rungs", "mud", "last night", "night", "who came up"]
+text = "\"Quiet as the grave,\" said Fitch. \"Nobody come in or out all night, sir.\""
+
+[[characters.fitch.topics.hut]]
+aliases = ["key", "padlock", "ruddock's hut", "door"]
+text = "\"That's Mr Ruddock's hut, sir. He keeps the only key on his own ring. Not even Mr Gaskin goes in there.\""
+
+[[characters.fitch.topics.ruddock]]
+aliases = ["joseph ruddock", "mr ruddock", "foreman"]
+text = "\"Mr Ruddock's the foreman,\" said Fitch, and looked at his fire."
+
+[characters.ruddock]
+name = "Ruddock"
+aliases = ["joseph ruddock", "mr ruddock", "works foreman", "contractors' foreman"]
+location = "works_yard"
+description = "Joseph Ruddock, Gaskin & Pell's foreman of works: a big, black-bearded, broad-shouldered man in a pilot coat, clean-booted and freshly shaved, with a pair of very steady grey eyes."
+presence = "Ruddock, the contractors' foreman, was walking about the yard with a measuring-rod under his arm."
+unknown_topic = "\"I've work to do, Doctor,\" said Ruddock."
+unknown_show = "Ruddock looked at it, and then at me, and said nothing at all."
+
+[[characters.ruddock.greeting]]
+text = "\"Doctor.\" Ruddock touched his hat. \"Bad business. I'm at your service, though I don't know what I can tell you.\""
+
+[[characters.ruddock.topics.night]]
+aliases = ["last night", "alibi", "where", "home"]
+text = "\"I went home at six to my lodgings in the Borough,\" said Ruddock, \"had my supper, and was in my bed by ten. My landlady will tell you so.\""
+effects = ["clue:ruddock_story"]
+
+[[characters.ruddock.topics.lining]]
+aliases = ["relining", "work", "works", "contract", "measurement", "measure"]
+text = "\"Sound as a bell, Doctor, every yard of it,\" said Ruddock. \"I measured it myself and the Board's foreman passed it.\""
+
+[[characters.ruddock.topics.handle]]
+aliases = ["penstock handle", "crank", "contractors' handle"]
+text = "\"Our handle? It's in my hut, where it always is,\" said Ruddock, \"under lock and key.\""
+
+[[characters.ruddock.topics.hurrell]]
+aliases = ["mr hurrell", "edwin hurrell", "engineer"]
+text = "\"I met the gentleman when he came about the certificate,\" said Ruddock. \"Very particular. I can't say I knew him.\""
+
+[characters.ruddock.shows.ruddock_handle]
+text = "Ruddock looked at the handle in my hand, scoured bright, and for the first time something moved behind his steady eyes. \"We keep our gear clean, Doctor,\" said he. \"That's no crime.\""
+
+[characters.ruddock.shows.hurrell_notebook]
+text = "Ruddock read the last page without a flicker. \"He was mistaken,\" said he, and handed it back."

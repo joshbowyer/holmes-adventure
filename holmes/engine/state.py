@@ -22,10 +22,12 @@ class GameState:
     wrong: int = 0
     turns: int = 0
     solved: bool = False
+    counters: dict = field(default_factory=dict)     # name -> int (tide, lamp oil...)
 
     @classmethod
     def new(cls, story) -> "GameState":
         s = cls(case_id=story.id, room=story.case["start"])
+        s.counters = dict(story.case.get("counters", {}))
         for tid, t in list(story.items.items()) + list(story.characters.items()):
             s.locations[tid] = t.get("location", "nowhere")
         s.opened = {tid for tid, it in story.items.items() if it.get("open")}

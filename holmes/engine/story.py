@@ -2,7 +2,10 @@
 
 Story data shape (authored as TOML, shipped encoded as JSON):
 
-  case        id, title, year, start, intro, order, coin_name, coin_plural, hint texts
+  case        id, title, year, start, intro, order, coin_name, coin_plural, hint texts,
+              counters{name: start value}, every_turn[] (events run after each timed
+              command), status[] ({when, text} shown after rooms and by STATUS; text may
+              use {counter}), wait_turns, wait_text
   rooms.ID    name, description, aliases, details[], exits{dir: room | {to, when, blocked,
               visible_when, aliases, text}}, dark_when, dark_text, on_enter[]
               (an exit with `blocked` and no `to` is a way that is always barred)

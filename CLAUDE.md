@@ -159,8 +159,18 @@ Exploration premises:
   - Each source has a private `[test]` section: `walkthrough` (must solve the case, find
     every clue, and hit no misfire replies) and optional `wrong_path` (must reach a bad
     ending). Run `python -m unittest`. Tests never print story text.
-  - Shipped so far: `tutorial` (practice case, played and approved by the user) and
-    `bellboard` (E1, 19 rooms, 12 people; bible in `spoilers/stories/bellboard/bible.md`).
+  - Shipped so far: `tutorial` (practice case, played and approved by the user),
+    `bellboard` (E1, 19 rooms, 12 people; played and approved, "perfect") and
+    `bazalgette` (E2, 16 rooms, 10 people, 31 clues; not yet played). Bibles live in
+    `spoilers/stories/<id>/bible.md`.
+  - Timed cases (added for E2): `case.counters` (named ints), conditions `lt:/ge:/eq:NAME:N`,
+    effects `add:NAME:N` / `setn:NAME:N`, `case.every_turn` events run after each timed
+    command (meta verbs like NOTEBOOK, HINT, LOOK, STATUS are free), `case.status` lines
+    shown after each room and by STATUS, and WAIT running `case.wait_turns` turns (stops
+    early when something happens). E2 uses these for a tide cycle and lantern oil.
+  - A scripted walkthrough must respect the clock: plan the order so tide-gated places are
+    visited in a low-water window. Trace a walkthrough's room/counters/clues without prose
+    before committing it.
   - The walkthrough test also fails on any character's own "unknown topic/show" reply, so
     every ASK and SHOW in a walkthrough must hit a written answer.
 - Puzzle mechanics needed by the lineup: room/inventory/examine parser, notebook of clues,
@@ -170,6 +180,7 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays The Bell-Board at Pelham Square and gives feedback.
-  Then pick the next case; the deduction cases will need new final-puzzle types in
-  `holmes/puzzles/` (timeline, seating, Morse tape, record tables, telegram queue).
+- Next step from here: the user plays Below Bazalgette and gives feedback (especially on
+  how the tide and oil limits feel). Then pick the next case; the deduction cases will need
+  new final-puzzle types in `holmes/puzzles/` (timeline, seating, Morse tape, record
+  tables, telegram queue).

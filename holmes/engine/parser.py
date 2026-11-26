@@ -38,6 +38,7 @@ BUILTIN_VERBS = {
     "quit": ["quit", "q", "menu"],
     "exits": ["exits", "ways"],
     "wait": ["wait", "z"],
+    "status": ["status", "time"],
     "again": ["again", "g"],
 }
 

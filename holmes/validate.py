@@ -39,11 +39,31 @@ def validate(data: dict) -> list[str]:
 
     conds: list[tuple[str, object]] = []
     effects: list[tuple[str, object]] = []
+    counters = case.get("counters", {})
+    for k, v in counters.items():
+        if not isinstance(v, int):
+            errs.append(f"case: counter {k!r} must start at a whole number")
 
     def events(where: str, evs) -> None:
         for i, e in enumerate(_events(evs)):
             conds.append((f"{where}[{i}].when", e.get("when")))
             effects.append((f"{where}[{i}].effects", e.get("effects")))
+
+    def counter_ref(where: str, term: str, args: list[str]) -> None:
+        if args[0] not in counters:
+            errs.append(f"{where}: unknown counter in {term!r} (declare it in case.counters)")
+        try:
+            int(args[1])
+        except ValueError:
+            errs.append(f"{where}: {term!r} needs a whole number")
+
+    events("case.every_turn", case.get("every_turn"))
+    for i, s in enumerate(case.get("status", [])):
+        conds.append((f"case.status[{i}]", s.get("when")))
+        try:
+            s.get("text", "").format_map(counters)
+        except (KeyError, ValueError, IndexError):
+            errs.append(f"case.status[{i}]: text names an unknown counter")
 
     # rooms
     for rid, r in rooms.items():
@@ -189,6 +209,8 @@ def validate(data: dict) -> list[str]:
                 gotos.append(args[0])
                 if args[0] not in rooms:
                     errs.append(f"{where}: unknown room {args[0]!r}")
+            elif kind in ("add", "setn"):
+                counter_ref(where, e, args)
 
     # conditions: syntax and references
     for where, cond in conds:
@@ -209,6 +231,8 @@ def validate(data: dict) -> list[str]:
                     errs.append(f"{where}: unknown clue {a!r}")
                 elif kind == "loc" and (a not in things or args[1] not in places):
                     errs.append(f"{where}: bad loc reference {term!r}")
+                elif kind in ("lt", "ge", "eq"):
+                    counter_ref(where, term, args)
 
     for cid in clues:
         if "text" not in clues[cid]:

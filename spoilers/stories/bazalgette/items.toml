@@ -1,0 +1,504 @@
+# ================================================================ the depot
+
+[items.yard_grating]
+name = "grating"
+aliases = ["drain", "grating in the cobbles", "cobbles"]
+location = "depot_yard"
+scenery = true
+container = true
+description = "An iron grating over a drain in the middle of the yard, breathing up a sour, warm air."
+details = [ { when = "loc:coin_yard:yard_grating", text = "Something glinted between the bars, caught on the lip of the frame." } ]
+
+[items.coin_yard]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "yard_grating"
+coin = true
+description = "A penny, worn smooth."
+take_text = "I worked the penny out from between the bars with the end of my pencil and pocketed it."
+
+[items.boots]
+name = "thigh-boots"
+article = "some"
+aliases = ["boots", "thigh boots", "pegs", "rack", "shovels", "rakes"]
+location = "depot_yard"
+scenery = true
+description = "The flushers' thigh-boots, hung upside down on their pegs to drain, and beside them their long shovels and rakes. One pair, larger than the rest, still dripped onto the cobbles: Dunn's, I supposed, from the night's work."
+
+[items.tide_board]
+name = "tide board"
+aliases = ["board", "tides", "black board", "blackboard", "chalk"]
+location = "depot_office"
+scenery = true
+clue = "tide_board"
+description = """
+The board was ruled into columns and chalked in a round, careful hand:
+
+| TIDES, BLACKFRIARS          Tues 9th     Wed 10th
+| High water                  6.10 pm      6.35 am
+| Low water                   12.20 am     12.45 pm
+
+At the foot someone had added, more roughly: "Wind E., fresh to strong."
+"""
+
+[items.flush_log]
+name = "flushing log"
+aliases = ["log", "flush log", "log book", "logbook"]
+location = "depot_office"
+scenery = true
+clue = "flush_log"
+description = """
+A long ledger, ruled in columns, open at the night's page. The entries for the Fleet ran thus:
+
+| Tues 9th  10.0 pm  Fleet penstock shut to gather head.     H. Dunn
+| Wed 10th   2.0 am  Fleet flushed. Whistle given.           H. Dunn
+|                    Head at flushing 3 ft 4 in only.
+|                    (Usual: full, 7 ft.) Cause not known.
+|            2.20 am Penstock shut again.                    H. Dunn
+"""
+
+[items.key_book]
+name = "key book"
+aliases = ["key-book", "book of keys", "keys book"]
+location = "depot_office"
+scenery = true
+clue = "key_book"
+description = """
+The book in which every key and handle taken from the rack was signed out and in. The recent entries read:
+
+| Tues 9th  11.20 pm  Side-entrance key, Farringdon St.
+|                     OUT  E. Hurrell        IN  (found on deceased)
+| Wed 10th   1.30 am  Penstock handle, Fleet
+|                     OUT  H. Dunn           IN  3.10 am
+
+On the inside of the cover, pasted in, was an older slip: "3rd Aug. Second penstock handle (Fleet) lent to Gaskin & Pell, contractors, for the relining works, until completion. A. Coaker."
+"""
+
+[items.sewer_plan]
+name = "plan"
+aliases = ["plan of the fleet", "sewer plan", "map", "linen plan"]
+location = "depot_office"
+scenery = true
+description = "A plan of the Fleet sewer from Holborn to the river. Coaker's thick finger had worn the linen grey along one line of it: from the Farringdon Street side-entrance north to the penstock and the relined length beyond it, where the contractors' shaft came down; south down the long channel to the storm weir under the Embankment; and there the parting of the ways, east into the low-level sewer, or over the weir to the outfall and the river."
+
+[items.key_rack]
+name = "rack"
+aliases = ["key rack", "hooks", "rack of keys", "tackle"]
+location = "depot_office"
+scenery = true
+container = true
+description = "A board of numbered hooks for keys, bars and handles. Most hooks were full."
+
+[items.handle]
+name = "penstock handle"
+aliases = ["handle", "crank", "winch handle", "depot handle"]
+location = "key_rack"
+clue = "handles"
+description = "A heavy iron crank, near two feet long, for winding up the penstock. One end has a wooden grip; the other is forged into a square socket, about an inch across inside and very solid, to fit over the boss of the winch spindle."
+take_text = "I lifted the handle down from its hook. Coaker looked up from the desk. \"Blow your whistle before you wind,\" said he, \"every time, Doctor. There may be men below you.\""
+
+[items.whistle]
+name = "whistle"
+aliases = ["flusher's whistle", "tin whistle", "warning whistle"]
+location = "key_rack"
+description = "A tin whistle on a loop of cord, such as every flushers' ganger carries: three blasts, by the Board's rule, before ever a gate is lifted, so that every man below may get up on the benching and hold on."
+take_text = "I hung the whistle round my neck by its cord."
+
+[items.oil_book]
+name = "oil book"
+aliases = ["book", "lamp book", "issue book"]
+location = "lamp_room"
+scenery = true
+clue = "oil_book"
+description = """
+A greasy book in which Sparrow entered every lamp filled and given out. Last night's entries:
+
+| Tues 9th  9.40 pm   Lamps 2, 3, 4, 5 (Dunn's gang), filled.
+|          11.20 pm   Lamp 7, filled, to Mr Hurrell.
+| Wed 10th  1.30 am   Lamps 2, 3, 4, 5 re-trimmed.
+|           4.40 am   Lamps 2, 3, 4 (for the Police).
+"""
+
+[items.lamp_hooks]
+name = "lamp hooks"
+aliases = ["hooks", "lamps", "board lamps"]
+location = "lamp_room"
+scenery = true
+description = "Fourteen hooks, each with its painted number. Twelve lamps hung there, all of a pattern, with a little window of glass in each tin reservoir. The hook marked 7 was empty."
+details = [ { when = "!loc:lantern:lamp_room", text = "So was the hook beside it, where my lantern had hung." } ]
+
+[items.cribbage]
+name = "cribbage board"
+aliases = ["cards", "cribbage", "pack of cards", "box"]
+location = "lamp_room"
+scenery = true
+description = "A cribbage board with its pegs still in the holes, and the cards beside it. Somebody had been winning handsomely."
+
+[items.oil_bench]
+name = "bench"
+aliases = ["oil bench", "drip-tray", "drip tray", "oil cans", "measures", "cans"]
+location = "lamp_room"
+scenery = true
+container = true
+description = "The oil-bench, with its cans, its pewter measures marked in gills, and its sunken tray to catch the drips."
+details = [ { when = "loc:coin_lamp:oil_bench", text = "Something had rolled into the angle of the tray." } ]
+
+[items.coin_lamp]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "oil_bench"
+coin = true
+description = "A penny, sticky with oil."
+take_text = "I fished the penny out of the drip-tray, wiped it on Sparrow's rag, and put it in my pocket."
+
+[items.lantern]
+name = "bull's-eye lantern"
+aliases = ["lantern", "bull's eye", "bulls-eye", "bullseye", "my lantern", "light"]
+location = "lamp_room"
+description = "A Board's bull's-eye lantern of japanned tin, with a thick round lens and a sliding shutter. The little window in its reservoir showed how much oil was left in her."
+take_text = "Sparrow would not let me take it as it was. He filled it to the brim, trimmed the wick square, lit it, and put it into my hand. \"Four hours in her, full, sir,\" said he. \"Bring her back to me before she's dry, and I'll fill her again.\""
+on_take = ["setn:oil:50", "clue:lamp_burn"]
+
+[items.body]
+name = "body"
+aliases = ["hurrell", "edwin hurrell", "dead man", "corpse", "deceased", "tarpaulin", "head", "wound"]
+location = "dead_house"
+scenery = true
+clue = "wound"
+description = "Edwin Hurrell had been a big, fair, well-made man of five-and-thirty or so, in a tweed suit made for rough work. The sewer had done its worst to him: he was slimed from head to foot, his clothes were torn at elbow and knee, and he was grazed and battered all over as though he had been rolled down a quarry. But the injury that had killed him was none of these. At the back of the skull, a little to the left, was a depressed fracture, square-cornered, about an inch across, such as I have never seen made by a fall. There was very little froth at the mouth and nostrils. In my opinion he had been struck down from behind, and was dead, or past saving, before ever the water had him."
+
+[items.hands]
+name = "hands"
+aliases = ["hand", "fingers", "nails", "fingernails", "knuckles"]
+location = "dead_house"
+scenery = true
+clue = "nails"
+description = "His hands were grazed across every knuckle, as the rest of him was. But under the nails of the right hand, packed in hard, was a whitish grit that was certainly no part of a sewer. I picked a little out with my penknife and rubbed it between finger and thumb: it was cement, or something very like it."
+
+[items.waistcoat]
+name = "waistcoat"
+aliases = ["watch-chain", "watch chain", "chain", "pockets", "fob"]
+location = "dead_house"
+scenery = true
+clue = "watch_chain"
+description = "His watch-chain was still in place, a good gold one, the bar through the buttonhole. But there was no watch on the end of it. The last link had been dragged open into a hook, the gold drawn out thin, as if the watch had been caught and wrenched away from him by a great weight. Nobody unhooks a watch like that, still less a thief, who would have had the chain too. Gregson had found his purse in his trouser pocket with two sovereigns in it."
+
+[items.effects_bench]
+name = "bench"
+aliases = ["row", "effects", "things", "bench under the window"]
+location = "dead_house"
+scenery = true
+container = true
+description = "The bench where Gregson had laid out what came from the dead man's pockets: a clasp-knife and a small notebook swollen with wet. His purse and keys Gregson had already listed and put away."
+
+[items.knife]
+name = "clasp-knife"
+aliases = ["knife", "clasp knife", "pocket-knife", "penknife"]
+location = "effects_bench"
+description = "A stout clasp-knife, the blade left open. Its point was blunted, and white grit was crusted in the angle of the blade, the same stuff that was under his nails."
+
+[items.hurrell_notebook]
+name = "notebook"
+aliases = ["hurrell's notebook", "wet notebook", "pocket-book", "pocketbook"]
+location = "effects_bench"
+clue = "notebook_entry"
+description = """
+A surveyor's field-book, swollen with wet, the pencil writing blurred but legible. Page after page of chainage and measurements of the Fleet relining; and the last page, written in a larger hand, as by lamplight:
+
+| Tues. night. Ch. 9 to 14. The "new lining" is a skin of
+| render, half an inch, over the old brick, which is rotten
+| right through. Certified relined in full and paid for.
+| Will hear what the foreman has to say at the penstock
+| at 12 before I report. God knows I would rather not.
+"""
+take_text = "Gregson nodded to me to take it."
+
+# ================================================================ the street and the contractors
+
+[items.side_plate]
+name = "iron plate"
+aliases = ["plate", "cover", "manhole"]
+location = "side_entrance"
+scenery = true
+description = "An iron cover in the footway, propped open, with the Board's initials cast into it. The rungs went down into darkness. A cold, sweetish, foul air came up from below."
+
+[items.works_shaft]
+name = "working shaft"
+aliases = ["shaft", "head-frame", "head frame", "ladder", "rungs", "works shaft"]
+location = "works_yard"
+scenery = true
+clue = "ladder"
+description = "A square timber shaft with a ladder spiked to one side of it. I knelt at the top and held my lantern over. A dozen feet down the ladder ran into black standing water; but every rung above the water, to the very top, was smeared with black sewer-mud, dried grey at the edges, as though someone had come up out of the Fleet that way since the water last stood low, and in a hurry. The rungs below the head-frame in the yard were muddy too, where the same boots had stepped off."
+
+[items.trough]
+name = "mixing trough"
+aliases = ["trough", "cement trough", "water"]
+location = "works_yard"
+scenery = true
+description = "A long iron trough for mixing mortar, half full of rain-water. The water in it was grey and gritty with cement, and on its surface floated a black, greasy scum which certainly had not come from any mortar."
+
+[items.bricks]
+name = "brick stack"
+aliases = ["bricks", "stack", "stacked bricks", "sacks", "cement"]
+location = "works_yard"
+scenery = true
+container = true
+description = "Stacks of new stock bricks, a good many of them, and the sacks of cement beside them. For a firm that had just finished relining a sewer they had a great many bricks left over."
+details = [ { when = "loc:coin_works:bricks", text = "Something was wedged in the gap between two stacks." } ]
+
+[items.coin_works]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "bricks"
+coin = true
+description = "A penny, gritty with cement."
+take_text = "I took the penny from between the bricks and put it in my pocket."
+
+[items.hut_window]
+name = "hut"
+aliases = ["window", "hut window", "padlock", "tarred hut"]
+location = "works_yard"
+scenery = true
+visible_when = "!flag:hut_open"
+description = "A tarred plank hut with a padlocked door. Through the grimy window I could see a table spread with drawings, a stove, and coats and tackle hanging on nails along the wall."
+
+[items.ruddock_handle]
+name = "contractors' handle"
+aliases = ["handle", "crank", "contractor's handle", "contractors handle", "second handle"]
+location = "ruddocks_hut"
+clue = "hut_handle"
+description = "The second penstock handle, the twin of the Board's: the same weight, the same square socket an inch across. But where the Board's was black with years of grease, this one had been scoured bright from end to end, socket and all, cleaner than anything else in the hut; and the wooden grip was still damp."
+
+[items.trousers]
+name = "trousers"
+article = "a pair of"
+aliases = ["corduroys", "pair of trousers", "nail", "coat", "coats"]
+location = "ruddocks_hut"
+scenery = true
+clue = "trousers"
+description = "A pair of heavy corduroy trousers hung up to dry on a nail behind the stove. They were wet through, stiff with a black, stinking slime from the ankles to the middle of the thigh, and the smell of them was the smell of the Fleet."
+
+[items.tide_card]
+name = "tide card"
+aliases = ["card", "tide table", "almanac card"]
+location = "ruddocks_hut"
+scenery = true
+clue = "tide_card"
+description = "A printed tide-table for London Bridge, the sort the river firms give away, tacked to the wall above the table. Against Tuesday the 9th, \"Low water 12.15 a.m.\" had been ringed round twice in pencil."
+
+[items.measure_book]
+name = "measurement book"
+aliases = ["drawings", "measure book", "measurement", "table"]
+location = "ruddocks_hut"
+scenery = true
+clue = "measure_book"
+description = """
+Under the drawings on the table lay the firm's measurement book. The last page summed up the Fleet contract:
+
+| Relining invert & haunches, Ch. 0 to 14, in full.
+| 1,540 sq. yds. @ 9s. 6d.
+| Measured: J. Ruddock, Foreman.
+| Examined and found correct: A. Coaker, for the Board.
+"""
+
+# ================================================================ the river
+
+[items.skiff]
+name = "skiff"
+aliases = ["boat", "waterman's skiff"]
+location = "river_stairs"
+scenery = true
+description = "A waterman's skiff, well kept, with a boat-hook and a lantern lying in the stern sheets."
+
+[items.outfall_mouth]
+name = "outfall"
+aliases = ["outfall mouth", "mouth", "arch", "flaps"]
+location = "river_stairs"
+scenery = true
+description = "The mouth of the Fleet, low in the Embankment wall, closed by its great hinged flaps. From the stairs I could see little more."
+
+[items.flaps_outside]
+name = "flaps"
+aliases = ["flap", "outfall", "iron flaps", "arch", "mouth"]
+location = "foreshore"
+scenery = true
+description = "I went close and put my hand flat against one. It was a slab of cast iron, inches thick, hanging from a hinge-bar at the top: it would swing outward under the push of water from within, but the river, pressing on it from without, held it shut tight. A man on the mud might as well have tried to open the wall."
+
+[items.mud]
+name = "mud"
+aliases = ["shingle", "foreshore mud", "rubbish", "crockery"]
+location = "foreshore"
+scenery = true
+container = true
+description = "Black mud, shingle, and the rubbish of a great city."
+details = [ { when = "loc:coin_shore:mud", text = "A coin lay half-sunk in it where the outfall's little stream had washed it clean." } ]
+
+[items.coin_shore]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "mud"
+coin = true
+description = "A penny, black with the river."
+take_text = "I pulled the penny out of the mud and rinsed it in the outfall stream, a proceeding I do not recommend, and put it in my pocket."
+
+[items.watch]
+name = "gold watch"
+aliases = ["watch", "hurrell's watch", "hunter"]
+location = "nowhere"
+description = "A gold hunter, its case dented, the glass starred, full of grey water. The bow on top, where the chain had held it, was wrenched half out of the case."
+
+# ================================================================ below ground
+
+[items.shaft_silt]
+name = "silt"
+aliases = ["ledge", "brick ledge", "mud", "foot of the ladder"]
+location = "shaft_foot"
+scenery = true
+container = true
+description = "A drift of grey silt had collected at the foot of the rungs where the ledge met the wall."
+details = [ { when = "loc:coin_shaft:shaft_silt", text = "Something round lay in it, catching my light." } ]
+
+[items.coin_shaft]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "shaft_silt"
+coin = true
+description = "An old penny of King George's, green with age."
+take_text = "I picked the penny out of the silt and put it in my pocket. The toshers, I reflected, would have had it long since, had they known."
+
+[items.penstock]
+name = "penstock"
+aliases = ["gate", "penstock gate", "winch", "spindle", "boss", "iron gate"]
+location = "penstock_chamber"
+scenery = true
+description = "A gate of iron plate in grooves of dressed stone, worked by a winch upon the walkway above. The winch spindle ended in a square boss, smooth and bright with use, made to take the penstock handle."
+
+[items.gauge]
+name = "gauge-board"
+aliases = ["gauge", "gauge board", "board"]
+location = "penstock_chamber"
+scenery = true
+description = "A board painted in feet and inches, standing in the water on the upstream side of the gate. It showed the depth of the pond."
+details = [
+  { when = "!flag:pond_drained", text = "The water stood at seven feet, level with the crest of the gate: the pond was as full as it could be." },
+  { when = "flag:pond_drained", text = "It stood almost dry; a few inches of water ran past its foot." },
+]
+
+[items.notice]
+name = "notice"
+aliases = ["enamelled notice", "sign", "board's notice"]
+location = "penstock_chamber"
+scenery = true
+clue = "whistle_rule"
+description = """
+| METROPOLITAN BOARD OF WORKS.
+| NO PENSTOCK to be raised until the Ganger in charge has
+| first given THREE BLASTS upon his Whistle, and waited
+| One Minute, that all men below may gain the Benching.
+| By Order.
+"""
+
+[items.walkway]
+name = "walkway"
+aliases = ["iron walkway", "ledge", "rail"]
+location = "penstock_chamber"
+scenery = true
+description = "An iron walkway over the gate, with a rail on the downstream side only. On the pond side there was nothing at all between a man and the water. A narrow stone ledge ran off it along the wall."
+
+[items.lamp7]
+name = "lamp"
+aliases = ["lamp no 7", "lamp 7", "no 7", "board lamp", "hurrell's lamp", "lamp seven", "seven"]
+location = "penstock_chamber"
+clue = "lamp_found"
+details = [ { when = "loc:lamp7:penstock_chamber", text = "It stood upright and unlit on the ledge beside the walkway, where any flusher might take it for a spare." } ]
+description = "One of the Board's lamps, with a large figure 7 painted on its glass. It was cold, and dry outside; it had not been in the water. Through the little window in the reservoir I could see that it was nearly full of oil. The wick had not burnt down: it had been screwed right down into its tube, as a man does who means to put a lamp out."
+take_text = "I took up the lamp. It was heavy with oil."
+
+[items.render_wall]
+name = "lining"
+aliases = ["render", "wall", "new lining", "relining", "scraping", "cement", "brick", "brickwork"]
+location = "relined_length"
+scenery = true
+clue = "sham_wall"
+description = "I held my lantern close to the bright new lining. At the chain mark 11 someone had been at it with a knife: a patch the size of a hand had been scraped and gouged away, and the stuff that came off was not new brick at all, but a crust of cement render no thicker than a half-crown. Behind it the old brick was black and soft and rotten as cheese; I could push my thumb into it. I tried the render with my own knife at chain 12, and at 13, and found the same: a skin of white paint over a corpse."
+
+[items.chain_marks]
+name = "chain marks"
+aliases = ["marks", "numbers", "chain", "chainage"]
+location = "relined_length"
+scenery = true
+description = "Numbers painted at intervals on the wall, from 0 by the penstock to 14 by the contractors' shaft: the chain marks by which the work had been measured and paid for."
+
+[items.benching]
+name = "benching"
+aliases = ["platform", "timber platform", "bench"]
+location = "relined_length"
+scenery = true
+container = true
+description = "The stone benching ran along the side of the tunnel up to the timber platform at the foot of the contractors' ladder, all of it still streaming with the water I had let off."
+details = [ { when = "loc:coin_relined:benching", text = "A coin lay in a crevice of the stone." } ]
+
+[items.coin_relined]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "benching"
+coin = true
+description = "A penny, washed clean by the flood."
+take_text = "I picked the penny out of the crevice and put it in my pocket."
+
+[items.holes]
+name = "holes"
+aliases = ["hole", "crack", "brick", "ledge", "rats"]
+location = "fleet_channel"
+scenery = true
+container = true
+description = "Places where the old brick had dropped out of the wall above the ledge. The rats withdrew from my light with great dignity."
+details = [ { when = "loc:coin_channel:holes", text = "In the nearest hole something gleamed." } ]
+
+[items.coin_channel]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "holes"
+coin = true
+description = "A penny, very black."
+take_text = "I put my hand into the hole, with some reluctance, and drew out a penny."
+
+[items.weir]
+name = "weir"
+aliases = ["crest", "iron edge", "stone weir", "storm weir"]
+location = "weir_chamber"
+scenery = true
+clue = "weir"
+description = "A long stone weir across the old channel, its crest edged with an iron strip. The ordinary flow of the Fleet never reached it: it all turned aside through the screen into the low-level sewer. Only in a storm, or a flood, would water top this crest and go plunging down into the outfall chamber and so out to the river. The iron edge was rough, and here and there a rag or a twist of straw hung caught upon it."
+
+[items.screen]
+name = "screen"
+aliases = ["iron screen", "bars"]
+location = "weir_chamber"
+scenery = true
+description = "An iron screen of upright bars across the mouth of the low-level sewer, to catch what ought not to go through. Rags, sticks and the body of a cat hung on it."
+
+[items.flaps_inside]
+name = "flaps"
+aliases = ["flap", "iron flaps", "doors", "gap"]
+location = "outfall_chamber"
+scenery = true
+clue = "flaps"
+description = "From inside, the flaps showed their working plainly. Hung from the top, they swing outward to let the sewer run out to the river; but when the river stands higher than the water within, its weight holds them shut fast, and nothing can get out past them until the tide falls. The dark line of scum on the walls showed where the tide-locked water had stood: well over a man's head. Below it, against the foot of the left-hand flap, the slime was smoothed and furrowed where something large had lain wedged."
+
+[items.outfall_silt]
+name = "slime"
+aliases = ["silt", "floor", "grey slime", "scum", "scum line"]
+location = "outfall_chamber"
+scenery = true
+container = true
+description = "Grey slime and silt carpeted the floor, rippled by the water that had drained away through the flaps."
+details = [ { when = "loc:coin_outfall:outfall_silt", text = "A coin lay among the ripples." } ]
+
+[items.coin_outfall]
+name = "copper"
+aliases = ["coin", "penny", "copper coin"]
+location = "outfall_silt"
+coin = true
+description = "A penny, washed down from heaven knows where."
+take_text = "I picked the penny out of the slime and put it in my pocket."

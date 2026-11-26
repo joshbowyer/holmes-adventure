@@ -18,13 +18,19 @@ HELP = """\
 |                 or GO <place>.  EXITS lists the ways on.
 | Looking:        LOOK (L), EXAMINE (X) <thing or person>
 | Handling:       TAKE, DROP, OPEN, CLOSE, USE <thing> [ON <thing>],
-|                 INVENTORY (I)
+|                 INVENTORY (I), WAIT (Z), STATUS (time, light...)
 | People:         TALK TO <person>, ASK <person> ABOUT <subject>,
 |                 SHOW <thing> TO <person>
 | Thinking:       NOTEBOOK (your clues), HINT (costs a {coin}),
 |                 ACCUSE (when you are ready to name the truth)
 | Other:          SAVE, QUIT (back to the menu; progress is kept),
 |                 AGAIN (G) repeats your last command"""
+
+
+# Verbs that take no time in the world: the tide does not turn while you read your notes.
+# (WAIT runs its own turns.)
+UNTIMED = {"notebook", "hint", "help", "save", "quit", "inventory", "exits", "accuse",
+           "status", "look", "wait"}
 
 
 def join_list(parts: list[str]) -> str:
@@ -85,6 +91,24 @@ class Game:
             return
         handler = getattr(self, "do_" + cmd.verb, None)
         (handler or self.do_custom)(cmd)
+        if cmd.verb not in UNTIMED and not self.finished:
+            self.tick()
+
+    def tick(self) -> bool:
+        """One turn of the world passing: the case's `every_turn` events (tides, a
+        burning lamp...). Returns True if anything was said."""
+        said = False
+        for i, ev in enumerate(as_list(self.story.case.get("every_turn"))):
+            if self.run_event(ev, f"turn:{i}") and ev.get("text"):
+                said = True
+        return said
+
+    def status_text(self) -> str:
+        parts = []
+        for s in self.story.case.get("status", []):
+            if check(self.state, s.get("when")):
+                parts.append(s["text"].format_map(self.state.counters))
+        return " ".join(parts)
 
     def save(self) -> None:
         if self.autosave and not self.state.solved:
@@ -214,6 +238,10 @@ class Game:
                 self.enter(args[0])
             elif kind == "look":
                 self.describe_room()
+            elif kind == "add":
+                st.counters[args[0]] = st.counters.get(args[0], 0) + int(args[1])
+            elif kind == "setn":
+                st.counters[args[0]] = int(args[1])
             else:
                 raise ValueError(f"unknown effect {eff!r}")
 
@@ -254,6 +282,7 @@ class Game:
         if self.is_dark():
             self.say(room.get("dark_text", "It is too dark to see anything at all."))
             self.show_exits()
+            self.show_status()
             return
         text = room["description"].rstrip()
         extras = [d["text"].strip() for d in room.get("details", []) if check(st, d.get("when"))]
@@ -269,6 +298,12 @@ class Game:
                 ch = story.characters[c]
                 self.say(ch.get("presence") or f"{ch['name']} is here.", "person")
         self.show_exits()
+        self.show_status()
+
+    def show_status(self) -> None:
+        text = self.status_text()
+        if text:
+            self.say(text, "note")
 
     def exits(self) -> dict[str, dict]:
         out = {}
@@ -564,7 +599,17 @@ class Game:
         self.say(fail or "Nothing comes of it.")
 
     def do_wait(self, cmd: Command) -> None:
-        self.say("Time passes.")
+        """Lets several turns pass (case.wait_turns), stopping early if anything happens."""
+        case = self.story.case
+        self.say(case.get("wait_text", "Time passes."))
+        for i in range(max(1, int(case.get("wait_turns", 1)))):
+            if i:
+                self.state.turns += 1
+            if self.tick() or self.finished:
+                break
+
+    def do_status(self, cmd: Command) -> None:
+        self.say(self.status_text() or "Nothing presses upon you but the case itself.", "note")
 
     def do_notebook(self, cmd: Command) -> None:
         st, story = self.state, self.story

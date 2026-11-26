@@ -174,6 +174,33 @@ class GameTests(unittest.TestCase):
         g.handle("ask bob about key")
         self.assertIsNone(current_hint(g))
 
+    def test_counters_ticks_wait_and_status(self):
+        import copy
+        data = copy.deepcopy(FIXTURE)
+        data["case"].update({
+            "counters": {"oil": 3, "tide": 0},
+            "every_turn": [
+                {"when": "has:lamp", "effects": ["add:oil:-1"]},
+                {"effects": ["add:tide:1"]},
+                {"when": "eq:oil:0", "text": "The lamp dies.", "effects": ["setn:oil:-1"]},
+            ],
+            "status": [{"when": "has:lamp", "text": "[Oil: {oil}]"}],
+            "wait_turns": 5,
+        })
+        self.assertEqual(validate(data), [])
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.handle("notebook")                                  # untimed
+        self.assertEqual(g.state.counters["tide"], 0)
+        g.handle("take lamp")
+        self.assertEqual(g.state.counters, {"oil": 2, "tide": 1})
+        self.assertEqual(g.status_text(), "[Oil: 2]")
+        g.handle("wait")                                      # stops when the lamp dies
+        self.assertEqual(g.state.counters, {"oil": -1, "tide": 3})
+        self.assertTrue(check(g.state, ["lt:oil:0", "ge:tide:3", "!eq:tide:4"]))
+        bad = copy.deepcopy(data)
+        bad["case"]["every_turn"][0]["effects"] = ["add:fuel:-1"]
+        self.assertTrue(any("unknown counter" in e for e in validate(bad)))
+
     def test_wrong_then_right_accusation(self):
         g, _ = new_game(["2", "y", "", "1", "y"])
         g.handle("accuse")
