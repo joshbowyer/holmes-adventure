@@ -84,7 +84,7 @@ aliases = ["wednesday evening", "where", "last night", "wednesday", "lookout", "
 text = '''"Lloyd's wired at noon to keep a sharp lookout for her, so I went up to the lookout with Kitto at a quarter past six and stayed till a quarter to eight, the two of us watching for her lights. Nothing. Then I came down to my supper, and Kitto kept the watch alone. You'll find it in the watch log."'''
 
 [[characters.hext.topics.pascoe]]
-aliases = ["amos pascoe", "amos", "clerk", "nineteen years"]
+aliases = ["amos pascoe", "amos", "clerk", "nineteen years", "pascoe", "mr pascoe"]
 text = '''"A good clerk, sir: slow, but sure, and very particular. Kept everything by the rule. The rule is that tapes are kept three months and then destroyed, and I've seen him burn his old rolls in that stove regular as the calendar. Close, he was; kept himself to himself. I never knew much of what he thought."'''
 effects = ["clue:tapes_rule"]
 
@@ -105,7 +105,7 @@ unknown_show = '''Kitto shook his head at it. "Never seen it, sir."'''
 text = '''"You're the doctor that's come with Mr Holmes?" The young man stood up. "Jory Kitto, sir, signalman. It was me found him, sir, Wednesday night. I'll tell you anything you want: how I found him, or about the lamps, or the ship that never was, or Mr Tagg. I'm learning the telegraph, sir; Mr Pascoe was learning me, of an evening, on that practice set."'''
 
 [[characters.kitto.topics.found]]
-aliases = ["found him", "how i found him", "wednesday night", "night", "body", "found"]
+aliases = ["found him", "how i found him", "wednesday night", "night", "body", "found", "pascoe", "mr pascoe", "amos pascoe"]
 text = '''"I came down off watch at twenty to ten to report to Mr Pascoe, like always, and the instrument room was dark, sir, and cold as a vault: the stove out, and him gone. And the door unlocked. He never left that door unlocked, sir, not if he stepped out for a minute; it's the rule. I took my lantern and went to look for him, round the yard and then down the cliff path, and I found him by the stile, lying in the gorse, and his own lamp beside him out."'''
 effects = ["clue:room_cold", "clue:door_unlocked"]
 
@@ -174,7 +174,7 @@ unknown_show = '''Trevail grunted. "And what's that to the purpose, Doctor?"'''
 text = '''"Dr Watson. Trevail, Helston." He shook hands briskly. "You'll want to see him, I daresay, being a medical man; and the things on the shelf there. But I'll save you trouble, Doctor: I have my man. A London speculator, Tagg, in the overdue line, who sent that lying message from this station at five past nine, and killed poor Pascoe to do it. Ask me about the surgeon, or the wire, or Tagg himself, and I'll make it plain."'''
 
 [[characters.trevail.topics.surgeon]]
-aliases = ["police surgeon", "time", "when", "died", "death", "him"]
+aliases = ["police surgeon", "time", "when", "died", "death", "him", "pascoe", "poor pascoe", "mr pascoe", "body"]
 text = '''"Dr Penhallow of Helston saw him on the spot at half past twelve on Thursday morning. One blow, on the back of the head, a round stone or the like, which we've not found; it'll be in the sea. Dead, the doctor says, between six and eight o'clock in the evening, and nearer seven than not. But doctors can't be held to an hour, and we know better than that, Doctor. We know he was alive at twenty to eight."'''
 effects = ["clue:surgeon"]
 
@@ -212,7 +212,7 @@ aliases = ["london gentleman", "mr tagg", "tagg", "london man", "gentleman"]
 text = '''"Mr Tagg? He's handed in telegrams here, Doctor, to London, most days this week. I mayn't tell you what was in them: that's against the Act, and I'd lose my place. The Inspector has had them from Helston, I believe." She coloured a little. "I didn't like him. He looked at a person as if he were pricing her."'''
 
 [[characters.loveday.topics.pascoe]]
-aliases = ["mr pascoe", "him", "four years", "worked"]
+aliases = ["mr pascoe", "him", "four years", "worked", "pascoe", "amos pascoe"]
 text = '''"He was always very correct with me, Doctor. A heavy sender, slow and very regular: you'd know his hand on the sounder anywhere. I learnt a great deal from listening to him."'''
 
 [[characters.loveday.topics.gleaner]]
@@ -291,7 +291,7 @@ text = '''"I deal in overdue risks, sir; it's a lawful trade. I came down to be 
 effects = ["clue:tagg_lies"]
 
 [[characters.tagg.topics.pascoe]]
-aliases = ["this pascoe", "once", "twice", "clerk"]
+aliases = ["this pascoe", "once", "twice", "clerk", "pascoe", "mr pascoe"]
 text = '''"I went up to the station once or twice to ask after my ship. He was a dull, civil fellow. That's all I know of him."'''
 
 [[characters.tagg.shows.tagg_note]]
