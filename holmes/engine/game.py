@@ -441,6 +441,7 @@ class Game:
             self.say(f"The {t['name']} is shut.")
         if t.get("clue"):
             self.add_clue(t["clue"])
+            morse.show_item_tape(self, t["clue"])
         self.run_all(t.get("on_examine"), f"examine:{tid}")
 
     def do_take(self, cmd: Command) -> None:

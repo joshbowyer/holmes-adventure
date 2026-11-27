@@ -334,6 +334,11 @@ class GameTests(unittest.TestCase):
         data["actions"] = []
         self.assertEqual(validate(data), [])
         g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.handle("open box")
+        mark = len(g.io.output)
+        g.handle("examine key")                              # the item that deals the tapes
+        self.assertIn("=== =   === =", "".join(g.io.output[mark:]))   # shows their marks
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
         g.handle("codebook")                                 # no alphabet yet: refused
         self.assertTrue(g.failed)
         g.state.clues.append("found_key")

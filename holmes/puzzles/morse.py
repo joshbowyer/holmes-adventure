@@ -235,6 +235,24 @@ def show_tapes(game, text: str) -> bool:
     return True
 
 
+def passages_dealt_by(game, clue: str | None) -> list[str]:
+    if not clue or not has_morse(game):
+        return []
+    return [pid for pid, p in _spec(game)["passages"].items() if p["deal"] == clue]
+
+
+def show_item_tape(game, clue: str | None) -> None:
+    """Examining a piece of tape shows its marks, with the letters TAPES uses."""
+    pids = [p for p in passages_dealt_by(game, clue) if p in dealt(game)]
+    if not pids:
+        return
+    letters = letter_of(game)
+    show_tapes(game, "".join(letters[p] for p in pids))
+    game.say("(Each passage keeps its letter. TAPES lists every passage you hold; DECODE "
+             "<letter> AS <words> tries a reading, ATTRIBUTE <letter> TO <name> says who "
+             "sent it, and CODEBOOK shows the alphabet once you have it.)", "system")
+
+
 def show_codebook(game) -> bool:
     spec = _spec(game)
     if not check(game.state, spec.get("codebook_when")):
