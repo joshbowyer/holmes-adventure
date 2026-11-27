@@ -285,7 +285,7 @@ description = "A watchmen's key-box beside the arch, its key on its chain inside
 
 [items.screen]
 name = "screen"
-aliases = ["boarding", "tarred boarding", "boards", "little door", "draught"]
+aliases = ["boarding", "tarred boarding", "boards", "little door", "door", "screen door", "draught"]
 location = "north_end"
 scenery = true
 container = true
@@ -334,7 +334,7 @@ details = [ { when = "loc:hydrant_bar:impluvium", text = "I turned my lantern on
 
 [items.hydrant_bar]
 name = "hydrant bar"
-aliases = ["bar", "iron bar", "key", "hydrant key", "t-bar"]
+aliases = ["bar", "iron bar", "hydrant key", "t-bar"]
 location = "impluvium"
 clue = "bar_found"
 description = "An iron bar near three feet long, with a cross-piece at one end for the hands and, at the other, a square-cornered socket head, made to turn the valve of a fire hydrant. It had lain in the water long enough to be washed quite clean. The square head was about the size of the end of my thumb."
@@ -595,9 +595,9 @@ cant_take = "Hopkins put out a hand. \"I'll keep that with his things, Doctor, i
 
 [items.pike_keys]
 name = "Pike's keys"
-aliases = ["keys", "bunch of keys", "his keys", "pike's keys", "bunch"]
+aliases = ["keys", "key", "bunch of keys", "his keys", "pike's keys", "pike's key", "bunch"]
 location = "ambulance_room"
-description = "A heavy bunch of keys on a steel ring: the keys of the gallery stairs, the screen door, the watch-house, and a little one that looked as if it belonged to a locker."
+description = "A heavy bunch of keys on a steel ring: the long key of the screen door at the north end, the watch-house key, and a little one that looked as if it belonged to a locker. The gallery keys, I supposed, had gone to Crouch."
 take_text = "I took up Pike's keys. Hopkins nodded. \"Bring them back, that's all.\""
 
 [items.snuff_box]

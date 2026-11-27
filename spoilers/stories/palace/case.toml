@@ -216,8 +216,37 @@ text = "Pike's locker was locked. His keys, I supposed, were with his other thin
 
 [[actions]]
 id = "locker_unlock"
-verb = "unlock"
+verb = ["unlock", "use"]
 target = "pike_locker"
+when = "!open:pike_locker"
+text = "The smallest key on Pike's bunch turned the lock, and the door swung open."
+effects = ["open:pike_locker"]
+
+[[actions]]
+id = "screen_door_keys"
+verb = ["unlock", "open", "use"]
+target = "screen"
+when = "has:pike_keys"
+text = "The longest key on Pike's bunch turned stiffly in the lock, and I opened the little door and put my head out. The cold came in on my face. Before me lay the burnt north end, open to the sky: the stumps of iron columns standing up out of nettles and brambles, a litter of old glass, and beyond, the black trees of the park. There was nothing out there but the night. I shut the door and locked it again."
+
+[[actions]]
+id = "screen_keys_used"
+verb = "use"
+target = "pike_keys"
+with = "screen"
+text = "The longest key on Pike's bunch turned stiffly in the lock, and I opened the little door and put my head out. The cold came in on my face. Before me lay the burnt north end, open to the sky: the stumps of iron columns standing up out of nettles and brambles, a litter of old glass, and beyond, the black trees of the park. There was nothing out there but the night. I shut the door and locked it again."
+
+[[actions]]
+id = "screen_door_locked"
+verb = ["unlock", "open"]
+target = "screen"
+text = "The little door in the screen was locked. The watchmen, I supposed, had the key."
+
+[[actions]]
+id = "keys_on_locker"
+verb = "use"
+target = "pike_keys"
+with = "pike_locker"
 when = "!open:pike_locker"
 text = "The smallest key on Pike's bunch turned the lock, and the door swung open."
 effects = ["open:pike_locker"]

@@ -84,7 +84,7 @@ Here the nave ended, and not as an architect would have ended it. A high screen 
 south = { to = "north_nave", aliases = ["nave", "north nave"] }
 west = { to = "pompeian_court", when = "has:lantern", blocked = "The Pompeian Court lay quite dark beyond its painted doorway. I should want a lantern.", aliases = ["pompeian court", "pompeian", "pompeian house", "house", "doorway"] }
 east = { to = "alhambra_court", when = "has:lantern", blocked = "Through the horseshoe arch the Alhambra Court was a pit of darkness. I should want a lantern.", aliases = ["alhambra court", "alhambra", "horseshoe arch", "arch"] }
-north = { blocked = "The little door in the screen was padlocked, and beyond it lay only the burnt ground and the night.", aliases = ["screen", "door", "transept", "north transept"] }
+north = { blocked = "The little door in the screen was kept locked, and beyond it lay only the burnt ground and the night. There was no going out that way.", aliases = ["screen", "door", "transept", "north transept"] }
 
 [rooms.pompeian_court]
 name = "The Pompeian Court"
