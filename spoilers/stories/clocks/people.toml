@@ -1,0 +1,401 @@
+# ================================================================ Holmes
+
+[characters.holmes]
+name = "Holmes"
+aliases = ["sherlock holmes", "sherlock", "mr holmes"]
+location = "parlour"
+description = "Holmes sat with his long legs stretched to the fire and his finger-tips together, gazing at the coloured bullocks with every appearance of profound interest."
+presence = "Holmes sat by the parlour fire with his finger-tips together."
+unknown_topic = '''"That is for you to find out, Watson," said Holmes. "I am only the gentleman by the fire."'''
+unknown_show = '''Holmes glanced at it. "Yes. And what does it tell you?"'''
+
+[[characters.holmes.greeting]]
+text = '''"Ah, Watson. Sit down; the coffee is execrable." Holmes waved me to a chair. "We have come to a town that cannot agree what o'clock it is, and to a murder in which every man suspected has an alibi, and every alibi hangs upon a clock. You may ask me about the case, or about the clocks. And when you have fixed the events of last night each to its time, put them on the TIMELINE: I shall want to see them in their order."'''
+
+[[characters.holmes.topics.case]]
+aliases = ["murder", "gloyne", "mr gloyne", "alibis", "alibi", "suspects"]
+text = '''"Every suspect has an alibi," said Holmes. "Every alibi is a time. Every time was read off a clock. Find out, for every one of them, which clock, and what time that clock was keeping. Then, and only then, put them side by side."'''
+
+[[characters.holmes.topics.clocks]]
+aliases = ["clock", "time", "times", "two times", "railway time", "church time", "london time", "watch", "your watch"]
+text = '''"Your watch, my dear fellow, you set at Waterloo last night. It keeps London time, and it has no opinions about the vicar. It is the one perfectly honest witness in Hatherleigh. Hold every clock in the place up against it."'''
+
+[[characters.holmes.topics.timeline]]
+aliases = ["board", "arrange", "events", "order", "last night"]
+text = '''"TIMELINE will show you the events you have fixed, and ARRANGE will set them in an order, earliest first: ARRANGE BAC, and so on. You may change it as often as you please. But one thing, Watson." He held up a long finger. "One clock. Turn every time into the same time before you arrange anything, or you will be arranging the clocks and not the evening."'''
+
+[[characters.holmes.topics.coins]]
+aliases = ["halfpence", "halfpenny", "coin", "coins", "hint", "hints", "help"]
+text = '''"A halfpenny a time," said Holmes, "and cheap at the price. The town is full of them; Devonshire drovers are careless men."'''
+
+# ================================================================ the station
+
+[characters.pook]
+name = "Pook"
+aliases = ["porter", "jacob pook", "railway porter"]
+location = "platform"
+description = "Jacob Pook, porter, lamp-man and general factotum of Hatherleigh station: a stout, rosy man in corduroy and a waistcoat with brass buttons."
+presence = "Pook, the porter, was sweeping the platform."
+unknown_topic = '''"Can't say, sir, I'm sure," said Pook.'''
+unknown_show = '''Pook looked at it and scratched his head.'''
+
+[[characters.pook.greeting]]
+text = '''"Morning, sir." Pook leaned on his broom. "Bad business up to Fore House. I heard the shot from this very platform last night, and I put young Mr Gloyne into the up train not ten minutes before it, if you'll believe it."'''
+
+[[characters.pook.topics.shot]]
+aliases = ["last night", "night", "gun", "noise", "rain", "heard"]
+text = '''"I'd turned the lamps down after the up train went," said Pook. "The rain had stopped a few minutes before, and I'd come out from under the awning to look at the sky, when crack! up the town, sharp and short. I looked at the clock, as a railwayman will. Sixteen minutes past nine, sir, to the tick."'''
+effects = ["clue:porter_shot"]
+
+[[characters.pook.topics.train]]
+aliases = ["up train", "9.5", "nine five", "edward", "mr gloyne", "young mr gloyne", "edward gloyne", "nephew", "young gloyne"]
+text = '''"The up train for Exeter, the 9.5, left at five minutes past nine by that clock, sir, to the second: we're particular here. Young Mr Gloyne come pelting down the hill and in at the gate as she was moving, and I opened a door and bundled him in, and the guard took his fare. Another half-minute and he'd have missed her."'''
+effects = ["clue:card_train"]
+
+[[characters.pook.topics.clock]]
+aliases = ["station clock", "clocks", "church clock", "time", "railway time"]
+text = '''"Station clock's set every morning by the signal from Greenwich, sir. Mr Kingdon in the booking office will tell you all about it. He's a great man for the time, Mr Kingdon."'''
+
+[characters.kingdon]
+name = "Mr Kingdon"
+aliases = ["kingdon", "stationmaster", "station master", "station-master"]
+location = "booking_office"
+description = "Mr Kingdon, the stationmaster: a precise little man with a pointed grey beard, a gold watch-chain, and the air of a man to whom a minute is a serious thing."
+presence = "Mr Kingdon, the stationmaster, was entering figures in a ledger behind the ticket window."
+unknown_topic = '''"That's not a railway matter, sir," said Mr Kingdon.'''
+unknown_show = '''Mr Kingdon examined it gravely and handed it back.'''
+
+[[characters.kingdon.greeting]]
+text = '''"Kingdon, stationmaster." He came round to the door. "If it's times you want, sir, you've come to the right shop. This town keeps two clocks, more's the pity, and two times: the railway's, and the church's. And the trains have changed this month, which hasn't helped, nor has the vicar."'''
+
+[[characters.kingdon.topics.clocks]]
+aliases = ["time", "times", "two times", "church time", "railway time", "london time", "greenwich", "greenwich time", "local time", "sixteen minutes", "difference", "signal", "time signal", "act", "church", "railway's", "church's", "clock", "clocks"]
+text = '''"Hatherleigh lies four degrees west of Greenwich, sir, near enough; the sun comes to noon here sixteen minutes after it does at Greenwich. That's local time, and the church keeps it. We keep Greenwich time, which is London time, which is railway time, set every morning at ten by the signal down the wire. And since August of last year it's the law of the land, by Act of Parliament; but you'll not tell Mr Squance so. So when the church says nine, it's sixteen minutes past nine by us. Half the town sets its watch by one and half by the other, and most of 'em couldn't tell you which."'''
+effects = ["clue:sixteen"]
+
+[[characters.kingdon.topics.trains]]
+aliases = ["train", "trains", "timetable", "bradshaw", "up train", "9.5", "8.50", "changed", "this month"]
+text = '''"The up evening train went at 8.50 till the first of the month, sir; now she goes at 9.5, to make the connection at Exeter. There's plenty in the town still go by the old time, and either come down a quarter of an hour early or think they've missed her."'''
+
+[[characters.kingdon.topics.vicar]]
+aliases = ["squance", "mr squance", "the vicar", "parson", "reverend"]
+text = '''"He's a scholar and a gentleman, sir, and as obstinate as a Dartmoor pony. He'll have the church on God's time, he says, which is the sun's; and he'll have the school on it too, if he can."'''
+
+# ================================================================ the King's Arms
+
+[characters.vosper]
+name = "Vosper"
+aliases = ["landlord", "sam vosper", "mr vosper", "innkeeper"]
+location = "tap"
+description = "Sam Vosper, landlord of the King's Arms: a vast, bald, slow-moving man in shirt-sleeves and a green baize apron."
+presence = "Vosper, the landlord, was polishing glasses behind the bar."
+unknown_topic = '''"Couldn't tell 'ee, sir," said Vosper.'''
+unknown_show = '''Vosper shook his great head at it.'''
+
+[[characters.vosper.greeting]]
+text = '''"Sam Vosper, sir. Mr Holmes is in the parlour, up the stair. You'll be wanting to hear about Mr Luxton, I daresay, being as he was in my tap last night when it happened, and him and Mr Gloyne having had words in the market only that afternoon. And that's my clock up there, and it keeps railway time, as it says."'''
+
+[[characters.vosper.topics.luxton]]
+aliases = ["mr luxton", "william luxton", "last night", "night", "tap", "went out", "yard", "farmer"]
+text = '''"He come in about half past eight, and sat on the settle with his back to the wall, black as thunder. At ten minutes past nine by that clock he got up and went out to the yard; to see to his mare, he said. He come back in at eighteen minutes past nine, white as a sheet and all over straw, and called for brandy. I noticed particular, for the sergeant asked me."'''
+effects = ["clue:card_luxton_out", "clue:card_luxton_back"]
+
+[[characters.vosper.topics.clock]]
+aliases = ["inn clock", "railway time", "time", "notice", "my clock"]
+text = '''"Railway time, sir, ever since the omnibus began to meet the trains. Folks must know when to be in the yard for her. I set the clock myself by the station every Monday when I go down for the parcels, and she don't lose above a minute in the week."'''
+
+[[characters.vosper.topics.market]]
+aliases = ["threat", "mortgage", "week farm", "gloyne", "mr gloyne", "quarrel"]
+text = '''"He had words with Mr Gloyne in the market yesterday afternoon, sir, before everybody. Said he'd see him in hell before he'd see him in Week Farm. Mr Gloyne held the mortgage, see, and was calling it in."'''
+effects = ["clue:luxton_threat"]
+
+[characters.luxton]
+name = "Luxton"
+aliases = ["william luxton", "mr luxton", "farmer", "farmer luxton"]
+location = "tap"
+description = "William Luxton of Week Farm: a big, red-faced, grey-whiskered farmer in a frieze coat and leather gaiters, with hands like spades."
+presence = "A big grey-whiskered farmer sat on the settle by the fire with a pot of cider: Luxton, of Week Farm."
+unknown_topic = '''"Ask somebody else," said Luxton.'''
+unknown_show = '''Luxton looked at it and grunted.'''
+
+[[characters.luxton.greeting]]
+text = '''"You'll be the London doctor." Luxton did not get up. "I'll tell 'ee straight. I hated Gloyne, and I said so in the market yesterday before half Hatherleigh, for he was taking my farm. And I'm not sorry he's dead. But I never shot him, and I was in that yard there with my mare when it was done, and the churchyard key on my ring never left my pocket."'''
+
+[[characters.luxton.topics.gloyne]]
+aliases = ["mr gloyne", "market", "mortgage", "farm", "week farm", "threat", "hell", "hated"]
+text = '''"He held the mortgage on Week Farm, that my grandfather built. I'd the money near enough, by Lady Day; he wouldn't wait. 'I'll see 'ee in hell first,' I said. So I did say it. Put it in your book."'''
+effects = ["clue:luxton_threat"]
+
+[[characters.luxton.topics.mare]]
+aliases = ["yard", "night", "last night", "went out", "horse", "grey mare"]
+text = '''"I went out to look to her, and found her cast in her stall, poor maid, with her legs against the wall. Huxtable and I were the best part of ten minutes getting her up. Ask him."'''
+
+[[characters.luxton.topics.key]]
+aliases = ["churchyard key", "churchyard", "keys", "ring", "warden", "churchwarden"]
+text = '''"I'm vicar's warden, so I've a key to the churchyard gates. Vodden's the people's warden, and has the other. What of it? Mine was in my pocket all night, and I was in that yard."'''
+
+[characters.huxtable]
+name = "Huxtable"
+aliases = ["ostler", "dick huxtable", "hostler"]
+location = "inn_yard"
+description = "Dick Huxtable, the ostler: a little bow-legged man in a sleeved waistcoat, smelling powerfully of horse."
+presence = "Huxtable, the ostler, was rubbing down the grey mare's legs."
+unknown_topic = '''"Dunno, sir," said Huxtable.'''
+unknown_show = '''Huxtable sniffed at it.'''
+
+[[characters.huxtable.greeting]]
+text = '''"Morning, sir. That's Mr Luxton's mare. She were cast in her stall last night, poor maid, and he and I had a job of it to get her up."'''
+
+[[characters.huxtable.topics.mare]]
+aliases = ["cast", "stall", "last night", "night", "luxton", "mr luxton", "grey mare", "horse", "shot", "job"]
+text = '''"Mr Luxton come out to look to her, and she'd got herself cast, right over against the wall. We was both of us down in the straw hauling on her legs when we heard a shot, up the square. 'What's that?' says he. 'Poacher,' says I, for it's often so. We got her up a few minutes after, and he went back in, shaking. He never left my sight, sir, from the time he come out to the time he went in."'''
+effects = ["clue:luxton_stable"]
+
+# ================================================================ Fore House
+
+[characters.pascoe]
+name = "Sergeant Pascoe"
+aliases = ["sergeant", "pascoe", "policeman", "constable"]
+location = "office"
+description = "Sergeant Pascoe of the Devon Constabulary: a solid, black-whiskered, slow-spoken man, much troubled in his mind."
+presence = "Sergeant Pascoe stood by the window with his notebook."
+unknown_topic = '''"I couldn't say, sir," said the sergeant.'''
+unknown_show = '''The sergeant looked at it and wrote something in his notebook.'''
+
+[[characters.pascoe.greeting]]
+text = '''"Sergeant Pascoe, Devon Constabulary. You'll be Mr Holmes's friend, the doctor." He nodded at the sofa. "There he lies. Shot, last night, and every man in Hatherleigh that might have done it has an alibi you couldn't drive a pin through. I've the ball he was shot with, if you care to see it. Help yourself to the desk; I've been through it."'''
+
+[[characters.pascoe.topics.bullet]]
+aliases = ["ball", "shot", "hole", "panelling", "calibre", "the ball"]
+text = '''He took a pill-box from his pocket and showed me a little conical ball, somewhat flattened at the nose. "Dug it out of the panelling myself. It went clean through him. Out of a revolver, I'd say, a .38 or thereabouts. Not out of his own pistol, that's in the desk; that's a different bore altogether, and it's not been fired."'''
+effects = ["clue:bullet"]
+
+[[characters.pascoe.topics.alibis]]
+aliases = ["alibi", "suspects", "case", "theory", "who", "pin"]
+text = '''The sergeant counted on his fingers. "Young Edward, the nephew, that's in debt and comes in for everything: on the 9.5 train when the shot was fired; the porter put him in. Farmer Luxton, that Gloyne was selling up: in the King's Arms. The vicar, that was at daggers drawn with him over the church clock: up the tower with the sexton. Mr Vodden at the bank, that worked with him on the Market Trust: at chess with the schoolmaster. Every one of 'em somewhere else, sir, and every one by a clock."'''
+
+[[characters.pascoe.topics.desk]]
+aliases = ["drawers", "papers", "diary"]
+text = '''"His diary's in there, and a lot of papers. You're welcome to anything that helps, sir. I'm a plain man and I don't follow half of it."'''
+
+[characters.pascoe.shows.diary]
+text = '''"'The Treasurer'?" The sergeant frowned. "There's a treasurer to everything in this town, sir. The school, the Trust, the clothing club. Mr Vodden's treasurer of most of 'em."'''
+
+[characters.pascoe.shows.draft_notice]
+text = '''The sergeant read it twice, moving his lips. "Eight hundred and twelve pound," said he softly. "That's a deal of money, sir."'''
+
+[characters.bickle]
+name = "Mrs Bickle"
+aliases = ["bickle", "housekeeper", "hannah bickle"]
+location = "fore_hall"
+description = "Mrs Bickle, the housekeeper: a thin, upright, black-gowned woman with red eyes and a firm mouth."
+presence = "Mrs Bickle, the housekeeper, stood in the hall with her hands folded."
+unknown_topic = '''"I'm sure I couldn't say, sir," said Mrs Bickle.'''
+unknown_show = '''Mrs Bickle looked at it and shook her head.'''
+
+[[characters.bickle.greeting]]
+text = '''"I'm Mrs Bickle, sir, the housekeeper. It was me that found him, God help me, when I came in from chapel last night. And I'll not deny Mr Edward and the master had been at it hammer and tongs before I went out. I kept house for the master twenty year, sir, and I never knew him change a habit."'''
+
+[[characters.bickle.topics.night]]
+aliases = ["last night", "found", "finding", "chapel", "came in", "body", "garden door", "door", "bolt"]
+text = '''"I came in at the front as the church struck the half after nine, and the office door stood open and the lamp burning, and him lying behind his desk. I screamed for the constable. And this I'll say to the sergeant or anybody: when they'd taken him up I went round the house, and the garden door was unbolted, top and bottom. The master shot those bolts himself every night of his life at dusk, and I heard him do it last night, before ever I went out."'''
+effects = ["clue:card_body", "clue:garden_door"]
+
+[[characters.bickle.topics.edward]]
+aliases = ["mr edward", "nephew", "quarrel", "hammer and tongs", "row", "edward gloyne"]
+text = '''"At a quarter past eight it was, as I was putting on my bonnet. Money, as always with Mr Edward. I heard the master say, 'Not another penny, and you'll go now, sir, for I have someone coming at nine on business.' Then I went out to chapel, and I don't know what passed after."'''
+effects = ["clue:edward_quarrel"]
+
+[[characters.bickle.topics.master]]
+aliases = ["mr gloyne", "gloyne", "master", "habit", "habits", "clock", "time", "church time"]
+text = '''"Regular as his own clock, sir, and his clock kept the church's time. He'd have no London time in this house; though he was all for the law, and moved the vestry to change the church, and him and the vicar not speaking over it."'''
+effects = ["clue:gloyne_church_time"]
+
+[characters.edward]
+name = "Edward Gloyne"
+aliases = ["edward", "mr edward", "nephew", "young gloyne", "mr edward gloyne"]
+location = "dining_room"
+description = "Edward Gloyne: a weak, handsome, untidy young man of five-and-twenty, unshaven, in a London-cut suit he had slept in."
+presence = "Edward Gloyne, the nephew, sat at the end of the table with his head in his hands."
+unknown_topic = '''"I don't know anything about that," said Edward wretchedly.'''
+unknown_show = '''Edward stared at it. "What has that to do with me?"'''
+
+[[characters.edward.greeting]]
+text = '''"Doctor Watson? Thank God. I'm Edward Gloyne; it was I who wired. They think I shot my uncle, and I suppose I can't blame them; I owe money everywhere and I come in for everything. We quarrelled last night, I won't deny it, and I left him in a temper and ran for the train."'''
+
+[[characters.edward.topics.night]]
+aliases = ["last night", "uncle", "quarrel", "left", "leaving", "train", "ran", "temper"]
+text = '''"He turned me out: he had someone coming at nine on business, he said, and I was to go. I went out of the front door as the church struck the three-quarters, and I thought I'd missed my train, for it used to go at ten to nine; I had the old Bradshaw in my head. I ran all the same, all the way down the hill, and there she was, just moving. The porter shoved me in. I was in Exeter by a quarter past ten and in my lodgings by eleven, and they wired me this morning that he was dead."'''
+effects = ["clue:card_edward"]
+
+[[characters.edward.topics.debts]]
+aliases = ["money", "debt", "owe", "will", "inheritance", "everything", "come in for"]
+text = '''"Four hundred pounds, to men in Exeter who don't wait. And yes, I'm his heir. I know exactly how it looks, Doctor. I wired for Mr Holmes because I can't think of anyone else who might believe me."'''
+
+# ================================================================ the bank
+
+[characters.pring]
+name = "Pring"
+aliases = ["clerk", "bank clerk", "mr pring", "ned pring"]
+location = "bank"
+description = "Mr Pring, the Bank's clerk: a pale, earnest, red-haired young man with ink on his cuffs."
+presence = "Pring, the clerk, stood behind the counter."
+unknown_topic = '''"I'm afraid I couldn't say, sir," said Pring.'''
+unknown_show = '''Pring looked at it nervously and said nothing.'''
+
+[[characters.pring.greeting]]
+text = '''"Pring, sir, the Bank's clerk. Mr Vodden is in his room. A shocking thing, Mr Gloyne. Mr Vodden and I were here late last night over the half-yearly returns, and he went off to his chess, and I went home to my supper, and never knew a thing till morning. Mr Vodden was very close with Mr Gloyne, sir, over the Market Trust."'''
+
+[[characters.pring.topics.night]]
+aliases = ["last night", "late", "returns", "half-yearly returns", "mr vodden", "vodden", "chess", "locked up"]
+text = '''"We worked till a quarter to nine by our clock, sir, and then Mr Vodden locked up and went off across the square. He said he had his chess with Mr Lethbridge at nine. He seemed in very good spirits, I thought, considering."'''
+effects = ["clue:card_bank"]
+
+[[characters.pring.topics.clock]]
+aliases = ["bank clock", "time", "railway time", "our clock"]
+text = '''"London time, sir, always. A bill of exchange falls due by Greenwich, not by Mr Squance. The inspector from Plymouth checks it every quarter."'''
+
+[[characters.pring.topics.revolver]]
+aliases = ["drawer", "gun", "pistol", "bank revolver", "fired", "key"]
+when = "clue:revolver"
+text = '''Pring went quite white. "Fired? It can't have been. I cleaned it and oiled it on Monday myself, sir; it's my duty, the first of the week. And loaded all five." He swallowed. "Mr Vodden keeps the key of that drawer at night, sir. He had it last night."'''
+effects = ["clue:pring_revolver"]
+
+[[characters.pring.topics.revolver]]
+aliases = ["drawer", "gun", "pistol", "bank revolver", "fired", "key"]
+text = '''"The Bank's revolver is kept in my drawer under the counter, sir, against robbers. I've never had occasion to use it, thank God."'''
+
+[[characters.pring.topics.trust]]
+aliases = ["market trust", "treasurer", "account", "trust account"]
+text = '''"Mr Vodden is Treasurer of the Market Trust, sir, and Mr Gloyne was Clerk. The Trust's account is kept here, but I'm not permitted to see it; Mr Vodden keeps that ledger in his own room."'''
+
+[characters.vodden]
+name = "Mr Vodden"
+aliases = ["vodden", "arthur vodden", "agent", "bank agent", "manager"]
+location = "agent_room"
+description = "Mr Arthur Vodden, the Bank's agent: a sleek, well-fed, handsome man of five-and-forty, beautifully dressed, with a heavy fair moustache and a ready smile that did not quite reach his eyes."
+presence = "Mr Vodden, the Bank's agent, sat at the roll-top desk."
+unknown_topic = '''"I really can't help you there, Doctor," said Vodden pleasantly.'''
+unknown_show = '''Vodden glanced at it. "I don't follow you, Doctor."'''
+
+[[characters.vodden.greeting]]
+text = '''"Vodden." He rose and shook my hand. "I'm the Bank's agent here, and churchwarden, and treasurer of half the funds in the parish, and I don't know what else. A dreadful business. I was at chess with Lethbridge at the schoolhouse last night when it happened, I'm told, which is the sort of thing one never forgets. Poor Gloyne. We sat on the Market Trust together for ten years. Anything I can tell you, Doctor."'''
+
+[[characters.vodden.topics.night]]
+aliases = ["last night", "chess", "lethbridge", "schoolhouse", "school", "alibi", "where", "game"]
+text = '''"I locked up here at a quarter to nine, went home for my coat, and walked round by the square and Church Street to the schoolhouse. I knocked at five past nine; I remember, because Lethbridge made a joke of my being late. We were at the board when the shot was fired, I suppose, though neither of us heard it. The wind was the wrong way."'''
+effects = ["clue:vodden_story"]
+
+[[characters.vodden.topics.trust]]
+aliases = ["market trust", "treasurer", "account", "funds", "trust account"]
+text = '''"The Trust's affairs are in perfect order, Doctor." He smiled. "Gloyne was a little fussy over his figures, that's all. Lawyers are."'''
+
+[[characters.vodden.topics.gloyne]]
+aliases = ["mr gloyne", "poor gloyne", "josiah gloyne"]
+text = '''"An able man, if a dry one. We worked together on the Trust and on the school managers. I shall miss him."'''
+
+[[characters.vodden.topics.key]]
+aliases = ["churchyard key", "keys", "churchwarden", "warden", "churchyard"]
+text = '''"As people's warden I have a key to the churchyard, naturally. It's on my ring with the others." He jingled them. "I hardly ever use it."'''
+
+[[characters.vodden.topics.clock]]
+aliases = ["clocks", "time", "church clock", "railway time", "church time"]
+text = '''"Railway time is the law, Doctor. Our vicar is a Canute; he would bid the sun stand still. Gloyne was going to beat him on Thursday, at the vestry."'''
+
+[characters.vodden.shows.diary]
+text = '''Vodden read the entry and laughed a little. "'The Treasurer'? He might mean the treasurer of anything. Half the parish has a treasurer."'''
+
+[characters.vodden.shows.draft_notice]
+text = '''Vodden read it, and for an instant the smile went out like a lamp. Then it came back. "Gloyne's arithmetic," said he. "He was always finding deficiencies. We should have found it in the Bank's books on Thursday, and laughed at it."'''
+
+[characters.vodden.shows.minute_book]
+text = '''Vodden glanced at the page and handed it back. "Squance and his clock. We all humour him, Doctor."'''
+
+# ================================================================ the church and the school
+
+[characters.squance]
+name = "Mr Squance"
+aliases = ["squance", "vicar", "the vicar", "parson", "oliver squance", "reverend", "rev squance"]
+location = "vestry"
+description = "The Reverend Oliver Squance: a tall, stooping, white-haired scholar with a long nose, fierce eyebrows, and a beautiful old voice."
+presence = "Mr Squance, the vicar, was writing at a little table in the vestry."
+unknown_topic = '''"I fear I cannot help you there," said the vicar.'''
+unknown_show = '''The vicar regarded it over his spectacles and said nothing.'''
+
+[[characters.squance.greeting]]
+text = '''"Squance." He did not rise. "I am the vicar here, and the keeper of that church clock which you have no doubt been told is wrong. It is not wrong, sir; it is the only honest clock in Hatherleigh. As chairman of the school managers I wage the same war over the school clock, with rather less success. And I was in the tower last night when the shot was fired, if that is what you have come about."'''
+
+[[characters.squance.topics.night]]
+aliases = ["last night", "shot", "tower", "winding", "wind", "nine", "stroke"]
+text = '''"Medland and I go up to wind the clock every Tuesday after the evening service. Last night we were later than usual. I was standing by the works with my watch in my hand, to see her strike, and as the hammer fell for the last stroke of nine, at that very instant, there came a shot from below, from the direction of Fore House. Nine o'clock by the church, sir, which is to say nine o'clock by the sun."'''
+effects = ["clue:card_shot"]
+
+[[characters.squance.topics.church_clock]]
+aliases = ["church clock", "clock", "time", "church time", "local time", "sun", "honest clock", "greenwich", "railway time"]
+text = '''"That clock keeps the time of this meridian, sir: noon when the sun is south over Hatherleigh, sixteen minutes after it is south over Greenwich. That is the truth. The other is a convenience for railway companies, and I will not have the church of God telling lies for the convenience of the London and South Western Railway."'''
+
+[[characters.squance.topics.school_clock]]
+aliases = ["school clock", "school", "war", "managers", "school managers", "lethbridge"]
+text = '''The vicar's eyebrows went up. "Ah. Lethbridge will keep setting it by the railway, and I will keep setting it right. It is a church school, sir. I put it back myself on Monday evening, at the managers' meeting, with my own hands, and I doubt the poor man has noticed yet. Vodden laughed at me for it. Gloyne minuted it, very properly."'''
+effects = ["clue:clock_put_back"]
+
+[[characters.squance.topics.gloyne]]
+aliases = ["mr gloyne", "vestry", "motion", "quarrel", "notice"]
+text = '''"Gloyne carried a motion at the vestry to put my clock on Greenwich time. It was to be confirmed on Thursday. I would have resigned the living sooner than see it done. I say that plainly, sir, so that you need not hear it from others. I did not love the man. But I was in the tower with Medland when he died, and I thank God for it."'''
+
+[[characters.squance.topics.keys]]
+aliases = ["key", "churchyard", "gates", "lych gate"]
+text = '''"There are keys to the churchyard gates in the hands of myself, the sexton, and both churchwardens. Medland keeps the gates. Ask him."'''
+
+[characters.medland]
+name = "Medland"
+aliases = ["sexton", "ezra medland", "gravedigger"]
+location = "churchyard"
+description = "Ezra Medland, the sexton: a bent old man with a face like a walnut, leaning on a besom."
+presence = "Medland, the sexton, was sweeping leaves from the church porch."
+unknown_topic = '''"Ah," said Medland, and went on sweeping.'''
+unknown_show = '''Medland peered at it and shook his head.'''
+
+[[characters.medland.greeting]]
+text = '''"Ezra Medland, sexton." He touched his cap. "Bad doings, sir. I was up the tower with Parson last night, winding. And I locked the churchyard gates myself at dusk, same as always, and this morning the lych gate was standing open. There's not many keys to them gates, sir."'''
+
+[[characters.medland.topics.tower]]
+aliases = ["winding", "last night", "night", "parson", "wind", "up the tower"]
+text = '''"We went up at twenty to nine by the church, sir; I looked at the dial as we come in at the porch. Parson's particular about the winding. We was up there at the works when she struck nine, and the shot come with it, down by Fore House."'''
+effects = ["clue:card_tower"]
+
+[[characters.medland.topics.gates]]
+aliases = ["lych gate", "gate", "gates", "locked", "open", "lych-gate", "dusk"]
+text = '''"I locked all three at dusk, sir, half after five, and tried 'em: the iron gates, the lych gate, and Mr Gloyne's little gate from his garden. This morning the iron gates was as I left 'em, and Mr Gloyne's gate was unlocked, but he'd his own key to that and often used it. But the lych gate into School Lane was unlocked and standing wide open. I'll swear I locked it."'''
+effects = ["clue:lych_unlocked"]
+
+[[characters.medland.topics.keys]]
+aliases = ["key", "not many keys", "who has keys", "wardens", "churchwardens"]
+text = '''"Parson has one, and I have one, and the two wardens, Mr Vodden and Mr Luxton, one apiece. And Mr Gloyne had a key to his own little gate, but not to the others. That's all, sir; there's no more."'''
+effects = ["clue:keys"]
+
+[characters.lethbridge]
+name = "Mr Lethbridge"
+aliases = ["lethbridge", "schoolmaster", "master", "mr lethbridge"]
+location = "schoolhouse"
+description = "Mr Lethbridge, the schoolmaster: a thin, eager, short-sighted young man with an untidy black beard and ink on his fingers."
+presence = "Mr Lethbridge, the schoolmaster, sat by the chess-board."
+unknown_topic = '''"I'm afraid I don't know, Doctor," said Lethbridge.'''
+unknown_show = '''Lethbridge peered at it short-sightedly.'''
+
+[[characters.lethbridge.greeting]]
+text = '''"Lethbridge, schoolmaster. You'll forgive me, Doctor; I have hardly slept. Mr Vodden was here with me at chess last night when that poor man was killed, as I've told the sergeant twice already; the game is there as we left it. And the school clock keeps railway time, whatever the vicar may tell you. I set it myself."'''
+
+[[characters.lethbridge.topics.night]]
+aliases = ["last night", "chess", "game", "vodden", "mr vodden", "knock", "when"]
+text = '''"He knocked at five minutes past nine by the school clock; I could see it through the door between, and I chaffed him for being late. He was flushed and out of breath; he said he had run round by Church Street for fear of keeping me waiting. We played until eleven. He played like a madman, I may say; he usually beats me. He had made the appointment himself, on Monday."'''
+effects = ["clue:card_school"]
+
+[[characters.lethbridge.topics.appointment]]
+aliases = ["monday", "made the appointment", "arrangement", "nine"]
+text = '''"He came round to me after the managers' meeting on Monday evening and proposed it. 'Tomorrow at nine, Lethbridge,' he said, 'and mind, nine by your school clock,' and laughed. The clock is a standing joke between the vicar and me, you understand; the whole town knows it."'''
+effects = ["clue:chess_fixed"]
+
+[[characters.lethbridge.topics.clock]]
+aliases = ["school clock", "railway time", "time", "vicar"]
+text = '''"Railway time, I assure you. I set it by the station clock on Saturday afternoon, with my own watch for a go-between. The vicar sometimes interferes with it, but he hasn't been in the school since, that I know of; the managers met on Monday, but they meet without me."'''

@@ -1,0 +1,561 @@
+[case]
+id = "clocks"
+title = "The Two Clocks of Hatherleigh"
+year = 1881
+order = 30
+start = "platform"
+coin_name = "halfpenny"
+coin_plural = "halfpence"
+hint_intro = "I laid a halfpenny on the arm of Holmes's chair. He took it up without looking at it, spun it once, and put it in his waistcoat pocket."
+hint_none = "\"You have everything, Watson,\" said Holmes. \"Set it in order on the TIMELINE, and then ACCUSE.\""
+hint_broke = "I had not a halfpenny about me. \"Then go and find one,\" said Holmes. \"This is a market town; they lie about like leaves.\""
+counters = { walk = 0, round = 0 }
+intro = """
+It was in the October of 1881, when I had shared rooms with Sherlock Holmes for less than a year and was still very far from understanding him, that a telegram reached Baker Street from a little market town on the edge of Dartmoor:
+
+| UNCLE JOSIAH GLOYNE SHOT DEAD LAST NIGHT. POLICE SUSPECT ME.
+| BEFORE GOD I AM INNOCENT. COME. EDWARD GLOYNE, FORE HOUSE,
+| HATHERLEIGH.
+
+We went down by the night mail and the early branch train, and came into Hatherleigh at twenty minutes to eleven on the Wednesday morning, the 19th, in a thin cold drizzle. Holmes stood for a moment on the platform, looking from the station clock above the booking-office door to the clock on the church tower up the hill, and back again. Then he gave a short laugh.
+
+"There is your case, Watson," said he. "Two clocks, and one of them is lying. Or both; or neither. I shall take rooms at the inn and sit by a fire. The town is yours. Bring me every time you are given, and the name of the clock it was read from."
+
+He went off up the hill behind the omnibus, and left me on the platform.
+"""
+intro_note = "[Every witness in this case tells time by some clock or other. TIMELINE shows the events you have fixed to a time; ARRANGE puts them in order. Halfpence found while exploring buy hints from Holmes with HINT.]"
+
+# ================================================================ clues
+
+[clues.found]
+text = "Josiah Gloyne, attorney, of Fore House, Hatherleigh, was shot dead on Tuesday night, the 18th. His nephew Edward, who wired for us, is suspected."
+
+[clues.watch_set]
+text = "My own watch was set at Waterloo last night: it keeps London (railway) time, which is now by Act of Parliament the legal time."
+
+[clues.sixteen]
+text = "Mr Kingdon, stationmaster: Hatherleigh's local time is 16 minutes behind London time. The station keeps London time; the church keeps local time. \"When the church says nine, it's sixteen minutes past nine by us.\""
+
+[clues.porter_shot]
+text = "Pook, the porter, heard the shot from the platform at sixteen minutes past nine by the station clock. The rain had stopped a few minutes before."
+
+[clues.church_std]
+text = "The church clock is sixteen minutes slow by my watch: it keeps local time, by the vicar's will."
+
+[clues.inn_std]
+text = "The King's Arms clock keeps railway time (within a minute of my watch). Vosper sets it by the station every Monday."
+
+[clues.bank_std]
+text = "The bank clock keeps London time to the minute by my watch."
+
+[clues.school_std]
+text = "The schoolroom clock is sixteen minutes slow by my watch. Whatever Lethbridge believes, it is keeping church time."
+
+[clues.gloyne_church_time]
+text = "Gloyne kept church time in his own house: the long-case clock in his hall is sixteen minutes slow by my watch."
+
+[clues.clock_put_back]
+text = "The vicar put the school clock back to church time himself on Monday evening, at the managers' meeting. Vodden was there and laughed at him; Gloyne minuted it."
+
+[clues.minute_book]
+text = "School managers' minutes, Monday 17th: present the Chairman (Squance), Mr Vodden, the Clerk (Gloyne). \"The Chairman ... himself put [the School clock] back to the time of the Parish Church.\" Mr A. Vodden is Treasurer."
+
+[clues.chess_fixed]
+text = "Lethbridge: Vodden proposed the game himself after the managers' meeting on Monday: \"Tomorrow at nine, Lethbridge, and mind, nine by your school clock.\""
+
+[clues.wound]
+text = "Gloyne was shot once through the chest from in front, at a yard or two: powder-blackening on his waistcoat. He was standing, facing his killer."
+
+[clues.bullet]
+text = "The ball, dug from the panelling by Sergeant Pascoe: a conical revolver ball, about .38. Not from Gloyne's own pistol."
+
+[clues.desk_pistol]
+text = "Gloyne's own pocket pistol was in his desk drawer, loaded and unfired. He never reached for it."
+
+[clues.diary]
+text = "Gloyne's diary, Tuesday 18th: \"3 o'c. Mr Luxton, Week Farm, re mortgage: will NOT extend. 9 o'c. The Treasurer. Last chance.\""
+
+[clues.draft_notice]
+text = "Gloyne's draft notice: a Special Meeting of the Market Trust on Thursday \"to consider the state of the Treasurer's account, in which the Clerk has found a deficiency of £812.\""
+
+[clues.garden_door]
+text = "Mrs Bickle: Gloyne bolted the garden door himself at dusk last night, as always. After the body was found, it was unbolted top and bottom."
+
+[clues.prints]
+text = "On the churchyard path from Fore House's garden gate to the lych gate: a man's footprints, long-strided, toes towards School Lane, sharp-edged, so made after the rain stopped."
+
+[clues.lych_unlocked]
+text = "Medland, sexton, locked all three churchyard gates at dusk. This morning the lych gate on School Lane was unlocked and standing open."
+
+[clues.keys]
+text = "Keys to the churchyard gates: the vicar, the sexton, and the two churchwardens, Mr Vodden and Mr Luxton. (Gloyne had a key to his own garden gate only.)"
+
+[clues.shortcut]
+text = "From Gloyne's garden door through the churchyard to School Lane: four minutes at a brisk walk, by my watch."
+
+[clues.long_way]
+text = "From the square round by Church Street to School Lane: the better part of nine minutes, by my watch."
+
+[clues.revolver]
+text = "The bank's revolver, in the drawer under the counter: one chamber fired, the barrel foul and smelling of powder, about .38 calibre."
+
+[clues.pring_revolver]
+text = "Pring cleaned and loaded the bank's revolver on Monday. Mr Vodden keeps the drawer key at night, and had it last night."
+
+[clues.edward_quarrel]
+text = "Mrs Bickle heard Gloyne tell Edward at a quarter past eight: \"Not another penny, and you'll go now, sir, for I have someone coming at nine on business.\""
+
+[clues.luxton_threat]
+text = "Luxton, whose farm Gloyne was taking under the mortgage, swore in the market on Tuesday that he would see Gloyne in hell first."
+
+[clues.luxton_stable]
+text = "Huxtable, ostler: Luxton was down in the straw with him, getting the cast mare up, when they heard the shot. He never left Huxtable's sight while he was out of the tap."
+
+[clues.vestry_motion]
+text = "Gloyne carried a motion in the vestry to put the church clock on Greenwich time, to be confirmed on Thursday. Somebody pencilled on the notice: \"Not while I am Vicar.\""
+
+[clues.vodden_story]
+text = "Vodden: locked the bank at a quarter to nine, went home for his coat, walked round by the square and Church Street, and knocked at the schoolhouse at five past nine."
+
+# --- timeline cards
+
+[clues.card_bank]
+text = "Pring: Vodden locked up the bank and left at a quarter to nine by the bank clock."
+
+[clues.card_tower]
+text = "Medland: he and the vicar went up the tower to wind the clock at twenty to nine by the church clock."
+
+[clues.card_edward]
+text = "Edward: he left Fore House as the church clock struck the three-quarters (a quarter to nine), and ran for the train."
+
+[clues.card_train]
+text = "Pook: the up train left at five minutes past nine by the station clock, with Edward Gloyne bundled in as it moved."
+
+[clues.card_luxton_out]
+text = "Vosper: Luxton went out of the tap to the yard at ten minutes past nine by the inn clock."
+
+[clues.card_shot]
+text = "The vicar: the shot came on the last stroke of nine by the church clock, as he stood beside the works."
+
+[clues.card_luxton_back]
+text = "Vosper: Luxton came back into the tap at eighteen minutes past nine by the inn clock."
+
+[clues.card_school]
+text = "Lethbridge: Vodden knocked at the schoolhouse at five minutes past nine by the school clock."
+
+[clues.card_body]
+text = "Mrs Bickle: she came in and found the body as the church clock struck half past nine."
+
+# ================================================================ hints
+
+[[hints]]
+id = "porter"
+done = ["clue:porter_shot", "clue:card_train"]
+texts = [
+  "\"The porter on that platform was on duty last night. Railwaymen look at clocks.\"",
+  "\"TALK TO POOK on the platform, then ASK POOK ABOUT THE SHOT and ASK POOK ABOUT THE TRAIN.\"",
+]
+
+[[hints]]
+id = "watch"
+done = "clue:watch_set"
+texts = [
+  "\"You carry the one honest witness in Hatherleigh in your waistcoat pocket.\"",
+  "\"EXAMINE YOUR WATCH.\"",
+]
+
+[[hints]]
+id = "sixteen"
+done = "clue:sixteen"
+texts = [
+  "\"There is a man at the station who knows more about time than anyone in Devon.\"",
+  "\"Go IN to the booking office, TALK TO KINGDON and ASK HIM ABOUT THE CLOCKS.\"",
+]
+
+[[hints]]
+id = "scene"
+done = ["clue:wound", "clue:bullet"]
+texts = [
+  "\"You are a medical man, and there is a dead man in Fore House.\"",
+  "\"Go NORTH from the square into Fore House and WEST into the office. EXAMINE THE BODY, TALK TO THE SERGEANT and ASK HIM ABOUT THE BALL.\"",
+]
+
+[[hints]]
+id = "desk"
+when = "visited:office"
+done = ["clue:diary", "clue:draft_notice", "clue:desk_pistol"]
+texts = [
+  "\"A lawyer's desk is a lawyer's mind, Watson.\"",
+  "\"In the office, OPEN THE DESK, and EXAMINE the DIARY, the DRAFT NOTICE and the PISTOL.\"",
+]
+
+[[hints]]
+id = "bickle"
+when = "visited:fore_hall"
+done = ["clue:card_body", "clue:garden_door", "clue:edward_quarrel"]
+texts = [
+  "\"The woman who found him has more to tell than she has told the sergeant.\"",
+  "\"TALK TO MRS BICKLE in the hall; ASK her ABOUT LAST NIGHT and ABOUT MR EDWARD.\"",
+]
+
+[[hints]]
+id = "edward"
+done = "clue:card_edward"
+texts = [
+  "\"Our client is sitting in the dining-room at Fore House feeling very sorry for himself. Hear his side.\"",
+  "\"Go EAST from the hall of Fore House, TALK TO EDWARD and ASK HIM ABOUT LAST NIGHT.\"",
+]
+
+[[hints]]
+id = "tap"
+done = ["clue:card_luxton_out", "clue:inn_std"]
+texts = [
+  "\"Farmer Luxton spent the evening in the tap, they say. Ask the landlord exactly when, and by what clock.\"",
+  "\"In the King's Arms, TALK TO VOSPER, ASK HIM ABOUT LUXTON, then EXAMINE THE INN CLOCK.\"",
+]
+
+[[hints]]
+id = "ostler"
+when = "clue:card_luxton_out"
+done = "clue:luxton_stable"
+texts = [
+  "\"Luxton went out to the yard. Who else was in the yard?\"",
+  "\"Go EAST from the tap into the inn yard, TALK TO HUXTABLE and ASK HIM ABOUT THE MARE.\"",
+]
+
+[[hints]]
+id = "vicar"
+done = "clue:card_shot"
+texts = [
+  "\"The vicar was closer to the shot than anyone, and closer to his clock.\"",
+  "\"Go into the church and WEST to the vestry. TALK TO SQUANCE and ASK HIM ABOUT LAST NIGHT.\"",
+]
+
+[[hints]]
+id = "sexton"
+done = ["clue:card_tower", "clue:lych_unlocked", "clue:keys"]
+texts = [
+  "\"The sexton keeps the churchyard and its gates, and was up the tower with the vicar.\"",
+  "\"In the churchyard, TALK TO MEDLAND, then ASK HIM ABOUT THE TOWER, ABOUT THE GATES and ABOUT THE KEYS.\"",
+]
+
+[[hints]]
+id = "church_dial"
+done = "clue:church_std"
+texts = [
+  "\"Hold the church clock up against your watch.\"",
+  "\"From Station Road, EXAMINE THE CHURCH CLOCK.\"",
+]
+
+[[hints]]
+id = "bank"
+done = ["clue:card_bank", "clue:bank_std"]
+texts = [
+  "\"Mr Vodden's evening began at the bank. Somebody there will know when it ended.\"",
+  "\"Go WEST from the square into the bank, TALK TO PRING and ASK HIM ABOUT LAST NIGHT, and EXAMINE THE BANK CLOCK.\"",
+]
+
+[[hints]]
+id = "vodden"
+done = "clue:vodden_story"
+texts = [
+  "\"You have heard about Mr Vodden from everyone but Mr Vodden.\"",
+  "\"Go IN from the bank, TALK TO VODDEN and ASK HIM ABOUT LAST NIGHT.\"",
+]
+
+[[hints]]
+id = "lethbridge"
+done = ["clue:card_school", "clue:chess_fixed"]
+texts = [
+  "\"A chess game is an alibi with two players. Hear the other one.\"",
+  "\"In School Lane go EAST to the schoolmaster's house. TALK TO LETHBRIDGE, ASK HIM ABOUT LAST NIGHT, then ASK HIM ABOUT THE APPOINTMENT.\"",
+]
+
+[[hints]]
+id = "school_clock"
+when = "clue:card_school"
+done = "clue:school_std"
+texts = [
+  "\"Lethbridge says his clock keeps railway time. Does it?\"",
+  "\"Go IN to the schoolroom from School Lane and EXAMINE THE SCHOOL CLOCK.\"",
+]
+
+[[hints]]
+id = "put_back"
+when = "clue:school_std"
+done = "clue:clock_put_back"
+texts = [
+  "\"Someone has been at that school clock. Who in this town cares most about such things?\"",
+  "\"ASK SQUANCE ABOUT THE SCHOOL CLOCK.\"",
+]
+
+[[hints]]
+id = "minutes"
+when = "clue:clock_put_back"
+done = "clue:minute_book"
+texts = [
+  "\"Gloyne minuted it, the vicar says. Minutes are kept somewhere.\"",
+  "\"In the schoolroom, OPEN THE MASTER'S DESK and EXAMINE THE MINUTE BOOK.\"",
+]
+
+[[hints]]
+id = "prints"
+when = "visited:churchyard"
+done = "clue:prints"
+texts = [
+  "\"It rained last night, and stopped. Look down, Watson.\"",
+  "\"In the churchyard, EXAMINE THE PATH.\"",
+]
+
+[[hints]]
+id = "walk"
+when = "clue:prints"
+done = ["clue:shortcut", "clue:long_way"]
+texts = [
+  "\"How long does it take to get from Fore House to the schoolhouse? There are two ways. Walk them both, watch in hand.\"",
+  "\"Go from Fore House into the garden, NORTH into the churchyard and EAST into School Lane. Then go back to the square and walk NORTHEAST up Church Street and NORTH into School Lane.\"",
+]
+
+[[hints]]
+id = "revolver"
+when = "clue:bullet"
+done = ["clue:revolver", "clue:pring_revolver"]
+texts = [
+  "\"A .38 revolver ball. Who in Hatherleigh keeps a revolver?\"",
+  "\"In the bank, OPEN THE DRAWER, EXAMINE THE REVOLVER, then ASK PRING ABOUT THE REVOLVER.\"",
+]
+
+[[hints]]
+id = "timeline"
+when = ["clue:card_bank", "clue:card_tower", "clue:card_edward", "clue:card_train", "clue:card_luxton_out", "clue:card_shot", "clue:card_luxton_back", "clue:card_school", "clue:card_body"]
+texts = [
+  "\"You have the whole evening now. But you have it in three different times. Turn every one of them into London time before you put them in order.\"",
+  "\"Church time is sixteen minutes behind London time. The station, the bank and the inn keep London time; the church, Gloyne's house and the school clock keep church time. Add sixteen minutes to every church-time event, then ARRANGE the events by the result.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "timeline"
+when = ["clue:card_bank", "clue:card_tower", "clue:card_edward", "clue:card_train", "clue:card_luxton_out", "clue:card_shot", "clue:card_luxton_back", "clue:card_school", "clue:card_body"]
+locked_text = "I had not yet the whole of last evening, or anything like it. Holmes would want every time I could get, and the clock it was read from."
+intro = "I went up to the parlour of the King's Arms and laid my notebook on the table. Holmes took his pipe from his mouth. \"Well, Watson? Let us have the evening first, in its true order, by one clock; and then the man.\""
+good = "solved"
+default_wrong = "escape"
+
+[final.timeline]
+intro = "\"Here are your events,\" said Holmes, turning the pages. \"Put them in the order in which they truly happened, earliest first.\""
+wrong_ending = "muddle"
+order = ["card_bank", "card_tower", "card_edward", "card_train", "card_luxton_out", "card_shot", "card_luxton_back", "card_school", "card_body"]
+
+[final.timeline.cards]
+card_bank = "Vodden locks up the bank and leaves: a quarter to nine by the bank clock."
+card_tower = "The vicar and the sexton go up the tower to wind: twenty to nine by the church clock."
+card_edward = "Edward leaves Fore House: as the church clock strikes a quarter to nine."
+card_train = "The up train leaves, Edward aboard: five past nine by the station clock."
+card_luxton_out = "Luxton goes out of the tap: ten past nine by the inn clock."
+card_shot = "The shot: on the last stroke of nine by the church clock."
+card_luxton_back = "Luxton comes back into the tap: eighteen minutes past nine by the inn clock."
+card_school = "Vodden knocks at the schoolhouse: five past nine by the school clock."
+card_body = "Mrs Bickle finds the body: as the church clock strikes half past nine."
+
+[[final.questions]]
+id = "who"
+prompt = "Who shot Josiah Gloyne?"
+options = [
+  { id = "edward", label = "Edward Gloyne, the nephew" },
+  { id = "luxton", label = "William Luxton, of Week Farm" },
+  { id = "squance", label = "The Reverend Oliver Squance, the vicar" },
+  { id = "lethbridge", label = "Mr Lethbridge, the schoolmaster" },
+  { id = "vodden", label = "Mr Arthur Vodden, the Bank's agent" },
+]
+
+[[final.questions]]
+id = "how"
+prompt = "How was the murderer's alibi made?"
+options = [
+  { id = "station", label = "The station clock was put on" },
+  { id = "inn", label = "The inn clock was keeping church time" },
+  { id = "school", label = "The school clock had been put back to church time, and he knew it" },
+  { id = "lie", label = "His witness lied for him" },
+]
+
+[[final.questions]]
+id = "route"
+prompt = "How did he come and go?"
+options = [
+  { id = "round", label = "Round by the square and Church Street" },
+  { id = "churchyard", label = "Through the churchyard, with a churchwarden's key" },
+  { id = "front", label = "By the front door of Fore House, under the constable's nose" },
+  { id = "train", label = "He came back on a train" },
+]
+
+[[final.questions]]
+id = "why"
+prompt = "Why was Gloyne killed?"
+options = [
+  { id = "money", label = "To inherit his money" },
+  { id = "farm", label = "To save a farm from foreclosure" },
+  { id = "clock", label = "To stop the church clock being changed" },
+  { id = "trust", label = "To stop him exposing a theft from the Market Trust" },
+]
+
+[final.solution]
+who = "vodden"
+how = "school"
+route = "churchyard"
+why = "trust"
+
+[[final.wrong]]
+answers = { who = "edward" }
+ending = "edward"
+
+[[final.wrong]]
+answers = { who = "luxton" }
+ending = "luxton"
+
+[[final.wrong]]
+answers = { who = "squance" }
+ending = "vicar"
+
+[[final.wrong]]
+answers = { who = "lethbridge" }
+ending = "lethbridge"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "Nine by the Church"
+text = """
+Holmes heard me to the end without once interrupting, which in those early days I did not yet know for the compliment it was. Then he knocked out his pipe.
+
+"Excellent, Watson. You see it all. Every alibi in this town was true, and every witness honest, and every clock but one was doing exactly what its owner believed. The whole art of the thing lay in that one. Mr Vodden sat in the schoolroom on Monday evening and watched the vicar put Lethbridge's clock back sixteen minutes, and knew that Lethbridge would never notice, and that the whole town would read whatever that clock said as railway time, because Lethbridge would swear it was. So he made his appointment for nine by the school clock, and his appointment with Gloyne for nine by the church, and the two nines were the same nine. He had only to walk four minutes between them."
+
+We went across to the bank together, with Sergeant Pascoe behind us. Vodden was at his desk. He listened to Holmes with his smile growing fixed and fixed, and when Holmes came to the drawer under the counter and the empty chamber, he made one quick movement towards the roll-top desk, and the sergeant was on him.
+
+The Market Trust's ledger, when it was opened, told the rest. He had been taking its money for three years to cover his losses in Cornish mining shares, and Gloyne, with his lawyer's fussiness over figures, had found him out. Gloyne had given him one chance, at nine by the church, by the garden door. Vodden had come with the bank's revolver in his pocket, and had never meant to take the chance at all.
+
+Edward Gloyne took the afternoon train back to Exeter, a richer and, I hope, a wiser man. The vestry met on Thursday as had been arranged, and, as a mark of respect to the late Clerk, confirmed his motion without a division. But I am told that the Reverend Mr Squance has not yet altered his clock, and that the School clock is still a standing joke between him and the schoolmaster.
+
+"There was a case at Dorchester assizes, Watson, some twenty years ago," said Holmes, as the train drew out of Hatherleigh, and he watched the church tower go by. "A gentleman lost his action by arriving late by the clock of the court, though he was early by the clock of the town, and Parliament has been tidying up after it ever since. They will never quite manage it. Men will always carry two times about with them: the time that is, and the time they believe."
+"""
+
+[endings.muddle]
+title = "Three Clocks at Once"
+text = """
+Holmes ran his eye down my order of events, and then down it again, and laid the notebook on his knee.
+
+"My dear Watson," said he gently, "you have arranged the clocks, not the evening. Look: on your showing, a thing that happened by the church comes before a thing that happened by the railway, because the figures stand so. But the figures are in two different languages. Until they are in one, the order means nothing at all, and anyone who reads it will hang the wrong man, or none."
+
+He was right, and I knew it. Sergeant Pascoe, who had no such scruples, arrested Edward Gloyne that afternoon on the strength of twenty minutes he could not account for, and it was a week before the magistrates let him go again. By then the murderer had had time to put his affairs in such order as they would bear.
+
+"Go back, Watson," said Holmes. "One clock. Then put them in order."
+"""
+
+[endings.edward]
+title = "The Nephew"
+text = """
+"Edward?" Holmes shook his head. "He left Fore House as the church struck the three-quarters, which is a minute past nine by any clock that matters. The 9.5 left at five past, by the station, with Edward thrown into it by the porter. He ran down that hill in four minutes because he thought he had already missed his train. He was the one man in Hatherleigh last night who was trying to keep the wrong time, Watson, and it saved his neck."
+
+But I had said it in the sergeant's hearing, and Pascoe, who had wanted to say it himself all morning, took young Gloyne before the magistrates that afternoon. He was committed for trial on my evidence. It was a month before the truth came out at the assizes, and I have not often been so ashamed of anything.
+"""
+
+[endings.luxton]
+title = "The Farmer"
+text = """
+"Luxton?" said Holmes. "He hated the man and said so, which is what an honest farmer does; murderers are commonly more polite. And at the moment of the shot he was flat on his back in the straw with the ostler, hauling on the legs of a cast mare. Huxtable heard the shot with him."
+
+Luxton, however, had heard my opinion of him through the parlour floor, and came up the stairs to tell me his own. It was a remarkable opinion and I shall not record it. Week Farm went to the auctioneer in December; the real murderer, meanwhile, had time to consider his position, and used it.
+"""
+
+[endings.vicar]
+title = "The Vicar"
+text = """
+"The vicar?" Holmes smiled. "He did not love Gloyne, and he would have resigned his living sooner than see his clock put right. But at the moment of the shot he was standing beside the works of his clock, watching its hammer fall, with the sexton holding his lantern. He is the one man in this case whose alibi is the very clock itself."
+
+It was too late. I had already put the question to Mr Squance in the vestry, and he had answered it in the language of the Commination Service. The story ran round Hatherleigh in an hour, and the bishop heard of it in a week. Meanwhile the man who had done it went quietly about his business.
+"""
+
+[endings.lethbridge]
+title = "The Schoolmaster"
+text = """
+"Lethbridge?" said Holmes. "The one honest, muddled man in the business. He swore to the time on his clock, and the time on his clock was true; it was only the clock that had been told a lie, and he was not there when it was told. He was at home, reading Euclid, with a man playing chess against him who had just killed another."
+
+My opinion went round the town by dinner-time, and the managers, who had never liked Lethbridge's railway-time opinions, gave him notice by the end of the week. The real culprit, I need hardly say, was among the managers who signed it.
+"""
+
+[endings.escape]
+title = "The Right Man, the Wrong Case"
+text = """
+Holmes heard me out, and then shook his head.
+
+"You have the right man, Watson, and you would lose him at the trial. Counsel would take your account to pieces in a quarter of an hour, for half of it is wrong, and when a jury has seen half a case fall down, it will not stay to look at the other half. A man is not hanged on a good guess."
+
+We went to the bank with the sergeant, and our man listened with a polite smile and sent for his solicitor from Exeter, who listened with a less polite one. By the time the case came before the magistrates, the drawer had been cleaned, the ledger had been mended, and our man had an answer to everything I had got wrong. He was discharged.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "talk to pook", "ask pook about the shot", "ask pook about the train", "examine station clock",
+  "examine fire buckets", "take halfpenny", "examine watch",
+  "in", "talk to kingdon", "ask kingdon about the clocks", "ask kingdon about the trains",
+  "examine bradshaw", "examine printed card", "examine telegraph", "out",
+  "n", "examine church clock", "n", "examine hurdles", "take halfpenny", "examine brass plate",
+  "e", "talk to vosper", "ask vosper about luxton", "ask vosper about the clock",
+  "ask vosper about the market", "examine inn clock", "examine settle", "take halfpenny",
+  "talk to luxton", "ask luxton about the mare", "ask luxton about the key",
+  "e", "talk to huxtable", "ask huxtable about the mare", "examine grey mare", "examine horse-trough",
+  "take halfpenny", "w",
+  "up", "talk to holmes", "ask holmes about the clocks", "ask holmes about the timeline", "down",
+  "w", "n", "talk to mrs bickle", "ask mrs bickle about last night", "ask mrs bickle about mr edward",
+  "ask mrs bickle about the master", "examine long-case clock",
+  "w", "talk to sergeant", "ask sergeant about the ball", "ask sergeant about the alibi",
+  "examine body", "examine hole", "open desk", "examine pistol", "take diary", "examine diary",
+  "take draft notice", "examine draft notice", "show diary to sergeant", "e",
+  "e", "talk to edward", "ask edward about last night", "ask edward about money", "w",
+  "n", "examine garden door", "examine boot-scraper", "take halfpenny", "examine oak gate",
+  "n", "examine path", "talk to medland", "ask medland about the tower", "ask medland about the gates",
+  "ask medland about the keys", "examine table tombs", "take halfpenny",
+  "e", "e", "talk to lethbridge", "ask lethbridge about last night",
+  "ask lethbridge about the appointment", "ask lethbridge about the school clock", "examine chess-board",
+  "out", "in", "examine school clock", "open desk", "take minute book", "examine minute book",
+  "out", "w", "in", "examine notice-board", "w", "talk to squance", "ask squance about last night",
+  "ask squance about the church clock", "ask squance about the school clock", "ask squance about the vestry",
+  "up", "examine clock", "examine iron frame", "take halfpenny", "examine louvres", "d", "e", "out",
+  "se", "w", "talk to pring", "ask pring about last night", "ask pring about the bank clock",
+  "examine bank clock", "open drawer", "examine revolver", "ask pring about the revolver",
+  "ask pring about the market trust",
+  "in", "talk to vodden", "ask vodden about last night", "ask vodden about the trust",
+  "show draft notice to vodden", "out", "out",
+  "ne", "examine gutter", "take halfpenny", "n",
+  "timeline", "arrange IFEABHCGD", "notebook",
+  "accuse", "", "5", "3", "2", "4", "y",
+]
+wrong_path = [
+  "talk to pook", "ask pook about the shot", "ask pook about the train", "examine station clock", "examine fire buckets", "take halfpenny",
+  "examine watch", "in", "talk to kingdon", "ask kingdon about the clocks", "ask kingdon about the trains", "examine bradshaw",
+  "examine printed card", "examine telegraph", "out", "n", "examine church clock", "n",
+  "examine hurdles", "take halfpenny", "examine brass plate", "e", "talk to vosper", "ask vosper about luxton",
+  "ask vosper about the clock", "ask vosper about the market", "examine inn clock", "examine settle", "take halfpenny", "talk to luxton",
+  "ask luxton about the mare", "ask luxton about the key", "e", "talk to huxtable", "ask huxtable about the mare", "examine grey mare",
+  "examine horse-trough", "take halfpenny", "w", "up", "talk to holmes", "ask holmes about the clocks",
+  "ask holmes about the timeline", "down", "w", "n", "talk to mrs bickle", "ask mrs bickle about last night",
+  "ask mrs bickle about mr edward", "ask mrs bickle about the master", "examine long-case clock", "w", "talk to sergeant", "ask sergeant about the ball",
+  "ask sergeant about the alibi", "examine body", "examine hole", "open desk", "examine pistol", "take diary",
+  "examine diary", "take draft notice", "examine draft notice", "show diary to sergeant", "e", "e",
+  "talk to edward", "ask edward about last night", "ask edward about money", "w", "n", "examine garden door",
+  "examine boot-scraper", "take halfpenny", "examine oak gate", "n", "examine path", "talk to medland",
+  "ask medland about the tower", "ask medland about the gates", "ask medland about the keys", "examine table tombs", "take halfpenny", "e",
+  "e", "talk to lethbridge", "ask lethbridge about last night", "ask lethbridge about the appointment", "ask lethbridge about the school clock", "examine chess-board",
+  "out", "in", "examine school clock", "open desk", "take minute book", "examine minute book",
+  "out", "w", "in", "examine notice-board", "w", "talk to squance",
+  "ask squance about last night", "ask squance about the church clock", "ask squance about the school clock", "ask squance about the vestry", "up", "examine clock",
+  "examine iron frame", "take halfpenny", "examine louvres", "d", "e", "out",
+  "se", "w", "talk to pring", "ask pring about last night", "ask pring about the bank clock", "examine bank clock",
+  "open drawer", "examine revolver", "ask pring about the revolver", "ask pring about the market trust", "in", "talk to vodden",
+  "ask vodden about last night", "ask vodden about the trust", "show draft notice to vodden", "out", "out", "ne",
+  "examine gutter", "take halfpenny", "n", "accuse", "ABCDEFGHI", "",
+  "5", "3", "2", "4", "y", "",
+]

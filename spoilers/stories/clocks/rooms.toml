@@ -1,0 +1,252 @@
+# ================================================================ the station
+
+[rooms.platform]
+name = "Hatherleigh Station"
+aliases = ["station", "platform"]
+description = """
+The branch line ended here in a single platform of new red brick, with a booking office, a lamp-room and a row of fire buckets under the eaves, and beyond the buffers a sweep of wet Devon fields running up to the moor. Over the booking-office door hung the station clock, a round white face in a mahogany case, and under it a board proclaiming in gilt letters that the trains of the London and South Western Railway ran by GREENWICH TIME. A road went up the hill to the north towards the town, where the grey tower of the church stood up above the roofs with a gilded clock-face of its own.
+"""
+on_enter = [
+  { once = true, text = "[I opened my notebook and wrote down what young Gloyne's telegram had told us.]", effects = ["clue:found"] },
+]
+[rooms.platform.exits]
+in = { to = "booking_office", aliases = ["booking office", "office", "booking-office"] }
+north = { to = "station_road", aliases = ["road", "town", "hill"] }
+
+[rooms.booking_office]
+name = "The Booking Office"
+aliases = ["booking office", "booking-office"]
+description = """
+A snug little office with a ticket window, a rack of pasteboard tickets, a copy of Bradshaw chained to the counter, and in the corner the telegraph instrument ticking quietly to itself under its glass case. Over the instrument a printed card gave the hour of the daily time signal.
+"""
+[rooms.booking_office.exits]
+out = { to = "platform", aliases = ["platform"] }
+
+[rooms.station_road]
+name = "Station Road"
+aliases = ["station road", "road"]
+description = """
+The road climbed between high Devon banks, crowned with hazel and dripping with the night's rain, from the station up into the town. Halfway up, where the banks fell away, there was a fine view of the church tower and the church clock upon it.
+"""
+[rooms.station_road.exits]
+south = { to = "platform", aliases = ["station", "platform"] }
+north = { to = "square", aliases = ["town", "square", "market"] }
+
+# ================================================================ the town
+
+[rooms.square]
+name = "The Square"
+aliases = ["square", "market", "market place", "market square"]
+description = """
+Yesterday had been market day, and the square still bore the marks of it: the hurdles of the cattle pens stacked against the pump, straw and worse trodden into the mud, and a smell of beasts that the rain had not yet washed away. On the north side stood Fore House, Mr Gloyne's, a square stone house with a brass plate by its door; beside it the churchyard wall and its iron gates, and the church tower above them. The King's Arms, long and whitewashed, filled the east side; the Devon & Cornwall Bank, very new and very respectable, the west. Church Street went off at the north-east corner, and Station Road down the hill to the south.
+"""
+on_enter = [ { effects = ["setn:round:1", "setn:walk:0"] } ]
+[rooms.square.exits]
+north = { to = "fore_hall", aliases = ["fore house", "house", "gloyne's house", "gloyne's", "brass plate"] }
+northwest = { to = "churchyard", aliases = ["churchyard", "gates", "church", "iron gates"] }
+northeast = { to = "church_street", aliases = ["church street", "street"] }
+east = { to = "tap", aliases = ["king's arms", "kings arms", "inn", "pub", "tap"] }
+west = { to = "bank", aliases = ["bank", "devon & cornwall bank", "devon and cornwall bank"] }
+south = { to = "station_road", aliases = ["station road", "station", "hill"] }
+
+[rooms.church_street]
+name = "Church Street"
+aliases = ["church street"]
+description = """
+A crooked street of cob cottages under heavy thatch, running round the back of the churchyard wall from the square to School Lane. Rain had run in the gutter all night and left it choked with leaves.
+"""
+on_enter = [
+  { when = "eq:round:1", effects = ["setn:round:2"] },
+  { when = "!eq:round:2", effects = ["setn:round:0"] },
+  { effects = ["setn:walk:0"] },
+]
+[rooms.church_street.exits]
+south = { to = "square", aliases = ["square"] }
+north = { to = "school_lane", aliases = ["school lane", "lane", "school"] }
+
+[rooms.school_lane]
+name = "School Lane"
+aliases = ["school lane", "lane"]
+description = """
+A short lane behind the church. On one side the churchyard wall ran along to a lych gate, roofed with old shingles, which let into the churchyard; on the other stood the National School, a plain building of grey stone with tall church windows and a bell-cote, and the schoolmaster's house joined on to the end of it.
+"""
+on_enter = [
+  { when = "eq:walk:2", once = true, text = "I looked at my watch as I came out under the lych gate. From Gloyne's garden door, through the churchyard, it had taken me four minutes at a brisk walk.", effects = ["clue:shortcut"] },
+  { when = "eq:round:2", once = true, text = "I looked at my watch as I came into the lane. From the square, round by Church Street, it had taken me the better part of nine minutes, and Fore House is farther still from the corner.", effects = ["clue:long_way"] },
+  { effects = ["setn:walk:0", "setn:round:0"] },
+]
+[rooms.school_lane.exits]
+west = { to = "churchyard", aliases = ["lych gate", "lych-gate", "churchyard", "gate"] }
+south = { to = "church_street", aliases = ["church street", "street"] }
+in = { to = "schoolroom", aliases = ["school", "national school", "schoolroom"] }
+east = { to = "schoolhouse", aliases = ["schoolmaster's house", "schoolhouse", "house"] }
+
+[rooms.schoolroom]
+name = "The Schoolroom"
+aliases = ["schoolroom", "school"]
+description = """
+A long, cold, lofty room smelling of slates and chalk, with rows of desks and forms facing the master's high desk, a map of the Holy Land on one wall, and on the other, above the stove, the school clock in its plain deal case. Today the forms were empty: the managers had given the children a holiday out of respect.
+"""
+[rooms.schoolroom.exits]
+out = { to = "school_lane", aliases = ["lane", "school lane"] }
+
+[rooms.schoolhouse]
+name = "The Schoolmaster's Parlour"
+aliases = ["schoolmaster's parlour", "parlour", "schoolhouse"]
+description = """
+A small, bare, scrupulously tidy parlour, with a shelf of books, a horsehair sofa and a table by the window on which a chess-board stood with the pieces left where they had been, in the middle of a game.
+"""
+[rooms.schoolhouse.exits]
+out = { to = "school_lane", aliases = ["lane", "school lane"] }
+west = { to = "school_lane", aliases = ["lane", "school lane"] }
+
+# ================================================================ Fore House
+
+[rooms.fore_hall]
+name = "Fore House: the Hall"
+aliases = ["hall", "fore house"]
+description = """
+A flagged hall, dim and smelling of beeswax, with a long-case clock against the wall and the stairs going up at the back. The door of the office stood open on the left, with a constable's helmet on the chair outside it; on the right was the dining-room. A passage beside the stairs led through to the garden door.
+"""
+[rooms.fore_hall.exits]
+out = { to = "square", aliases = ["square"] }
+south = { to = "square", aliases = ["square"] }
+west = { to = "office", aliases = ["office", "study"] }
+east = { to = "dining_room", aliases = ["dining-room", "dining room"] }
+north = { to = "garden", aliases = ["garden", "garden door", "passage"] }
+up = { blocked = "Mrs Bickle was at the foot of the stairs before me. \"The bedrooms are shut up, sir, if you please. There's nothing up there but sheets.\"", aliases = ["stairs", "upstairs"] }
+
+[rooms.office]
+name = "Mr Gloyne's Office"
+aliases = ["office", "study"]
+description = """
+A square, panelled, comfortable room, with deed-boxes painted with clients' names stacked to the ceiling, a broad mahogany desk facing the door, and a window giving on the square. On a sofa against the wall lay the body, under a sheet. In the panelling behind the desk, at about the height of a man's chest, someone had cut a neat hole with a knife.
+"""
+[rooms.office.exits]
+east = { to = "fore_hall", aliases = ["hall"] }
+out = { to = "fore_hall", aliases = ["hall"] }
+
+[rooms.dining_room]
+name = "The Dining-Room"
+aliases = ["dining-room", "dining room"]
+description = """
+A dark room of mahogany and red flock, the shutters half closed, with a cold breakfast on the sideboard that nobody had touched.
+"""
+[rooms.dining_room.exits]
+west = { to = "fore_hall", aliases = ["hall"] }
+out = { to = "fore_hall", aliases = ["hall"] }
+
+[rooms.garden]
+name = "The Garden of Fore House"
+aliases = ["garden"]
+description = """
+A long walled garden behind the house, its beds dug over for the winter and its paths black with wet. At the house end the garden door stood under a little porch, with an iron boot-scraper beside the step. At the far end a door in the wall, a solid little oak gate, gave on the churchyard.
+"""
+on_enter = [ { effects = ["setn:walk:1", "setn:round:0"] } ]
+[rooms.garden.exits]
+south = { to = "fore_hall", aliases = ["house", "hall", "garden door"] }
+north = { to = "churchyard", aliases = ["churchyard", "gate", "door in the wall", "oak gate"] }
+
+# ================================================================ the church
+
+[rooms.churchyard]
+name = "St John's Churchyard"
+aliases = ["churchyard"]
+description = """
+An old, crowded churchyard of leaning slate headstones and table tombs grown over with lichen, with the church in the middle of it. A gravel path ran right round the church. Three ways led out: the iron gates on the square to the south-east, the little oak gate into the garden of Fore House to the south, and the lych gate on School Lane to the east.
+"""
+on_enter = [
+  { when = "eq:walk:1", effects = ["setn:walk:2"] },
+  { when = "!eq:walk:2", effects = ["setn:walk:0"] },
+  { effects = ["setn:round:0"] },
+]
+[rooms.churchyard.exits]
+southeast = { to = "square", aliases = ["square", "iron gates", "gates"] }
+south = { to = "garden", aliases = ["garden", "oak gate", "fore house", "gate"] }
+east = { to = "school_lane", aliases = ["school lane", "lane", "lych gate", "lych-gate"] }
+in = { to = "nave", aliases = ["church", "nave", "porch"] }
+
+[rooms.nave]
+name = "St John's Church"
+aliases = ["church", "nave"]
+description = """
+A long, low, whitewashed church of the old Devon sort, with box pews, a barrel roof of carved oak, and the smell of damp hassocks. By the south door hung a notice-board. A door at the west end, under the tower, led into the vestry.
+"""
+on_enter = [ { effects = ["setn:walk:0"] } ]
+[rooms.nave.exits]
+out = { to = "churchyard", aliases = ["churchyard", "porch"] }
+west = { to = "vestry", aliases = ["vestry", "tower"] }
+
+[rooms.vestry]
+name = "The Vestry"
+aliases = ["vestry"]
+description = """
+A little stone room in the foot of the tower, with surplices on pegs, a cope-chest and an iron-bound parish chest. A ladder went up through a trap in the ceiling into the clock chamber.
+"""
+[rooms.vestry.exits]
+east = { to = "nave", aliases = ["church", "nave"] }
+up = { to = "clock_chamber", aliases = ["ladder", "trap", "clock chamber", "tower"] }
+
+[rooms.clock_chamber]
+name = "The Clock Chamber"
+aliases = ["clock chamber"]
+description = """
+A dusty, cobwebbed little chamber halfway up the tower, nearly filled by the works of the church clock in a great iron frame: wheels and arbors, a long pendulum swinging slow in its well, and the weights hanging down on their ropes into the dark. A rod ran up from the works to the dial outside, and another to the bell above. Through the louvres one looked straight down upon the roof and back windows of Fore House.
+"""
+[rooms.clock_chamber.exits]
+down = { to = "vestry", aliases = ["ladder", "vestry", "trap"] }
+
+# ================================================================ the King's Arms
+
+[rooms.tap]
+name = "The King's Arms: the Tap"
+aliases = ["tap", "king's arms", "inn"]
+description = """
+A low, smoky, cheerful tap-room with a sanded floor, a settle by the fire, and a long bar of black oak. On the wall behind the bar hung the inn clock, a big dial in a carved case, and painted on the plaster beneath it in red and white letters: RAILWAY TIME KEPT HERE. A door led out to the yard at the back, and a stair went up to the parlour.
+"""
+[rooms.tap.exits]
+west = { to = "square", aliases = ["square"] }
+out = { to = "square", aliases = ["square"] }
+east = { to = "inn_yard", aliases = ["yard", "inn yard", "stable", "stables"] }
+up = { to = "parlour", aliases = ["parlour", "stair", "stairs"] }
+
+[rooms.inn_yard]
+name = "The Inn Yard"
+aliases = ["inn yard", "yard"]
+description = """
+A cobbled yard behind the inn, with the station omnibus standing under a cart-shed, a stone horse-trough under the pump, and a range of stables along the back, from one of which a grey mare looked out over her half-door.
+"""
+[rooms.inn_yard.exits]
+west = { to = "tap", aliases = ["tap", "inn"] }
+in = { to = "tap", aliases = ["tap", "inn"] }
+
+[rooms.parlour]
+name = "The Inn Parlour"
+aliases = ["parlour", "inn parlour"]
+description = """
+The best parlour of the King's Arms, a low room full of horsehair, wax fruit and coloured prints of prize bullocks, with a good fire and a window over the square. Holmes had made it his own within ten minutes of our arrival.
+"""
+[rooms.parlour.exits]
+down = { to = "tap", aliases = ["tap", "stairs"] }
+
+# ================================================================ the bank
+
+[rooms.bank]
+name = "The Devon & Cornwall Bank"
+aliases = ["bank", "banking hall"]
+description = """
+A banking hall in miniature, all new mahogany, brass rails and frosted glass, with a long counter, a drawer under it at the clerk's place, a pair of brass scales for gold, and over the door the bank clock, a handsome thing with a seconds hand. A door marked AGENT led to an inner room.
+"""
+[rooms.bank.exits]
+east = { to = "square", aliases = ["square"] }
+out = { to = "square", aliases = ["square"] }
+in = { to = "agent_room", aliases = ["agent", "inner room", "agent's room"] }
+
+[rooms.agent_room]
+name = "The Agent's Room"
+aliases = ["agent's room", "inner room"]
+description = """
+A small inner room with a Turkey carpet, a roll-top desk, a green safe in the corner, and an engraving of the Bank's head office in Plymouth over the fire.
+"""
+[rooms.agent_room.exits]
+out = { to = "bank", aliases = ["banking hall", "bank"] }

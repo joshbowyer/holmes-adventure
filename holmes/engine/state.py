@@ -23,6 +23,7 @@ class GameState:
     turns: int = 0
     solved: bool = False
     counters: dict = field(default_factory=dict)     # name -> int (tide, lamp oil...)
+    arrangement: list = field(default_factory=list)  # timeline card ids, player's order
 
     @classmethod
     def new(cls, story) -> "GameState":

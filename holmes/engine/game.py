@@ -12,6 +12,7 @@ from holmes.engine.hints import give_hint
 from holmes.engine.parser import DIRECTIONS, Command, build_verb_map, parse
 from holmes.engine.state import GameState
 from holmes.engine.story import Story, as_list
+from holmes.puzzles.timeline import arrange, has_timeline, show_board
 
 HELP = """\
 | Moving about:   NORTH (N), SOUTH, EAST, WEST, UP, DOWN, IN, OUT,
@@ -30,7 +31,7 @@ HELP = """\
 # Verbs that take no time in the world: the tide does not turn while you read your notes.
 # (WAIT runs its own turns.)
 UNTIMED = {"notebook", "hint", "help", "save", "quit", "inventory", "exits", "accuse",
-           "status", "look", "wait"}
+           "status", "look", "wait", "timeline", "arrange"}
 
 # Typed alone (spaces and case ignored), grants one hint coin. Not listed in HELP.
 CHEAT_WORD = "persianslipper"
@@ -652,7 +653,24 @@ class Game:
         run_final(self)
 
     def do_help(self, cmd: Command) -> None:
-        self.say(HELP.format(coin=self.story.coin_name()), "system")
+        text = HELP.format(coin=self.story.coin_name())
+        if has_timeline(self):
+            text += ("\n| Timeline:       TIMELINE shows the events you can fix to a time;"
+                     "\n|                 ARRANGE <letters> puts them in order")
+        self.say(text, "system")
+
+    def do_timeline(self, cmd: Command) -> None:
+        if not has_timeline(self):
+            self.fail("There is no timeline to be built in this case.")
+            return
+        show_board(self)
+
+    def do_arrange(self, cmd: Command) -> None:
+        if not has_timeline(self):
+            self.fail("There is no timeline to be built in this case.")
+            return
+        text = cmd.raw.split(None, 1)[1] if len(cmd.raw.split(None, 1)) > 1 else ""
+        arrange(self, text)
 
     def do_save(self, cmd: Command) -> None:
         self.save()

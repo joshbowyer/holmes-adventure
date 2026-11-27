@@ -1,0 +1,506 @@
+# ================================================================ Watson's own
+
+[items.watch]
+name = "watch"
+article = "my"
+aliases = ["my watch", "pocket watch", "pocket-watch", "hunter", "own watch"]
+location = "player"
+clue = "watch_set"
+description = "My own watch, a plain gold hunter that had come through Afghanistan with me. I had set it by the great clock at Waterloo the night before, so that it kept London time to the minute: the time of the railway, and now, by Act of Parliament, the time of the law."
+cant_take = "It was on its chain already."
+
+# ================================================================ the station
+
+[items.station_clock]
+name = "station clock"
+aliases = ["clock", "station's clock", "board", "greenwich time", "gilt letters"]
+location = "platform"
+scenery = true
+description = "A round white dial in a mahogany case, with the Company's name upon it. I compared it with my watch: they agreed to the minute, as they ought, both keeping London time."
+
+[items.fire_buckets]
+name = "fire buckets"
+aliases = ["buckets", "bucket", "sand"]
+location = "platform"
+scenery = true
+container = true
+description = "A row of red fire buckets on hooks under the eaves, half full of wet sand."
+details = [ { when = "loc:coin_station:fire_buckets", text = "Something small and brown lay on the sand in the end bucket." } ]
+
+[items.coin_station]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "fire_buckets"
+coin = true
+description = "A halfpenny of the old Queen's head."
+take_text = "I picked the halfpenny off the sand and put it in my pocket."
+
+[items.bradshaw]
+name = "Bradshaw"
+aliases = ["timetable", "railway guide", "guide"]
+location = "booking_office"
+scenery = true
+description = "The October number of Bradshaw's Railway Guide, chained to the counter by a length of brass chain. The page for the branch was well thumbed. Up trains to Exeter left Hatherleigh at 7.10 and 9.40 in the morning, and 2.15, 5.30 and 9.5 at night; a pencilled note in the margin, in the stationmaster's hand, read: \"9.5 p.m., new from 1st Oct. (was 8.50).\""
+
+[items.time_card]
+name = "printed card"
+aliases = ["card", "time signal", "signal card"]
+location = "booking_office"
+scenery = true
+description = "\"ELECTRIC TELEGRAPH. Greenwich Mean Time is signalled from the Royal Observatory at 10 a.m. daily. All clocks of the Company to be set by the signal.\""
+
+[items.telegraph]
+name = "telegraph instrument"
+aliases = ["telegraph", "instrument", "glass case"]
+location = "booking_office"
+scenery = true
+description = "A single-needle telegraph instrument under a glass case, its needle twitching now and then as the line talked to itself."
+
+[items.church_dial]
+name = "church clock"
+aliases = ["clock", "tower", "church tower", "dial", "clock-face", "clock face"]
+location = "station_road"
+scenery = true
+clue = "church_std"
+description = "From here the gilded dial on the church tower showed plain across the roofs. I compared it with my watch, and found it sixteen minutes slow. It was not, I gathered, a matter of neglect: a clock so handsomely kept is not sixteen minutes slow by accident."
+
+# ================================================================ the square and the streets
+
+[items.pens]
+name = "hurdles"
+aliases = ["cattle pens", "pens", "hurdle", "pump", "straw"]
+location = "square"
+scenery = true
+container = true
+description = "The hurdles of the market pens, stacked against the pump, and a great deal of straw trodden into the mud about them."
+details = [ { when = "loc:coin_square:pens", text = "Something glinted in the straw at the foot of the stack." } ]
+
+[items.coin_square]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "pens"
+coin = true
+description = "A halfpenny, dropped by some drover on market day."
+take_text = "I picked the halfpenny out of the straw and put it in my pocket."
+
+[items.brass_plate]
+name = "brass plate"
+aliases = ["plate"]
+location = "square"
+scenery = true
+description = "\"J. GLOYNE. ATTORNEY & SOLICITOR. Clerk to the Justices. Clerk to the Hatherleigh Market Trust.\""
+
+[items.gutter]
+name = "gutter"
+aliases = ["leaves", "drain"]
+location = "church_street"
+scenery = true
+container = true
+description = "A stone gutter choked with sodden leaves."
+details = [ { when = "loc:coin_street:gutter", text = "The edge of a coin showed among the leaves." } ]
+
+[items.coin_street]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "gutter"
+coin = true
+description = "A halfpenny, very muddy."
+take_text = "I fished the halfpenny out of the leaves and put it in my pocket."
+
+[items.cottages]
+name = "cottages"
+aliases = ["cottage", "cob cottages", "thatch"]
+location = "church_street"
+scenery = true
+description = "Old cob cottages, their thatch black with wet. Not a curtain stirred."
+
+# ================================================================ the school
+
+[items.school_clock]
+name = "school clock"
+aliases = ["clock", "deal case", "school's clock"]
+location = "schoolroom"
+scenery = true
+clue = "school_std"
+description = "A plain eight-day clock in a deal case, such as every board school in England buys by the gross. I compared it with my watch, and then again, to be sure: it was sixteen minutes slow by London time. Whatever the schoolmaster might suppose, his clock was keeping church time."
+
+[items.master_desk]
+name = "master's desk"
+aliases = ["desk", "high desk", "master's high desk"]
+location = "schoolroom"
+scenery = true
+container = true
+openable = true
+description = "The master's high desk, with a sloping lid."
+open_text = "I raised the lid of the desk."
+
+[items.minute_book]
+name = "minute book"
+aliases = ["managers' minute book", "minutes", "book"]
+location = "master_desk"
+clue = "minute_book"
+description = """
+The minute book of the Managers of Hatherleigh National School. On the flyleaf: "Chairman, the Rev. O. Squance. Treasurer, A. Vodden, Esq. Clerk, J. Gloyne, Esq." The last entry, in Gloyne's neat hand:
+
+| Monday 17th October 1881. Present: the Chairman, Mr Vodden,
+| the Clerk. ... The Chairman remarked that the School clock
+| had once more been set to London time, contrary to his
+| repeated wish, and himself put it back to the time of the
+| Parish Church before the meeting rose.
+"""
+take_text = "I took the minute book. The schoolmaster, I thought, would not grudge it me."
+
+[items.school_things]
+name = "desks"
+aliases = ["forms", "map", "map of the holy land", "stove", "slates"]
+location = "schoolroom"
+scenery = true
+description = "Desks and forms scored with generations of initials, a map of the Holy Land, a cold stove. Nothing here had been disturbed."
+
+[items.chessboard]
+name = "chess-board"
+aliases = ["chess board", "chessboard", "chess", "pieces", "game"]
+location = "schoolhouse"
+scenery = true
+description = "An unfinished game. White, I judged, had been playing very wildly: he had thrown away a knight and a bishop in a dozen moves, as a man does whose mind is on something else entirely."
+
+# ================================================================ Fore House
+
+[items.hall_clock]
+name = "long-case clock"
+aliases = ["clock", "long case clock", "grandfather clock", "hall clock"]
+location = "fore_hall"
+scenery = true
+clue = "gloyne_church_time"
+description = "A fine old long-case clock with a painted moon in the arch. By my watch it was sixteen minutes slow, to a hair. Mr Gloyne, it seemed, had kept church time in his own house."
+
+[items.body]
+name = "body"
+aliases = ["sheet", "gloyne", "josiah gloyne", "mr gloyne", "dead man", "corpse", "wound", "sofa"]
+location = "office"
+scenery = true
+clue = "wound"
+description = "I turned back the sheet. Josiah Gloyne had been a spare, grey, close-shaven man of sixty, with a lawyer's thin mouth. He had been shot once, through the chest, a little to the left of the breastbone, and the ball had gone clean through him. There was a ring of powder-blackening on his waistcoat round the hole: the shot had been fired from no more than a yard or two, and from in front. He had been standing, I thought, and facing whoever killed him."
+
+[items.bullet_hole]
+name = "hole"
+aliases = ["panelling", "bullet hole", "panel"]
+location = "office"
+scenery = true
+description = "A neat, fresh cut in the panelling where somebody, the sergeant I supposed, had dug out the ball. It was at about the height of a standing man's heart."
+
+[items.desk]
+name = "desk"
+aliases = ["mahogany desk", "drawers", "drawer"]
+location = "office"
+scenery = true
+container = true
+openable = true
+description = "A broad mahogany desk, its top bare but for an inkstand and the blotter, with a drawer on either side."
+open_text = "I opened the drawers of the desk. The sergeant made no objection."
+
+[items.diary]
+name = "diary"
+aliases = ["engagement diary", "appointment book", "book"]
+location = "desk"
+clue = "diary"
+description = """
+Gloyne's engagement diary for 1881, in his small, precise hand. The entry for Tuesday the 18th read:
+
+| 11 o'c. Petty Sessions.  3 o'c. Mr Luxton, Week Farm, re
+| mortgage: will NOT extend.  9 o'c. The Treasurer. Last chance.
+"""
+take_text = "I took the diary. Sergeant Pascoe made a note of it."
+
+[items.draft_notice]
+name = "draft notice"
+aliases = ["notice", "draft", "paper", "foolscap"]
+location = "desk"
+clue = "draft_notice"
+description = """
+A sheet of foolscap in Gloyne's hand, much corrected:
+
+| HATHERLEIGH MARKET TRUST. Notice is hereby given that a Special
+| Meeting of the Trustees will be held at the Town Hall on Thursday
+| the 20th inst. at noon, to consider the state of the Treasurer's
+| account, in which the Clerk has found a deficiency of £812.
+"""
+take_text = "I folded the draft and put it in my pocket."
+
+[items.gloyne_pistol]
+name = "pistol"
+aliases = ["gloyne's pistol", "pocket pistol", "his pistol"]
+location = "desk"
+scenery = true
+clue = "desk_pistol"
+description = "A little double-barrelled pocket pistol, loaded in both barrels, the caps on the nipples. Neither barrel had been fired, and the inside of each was clean and bright. Whatever had happened in this room, Gloyne had never reached for it."
+
+[items.office_window]
+name = "window"
+aliases = ["office window", "deed-boxes", "deed boxes", "boxes"]
+location = "office"
+scenery = true
+description = "The window gave on the square and was fastened on the inside. The deed-boxes were all locked and dusty."
+
+[items.sideboard]
+name = "sideboard"
+aliases = ["breakfast", "cold breakfast", "shutters"]
+location = "dining_room"
+scenery = true
+description = "Cold ham, cold eggs and cold tea. Nobody in that house had any appetite this morning."
+
+[items.garden_door]
+name = "garden door"
+aliases = ["door", "porch", "bolt", "bolts"]
+location = "garden"
+scenery = true
+description = "A stout door with a great iron bolt at top and bottom on the inside, and an old lock whose key stood in it."
+
+[items.scraper]
+name = "boot-scraper"
+aliases = ["scraper", "boot scraper", "step"]
+location = "garden"
+scenery = true
+container = true
+description = "An iron boot-scraper set in a stone by the step, clogged with garden earth."
+details = [ { when = "loc:coin_garden:scraper", text = "Something round was caught in the clogged earth under the blade." } ]
+
+[items.coin_garden]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "scraper"
+coin = true
+description = "A halfpenny, scraped bright along one edge."
+take_text = "I worked the halfpenny out from under the blade and put it in my pocket."
+
+[items.oak_gate]
+name = "oak gate"
+aliases = ["gate", "door in the wall", "little gate"]
+location = "garden"
+scenery = true
+description = "A solid little gate of oak let into the churchyard wall, with a lock on the churchyard side and a latch on this. It was not locked now."
+
+[items.beds]
+name = "beds"
+aliases = ["paths", "garden beds"]
+location = "garden"
+scenery = true
+description = "Bare black earth, dug over for the winter. Nobody had trodden on it."
+
+# ================================================================ the church
+
+[items.path]
+name = "path"
+aliases = ["gravel path", "gravel", "footprints", "prints", "marks"]
+location = "churchyard"
+scenery = true
+clue = "prints"
+description = "The gravel path was thin and old, and the rain had washed the earth up through it. Between the little oak gate from Fore House and the lych gate on School Lane it held a line of a man's footprints, long-strided and sharp-edged, the toes pointing towards School Lane: a man walking fast, or half running. They were sharp because they had been made after the rain stopped; anything made while it fell would have been blurred to nothing. Nobody else, it seemed, had come that way since."
+
+[items.tombs]
+name = "table tombs"
+aliases = ["tombs", "tomb", "headstones", "headstone", "lichen"]
+location = "churchyard"
+scenery = true
+container = true
+description = "Old slate headstones and table tombs, the inscriptions furred over with lichen."
+details = [ { when = "loc:coin_churchyard:tombs", text = "On the ledge of the nearest table tomb, as if set there by a child, lay a coin." } ]
+
+[items.coin_churchyard]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "tombs"
+coin = true
+description = "A halfpenny, green with the wet."
+take_text = "I took the halfpenny from the tomb, with an apology to its tenant, and put it in my pocket."
+
+[items.lych_gate]
+name = "lych gate"
+aliases = ["lych-gate", "lychgate", "shingles"]
+location = "churchyard"
+scenery = true
+description = "A roofed gate of old oak, with a stone bench either side under the shingles. It had a good modern lock."
+
+[items.iron_gates]
+name = "iron gates"
+aliases = ["gates"]
+location = "churchyard"
+scenery = true
+description = "Tall iron gates on the square, chained and locked every evening at dusk, by the look of the chain."
+
+[items.notice_board]
+name = "notice-board"
+aliases = ["notice board", "noticeboard", "notices", "vestry notice"]
+location = "nave"
+scenery = true
+clue = "vestry_motion"
+description = """
+Among the notices of banns and charities was one freshly pinned:
+
+| PARISH OF HATHERLEIGH. At a Vestry held on the 6th inst., on
+| the motion of Mr J. Gloyne, it was Resolved that the Church
+| Clock be henceforth kept to Greenwich Mean Time, being the
+| legal time of the Realm. To be confirmed at an adjourned Vestry
+| on Thursday the 20th inst.
+
+Somebody had written across it in pencil, in a scholarly hand: "Not while I am Vicar."
+"""
+
+[items.pews]
+name = "box pews"
+aliases = ["pews", "pew", "hassocks", "roof"]
+location = "nave"
+scenery = true
+description = "High box pews with doors, each with its family's name painted on the door."
+
+[items.parish_chest]
+name = "parish chest"
+aliases = ["chest", "cope-chest", "surplices"]
+location = "vestry"
+scenery = true
+description = "An ancient iron-bound chest with three locks, beside the cope-chest and the surplices on their pegs."
+
+[items.clockworks]
+name = "clock"
+aliases = ["works", "church clock", "pendulum", "weights", "rods", "wheels"]
+location = "clock_chamber"
+scenery = true
+description = "A good, heavy turret clock, well oiled and well kept. It struck the quarters on two small bells and the hours on the great one, each hammer drawn up and let fall by a wheel on its own train; standing here, a man would hear every stroke of the bell above him as plain as a blow on the head, and see the hammer move."
+
+[items.frame]
+name = "iron frame"
+aliases = ["frame"]
+location = "clock_chamber"
+scenery = true
+container = true
+description = "The great iron frame of the clock, bolted to oak beams."
+details = [ { when = "loc:coin_tower:frame", text = "On the flat top of the frame, in the dust, lay a coin." } ]
+
+[items.coin_tower]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "frame"
+coin = true
+description = "An old halfpenny, very dusty."
+take_text = "I took the halfpenny from the top of the frame and blew the dust off it."
+
+[items.louvres]
+name = "louvres"
+aliases = ["louvre", "slats", "view", "roof"]
+location = "clock_chamber"
+scenery = true
+description = "Through the slats I looked down on the slate roof of Fore House, its garden, the little oak gate in the churchyard wall, and the line of the path to the lych gate. In the dark, with the rain on the louvres, a man up here would have seen nothing at all."
+
+# ================================================================ the King's Arms
+
+[items.inn_clock]
+name = "inn clock"
+aliases = ["clock", "dial", "carved case", "railway time kept here", "notice", "painted letters"]
+location = "tap"
+scenery = true
+clue = "inn_std"
+description = "A big dial in a carved oak case, and under it the landlord's boast in red and white paint: RAILWAY TIME KEPT HERE. I compared the clock with my watch: it was a minute fast, no more. Railway time it was."
+
+[items.settle]
+name = "settle"
+aliases = ["settle by the fire", "cushion", "fire"]
+location = "tap"
+scenery = true
+container = true
+description = "A high-backed oak settle by the fire, with a flat cushion on its seat."
+details = [ { when = "loc:coin_tap:settle", text = "Wedged down the back of the cushion was a coin." } ]
+
+[items.coin_tap]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "settle"
+coin = true
+description = "A halfpenny, warm from the fire."
+take_text = "I pulled the halfpenny out from behind the cushion and pocketed it."
+
+[items.bar]
+name = "bar"
+aliases = ["long bar", "black oak"]
+location = "tap"
+scenery = true
+description = "A long bar of black oak, polished by elbows."
+
+[items.trough]
+name = "horse-trough"
+aliases = ["trough", "horse trough", "pump"]
+location = "inn_yard"
+scenery = true
+container = true
+description = "A stone horse-trough under the yard pump, brim-full of clear water."
+details = [ { when = "loc:coin_yard:trough", text = "A coin lay on the bottom, plain to see through the water." } ]
+
+[items.coin_yard]
+name = "halfpenny"
+aliases = ["coin", "ha'penny", "halfpence"]
+location = "trough"
+coin = true
+description = "A halfpenny, cold from the trough."
+take_text = "I rolled up my sleeve and took the halfpenny from the bottom of the trough."
+
+[items.mare]
+name = "grey mare"
+aliases = ["mare", "horse", "stables", "stable", "half-door"]
+location = "inn_yard"
+scenery = true
+description = "A big, gentle grey mare with a fresh graze on one hip and another on her hock, as a horse gets that has been cast in her stall and struggled to get up."
+
+[items.omnibus]
+name = "omnibus"
+aliases = ["station omnibus", "bus", "cart-shed", "cart shed"]
+location = "inn_yard"
+scenery = true
+description = "The station omnibus, with KING'S ARMS, HATHERLEIGH. MEETS ALL TRAINS painted on its side."
+
+[items.prize_prints]
+name = "prints"
+aliases = ["coloured prints", "bullocks", "wax fruit"]
+location = "parlour"
+scenery = true
+description = "Prize bullocks of the district, each the shape of a sofa, with their owners standing proudly by."
+
+# ================================================================ the bank
+
+[items.bank_clock]
+name = "bank clock"
+aliases = ["clock", "seconds hand"]
+location = "bank"
+scenery = true
+clue = "bank_std"
+description = "A handsome regulator with a seconds hand, as a bank should have. By my watch it kept London time to the minute."
+
+[items.counter]
+name = "counter"
+aliases = ["long counter", "scales", "brass scales", "rails"]
+location = "bank"
+scenery = true
+description = "A long mahogany counter with brass rails and a pair of gold-scales, and a shallow drawer under the counter at the clerk's place."
+
+[items.counter_drawer]
+name = "drawer"
+aliases = ["counter drawer", "clerk's drawer", "shallow drawer"]
+location = "bank"
+scenery = true
+container = true
+openable = true
+description = "A shallow drawer under the counter at the clerk's place."
+open_text = "Pring hesitated, then opened the drawer for me. In it lay the Bank's revolver."
+
+[items.revolver]
+name = "revolver"
+aliases = ["bank revolver", "bank's revolver", "gun", "pistol"]
+location = "counter_drawer"
+take_text = "Pring opened his mouth to protest, and shut it again. I put the revolver in my coat pocket."
+clue = "revolver"
+description = "A small five-chambered revolver of the kind banks keep against robbers, of about .38 calibre. Four chambers were loaded. The fifth held an empty, blackened case, and the barrel, when I sniffed it, was foul and smelt of burnt powder. It had been fired, and not cleaned since."
+
+[items.safe]
+name = "safe"
+aliases = ["green safe", "roll-top desk", "desk", "engraving", "roll top desk"]
+location = "agent_room"
+scenery = true
+description = "A green safe by Milner, a roll-top desk shut and locked, and the Bank's head office engraved in the grand manner."

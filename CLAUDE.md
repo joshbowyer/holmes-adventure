@@ -161,8 +161,11 @@ Exploration premises:
 - **Engine built (2026-11-26).** Runtime targets Python 3.10+; the build step needs 3.11+
   (tomllib). On this Windows dev machine Python is reached as `py` (3.15).
   - `holmes/engine/`: game loop and verbs (`game.py`), parser, conditions/effects language,
-    state, hints (coins), saves, text/colour. `holmes/puzzles/`: final-puzzle types (only
-    `accuse` so far). `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
+    state, hints (coins), saves, text/colour. `holmes/puzzles/`: final-puzzle types: `accuse`
+    (multiple choice) and `timeline` (accuse plus an ordering step: `final.timeline` has
+    `cards` {clue id: label giving the time as stated}, `order`, `wrong_ending`; during
+    play TIMELINE shows found cards lettered in the order found, ARRANGE <letters> orders
+    them, saved in `state.arrangement`; a wrong order plays `wrong_ending`). `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
   - Story sources: `spoilers/stories/<id>/*.toml` (all files in a folder are merged).
     `python -m holmes.build` validates and writes scrambled `holmes/data/<id>.case`.
   - Each source has a private `[test]` section: `walkthrough` (must solve the case, find
@@ -170,7 +173,12 @@ Exploration premises:
     ending). Run `python -m unittest`. Tests never print story text.
   - Shipped so far: `tutorial` (practice case, played and approved by the user),
     `bellboard` (E1, 19 rooms, 12 people; played and approved, "perfect") and
-    `bazalgette` (E2, 16 rooms, 10 people, 31 clues; not yet played). Bibles live in
+    `bazalgette` (E2, 16 rooms, 10 people, 31 clues; played, finished: "a little clunkier
+    than the previous one" because the syntax had grown and the text hadn't caught up,
+    since fixed by the signposting rule) and `clocks` (deduction case 2, The Two Clocks of
+    Hatherleigh, 21 rooms, 14 people, 39 clues, 9 timeline cards, 8 halfpence; first
+    `timeline` case; set "a little harder" than E2 at the user's request; not yet played).
+    Bibles live in
     `spoilers/stories/<id>/bible.md`.
   - Timed cases (added for E2): `case.counters` (named ints), conditions `lt:/ge:/eq:NAME:N`,
     effects `add:NAME:N` / `setn:NAME:N`, `case.every_turn` events run after each timed
@@ -191,7 +199,7 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays Below Bazalgette and gives feedback (especially on
-  how the tide and oil limits feel). Then pick the next case; the deduction cases will need
-  new final-puzzle types in `holmes/puzzles/` (timeline, seating, Morse tape, record
-  tables, telegram queue).
+- Next step from here: the user plays The Two Clocks of Hatherleigh and gives feedback
+  (especially on the TIMELINE/ARRANGE board and the difficulty). Then pick the next case;
+  the remaining deduction cases need new final-puzzle types in `holmes/puzzles/` (seating,
+  Morse tape, record tables, telegram queue, cylinder).

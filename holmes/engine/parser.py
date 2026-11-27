@@ -39,6 +39,8 @@ BUILTIN_VERBS = {
     "exits": ["exits", "ways"],
     "wait": ["wait", "z"],
     "status": ["status", "time"],
+    "timeline": ["timeline", "board", "events"],
+    "arrange": ["arrange", "order", "reorder", "sort"],
     "again": ["again", "g"],
 }
 

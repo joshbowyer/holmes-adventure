@@ -27,39 +27,61 @@ class AccusePuzzle:
         self.spec = spec
 
     def run(self) -> None:
+        if not self.gate():
+            return
+        answers = self.ask()
+        if answers is None or not self.confirm():
+            return self.stop()
+        self.judge(*self.ending_for(answers))
+
+    # --- the steps, shared with puzzles built on this one ------------------------------
+
+    def gate(self) -> bool:
         g, spec, st = self.game, self.spec, self.game.state
         if st.solved:
             g.say("The case is closed.")
-            return
+            return False
         if not check(st, spec.get("when")):
             g.say(spec.get("locked_text",
                            "You turn the matter over, but you have not yet facts enough to "
                            "build upon. Better to look further."))
-            return
+            return False
         if spec.get("intro"):
             g.say(spec["intro"])
-        answers = {}
-        for q in spec["questions"]:
+        return True
+
+    def stop(self) -> None:
+        self.game.say("You decide to gather more facts before committing yourself.")
+
+    def ask(self) -> dict | None:
+        st, answers = self.game.state, {}
+        for q in self.spec["questions"]:
             opts = [o for o in q["options"] if check(st, o.get("when"))]
             choice = self.choose(q["prompt"], opts)
             if choice is None:
-                g.say("You decide to gather more facts before committing yourself.")
-                return
+                return None
             answers[q["id"]] = choice
-        confirm = g.io.read("Is that your final word? (y/n) ")
-        if (confirm or "").strip().lower() not in YES:
-            g.say("You decide to gather more facts before committing yourself.")
-            return
+        return answers
+
+    def confirm(self) -> bool:
+        confirm = self.game.io.read("Is that your final word? (y/n) ")
+        return (confirm or "").strip().lower() in YES
+
+    def ending_for(self, answers: dict) -> tuple[str, bool]:
+        spec = self.spec
         if all(answers.get(k) == v for k, v in spec["solution"].items()):
-            g.show_ending(spec["good"])
-            g.case_closed()
-            return
-        ending = spec["default_wrong"]
+            return spec["good"], True
         for w in spec.get("wrong", []):
             if all(answers.get(k) == v for k, v in w["answers"].items()):
-                ending = w["ending"]
-                break
+                return w["ending"], False
+        return spec["default_wrong"], False
+
+    def judge(self, ending: str, good: bool) -> None:
+        g, st = self.game, self.game.state
         g.show_ending(ending)
+        if good:
+            g.case_closed()
+            return
         st.wrong += 1
         g.note(f"[That was not the truth of the matter. Wrong conclusions so far: {st.wrong}. "
                "The case is still open.]")

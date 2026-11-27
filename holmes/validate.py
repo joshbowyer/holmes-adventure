@@ -151,7 +151,19 @@ def validate(data: dict) -> list[str]:
     final = data.get("final")
     if not final:
         errs.append("final: missing")
-    elif final.get("type", "accuse") == "accuse":
+    elif final.get("type", "accuse") in ("accuse", "timeline"):
+        if final.get("type") == "timeline":
+            tl = final.get("timeline", {})
+            cards, order = tl.get("cards", {}), tl.get("order", [])
+            for cid in cards:
+                if cid not in clues:
+                    errs.append(f"final timeline: card {cid!r} is not a clue")
+            if sorted(order) != sorted(cards) or len(set(order)) != len(order):
+                errs.append("final timeline: order must list every card exactly once")
+            if len(cards) > 26:
+                errs.append("final timeline: more than 26 cards")
+            if tl.get("wrong_ending") not in endings:
+                errs.append(f"final timeline: wrong_ending {tl.get('wrong_ending')!r} does not exist")
         conds.append(("final.when", final.get("when")))
         qopts = {}
         for q in final.get("questions", []):

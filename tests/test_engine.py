@@ -210,6 +210,27 @@ class GameTests(unittest.TestCase):
         bad["case"]["every_turn"][0]["effects"] = ["add:fuel:-1"]
         self.assertTrue(any("unknown counter" in e for e in validate(bad)))
 
+    def test_timeline_board_and_final(self):
+        import copy
+        data = copy.deepcopy(FIXTURE)
+        data["final"].update({"type": "timeline", "when": ["clue:found_key", "clue:rope_pulled"],
+                              "timeline": {"cards": {"rope_pulled": "Rope.", "found_key": "Key."},
+                                           "order": ["rope_pulled", "found_key"],
+                                           "wrong_ending": "lose"}})
+        self.assertEqual(validate(data), [])
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.state.clues += ["found_key", "rope_pulled"]          # dealt as A (key), B (rope)
+        g.handle("arrange c")
+        self.assertEqual((g.state.arrangement, g.state.turns), ([], 0))   # no such card: free
+        g.handle("arrange a b")
+        self.assertEqual(g.state.arrangement, ["found_key", "rope_pulled"])
+        g.io.inputs += ["", "1", "y", ""]                       # stand by A B: wrong order
+        g.handle("accuse")
+        self.assertEqual((g.state.wrong, g.state.solved), (1, False))
+        g.io.inputs += ["ba", "", "1", "y"]                     # re-order at the accusation
+        g.handle("accuse")
+        self.assertTrue(g.state.solved)
+
     def test_wrong_then_right_accusation(self):
         g, _ = new_game(["2", "y", "", "1", "y"])
         g.handle("accuse")
