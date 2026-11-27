@@ -86,8 +86,9 @@ of her own sending with her habit of splitting the letter C. The same split C ru
   Rowse in December, and she is helpful, gentle and grieved.
   - Her fist: dashes 3, letter gap 3, word gap 6, and she **splits C** (she does not know
     it).
-  - When she imitates Pascoe she lengthens dashes to 4 and gaps to 4 (with an occasional
-    slip back to 3), but still splits her C's.
+  - When she imitates Pascoe she lengthens dashes to 4 and gaps to 4, but still splits
+    her C's. (An occasional slip back to 3-unit dashes was dropped after play: it
+    looked like Kitto's wobble and sent the player chasing noise.)
 - **Mrs Nance**, postmistress, her mother.
   - She was at the Wednesday class meeting at chapel from 6:30 to 7:30.
   - She came in at 7:35 and saw Loveday at the key "talking to Mr Pascoe".

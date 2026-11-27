@@ -241,7 +241,11 @@ Exploration premises:
     the seating was "too easy": testimony placed every sitter outright) and `fist`
     (deduction case 4, The Operator's Fist, 1887, Lizard coast, 15 rooms, 11 people,
     47 clues, 8 farthings; first `morse` case; a step harder than the Medium, with
-    passages whose sender must be inferred; not yet played).
+    passages whose sender must be inferred; played and finished 2026-11-27. Tape
+    reading and DECODE/ATTRIBUTE worked; the snag was noise: a minor fault in one
+    fist (an occasional short dash) looked like another fist's wobble, and the player
+    chased every discrepancy. Removed. **Every visible quirk in a puzzle should mean
+    something; don't add texture that resembles a real tell.**
   - **Difficulty trajectory** (user, 2026-11-27): make each new case a little harder than
     the last, unless the user says the latest one was a little too hard. Don't ask about
     difficulty each time; just step it up.
@@ -271,7 +275,6 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays The Operator's Fist and gives feedback
-  (especially on reading tape and the DECODE/ATTRIBUTE flow). Then pick the next case;
-  the remaining deduction cases need new final-puzzle types in `holmes/puzzles/`
+- Next step from here: build the next case (the user asked to proceed, 2026-11-27).
+  The remaining deduction cases need new final-puzzle types in `holmes/puzzles/`
   (record tables, telegram queue, cylinder).

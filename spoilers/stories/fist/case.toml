@@ -434,7 +434,7 @@ incomplete_ending = "loose_ends"
 [final.morse.fists]
 pascoe = { dot = 1, dash = 4, gap = 1, letter = 4, word = 8 }
 nance = { dot = 1, dash = 3, gap = 1, letter = 3, word = 6, split = ["C"] }
-as_pascoe = { dot = 1, dash = 4, gap = 1, letter = 4, word = 8, split = ["C"], slip = 5 }
+as_pascoe = { dot = 1, dash = 4, gap = 1, letter = 4, word = 8, split = ["C"] }
 tagg = { dot = 1, dash = 2, gap = 1, letter = 2, word = 4 }
 kitto = { dot = 1, dash = 3, gap = 1, letter = 3, word = 6, wobble = 1 }
 
