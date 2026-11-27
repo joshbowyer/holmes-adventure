@@ -174,6 +174,23 @@ class GameTests(unittest.TestCase):
         g.handle("ask bob about key")
         self.assertIsNone(current_hint(g))
 
+    def test_hint_parts_name_only_what_is_left(self):
+        from holmes.engine.hints import tiers
+        g, _ = new_game()
+        h = {"id": "p", "texts": ["gentle"], "parts": [
+            {"done": "clue:found_key", "text": "FIND KEY."},
+            {"done": "clue:rope_pulled", "text": "PULL ROPE."}]}
+        self.assertEqual(tiers(g, h), ["gentle", '"FIND KEY. PULL ROPE."'])
+        g.state.clues.append("found_key")
+        self.assertEqual(tiers(g, h)[-1], '"PULL ROPE."')
+
+    def test_pronouns_reach_the_person_here(self):
+        g, _ = new_game()
+        g.handle("n")
+        g.handle("ask him about key")
+        self.assertIn("asked", g.state.flags)
+        self.assertIn("bob", g.state.met)
+
     def test_cheat_word_grants_a_free_coin(self):
         g, _ = new_game()
         g.handle("Persian Slipper")

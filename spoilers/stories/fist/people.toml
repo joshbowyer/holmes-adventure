@@ -269,9 +269,14 @@ text = '''"He dined in the coffee room on Wednesday from six o'clock, sir, with 
 effects = ["clue:tagg_dinner"]
 
 [[characters.hosken.topics.out]]
-aliases = ["went out", "when he went out", "mud", "brandy", "back"]
+aliases = ["went out", "when he went out", "when tagg went out", "when mr tagg went out", "out", "mud", "brandy", "back", "came back", "half past nine"]
 text = '''"At half past eight he put on his coat and went out by the street door, sir, and said he'd take a turn. He came in again at half past nine by the taproom clock, red mud to his knees and blowing like a grampus, and called for a brandy, and took it up to his room."'''
 effects = ["clue:tagg_out"]
+
+[[characters.hosken.topics.tagg]]
+aliases = ["mr tagg", "london gentleman", "my london gentleman", "gentleman", "him", "wednesday evening", "evening", "going out", "him going out"]
+text = '''"A free-handed gentleman, sir, I'll say that, though short with the girl. Wednesday he dined in the coffee room from six o'clock with the commercial gentleman from Redruth and the curate, and never stirred from the table till half past eight; I waited on them myself. Then he put on his coat and went out by the street door for a turn, he said, and came in again at half past nine by the taproom clock, red mud to his knees and blowing like a grampus, and called for a brandy and took it up to his room."'''
+effects = ["clue:tagg_dinner", "clue:tagg_out"]
 
 [characters.tagg]
 name = "Mr Tagg"

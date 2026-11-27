@@ -10,6 +10,8 @@ from holmes.engine import saves
 from holmes.engine.conditions import check, split_term
 from holmes.engine.hints import give_hint
 from holmes.engine.parser import DIRECTIONS, Command, build_verb_map, parse
+
+PRONOUNS = {"him", "her", "them", "he", "she"}
 from holmes.engine.state import GameState
 from holmes.engine.story import Story, as_list
 from holmes.puzzles import morse
@@ -536,9 +538,21 @@ class Game:
         return [c for c in self.contents(self.state.room) if self.story.is_character(c)]
 
     def _person(self, phrase: str, verb: str) -> str | None:
-        if not phrase:
-            people = self._people_here()
+        people = self._people_here()
+        if phrase in PRONOUNS:
+            # "ask him about…": the one person here, or the last one spoken to here.
+            last = getattr(self, "last_person", None)
             if len(people) == 1:
+                phrase = ""
+            elif last in people:
+                return last
+            else:
+                self.fail(f"{verb.capitalize()} whom? Name them.")
+                return None
+        if not phrase:
+            if len(people) == 1:
+                self.state.met.add(people[0])
+                self.last_person = people[0]
                 return people[0]
             self.fail(f"{verb.capitalize()} whom?")
             return None
@@ -549,6 +563,7 @@ class Game:
             self.fail("You receive no answer.")
             return None
         self.state.met.add(tid)
+        self.last_person = tid
         return tid
 
     def do_talk(self, cmd: Command) -> None:

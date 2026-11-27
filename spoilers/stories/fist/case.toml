@@ -171,74 +171,177 @@ text = "The 1885 coil, decoded: at 12:12 Porthkellis answered the Head at last, 
 id = "lineman"
 done = ["clue:single_wire", "clue:fists"]
 texts = [
-  "\"There is a man in the lane who knows this wire better than anyone living. Before you read a single tape, Watson, learn how the thing works.\"",
-  "\"In the lane, TALK TO BOLITHO and ASK HIM ABOUT HOW IT WORKS, ABOUT FISTS and ABOUT THE PORTHKELLIS OFFICE.\"",
+  "\"There is a man in the lane who knows this wire better than anyone living. Before you read a single tape, Watson, learn how the thing works.\""
 ]
+
+[[hints.parts]]
+done = "clue:single_wire"
+text = "In the lane, TALK TO BOLITHO and ASK HIM ABOUT HOW IT WORKS."
+
+[[hints.parts]]
+done = "clue:fists"
+text = "Ask Bolitho ABOUT FISTS."
+
+[[hints.parts]]
+done = "clue:sounder_office"
+text = "Ask Bolitho ABOUT THE PORTHKELLIS OFFICE."
 
 [[hints]]
 id = "roll"
 done = ["clue:evening_roll", "clue:code_card"]
 texts = [
-  "\"The machine at my elbow writes down everything that passes on the line. You will want what it wrote on Wednesday, and something to read it by.\"",
-  "\"In the instrument room, EXAMINE THE INKER, TAKE THE ROLL and EXAMINE it, and EXAMINE THE CARD on the wall.\"",
+  "\"The machine at my elbow writes down everything that passes on the line. You will want what it wrote on Wednesday, and something to read it by.\""
 ]
+
+[[hints.parts]]
+done = "clue:evening_roll"
+text = "In the instrument room, EXAMINE THE INKER, TAKE THE ROLL and EXAMINE it."
+
+[[hints.parts]]
+done = "clue:code_card"
+text = "EXAMINE THE CARD on the wall of the instrument room."
 
 [[hints]]
 id = "body"
 done = ["clue:wound", "clue:surgeon", "clue:lamp_dry", "clue:tagg_note"]
 texts = [
-  "\"You are the medical man, Watson. The body is in the flag store, with the Inspector and everything that was found by it.\"",
-  "\"In the flag store, EXAMINE THE BODY and THE SHELF. TAKE THE LANTERN and THE NOTE and examine both. TALK TO TREVAIL and ASK HIM ABOUT THE SURGEON, THE WIRE and TAGG.\"",
+  "\"You are the medical man, Watson. The body is in the flag store, with the Inspector and everything that was found by it.\""
 ]
+
+[[hints.parts]]
+done = "clue:wound"
+text = "In the flag store, EXAMINE THE BODY."
+
+[[hints.parts]]
+done = "clue:lamp_dry"
+text = "In the flag store, EXAMINE THE SHELF, TAKE THE LANTERN and examine it."
+
+[[hints.parts]]
+done = "clue:tagg_note"
+text = "TAKE THE NOTE from the shelf in the flag store and examine it."
+
+[[hints.parts]]
+done = "clue:surgeon"
+text = "TALK TO TREVAIL and ASK HIM ABOUT THE SURGEON, THE WIRE and TAGG."
 
 [[hints]]
 id = "kitto"
 done = ["clue:room_cold", "clue:lamp_hours", "clue:no_ship", "clue:practice_tape"]
 texts = [
-  "\"The young man who found him keeps the lookout, and the lamps. Hear him out, and look at his little practice set.\"",
-  "\"At the lookout, TALK TO KITTO and ASK HIM ABOUT HOW HE FOUND HIM, THE LAMPS, THE SHIP and MR TAGG. EXAMINE THE WATCH LOG and TAKE THE PRACTICE TAPE.\"",
+  "\"The young man who found him keeps the lookout, and the lamps. Hear him out, and look at his little practice set.\""
 ]
+
+[[hints.parts]]
+done = "clue:room_cold"
+text = "At the lookout, TALK TO KITTO and ASK HIM ABOUT HOW HE FOUND HIM."
+
+[[hints.parts]]
+done = "clue:lamp_hours"
+text = "Ask Kitto ABOUT THE LAMPS."
+
+[[hints.parts]]
+done = "clue:no_ship"
+text = "Ask Kitto ABOUT THE SHIP."
+
+[[hints.parts]]
+done = "clue:practice_tape"
+text = "At the lookout, EXAMINE THE WATCH LOG and TAKE THE PRACTICE TAPE."
 
 [[hints]]
 id = "hext"
 done = ["clue:overdue", "clue:false_report", "clue:tapes_rule"]
 texts = [
-  "\"Captain Hext can tell you what the lie was worth, and something of the man who was killed.\"",
-  "\"In the Lloyd's office, TALK TO HEXT and ASK HIM ABOUT THE OVERDUE MARKET, THE CORISANDE, WEDNESDAY EVENING and PASCOE.\"",
+  "\"Captain Hext can tell you what the lie was worth, and something of the man who was killed.\""
 ]
+
+[[hints.parts]]
+done = "clue:overdue"
+text = "In the Lloyd's office, TALK TO HEXT and ASK HIM ABOUT THE OVERDUE MARKET."
+
+[[hints.parts]]
+done = "clue:false_report"
+text = "Ask Hext ABOUT THE CORISANDE and WEDNESDAY EVENING."
+
+[[hints.parts]]
+done = "clue:tapes_rule"
+text = "Ask Hext ABOUT PASCOE."
 
 [[hints]]
 id = "widow"
 done = ["clue:battery_habit", "clue:money_lately", "clue:pocket_book"]
 texts = [
-  "\"The widow knew him better than his Captain did, and less than she thought.\"",
-  "\"In the cottage, TALK TO MRS PASCOE and ASK HER ABOUT AMOS, ABOUT MONEY and ABOUT THE POCKET-BOOK.\"",
+  "\"The widow knew him better than his Captain did, and less than she thought.\""
 ]
+
+[[hints.parts]]
+done = "clue:battery_habit"
+text = "In the cottage, TALK TO MRS PASCOE and ASK HER ABOUT AMOS."
+
+[[hints.parts]]
+done = "clue:money_lately"
+text = "Ask Mrs Pascoe ABOUT MONEY."
+
+[[hints.parts]]
+done = "clue:pocket_book"
+text = "Ask Mrs Pascoe ABOUT THE POCKET-BOOK."
 
 [[hints]]
 id = "village"
 done = ["clue:nance_account", "clue:mother_saw", "clue:tea_alone"]
 texts = [
-  "\"The other end of the wire is in Porthkellis. Go down and hear what was said on it.\"",
-  "\"In the post office at Porthkellis, TALK TO MISS NANCE and ASK HER ABOUT WEDNESDAY EVENING; TALK TO MRS NANCE and ASK HER ABOUT THE CLASS MEETING and THE OFFICE HOURS.\"",
+  "\"The other end of the wire is in Porthkellis. Go down and hear what was said on it.\""
 ]
+
+[[hints.parts]]
+done = "clue:nance_account"
+text = "In the post office at Porthkellis, TALK TO MISS NANCE and ASK HER ABOUT WEDNESDAY EVENING."
+
+[[hints.parts]]
+done = "clue:mother_saw"
+text = "In the post office, TALK TO MRS NANCE and ASK HER ABOUT THE CLASS MEETING."
+
+[[hints.parts]]
+done = "clue:tea_alone"
+text = "Ask Mrs Nance ABOUT THE OFFICE HOURS."
 
 [[hints]]
 id = "tagg"
 done = ["clue:tagg_dinner", "clue:tagg_out", "clue:tagg_lies"]
 texts = [
-  "\"The Inspector's man is at the Fisherman's Arms. Hear him, and hear his landlord.\"",
-  "\"At the inn, TALK TO HOSKEN and ASK HIM ABOUT HIS DINNER and WHEN HE WENT OUT. Then go into the coffee room, TALK TO TAGG and ASK HIM ABOUT THE CORISANDE.\"",
+  "\"The Inspector's man is at the Fisherman's Arms. Hear him, and hear his landlord.\""
 ]
+
+[[hints.parts]]
+done = "clue:tagg_dinner"
+text = "At the inn, TALK TO HOSKEN and ASK HIM ABOUT HIS DINNER."
+
+[[hints.parts]]
+done = "clue:tagg_out"
+text = "Ask Hosken ABOUT WHEN HE WENT OUT."
+
+[[hints.parts]]
+done = "clue:tagg_lies"
+text = "Go into the coffee room, TALK TO TAGG and ASK HIM ABOUT THE CORISANDE."
 
 [[hints]]
 id = "tagg_room"
 when = "visited:inn"
 done = ["clue:leete_letter", "clue:tagg_wire", "clue:tagg_boots"]
 texts = [
-  "\"Mr Tagg is detained in the coffee room. His bedroom is not.\"",
-  "\"Go UP from the taproom to Tagg's room. EXAMINE THE BOOTS, OPEN THE WRITING-CASE, and take and read the LETTER and the RECEIPT.\"",
+  "\"Mr Tagg is detained in the coffee room. His bedroom is not.\""
 ]
+
+[[hints.parts]]
+done = "clue:tagg_boots"
+text = "Go UP from the taproom to Tagg's room and EXAMINE THE BOOTS."
+
+[[hints.parts]]
+done = "clue:leete_letter"
+text = "In Tagg's room, OPEN THE WRITING-CASE, and take and read the LETTER."
+
+[[hints.parts]]
+done = "clue:tagg_wire"
+text = "In Tagg's room, OPEN THE WRITING-CASE, and take and read the RECEIPT."
 
 [[hints]]
 id = "confession"
@@ -253,9 +356,16 @@ texts = [
 id = "lifeboat"
 done = ["clue:gleaner", "clue:loveday_low"]
 texts = [
-  "\"Everyone in Porthkellis has been to the lifeboat house this week but you.\"",
-  "\"In the lifeboat house, TALK TO ROWSE and ASK HIM ABOUT THE DRILL, THE GLEANER and LOVEDAY, and EXAMINE THE BOARD.\"",
+  "\"Everyone in Porthkellis has been to the lifeboat house this week but you.\""
 ]
+
+[[hints.parts]]
+done = "clue:gleaner"
+text = "In the lifeboat house, TALK TO ROWSE and ASK HIM ABOUT THE GLEANER, and EXAMINE THE BOARD."
+
+[[hints.parts]]
+done = "clue:loveday_low"
+text = "Ask Rowse ABOUT LOVEDAY."
 
 [[hints]]
 id = "read"
@@ -271,9 +381,16 @@ id = "cell"
 when = ["clue:battery_habit"]
 done = ["clue:blackmail_book", "clue:wreck_tape"]
 texts = [
-  "\"A man who burns his tapes by the rule, and has money he cannot account for, and spends his evenings among the batteries. Where would such a man keep what he did not burn?\"",
-  "\"Go into the battery room behind the instrument room. EXAMINE THE CELLS, then THE CELL that has no wire. OPEN it.\"",
+  "\"A man who burns his tapes by the rule, and has money he cannot account for, and spends his evenings among the batteries. Where would such a man keep what he did not burn?\""
 ]
+
+[[hints.parts]]
+done = "clue:wreck_tape|clue:blackmail_book"
+text = "Go into the battery room behind the instrument room. EXAMINE THE CELLS, then THE CELL that has no wire. OPEN it."
+
+[[hints.parts]]
+done = ["clue:wreck_tape", "clue:blackmail_book"]
+text = "Take everything that is in the dry cell, and examine each thing."
 
 [[hints]]
 id = "wreck_read"

@@ -94,7 +94,11 @@ must never learn it outside the game.
   around each case's scenes; spending one buys a hint from Holmes. Hints must be
   state-aware: chosen from the player's current inventory, notebook and progress so a coin
   is never wasted on something already found or solved. Repeated hints on the same step get
-  firmer. Secret cheat word `persianslipper` (typed alone, spaces/case ignored) grants one
+  firmer. A step that covers several finds gives its plainest tier as `parts`
+  [{done, text}], and only the parts not yet done are told (user, 2026-11-27: hints
+  repeated things already done, and a step stuck on one missed piece). Hint commands
+  must really work as typed; ASK HIM / ASK HER reach the one person present or the
+  last one spoken to. Secret cheat word `persianslipper` (typed alone, spaces/case ignored) grants one
   coin of the current case's coinage, free of time; not listed in HELP (user, 2026-11-26).
 - **Wrong final answer:** the player sees that answer's bad ending in full, then may resume
   the case and try again. Wrong attempts are counted and shown on the case-closed screen.

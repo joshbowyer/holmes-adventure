@@ -150,6 +150,10 @@ def validate(data: dict) -> list[str]:
         if not as_list(h.get("texts")):
             errs.append(f"hint {hid}: no texts")
         conds.append((f"hint {hid}.when", h.get("when")))
+        for j, part in enumerate(h.get("parts", [])):
+            if not part.get("text"):
+                errs.append(f"hint {hid}: part {j} has no text")
+            conds.append((f"hint {hid}.parts[{j}].done", part.get("done")))
         conds.append((f"hint {hid}.done", h.get("done")))
 
     # final puzzle

@@ -133,7 +133,10 @@ def parse(line: str, verb_map: dict[str, str]) -> Command | None:
     if verb is None:
         return Command(None, " ".join(tokens[1:]), word=tokens[0], raw=raw)
 
-    rest = [t for t in rest if t not in ARTICLES]
+    # Articles go, except a pronoun standing alone ("ask her about…", "show it to her").
+    rest = [t for i, t in enumerate(rest)
+            if t not in ARTICLES
+            or (t == "her" and (i + 1 == len(rest) or rest[i + 1] in PREPOSITIONS))]
 
     if verb == "look" and rest:
         # "look north" moves you; "look cushion" examines it.
