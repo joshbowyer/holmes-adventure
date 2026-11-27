@@ -58,6 +58,10 @@ must never learn it outside the game.
   - When text reveals things found (in a pocket, under a cushion), name only things the
     player can actually take. No incidental clutter ("a pencil-stub, a cab-ticket") that
     can't be picked up.
+  - A description must not keep hinting at something once it has been taken (user,
+    2026-11-27: a grate still promised "something that had not burnt so well" after the
+    find was taken). Any hint of a takeable thing goes in a `details` entry gated on
+    `loc:ITEM:CONTAINER`, never in the base description.
   - **No grasping at straws** (user feedback on Below Bazalgette, 2026-11-26): every word
     the player needs must appear in text they have seen. Scenery is named in its room's
     text (or in something else there); parts worth examining are named in the parent's

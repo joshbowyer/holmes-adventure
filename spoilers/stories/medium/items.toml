@@ -491,8 +491,8 @@ aliases = ["ashes", "small grate", "fireplace", "fire"]
 location = "gale_room"
 scenery = true
 container = true
-description = "A small grate, full of ashes. Paper had been burnt in it, and something else that had not burnt so well."
-details = [ { when = "loc:cuff:gale_grate", text = "Among the ashes, scorched brown but not burnt through, lay a curl of starched white linen." } ]
+description = "A small grate, full of ashes. Paper had been burnt in it, and burnt thoroughly."
+details = [ { when = "loc:cuff:gale_grate", text = "Something else had been burnt with the paper that had not burnt so well: among the ashes, scorched brown but not burnt through, lay a curl of starched white linen." } ]
 
 [items.cuff]
 name = "cuff"
