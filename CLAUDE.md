@@ -58,6 +58,9 @@ must never learn it outside the game.
   - When text reveals things found (in a pocket, under a cushion), name only things the
     player can actually take. No incidental clutter ("a pencil-stub, a cab-ticket") that
     can't be picked up.
+  - Nothing can be taken before it is found (user, 2026-11-27: TAKE FARTHING worked
+    blind). The engine keeps a container's contents out of reach until the container
+    has been examined (`state.searched`) or, if it opens, opened.
   - A description must not keep hinting at something once it has been taken (user,
     2026-11-27: a grate still promised "something that had not burnt so well" after the
     find was taken). Any hint of a takeable thing goes in a `details` entry gated on

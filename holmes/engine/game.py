@@ -171,8 +171,15 @@ class Game:
         return [t for t, loc in self.state.locations.items() if loc == place and self.visible(t)]
 
     def accessible(self, tid: str) -> bool:
+        """Can the player reach into this container? Only once it is open, or, for one
+        that does not open, once it has been examined: what is in a jug or under a
+        cushion is not in reach until the player has looked there."""
         it = self.story.items.get(tid, {})
-        return bool(it.get("container")) and (not it.get("openable") or tid in self.state.opened)
+        if not it.get("container"):
+            return False
+        if it.get("openable"):
+            return tid in self.state.opened
+        return tid in self.state.searched
 
     def takeable_contents(self, place: str) -> list[str]:
         """What the game lists as 'you see': only things the player can pick up."""
@@ -402,6 +409,8 @@ class Game:
             self.describe_room()
             return
         tid = self.resolve(cmd.obj)
+        if tid is not None and self.story.items.get(tid, {}).get("container"):
+            self.state.searched.add(tid)     # even when a story action does the describing
         if tid is None or self.try_actions("examine", tid):
             return
         self.examine(tid)
@@ -414,6 +423,8 @@ class Game:
         if extras:
             text += " " + " ".join(extras)
         self.say(text)
+        if t.get("container"):
+            st.searched.add(tid)
         if self.accessible(tid):
             inside = self.takeable_contents(tid)
             if inside:

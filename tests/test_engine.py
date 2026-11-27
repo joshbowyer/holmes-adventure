@@ -292,6 +292,22 @@ class GameTests(unittest.TestCase):
         g.handle("accuse")
         self.assertTrue(g.state.solved)
 
+    def test_container_contents_hidden_until_searched(self):
+        """A coin in a jug can't be taken by guessing it is there (user, 2026-11-27)."""
+        import copy
+        data = copy.deepcopy(FIXTURE)
+        data["items"]["jug"] = {"name": "jug", "location": "b", "description": "J.",
+                                "scenery": True, "container": True}
+        data["items"]["coin1"]["location"] = "jug"
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.handle("n")
+        g.handle("take penny")
+        self.assertEqual((g.state.coins, g.state.turns), (0, 1))   # refused, no time
+        g.handle("examine jug")
+        g.handle("take penny")
+        self.assertEqual(g.state.coins, 1)
+        self.assertEqual(GameState.from_dict(g.state.to_dict()).searched, {"jug"})
+
     def test_morse_tapes_and_final(self):
         import copy
         from holmes.puzzles.morse import literal, render
