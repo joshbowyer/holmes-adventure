@@ -20,7 +20,7 @@ south = { to = "river_stairs", aliases = ["stairs", "river", "river stairs", "pa
 name = "The Foreman's Office"
 aliases = ["office", "foreman's office"]
 description = """
-A narrow room with a sloping desk under the window and a stove that roared and did little good. On the wall hung a great linen-backed plan of the Fleet and its branches, all coloured in blue and red; beside it a black board on which the day's tides were chalked, and a rack of iron keys and tackle each upon its numbered hook. The flushing log lay open on the desk beside the key book.
+A narrow room with a sloping desk under the window and a stove that roared and did little good. On the wall hung a great linen-backed plan of the Fleet and its branches, all coloured in blue and red; beside it the tide board, a black board on which the day's tides were chalked, and a rack of iron keys and tackle each upon its numbered hook. The flushing log lay open on the desk beside the key book.
 """
 [rooms.depot_office.exits]
 out = { to = "depot_yard", aliases = ["yard"] }
@@ -29,7 +29,7 @@ out = { to = "depot_yard", aliases = ["yard"] }
 name = "The Lamp-Room"
 aliases = ["lamp room", "lamp-room"]
 description = """
-A low, warm, close room, reeking of colza oil and hot tin. Along one wall ran a bench with a sunken drip-tray, and on it stood the oil cans, the measures and the trimming scissors; above it, on numbered hooks, hung the Board's lamps, each with its number painted on the glass. A cribbage board and a greasy pack of cards lay on an upturned box by the stove. From the window one looked straight across the yard at the office door.
+A low, warm, close room, reeking of colza oil and hot tin. Along one wall ran a bench with a sunken drip-tray, and on it stood the oil cans, the measures, the trimming scissors and Sparrow's greasy oil book; above it, on numbered hooks, hung the Board's lamps, each with its number painted on the glass. A cribbage board and a greasy pack of cards lay on an upturned box by the stove. From the window one looked straight across the yard at the office door.
 """
 [rooms.lamp_room.exits]
 west = { to = "depot_yard", aliases = ["yard"] }
@@ -39,7 +39,7 @@ out = { to = "depot_yard", aliases = ["yard"] }
 name = "The Shed"
 aliases = ["shed", "dead house", "dead-house"]
 description = """
-They had laid him on a pair of trestles under a tarpaulin in the whitewashed shed where the flushers kept their spare boots, and a constable stood at the door with his helmet in his hand. The little that had come out of his pockets was set out in a row upon a bench beneath the window.
+They had laid the body on a pair of trestles under a tarpaulin in the whitewashed shed where the flushers kept their spare boots, and a constable stood at the door with his helmet in his hand. The little that had come out of his pockets was set out in a row upon a bench beneath the window.
 """
 [rooms.dead_house.exits]
 east = { to = "depot_yard", aliases = ["yard"] }
@@ -76,7 +76,7 @@ down = { to = "relined_length", when = ["flag:pond_drained", "has:lantern"], blo
 name = "Ruddock's Hut"
 aliases = ["hut"]
 description = """
-It was a foreman's den: a plank table covered in drawings weighted down with half-bricks, a stool, a cold stove with a pipe through the roof, and a row of nails along the wall for coats and tackle. It smelt of tobacco, of wet cement, and, faintly but quite unmistakably, of the sewer.
+It was a foreman's den: a plank table covered in drawings weighted down with half-bricks, a stool, a cold stove with a pipe through the roof, and a row of nails along the wall for coats and tackle. A pair of corduroy trousers hung on a nail behind the stove; a printed tide card was tacked to the wall above the table; and under the drawings lay a fat measurement book. It smelt of tobacco, of wet cement, and, faintly but quite unmistakably, of the sewer.
 """
 [rooms.ruddocks_hut.exits]
 out = { to = "works_yard", aliases = ["yard"] }
@@ -113,7 +113,7 @@ up = { to = "river_stairs", aliases = ["stairs"] }
 name = "The Foot of the Side-Entrance"
 aliases = ["shaft foot", "foot of the shaft", "side entrance"]
 description = """
-The rungs brought me down at last onto a brick ledge beside the Fleet. I had expected a drain; I found a cathedral. The sewer ran away north and south in a great egg-shaped tunnel of sooty brick, higher than a man could reach, with a stone benching along one side and the black water sliding past below it, smoking a little in the cold. A grey glimmer of daylight came down the shaft from the street above, and with it the far-off roar of the traffic. Upstream, to the north, lay the penstock; downstream, the long run of the channel towards the river.
+The rungs brought me down at last onto a brick ledge beside the Fleet, where a drift of grey silt had gathered at their foot. I had expected a drain; I found a cathedral. The sewer ran away north and south in a great egg-shaped tunnel of sooty brick, higher than a man could reach, with a stone benching along one side and the black water sliding past below it, smoking a little in the cold. A grey glimmer of daylight came down the shaft from the street above, and with it the far-off roar of the traffic. Upstream, to the north, lay the penstock; downstream, the long run of the channel towards the river.
 """
 on_enter = [ { effects = ["set:below"] } ]
 [rooms.shaft_foot.exits]
@@ -141,7 +141,7 @@ north = { to = "relined_length", when = "flag:pond_drained", blocked = "Beyond t
 name = "The Relined Length"
 aliases = ["relined length", "relining", "upstream"]
 description = """
-Above the penstock the Fleet ran on north beneath Farringdon Street, and for a long stretch its lining had a new, bright, almost raw look, the brick white with cement so that my lantern seemed to burn the brighter for it. Numbers were painted on the wall at intervals: chain marks, I supposed, for the measuring. Further up a timber platform and a ladder showed where the contractors' own shaft came down from their yard.
+Above the penstock the Fleet ran on north beneath Farringdon Street, and for a long stretch its lining had a new, bright, almost raw look, the brick white with cement so that my lantern seemed to burn the brighter for it, and the stone benching along its side still running wet. Numbers were painted on the wall at intervals: chain marks, I supposed, for the measuring. Further up a timber platform and a ladder showed where the contractors' own shaft came down from their yard.
 """
 dark_when = "!has:lantern|lt:oil:1"
 dark_text = "Without a light I could not see my own hand. Water dripped all about me in the dark."

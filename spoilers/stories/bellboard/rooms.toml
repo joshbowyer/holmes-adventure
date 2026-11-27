@@ -4,7 +4,7 @@
 name = "The Entrance Hall"
 aliases = ["hall", "entrance hall"]
 description = """
-The hall of No. 11 was a lofty, chilly place of black-and-white marble, lit by a gasolier that hissed overhead. The main stair rose on the left beneath a crimson runner. To the right stood the door of the library, a constable posted beside it; to the left, the dining-room. At the back of the hall a door gave upon the morning-room, and beside it a smaller one upon the gentlemen's cloakroom. Against the wall, facing the street door, stood the footman's hooded chair.
+The hall of No. 11 was a lofty, chilly place of black-and-white marble, lit by a gasolier that hissed overhead. The main stair rose on the left beneath a crimson runner. To the right stood the door of the library, a constable posted beside it; to the left, the dining-room. At the back of the hall a door gave upon the morning-room, and beside it a smaller one upon the gentlemen's cloakroom. Against the wall, facing the street door, stood the footman's hooded chair, and beside it an umbrella stand.
 """
 on_enter = [
   { once = true, text = "[Before going further I set down in my notebook what I had myself seen and heard at the table that evening.]", effects = ["clue:table_times", "clue:piano", "clue:quarrel"] },
@@ -21,7 +21,7 @@ out = { blocked = "A constable stood upon the step outside, and Lestrade had giv
 name = "The Library"
 aliases = ["library"]
 description = """
-It was a handsome room, panelled to the height of a man's shoulder and papered above in a dark green flock, with books rising to the cornice on three sides. Heavy curtains were drawn across the window. A writing-desk stood near the fire, its lamp still burning; the fire itself had sunk to a red glow behind its fender, the fire-irons standing in their rack beside it. On the wall between the desk and the bookshelves was fixed the brass mouthpiece of a speaking tube.
+It was a handsome room, with oak panelling to the height of a man's shoulder and papered above in a dark green flock, with books rising to the cornice on three sides. Heavy curtains were drawn across the window. A writing-desk stood near the fire, its lamp still burning; the fire itself had sunk to a red glow in the grate behind its fender, the fire-irons, tongs, shovel and poker, standing in their rack beside it. On the wall between the desk and the bookshelves was fixed the brass mouthpiece of a speaking tube.
 
 And beneath it, upon the Turkey carpet, lay Lionel Brand.
 """
@@ -88,7 +88,7 @@ west = { to = "back_stair_first", aliases = ["baize door", "green door", "back s
 name = "The Drawing-Room"
 aliases = ["drawing room", "drawing-room"]
 description = """
-The drawing-room ran the whole width of the house, a long, bright room of looking-glass and gilt and pale blue silk. The tea-things still stood upon a low table where the ladies had been served at a quarter past ten. At the far end, near the windows, stood a grand piano, its lid raised and a book of music open upon the stand.
+The drawing-room ran the whole width of the house, a long, bright room of looking-glass and gilt and pale blue silk. The tea-things still stood upon a low table where the ladies had been served at a quarter past ten. At the far end, near the windows, stood a grand piano and its stool, the lid raised and a book of music open upon the stand.
 """
 [rooms.drawing_room.exits]
 south = { to = "first_landing", aliases = ["landing"] }

@@ -38,7 +38,7 @@ unknown_topic = "\"Can't help you there, Doctor,\" said Gregson. \"I'm a policem
 unknown_show = "Gregson looked at it and shrugged. \"If you say so, Doctor.\""
 
 [[characters.gregson.greeting]]
-text = "\"Doctor.\" Gregson nodded to the trestles. \"There he is, poor fellow. You'll tell me he drowned, I hope, and then we may all go home to breakfast. I've a constable out after a certain old tosher who was selling a gold watch in Fleet Lane at six this morning, mind; so if he didn't drown, I daresay I know who helped him.\""
+text = "\"Doctor.\" Gregson nodded to the trestles. \"There he is, poor fellow. You'll tell me he drowned, I hope, and then we may all go home to breakfast. Not that I haven't a theory of my own. I've a constable out after a certain old tosher who was selling a gold watch in Fleet Lane at six this morning, mind; so if he didn't drown, I daresay I know who helped him. And Mr Gaskin, the contractor, has been at me since five o'clock about his precious contract, so I've had to look into him too.\""
 
 [[characters.gregson.topics.theory]]
 aliases = ["case", "accident", "death", "hurrell", "body", "how"]
@@ -88,7 +88,7 @@ unknown_topic = "Coaker pulled at his beard. \"Couldn't say, sir.\""
 unknown_show = "Coaker looked at it and said nothing."
 
 [[characters.coaker.greeting]]
-text = "\"Doctor.\" Coaker got up heavily. \"Anything in reason, sir. The Board's very much put about. Mr Hurrell was a gentleman, and it's a bad business.\""
+text = "\"Doctor.\" Coaker got up heavily. \"Anything in reason, sir. The Board's very much put about. Mr Hurrell was a gentleman, and last night's a bad business. If it's the Fleet you want, sir, I've had the charge of her these eleven years: the penstock and the pond behind it, the handles, the flaps and the tides, the whistle and the rule. Ask me what you like.\""
 
 [[characters.coaker.topics.hurrell]]
 aliases = ["mr hurrell", "edwin hurrell", "engineer", "key", "side-entrance key"]
@@ -152,7 +152,7 @@ unknown_topic = "\"I'm sure I couldn't say, Doctor,\" said Gaskin, blowing out h
 unknown_show = "Gaskin looked at it and blew out his cheeks. \"I know nothing about that.\""
 
 [[characters.gaskin.greeting]]
-text = "\"Gaskin, of Gaskin and Pell.\" He shook my hand warmly. \"A shocking thing, Doctor. A promising young man. My firm will do anything, anything in its power.\""
+text = "\"Gaskin, of Gaskin and Pell.\" He shook my hand warmly. \"A shocking thing, Doctor. A promising young man, and with our Fleet contract all but signed off, too. My firm will do anything, anything in its power. I was at a banquet half last night, and came the moment I heard.\""
 
 [[characters.gaskin.topics.night]]
 aliases = ["last night", "alibi", "where", "banquet", "dinner"]
@@ -184,7 +184,7 @@ unknown_topic = "\"Lamps is my business, sir,\" said Sparrow. \"Lamps and oil.\"
 unknown_show = "Sparrow peered at it. \"That's not a lamp, sir.\""
 
 [[characters.sparrow.greeting]]
-text = "\"Morning, sir.\" Sparrow did not stop trimming. \"You'll be wanting a light, I daresay, if you're going down.\""
+text = "\"Morning, sir.\" Sparrow did not stop trimming. \"You'll be wanting a light, I daresay, if you're going down. Lamps and oil, sir, that's me. I was up the whole of last night in here, and Mr Coaker with me, and a long night it was.\""
 
 [[characters.sparrow.topics.lamps]]
 aliases = ["lamp", "lantern", "how long", "burning", "four hours"]
@@ -227,10 +227,10 @@ unknown_topic = "Dunn grinned. \"You've got me there, sir.\""
 unknown_show = "Dunn looked at it by his lamp and shook his head."
 
 [[characters.dunn.greeting]]
-text = "\"Mr Coaker said I was to see you safe, sir,\" said Dunn, \"but I'd as soon bide here by the shaft, if it's the same to you, where I can hear you holler. North's the penstock; south's the long run down to the weir and the outfall. Keep to the benching and don't go stepping off it.\""
+text = "\"Mr Coaker said I was to see you safe, sir,\" said Dunn, \"but I'd as soon bide here by the shaft, if it's the same to you, where I can hear you holler. North's the penstock; south's the long run down to the weir and the outfall. Keep to the benching and don't go stepping off it. I was down here last night with my gang, flushing, if you want to hear about it.\""
 
 [[characters.dunn.topics.night]]
-aliases = ["last night", "flush", "flushing", "two o'clock", "head", "gauge", "head low"]
+aliases = ["last night", "flush", "flushing", "two o'clock", "head", "gauge", "head low", "lamp", "lamps", "ledge", "penstock", "pond", "gate", "gang", "evening", "what happened", "hurrell", "mr hurrell", "work"]
 text = "\"We come down at a quarter to two, three of us, to flush,\" said Dunn. \"Gauge showed three foot four. It ought to have been full, seven foot, after four hours shut; I never saw it so low on a dry night, and I put it in the log. I gave her three on the whistle, same as always, and wound her up, and down she went. There was a lamp standing on the ledge by the walkway, out. I took it for one of the contractors'; they're always leaving their gear about.\""
 effects = ["clue:dunn_night"]
 
@@ -260,7 +260,7 @@ unknown_topic = "Pellow spat into the river. \"Couldn't tell you, sir.\""
 unknown_show = "Pellow gave it a glance. \"Not a thing I know, sir.\""
 
 [[characters.pellow.greeting]]
-text = "\"Morning, sir. You'll be the doctor. I'm the one as found him.\""
+text = "\"Morning, sir. You'll be the doctor. I'm the one as found him, at low water under the outfall. And a queer tide it was last night, too.\""
 
 [[characters.pellow.topics.tide]]
 aliases = ["wind", "low water", "last night", "flaps", "tides", "almanac", "weather", "gale"]
@@ -286,7 +286,7 @@ unknown_topic = "\"Dunno nothing about it,\" said Mott, and spat."
 unknown_show = "Mott eyed it, and me, and said nothing."
 
 [[characters.mott.greeting]]
-text = "\"I know who you are,\" said Mott, without turning round. \"You're with the peelers. I ain't done nothing.\""
+text = "\"I know who you are,\" said Mott, without turning round. \"You're with the peelers. I ain't done nothing, last night nor any night.\""
 
 [[characters.mott.topics.watch]]
 aliases = ["gold watch", "hunter", "hurrell's watch", "fence"]
@@ -355,7 +355,7 @@ unknown_topic = "\"I've work to do, Doctor,\" said Ruddock."
 unknown_show = "Ruddock looked at it, and then at me, and said nothing at all."
 
 [[characters.ruddock.greeting]]
-text = "\"Doctor.\" Ruddock touched his hat. \"Bad business. I'm at your service, though I don't know what I can tell you.\""
+text = "\"Doctor.\" Ruddock touched his hat. \"Bad business. I'm at your service, though I don't know what I can tell you. You'll want to know where I was last night, I suppose; everybody does. And you'll have heard about our relining.\""
 
 [[characters.ruddock.topics.night]]
 aliases = ["last night", "alibi", "where", "home"]

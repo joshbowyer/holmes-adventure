@@ -181,7 +181,7 @@ unknown_topic = "\"I'm afraid I don't know, Doctor Watson.\""
 unknown_show = "Miss Orme looked at it and shook her head."
 
 [[characters.letitia.greeting]]
-text = "\"Doctor Watson. Hugh didn't do this. You know he didn't.\""
+text = "\"Doctor Watson. Hugh didn't do this. You know he didn't. Ask me anything you like: about Hugh, or this evening, or our hostess, Mrs Vane.\""
 
 [[characters.letitia.topics.piano]]
 aliases = ["music", "chopin", "nocturnes", "playing", "evening", "tonight", "movements", "whereabouts", "alibi", "ten o'clock", "ten"]
@@ -208,7 +208,7 @@ unknown_topic = "\"I couldn't say, sir.\""
 unknown_show = "\"I don't know anything about that, sir.\""
 
 [[characters.james.greeting]]
-text = "\"Sir.\" He stood a little straighter."
+text = "\"Sir.\" He stood a little straighter. \"I've been at my post in the hall all the evening, sir, and saw everyone that crossed it: the master, the mistress and the ladies, the gentlemen. If it's the library door you're asking after, or the main stair, or the back stair, I'll tell you what I can.\""
 
 [[characters.james.topics.library]]
 aliases = ["library door", "door", "evening", "tonight", "chair", "hall", "who went in", "anyone", "movements", "alibi", "ten o'clock", "ten"]
@@ -233,7 +233,7 @@ unknown_topic = "\"I really could not say, sir.\""
 unknown_show = "Gaunt inclined his head politely over it and said nothing."
 
 [[characters.gaunt.greeting]]
-text = "\"Doctor Watson, sir. A terrible business. A terrible business.\""
+text = "\"Doctor Watson, sir. A terrible business. A terrible business. Nothing goes on below stairs in this house, sir, nor up and down the back stair, but I hear of it, by the bells or otherwise.\""
 
 [[characters.gaunt.topics.whistle]]
 aliases = ["tube", "speaking tube", "speaking-tube", "library tube", "evening", "tonight", "ten o'clock", "ten", "movements", "alibi"]
@@ -280,7 +280,7 @@ unknown_topic = "\"I couldn't say, sir.\""
 unknown_show = "\"I don't know what that is, sir.\""
 
 [[characters.parkes.greeting]]
-text = "\"Doctor Watson, sir.\" He rose, and stood with his hands at his sides."
+text = "\"Doctor Watson, sir.\" He rose, and stood with his hands at his sides. \"I'm Mr Vane's man, sir. I was up in his dressing-room with him for a part of the evening, if that's any help to you.\""
 
 [[characters.parkes.topics.dressing_room]]
 aliases = ["dressing room", "dressing-room", "master", "mr vane", "bell", "cigars", "cigar case", "evening", "tonight", "movements", "alibi"]

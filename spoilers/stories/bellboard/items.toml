@@ -117,7 +117,7 @@ name = "fireplace"
 aliases = ["grate", "fire", "hearth", "ashes"]
 location = "library"
 scenery = true
-description = "The fire had sunk to embers. Among the ashes at the front of the grate, where the heat had not quite reached, were the curled black remains of several sheets of paper."
+description = "The fire had sunk to embers. Among the ashes at the front of the grate, where the heat had not quite reached, were the curled black fragments of several sheets of paper."
 
 [items.fragments]
 name = "charred fragments"
@@ -387,7 +387,7 @@ on_examine = [
 
 [items.servery_door_back]
 name = "servery door"
-aliases = ["servery door"]
+aliases = ["servery door", "servery", "door to the servery"]
 location = "back_stair_ground"
 scenery = true
 description = "A plain door, propped open with a wedge, through which the dishes go."

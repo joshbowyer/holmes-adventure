@@ -174,6 +174,12 @@ class GameTests(unittest.TestCase):
         g.handle("ask bob about key")
         self.assertIsNone(current_hint(g))
 
+    def test_cheat_word_grants_a_free_coin(self):
+        g, _ = new_game()
+        g.handle("Persian Slipper")
+        g.handle("persianslipper")
+        self.assertEqual((g.state.coins, g.state.coins_found, g.state.turns), (2, 0, 0))
+
     def test_counters_ticks_wait_and_status(self):
         import copy
         data = copy.deepcopy(FIXTURE)

@@ -47,6 +47,14 @@ must never learn it outside the game.
   - When text reveals things found (in a pocket, under a cushion), name only things the
     player can actually take. No incidental clutter ("a pencil-stub, a cab-ticket") that
     can't be picked up.
+  - **No grasping at straws** (user feedback on Below Bazalgette, 2026-11-26): every word
+    the player needs must appear in text they have seen. Scenery is named in its room's
+    text (or in something else there); parts worth examining are named in the parent's
+    description; every ASK topic is raised in that person's greeting (e.g. "last night"),
+    and topics get generous aliases (asking about the lamp should reach the account of the
+    night in which the lamp figures). Tests enforce this: `test_scenery_is_named`, and
+    `test_walkthrough_words_are_signposted`, which needs walkthroughs to TALK TO before
+    ASK and to use the words the screen shows.
   - Never narrate an action the player hasn't performed. If the text says Watson pockets
     something, an effect must really do it; otherwise just describe where it lies and let
     the player TAKE it.
@@ -65,7 +73,8 @@ must never learn it outside the game.
   around each case's scenes; spending one buys a hint from Holmes. Hints must be
   state-aware: chosen from the player's current inventory, notebook and progress so a coin
   is never wasted on something already found or solved. Repeated hints on the same step get
-  firmer.
+  firmer. Secret cheat word `persianslipper` (typed alone, spaces/case ignored) grants one
+  coin of the current case's coinage, free of time; not listed in HELP (user, 2026-11-26).
 - **Wrong final answer:** the player sees that answer's bad ending in full, then may resume
   the case and try again. Wrong attempts are counted and shown on the case-closed screen.
 - **Colour:** ANSI colour and bold used sparingly (room names, items, exits), with a plain

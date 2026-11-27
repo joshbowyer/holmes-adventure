@@ -32,6 +32,9 @@ HELP = """\
 UNTIMED = {"notebook", "hint", "help", "save", "quit", "inventory", "exits", "accuse",
            "status", "look", "wait"}
 
+# Typed alone (spaces and case ignored), grants one hint coin. Not listed in HELP.
+CHEAT_WORD = "persianslipper"
+
 
 def join_list(parts: list[str]) -> str:
     if len(parts) <= 1:
@@ -76,6 +79,9 @@ class Game:
         return st
 
     def handle(self, line: str) -> None:
+        if "".join(ch for ch in line.lower() if ch.isalpha()) == CHEAT_WORD:
+            self.cheat_coin()
+            return
         cmd = parse(line, self.verb_map)
         if cmd is None:
             return
@@ -97,6 +103,14 @@ class Game:
         self.state.turns += 1
         if cmd.verb not in UNTIMED and not self.finished:
             self.tick()
+
+    def cheat_coin(self) -> None:
+        """The secret word: one hint coin, free of time, in this case's own coinage."""
+        st, coin = self.state, self.story.coin_name()
+        st.coins += 1
+        self.say(f"From the toe of a Persian slipper, among the shag tobacco, "
+                 f"there drops a {coin}.")
+        self.note(f"[{st.coins} {self.story.coin_name(st.coins)} in your purse.]")
 
     def tick(self) -> bool:
         """One turn of the world passing: the case's `every_turn` events (tides, a

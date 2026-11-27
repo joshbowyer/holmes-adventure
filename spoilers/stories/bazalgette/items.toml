@@ -165,7 +165,7 @@ aliases = ["hurrell", "edwin hurrell", "dead man", "corpse", "deceased", "tarpau
 location = "dead_house"
 scenery = true
 clue = "wound"
-description = "Edwin Hurrell had been a big, fair, well-made man of five-and-thirty or so, in a tweed suit made for rough work. The sewer had done its worst to him: he was slimed from head to foot, his clothes were torn at elbow and knee, and he was grazed and battered all over as though he had been rolled down a quarry. But the injury that had killed him was none of these. At the back of the skull, a little to the left, was a depressed fracture, square-cornered, about an inch across, such as I have never seen made by a fall. There was very little froth at the mouth and nostrils. In my opinion he had been struck down from behind, and was dead, or past saving, before ever the water had him."
+description = "Edwin Hurrell had been a big, fair, well-made man of five-and-thirty or so, in a tweed suit made for rough work. The sewer had done its worst to him: he was slimed from head to foot, his clothes were torn at elbow and knee, and he was grazed and battered all over as though he had been rolled down a quarry. His hands lay curled at his sides, and his waistcoat was still buttoned across him, a gold watch-chain looped from its pocket. But the injury that had killed him was none of these. At the back of the skull, a little to the left, was a depressed fracture, square-cornered, about an inch across, such as I have never seen made by a fall. There was very little froth at the mouth and nostrils. In my opinion he had been struck down from behind, and was dead, or past saving, before ever the water had him."
 
 [items.hands]
 name = "hands"

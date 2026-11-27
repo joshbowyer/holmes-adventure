@@ -338,7 +338,7 @@ unknown_topic = "\"I'm sure I couldn't say, Doctor,\" said Mrs Hudson."
 unknown_show = "Mrs Hudson peered at it and shook her head."
 
 [[characters.hudson.greeting]]
-text = "\"Oh, Doctor! Has Mr Holmes sent you? It's a crying shame, a cake I was taking to the chapel bazaar, and that boy loafing about the railings all the morning.\""
+text = "\"Oh, Doctor! Has Mr Holmes sent you? It's a crying shame, a cake I was taking to the chapel bazaar, and that boy loafing about the railings all the morning. Nobody's been near my kitchen today but the coal man with his delivery.\""
 
 [[characters.hudson.topics.cake]]
 aliases = ["seed-cake", "seed cake", "theft", "bazaar"]
@@ -379,7 +379,7 @@ unknown_topic = "\"Dunno nothing about that, Doctor.\""
 unknown_show = "Wiggins squinted at it. \"What's that, then?\""
 
 [[characters.wiggins.greeting]]
-text = "\"Morning, Doctor. Mr Holmes got any work for us yet?\""
+text = "\"Morning, Doctor. Mr Holmes got any work for us yet? I've had my eye on this street all morning: the milk, the coal man, the lot.\""
 
 [[characters.wiggins.topics.cake]]
 aliases = ["seed-cake", "seed cake", "theft"]
@@ -666,9 +666,9 @@ I went back to the kitchen with my ears burning.
 
 [test]
 walkthrough = [
-  "examine cushions", "take penny", "d", "examine coat", "take penny", "d",
+  "examine cushions", "take penny", "d", "examine greatcoat", "take penny", "d",
   "talk to mrs hudson", "ask hudson about cake", "examine window", "examine smudge",
-  "ask hudson about coal man", "take candle", "take matches", "out",
+  "ask hudson about coal man", "take candle", "take vestas", "out",
   "examine drain", "take penny", "up", "examine wiggins", "ask wiggins about coal man",
   "d", "n", "light candle", "examine crate", "take seeds", "examine coal", "take penny",
   "out", "in", "show seeds to hudson", "up", "out", "examine dobbs",
