@@ -437,6 +437,8 @@ class Game:
                          join_list([self.styled_name(i) for i in inside]) + ".")
             elif t.get("openable"):
                 self.say("It is empty.")
+        elif t.get("container") and t.get("openable"):
+            self.say(f"The {t['name']} is shut.")
         if t.get("clue"):
             self.add_clue(t["clue"])
         self.run_all(t.get("on_examine"), f"examine:{tid}")

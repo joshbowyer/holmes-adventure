@@ -303,7 +303,7 @@ container = true
 openable = true
 description = "A wooden locker of pigeon-holes, each with its folded flag."
 open_text = "I opened the flag locker."
-details = [ { when = "loc:coin_lookout:flag_locker", text = "In the pigeon-hole for the answering pennant, someone had left a farthing." } ]
+details = [ { when = ["open:flag_locker", "loc:coin_lookout:flag_locker"], text = "In the pigeon-hole for the answering pennant something small and round had been tucked among the bunting." } ]
 
 [items.coin_lookout]
 name = "farthing"

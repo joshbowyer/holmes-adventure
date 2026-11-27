@@ -97,6 +97,10 @@ def validate(data: dict) -> list[str]:
         conds.append((f"item {iid}.visible_when", it.get("visible_when")))
         for i, det in enumerate(it.get("details", [])):
             conds.append((f"item {iid} details[{i}]", det.get("when")))
+            when = " ".join(as_list(det.get("when")))
+            if it.get("openable") and "loc:" in when and f"open:{iid}" not in when:
+                errs.append(f"item {iid} details[{i}]: tells of contents while shut "
+                            f"(add open:{iid} to its when)")
         events(f"item {iid}.on_examine", it.get("on_examine"))
         effects.append((f"item {iid}.on_take", it.get("on_take")))
         if "clue" in it and it["clue"] not in clues:
