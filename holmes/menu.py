@@ -42,14 +42,33 @@ def _yes(answer: str | None) -> bool:
 
 def play_case(story: Story, console: Console, profile: dict) -> None:
     saved = saves.load_game(story.id)
+    solved = profile["cases"].get(story.id, {}).get("solved")
     state = None
     if saved:
-        if _yes(console.read("You have this case in progress. Continue where you left off? (y/n) ")):
+        what = "a replay of this case" if solved else "this case"
+        console.say(f"You have {what} in progress.")
+        console.raw("  1. Continue where you left off")
+        console.raw("  2. Start afresh")
+        console.raw("  3. Put it away (your progress is thrown away)")
+        console.raw("  Enter: back to the casebook")
+        choice = (console.read("Your choice: ") or "").strip().lower()
+        if choice == "1":
             state = GameState.from_dict(saved)
-        elif not _yes(console.read("Start afresh? Your progress in this case will be lost. (y/n) ")):
+        elif choice == "2":
+            if not _yes(console.read("Your progress in this case will be lost. Are you sure? (y/n) ")):
+                return
+            saves.delete_game(story.id)
+        elif choice == "3":
+            if _yes(console.read("Throw away your progress in this case? (y/n) ")):
+                saves.delete_game(story.id)
+                console.say("Put away." + (" The case stays solved in your casebook." if solved else ""))
             return
         else:
-            saves.delete_game(story.id)
+            return
+    elif solved:
+        if not _yes(console.read("You have solved this case already. Play it again from the "
+                                 "start? (y/n) ")):
+            return
     console.write("\n")
     st = Game(story, console, state).run()
     if st.solved:
@@ -69,11 +88,16 @@ def menu(stories: list[Story], console: Console, profile: dict) -> None:
             line = f"  {i}. {s.title} ({s.case.get('year', '?')})"
             if s.case.get("subtitle"):
                 line += f": {s.case['subtitle']}"
-            status = ""
-            if profile["cases"].get(s.id, {}).get("solved"):
+            solved = profile["cases"].get(s.id, {}).get("solved")
+            playing = saves.save_path(s.id).exists()
+            if solved and playing:
+                status = "  [solved; replay in progress]"
+            elif solved:
                 status = "  [solved]"
-            if saves.save_path(s.id).exists():
+            elif playing:
                 status = "  [in progress]"
+            else:
+                status = ""
             console.raw(line + console.style(status, "note"))
         console.raw("")
         console.raw(f"  c. Colour: {'on' if console.color else 'off'}")
