@@ -165,7 +165,10 @@ Exploration premises:
     (multiple choice) and `timeline` (accuse plus an ordering step: `final.timeline` has
     `cards` {clue id: label giving the time as stated}, `order`, `wrong_ending`; during
     play TIMELINE shows found cards lettered in the order found, ARRANGE <letters> orders
-    them, saved in `state.arrangement`; a wrong order plays `wrong_ending`). `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
+    them, saved in `state.arrangement`; a wrong order plays `wrong_ending`). **Any statement
+    that fixes an event to a clock time must deal a card** (user, 2026-11-26: Pook gave
+    the shot's time and TIMELINE stayed empty). A card can be any clue id, so the clue a
+    witness's answer gives can itself be the card. `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
   - Story sources: `spoilers/stories/<id>/*.toml` (all files in a folder are merged).
     `python -m holmes.build` validates and writes scrambled `holmes/data/<id>.case`.
   - Each source has a private `[test]` section: `walkthrough` (must solve the case, find

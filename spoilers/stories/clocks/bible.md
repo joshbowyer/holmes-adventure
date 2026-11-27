@@ -60,6 +60,7 @@ Wednesday morning, uncleaned (one chamber fired).
 
 | L    | Event | As stated | Source |
 |---|---|---|---|
+| 8.31 | Edward and Gloyne heard quarrelling | quarter past eight by the hall clock (church time) | Mrs Bickle |
 | 8.45 | Vodden locks the bank and leaves | quarter to nine by the bank clock | Pring, the clerk |
 | 8.56 | Vicar and sexton go up the tower to wind | twenty to nine by the church | Medland, sexton |
 | 9.01 | Edward leaves Fore House | as the church struck the three-quarters | Edward |
@@ -122,7 +123,7 @@ the vicar's quarrel over the clock and his key; Gloyne's own pistol in his desk 
 
 ## Final puzzle
 
-TIMELINE: the nine cards above in true order. Then:
+TIMELINE: the ten cards above in true order. The shot's card is dealt by the porter (9.16 station); the vicar's "last stroke of nine" is an ordinary clue that confirms the 16 minutes. Rule (user, 2026-11-26): any statement that fixes an event of the evening to a clock time must deal a card. Then:
 - who: Vodden.
 - how the alibi was made: the schoolroom clock had been put back to church time, and he
   knew it.

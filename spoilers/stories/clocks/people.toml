@@ -203,7 +203,7 @@ effects = ["clue:card_body", "clue:garden_door"]
 
 [[characters.bickle.topics.edward]]
 aliases = ["mr edward", "nephew", "quarrel", "hammer and tongs", "row", "edward gloyne"]
-text = '''"At a quarter past eight it was, as I was putting on my bonnet. Money, as always with Mr Edward. I heard the master say, 'Not another penny, and you'll go now, sir, for I have someone coming at nine on business.' Then I went out to chapel, and I don't know what passed after."'''
+text = '''"At a quarter past eight by the hall clock it was, as I was putting on my bonnet. Money, as always with Mr Edward. I heard the master say, 'Not another penny, and you'll go now, sir, for I have someone coming at nine on business.' Then I went out to chapel, and I don't know what passed after."'''
 effects = ["clue:edward_quarrel"]
 
 [[characters.bickle.topics.master]]

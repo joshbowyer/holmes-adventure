@@ -103,7 +103,7 @@ text = "The bank's revolver, in the drawer under the counter: one chamber fired,
 text = "Pring cleaned and loaded the bank's revolver on Monday. Mr Vodden keeps the drawer key at night, and had it last night."
 
 [clues.edward_quarrel]
-text = "Mrs Bickle heard Gloyne tell Edward at a quarter past eight: \"Not another penny, and you'll go now, sir, for I have someone coming at nine on business.\""
+text = "Mrs Bickle heard Gloyne tell Edward, at a quarter past eight by the hall clock: \"Not another penny, and you'll go now, sir, for I have someone coming at nine on business.\""
 
 [clues.luxton_threat]
 text = "Luxton, whose farm Gloyne was taking under the mortgage, swore in the market on Tuesday that he would see Gloyne in hell first."
@@ -327,7 +327,7 @@ texts = [
 
 [[hints]]
 id = "timeline"
-when = ["clue:card_bank", "clue:card_tower", "clue:card_edward", "clue:card_train", "clue:card_luxton_out", "clue:card_shot", "clue:card_luxton_back", "clue:card_school", "clue:card_body"]
+when = ["clue:card_bank", "clue:card_tower", "clue:card_edward", "clue:card_train", "clue:card_luxton_out", "clue:porter_shot", "clue:edward_quarrel", "clue:card_luxton_back", "clue:card_school", "clue:card_body"]
 texts = [
   "\"You have the whole evening now. But you have it in three different times. Turn every one of them into London time before you put them in order.\"",
   "\"Church time is sixteen minutes behind London time. The station, the bank and the inn keep London time; the church, Gloyne's house and the school clock keep church time. Add sixteen minutes to every church-time event, then ARRANGE the events by the result.\"",
@@ -337,7 +337,7 @@ texts = [
 
 [final]
 type = "timeline"
-when = ["clue:card_bank", "clue:card_tower", "clue:card_edward", "clue:card_train", "clue:card_luxton_out", "clue:card_shot", "clue:card_luxton_back", "clue:card_school", "clue:card_body"]
+when = ["clue:card_bank", "clue:card_tower", "clue:card_edward", "clue:card_train", "clue:card_luxton_out", "clue:porter_shot", "clue:edward_quarrel", "clue:card_luxton_back", "clue:card_school", "clue:card_body"]
 locked_text = "I had not yet the whole of last evening, or anything like it. Holmes would want every time I could get, and the clock it was read from."
 intro = "I went up to the parlour of the King's Arms and laid my notebook on the table. Holmes took his pipe from his mouth. \"Well, Watson? Let us have the evening first, in its true order, by one clock; and then the man.\""
 good = "solved"
@@ -346,7 +346,7 @@ default_wrong = "escape"
 [final.timeline]
 intro = "\"Here are your events,\" said Holmes, turning the pages. \"Put them in the order in which they truly happened, earliest first.\""
 wrong_ending = "muddle"
-order = ["card_bank", "card_tower", "card_edward", "card_train", "card_luxton_out", "card_shot", "card_luxton_back", "card_school", "card_body"]
+order = ["edward_quarrel", "card_bank", "card_tower", "card_edward", "card_train", "card_luxton_out", "porter_shot", "card_luxton_back", "card_school", "card_body"]
 
 [final.timeline.cards]
 card_bank = "Vodden locks up the bank and leaves: a quarter to nine by the bank clock."
@@ -354,7 +354,8 @@ card_tower = "The vicar and the sexton go up the tower to wind: twenty to nine b
 card_edward = "Edward leaves Fore House: as the church clock strikes a quarter to nine."
 card_train = "The up train leaves, Edward aboard: five past nine by the station clock."
 card_luxton_out = "Luxton goes out of the tap: ten past nine by the inn clock."
-card_shot = "The shot: on the last stroke of nine by the church clock."
+porter_shot = "The shot is heard: sixteen minutes past nine by the station clock."
+edward_quarrel = "Edward and his uncle are heard quarrelling: a quarter past eight by the hall clock at Fore House."
 card_luxton_back = "Luxton comes back into the tap: eighteen minutes past nine by the inn clock."
 card_school = "Vodden knocks at the schoolhouse: five past nine by the school clock."
 card_body = "Mrs Bickle finds the body: as the church clock strikes half past nine."
@@ -530,7 +531,7 @@ walkthrough = [
   "in", "talk to vodden", "ask vodden about last night", "ask vodden about the trust",
   "show draft notice to vodden", "out", "out",
   "ne", "examine gutter", "take halfpenny", "n",
-  "timeline", "arrange IFEABHCGD", "notebook",
+  "timeline", "arrange FJHGBCADIE", "notebook",
   "accuse", "", "5", "3", "2", "4", "y",
 ]
 wrong_path = [
@@ -556,6 +557,6 @@ wrong_path = [
   "se", "w", "talk to pring", "ask pring about last night", "ask pring about the bank clock", "examine bank clock",
   "open drawer", "examine revolver", "ask pring about the revolver", "ask pring about the market trust", "in", "talk to vodden",
   "ask vodden about last night", "ask vodden about the trust", "show draft notice to vodden", "out", "out", "ne",
-  "examine gutter", "take halfpenny", "n", "accuse", "ABCDEFGHI", "",
+  "examine gutter", "take halfpenny", "n", "accuse", "ABCDEFGHIJ", "",
   "5", "3", "2", "4", "y", "",
 ]
