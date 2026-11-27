@@ -102,7 +102,7 @@ text = "The Board's rule at the penstock: no gate raised until the ganger has gi
 text = "Hurrell's lamp No. 7 was standing unlit on the ledge by the penstock walkway, dry, nearly full of oil, its wick screwed right down."
 
 [clues.lamp_measured]
-text = "Sparrow measured the oil left in lamp No. 7: it burned not above an hour after 11.20, nearer three-quarters. It did not go out by itself; the wick was screwed down by hand."
+text = "Sparrow measured the oil left in lamp No. 7: it burned not above an hour after 11:20, nearer three-quarters. It did not go out by itself; the wick was screwed down by hand."
 
 [clues.dunn_night]
 text = "Dunn: at 2 a.m. the gauge showed only 3 ft 4 in where it should have been full. He blew three blasts and flushed. An unlit lamp stood on the ledge by the walkway; he took it for the contractors'."
@@ -117,7 +117,7 @@ text = "The storm weir: all the ordinary flow of the Fleet turns aside into the 
 text = "The outfall flaps open outward only when the river is lower than the water inside; when the river is higher they are held shut, and the chamber is tide-locked. The scum line stands over a man's head. Something large lay wedged against the left-hand flap."
 
 [clues.pellow_tide]
-text = "Pellow: low water was due at 12.20, but a hard east wind held the tide up. At midnight the river stood nearly at the flood and the flaps were shut tight. It did not fall until after two; true low water was near four."
+text = "Pellow: low water was due at 12:20, but a hard east wind held the tide up. At midnight the river stood nearly at the flood and the flaps were shut tight. It did not fall until after two; true low water was near four."
 
 [clues.mott_flood]
 text = "Mott: a little after a quarter past twelve a flood came down the Fleet with no whistle at all, and something big went past him in the dark and over the weir. At 1 a.m. he found the watch caught by its bow on the iron of the weir. At two came three blasts and the second flush."
@@ -126,7 +126,7 @@ text = "Mott: a little after a quarter past twelve a flood came down the Fleet w
 text = "Gaskin was at a Masonic banquet at the Cannon Street Hotel from seven until a quarter past one, before forty witnesses (Gregson has checked)."
 
 [clues.sparrow_alibi]
-text = "Sparrow: he and Coaker played cribbage in the lamp-room from 11:30 to 1.30, and Coaker never left. From the window Sparrow watched the lit office door all night; the Board's handle never left its hook until Dunn took it at 1:30."
+text = "Sparrow: he and Coaker played cribbage in the lamp-room from 11:30 to 1:30, and Coaker never left. From the window Sparrow watched the lit office door all night; the Board's handle never left its hook until Dunn took it at 1:30."
 
 [clues.coaker_admits]
 text = "Coaker admits he never examined the relining above chain 8. He signed the measurement on Ruddock's word, and Gaskin was \"very good to him at quarter-day\"."

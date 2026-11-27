@@ -14,6 +14,7 @@ from holmes.engine.game import Game
 from holmes.engine.parser import parse
 from holmes.engine.story import Story
 from holmes.engine.text import ScriptedConsole
+from holmes.puzzles.timeline import card_clues
 from holmes.validate import validate
 
 # Engine responses that mean a walkthrough command misfired.
@@ -133,7 +134,47 @@ def unnamed_scenery(data):
     return out
 
 
+_N = r"(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|twenty|twenty-five|\d{1,2})"
+CLOCK_READING = re.compile(r"\d{1,2}:\d{2}|o'clock|\bo'c\b|\b(quarter|half|minutes?|" + _N + r")\s+"
+                           r"(past|to|after|before)\s+" + _N + r"\b|\bstr(uck|ikes|iking)\b", re.I)
+
+
+def undealt_times(data):
+    """In a timeline case, every text that gives a clock time must deal a card
+    (user, 2026-11-26), unless [test] untimed lists its path as a timetable,
+    an appointment or the like. Returns the offending paths, never prose."""
+    final = data.get("final", {})
+    if final.get("type") != "timeline":
+        return []
+    dealers = card_clues(final)
+    allowed = set(data.get("test", {}).get("untimed", []))
+    out = []
+
+    def walk(node, path):
+        if isinstance(node, dict):
+            clues = {v[5:] for vals in node.values() if isinstance(vals, list)
+                     for v in vals if isinstance(v, str) and v.startswith("clue:")}
+            for k in ("text", "description"):
+                if (isinstance(node.get(k), str) and CLOCK_READING.search(node[k])
+                        and not clues & set(dealers) and path not in allowed):
+                    out.append(path)
+            for k, v in node.items():
+                walk(v, f"{path}.{k}" if path else k)
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, f"{path}.{i}")
+    for part in ("rooms", "items", "characters", "events"):
+        walk(data.get(part, {}), part)
+    return out
+
+
 class StoryTests(unittest.TestCase):
+    def test_timed_statements_deal_cards(self):
+        for d in build.source_dirs():
+            data = build.load_source(d)
+            with self.subTest(case=data["case"]["id"]):
+                self.assertEqual(undealt_times(data), [])
+
     def test_clock_times_use_colons(self):
         """Times are written 9:05, never the period-style 9.5 or 9.05 (user's request)."""
         def strings(v):
@@ -145,7 +186,7 @@ class StoryTests(unittest.TestCase):
             elif isinstance(v, list):
                 for x in v:
                     yield from strings(x)
-        dotted = re.compile(r"(?<![\d.£])\b\d{1,2}\.\d{1,2}\b(?![\d,])")
+        dotted = re.compile(r"(?<![\d.£])\b\d{1,2}\.\d{1,2}\b(?!\d)")
         for d in build.source_dirs():
             data = build.load_source(d)
             shipped = {k: v for k, v in data.items() if k != "test"}

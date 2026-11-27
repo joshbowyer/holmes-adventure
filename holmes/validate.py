@@ -155,8 +155,14 @@ def validate(data: dict) -> list[str]:
         if final.get("type") == "timeline":
             tl = final.get("timeline", {})
             cards, order = tl.get("cards", {}), tl.get("order", [])
-            for cid in cards:
-                if cid not in clues:
+            for cid, card in cards.items():
+                if isinstance(card, dict):
+                    if not isinstance(card.get("event"), str) or not card.get("says"):
+                        errs.append(f"final timeline: card {cid!r} needs an event and says")
+                    for clue in card.get("says", {}):
+                        if clue not in clues:
+                            errs.append(f"final timeline: card {cid!r} says {clue!r}, not a clue")
+                elif cid not in clues:
                     errs.append(f"final timeline: card {cid!r} is not a clue")
             if sorted(order) != sorted(cards) or len(set(order)) != len(order):
                 errs.append("final timeline: order must list every card exactly once")

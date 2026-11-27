@@ -49,7 +49,7 @@ effects = ["clue:porter_shot"]
 
 [[characters.pook.topics.train]]
 aliases = ["up train", "9 05", "9 5", "905", "nine five", "edward", "mr gloyne", "young mr gloyne", "edward gloyne", "nephew", "young gloyne"]
-text = '''"The up train for Exeter, the 9.5, left at five minutes past nine by that clock, sir, to the second: we're particular here. Young Mr Gloyne come pelting down the hill and in at the gate as she was moving, and I opened a door and bundled him in, and the guard took his fare. Another half-minute and he'd have missed her."'''
+text = '''"The up train for Exeter, the 9:05, left at five minutes past nine by that clock, sir, to the second: we're particular here. Young Mr Gloyne come pelting down the hill and in at the gate as she was moving, and I opened a door and bundled him in, and the guard took his fare. Another half-minute and he'd have missed her."'''
 effects = ["clue:card_train"]
 
 [[characters.pook.topics.clock]]
@@ -75,7 +75,7 @@ effects = ["clue:sixteen"]
 
 [[characters.kingdon.topics.trains]]
 aliases = ["train", "trains", "timetable", "bradshaw", "up train", "9 05", "9 5", "8 50", "changed", "this month"]
-text = '''"The up evening train went at 8:50 till the first of the month, sir; now she goes at 9.5, to make the connection at Exeter. There's plenty in the town still go by the old time, and either come down a quarter of an hour early or think they've missed her."'''
+text = '''"The up evening train went at 8:50 till the first of the month, sir; now she goes at 9:05, to make the connection at Exeter. There's plenty in the town still go by the old time, and either come down a quarter of an hour early or think they've missed her."'''
 
 [[characters.kingdon.topics.vicar]]
 aliases = ["squance", "mr squance", "the vicar", "parson", "reverend"]
@@ -97,7 +97,7 @@ text = '''"Sam Vosper, sir. Mr Holmes is in the parlour, up the stair. You'll be
 
 [[characters.vosper.topics.luxton]]
 aliases = ["mr luxton", "william luxton", "last night", "night", "tap", "went out", "yard", "farmer"]
-text = '''"He come in about half past eight, and sat on the settle with his back to the wall, black as thunder. At ten minutes past nine by that clock he got up and went out to the yard; to see to his mare, he said. He come back in at eighteen minutes past nine, white as a sheet and all over straw, and called for brandy. I noticed particular, for the sergeant asked me."'''
+text = '''"He come in after his supper, and sat on the settle with his back to the wall, black as thunder. At ten minutes past nine by that clock he got up and went out to the yard; to see to his mare, he said. He come back in at eighteen minutes past nine, white as a sheet and all over straw, and called for brandy. I noticed particular, for the sergeant asked me."'''
 effects = ["clue:card_luxton_out", "clue:card_luxton_back"]
 
 [[characters.vosper.topics.clock]]
@@ -225,7 +225,7 @@ text = '''"Doctor Watson? Thank God. I'm Edward Gloyne; it was I who wired. They
 
 [[characters.edward.topics.night]]
 aliases = ["last night", "uncle", "quarrel", "left", "leaving", "train", "ran", "temper"]
-text = '''"He turned me out: he had someone coming at nine on business, he said, and I was to go. I went out of the front door as the church struck the three-quarters, and I thought I'd missed my train, for it used to go at ten to nine; I had the old Bradshaw in my head. I ran all the same, all the way down the hill, and there she was, just moving. The porter shoved me in. I was in Exeter by a quarter past ten and in my lodgings by eleven, and they wired me this morning that he was dead."'''
+text = '''"He turned me out: he had someone coming at nine on business, he said, and I was to go. I went out of the front door as the church struck the three-quarters, and I thought I'd missed my train, for it used to go at ten to nine; I had the old Bradshaw in my head. I ran all the same, all the way down the hill, and there she was, just moving. The porter shoved me in. I was in Exeter and in my lodgings before the night was out, and they wired me this morning that he was dead."'''
 effects = ["clue:card_edward"]
 
 [[characters.edward.topics.debts]]
@@ -283,7 +283,7 @@ text = '''"Vodden." He rose and shook my hand. "I'm the Bank's agent here, and c
 
 [[characters.vodden.topics.night]]
 aliases = ["last night", "chess", "lethbridge", "schoolhouse", "school", "alibi", "where", "game"]
-text = '''"I locked up here at a quarter to nine, went home for my coat, and walked round by the square and Church Street to the schoolhouse. I knocked at five past nine; I remember, because Lethbridge made a joke of my being late. We were at the board when the shot was fired, I suppose, though neither of us heard it. The wind was the wrong way."'''
+text = '''"I locked up here at a quarter to nine, went home for my coat, and walked round by the square and Church Street to the schoolhouse. I knocked at five past nine by his clock; I remember, because Lethbridge made a joke of my being late. We were at the board when the shot was fired, I suppose, though neither of us heard it. The wind was the wrong way."'''
 effects = ["clue:vodden_story"]
 
 [[characters.vodden.topics.trust]]
@@ -366,7 +366,7 @@ effects = ["clue:card_tower"]
 
 [[characters.medland.topics.gates]]
 aliases = ["lych gate", "gate", "gates", "locked", "open", "lych-gate", "dusk"]
-text = '''"I locked all three at dusk, sir, half after five, and tried 'em: the iron gates, the lych gate, and Mr Gloyne's little gate from his garden. This morning the iron gates was as I left 'em, and Mr Gloyne's gate was unlocked, but he'd his own key to that and often used it. But the lych gate into School Lane was unlocked and standing wide open. I'll swear I locked it."'''
+text = '''"I locked all three at dusk, sir, and tried 'em: the iron gates, the lych gate, and Mr Gloyne's little gate from his garden. This morning the iron gates was as I left 'em, and Mr Gloyne's gate was unlocked, but he'd his own key to that and often used it. But the lych gate into School Lane was unlocked and standing wide open. I'll swear I locked it."'''
 effects = ["clue:lych_unlocked"]
 
 [[characters.medland.topics.keys]]

@@ -115,7 +115,7 @@ text = "Huxtable, ostler: Luxton was down in the straw with him, getting the cas
 text = "Gloyne carried a motion in the vestry to put the church clock on Greenwich time, to be confirmed on Thursday. Somebody pencilled on the notice: \"Not while I am Vicar.\""
 
 [clues.vodden_story]
-text = "Vodden: locked the bank at a quarter to nine, went home for his coat, walked round by the square and Church Street, and knocked at the schoolhouse at five past nine."
+text = "Vodden: locked the bank at a quarter to nine, went home for his coat, walked round by the square and Church Street, and knocked at the schoolhouse at five past nine by Lethbridge's clock."
 
 # --- timeline cards
 
@@ -349,16 +349,16 @@ wrong_ending = "muddle"
 order = ["edward_quarrel", "card_bank", "card_tower", "card_edward", "card_train", "card_luxton_out", "porter_shot", "card_luxton_back", "card_school", "card_body"]
 
 [final.timeline.cards]
-card_bank = "Vodden locks up the bank and leaves: a quarter to nine by the bank clock."
-card_tower = "The vicar and the sexton go up the tower to wind: twenty to nine by the church clock."
-card_edward = "Edward leaves Fore House: as the church clock strikes a quarter to nine."
-card_train = "The up train leaves, Edward aboard: five past nine by the station clock."
-card_luxton_out = "Luxton goes out of the tap: ten past nine by the inn clock."
-porter_shot = "The shot is heard: sixteen minutes past nine by the station clock."
-edward_quarrel = "Edward and his uncle are heard quarrelling: a quarter past eight by the hall clock at Fore House."
-card_luxton_back = "Luxton comes back into the tap: eighteen minutes past nine by the inn clock."
-card_school = "Vodden knocks at the schoolhouse: five past nine by the school clock."
-card_body = "Mrs Bickle finds the body: as the church clock strikes half past nine."
+card_bank = { event = "Vodden locks up the bank and leaves", says = { card_bank = "a quarter to nine by the bank clock (Pring)", vodden_story = "a quarter to nine, by his own account (Vodden)" } }
+card_tower = { event = "The vicar and the sexton go up the tower to wind", says = { card_tower = "twenty to nine by the church clock (Medland)" } }
+card_edward = { event = "Edward leaves Fore House", says = { card_edward = "as the church clock strikes a quarter to nine (Edward)" } }
+card_train = { event = "The up train leaves, Edward aboard", says = { card_train = "five past nine by the station clock (Pook)" } }
+card_luxton_out = { event = "Luxton goes out of the tap", says = { card_luxton_out = "ten past nine by the inn clock (Vosper)" } }
+porter_shot = { event = "The shot", says = { porter_shot = "sixteen minutes past nine by the station clock (Pook)", card_shot = "on the last stroke of nine by the church clock (the vicar)" } }
+edward_quarrel = { event = "Edward and his uncle are heard quarrelling", says = { edward_quarrel = "a quarter past eight by the hall clock at Fore House (Mrs Bickle)" } }
+card_luxton_back = { event = "Luxton comes back into the tap", says = { card_luxton_back = "eighteen minutes past nine by the inn clock (Vosper)" } }
+card_school = { event = "Vodden knocks at the schoolhouse", says = { card_school = "five past nine by the school clock (Lethbridge)", vodden_story = "five past nine by Lethbridge's clock, by his own account (Vodden)" } }
+card_body = { event = "Mrs Bickle finds the body", says = { card_body = "as the church clock strikes half past nine (Mrs Bickle)" } }
 
 [[final.questions]]
 id = "who"
@@ -498,6 +498,13 @@ We went to the bank with the sergeant, and our man listened with a polite smile 
 # ================================================================ tests (not shipped)
 
 [test]
+# Texts that give clock times without timing an event of the night: timetables,
+# diary appointments, the clock's own workings, the 9:05 as a train's name.
+untimed = [
+  "items.bradshaw", "items.diary", "items.clockworks", "characters.holmes.greeting.0",
+  "characters.kingdon.topics.clocks.0", "characters.kingdon.topics.trains.0",
+  "characters.pascoe.topics.alibis.0",
+]
 walkthrough = [
   "talk to pook", "ask pook about the shot", "ask pook about the train", "examine station clock",
   "examine fire buckets", "take halfpenny", "examine watch",

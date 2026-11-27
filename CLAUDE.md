@@ -34,6 +34,17 @@ must never learn it outside the game.
   Holmes's dry deductive dialogue, Victorian London texture. No modern idiom.
 - Mysteries must be clever but realistic: fair-play (every clue needed is findable),
   period-accurate technology and procedure, no supernatural solutions, no deus ex machina.
+- **Obvious culprit, hard proof** is the house style so far, and the user likes it
+  ("these are absolutely perfect", 2026-11-27; they expect dozens of cases).
+- **Misdirection cases, interspersed** (user, 2026-11-27): some cases should let the
+  clues, narrative and descriptions point at someone innocent, with the real culprit
+  someone "obviously innocent" in context and circumstance, turned by one lynchpin clue
+  that comes later or is harder to find than the rest. Still fair-play. Rules:
+  - **Not the case after Two Clocks** (the next one built).
+  - **Never tell the user which cases have the twist**, not even that a given case
+    doesn't. Not in chat, commits, CLAUDE.md, case titles, menu blurbs or the lineup
+    tables. Decide privately when writing each bible and record it only in `spoilers/`
+    (the bible and `spoilers/twists.md`). Mix them in irregularly so there's no pattern.
 - Entirely original stories. The user has read all the canon and played the Frogwares
   games, so avoid retreading them. Known near-misses already rejected:
   - a fake arrangement hiding a crime (too close to *The Red-Headed League*)
@@ -170,8 +181,13 @@ Exploration premises:
     play TIMELINE shows found cards lettered in the order found, ARRANGE <letters> orders
     them, saved in `state.arrangement`; a wrong order plays `wrong_ending`). **Any statement
     that fixes an event to a clock time must deal a card** (user, 2026-11-26: Pook gave
-    the shot's time and TIMELINE stayed empty). A card can be any clue id, so the clue a
-    witness's answer gives can itself be the card. `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
+    the shot's time and TIMELINE stayed empty; 2026-11-27: Vodden's own account gave
+    times and dealt nothing). A card can be any clue id, so the clue a witness's answer
+    gives can itself be the card. When several witnesses time the same event, the card is
+    `{event, says = {clue: statement}}`: whichever is heard first deals it, and the label
+    lists every statement heard. `test_timed_statements_deal_cards` scans timeline cases
+    for clock readings in texts that deal no card; timetables and appointments go in
+    `[test] untimed` by path. `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
   - Story sources: `spoilers/stories/<id>/*.toml` (all files in a folder are merged).
     `python -m holmes.build` validates and writes scrambled `holmes/data/<id>.case`.
   - Each source has a private `[test]` section: `walkthrough` (must solve the case, find
@@ -205,7 +221,8 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays The Two Clocks of Hatherleigh and gives feedback
-  (especially on the TIMELINE/ARRANGE board and the difficulty). Then pick the next case;
+- Next step from here: the user is partway through The Two Clocks of Hatherleigh (save
+  in progress) and will give feedback (especially on the TIMELINE/ARRANGE board and the
+  difficulty). Then pick the next case;
   the remaining deduction cases need new final-puzzle types in `holmes/puzzles/` (seating,
   Morse tape, record tables, telegram queue, cylinder).

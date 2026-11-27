@@ -3,9 +3,15 @@
 spec: everything an `accuse` spec has, plus
   timeline = {
     intro         shown before the board, when the player accuses
-    cards = {clue id: "short label"}   an event card, dealt when its clue is noted;
-                                        the label gives the time as it was stated
-    order = [clue id, ...]             the true order (every card)
+    cards = {card id: "short label"}   an event card, dealt when the clue of the same
+                                        id is noted; the label gives the time as stated
+          or {card id: {event = "what happened",
+                        says = {clue id: "the time as this witness gave it", ...}}}
+                                        an event several witnesses timed: dealt by
+                                        whichever of those clues is noted first, and
+                                        labelled with the event and every statement
+                                        of it noted so far
+    order = [card id, ...]             the true order (every card)
     wrong_ending  ending id when the order is wrong
   }
 
@@ -26,10 +32,30 @@ def has_timeline(game) -> bool:
     return game.story.final.get("type") == "timeline"
 
 
+def card_clues(spec: dict) -> dict[str, list[str]]:
+    """{clue id: [card ids it deals]} for a final spec's timeline."""
+    out: dict[str, list[str]] = {}
+    for cid, card in spec.get("timeline", {}).get("cards", {}).items():
+        for clue in (card.get("says", {}) if isinstance(card, dict) else [cid]):
+            out.setdefault(clue, []).append(cid)
+    return out
+
+
 def dealt(game) -> list[str]:
     """The card ids found so far, in the order found."""
-    cards = game.story.final["timeline"]["cards"]
-    return [c for c in game.state.clues if c in cards]
+    by_clue = card_clues(game.story.final)
+    out: list[str] = []
+    for clue in game.state.clues:
+        out += [c for c in by_clue.get(clue, []) if c not in out]
+    return out
+
+
+def label(game, cid: str) -> str:
+    card = game.story.final["timeline"]["cards"][cid]
+    if not isinstance(card, dict):
+        return card
+    said = [t for clue, t in card.get("says", {}).items() if clue in game.state.clues]
+    return f"{card['event']}: {'; '.join(said)}."
 
 
 def letter_of(game) -> dict[str, str]:
@@ -44,7 +70,6 @@ def placed(game) -> tuple[list[str], list[str]]:
 
 
 def show_board(game) -> None:
-    cards = game.story.final["timeline"]["cards"]
     letters = letter_of(game)
     arranged, loose = placed(game)
     game.say("TIMELINE", "heading")
@@ -54,10 +79,10 @@ def show_board(game) -> None:
     lines = []
     if arranged:
         lines += ["| In the order you have put them, earliest first:"]
-        lines += [f"|   {letters[c]}  {cards[c]}" for c in arranged]
+        lines += [f"|   {letters[c]}  {label(game, c)}" for c in arranged]
     if loose:
         lines += ["| Not yet placed:" if arranged else "| Events noted, not yet placed:"]
-        lines += [f"|   {letters[c]}  {cards[c]}" for c in loose]
+        lines += [f"|   {letters[c]}  {label(game, c)}" for c in loose]
     game.say("\n".join(lines))
     game.say("(ARRANGE followed by letters, earliest first, sets the order: e.g. "
              f"ARRANGE {''.join(sorted(letters.values())[:3])}. You may place only some.)",
