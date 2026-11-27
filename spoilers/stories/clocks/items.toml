@@ -40,7 +40,7 @@ name = "Bradshaw"
 aliases = ["timetable", "railway guide", "guide"]
 location = "booking_office"
 scenery = true
-description = "The October number of Bradshaw's Railway Guide, chained to the counter by a length of brass chain. The page for the branch was well thumbed. Up trains to Exeter left Hatherleigh at 7.10 and 9.40 in the morning, and 2.15, 5.30 and 9.5 at night; a pencilled note in the margin, in the stationmaster's hand, read: \"9.5 p.m., new from 1st Oct. (was 8.50).\""
+description = "The October number of Bradshaw's Railway Guide, chained to the counter by a length of brass chain. The page for the branch was well thumbed. Up trains to Exeter left Hatherleigh at 7:10 and 9:40 in the morning, and 2.15, 5:30 and 9:05 at night; a pencilled note in the margin, in the stationmaster's hand, read: \"9:05 p.m., new from 1st Oct. (was 8:50).\""
 
 [items.time_card]
 name = "printed card"

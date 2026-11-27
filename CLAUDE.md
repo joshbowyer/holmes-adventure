@@ -55,6 +55,9 @@ must never learn it outside the game.
     night in which the lamp figures). Tests enforce this: `test_scenery_is_named`, and
     `test_walkthrough_words_are_signposted`, which needs walkthroughs to TALK TO before
     ASK and to use the words the screen shows.
+  - **Write clock times as 9:05** (user, 2026-11-26), never the period-style "9.5" or
+    "9.05", which read as decimals. Words ("five past nine") are fine. A test enforces it.
+    Aliases for typed times use spaces ("9 05"), since the parser turns ":" into a space.
   - Never narrate an action the player hasn't performed. If the text says Watson pockets
     something, an effect must really do it; otherwise just describe where it lies and let
     the player TAKE it.

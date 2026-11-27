@@ -134,6 +134,24 @@ def unnamed_scenery(data):
 
 
 class StoryTests(unittest.TestCase):
+    def test_clock_times_use_colons(self):
+        """Times are written 9:05, never the period-style 9.5 or 9.05 (user's request)."""
+        def strings(v):
+            if isinstance(v, str):
+                yield v
+            elif isinstance(v, dict):
+                for x in v.values():
+                    yield from strings(x)
+            elif isinstance(v, list):
+                for x in v:
+                    yield from strings(x)
+        dotted = re.compile(r"(?<![\d.£])\b\d{1,2}\.\d{1,2}\b(?![\d,])")
+        for d in build.source_dirs():
+            data = build.load_source(d)
+            shipped = {k: v for k, v in data.items() if k != "test"}
+            with self.subTest(case=data["case"]["id"]):
+                self.assertEqual(sum(bool(dotted.search(s)) for s in strings(shipped)), 0)
+
     def test_scenery_is_named(self):
         for d in build.source_dirs():
             data = build.load_source(d)

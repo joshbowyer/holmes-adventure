@@ -60,16 +60,16 @@ fill = ["fill", "refill", "trim"]
 # ================================================================ clues
 
 [clues.found]
-text = "Gregson's account: Edwin Hurrell, engineer to the Board, went down into the Fleet alone before midnight. At 4.15 a.m., at low water, a waterman saw his arm hanging out under a flap of the Fleet outfall. Gregson calls it misadventure, or a tosher who was selling a gold watch at six this morning."
+text = "Gregson's account: Edwin Hurrell, engineer to the Board, went down into the Fleet alone before midnight. At 4:15 a.m., at low water, a waterman saw his arm hanging out under a flap of the Fleet outfall. Gregson calls it misadventure, or a tosher who was selling a gold watch at six this morning."
 
 [clues.tide_board]
-text = "The depot tide board: low water at Blackfriars was due at 12.20 a.m. last night; high water at 6.35 this morning. Added beneath: \"Wind E., fresh to strong.\""
+text = "The depot tide board: low water at Blackfriars was due at 12:20 a.m. last night; high water at 6:35 this morning. Added beneath: \"Wind E., fresh to strong.\""
 
 [clues.flush_log]
-text = "Flushing log: Fleet penstock shut at 10 p.m. to gather head; flushed at 2 a.m. by Dunn, whistle given; \"head at flushing 3 ft 4 in only (usual: full, 7 ft). Cause not known.\" Shut again at 2.20."
+text = "Flushing log: Fleet penstock shut at 10 p.m. to gather head; flushed at 2 a.m. by Dunn, whistle given; \"head at flushing 3 ft 4 in only (usual: full, 7 ft). Cause not known.\" Shut again at 2:20."
 
 [clues.key_book]
-text = "Key book: Hurrell signed out the Farringdon Street side-entrance key at 11.20 p.m. The Board's penstock handle went out to Dunn at 1.30 a.m. and back at 3.10. A second penstock handle was lent to Gaskin & Pell, the contractors, on 3 August."
+text = "Key book: Hurrell signed out the Farringdon Street side-entrance key at 11:20 p.m. The Board's penstock handle went out to Dunn at 1:30 a.m. and back at 3:10. A second penstock handle was lent to Gaskin & Pell, the contractors, on 3 August."
 
 [clues.fill_rate]
 text = "Coaker: with the gate shut, the pond fills about two feet an hour in dry weather, and is full to the crest (7 ft) well before the 2 a.m. flush."
@@ -78,7 +78,7 @@ text = "Coaker: with the gate shut, the pond fills about two feet an hour in dry
 text = "The Board's penstock handle: a heavy iron crank whose working end is a square socket, about an inch across. There are only two: the Board's, and the contractors'."
 
 [clues.oil_book]
-text = "Sparrow's oil book: lamp No. 7 was filled to the brim and issued to Hurrell at 11.20 p.m."
+text = "Sparrow's oil book: lamp No. 7 was filled to the brim and issued to Hurrell at 11:20 p.m."
 
 [clues.lamp_burn]
 text = "A Board's lamp or lantern, filled to the brim, burns about four hours."
@@ -126,7 +126,7 @@ text = "Mott: a little after a quarter past twelve a flood came down the Fleet w
 text = "Gaskin was at a Masonic banquet at the Cannon Street Hotel from seven until a quarter past one, before forty witnesses (Gregson has checked)."
 
 [clues.sparrow_alibi]
-text = "Sparrow: he and Coaker played cribbage in the lamp-room from 11.30 to 1.30, and Coaker never left. From the window Sparrow watched the lit office door all night; the Board's handle never left its hook until Dunn took it at 1.30."
+text = "Sparrow: he and Coaker played cribbage in the lamp-room from 11:30 to 1.30, and Coaker never left. From the window Sparrow watched the lit office door all night; the Board's handle never left its hook until Dunn took it at 1:30."
 
 [clues.coaker_admits]
 text = "Coaker admits he never examined the relining above chain 8. He signed the measurement on Ruddock's word, and Gaskin was \"very good to him at quarter-day\"."
@@ -135,7 +135,7 @@ text = "Coaker admits he never examined the relining above chain 8. He signed th
 text = "The contractors' working shaft: every rung above the standing water is smeared with fresh sewer mud, right up to the yard. Someone climbed out of the Fleet that way since the pond last stood low."
 
 [clues.fitch_saw]
-text = "Fitch, the contractors' watchman: at about 12.30 a.m. Ruddock came up out of the working shaft, wet to the thighs, with his dark lantern and the contractors' penstock handle, and told him, \"You never saw me.\""
+text = "Fitch, the contractors' watchman: at about 12:30 a.m. Ruddock came up out of the working shaft, wet to the thighs, with his dark lantern and the contractors' penstock handle, and told him, \"You never saw me.\""
 
 [clues.ruddock_story]
 text = "Ruddock says he went home to the Borough at six last night and was in bed by ten."
@@ -147,7 +147,7 @@ text = "In Ruddock's hut: the contractors' penstock handle, with the same inch-s
 text = "In Ruddock's hut: a pair of corduroy trousers hung to dry behind the stove, soaked and black with Fleet slime up to the thigh."
 
 [clues.tide_card]
-text = "In Ruddock's hut: a London Bridge tide card with \"Low water 12.15 a.m.\" for Tuesday the 9th ringed twice in pencil."
+text = "In Ruddock's hut: a London Bridge tide card with \"Low water 12:15 a.m.\" for Tuesday the 9th ringed twice in pencil."
 
 [clues.measure_book]
 text = "The contractors' measurement book: chains 0 to 14 relined in full, \"Measured: J. Ruddock, Foreman. Examined and found correct: A. Coaker, for the Board.\""

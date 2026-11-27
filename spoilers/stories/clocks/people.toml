@@ -48,7 +48,7 @@ text = '''"I'd turned the lamps down after the up train went," said Pook. "The r
 effects = ["clue:porter_shot"]
 
 [[characters.pook.topics.train]]
-aliases = ["up train", "9.5", "nine five", "edward", "mr gloyne", "young mr gloyne", "edward gloyne", "nephew", "young gloyne"]
+aliases = ["up train", "9 05", "9 5", "905", "nine five", "edward", "mr gloyne", "young mr gloyne", "edward gloyne", "nephew", "young gloyne"]
 text = '''"The up train for Exeter, the 9.5, left at five minutes past nine by that clock, sir, to the second: we're particular here. Young Mr Gloyne come pelting down the hill and in at the gate as she was moving, and I opened a door and bundled him in, and the guard took his fare. Another half-minute and he'd have missed her."'''
 effects = ["clue:card_train"]
 
@@ -74,8 +74,8 @@ text = '''"Hatherleigh lies four degrees west of Greenwich, sir, near enough; th
 effects = ["clue:sixteen"]
 
 [[characters.kingdon.topics.trains]]
-aliases = ["train", "trains", "timetable", "bradshaw", "up train", "9.5", "8.50", "changed", "this month"]
-text = '''"The up evening train went at 8.50 till the first of the month, sir; now she goes at 9.5, to make the connection at Exeter. There's plenty in the town still go by the old time, and either come down a quarter of an hour early or think they've missed her."'''
+aliases = ["train", "trains", "timetable", "bradshaw", "up train", "9 05", "9 5", "8 50", "changed", "this month"]
+text = '''"The up evening train went at 8:50 till the first of the month, sir; now she goes at 9.5, to make the connection at Exeter. There's plenty in the town still go by the old time, and either come down a quarter of an hour early or think they've missed her."'''
 
 [[characters.kingdon.topics.vicar]]
 aliases = ["squance", "mr squance", "the vicar", "parson", "reverend"]
@@ -172,7 +172,7 @@ effects = ["clue:bullet"]
 
 [[characters.pascoe.topics.alibis]]
 aliases = ["alibi", "suspects", "case", "theory", "who", "pin"]
-text = '''The sergeant counted on his fingers. "Young Edward, the nephew, that's in debt and comes in for everything: on the 9.5 train when the shot was fired; the porter put him in. Farmer Luxton, that Gloyne was selling up: in the King's Arms. The vicar, that was at daggers drawn with him over the church clock: up the tower with the sexton. Mr Vodden at the bank, that worked with him on the Market Trust: at chess with the schoolmaster. Every one of 'em somewhere else, sir, and every one by a clock."'''
+text = '''The sergeant counted on his fingers. "Young Edward, the nephew, that's in debt and comes in for everything: on the 9:05 train when the shot was fired; the porter put him in. Farmer Luxton, that Gloyne was selling up: in the King's Arms. The vicar, that was at daggers drawn with him over the church clock: up the tower with the sexton. Mr Vodden at the bank, that worked with him on the Market Trust: at chess with the schoolmaster. Every one of 'em somewhere else, sir, and every one by a clock."'''
 
 [[characters.pascoe.topics.desk]]
 aliases = ["drawers", "papers", "diary"]

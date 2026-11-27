@@ -35,8 +35,8 @@ description = """
 The board was ruled into columns and chalked in a round, careful hand:
 
 | TIDES, BLACKFRIARS          Tues 9th     Wed 10th
-| High water                  6.10 pm      6.35 am
-| Low water                   12.20 am     12.45 pm
+| High water                  6:10 pm      6:35 am
+| Low water                   12:20 am     12:45 pm
 
 At the foot someone had added, more roughly: "Wind E., fresh to strong."
 """
@@ -50,11 +50,11 @@ clue = "flush_log"
 description = """
 A long ledger, ruled in columns, open at the night's page. The entries for the Fleet ran thus:
 
-| Tues 9th  10.0 pm  Fleet penstock shut to gather head.     H. Dunn
-| Wed 10th   2.0 am  Fleet flushed. Whistle given.           H. Dunn
+| Tues 9th  10:00 pm  Fleet penstock shut to gather head.     H. Dunn
+| Wed 10th   2:00 am  Fleet flushed. Whistle given.           H. Dunn
 |                    Head at flushing 3 ft 4 in only.
 |                    (Usual: full, 7 ft.) Cause not known.
-|            2.20 am Penstock shut again.                    H. Dunn
+|            2:20 am  Penstock shut again.                   H. Dunn
 """
 
 [items.key_book]
@@ -66,10 +66,10 @@ clue = "key_book"
 description = """
 The book in which every key and handle taken from the rack was signed out and in. The recent entries read:
 
-| Tues 9th  11.20 pm  Side-entrance key, Farringdon St.
+| Tues 9th  11:20 pm  Side-entrance key, Farringdon St.
 |                     OUT  E. Hurrell        IN  (found on deceased)
-| Wed 10th   1.30 am  Penstock handle, Fleet
-|                     OUT  H. Dunn           IN  3.10 am
+| Wed 10th   1:30 am  Penstock handle, Fleet
+|                     OUT  H. Dunn           IN  3:10 am
 
 On the inside of the cover, pasted in, was an older slip: "3rd Aug. Second penstock handle (Fleet) lent to Gaskin & Pell, contractors, for the relining works, until completion. A. Coaker."
 """
@@ -113,10 +113,10 @@ clue = "oil_book"
 description = """
 A greasy book in which Sparrow entered every lamp filled and given out. Last night's entries:
 
-| Tues 9th  9.40 pm   Lamps 2, 3, 4, 5 (Dunn's gang), filled.
-|          11.20 pm   Lamp 7, filled, to Mr Hurrell.
-| Wed 10th  1.30 am   Lamps 2, 3, 4, 5 re-trimmed.
-|           4.40 am   Lamps 2, 3, 4 (for the Police).
+| Tues 9th   9:40 pm  Lamps 2, 3, 4, 5 (Dunn's gang), filled.
+|           11:20 pm  Lamp 7, filled, to Mr Hurrell.
+| Wed 10th   1:30 am  Lamps 2, 3, 4, 5 re-trimmed.
+|            4:40 am  Lamps 2, 3, 4 (for the Police).
 """
 
 [items.lamp_hooks]
@@ -284,7 +284,7 @@ aliases = ["card", "tide table", "almanac card"]
 location = "ruddocks_hut"
 scenery = true
 clue = "tide_card"
-description = "A printed tide-table for London Bridge, the sort the river firms give away, tacked to the wall above the table. Against Tuesday the 9th, \"Low water 12.15 a.m.\" had been ringed round twice in pencil."
+description = "A printed tide-table for London Bridge, the sort the river firms give away, tacked to the wall above the table. Against Tuesday the 9th, \"Low water 12:15 a.m.\" had been ringed round twice in pencil."
 
 [items.measure_book]
 name = "measurement book"
