@@ -213,6 +213,11 @@ class Game:
                 vocab.update(n.replace("-", " ").split())
             if words and all(w in vocab for w in words):
                 partial.append(tid)
+        if len(exact) > 1:
+            # "telegram" means the thing called a telegram, not one with it as an alias
+            named = [t for t in exact if self.story.names_for(t)[0] == phrase]
+            if len(named) == 1:
+                return named
         return exact or partial
 
     def resolve(self, phrase: str, candidates: list[str] | None = None) -> str | None:

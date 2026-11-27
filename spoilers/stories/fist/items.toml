@@ -523,7 +523,7 @@ take_text = "I took the letter."
 
 [items.wire_copy]
 name = "telegram receipt"
-aliases = ["receipt", "copy", "telegram", "wire", "counterfoil"]
+aliases = ["receipt", "copy", "counterfoil", "copy of the telegram"]
 location = "writing_case"
 clue = "tagg_wire"
 description = "A copy, in Tagg's hand, of a telegram he had handed in at Porthkellis office on Tuesday morning, with the office's receipt pinned to it: 'LEETE BIRCHIN LANE LONDON. WILL WIRE NEWS FROM HEAD NINE WEDNESDAY. TAGG.'"
