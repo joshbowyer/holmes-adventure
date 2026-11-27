@@ -91,6 +91,15 @@ must never learn it outside the game.
   coin of the current case's coinage, free of time; not listed in HELP (user, 2026-11-26).
 - **Wrong final answer:** the player sees that answer's bad ending in full, then may resume
   the case and try again. Wrong attempts are counted and shown on the case-closed screen.
+- **Accusing is never blocked** (user, 2026-11-27): ACCUSE works from the first turn, so a
+  player who thinks they have it may rush to a wrong answer. Don't set `final.when`.
+  Instead, each answer choice that names something found in play (a person, a route, a
+  means, a motive) has `when` and is offered only once it is found: `met:PERSON` (spoken
+  to) or `clue:` alternatives. Gate wrong choices as well as right ones, so a new choice
+  appearing is no tell. Every question keeps at least one choice offered from the start.
+  A timeline case accused with cards missing plays `incomplete_ending` if the cards found
+  are in the right order. Tests: `test_unexplored_case_cannot_be_solved`; the validator
+  needs an ungated choice per question.
 - **Colour:** ANSI colour and bold used sparingly (room names, items, exits), with a plain
   mode that turns it off.
 - Deduction cases, each built around a *different* final-puzzle style:

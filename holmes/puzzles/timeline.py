@@ -13,6 +13,8 @@ spec: everything an `accuse` spec has, plus
                                         of it noted so far
     order = [card id, ...]             the true order (every card)
     wrong_ending  ending id when the order is wrong
+    incomplete_ending   optional: ending id when the cards found are in the right order
+                  but some were never found (else wrong_ending)
   }
 
 During play, TIMELINE shows the cards found so far, each lettered in the order it was
@@ -126,7 +128,7 @@ class TimelinePuzzle(AccusePuzzle):
         if answers is None or not self.confirm():
             return self.stop()
         if not self.order_right():
-            return self.judge(tl["wrong_ending"], False)
+            return self.judge(self.order_ending(), False)
         self.judge(*self.ending_for(answers))
 
     def settle_order(self) -> bool:
@@ -153,6 +155,13 @@ class TimelinePuzzle(AccusePuzzle):
                 g.say("Every event must have its place.", "system")
                 continue
             g.state.arrangement = got
+
+    def order_ending(self) -> str:
+        tl, found = self.spec["timeline"], set(dealt(self.game))
+        mine = [c for c in self.game.state.arrangement if c in found]
+        if mine == [c for c in tl["order"] if c in found]:
+            return tl.get("incomplete_ending", tl["wrong_ending"])
+        return tl["wrong_ending"]
 
     def order_right(self) -> bool:
         order = self.spec["timeline"]["order"]

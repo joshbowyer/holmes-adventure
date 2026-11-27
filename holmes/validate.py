@@ -168,6 +168,8 @@ def validate(data: dict) -> list[str]:
                 errs.append("final timeline: order must list every card exactly once")
             if len(cards) > 26:
                 errs.append("final timeline: more than 26 cards")
+            if tl.get("incomplete_ending", tl.get("wrong_ending")) not in endings:
+                errs.append(f"final timeline: incomplete_ending {tl.get('incomplete_ending')!r} does not exist")
             if tl.get("wrong_ending") not in endings:
                 errs.append(f"final timeline: wrong_ending {tl.get('wrong_ending')!r} does not exist")
         conds.append(("final.when", final.get("when")))
@@ -177,6 +179,8 @@ def validate(data: dict) -> list[str]:
             if len(set(ids)) != len(ids):
                 errs.append(f"final question {q.get('id')}: duplicate option ids")
             qopts[q.get("id")] = set(ids)
+            if all(o.get("when") for o in q.get("options", [])):
+                errs.append(f"final question {q.get('id')}: needs an option offered from the start")
             for o in q.get("options", []):
                 conds.append((f"final option {o.get('id')}.when", o.get("when")))
         sol = final.get("solution", {})
@@ -245,6 +249,8 @@ def validate(data: dict) -> list[str]:
                     errs.append(f"{where}: unknown item {a!r}")
                 elif kind in ("at", "visited") and a not in rooms:
                     errs.append(f"{where}: unknown room {a!r}")
+                elif kind == "met" and a not in chars:
+                    errs.append(f"{where}: unknown person {a!r}")
                 elif kind == "clue" and a not in clues:
                     errs.append(f"{where}: unknown clue {a!r}")
                 elif kind == "loc" and (a not in things or args[1] not in places):

@@ -337,8 +337,6 @@ texts = [
 
 [final]
 type = "timeline"
-when = ["clue:card_bank", "clue:card_tower", "clue:card_edward", "clue:card_train", "clue:card_luxton_out", "clue:porter_shot", "clue:edward_quarrel", "clue:card_luxton_back", "clue:card_school", "clue:card_body"]
-locked_text = "I had not yet the whole of last evening, or anything like it. Holmes would want every time I could get, and the clock it was read from."
 intro = "I went up to the parlour of the King's Arms and laid my notebook on the table. Holmes took his pipe from his mouth. \"Well, Watson? Let us have the evening first, in its true order, by one clock; and then the man.\""
 good = "solved"
 default_wrong = "escape"
@@ -346,6 +344,7 @@ default_wrong = "escape"
 [final.timeline]
 intro = "\"Here are your events,\" said Holmes, turning the pages. \"Put them in the order in which they truly happened, earliest first.\""
 wrong_ending = "muddle"
+incomplete_ending = "gaps"
 order = ["edward_quarrel", "card_bank", "card_tower", "card_edward", "card_train", "card_luxton_out", "porter_shot", "card_luxton_back", "card_school", "card_body"]
 
 [final.timeline.cards]
@@ -365,10 +364,10 @@ id = "who"
 prompt = "Who shot Josiah Gloyne?"
 options = [
   { id = "edward", label = "Edward Gloyne, the nephew" },
-  { id = "luxton", label = "William Luxton, of Week Farm" },
-  { id = "squance", label = "The Reverend Oliver Squance, the vicar" },
-  { id = "lethbridge", label = "Mr Lethbridge, the schoolmaster" },
-  { id = "vodden", label = "Mr Arthur Vodden, the Bank's agent" },
+  { id = "luxton", label = "William Luxton, of Week Farm", when = "met:luxton|clue:luxton_threat|clue:diary" },
+  { id = "squance", label = "The Reverend Oliver Squance, the vicar", when = "met:squance|clue:vestry_motion" },
+  { id = "lethbridge", label = "Mr Lethbridge, the schoolmaster", when = "met:lethbridge|clue:card_school" },
+  { id = "vodden", label = "Mr Arthur Vodden, the Bank's agent", when = "met:vodden|clue:card_bank|clue:vodden_story" },
 ]
 
 [[final.questions]]
@@ -376,8 +375,8 @@ id = "how"
 prompt = "How was the murderer's alibi made?"
 options = [
   { id = "station", label = "The station clock was put on" },
-  { id = "inn", label = "The inn clock was keeping church time" },
-  { id = "school", label = "The school clock had been put back to church time, and he knew it" },
+  { id = "inn", label = "The inn clock was keeping church time", when = "clue:inn_std" },
+  { id = "school", label = "The school clock had been put back to church time, and he knew it", when = "clue:school_std" },
   { id = "lie", label = "His witness lied for him" },
 ]
 
@@ -385,8 +384,8 @@ options = [
 id = "route"
 prompt = "How did he come and go?"
 options = [
-  { id = "round", label = "Round by the square and Church Street" },
-  { id = "churchyard", label = "Through the churchyard, with a churchwarden's key" },
+  { id = "round", label = "Round by the square and Church Street", when = "clue:vodden_story|clue:long_way" },
+  { id = "churchyard", label = "Through the churchyard, with a churchwarden's key", when = "clue:keys" },
   { id = "front", label = "By the front door of Fore House, under the constable's nose" },
   { id = "train", label = "He came back on a train" },
 ]
@@ -396,9 +395,9 @@ id = "why"
 prompt = "Why was Gloyne killed?"
 options = [
   { id = "money", label = "To inherit his money" },
-  { id = "farm", label = "To save a farm from foreclosure" },
-  { id = "clock", label = "To stop the church clock being changed" },
-  { id = "trust", label = "To stop him exposing a theft from the Market Trust" },
+  { id = "farm", label = "To save a farm from foreclosure", when = "clue:luxton_threat|clue:diary" },
+  { id = "clock", label = "To stop the church clock being changed", when = "clue:vestry_motion" },
+  { id = "trust", label = "To stop him exposing a theft from the Market Trust", when = "clue:draft_notice" },
 ]
 
 [final.solution]
@@ -451,6 +450,18 @@ Holmes ran his eye down my order of events, and then down it again, and laid the
 He was right, and I knew it. Sergeant Pascoe, who had no such scruples, arrested Edward Gloyne that afternoon on the strength of twenty minutes he could not account for, and it was a week before the magistrates let him go again. By then the murderer had had time to put his affairs in such order as they would bear.
 
 "Go back, Watson," said Holmes. "One clock. Then put them in order."
+"""
+
+[endings.gaps]
+title = "An Evening with Holes in It"
+text = """
+Holmes ran his eye down my order of events, and nodded slowly, and then turned back the page and ran it down again.
+
+"So far as it goes, Watson, it is very fair," said he. "But it does not go far enough. There are hours of last evening here that you have not accounted for at all, and men in this town who were doing something by some clock in those hours that you have not troubled to ask them about. A case built over a hole will fall into it."
+
+I said that I was sure of my man. Holmes only shrugged, and Sergeant Pascoe, who was sure of a different one, went up the hill to Fore House with the handcuffs in his pocket. By the time the magistrates had sorted the matter out, the evening had grown a week older, and every clock in Hatherleigh had been set and re-set a dozen times.
+
+"Go back, Watson," said Holmes. "Every time in Hatherleigh, and the clock it was read from. Then the order. Then the man."
 """
 
 [endings.edward]

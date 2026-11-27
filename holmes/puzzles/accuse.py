@@ -2,10 +2,13 @@
 
 spec:
   type = "accuse"
-  when           condition before an accusation is allowed
+  when           optional condition before an accusation is allowed (user, 2026-11-27:
+                 don't use it; let the player rush to a wrong answer instead)
   locked_text    shown when `when` does not hold
   intro          shown before the questions
   questions = [{id, prompt, options = [{id, label, when?}]}]
+                 an option with `when` is offered only once the player has found
+                 what it names, so an unexplored case cannot be answered rightly
   solution = {question id: option id}
   good           ending id for the right answer
   wrong = [{answers = {question id: option id}, ending}]   first match wins

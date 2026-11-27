@@ -321,8 +321,6 @@ texts = [
 
 [final]
 type = "accuse"
-when = "clue:tube_plug"
-locked_text = "I had not yet so much as looked properly at the scene of the crime. I had better begin there."
 intro = "I found Holmes still by the newel post. He took one look at my face, knocked out his pipe, and said, \"Well, Watson?\""
 good = "solved"
 default_wrong = "collapses"
@@ -333,11 +331,11 @@ prompt = "Who killed Lionel Brand?"
 options = [
   { id = "orme", label = "Captain Hugh Orme" },
   { id = "vane", label = "Mr Edmund Vane" },
-  { id = "clara", label = "Mrs Clara Vane" },
+  { id = "clara", label = "Mrs Clara Vane", when = "met:clara" },
   { id = "letitia", label = "Miss Letitia Orme" },
-  { id = "gaunt", label = "Gaunt, the butler" },
-  { id = "parkes", label = "Parkes, the valet" },
-  { id = "james", label = "James, the footman" },
+  { id = "gaunt", label = "Gaunt, the butler", when = "met:gaunt" },
+  { id = "parkes", label = "Parkes, the valet", when = "met:parkes" },
+  { id = "james", label = "James, the footman", when = "met:james" },
 ]
 
 [[final.questions]]
@@ -362,9 +360,9 @@ options = [
 id = "why"
 prompt = "Why was he killed?"
 options = [
-  { id = "business", label = "To stop him taking his money out of the firm" },
-  { id = "debt", label = "To be rid of a debt owed to him" },
-  { id = "secret", label = "To stop him revealing a secret from the past" },
+  { id = "business", label = "To stop him taking his money out of the firm", when = "clue:dissolution" },
+  { id = "debt", label = "To be rid of a debt owed to him", when = "clue:orme_debt" },
+  { id = "secret", label = "To stop him revealing a secret from the past", when = "clue:burnt_letter|clue:cutting" },
   { id = "robbery", label = "For gain, by robbery" },
 ]
 
@@ -503,5 +501,5 @@ walkthrough = [
   "accuse", "clara", "jib", "ten o'clock", "secret", "y",
 ]
 wrong_path = [
-  "e", "examine speaking tube", "accuse", "1", "1", "2", "2", "y", "",
+  "e", "examine speaking tube", "accuse", "captain", "library door", "o'clock", "robbery", "y", "",
 ]

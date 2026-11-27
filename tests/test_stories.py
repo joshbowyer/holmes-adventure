@@ -10,6 +10,8 @@ os.environ.setdefault("HOLMES_SAVE_DIR", tempfile.mkdtemp(prefix="holmes-test-")
 
 from holmes import build
 from holmes.engine import codec
+from holmes.engine.conditions import check
+from holmes.engine.state import GameState
 from holmes.engine.game import Game
 from holmes.engine.parser import parse
 from holmes.engine.story import Story
@@ -169,6 +171,19 @@ def undealt_times(data):
 
 
 class StoryTests(unittest.TestCase):
+    def test_unexplored_case_cannot_be_solved(self):
+        """The player may accuse at any time (user, 2026-11-27), but the answers they
+        have not yet found are not offered, so the right answer needs the evidence."""
+        for d in build.source_dirs():
+            data = build.load_source(d)
+            with self.subTest(case=data["case"]["id"]):
+                final = data["final"]
+                self.assertFalse(final.get("when"), "accusation is gated")
+                state = GameState.new(Story({k: v for k, v in data.items() if k != "test"}))
+                offered = {q["id"]: {o["id"] for o in q["options"] if check(state, o.get("when"))}
+                           for q in final["questions"]}
+                self.assertFalse(all(v in offered[k] for k, v in final["solution"].items()))
+
     def test_timed_statements_deal_cards(self):
         for d in build.source_dirs():
             data = build.load_source(d)

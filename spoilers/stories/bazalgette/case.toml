@@ -415,8 +415,6 @@ texts = [
 
 [final]
 type = "accuse"
-when = "clue:wound"
-locked_text = "I had not yet so much as looked at the dead man. A doctor had better begin there."
 intro = "I came up into the yard, filthy and very tired, and found Holmes still on his barrel. He closed the ledger on his finger. \"Well, Watson?\""
 good = "solved"
 default_wrong = "collapses"
@@ -425,11 +423,11 @@ default_wrong = "collapses"
 id = "who"
 prompt = "Who killed Edwin Hurrell?"
 options = [
-  { id = "ruddock", label = "Joseph Ruddock, the contractors' foreman" },
-  { id = "coaker", label = "Abel Coaker, the foreman of flushers" },
-  { id = "gaskin", label = "Mr Thomas Gaskin, the contractor" },
-  { id = "mott", label = "Saul Mott, the tosher" },
-  { id = "dunn", label = "Harry Dunn, the ganger" },
+  { id = "ruddock", label = "Joseph Ruddock, the contractors' foreman", when = "met:ruddock" },
+  { id = "coaker", label = "Abel Coaker, the foreman of flushers", when = "met:coaker" },
+  { id = "gaskin", label = "Mr Thomas Gaskin, the contractor", when = "met:gaskin" },
+  { id = "mott", label = "Saul Mott, the tosher", when = "met:mott" },
+  { id = "dunn", label = "Harry Dunn, the ganger", when = "met:dunn" },
   { id = "nobody", label = "Nobody: it was an accident" },
 ]
 
@@ -438,8 +436,8 @@ id = "how"
 prompt = "How did his body come to the outfall chamber?"
 options = [
   { id = "fell", label = "He fell into the stream in the dark and was carried down" },
-  { id = "two", label = "He was carried down by Dunn's two o'clock flush" },
-  { id = "early", label = "He was carried down by a flush let go without warning at about a quarter past twelve" },
+  { id = "two", label = "He was carried down by Dunn's two o'clock flush", when = "clue:flush_log|clue:dunn_night|clue:mott_flood" },
+  { id = "early", label = "He was carried down by a flush let go without warning at about a quarter past twelve", when = "clue:flush_log|clue:dunn_night|clue:mott_flood" },
   { id = "carried", label = "He was carried there by hand and left" },
 ]
 
@@ -447,9 +445,9 @@ options = [
 id = "stayed"
 prompt = "Why was he not carried out into the river?"
 options = [
-  { id = "wind", label = "The east wind held the tide up, so the flaps were shut" },
-  { id = "weir", label = "He caught on the weir and only slid down later" },
-  { id = "heavy", label = "The flaps are too heavy for any flush to open" },
+  { id = "wind", label = "The east wind held the tide up, so the flaps were shut", when = "clue:flaps|clue:pellow_tide" },
+  { id = "weir", label = "He caught on the weir and only slid down later", when = "clue:weir" },
+  { id = "heavy", label = "The flaps are too heavy for any flush to open", when = "clue:flaps|clue:pellow_tide" },
   { id = "wedged", label = "Someone had wedged the flaps shut" },
 ]
 
@@ -457,9 +455,9 @@ options = [
 id = "why"
 prompt = "Why was he killed?"
 options = [
-  { id = "sham", label = "To stop him reporting that the relining was a sham" },
-  { id = "robbery", label = "For his watch" },
-  { id = "tosher", label = "Because he caught a tosher at work" },
+  { id = "sham", label = "To stop him reporting that the relining was a sham", when = "clue:sham_wall|clue:notebook_entry" },
+  { id = "robbery", label = "For his watch", when = "clue:watch_chain|met:mott" },
+  { id = "tosher", label = "Because he caught a tosher at work", when = "met:mott" },
   { id = "none", label = "He was not killed" },
 ]
 
@@ -612,5 +610,5 @@ walkthrough = [
   "accuse", "ruddock", "quarter past twelve", "wind", "sham", "y",
 ]
 wrong_path = [
-  "w", "examine body", "accuse", "4", "2", "2", "2", "y", "",
+  "w", "examine body", "accuse", "nobody", "fell", "wedged", "not killed", "y", "",
 ]

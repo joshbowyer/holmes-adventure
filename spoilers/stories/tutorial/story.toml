@@ -582,8 +582,6 @@ texts = [
 
 [final]
 type = "accuse"
-when = "clue:sill_crumbs"
-locked_text = "I turned the matter over, but I had not yet so much as looked at the scene of the crime. Holmes would have laughed at me."
 intro = "I went up to the sitting-room and stood before Holmes's chair. \"I have it,\" said I."
 good = "solved"
 default_wrong = "wrong_account"
@@ -601,7 +599,7 @@ options = [
 id = "how"
 prompt = "How did the thief come at the cake?"
 options = [
-  { id = "window", label = "Reached in at the open window from the area" },
+  { id = "window", label = "Reached in at the open window from the area", when = "clue:sill_crumbs" },
   { id = "house", label = "Came through the house by the street door and the kitchen stair" },
   { id = "kitchen", label = "Walked into the kitchen while Mrs Hudson was in the scullery" },
 ]

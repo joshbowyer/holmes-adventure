@@ -231,6 +231,34 @@ class GameTests(unittest.TestCase):
         g.handle("accuse")
         self.assertTrue(g.state.solved)
 
+    def test_incomplete_timeline_and_met_options(self):
+        import copy
+        from holmes.engine.conditions import check
+        data = copy.deepcopy(FIXTURE)
+        del data["final"]["when"]
+        data["final"]["questions"][0]["options"][0]["when"] = "met:bob"
+        data["final"].update({"type": "timeline",
+                              "timeline": {"cards": {"rope_pulled": "Rope.",
+                                                     "k": {"event": "Key", "says": {"found_key": "now"}}},
+                                           "order": ["rope_pulled", "k"],
+                                           "wrong_ending": "lose", "incomplete_ending": "gaps"}})
+        data["endings"]["gaps"] = {"text": "Gaps."}
+        self.assertEqual(validate(data), [])
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        self.assertFalse(check(g.state, "met:bob"))
+        g.io.inputs += ["", "1", "y", ""]                 # nothing found: may still accuse
+        g.handle("accuse")
+        self.assertEqual(g.state.wrong, 1)               # only Nob was offered
+        g.handle("n")
+        g.handle("ask bob about key")
+        self.assertTrue(check(g.state, "met:bob"))
+        g.state.clues.append("found_key")                 # one card of two, in order
+        mark = len(g.io.output)
+        g.io.inputs += ["a", "", "bob", "y", ""]
+        g.handle("accuse")
+        self.assertIn("Gaps.", "".join(g.io.output[mark:]))
+        self.assertEqual((g.state.wrong, g.state.solved), (2, False))
+
     def test_wrong_then_right_accusation(self):
         g, _ = new_game(["2", "y", "", "1", "y"])
         g.handle("accuse")

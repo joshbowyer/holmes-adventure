@@ -13,6 +13,7 @@ class GameState:
     flags: set = field(default_factory=set)
     clues: list = field(default_factory=list)        # in the order found
     visited: set = field(default_factory=set)
+    met: set = field(default_factory=set)           # people spoken to
     opened: set = field(default_factory=set)
     fired: set = field(default_factory=set)          # ids of one-shot events already run
     coins: int = 0
@@ -39,14 +40,14 @@ class GameState:
 
     def to_dict(self) -> dict:
         d = dict(self.__dict__)
-        for k in ("flags", "visited", "opened", "fired"):
+        for k in ("flags", "visited", "met", "opened", "fired"):
             d[k] = sorted(d[k])
         return d
 
     @classmethod
     def from_dict(cls, d: dict) -> "GameState":
         d = dict(d)
-        for k in ("flags", "visited", "opened", "fired"):
+        for k in ("flags", "visited", "met", "opened", "fired"):
             d[k] = set(d.get(k, []))
         known = cls.__dataclass_fields__
         return cls(**{k: v for k, v in d.items() if k in known})

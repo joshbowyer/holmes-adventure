@@ -49,6 +49,9 @@ class Game:
         self.story = story
         self.io = console
         self.state = state or GameState.new(story)
+        if state is not None and not state.met:
+            # saves from before `met` existed: count everyone in a room already visited
+            state.met = {c for c in story.characters if state.loc(c) in state.visited}
         self.autosave = autosave
         self.verb_map = build_verb_map(story.verbs)
         self.last: Command | None = None
@@ -522,6 +525,7 @@ class Game:
         if not self.story.is_character(tid):
             self.fail("You receive no answer.")
             return None
+        self.state.met.add(tid)
         return tid
 
     def do_talk(self, cmd: Command) -> None:

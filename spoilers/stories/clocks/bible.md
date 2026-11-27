@@ -131,3 +131,7 @@ TIMELINE: the ten cards above in true order. The shot's card is dealt by the por
 - why: Gloyne would expose his theft from the Market Trust.
 Wrong timeline -> `muddle` ending. Wrong who -> per-suspect endings; right who but wrong
 details -> `escape` ending (Vodden's counsel picks the case apart).
+
+Accusation (2026-11-27): no gate. Options gated: suspects on met/clue, inn/school on the
+clock-standard clues, round/churchyard on vodden_story|long_way / keys, motives on
+their clues. Missing cards with the found ones in order -> `gaps` ending.

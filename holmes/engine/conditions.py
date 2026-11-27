@@ -8,6 +8,7 @@ A leading '!' negates a term.
   has:ITEM           the player is carrying ITEM
   at:ROOM            the player is in ROOM
   visited:ROOM       the player has been in ROOM
+  met:PERSON         the player has spoken to PERSON (talk, ask or show)
   clue:ID            the clue is in the notebook
   loc:THING:PLACE    THING is at PLACE (room, container item, 'player', 'nowhere')
   open:ITEM          ITEM is open
@@ -28,7 +29,7 @@ from __future__ import annotations
 from holmes.engine.story import as_list
 
 COUNTER_TESTS = {"lt", "ge", "eq"}
-COND_ARITY = {"flag": 1, "has": 1, "at": 1, "visited": 1, "clue": 1, "loc": 2, "open": 1,
+COND_ARITY = {"flag": 1, "has": 1, "at": 1, "visited": 1, "met": 1, "clue": 1, "loc": 2, "open": 1,
               "lt": 2, "ge": 2, "eq": 2}
 EFFECT_ARITY = {
     "set": 1, "unset": 1, "clue": 1, "move": 2, "give": 1, "remove": 1,
@@ -64,6 +65,8 @@ def _term(state, term: str) -> bool:
         r = state.room == args[0]
     elif kind == "visited":
         r = args[0] in state.visited
+    elif kind == "met":
+        r = args[0] in state.met
     elif kind == "clue":
         r = args[0] in state.clues
     elif kind == "loc":
