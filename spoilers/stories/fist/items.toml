@@ -1,0 +1,584 @@
+# ================================================================ the lane
+
+[items.white_gate]
+name = "white gate"
+aliases = ["gate", "board"]
+location = "lane"
+scenery = true
+description = "A white-painted gate in the station wall, with a board: LLOYD'S SIGNAL STATION, POLVENTON. VESSELS SIGNALLED AND REPORTED. The paint was flaking in the salt wind."
+
+[items.telegraph_pole]
+name = "telegraph pole"
+aliases = ["pole", "poles", "wire", "single wire", "line", "telegraph poles", "insulators"]
+location = "lane"
+scenery = true
+description = "A tarred pole, leaning a little from the sea, with a white porcelain insulator at its head carrying a single wire. The line of poles marched down the lane towards Porthkellis, and the wire from the last of them ran in under the eaves of the instrument house."
+
+[items.instrument_box]
+name = "box of instruments"
+aliases = ["box", "instruments", "instrument box", "detector"]
+location = "lane"
+scenery = true
+description = "The lineman's box: a portable galvanometer, a coil of wire, a set of climbing irons and a tin of luncheon."
+
+[items.hedges]
+name = "stone hedges"
+aliases = ["hedge", "hedges", "bracken", "dead bracken"]
+location = "lane"
+scenery = true
+description = "The Cornish hedges of these parts: walls of granite and earth as high as a man, overgrown with bracken, gorse and thrift."
+
+[items.milestone]
+name = "milestone"
+aliases = ["granite milestone", "bank"]
+location = "lane"
+scenery = true
+container = true
+description = "An old granite milestone, half sunk in the bank: HELSTON 9."
+details = [ { when = "loc:coin_lane:milestone", text = "In the hollow worn at its foot, among the grass, lay a small copper coin." } ]
+
+[items.coin_lane]
+name = "farthing"
+aliases = ["coin", "copper", "copper coin", "small copper coin"]
+location = "milestone"
+coin = true
+description = "A farthing, Britannia on the back, green with the weather."
+take_text = "I picked the farthing out of the grass at the foot of the milestone."
+
+# ================================================================ the yard
+
+[items.step]
+name = "step"
+aliases = ["stone step", "doorstep", "prints", "footprints", "boot-prints", "mud", "door"]
+location = "yard"
+scenery = true
+clue = "boot_prints"
+description = "The step of the instrument house was a single slab of granite, and the gravel before it had been worn into a hollow that held the red mud of the lane. The police had laid a board beside it, and chalked a ring on the stone. Inside the ring, plain in the dried mud, were the prints of a narrow town boot with a pointed toe and a small heel: going in, and coming out again a little blurred, as if in haste."
+
+[items.water_butt]
+name = "water-butt"
+aliases = ["water butt", "butt", "barrel", "eaves"]
+location = "yard"
+scenery = true
+container = true
+description = "A tarred water-butt under the cottage eaves, brimming with rain."
+details = [ { when = "loc:coin_yard:water_butt", text = "On the rim, where somebody had set it down to have both hands for the lid, sat a farthing." } ]
+
+[items.coin_yard]
+name = "farthing"
+aliases = ["coin", "copper", "copper coin"]
+location = "water_butt"
+coin = true
+description = "A farthing, wet with rain."
+take_text = "I took the farthing from the rim of the water-butt."
+
+# ================================================================ the instrument room
+
+[items.inker]
+name = "inker"
+aliases = ["machine", "clockwork", "drum", "drums", "recorder", "instrument"]
+location = "instrument_room"
+scenery = true
+container = true
+description = "A Morse inker of the Post Office pattern: a brass clockwork that, while it runs, draws the paper tape under a little inked wheel, and an electro-magnet that pressed the tape up against the wheel whenever current came on the line, so that a long current made a long mark and a short one a short. The tape went from a full drum on one side, under the wheel, and on to a take-up drum on the other."
+details = [ { when = "loc:roll:inker", text = "On the take-up drum sat a roll of printed tape, where the police had left it, not knowing what to make of it." } ]
+
+[items.roll]
+name = "roll of tape"
+aliases = ["roll", "tape", "evening roll", "station tape", "printed tape", "wednesday's tape"]
+location = "inker"
+clue = "evening_roll"
+description = "Wednesday's tape, a fat roll of narrow paper printed from end to end with the dashes and dots of the day's traffic. Against every message all day, from the morning onward, Pascoe had pencilled the time in a small neat hand. The last time pencilled was 6:30, against the evening report. After it came several more passages of marks with no time against any of them, and then the roll ended."
+take_text = "I lifted the roll off the drum, tore it across, and coiled it carefully into an envelope from the desk."
+
+[items.sending_key]
+name = "brass key"
+aliases = ["key", "sending key", "morse key", "brass sending key"]
+location = "instrument_room"
+scenery = true
+description = "A brass sending key on a mahogany base, its knob of black ebonite polished by twenty years of one man's fingers."
+
+[items.galvanometer]
+name = "galvanometer"
+aliases = ["glass case", "needle"]
+location = "instrument_room"
+scenery = true
+description = "A galvanometer in a glass case, its needle twitching faintly as the current came and went on the line."
+
+[items.code_card]
+name = "card"
+aliases = ["morse alphabet", "alphabet card", "morse card", "alphabet", "printed card"]
+location = "instrument_room"
+scenery = true
+clue = "code_card"
+description = "A card printed by the Post Office with the Morse alphabet in columns, the letters and figures each with its pattern of dots and dashes, fly-specked and curling at the corners. I copied it carefully into the back of my notebook."
+on_examine = [ { once = true, text = "[CODEBOOK will show you the alphabet from now on.]" } ]
+
+[items.day_book]
+name = "day book"
+aliases = ["book", "fat day book", "message book", "log"]
+location = "instrument_room"
+scenery = true
+clue = "day_book"
+description = "The station's day book, in Pascoe's small neat hand. Wednesday's page began at eight in the morning and noted every message sent and received, with its time: vessels reported, a weather return, a message from Lloyd's at 12:05 ('CORISANDE MAY BE NEAR. KEEP SHARP LOOKOUT'), and last of all, '6:30 p.m. Evening report to Lloyd's. Nil since noon. Wind NW, clear.' Below it the page was blank."
+
+[items.desk_lamp]
+name = "desk lamp"
+aliases = ["lamp", "chimney"]
+location = "instrument_room"
+scenery = true
+description = "A brass paraffin lamp with a green shade. Its glass chimney was blackened up one side, as a chimney is when a wick has been lit carelessly and turned too high by someone who did not know the lamp."
+
+[items.stove]
+name = "stove"
+aliases = ["iron stove", "round iron stove", "grate"]
+location = "instrument_room"
+scenery = true
+description = "A round iron stove, quite cold, with a bucket of coal beside it. The ash in its pan had settled grey and dead."
+
+# ================================================================ the battery room
+
+[items.cells]
+name = "glass cells"
+aliases = ["cells", "battery", "shelves", "shelf", "chain", "jars", "terminals", "wires"]
+location = "battery_room"
+scenery = true
+description = "Daniell cells, sixty or seventy of them, each a glass jar with a copper plate and a zinc and the blue liquor of copper sulphate, every one wired to the next. Every jar but one was clear enough to see the plates in. The odd one was the last on the bottom shelf, which stood a little apart, with no wire to it."
+
+[items.dead_cell]
+name = "unwired cell"
+aliases = ["cell", "end cell", "odd one", "jar", "zinc lid", "lid", "bottom shelf"]
+location = "battery_room"
+scenery = true
+container = true
+openable = true
+description = "A jar like the others, but its glass was painted over on the inside, so that one could not see in, and its zinc lid sat a little crooked. There was no wire to its terminals; it could never have been part of the battery at all."
+open_text = "I lifted the zinc lid. There was no acid in the jar, nor zinc, nor copper: it was dry as a biscuit-tin, and lined with oilcloth."
+
+[items.black_book]
+name = "little black book"
+aliases = ["black book", "book", "little book", "accounts"]
+location = "dead_cell"
+clue = "blackmail_book"
+description = """
+A little black book with a brass clasp, ruled in columns in Pascoe's hand, with initials, dates and sums. Most of the pages ran the same way:
+
+| L.N.   Dec 2 1885 ... 10s.     J.K.   Feb 3 1886 ... 2s.
+| L.N.   Jan 6 1886 ... 10s.     J.K.   Mar 3 1886 ... 2s.
+| L.N.   Feb 3 1886 ... 10s.     ...
+| (and so on, L.N. every month, on the first Wednesday,
+|  down to)  L.N.   Oct 5 1887 ... 10s.
+| J.T.   Nov 2 1887 ... £20. The other twenty Thursday.
+
+And on the last written page, by itself: 'Nov 1. Told L.N. a sovereign from Dec., or W.R. shall have the tape.'
+"""
+take_text = "I took the little black book and slipped it into my breast pocket."
+
+[items.wreck_tape]
+name = "old tape"
+aliases = ["coil of tape", "old coil", "coil", "yellowed tape", "tape"]
+location = "dead_cell"
+clue = "wreck_tape"
+description = "A coil of yellowed tape, tied with thread, and labelled in Pascoe's hand: '19 Nov 1885. Night.' Against the first passage he had pencilled '11:02'. Further on, against a stretch of marks that were not passages of his own, he had written 'HN calling PK 11:40, no answer from PK'. Against the last passage he had pencilled '12:12 PK' and drawn a heavy line beneath it."
+take_text = "I took the old coil of tape, handling it as though it might break."
+
+# ================================================================ the Lloyd's office
+
+[items.overdue_board]
+name = "board of overdue ships"
+aliases = ["board", "overdue board", "overdue ships", "chalk", "names"]
+location = "office"
+scenery = true
+clue = "corisande_overdue"
+description = """
+A black board ruled in white, headed OVERDUE, with ships' names and figures in chalk:
+
+| MARY HOLT, brig, Quebec ............... 15 gns.
+| ARCTURUS, s.s., Bombay ................ 25 gns.
+| CORISANDE, barque, San Francisco ...... 60 gns.
+
+The figure against the CORISANDE had been rubbed out and written in again more than once: there were the ghosts of a 3 and a 5 under the 60.
+"""
+
+[items.vessels_ledger]
+name = "ledger of vessels passed"
+aliases = ["ledger", "thick ledger", "vessels passed", "vessels"]
+location = "office"
+scenery = true
+description = "The ledger in which every vessel seen from the head is entered, with her name, her rig, her course and the time. On Wednesday the last entry was a Norwegian timber-barque at 12:40 in the afternoon, bound west. There was no other entry that day, and there was no CORISANDE."
+
+[items.office_telescope]
+name = "long telescope"
+aliases = ["telescope", "stand"]
+location = "office"
+scenery = true
+description = "A fine long brass telescope on a stand, trained on the empty sea."
+
+[items.signal_books]
+name = "signal books"
+aliases = ["rack", "books", "signal book", "rack of signal books"]
+location = "office"
+scenery = true
+description = "The Commercial Code of Signals and its fellows, for speaking passing ships by flags."
+
+[items.lloyds_telegram]
+name = "telegram"
+aliases = ["telegram from lloyd's", "lloyd's telegram", "wire", "message"]
+location = "office"
+scenery = true
+description = "A telegram from Lloyd's, pinned to the desk, sent on Thursday afternoon: 'CORISANDE NOT REPORTED ELSEWHERE. ROOM DOUBTS POLVENTON REPORT. RATE FELL TO 3 THIS MORNING, NOW 50 AGAIN. EXPLAIN.'"
+
+[items.shell_case]
+name = "brass shell-case"
+aliases = ["shell case", "shell-case", "doorstop", "shell"]
+location = "office"
+scenery = true
+container = true
+description = "A great brass shell-case from some old man-of-war, used as a doorstop."
+details = [ { when = "loc:coin_office:shell_case", text = "In the bottom of it lay a farthing." } ]
+
+[items.coin_office]
+name = "farthing"
+aliases = ["coin", "copper"]
+location = "shell_case"
+coin = true
+description = "A farthing, bright from the brass."
+take_text = "I tipped the farthing out of the shell-case."
+
+# ================================================================ the lookout
+
+[items.big_telescope]
+name = "big telescope"
+aliases = ["telescope", "swivel"]
+location = "lookout"
+scenery = true
+description = "A great telescope on a swivel, with a stool before it worn shiny."
+
+[items.signal_mast]
+name = "signal mast"
+aliases = ["mast", "yards", "halliards"]
+location = "lookout"
+scenery = true
+description = "A tall mast with a yard across it, for hoisting the flags of the code to passing ships, and a lamp-hoist for signalling by night."
+
+[items.watch_log]
+name = "watch log"
+aliases = ["log", "shelf", "lookout log"]
+location = "lookout"
+scenery = true
+clue = "watch_log"
+description = """
+The lookout's log, kept by the hour in a round, careful schoolboy hand. Wednesday ran:
+
+| 6:15 p.m.  Capt. Hext came up. Watching for CORISANDE per Lloyd's.
+| 7:00 p.m.  No lights. Wind NW fresh, clear.
+| 7:45 p.m.  Capt. Hext went down. No lights.
+| 8:00 p.m. to 9:00 p.m.  Nothing sighted.
+| 9:40 p.m.  Went down to report to Mr P. at close of watch.
+
+It was signed J. KITTO at every entry, and E. HEXT beside the first three.
+"""
+
+[items.practice_set]
+name = "practice set"
+aliases = ["set", "second key", "old inker", "battery", "table"]
+location = "lookout"
+scenery = true
+description = "A second-hand key and an old inker, wired to a little battery of their own and to nothing else: a learner's practice set, on which a man might send to himself and read back his own mistakes."
+
+[items.practice_tape]
+name = "practice tape"
+aliases = ["strip", "tape", "strip of practice tape", "practice strip"]
+location = "lookout"
+clue = "practice_tape"
+description = "A strip of tape from the practice set, a yard or so long. Two passages were printed on it. Against the first someone had pencilled 'J.K.', and against the second, in the same round hand, 'Mr Tagg's, Monday. London style.'"
+take_text = "I tore off the strip and put it with my other papers."
+
+[items.flag_locker]
+name = "flag locker"
+aliases = ["locker", "flags"]
+location = "lookout"
+scenery = true
+container = true
+openable = true
+description = "A wooden locker of pigeon-holes, each with its folded flag."
+open_text = "I opened the flag locker."
+details = [ { when = "loc:coin_lookout:flag_locker", text = "In the pigeon-hole for the answering pennant, someone had left a farthing." } ]
+
+[items.coin_lookout]
+name = "farthing"
+aliases = ["coin", "copper"]
+location = "flag_locker"
+coin = true
+description = "A farthing."
+take_text = "I took the farthing from among the flags."
+
+# ================================================================ the cottage
+
+[items.dresser]
+name = "dresser"
+aliases = ["plates", "jug", "lustre jug"]
+location = "cottage"
+scenery = true
+container = true
+description = "A dresser of willow-pattern plates, with a copper-lustre jug on the top shelf."
+details = [ { when = "loc:coin_cottage:dresser", text = "In the lustre jug, when I tipped it to the light, a farthing rattled." } ]
+
+[items.coin_cottage]
+name = "farthing"
+aliases = ["coin", "copper"]
+location = "dresser"
+coin = true
+description = "A farthing."
+take_text = "Mrs Pascoe nodded to me to keep it. \"For luck, sir. He'd have wanted it put to some use.\""
+
+[items.armchair]
+name = "armchair"
+aliases = ["horsehair armchair", "chair"]
+location = "cottage"
+scenery = true
+description = "A horsehair armchair, hollowed to the shape of a heavy man."
+
+# ================================================================ the flag store
+
+[items.body]
+name = "body"
+aliases = ["pascoe", "amos pascoe", "corpse", "dead man", "ensign", "red ensign", "trestles"]
+location = "flag_store"
+scenery = true
+clue = "wound"
+description = "I turned back the ensign. Amos Pascoe had been a big, heavy, pale man in his fifties, with a clerk's soft hands and the stained right forefinger of a man who works a key. He had died of a single heavy blow to the back of the skull, a little to the right, from something round and very hard, struck from behind by someone close to him. He would have known nothing after it. His coat was buttoned and his waistcoat pockets untouched, but the inside pocket of his coat had been turned half out. After a day and a half in that cold shed I could tell nothing of the hour of his death that the police surgeon had not told already."
+
+[items.signal_flags]
+name = "signal flags"
+aliases = ["flags", "pigeon-holes", "halliard", "yard", "spare yard"]
+location = "flag_store"
+scenery = true
+description = "The flags of the code in their pigeon-holes, and spare gear for the mast."
+
+[items.shelf]
+name = "shelf"
+aliases = ["shelf by the door", "effects"]
+location = "flag_store"
+scenery = true
+container = true
+description = "A shelf by the door, on which the police had laid out what was found on the dead man and beside him."
+
+[items.lantern]
+name = "bull's-eye lantern"
+aliases = ["lantern", "bull's-eye", "bulls eye", "bull's eye", "hand-lamp", "hand lamp"]
+location = "shelf"
+clue = "lamp_dry"
+description = "A tin bull's-eye lantern with a thick glass lens, the kind a man carries on a cliff path at night. I unscrewed the reservoir: it was perfectly dry, and the wick was charred right down to the brass. It had burned until there was nothing left to burn."
+take_text = "I took the lantern."
+
+[items.tagg_note]
+name = "folded note"
+aliases = ["note", "paper", "five-pound notes", "banknotes", "money", "twenty pounds"]
+location = "shelf"
+clue = "tagg_note"
+description = """
+A half-sheet of the Fisherman's Arms notepaper, folded round four five-pound notes of the Bank of England. In a quick, sloping hand:
+
+| Be up at the lookout at nine and stay till the half hour.
+| The other twenty when it is through.      J.T.
+"""
+take_text = "Trevail let me take the note, though he made me count the money back on to the shelf."
+
+# ================================================================ the cliff path
+
+[items.stile_stone]
+name = "stile"
+aliases = ["granite stile", "stone hedge", "hedge"]
+location = "stile"
+scenery = true
+description = "A stile of granite slabs set through the stone hedge. From here, I noticed, the hedge and the swell of the head hid the station entirely; one could see neither its windows nor the lookout."
+
+[items.trampled_gorse]
+name = "trampled gorse"
+aliases = ["gorse", "place", "where he lay", "something heavy", "banks"]
+location = "stile"
+scenery = true
+description = "The gorse was flattened in the shape of a man where he had fallen, on the station side of the stile, and on a stone among the roots there was a dark stain. Of the weapon there was no sign; the edge of the cliff was ten yards off, and the sea below it."
+
+# ================================================================ Porthkellis
+
+[items.capstan]
+name = "capstan"
+aliases = ["quay", "rusting capstan"]
+location = "village"
+scenery = true
+container = true
+description = "An iron capstan on the quay, rusted to a standstill."
+details = [ { when = "loc:coin_village:capstan", text = "In a crack of its drum, out of the rain, someone had tucked a farthing." } ]
+
+[items.coin_village]
+name = "farthing"
+aliases = ["coin", "copper"]
+location = "capstan"
+coin = true
+description = "A farthing."
+take_text = "I worked the farthing out of the crack with my thumbnail."
+
+[items.crabbers]
+name = "crabbers"
+aliases = ["boats", "mud", "harbour"]
+location = "village"
+scenery = true
+description = "Stout little open boats, tarred and patched, lying over on the mud until the tide should lift them."
+
+[items.hours_board]
+name = "board of office hours"
+aliases = ["board", "office hours", "hours", "notice"]
+location = "post_office"
+scenery = true
+clue = "office_hours"
+description = """
+A painted board by the door:
+
+| PORTHKELLIS POST OFFICE.
+| Money Orders, Savings Bank and Telegraph Business.
+| Open 8 a.m. to 8 p.m.
+| CLOSED FOR MEALS from 1 to 2 and from 6 to 7 p.m.
+"""
+
+[items.sounder]
+name = "sounder"
+aliases = ["brass sounder", "telegraph instrument", "instrument", "key", "rail"]
+location = "post_office"
+scenery = true
+description = "A brass sounder, which clicks out the Morse so that the clerk may take it down by ear, and a sending key beside it. There was no inker: at Porthkellis nothing on the wire was written down but what the clerk wrote herself."
+
+[items.letter_scale]
+name = "letter-scale"
+aliases = ["letter scale", "scale", "scales"]
+location = "post_office"
+scenery = true
+description = "A brass letter-scale with its little pile of weights, polished till it shone."
+
+[items.forms]
+name = "rack of forms"
+aliases = ["forms", "rack", "telegraph forms"]
+location = "post_office"
+scenery = true
+description = "Telegraph forms, money-order forms and savings-bank slips, in neat pigeon-holes."
+
+[items.settle]
+name = "settle"
+aliases = ["high-backed settle", "cushion"]
+location = "inn"
+scenery = true
+container = true
+description = "A high-backed oak settle by the fire, with a flattened cushion."
+details = [ { when = "loc:coin_inn:settle", text = "Down behind the cushion I felt a small coin." } ]
+
+[items.coin_inn]
+name = "farthing"
+aliases = ["coin", "copper"]
+location = "settle"
+coin = true
+description = "A farthing."
+take_text = "I fished the farthing from behind the cushion."
+
+[items.driftwood_fire]
+name = "fire"
+aliases = ["driftwood", "fire of driftwood"]
+location = "inn"
+scenery = true
+description = "Driftwood burning with the green and blue flames of the salt in it."
+
+[items.sea_birds]
+name = "stuffed sea-birds"
+aliases = ["sea-birds", "sea birds", "birds", "case"]
+location = "coffee_room"
+scenery = true
+description = "A puffin, a razorbill and a cormorant, glaring through the glass."
+
+[items.writing_case]
+name = "writing-case"
+aliases = ["writing case", "leather writing-case", "case"]
+location = "tagg_room"
+scenery = true
+container = true
+openable = true
+description = "A London writing-case of good morocco, with a little brass lock that had not been locked."
+open_text = "I opened Mr Tagg's writing-case. I am not proud of it; but a man had been murdered."
+
+[items.leete_letter]
+name = "letter"
+aliases = ["leete's letter", "london letter"]
+location = "writing_case"
+clue = "leete_letter"
+description = """
+A letter on the paper of LEETE & TAGG, Birchin Lane, dated Saturday:
+
+| My dear T., Our man at Brest writes that a fishing-boat of Ouessant
+| has picked up a boat's transom and a name-board, CORISANDE OF
+| LIVERPOOL, the paint still fresh. It is not known here and must not
+| be. The rate stands at 60. Get your word from the Head, and wire me
+| the moment it is through; I shall buy every line in the Room at
+| whatever it falls to. You know the man to see.      S. LEETE.
+"""
+take_text = "I took the letter."
+
+[items.wire_copy]
+name = "telegram receipt"
+aliases = ["receipt", "copy", "telegram", "wire", "counterfoil"]
+location = "writing_case"
+clue = "tagg_wire"
+description = "A copy, in Tagg's hand, of a telegram he had handed in at Porthkellis office on Tuesday morning, with the office's receipt pinned to it: 'LEETE BIRCHIN LANE LONDON. WILL WIRE NEWS FROM HEAD NINE WEDNESDAY. TAGG.'"
+take_text = "I took the copy and its receipt."
+
+[items.boots]
+name = "town boots"
+aliases = ["boots", "pair of boots", "red mud", "mud"]
+location = "tagg_room"
+scenery = true
+clue = "tagg_boots"
+description = "A pair of narrow town boots with pointed toes and small heels, of the best London make, caked to the ankle with the red mud of the lane. They would fit the prints on the instrument-house step as a key fits its lock."
+
+[items.brass_bed]
+name = "brass bed"
+aliases = ["bed", "washstand", "wardrobe"]
+location = "tagg_room"
+scenery = true
+description = "The furniture of a good inn bedroom, and nothing in it of interest."
+
+[items.service_board]
+name = "board of services"
+aliases = ["board", "services", "service board", "gold", "varnished board"]
+location = "lifeboat_house"
+scenery = true
+clue = "gleaner_board"
+description = """
+The record of the Porthkellis lifeboat, in gold leaf, service by service. Near the bottom:
+
+| 1885  Nov 19.  Schooner GLEANER of Porthkellis, ashore on
+|                Polventon Ledges in a S.W. gale.  Launched 12:40 a.m.
+|                2 saved.  3 lost: J. Penrose, master; R. Rowse;
+|                T. Hichens.
+"""
+
+[items.lifeboat]
+name = "lifeboat"
+aliases = ["boat", "carriage", "oars", "cork jackets", "jackets"]
+location = "lifeboat_house"
+scenery = true
+description = "A ten-oared self-righter, blue and white, scrubbed and ready."
+
+[items.shingle]
+name = "slip"
+aliases = ["shingle", "slipway"]
+location = "lifeboat_house"
+scenery = true
+container = true
+description = "The stone slip running down into the shingle, wet with spray."
+details = [ { when = "loc:coin_lifeboat:shingle", text = "Among the pebbles at the foot of the slip, a coin winked." } ]
+
+[items.coin_lifeboat]
+name = "farthing"
+aliases = ["coin", "copper"]
+location = "shingle"
+coin = true
+description = "A farthing, rubbed smooth by the shingle."
+take_text = "I picked the farthing out of the shingle."

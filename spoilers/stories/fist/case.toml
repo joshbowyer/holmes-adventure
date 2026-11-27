@@ -1,0 +1,568 @@
+[case]
+id = "fist"
+title = "The Operator's Fist"
+year = 1887
+order = 50
+start = "lane"
+coin_name = "farthing"
+coin_plural = "farthings"
+hint_intro = "I laid a farthing on the table by the inker. Holmes regarded it as gravely as if it had been a sovereign, and spoke without lifting his eyes from the tape."
+hint_none = "\"You have it all now, Watson,\" said Holmes. \"Account for every passage on the TAPES with ATTRIBUTE, and then ACCUSE.\""
+hint_broke = "I had not a farthing about me. \"Then find one,\" said Holmes. \"The Cornish leave them about for the piskies.\""
+intro = """
+It was on a Thursday morning in the November of 1887 that a thin, anxious gentleman in a silk hat was shown up to our rooms in Baker Street, and introduced himself as Mr Rendle, of the Intelligence Department at Lloyd's.
+
+"I have come about a lie, Mr Holmes," said he, "and a murder. On Wednesday evening, at five minutes past nine, our signal station at Polventon Head, on the Lizard coast, telegraphed that the barque Corisande, long overdue, had passed the Head, all well. This morning the overdue market in the Room went mad; men have been ruined and others made, between ten o'clock and noon. And at noon we learned two things. That no one else has seen the Corisande. And that the station's telegraph clerk, a man named Pascoe, was found dead on Wednesday night on the cliff path below the station, with his head broken; and that the county surgeon says he died a good two hours before that message was sent."
+
+Holmes, who had been lying back in his chair with his eyes closed, opened them.
+
+"The station went on talking after its clerk was dead," said he. "That is very pretty. Watson, there is a night mail from Paddington."
+
+So it was that at about nine on the Friday morning, stiff and unshaven after a night in the train and two hours in a fly from Helston, I climbed down in the lane on Polventon Head. Holmes had gone in through the station gate before the wheels had stopped.
+"""
+intro_note = "[In this case you must read telegraph tape. TAPES lists what you hold, TAPE <letter> shows the marks, DECODE <letter> AS <words> checks a reading, and ATTRIBUTE <letter> TO <name> says who sent it. Farthings found while exploring buy hints from Holmes with HINT.]"
+
+# ================================================================ clues
+
+[clues.found]
+text = "Amos Pascoe, telegraph clerk at the Lloyd's station on Polventon Head, was found dead on the cliff path on Wednesday night, 2 November. At 9:05 that night his station reported the overdue barque Corisande passed, all well; nobody else has seen her. The surgeon puts his death about two hours before that message."
+
+[clues.single_wire]
+text = "Bolitho, the lineman: one wire runs Helston to Porthkellis to the Head. The station's inker writes down every signal on it, whoever sends it; the tape cannot tell you which end a signal was keyed at. Only the fist can."
+
+[clues.line_sound]
+text = "Bolitho: the line tested sound end to end, and was sound all Wednesday."
+
+[clues.fists]
+text = "Bolitho: every clerk has his fist. Pascoe sent heavy, with long dashes and wide gaps. Some clip their dashes, London fashion. Some split the letter C, so that it reads as two N's, and never know they do it."
+
+[clues.sounder_office]
+text = "Porthkellis post office is a sounder office: nothing written by machine, only taken down by ear. Miss Nance keeps it."
+
+[clues.boot_prints]
+text = "On the instrument-house step: the prints of a narrow town boot with a pointed toe, going in and coming out."
+
+[clues.evening_roll]
+text = "Wednesday's roll from the station inker. Pascoe pencilled the time against every message all day; the last is 6:30, the evening report. Several passages follow it with no time against them."
+
+[clues.code_card]
+text = "I have copied the Morse alphabet from the card in the instrument room (CODEBOOK)."
+
+[clues.day_book]
+text = "The day book: every message on Wednesday entered with its time in Pascoe's hand, and last of all, '6:30 p.m. Evening report. Nil since noon. Wind NW, clear.' Nothing after it. Lloyd's had wired at 12:05 to keep a sharp lookout for the Corisande."
+
+[clues.wound]
+text = "The body: one heavy blow to the back of the skull from something round and hard, struck from behind, close. The inside pocket of his coat turned half out."
+
+[clues.surgeon]
+text = "Inspector Trevail: the surgeon puts death between six and eight in the evening, nearer seven. The weapon, a stone or the like, is not found."
+
+[clues.lamp_dry]
+text = "Pascoe's bull's-eye lantern, found beside him: the reservoir dry and the wick burnt down to the brass. It burned until there was nothing left."
+
+[clues.lamp_hours]
+text = "Kitto fills the lamps at six. Pascoe's bull's-eye burns about three hours on a filling, and he never lit it indoors, only to go out. When Kitto found him at about a quarter to ten it was out, cold and dry."
+
+[clues.tagg_note]
+text = "On the dead man, folded round four five-pound notes, a note signed J.T.: 'Be up at the lookout at nine and stay till the half hour. The other twenty when it is through.'"
+
+[clues.nance_report]
+text = "Trevail: Miss Nance, at Porthkellis, talked with Pascoe on the wire from 7:15 to 7:40, and he told her he was expecting a London man at nine and didn't care for him. So he was alive at twenty to eight."
+
+[clues.police_case]
+text = "Trevail's case against Tagg: his boot-prints at the station at nine; out of the inn from 8:30 to 9:30; a motive worth thousands; once a telegraph clerk; and his note in the dead man's pocket."
+
+[clues.room_cold]
+text = "Kitto, at 9:40 on Wednesday: the instrument room dark and cold as a vault, the stove out, and Pascoe gone."
+
+[clues.door_unlocked]
+text = "Kitto: Pascoe never left the instrument-room door unlocked, even for a minute. On Wednesday night it was unlocked."
+
+[clues.no_ship]
+text = "Kitto, at the glass from 6:15 till 9:40 on a clear night: no vessel passed after dark, at 8:50 or at any time."
+
+[clues.tagg_visit]
+text = "Kitto: Tagg was in the instrument room with Pascoe for a quarter of an hour, door shut, about three on Wednesday afternoon. On Monday he showed off on Kitto's practice set."
+
+[clues.watch_log]
+text = "The watch log: Captain Hext with Kitto at the lookout from 6:15 to 7:45 on Wednesday, signed by both; Kitto alone from then until 9:40."
+
+[clues.practice_tape]
+text = "The practice strip from the lookout: one passage of Kitto's, marked J.K., and one of Tagg's, marked 'Mr Tagg's, Monday. London style.'"
+
+[clues.overdue]
+text = "Captain Hext: a false 'passed, all well' on an overdue ship makes her reinsurance rate fall to nothing. A man who knew she was lost could buy cover cheap that would pay in full."
+
+[clues.corisande_overdue]
+text = "The overdue board: the Corisande, barque, from San Francisco, 60 guineas; the 60 has been rubbed out and rewritten over a 3."
+
+[clues.false_report]
+text = "Captain Hext: at 9:05 on Wednesday the station reported the Corisande passed at 8:50, bound east, all well. Nobody on the head saw her."
+
+[clues.tapes_rule]
+text = "Captain Hext: the rule is that tapes are kept three months and then destroyed, and Pascoe burned his old rolls regular as the calendar."
+
+[clues.battery_habit]
+text = "Mrs Pascoe: these two years her husband spent his evenings in the battery room more than the cells could want."
+
+[clues.money_lately]
+text = "Mrs Pascoe: lately Pascoe had money beyond his wages: 'a debt being paid him, a little at a time', and more to come."
+
+[clues.pocket_book]
+text = "Mrs Pascoe: his brown pocket-book, always in his inside coat pocket, is gone; but twenty pounds was left in his waistcoat."
+
+[clues.nance_account]
+text = "Miss Nance: she called the Head at 7:15 to ask about the night mail; Pascoe answered; he was expecting a London man at nine and didn't care for him; they said good night about 7:40."
+
+[clues.mother_saw]
+text = "Mrs Nance: she was at the chapel class meeting from 6:30 to 7:30, and at 7:35 came in and saw Loveday at the sounder, 'talking to Mr Pascoe'."
+
+[clues.tea_alone]
+text = "Mrs Nance: the office shuts from six to seven for tea; Loveday has hers upstairs alone. Loveday has been the only telegraph clerk at Porthkellis since the spring of 1883."
+
+[clues.office_hours]
+text = "The board at Porthkellis post office: open 8 a.m. to 8 p.m., closed for meals from 1 to 2 and from 6 to 7 p.m."
+
+[clues.tagg_dinner]
+text = "Hosken: Tagg dined in the coffee room from six until half past eight on Wednesday with two other guests, and never left the table."
+
+[clues.tagg_out]
+text = "Hosken: Tagg went out at half past eight and came back at half past nine, muddy to the knees, and called for brandy."
+
+[clues.tagg_lies]
+text = "Tagg says he only took a turn on the quay and up the road on Wednesday evening, and hardly knew Pascoe."
+
+[clues.tagg_confesses]
+text = "Tagg, shown his note: he paid Pascoe twenty pounds to be at the lookout at nine and leave him the room. At nine the room was unlocked, empty, dark and cold, the stove out, 'as if nobody had been in it for hours'. He lit the desk lamp, sent the false report at 9:05, and went down by the road. He never saw Pascoe."
+
+[clues.leete_letter]
+text = "Leete to Tagg: wreckage with the Corisande's name has been picked up off Ushant, and the news is being kept quiet. 'Get your word from the Head' and wire, and Leete will buy cheap."
+
+[clues.tagg_wire]
+text = "Tagg's telegram, handed in at Porthkellis post office on Tuesday: 'WILL WIRE NEWS FROM HEAD NINE WEDNESDAY.'"
+
+[clues.tagg_boots]
+text = "Tagg's town boots: narrow, pointed, caked with the red mud of the lane. They would fit the prints on the step."
+
+[clues.gleaner]
+text = "Will Rowse: in November 1885 the schooner Gleaner went on Polventon Ledges about eleven at night. The Head sent for the lifeboat by wire, but the word did not come till after midnight. Three were drowned, his brother Dick among them. The inquiry found the line was down in the gale."
+
+[clues.gleaner_board]
+text = "The lifeboat board: 19 November 1885, the Gleaner, launched at 12:40 a.m.; three lost."
+
+[clues.loveday_low]
+text = "Will Rowse: Loveday was on duty the night of the Gleaner. She has been low and nervy this year, putting the wedding off and then not putting it off."
+
+[clues.blackmail_book]
+text = "Hidden in a dummy cell in the battery room: Pascoe's little black book. 'L.N.' paid him ten shillings on the first Wednesday of every month from December 1885 to October 1887; 'J.K.' paid small sums; 'J.T.' paid £20 on 2 November. On 1 November: 'Told L.N. a sovereign from Dec., or W.R. shall have the tape.'"
+
+[clues.wreck_tape]
+text = "Hidden in the same cell: an old coil of tape, labelled '19 Nov 1885. Night'. Pascoe's call at 11:02; his pencilled note 'HN calling PK 11:40, no answer from PK'; and a reply pencilled '12:12 PK'."
+
+[clues.split_c]
+text = "Reading the evening roll mark by mark: in the passage that names the Corisande, each C is broken in two, so that CORISANDE reads NNORISANDE. Whoever sent that passage splits his C's."
+
+[clues.wreck_reply]
+text = "The 1885 coil, decoded: at 12:12 Porthkellis answered the Head at last, 'SORRY CALLED AWAY CALLING COXSWAIN NOW'. That was seventy minutes after the first call, and Helston had been working the line at 11:40, so the line was never down."
+
+# ================================================================ hints
+
+[[hints]]
+id = "lineman"
+done = ["clue:single_wire", "clue:fists"]
+texts = [
+  "\"There is a man in the lane who knows this wire better than anyone living. Before you read a single tape, Watson, learn how the thing works.\"",
+  "\"In the lane, TALK TO BOLITHO and ASK HIM ABOUT HOW IT WORKS, ABOUT FISTS and ABOUT THE PORTHKELLIS OFFICE.\"",
+]
+
+[[hints]]
+id = "roll"
+done = ["clue:evening_roll", "clue:code_card"]
+texts = [
+  "\"The machine at my elbow writes down everything that passes on the line. You will want what it wrote on Wednesday, and something to read it by.\"",
+  "\"In the instrument room, EXAMINE THE INKER, TAKE THE ROLL and EXAMINE it, and EXAMINE THE CARD on the wall.\"",
+]
+
+[[hints]]
+id = "body"
+done = ["clue:wound", "clue:surgeon", "clue:lamp_dry", "clue:tagg_note"]
+texts = [
+  "\"You are the medical man, Watson. The body is in the flag store, with the Inspector and everything that was found by it.\"",
+  "\"In the flag store, EXAMINE THE BODY and THE SHELF. TAKE THE LANTERN and THE NOTE and examine both. TALK TO TREVAIL and ASK HIM ABOUT THE SURGEON, THE WIRE and TAGG.\"",
+]
+
+[[hints]]
+id = "kitto"
+done = ["clue:room_cold", "clue:lamp_hours", "clue:no_ship", "clue:practice_tape"]
+texts = [
+  "\"The young man who found him keeps the lookout, and the lamps. Hear him out, and look at his little practice set.\"",
+  "\"At the lookout, TALK TO KITTO and ASK HIM ABOUT HOW HE FOUND HIM, THE LAMPS, THE SHIP and MR TAGG. EXAMINE THE WATCH LOG and TAKE THE PRACTICE TAPE.\"",
+]
+
+[[hints]]
+id = "hext"
+done = ["clue:overdue", "clue:false_report", "clue:tapes_rule"]
+texts = [
+  "\"Captain Hext can tell you what the lie was worth, and something of the man who was killed.\"",
+  "\"In the Lloyd's office, TALK TO HEXT and ASK HIM ABOUT THE OVERDUE MARKET, THE CORISANDE, WEDNESDAY EVENING and PASCOE.\"",
+]
+
+[[hints]]
+id = "widow"
+done = ["clue:battery_habit", "clue:money_lately", "clue:pocket_book"]
+texts = [
+  "\"The widow knew him better than his Captain did, and less than she thought.\"",
+  "\"In the cottage, TALK TO MRS PASCOE and ASK HER ABOUT AMOS, ABOUT MONEY and ABOUT THE POCKET-BOOK.\"",
+]
+
+[[hints]]
+id = "village"
+done = ["clue:nance_account", "clue:mother_saw", "clue:tea_alone"]
+texts = [
+  "\"The other end of the wire is in Porthkellis. Go down and hear what was said on it.\"",
+  "\"In the post office at Porthkellis, TALK TO MISS NANCE and ASK HER ABOUT WEDNESDAY EVENING; TALK TO MRS NANCE and ASK HER ABOUT THE CLASS MEETING and THE OFFICE HOURS.\"",
+]
+
+[[hints]]
+id = "tagg"
+done = ["clue:tagg_dinner", "clue:tagg_out", "clue:tagg_lies"]
+texts = [
+  "\"The Inspector's man is at the Fisherman's Arms. Hear him, and hear his landlord.\"",
+  "\"At the inn, TALK TO HOSKEN and ASK HIM ABOUT HIS DINNER and WHEN HE WENT OUT. Then go into the coffee room, TALK TO TAGG and ASK HIM ABOUT THE CORISANDE.\"",
+]
+
+[[hints]]
+id = "tagg_room"
+when = "visited:inn"
+done = ["clue:leete_letter", "clue:tagg_wire", "clue:tagg_boots"]
+texts = [
+  "\"Mr Tagg is detained in the coffee room. His bedroom is not.\"",
+  "\"Go UP from the taproom to Tagg's room. EXAMINE THE BOOTS, OPEN THE WRITING-CASE, and take and read the LETTER and the RECEIPT.\"",
+]
+
+[[hints]]
+id = "confession"
+when = ["clue:tagg_note", "clue:tagg_lies"]
+done = "clue:tagg_confesses"
+texts = [
+  "\"Mr Tagg says he hardly knew the man. You have something in his hand that says otherwise.\"",
+  "\"SHOW THE NOTE TO TAGG.\"",
+]
+
+[[hints]]
+id = "lifeboat"
+done = ["clue:gleaner", "clue:loveday_low"]
+texts = [
+  "\"Everyone in Porthkellis has been to the lifeboat house this week but you.\"",
+  "\"In the lifeboat house, TALK TO ROWSE and ASK HIM ABOUT THE DRILL, THE GLEANER and LOVEDAY, and EXAMINE THE BOARD.\"",
+]
+
+[[hints]]
+id = "read"
+when = ["clue:evening_roll", "clue:code_card"]
+done = "clue:split_c"
+texts = [
+  "\"Read the roll, Watson, every passage of it, letter by letter, and do not correct what you read into what you expected. The tape is never polite.\"",
+  "\"Decode the passage that names the Corisande, mark by mark. Look at what its C's come out as, and then at the C's in Pascoe's own report at 6:30.\"",
+]
+
+[[hints]]
+id = "cell"
+when = ["clue:battery_habit"]
+done = ["clue:blackmail_book", "clue:wreck_tape"]
+texts = [
+  "\"A man who burns his tapes by the rule, and has money he cannot account for, and spends his evenings among the batteries. Where would such a man keep what he did not burn?\"",
+  "\"Go into the battery room behind the instrument room. EXAMINE THE CELLS, then THE CELL that has no wire. OPEN it.\"",
+]
+
+[[hints]]
+id = "wreck_read"
+when = "clue:wreck_tape"
+done = "clue:wreck_reply"
+texts = [
+  "\"He kept that coil for two years, Watson, against every rule. Read what was on it.\"",
+  "\"DECODE the last passage on the old coil, the one pencilled 12:12. Then compare its C's with what you have seen elsewhere.\"",
+]
+
+[[hints]]
+id = "when"
+when = ["clue:lamp_dry", "clue:lamp_hours"]
+done = "clue:wreck_reply"
+texts = [
+  "\"A lamp that burns three hours was found dry and cold at a quarter to ten. When was it lit, and why would he light it?\"",
+  "\"If Pascoe had gone out after twenty to eight, his lamp would still have been burning when Kitto found him. So he went out, and died, before the talk on the wire began. Then who answered Porthkellis in his name?\"",
+]
+
+[[hints]]
+id = "attribute"
+texts = [
+  "\"Every passage on the roll, Watson: whose fist? Lay each beside your samples. Where a passage is too short to show a fault, ask whose conversation it belongs to.\"",
+  "\"The evening report is Pascoe's own, and the report of the Corisande is plainly the London style of the practice strip. Every passage between them came from one hand at the far end of the wire, the hand that splits its C's on the old coil. ATTRIBUTE them all to it.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "morse"
+intro = "I went back to the instrument room with my envelopes of tape. Holmes was sitting on the edge of the table, swinging one long leg. \"Well, Watson,\" said he. \"The wire first. Who sent what?\""
+good = "solved"
+default_wrong = "escape"
+
+[final.morse]
+intro = "\"Every passage on the roll,\" said Holmes, \"and a hand to every passage.\""
+codebook_when = "clue:code_card"
+wrong_ending = "crossed"
+incomplete_ending = "loose_ends"
+
+[final.morse.fists]
+pascoe = { dot = 1, dash = 4, gap = 1, letter = 4, word = 8 }
+nance = { dot = 1, dash = 3, gap = 1, letter = 3, word = 6, split = ["C"] }
+as_pascoe = { dot = 1, dash = 4, gap = 1, letter = 4, word = 8, split = ["C"], slip = 5 }
+tagg = { dot = 1, dash = 2, gap = 1, letter = 2, word = 4 }
+kitto = { dot = 1, dash = 3, gap = 1, letter = 3, word = 6, wobble = 1 }
+
+[final.morse.passages]
+report = { deal = "evening_roll", label = "Wednesday's roll, 1st passage, pencilled 6:30", text = "NIL SINCE NOON WIND NW CLEAR PV", fist = "pascoe" }
+call = { deal = "evening_roll", label = "Wednesday's roll, 2nd passage, no time against it", text = "PV PV PK ANY FOR NIGHT MAIL", fist = "nance" }
+quiet = { deal = "evening_roll", label = "Wednesday's roll, 3rd passage, no time against it", text = "NIL QUIET HERE EXPECT LONDON MAN AT NINE", fist = "as_pascoe" }
+whatman = { deal = "evening_roll", label = "Wednesday's roll, 4th passage, no time against it", text = "WHAT MAN", fist = "nance" }
+corman = { deal = "evening_roll", label = "Wednesday's roll, 5th passage, no time against it", text = "CORISANDE MAN DONT CARE FOR HIM", fist = "as_pascoe", clue = "split_c" }
+night = { deal = "evening_roll", label = "Wednesday's roll, 6th passage, no time against it", text = "GOOD NIGHT", fist = "nance" }
+gn = { deal = "evening_roll", label = "Wednesday's roll, 7th passage, no time against it", text = "GN", fist = "as_pascoe" }
+false = { deal = "evening_roll", label = "Wednesday's roll, 8th and last passage, no time against it", text = "CORISANDE PASSED EAST EIGHT FIFTY ALL WELL", fist = "tagg" }
+kitto_ex = { deal = "practice_tape", label = "Practice strip, 1st passage, marked 'J.K.'", text = "NOW IS THE TIME", fist = "kitto", sender = "kitto" }
+tagg_ex = { deal = "practice_tape", label = "Practice strip, 2nd passage, marked 'Mr Tagg's, Monday'", text = "COMPLIMENTS OF THROGMORTON STREET", fist = "tagg", sender = "tagg" }
+wreck_call = { deal = "wreck_tape", label = "The 1885 coil, 1st passage, pencilled 11:02 by Pascoe", text = "PK PK URGENT SCHOONER ASHORE LEDGES CALL LIFEBOAT", fist = "pascoe", sender = "pascoe" }
+wreck_reply = { deal = "wreck_tape", label = "The 1885 coil, last passage, pencilled '12:12 PK'", text = "PV PK SORRY CALLED AWAY CALLING COXSWAIN NOW", fist = "nance", sender = "loveday", clue = "wreck_reply" }
+
+[final.morse.senders]
+pascoe = { name = "Mr Pascoe", aliases = ["pascoe", "amos", "amos pascoe"] }
+loveday = { name = "Miss Nance", aliases = ["nance", "loveday", "loveday nance", "porthkellis"], when = "met:loveday|clue:nance_report" }
+tagg = { name = "Mr Tagg", aliases = ["tagg", "julius tagg"], when = "met:tagg|clue:police_case" }
+kitto = { name = "Jory Kitto", aliases = ["kitto", "jory"], when = "met:kitto|clue:practice_tape" }
+hext = { name = "Captain Hext", aliases = ["hext", "captain"], when = "met:hext" }
+bolitho = { name = "Mr Bolitho", aliases = ["bolitho", "lineman"], when = "met:bolitho" }
+
+[final.morse.answer]
+report = "pascoe"
+call = "loveday"
+quiet = "loveday"
+whatman = "loveday"
+corman = "loveday"
+night = "loveday"
+gn = "loveday"
+false = "tagg"
+
+[[final.questions]]
+id = "who"
+prompt = "Who killed Amos Pascoe?"
+options = [
+  { id = "nobody", label = "No one: he fell in the dark and struck his head" },
+  { id = "tagg", label = "Mr Julius Tagg", when = "met:tagg|clue:police_case" },
+  { id = "loveday", label = "Miss Loveday Nance", when = "met:loveday|clue:nance_report" },
+  { id = "kitto", label = "Jory Kitto", when = "met:kitto" },
+  { id = "hext", label = "Captain Hext", when = "met:hext" },
+  { id = "rowse", label = "Will Rowse", when = "met:rowse" },
+  { id = "mrs_pascoe", label = "Mrs Pascoe", when = "met:mrs_pascoe" },
+  { id = "bolitho", label = "Mr Bolitho, the lineman", when = "met:bolitho" },
+]
+
+[[final.questions]]
+id = "when"
+prompt = "When did he die?"
+options = [
+  { id = "evening", label = "Between twenty to eight, when he said good night on the wire, and nine" },
+  { id = "nine", label = "At about nine, when the London man came to the station", when = "clue:police_case|met:tagg" },
+  { id = "early", label = "At about twenty to seven, before the talk on the wire ever began", when = "clue:lamp_hours|clue:lamp_dry" },
+]
+
+[[final.questions]]
+id = "why"
+prompt = "Why was he killed?"
+options = [
+  { id = "robbery", label = "For his pocket-book and what was in it" },
+  { id = "report", label = "To stop him betraying the false report of the Corisande", when = "clue:overdue|clue:false_report|met:tagg" },
+  { id = "gleaner", label = "Because he was blackmailing his killer over the night of the Gleaner", when = "clue:wreck_reply|clue:blackmail_book" },
+]
+
+[final.solution]
+who = "loveday"
+when = "early"
+why = "gleaner"
+
+[[final.wrong]]
+answers = { who = "nobody" }
+ending = "nobody"
+
+[[final.wrong]]
+answers = { who = "tagg" }
+ending = "tagg"
+
+[[final.wrong]]
+answers = { who = "kitto" }
+ending = "kitto"
+
+[[final.wrong]]
+answers = { who = "hext" }
+ending = "kitto"
+
+[[final.wrong]]
+answers = { who = "rowse" }
+ending = "rowse"
+
+[[final.wrong]]
+answers = { who = "mrs_pascoe" }
+ending = "widow"
+
+[[final.wrong]]
+answers = { who = "bolitho" }
+ending = "lineman"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "The Fist at the Far End"
+text = """
+Holmes heard me to the end without a word, and then he took the old coil from my hand and laid it on the table beside Wednesday's roll, the two passages side by side, and ran his finger along the marks.
+
+"Dah-dit, dah-dit," said he softly. "There she is, Watson, on both of them, two years apart. A careful woman: she lengthened her dashes and widened her gaps until she sent as heavily as Pascoe himself, for she had listened to him on her sounder every day for four years. But a fault you do not know you have is the one fault you cannot hide. She never learned that she splits her C's, because there was never an inker at Porthkellis to show her.
+
+"Everything else was true, you see. Pascoe was paid to leave the room empty at nine, and he did; Tagg came and found it empty, and cold, and sent his lie, and went away. Only Pascoe was not at the lookout, earning his money. He had gone down the path at twenty to seven with his lamp, as he went on the first Wednesday of every month, to be paid his ten shillings at the stile, where neither the station nor the lookout can see. And she was waiting for him, in her tea hour, with a stone. Then she went home and sat down at her key and made him talk to her for half an hour, and told the whole county through his mouth that he feared the London man. It was very nearly perfect. The tape can't tell you which end sent a signal, Watson. But it can tell you whose hand."
+
+We went down to Porthkellis together. Miss Nance was at her sounder, and when she saw the two strips of tape in Holmes's hand she took off her sleeve-protectors, folded them, and laid them on the counter, and stood up.
+
+"He'd have told Will," she said. "That's all. He'd have shown Will the tape, and Will would have known I was asleep upstairs while Dick drowned. I couldn't pay him any more, Mr Holmes. I couldn't bear him any more." And that was all she ever said, then or at Bodmin.
+
+Mr Julius Tagg went to prison for eighteen months for his part in the affair, and Mr Leete of Birchin Lane for two years; the Corisande's name-board is on the wall of the Room at Lloyd's to this day. Will Rowse visited Loveday Nance every week until the end, which was not, in the event, upon the scaffold; the jury's recommendation to mercy was heeded, and when I last heard of her she was keeping the books in a prison laundry. I am told that she writes a very good hand.
+
+"Telegraph, Watson," said Holmes, in the fly, "is the most honest witness I know. It records everything and understands nothing. It is the people who read it who tell the lies."
+"""
+
+[endings.crossed]
+title = "Crossed Wires"
+text = """
+Holmes ran his eye down my list of passages and the names I had set against them, and shook his head.
+
+"You have put a passage to a hand that did not send it, Watson. Look at the marks again: the length of the dashes, the gaps between the letters, and above all the little faults. Every word of this case was spoken on that wire, and if you cannot say who spoke it, you cannot say anything at all."
+
+Trevail, who had been waiting at the door, took my opinion to the magistrates all the same, for it agreed in the main with his own, and it was a long and unpleasant business to unsay it.
+
+"Back to the tapes, Watson," said Holmes. "Mark by mark."
+"""
+
+[endings.loose_ends]
+title = "Loose Ends"
+text = """
+Holmes looked at my list for a long moment.
+
+"It is good as far as it goes, Watson," said he. "But there are passages on that roll which you have not accounted for, or have never found. Every one of them was keyed by somebody's hand on Wednesday evening, and the one you have left out is very likely the one that hangs the case. A telegraph clerk does not leave half a message on the line, and nor should you."
+
+I said I was sure of my answer. Holmes said nothing, and Trevail went off to make his arrest on the strength of it. By the time the matter was put right, the case was in such a tangle that the right person was never brought to trial for it at all.
+
+"Every passage, Watson," said Holmes. "Then the hand."
+"""
+
+[endings.nobody]
+title = "A Fall in the Dark"
+text = """
+"He fell?" Holmes raised his eyebrows. "Then it was a very remarkable fall, Watson, that hit him on the back of the head, turned out his coat pocket and carried his pocket-book away. And after he was dead, his station went on telegraphing without him. Do you suppose the stile did that too?"
+
+The coroner's jury at Helston, who had not Holmes to put it to them, brought in accidental death with a rider about the danger of the cliff path at night, and the parish put a rail along it. It is a very good rail. Nobody was ever asked to answer for Amos Pascoe.
+"""
+
+[endings.tagg]
+title = "The London Man"
+text = """
+Holmes heard me out, and then said only: "You have proved that Mr Tagg sent a lying telegram, Watson. You have proved it very thoroughly; I congratulate you. Now prove to me that he killed a man, and tell me how he did it while he was eating his dinner."
+
+But I had said it in Trevail's hearing, and Trevail wanted nothing better. Tagg was taken to Bodmin that night. He was a liar and a cheat, and when he stood up at the Assizes the jury could see it in his face; and the prosecution had his boot-prints, and his note, and his motive, and the dead man's own words on the wire, that he was expecting a London man at nine and did not care for him. There was a witness from Porthkellis who gave that evidence very clearly, and very quietly, and was much admired for it.
+
+"The wire is your witness, Watson," said Holmes, as we left the court, "and it lied to you. Whose hand was on the key when it lied? You never asked."
+"""
+
+[endings.kitto]
+title = "The Lookout"
+text = """
+"From the lookout?" said Holmes. "Watson, the watch log is signed by two men for the whole of the first part of that evening, and the Lloyd's agent is one of them, and the clerk's own lamp tells you when he died. You have chosen a man with an alibi written down in ink and countersigned."
+
+Trevail did not take my view, to my relief; but the Lloyd's committee heard of it, and there was an inquiry into the conduct of the station, and it was a twelvemonth before the head of Polventon recovered its good name. The person who killed Amos Pascoe was not troubled by it at all.
+"""
+
+[endings.rowse]
+title = "The Coxswain"
+text = """
+"Rowse?" Holmes looked at me with something like pity. "He was drilling his crew by lantern-light from six until eight, Watson, with a dozen men to swear to it, and he has never sent a word on a telegraph wire in his life. You have chosen him because he has a grief, and grief is not evidence."
+
+It got about, as such things do in a village, and Rowse took it very quietly; but I could never afterwards go into the Fisherman's Arms without the room falling silent. The real culprit took a good deal of comfort from it, I have no doubt.
+"""
+
+[endings.widow]
+title = "The Widow"
+text = """
+"Mrs Pascoe," said Holmes, "was in Meneage Street in Helston from Wednesday afternoon until Thursday, with her sister and half the street to say so. She could no more have keyed a message than flown, and she could not have been on the cliff path at any hour of that evening. You have accused the one person who has lost most by this."
+
+I wrote to her afterwards, to say how sorry I was. She did not answer the letter, and I cannot say I blamed her.
+"""
+
+[endings.lineman]
+title = "The Lineman"
+text = """
+"Bolitho?" said Holmes. "Because he knows the wire? So do half a dozen people in this business, Watson. He was sent out from Helston on Thursday morning, after it was all over, and he has told you the one thing you most needed to know. It is a poor return for a lesson to hang the teacher."
+
+Fortunately Trevail laughed at me, and Bolitho never heard of it. But the person who did it heard me give my opinion, and slept the better for it.
+"""
+
+[endings.escape]
+title = "The Right Hand, the Wrong Reasons"
+text = """
+Holmes heard me out, and then shook his head slowly.
+
+"You have the right person, Watson, and you would lose the case at the Assizes. Half your account is wrong, and the half that is wrong is exactly the half that a clever counsel will choose to talk about. When did he die, and why? Until you can say, you cannot answer the question every juryman will ask: how could anyone have killed a man who was talking on the wire at twenty to eight?"
+
+He was right. The case was put to the magistrates as I had put it to Holmes, and it fell to pieces in an afternoon. The prisoner walked out of the court with everyone's sympathy, and I was the villain of the piece in two counties.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "talk to bolitho", "ask bolitho about how it works", "ask bolitho about fists",
+  "ask bolitho about the porthkellis office", "examine telegraph pole", "examine milestone", "take farthing",
+  "n", "examine step", "examine water-butt", "take farthing",
+  "e", "talk to holmes", "ask holmes about the case", "ask holmes about the tape", "ask holmes about fists",
+  "examine inker", "take roll", "examine roll", "examine card", "examine day book", "examine desk lamp",
+  "examine stove", "codebook", "tapes", "tape a",
+  "decode a as nil since noon wind nw clear pv", "tape e", "decode e as nnorisande man dont nnare for him",
+  "w", "nw", "talk to trevail", "ask trevail about the surgeon", "ask trevail about the wire",
+  "ask trevail about tagg", "examine body", "examine shelf", "take lantern", "examine lantern",
+  "take note", "examine note",
+  "se", "n", "talk to kitto", "ask kitto about how i found him", "ask kitto about the lamps",
+  "ask kitto about the ship", "ask kitto about mr tagg", "ask kitto about the practice set",
+  "examine watch log", "take practice tape", "examine practice tape", "open flag locker", "take farthing",
+  "s", "ne", "talk to hext", "ask hext about the overdue market", "ask hext about the corisande",
+  "ask hext about wednesday evening", "ask hext about pascoe", "examine board of overdue ships",
+  "examine ledger", "examine telegram", "examine shell-case", "take farthing",
+  "sw", "w", "talk to mrs pascoe", "ask mrs pascoe about amos", "ask mrs pascoe about money",
+  "ask mrs pascoe about the pocket-book", "ask mrs pascoe about her sister", "examine dresser", "take farthing",
+  "e", "sw", "examine stile", "examine gorse",
+  "down", "examine capstan", "take farthing",
+  "e", "talk to miss nance", "ask miss nance about wednesday evening", "ask miss nance about the london gentleman",
+  "ask miss nance about will", "ask miss nance about the gleaner",
+  "talk to mrs nance", "ask mrs nance about the class meeting", "ask mrs nance about the office hours",
+  "examine board of office hours", "examine sounder",
+  "w", "w", "talk to hosken", "ask hosken about his dinner", "ask hosken about when he went out",
+  "examine settle", "take farthing",
+  "n", "talk to tagg", "ask tagg about the corisande", "ask tagg about this pascoe", "show note to tagg",
+  "s", "up", "examine town boots", "open writing-case", "take letter", "examine letter",
+  "take telegram receipt", "examine telegram receipt",
+  "down", "e", "s", "talk to rowse", "ask rowse about the drill", "ask rowse about the gleaner",
+  "ask rowse about loveday", "examine board", "examine slip", "take farthing",
+  "n", "up", "ne", "e", "e", "examine cells", "examine cell", "open cell",
+  "take little black book", "examine little black book", "take old tape", "examine old tape",
+  "tapes", "tape l", "decode l as pv pk sorry called away calling coxswain now",
+  "attribute a to pascoe", "attribute bcdefg to miss nance", "attribute h to tagg", "notebook",
+  "accuse", "", "loveday", "twenty to seven", "gleaner", "y",
+]
+wrong_path = [
+  "accuse", "", "1", "1", "1", "y", "",
+]

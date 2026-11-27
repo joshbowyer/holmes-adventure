@@ -1,0 +1,327 @@
+# ================================================================ Holmes
+
+[characters.holmes]
+name = "Holmes"
+aliases = ["sherlock holmes", "sherlock", "mr holmes"]
+location = "instrument_room"
+description = "Holmes was bent over the inker with his lens, as absorbed as a naturalist over a beetle."
+presence = "Holmes was bent over the inker with his lens."
+unknown_topic = '''"That is your part of the business, Watson," said Holmes, without looking up. "Mine is to listen to the wire."'''
+unknown_show = '''Holmes glanced at it. "Yes. Now read your tapes again with that in mind."'''
+
+[[characters.holmes.greeting]]
+text = '''"Ah, Watson." Holmes straightened his back. "Trevail has his man, you know: a London speculator with a motive like a church steeple and mud on his boots. He may be right. But a man was killed here on Wednesday evening, and the wire from this room went on talking for two hours after the surgeon says he died, and that interests me a great deal more than the Inspector's steeple. This machine writes down everything that passes on the line. You and I must learn to read it. Ask me about the case, or about the tape and how to read it, or about fists; and I have no small change, so you must find your own farthings for my opinions."'''
+
+[[characters.holmes.topics.case]]
+aliases = ["murder", "pascoe", "man", "inspector", "trevail", "speculator", "steeple", "talking", "surgeon"]
+text = '''"A telegraph clerk is struck down on a cliff path," said Holmes. "His station goes on sending messages without him, and the last of them is a lie that has cost the underwriters of Lloyd's a very unpleasant morning. The Inspector reasons from the lie backward to the man who profited by it. That is natural, and it may even be right. I prefer to reason from the wire forward. Every word on that roll was sent by a hand, Watson, and every hand leaves its mark."'''
+
+[[characters.holmes.topics.tape]]
+aliases = ["roll", "read", "reading", "inker", "machine", "tapes", "how to read it", "decode", "morse"]
+text = '''"Take the roll off the drum," said Holmes, "and the alphabet card off the wall, and then TAPES will show you what you hold, each passage with its letter, and TAPE with a letter will show you its marks. A short mark is a dot and a long one a dash; a small gap parts the marks of one letter, a wider gap parts the letters, and a wider still the words. When you think you have read a passage, DECODE it AS the words you read, and I shall tell you whether it fits. You need not read every passage to the end, but you will be a poor judge of a fist if you do not."'''
+
+[[characters.holmes.topics.fists]]
+aliases = ["fist", "hand", "hands", "sender", "senders", "attribute", "who sent"]
+text = '''"A telegraphist's fist, Watson, is his hand on the key, and it is as much his own as his handwriting. One man makes his dashes long, another clips them; one leaves a wide gap between his letters and another runs them together; and most have some little fault of their own that they would swear they never commit. Lay a passage beside a sample of a known man's sending, and compare them mark by mark. When you are sure who sent a passage, ATTRIBUTE it TO him. I shall want every passage on that roll accounted for before I hear your conclusions."'''
+
+[[characters.holmes.topics.farthings]]
+aliases = ["farthing", "coins", "coin", "hint", "hints", "help", "change", "small change"]
+text = '''"A farthing a time," said Holmes. "It is the smallest coin of the realm, and I shall give you the smallest opinion that will serve."'''
+
+# ================================================================ the station
+
+[characters.bolitho]
+name = "Mr Bolitho"
+aliases = ["bolitho", "lineman", "post office man", "man in a post office cap", "man"]
+location = "lane"
+description = "A brown, wiry little man in the Post Office cap and badge, with climbing irons over his shoulder and a pencil behind his ear."
+presence = "Mr Bolitho, the lineman, was testing the wire at the foot of a pole."
+unknown_topic = '''"That's outside my line, sir," said Bolitho, and laughed at his own joke.'''
+unknown_show = '''Bolitho looked at it with polite interest. "Can't say I know it, sir."'''
+
+[[characters.bolitho.greeting]]
+text = '''"Morning, sir. Bolitho, lineman, from Helston." He touched his cap. "Sent out to test the line after this business, and she's sound as a bell, sir, end to end, and was all Wednesday. It's a simple line: one wire, Helston to Porthkellis to the Head. If you want to know how it works, or about fists, or the Porthkellis office, I'm your man. Twenty years I've been on it."'''
+
+[[characters.bolitho.topics.line]]
+aliases = ["wire", "one wire", "works", "how it works", "sound", "test", "simple line"]
+text = '''"One wire, sir, and the earth for the return. Every instrument on it, from here to Helston, is in that one circuit, so that when any clerk on the line presses his key, the current goes the whole length of it, and every instrument on it answers. That inker up at the station writes down every signal that passes on the line, sir: what it sends itself, and what Porthkellis sends, and what Helston sends. But mark this. The tape can't tell you which end sent a signal. A dash keyed in Helston looks the same on the Head's tape as a dash keyed on the Head's own table. You'd only know them apart by the fist."'''
+effects = ["clue:single_wire", "clue:line_sound"]
+
+[[characters.bolitho.topics.fists]]
+aliases = ["fist", "hand", "split", "faults"]
+text = '''"Every clerk's got his fist, sir, and after a year on a line you know 'em all by ear, as you'd know a man's step on the stair. Old Pascoe sent heavy: great long dashes and great wide gaps, slow and sure, the old Company style. Some clip their dashes, London fashion. And most have a fault or two they don't know of. You'll get a clerk as always splits his C, sir, so it comes out like two N's, dah-dit, dah-dit; and he'll swear blind he never did it in his life."'''
+effects = ["clue:fists"]
+
+[[characters.bolitho.topics.porthkellis]]
+aliases = ["porthkellis office", "office", "porthkellis", "sounder", "village"]
+text = '''"Porthkellis is a sounder office, sir: no inker, only a sounder that clicks out the signals, and the clerk takes 'em down by ear on to a form. That's Miss Nance, the postmistress's girl. Quick and clean, she is, and been on that sounder these four years and more."'''
+effects = ["clue:sounder_office"]
+
+[characters.hext]
+name = "Captain Hext"
+aliases = ["hext", "captain", "captain hext", "lloyd's agent", "agent", "elias hext"]
+location = "office"
+description = "Captain Elias Hext, Lloyd's agent at Polventon: a square, grey, deliberate old seaman with a beard like a ship's fender and eyes creased with forty years of looking at weather."
+presence = "Captain Hext sat at the desk, scowling at a telegram."
+unknown_topic = '''"Couldn't tell you, Doctor," said the Captain.'''
+unknown_show = '''The Captain turned it over. "Don't know it, Doctor."'''
+
+[[characters.hext.greeting]]
+text = '''"Dr Watson? Hext, Lloyd's agent." He gave me a hand like a block of teak. "This is a black business, sir, and a shameful one for this station: a false report gone up to the Room in our name, and poor Pascoe dead. I'll tell you what I can: about the overdue market, if you don't know it, and the Corisande, and where I was on Wednesday evening, and about Pascoe. Nineteen years we worked this head together."'''
+
+[[characters.hext.topics.market]]
+aliases = ["overdue market", "overdue", "room", "rate", "rates", "reinsurance", "lloyd's", "underwriters"]
+text = '''"When a ship is overdue, sir, and nobody knows whether she's afloat or at the bottom, the underwriters who have her on their books will reinsure her with others, for a premium, and the premium is the market's guess at her chances: so many guineas per cent. Sixty guineas on a ship means the Room thinks it rather more likely than not she's gone. Then if a station like this reports her passed, all well, the rate falls to nothing in an hour. A man who knew she was lost, and could get her reported safe, could buy cover at three guineas that would pay a hundred when the truth came out. That's what was done to us on Wednesday, sir, or tried."'''
+effects = ["clue:overdue"]
+
+[[characters.hext.topics.corisande]]
+aliases = ["barque", "the corisande", "report", "false report", "nine", "five past nine", "message"]
+text = '''"The Corisande, iron barque, of Liverpool, a hundred and thirty-one days out from San Francisco with grain; she was posted overdue a fortnight since, and stood at sixty guineas. On Wednesday at 9:05 at night this station sent up a report that she'd passed the Head at 8:50, bound east, all well. Kitto and I were watching for her lights half the evening, sir, and nobody on this head saw any Corisande. She's not been seen since, by anyone. And the Room has guessed it, as you see." He thumped the telegram.'''
+effects = ["clue:false_report"]
+
+[[characters.hext.topics.evening]]
+aliases = ["wednesday evening", "where", "last night", "wednesday", "lookout", "lights"]
+text = '''"Lloyd's wired at noon to keep a sharp lookout for her, so I went up to the lookout with Kitto at a quarter past six and stayed till a quarter to eight, the two of us watching for her lights. Nothing. Then I came down to my supper, and Kitto kept the watch alone. You'll find it in the watch log."'''
+
+[[characters.hext.topics.pascoe]]
+aliases = ["amos pascoe", "amos", "clerk", "nineteen years"]
+text = '''"A good clerk, sir: slow, but sure, and very particular. Kept everything by the rule. The rule is that tapes are kept three months and then destroyed, and I've seen him burn his old rolls in that stove regular as the calendar. Close, he was; kept himself to himself. I never knew much of what he thought."'''
+effects = ["clue:tapes_rule"]
+
+[[characters.hext.topics.tagg]]
+aliases = ["mr tagg", "london man", "speculator", "london"]
+text = '''"That Tagg's been about the head all week, sir, asking after the Corisande, very free with his cigars. I didn't care for him, and I told him so. He was up here on Wednesday afternoon, Kitto says."'''
+
+[characters.kitto]
+name = "Jory Kitto"
+aliases = ["kitto", "jory", "signalman", "lookout man", "young man"]
+location = "lookout"
+description = "A long, fair, raw-boned young Cornishman of two- or three-and-twenty, in a pea-jacket, with a telescope under his arm and red eyes."
+presence = "Jory Kitto, the signalman, sat on the stool by the window."
+unknown_topic = '''"I don't know about that, sir," said Kitto.'''
+unknown_show = '''Kitto shook his head at it. "Never seen it, sir."'''
+
+[[characters.kitto.greeting]]
+text = '''"You're the doctor that's come with Mr Holmes?" The young man stood up. "Jory Kitto, sir, signalman. It was me found him, sir, Wednesday night. I'll tell you anything you want: how I found him, or about the lamps, or the ship that never was, or Mr Tagg. I'm learning the telegraph, sir; Mr Pascoe was learning me, of an evening, on that practice set."'''
+
+[[characters.kitto.topics.found]]
+aliases = ["found him", "how i found him", "wednesday night", "night", "body", "found"]
+text = '''"I came down off watch at twenty to ten to report to Mr Pascoe, like always, and the instrument room was dark, sir, and cold as a vault: the stove out, and him gone. And the door unlocked. He never left that door unlocked, sir, not if he stepped out for a minute; it's the rule. I took my lantern and went to look for him, round the yard and then down the cliff path, and I found him by the stile, lying in the gorse, and his own lamp beside him out."'''
+effects = ["clue:room_cold", "clue:door_unlocked"]
+
+[[characters.kitto.topics.lamps]]
+aliases = ["lamp", "lamps", "lantern", "bull's-eye", "his own lamp", "oil"]
+text = '''"I fill and trim all the station lamps at six of an evening, sir, Mr Pascoe's bull's-eye with the rest, and set it on his table. That bull's-eye burns three hours on a filling, near enough; I've timed her. He never lit it indoors, sir, for there's the desk lamp for that; only when he was going out of doors. When I found him she was out and cold, and dry as a bone."'''
+effects = ["clue:lamp_hours"]
+
+[[characters.kitto.topics.ship]]
+aliases = ["ship that never was", "corisande", "ship", "barque"]
+text = '''"There wasn't any ship, sir. I was on that glass from a quarter past six till twenty to ten, the Captain with me till a quarter to eight, and it was a clear night with the wind north-west, and you can see a ship's lights twelve mile from here on a night like that. Nothing passed east or west after dark. Not at ten to nine nor any time."'''
+effects = ["clue:no_ship"]
+
+[[characters.kitto.topics.tagg]]
+aliases = ["mr tagg", "london gentleman", "london"]
+text = '''"He's been up most days, sir, asking about the Corisande. On Monday he had a go on my practice set, to show me how they send in London, quick as a sewing machine. And on Wednesday afternoon, about three, he came up and was in the instrument room with Mr Pascoe a quarter of an hour, with the door shut."'''
+effects = ["clue:tagg_visit"]
+
+[[characters.kitto.topics.practice]]
+aliases = ["practice set", "practice", "learning", "telegraph", "tape"]
+text = '''"That's my practice set, sir. I send on it and read back my own tape, and Mr Pascoe would look it over and tell me where I'd gone wrong. I'm slow yet, and my dashes wander, he says. You can have the strip if it's any use; the first bit's mine and the second's Mr Tagg's. I marked them."'''
+
+# ================================================================ the cottage and the store
+
+[characters.mrs_pascoe]
+name = "Mrs Pascoe"
+aliases = ["widow", "wife", "mrs pascoe", "woman"]
+location = "cottage"
+description = "A small, neat, grey-haired woman in new black, very upright, her hands folded in her lap."
+presence = "Mrs Pascoe sat very upright by the range."
+unknown_topic = '''"I couldn't say, sir," said Mrs Pascoe.'''
+unknown_show = '''She looked at it without understanding. "I never saw it, sir."'''
+
+[[characters.mrs_pascoe.greeting]]
+text = '''"You're very kind, sir." Her voice did not shake. "I was away at my sister's in Helston, sir, when it happened; I went on the train on Wednesday afternoon, and came home yesterday to this. I'll answer what you like. About Amos, sir, or about money, for they'll say it was money, or his pocket-book that's gone. He was a close man, sir. He never told me half."'''
+
+[[characters.mrs_pascoe.topics.helston]]
+aliases = ["sister", "away", "train", "wednesday"]
+text = '''"I went by the two-ten from Helston station on Wednesday, sir, the carrier took me in; and I stayed the night with my sister in Meneage Street, and came home on the Thursday. I left him a cold supper. He hadn't touched it."'''
+
+[[characters.mrs_pascoe.topics.amos]]
+aliases = ["husband", "pascoe", "mr pascoe", "close man", "close"]
+text = '''"He was a good provider, sir, and steady. But he'd his secrets. These two years he'd be out in that battery room of an evening more than ever the cells could want, and if I asked him he'd say they wanted watching. I never went in there. I don't like the smell of it."'''
+effects = ["clue:battery_habit"]
+
+[[characters.mrs_pascoe.topics.money]]
+aliases = ["savings", "house", "money lately"]
+text = '''"He'd money lately, sir, more than his wages. He said a debt was being paid him, a little at a time, and soon there'd be more, and we'd have a little house in Helston when he retired. I never asked whose debt."'''
+effects = ["clue:money_lately"]
+
+[[characters.mrs_pascoe.topics.pocket_book]]
+aliases = ["pocket-book", "pocketbook", "pocket book", "gone", "his pocket-book"]
+text = '''"His pocket-book's gone, sir: a brown leather one, that he carried in his inside coat pocket always. The Inspector says it's robbery. But they left twenty pound in his waistcoat, sir, and what thief does that?"'''
+effects = ["clue:pocket_book"]
+
+[characters.trevail]
+name = "Inspector Trevail"
+aliases = ["trevail", "inspector", "police"]
+location = "flag_store"
+description = "Inspector Trevail, of the county constabulary at Helston: a burly, black-whiskered, confident man in a frieze coat, with a notebook he consulted very often."
+presence = "Inspector Trevail stood by the trestles with his notebook."
+unknown_topic = '''"I can't help you there, Doctor," said Trevail.'''
+unknown_show = '''Trevail grunted. "And what's that to the purpose, Doctor?"'''
+
+[[characters.trevail.greeting]]
+text = '''"Dr Watson. Trevail, Helston." He shook hands briskly. "You'll want to see him, I daresay, being a medical man; and the things on the shelf there. But I'll save you trouble, Doctor: I have my man. A London speculator, Tagg, in the overdue line, who sent that lying message from this station at five past nine, and killed poor Pascoe to do it. Ask me about the surgeon, or the wire, or Tagg himself, and I'll make it plain."'''
+
+[[characters.trevail.topics.surgeon]]
+aliases = ["police surgeon", "time", "when", "died", "death", "him"]
+text = '''"Dr Penhallow of Helston saw him on the spot at half past twelve on Thursday morning. One blow, on the back of the head, a round stone or the like, which we've not found; it'll be in the sea. Dead, the doctor says, between six and eight o'clock in the evening, and nearer seven than not. But doctors can't be held to an hour, and we know better than that, Doctor. We know he was alive at twenty to eight."'''
+effects = ["clue:surgeon"]
+
+[[characters.trevail.topics.wire]]
+aliases = ["the wire", "alive", "twenty to eight", "miss nance", "conversation"]
+text = '''"Miss Nance, at the post office in Porthkellis, talked with him on the wire from a quarter past seven to twenty to eight, Doctor. She'd called up to ask if there was anything for the evening post. And he told her he was expecting a London man at nine, and didn't care for him. Her mother saw her at it. So he was alive at twenty to eight, by his own hand on the key, and dead before Kitto found him at a quarter to ten. And who was on this head at nine? Tagg."'''
+effects = ["clue:nance_report"]
+
+[[characters.trevail.topics.tagg]]
+aliases = ["mr tagg", "london speculator", "speculator", "my man", "man"]
+text = '''"Tagg came up here at nine, by his own boot-prints on the step yonder, which he'll not explain, and sent that message at five past. Hosken at the Arms says he went out at half past eight and came back at half past nine, mud to the knees, wanting brandy. He'd a motive worth thousands, Doctor: Pascoe wouldn't send his lie for him, or would have told on him after, so he put him out of the way and sent it himself. He was a telegraph clerk once, in the old Company days. And there's his note to Pascoe on the shelf, luring him out of the way at nine. I'll have a warrant by tonight."'''
+effects = ["clue:police_case"]
+
+# ================================================================ Porthkellis
+
+[characters.loveday]
+name = "Miss Nance"
+aliases = ["loveday", "loveday nance", "miss loveday", "nance", "telegraphist", "clerk", "young woman", "girl"]
+location = "post_office"
+description = "Miss Loveday Nance: a slight, dark young woman of six- or seven-and-twenty with grave grey eyes, in a plain grey stuff dress with black cuffs on account of the death, very neat behind her little rail."
+presence = "Miss Nance, the telegraphist, sat behind the rail by the sounder."
+unknown_topic = '''"I'm afraid I can't help you there, Doctor," said Miss Nance gently.'''
+unknown_show = '''Miss Nance looked at it gravely. "I'm sorry, Doctor. I don't know it."'''
+
+[[characters.loveday.greeting]]
+text = '''"You've come about poor Mr Pascoe." She rose, and gave me a small cold hand. "I'm Loveday Nance, Doctor. I keep the telegraph here. I've told the Inspector all I know, but I'll tell you gladly: about Wednesday evening, when I talked with him on the wire, and what he said about the London gentleman. I can't believe it yet. I've worked with him on that wire four years."'''
+
+[[characters.loveday.topics.evening]]
+aliases = ["wednesday evening", "talked", "wire", "evening", "last night"]
+text = '''"I called up the Head at a quarter past seven, Doctor, as I often do of an evening, to ask whether there was anything for the night mail. He answered, as he always did, and we talked a little; it was quiet. He said he was expecting a London man at nine, and that he didn't care for him. Then we said good night; that would be twenty to eight, a little after, for Mother came in from the class meeting at five and thirty past and saw me at the sounder. I never thought. If I'd thought, I could have sent for somebody."'''
+effects = ["clue:nance_account"]
+
+[[characters.loveday.topics.london]]
+aliases = ["london gentleman", "mr tagg", "tagg", "london man", "gentleman"]
+text = '''"Mr Tagg? He's handed in telegrams here, Doctor, to London, most days this week. I mayn't tell you what was in them: that's against the Act, and I'd lose my place. The Inspector has had them from Helston, I believe." She coloured a little. "I didn't like him. He looked at a person as if he were pricing her."'''
+
+[[characters.loveday.topics.pascoe]]
+aliases = ["mr pascoe", "him", "four years", "worked"]
+text = '''"He was always very correct with me, Doctor. A heavy sender, slow and very regular: you'd know his hand on the sounder anywhere. I learnt a great deal from listening to him."'''
+
+[[characters.loveday.topics.gleaner]]
+aliases = ["wreck", "the gleaner", "1885", "line down", "inquiry"]
+text = '''She was quite still for a moment. "That was a dreadful night, Doctor. The line was down in the gale, and the message from the Head never reached me till after midnight. The inquiry said so; nobody was to blame." She turned a pencil over and over on the counter. "Will's brother was drowned that night."'''
+
+[[characters.loveday.topics.will]]
+aliases = ["will rowse", "rowse", "wedding", "married", "fiancé", "fiance"]
+text = '''"Will and I are to be married at Christmas, Doctor." She smiled for the first time, a little crookedly. "He's the coxswain of the lifeboat. You'll find him down at the boathouse; he's always there, ever since his brother was lost in the Gleaner."'''
+
+[characters.loveday.shows.wreck_tape]
+text = '''Miss Nance looked at the old coil in my hand, and I saw the colour go out of her face as a lamp goes out. "I can't read a tape, Doctor," she said, quite steadily. "I work by ear. I don't know what that is." And she turned back to her sounder.'''
+
+[characters.loveday.shows.black_book]
+text = '''She glanced at the little black book, and away. "Was that Mr Pascoe's? I never saw it before, Doctor." Her hands were very still on the counter.'''
+
+[characters.mrs_nance]
+name = "Mrs Nance"
+aliases = ["mrs nance", "postmistress", "mother", "old woman", "woman"]
+location = "post_office"
+description = "Mrs Nance, the postmistress: a stout, shrewd, motherly woman in a cap, with her daughter's grey eyes."
+presence = "Mrs Nance, the postmistress, stood at the counter."
+unknown_topic = '''"I couldn't say, my dear," said Mrs Nance.'''
+unknown_show = '''Mrs Nance peered at it. "That's nothing of mine, Doctor."'''
+
+[[characters.mrs_nance.greeting]]
+text = '''"Good morning, Doctor. A terrible thing, terrible. You'll want to know about Wednesday evening, I daresay, the same as the Inspector: I was at the class meeting at chapel, and I came home and found my Loveday at the sounder. Or about the office, and its hours. Ask away, my dear."'''
+
+[[characters.mrs_nance.topics.evening]]
+aliases = ["class meeting", "chapel", "wednesday evening", "came home", "found", "sounder"]
+text = '''"Wednesday is the class meeting, Doctor, half past six till half past seven, and I never miss it. When I came in at five and thirty past seven, there was my Loveday at the sounder, talking to Mr Pascoe up at the Head. I stood a minute and listened, though I can't read it; it went click-click, very busy. Then I went up to see to the kettle."'''
+effects = ["clue:mother_saw"]
+
+[[characters.mrs_nance.topics.office]]
+aliases = ["office hours", "hours", "tea", "closed", "clerk"]
+text = '''"Eight till eight, Doctor, and shut for our dinner at one and our tea at six. Loveday has her tea upstairs alone at six, as I'm off to chapel. She's been the only telegraph clerk here since the spring of '83, Doctor, when she passed her examination; there's no one else here can work it, and nobody ever has."'''
+effects = ["clue:tea_alone"]
+
+[characters.hosken]
+name = "Mr Hosken"
+aliases = ["hosken", "landlord", "innkeeper", "publican"]
+location = "inn"
+description = "Mr Hosken, the landlord of the Fisherman's Arms: a vast, bald, slow man in a striped waistcoat, polishing a glass that was already clean."
+presence = "Mr Hosken, the landlord, was polishing a glass behind the bar."
+unknown_topic = '''"Couldn't say, sir," said Hosken.'''
+unknown_show = '''Hosken looked at it and shook his head slowly.'''
+
+[[characters.hosken.greeting]]
+text = '''"Morning, sir. You'll be from Mr Holmes, at the Head. You'll want to know about my London gentleman, Mr Tagg, same as the Inspector: about his dinner on Wednesday, and when he went out. He's in the coffee room now, sir, under orders not to leave the house, and not liking it."'''
+
+[[characters.hosken.topics.dinner]]
+aliases = ["his dinner", "wednesday", "coffee room", "coffee-room"]
+text = '''"He dined in the coffee room on Wednesday from six o'clock, sir, with the commercial gentleman from Redruth and the curate, who's lodging with us; I waited on them myself, and he never stirred from the table. A long dinner, sir, and a deal of port. It was half past eight before they rose."'''
+effects = ["clue:tagg_dinner"]
+
+[[characters.hosken.topics.out]]
+aliases = ["went out", "when he went out", "mud", "brandy", "back"]
+text = '''"At half past eight he put on his coat and went out by the street door, sir, and said he'd take a turn. He came in again at half past nine by the taproom clock, red mud to his knees and blowing like a grampus, and called for a brandy, and took it up to his room."'''
+effects = ["clue:tagg_out"]
+
+[characters.tagg]
+name = "Mr Tagg"
+aliases = ["tagg", "julius tagg", "london gentleman", "speculator", "londoner"]
+location = "coffee_room"
+description = "Mr Julius Tagg: a sleek, plump, quick-eyed Londoner of forty in a check suit and a heavy gold watch-chain, smoking a cigar too big for the room."
+presence = "Mr Tagg sat at the coffee-room table, smoking furiously."
+unknown_topic = '''"Ask the Inspector," said Tagg. "He knows everything."'''
+unknown_show = '''Tagg looked at it and shrugged. "Never saw it in my life."'''
+
+[[characters.tagg.greeting]]
+text = '''"Another of 'em." Tagg did not rise. "Well, sir, I'll say to you what I said to that Cornish blockhead: I know nothing about it. I'm a man of business. I came down here on business, about the Corisande, which is my affair and nobody else's; I took a turn on the quay on Wednesday evening, and I never set eyes on this Pascoe but once or twice in my life. Ask me what you like."'''
+
+[[characters.tagg.topics.business]]
+aliases = ["corisande", "turn", "quay", "wednesday evening", "evening"]
+text = '''"I deal in overdue risks, sir; it's a lawful trade. I came down to be near the Head, where she'd be reported, if she was reported. Wednesday I dined, and at half past eight I took a turn along the quay and up the road a little for my digestion, and came back. If somebody has been sending lies to Lloyd's in this ship's name, sir, I'm the loser by it as much as anybody."'''
+effects = ["clue:tagg_lies"]
+
+[[characters.tagg.topics.pascoe]]
+aliases = ["this pascoe", "once", "twice", "clerk"]
+text = '''"I went up to the station once or twice to ask after my ship. He was a dull, civil fellow. That's all I know of him."'''
+
+[[characters.tagg.shows.tagg_note]]
+text = '''Tagg looked at the note for a long moment, and then he put down his cigar.
+
+"Very well," he said. "Very well. I'll tell you, and you may tell your Inspector, and be damned to him. I paid Pascoe twenty pounds on Wednesday afternoon, and twenty more to come, to be up at the lookout at nine o'clock and leave me the room. He took it like a lamb. He never said a word about not caring for London men; he was glad of the money. At nine I went up the road, and the door was unlocked, as he'd promised, and the room was empty and black as your hat, and cold, sir: the stove out, and the place like a tomb, as if nobody had been in it for hours. I lit the desk lamp, which smoked like the devil, and I sent the report at 9:05, and I put the lamp out and walked down the road again. I was a Company clerk once; it's nothing to me. That's fraud, sir, and I'll answer for it. But I never touched the man. I never saw him. I thought he was up at the lookout, earning his money."'''
+effects = ["clue:tagg_confesses"]
+
+[characters.rowse]
+name = "Will Rowse"
+aliases = ["rowse", "will", "coxswain", "lifeboatman", "will rowse"]
+location = "lifeboat_house"
+description = "Will Rowse, coxswain of the Porthkellis lifeboat: a tall, quiet, black-bearded fisherman of thirty with enormous hands, mending a cork jacket."
+presence = "Will Rowse, the coxswain, was mending a cork jacket by the boat."
+unknown_topic = '''"Couldn't tell you, sir," said Rowse.'''
+unknown_show = '''Rowse looked at it and shook his head.'''
+
+[[characters.rowse.greeting]]
+text = '''"Morning, sir." He did not stop his needle. "Rowse; coxswain. You'll be asking all of us where we were on Wednesday, I suppose. I was here at the drill, sir, with the crew. If you're asking about the Gleaner, that's on the board there; and if you're asking about Loveday, she's my girl."'''
+
+[[characters.rowse.topics.drill]]
+aliases = ["the drill", "wednesday", "crew", "where"]
+text = '''"Six till eight, Wednesday, every week in the winter, with the full crew, by lantern-light. Ask any of 'em."'''
+
+[[characters.rowse.topics.gleaner]]
+aliases = ["the gleaner", "board", "wreck", "brother", "dick", "1885"]
+text = '''He put the jacket down. "November '85, a south-west gale. The Gleaner, of this place, went on Polventon Ledges near eleven at night. The Head saw her lights go and sent down the wire for the boat. And we never got the word till after midnight, sir, and we launched at twenty to one, and when we got out there were two left on her out of five. My brother Dick was one of the three. The Board of Trade held an inquiry, and they said the line was down in the gale and nobody was to blame. Lines do go down in a gale. I've had to be content with that."'''
+effects = ["clue:gleaner"]
+
+[[characters.rowse.topics.loveday]]
+aliases = ["my girl", "miss nance", "nance", "christmas", "wedding"]
+text = '''"We're to be married at Christmas, sir." He picked up the jacket again. "She's been strange this year: low, and nervy, and putting it off, and then not putting it off. Women are like that before a wedding, my mother says. She was on duty the night of the Gleaner, sir, and took it hard, though it was none of her fault. She's never been easy about the sea since."'''
+effects = ["clue:loveday_low"]

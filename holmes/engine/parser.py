@@ -44,6 +44,11 @@ BUILTIN_VERBS = {
     "seating": ["seating", "seats", "plan", "places"],
     "seat": ["seat"],
     "unseat": ["unseat"],
+    "tapes": ["tapes"],
+    "tape": ["tape"],
+    "decode": ["decode", "transcribe", "translate", "decipher"],
+    "attribute": ["attribute", "ascribe", "assign", "credit"],
+    "codebook": ["codebook", "alphabet", "morse"],
     "again": ["again", "g"],
 }
 

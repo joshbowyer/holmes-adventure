@@ -292,6 +292,53 @@ class GameTests(unittest.TestCase):
         g.handle("accuse")
         self.assertTrue(g.state.solved)
 
+    def test_morse_tapes_and_final(self):
+        import copy
+        from holmes.puzzles.morse import literal, render
+        split = {"dot": 1, "dash": 3, "gap": 1, "letter": 3, "word": 7, "split": ["C"]}
+        self.assertEqual(literal("CAT", split), "NNAT")
+        self.assertEqual("".join(render("ET", {"dot": 1, "dash": 4, "gap": 1, "letter": 2,
+                                               "word": 5})), "=  ====")
+        data = copy.deepcopy(FIXTURE)
+        del data["final"]["when"]
+        data["final"].update({"type": "morse", "morse": {
+            "codebook_when": "clue:found_key",
+            "fists": {"plain": {"dot": 1, "dash": 3, "gap": 1, "letter": 3, "word": 7},
+                      "odd": split},
+            "passages": {
+                "p1": {"deal": "found_key", "label": "First.", "text": "SOS", "fist": "plain",
+                       "sender": "bob"},
+                "p2": {"deal": "found_key", "label": "Second.", "text": "CAT", "fist": "odd",
+                       "clue": "rope_pulled"},
+            },
+            "senders": {"bob": {"name": "Bob"}, "ann": {"name": "Ann Lee", "when": "met:bob"}},
+            "answer": {"p2": "ann"},
+            "wrong_ending": "lose", "incomplete_ending": "gaps"}})
+        data["endings"]["gaps"] = {"text": "Gaps."}
+        data["actions"] = []
+        self.assertEqual(validate(data), [])
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.handle("codebook")                                 # no alphabet yet: refused
+        self.assertTrue(g.failed)
+        g.state.clues.append("found_key")
+        g.handle("tape b")
+        self.assertIn("=== =   === =", "".join(g.io.output))   # the split C
+        g.handle("decode b as dog")
+        self.assertEqual(g.state.decoded, [])
+        g.handle("decode b as nnat")                         # the literal reading will do
+        self.assertEqual((g.state.decoded, g.state.clues[-1]), (["p2"], "rope_pulled"))
+        g.handle("attribute a to ann")                       # known sender: refused
+        g.handle("attribute b to ann")                       # Ann not known yet
+        self.assertEqual(g.state.attribution, {})
+        g.handle("attribute b to bob")
+        g.io.inputs += ["", "bob", "y", ""]                 # wrong sender
+        g.handle("accuse")
+        self.assertEqual(g.state.wrong, 1)
+        g.state.met.add("bob")
+        g.io.inputs += ["attribute b to lee", "", "bob", "y"]
+        g.handle("accuse")
+        self.assertTrue(g.state.solved)
+
     def test_wrong_then_right_accusation(self):
         g, _ = new_game(["2", "y", "", "1", "y"])
         g.handle("accuse")

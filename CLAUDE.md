@@ -206,6 +206,15 @@ Exploration premises:
     `people` {key: {name, aliases, when, fixed}}; `answer` {place: person};
     `wrong_ending`, `incomplete_ending`. SEATING draws the round table, SEAT <name> AT <n>
     and UNSEAT <name> edit `state.seating`; sitters appear once their `when` holds).
+    `morse` (accuse plus attributing tape passages to senders: `final.morse` has `fists`
+    {key: {dot, dash, gap, letter, word, split?, slip?, wobble?}} in mark units,
+    `passages` {pid: {deal (clue), label, text, fist, sender? (known sample), clue?
+    (noted when decoded)}}, `senders`, `answer` {pid: sender} for passages without a
+    known sender, `codebook_when`, `wrong_ending`, `incomplete_ending`. Tape is drawn
+    from the text and fist at runtime as `=` marks and spaces, so the prose never
+    states it. Commands: TAPES, TAPE <letters>, DECODE <letter> AS <words> (accepts the
+    literal reading of split letters; on a miss it says how many letters fit),
+    ATTRIBUTE <letters> TO <name>, CODEBOOK; state in `state.decoded`/`attribution`).
     `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
   - Story sources: `spoilers/stories/<id>/*.toml` (all files in a folder are merged).
     `python -m holmes.build` validates and writes scrambled `holmes/data/<id>.case`.
@@ -221,7 +230,19 @@ Exploration premises:
     `timeline` case; set "a little harder" than E2 at the user's request; played and
     finished: "very good case") and `medium` (deduction case 3, The Medium's Last
     Sitting, 14 rooms, 12 people, 34 clues, 8 threepenny bits; first `seating` case;
-    difficulty "about the same" as Two Clocks; not yet played).
+    difficulty "about the same" as Two Clocks; played and finished: "very good", but
+    the seating was "too easy": testimony placed every sitter outright) and `fist`
+    (deduction case 4, The Operator's Fist, 1887, Lizard coast, 15 rooms, 11 people,
+    47 clues, 8 farthings; first `morse` case; a step harder than the Medium, with
+    passages whose sender must be inferred; not yet played).
+  - **Difficulty trajectory** (user, 2026-11-27): make each new case a little harder than
+    the last, unless the user says the latest one was a little too hard. Don't ask about
+    difficulty each time; just step it up.
+  - **Final puzzles must leave gaps to infer** (user, 2026-11-27, on the Medium's seating):
+    testimony should not hand over the whole answer piece by piece. Leave a gap or two
+    (a seat, a card, a field) that no one states and the player must work out from
+    constraints: elimination, "two places from", "had the fire at her back", a detail
+    in a room. Validate privately that the gaps have exactly one consistent answer.
     Bibles live in
     `spoilers/stories/<id>/bible.md`.
   - Timed cases (added for E2): `case.counters` (named ints), conditions `lt:/ge:/eq:NAME:N`,
@@ -243,7 +264,7 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays The Medium's Last Sitting and gives feedback
-  (especially on the SEATING board). Then pick the next case; the remaining deduction
-  cases need new final-puzzle types in `holmes/puzzles/` (Morse tape, record tables,
-  telegram queue, cylinder).
+- Next step from here: the user plays The Operator's Fist and gives feedback
+  (especially on reading tape and the DECODE/ATTRIBUTE flow). Then pick the next case;
+  the remaining deduction cases need new final-puzzle types in `holmes/puzzles/`
+  (record tables, telegram queue, cylinder).

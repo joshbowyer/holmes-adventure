@@ -37,6 +37,7 @@ def validate(data: dict) -> list[str]:
     for d in sorted(dupes):
         errs.append(f"id {d!r} is used by more than one room/item/character")
 
+    clue_from_decoding: set[str] = set()
     conds: list[tuple[str, object]] = []
     effects: list[tuple[str, object]] = []
     counters = case.get("counters", {})
@@ -151,7 +152,50 @@ def validate(data: dict) -> list[str]:
     final = data.get("final")
     if not final:
         errs.append("final: missing")
-    elif final.get("type", "accuse") in ("accuse", "timeline", "seating"):
+    elif final.get("type", "accuse") in ("accuse", "timeline", "seating", "morse"):
+        if final.get("type") == "morse":
+            from holmes.puzzles.morse import MORSE
+            ms = final.get("morse", {})
+            fists, senders = ms.get("fists", {}), ms.get("senders", {})
+            passages, answer = ms.get("passages", {}), ms.get("answer", {})
+            conds.append(("final morse.codebook_when", ms.get("codebook_when")))
+            for k, f in fists.items():
+                for n in ("dot", "dash", "gap", "letter", "word"):
+                    if not isinstance(f.get(n), int) or f[n] < 1:
+                        errs.append(f"final morse: fist {k!r} needs a whole-number {n}")
+            for k, s in senders.items():
+                if not s.get("name"):
+                    errs.append(f"final morse: sender {k!r} has no name")
+                conds.append((f"final morse sender {k}.when", s.get("when")))
+            if len(passages) > 26:
+                errs.append("final morse: more than 26 passages")
+            for pid, p in passages.items():
+                if p.get("deal") not in clues:
+                    errs.append(f"final morse: passage {pid!r} is dealt by unknown clue {p.get('deal')!r}")
+                if p.get("fist") not in fists:
+                    errs.append(f"final morse: passage {pid!r} has unknown fist {p.get('fist')!r}")
+                if not p.get("label"):
+                    errs.append(f"final morse: passage {pid!r} has no label")
+                bad = {ch for ch in p.get("text", "").upper() if ch != " " and ch not in MORSE}
+                if not p.get("text", "").strip() or bad:
+                    errs.append(f"final morse: passage {pid!r} text must be letters, figures and spaces")
+                if p.get("clue"):
+                    if p["clue"] not in clues:
+                        errs.append(f"final morse: passage {pid!r} gives unknown clue {p['clue']!r}")
+                    clue_from_decoding.add(p["clue"])
+                if p.get("sender"):
+                    if p["sender"] not in senders:
+                        errs.append(f"final morse: passage {pid!r} has unknown sender {p['sender']!r}")
+                    if pid in answer:
+                        errs.append(f"final morse: passage {pid!r} has a known sender and an answer")
+                elif answer.get(pid) not in senders:
+                    errs.append(f"final morse: passage {pid!r} needs an answer naming a sender")
+            for pid in answer:
+                if pid not in passages:
+                    errs.append(f"final morse: answer for unknown passage {pid!r}")
+            for key in ("wrong_ending", "incomplete_ending"):
+                if (key in ms or key == "wrong_ending") and ms.get(key) not in endings:
+                    errs.append(f"final morse: {key} {ms.get(key)!r} does not exist")
         if final.get("type") == "seating":
             sp = final.get("seating", {})
             seat_ids = [pl.get("id") for pl in sp.get("places", [])]
@@ -224,6 +268,7 @@ def validate(data: dict) -> list[str]:
     flags_set: set[str] = set()
     clues_given = {it["clue"] for it in items.values() if "clue" in it}
     clues_given |= {ch["clue"] for ch in chars.values() if "clue" in ch}
+    clues_given |= clue_from_decoding
     gotos: list[str] = []
     for where, effs in effects:
         for e in as_list(effs):

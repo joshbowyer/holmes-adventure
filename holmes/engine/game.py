@@ -12,6 +12,7 @@ from holmes.engine.hints import give_hint
 from holmes.engine.parser import DIRECTIONS, Command, build_verb_map, parse
 from holmes.engine.state import GameState
 from holmes.engine.story import Story, as_list
+from holmes.puzzles import morse
 from holmes.puzzles.seating import has_seating, seat, show_plan, unseat
 from holmes.puzzles.timeline import arrange, has_timeline, show_board
 
@@ -33,7 +34,8 @@ HELP = """\
 # (WAIT runs its own turns.)
 UNTIMED = {"notebook", "hint", "help", "save", "quit", "inventory", "exits", "accuse",
            "status", "look", "wait", "timeline", "arrange",
-           "seating", "seat", "unseat"}
+           "seating", "seat", "unseat",
+           "tapes", "tape", "decode", "attribute", "codebook"}
 
 # Typed alone (spaces and case ignored), grants one hint coin. Not listed in HELP.
 CHEAT_WORD = "persianslipper"
@@ -666,7 +668,38 @@ class Game:
         if has_seating(self):
             text += ("\n| Seating:        SEATING shows who sat where; SEAT <name> AT <number>"
                      "\n|                 places a sitter, UNSEAT <name> takes them out")
+        if morse.has_morse(self):
+            text += ("\n| Tapes:          TAPES lists the passages of tape you hold;"
+                     "\n|                 TAPE <letter> shows its marks; CODEBOOK the alphabet"
+                     "\n|                 DECODE <letter> AS <words> tries a reading"
+                     "\n|                 ATTRIBUTE <letter> TO <name> says who sent it")
         self.say(text, "system")
+
+    def _no_tapes(self) -> bool:
+        if morse.has_morse(self):
+            return False
+        self.fail("There are no telegraph tapes to be read in this case.")
+        return True
+
+    def do_tapes(self, cmd: Command) -> None:
+        if not self._no_tapes():
+            morse.show_board(self)
+
+    def do_tape(self, cmd: Command) -> None:
+        if not self._no_tapes():
+            morse.show_tapes(self, self._rest(cmd))
+
+    def do_decode(self, cmd: Command) -> None:
+        if not self._no_tapes():
+            morse.decode(self, self._rest(cmd))
+
+    def do_attribute(self, cmd: Command) -> None:
+        if not self._no_tapes():
+            morse.attribute(self, self._rest(cmd))
+
+    def do_codebook(self, cmd: Command) -> None:
+        if not self._no_tapes():
+            morse.show_codebook(self)
 
     def do_timeline(self, cmd: Command) -> None:
         if not has_timeline(self):

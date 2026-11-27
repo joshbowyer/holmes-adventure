@@ -1,0 +1,171 @@
+# ================================================================ Polventon Head
+
+[rooms.lane]
+name = "The Lane on Polventon Head"
+aliases = ["lane", "road", "head"]
+description = """
+The lane came up from Porthkellis between stone hedges thick with dead bracken and ended at a white gate in a whitewashed wall, over which I could see the roofs of the signal station and, beyond them, the grey bulk of the sea. A board on the gate said LLOYD'S SIGNAL STATION, POLVENTON. Along the lane ran a line of telegraph poles carrying a single wire, and at the foot of the nearest a man in a Post Office cap had set down a box of instruments. On the bank under the hedge stood an old granite milestone. The station lay through the gate to the north, and the road ran south and down to the village.
+"""
+on_enter = [
+  { once = true, text = "[I opened my notebook and set down what we had learnt in Baker Street.]", effects = ["clue:found"] },
+]
+[rooms.lane.exits]
+north = { to = "yard", aliases = ["gate", "white gate", "station", "signal station", "yard", "in"] }
+in = { to = "yard", aliases = ["gate", "station"] }
+south = { to = "village", aliases = ["road", "village", "porthkellis", "down"] }
+down = { to = "village", aliases = ["road", "village", "porthkellis"] }
+
+[rooms.yard]
+name = "The Station Yard"
+aliases = ["yard", "station yard"]
+description = """
+A square of trodden gravel inside the wall, scoured by the wind. To the east stood the instrument house, a low whitewashed building with a slate roof, where the telegraph wire came in under the eaves; its door stood at the top of a single stone step. To the north-east was the Lloyd's office, with a brass plate; to the west a little cottage with geraniums dying in its window; and to the north-west a black-tarred store with its doors ajar. A path ran north to the lookout on the point, where a tall signal mast stood against the sky, and in the south-west corner of the wall a wicket gate let out onto the cliff path. A water-butt stood under the eaves of the cottage. The lane was to the south.
+"""
+[rooms.yard.exits]
+south = { to = "lane", aliases = ["lane", "white gate", "out"] }
+out = { to = "lane", aliases = ["lane"] }
+east = { to = "instrument_room", aliases = ["instrument house", "instrument room", "telegraph room", "telegraph"] }
+northeast = { to = "office", aliases = ["lloyd's office", "lloyds office", "office"] }
+west = { to = "cottage", aliases = ["cottage", "pascoe's cottage"] }
+northwest = { to = "flag_store", aliases = ["store", "flag store", "tarred store"] }
+north = { to = "lookout", aliases = ["lookout", "point", "signal mast", "mast"] }
+southwest = { to = "stile", aliases = ["wicket gate", "wicket", "cliff path", "path"] }
+
+[rooms.instrument_room]
+name = "The Instrument Room"
+aliases = ["instrument room", "instrument house", "telegraph room"]
+description = """
+A plain, bare room, smelling of ink, paraffin and cold iron, with a window on the sea. Along the wall under the window ran a long table carrying the instruments: a brass sending key on its wooden base, a galvanometer in a glass case, and the inker, a black-and-brass machine of clockwork and wheels which drew a paper tape off one drum and wound it, printed, on to another, where a roll of tape still sat. Pinned on the wall above the key was a card printed with the Morse alphabet. At the end of the table lay a fat day book, beside a desk lamp, and a round iron stove stood in the corner. A door at the back led east to the battery room; the yard was to the west.
+"""
+[rooms.instrument_room.exits]
+west = { to = "yard", aliases = ["yard"] }
+out = { to = "yard", aliases = ["yard"] }
+east = { to = "battery_room", aliases = ["battery room", "back", "door"] }
+
+[rooms.battery_room]
+name = "The Battery Room"
+aliases = ["battery room"]
+description = """
+A narrow lean-to at the back of the instrument house, without a window and smelling sharply of acid. Three long shelves ran from end to end, carrying the battery: row upon row of glass cells, each with its zinc and its copper and its blue liquor, joined one to the next by short wires to their terminals, so that the whole made a single long chain whose ends went through the wall to the instruments. One cell at the end of the bottom shelf, I noticed, had no wire to its terminals at all. The instrument room was to the west.
+"""
+[rooms.battery_room.exits]
+west = { to = "instrument_room", aliases = ["instrument room", "back"] }
+out = { to = "instrument_room", aliases = ["instrument room"] }
+
+[rooms.office]
+name = "The Lloyd's Office"
+aliases = ["lloyd's office", "lloyds office", "office"]
+description = """
+A snug, square office like a ship's cabin, all varnished pine and brass, with a big window to the sea and a long telescope on a stand in it. On the wall hung a board of overdue ships, the names in chalk, and a rack of signal books; a thick ledger of vessels passed lay open on the desk, with a telegram pinned beside it. A brass shell-case served as a doorstop. The yard was to the south-west.
+"""
+[rooms.office.exits]
+southwest = { to = "yard", aliases = ["yard"] }
+out = { to = "yard", aliases = ["yard"] }
+
+[rooms.lookout]
+name = "The Lookout"
+aliases = ["lookout", "point", "lookout hut"]
+description = """
+At the very end of the point, where the turf ended in a fall of black rock and white water, stood a little hut of tarred boards with a great window facing the sea, and beside it the signal mast with its yards and halliards. Inside the hut were a stool, a big telescope on a swivel, a flag locker, and a watch log on a shelf by the window. On a little table in the corner a practice set had been rigged up: a second key, an old inker on a battery of its own, and a strip of practice tape curling out of it. The yard was to the south.
+"""
+[rooms.lookout.exits]
+south = { to = "yard", aliases = ["yard", "path", "station"] }
+out = { to = "yard", aliases = ["yard"] }
+
+[rooms.cottage]
+name = "The Clerk's Cottage"
+aliases = ["cottage", "pascoe's cottage"]
+description = """
+A low, clean kitchen-parlour, the floor sanded and the range blacked, with a dresser of plates against one wall and a horsehair armchair by the fire which no one, I fancied, would sit in now. The window looked over the yard. The yard was to the east.
+"""
+[rooms.cottage.exits]
+east = { to = "yard", aliases = ["yard"] }
+out = { to = "yard", aliases = ["yard"] }
+
+[rooms.flag_store]
+name = "The Flag Store"
+aliases = ["flag store", "store", "tarred store"]
+description = """
+A dim, tarry shed hung round with signal flags in their pigeon-holes, coils of halliard and a spare yard. On a pair of trestles in the middle, under a big red ensign, lay the body of Amos Pascoe, and on a shelf by the door the police had set out what had been found on him and beside him. The yard was to the south-east.
+"""
+[rooms.flag_store.exits]
+southeast = { to = "yard", aliases = ["yard"] }
+out = { to = "yard", aliases = ["yard"] }
+
+[rooms.stile]
+name = "The Stile on the Cliff Path"
+aliases = ["stile", "cliff path", "path"]
+description = """
+Beyond the wicket gate the cliff path ran south along the edge of the head between banks of gorse, with the sea grinding on the rocks below. A quarter of a mile from the station, where the path crossed a stone hedge, there was a granite stile, and just short of it the gorse on the landward side was broken and trampled where something heavy had lain. The path went on over the stile and down towards Porthkellis, whose roofs I could see in the cove below; the wicket gate was to the north-east.
+"""
+[rooms.stile.exits]
+northeast = { to = "yard", aliases = ["wicket gate", "wicket", "station", "yard"] }
+down = { to = "village", aliases = ["porthkellis", "village", "cove"] }
+south = { to = "village", aliases = ["porthkellis", "village", "cove", "over the stile"] }
+
+# ================================================================ Porthkellis
+
+[rooms.village]
+name = "Porthkellis Harbour"
+aliases = ["porthkellis", "village", "harbour", "cove"]
+description = """
+Porthkellis was a single crooked street of granite cottages tumbling down to a little harbour, where a dozen crabbers lay on the mud and a capstan stood rusting on the quay. Facing the harbour across the street were the post office, its window full of string and peppermints, to the east; the Fisherman's Arms, to the west; and on the shingle to the south the lifeboat house, with its doors open on the slip. The cliff path climbed away up the head, and the road ran north up the hill to the station.
+"""
+[rooms.village.exits]
+east = { to = "post_office", aliases = ["post office", "office", "shop"] }
+west = { to = "inn", aliases = ["fisherman's arms", "fishermans arms", "inn", "public house", "arms"] }
+south = { to = "lifeboat_house", aliases = ["lifeboat house", "lifeboat", "slip", "shingle"] }
+up = { to = "stile", aliases = ["cliff path", "path", "head"] }
+north = { to = "lane", aliases = ["road", "hill", "station", "lane"] }
+
+[rooms.post_office]
+name = "Porthkellis Post Office"
+aliases = ["post office", "shop"]
+description = """
+Half shop and half office: a counter with a brass letter-scale and a rack of forms, shelves of tea and candles and string, and behind the counter, in a corner screened off with a little wooden rail, the telegraph instrument, a brass sounder and its key. By the door hung a board of office hours. The street was to the west.
+"""
+[rooms.post_office.exits]
+west = { to = "village", aliases = ["street", "harbour", "village"] }
+out = { to = "village", aliases = ["street", "harbour"] }
+
+[rooms.inn]
+name = "The Fisherman's Arms"
+aliases = ["fisherman's arms", "fishermans arms", "inn", "taproom"]
+description = """
+A low taproom with a sanded floor, a fire of driftwood that burned green and blue, and a high-backed settle beside it. Beyond the bar a door marked COFFEE ROOM led north, and a narrow stair went up to the bedrooms. The street was to the east.
+"""
+[rooms.inn.exits]
+east = { to = "village", aliases = ["street", "harbour", "village"] }
+out = { to = "village", aliases = ["street", "harbour"] }
+north = { to = "coffee_room", aliases = ["coffee room", "coffee-room"] }
+up = { to = "tagg_room", aliases = ["stair", "stairs", "bedrooms", "upstairs"] }
+
+[rooms.coffee_room]
+name = "The Coffee Room"
+aliases = ["coffee room", "coffee-room"]
+description = """
+The best room of the Fisherman's Arms: a mahogany table, six chairs, a case of stuffed sea-birds and a view of the harbour. The taproom was to the south.
+"""
+[rooms.coffee_room.exits]
+south = { to = "inn", aliases = ["taproom", "bar"] }
+out = { to = "inn", aliases = ["taproom"] }
+
+[rooms.tagg_room]
+name = "Mr Tagg's Room"
+aliases = ["tagg's room", "bedroom"]
+description = """
+The best bedroom over the coffee room, low-beamed and smelling of the sea, with a brass bed, a washstand, and a wardrobe. A leather writing-case lay on the table under the window, and a pair of town boots stood by the door, caked with red mud to the ankles. The stair went down to the taproom.
+"""
+[rooms.tagg_room.exits]
+down = { to = "inn", aliases = ["stair", "stairs", "taproom"] }
+out = { to = "inn", aliases = ["taproom"] }
+
+[rooms.lifeboat_house]
+name = "The Lifeboat House"
+aliases = ["lifeboat house", "boathouse"]
+description = """
+A tall stone shed open to the slip, smelling of tar and wet rope, where the lifeboat sat on her carriage, painted blue and white, with her oars racked along her thwarts and her cork jackets hung above. On the back wall was a long varnished board, lettered in gold, of the services she had rendered. Outside, the slip ran down into the shingle. The street was to the north.
+"""
+[rooms.lifeboat_house.exits]
+north = { to = "village", aliases = ["street", "harbour", "village"] }
+out = { to = "village", aliases = ["street", "harbour"] }

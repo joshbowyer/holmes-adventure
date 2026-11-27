@@ -26,6 +26,8 @@ class GameState:
     counters: dict = field(default_factory=dict)     # name -> int (tide, lamp oil...)
     arrangement: list = field(default_factory=list)  # timeline card ids, player's order
     seating: dict = field(default_factory=dict)      # place id -> sitter, player's plan
+    decoded: list = field(default_factory=list)      # tape passages read correctly
+    attribution: dict = field(default_factory=dict)  # tape passage -> sender, player's view
 
     @classmethod
     def new(cls, story) -> "GameState":
