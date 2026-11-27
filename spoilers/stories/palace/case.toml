@@ -1,0 +1,786 @@
+[case]
+id = "palace"
+title = "The Crystal Palace by Night"
+year = 1895
+order = 60
+start = "centre_transept"
+coin_name = "sixpence"
+coin_plural = "sixpences"
+hint_intro = "I gave Holmes a sixpence. He spun it on the rim of the basin, caught it, and spoke without taking his eyes from the clock."
+hint_none = "\"You have it all, Watson,\" said Holmes. \"Every piece. Put them together, and ACCUSE.\""
+hint_broke = "I had not a sixpence about me. \"Thirty thousand people were here on Thursday,\" said Holmes. \"Look where they sat, and where they made their wishes.\""
+wait_turns = 4
+wait_text = "I waited, listening to the great house tick and creak about me in the dark as the iron cooled."
+intro = """
+I have said elsewhere that my friend Sherlock Holmes was at his best on a dark night, and I never saw it better shown than in the September of 1895, when he spent one in the Crystal Palace.
+
+The wire came from young Stanley Hopkins on the Friday afternoon. On the Thursday, the last fireworks night of the season, some thirty thousand people had come to Sydenham to see Mr Brock's set pieces burn, and had gone home again. At ten minutes to midnight the Palace night-watchman, Abel Crouch, had found his fellow, Daniel Pike, lying dead in the Alhambra Court under the gallery, with his skull broken. The police surgeon called it a fall. Hopkins was not so sure, and could not say why.
+
+"A fall," said Holmes, folding the wire, "in a building with a hundred thousand panes of glass, and every one of them a window. Come, Watson. We shall go down by the last train, and see the place as he saw it: after dark, with the gas down."
+
+So it was that a little after ten o'clock that night, with the last of the day's visitors gone home and the gas turned down to its night lights, I stood in the middle of the largest room in the world, and listened to it creak.
+"""
+intro_note = "[Many of the courts are dark: you will want a lantern. Crouch the watchman walks his round tonight, and some doors open only when he is there; STATUS shows where he is, and WAIT lets time pass. Sixpences found while exploring buy hints from Holmes with HINT.]"
+
+counters = { round = 24 }
+
+every_turn = [
+  # Crouch walks on, but stands while I am with him.
+  { when = ["loc:crouch:centre_transept", "!at:centre_transept"], effects = ["add:round:1"] },
+  { when = ["loc:crouch:north_end", "!at:north_end"], effects = ["add:round:1"] },
+  { when = ["loc:crouch:pompeian_court", "!at:pompeian_court"], effects = ["add:round:1"] },
+  { when = ["loc:crouch:alhambra_court", "!at:alhambra_court"], effects = ["add:round:1"] },
+  { when = ["loc:crouch:south_nave", "!at:south_nave"], effects = ["add:round:1"] },
+  { when = ["loc:crouch:south_transept", "!at:south_transept"], effects = ["add:round:1"] },
+  { when = ["loc:crouch:watch_house", "!at:watch_house"], effects = ["add:round:1"] },
+  { when = "ge:round:32", effects = ["setn:round:0"] },
+  { when = ["eq:round:0", "loc:crouch:watch_house", "at:centre_transept"], text = "Crouch came out of the watch-house, wiping his moustache, and went to the key-box on the pier. I heard the click of his key turning in the clock.", effects = ["move:crouch:centre_transept"] },
+  { when = ["eq:round:0", "loc:crouch:watch_house"], effects = ["move:crouch:centre_transept"] },
+  { when = ["eq:round:4", "loc:crouch:centre_transept", "at:north_end"], text = "Crouch's lantern came bobbing up the nave, and he stopped at the screen to key his clock.", effects = ["move:crouch:north_end"] },
+  { when = ["eq:round:4", "loc:crouch:centre_transept"], effects = ["move:crouch:north_end"] },
+  { when = ["eq:round:8", "loc:crouch:north_end", "at:pompeian_court"], text = "Crouch came in at the painted doorway with his lantern, nodded to me, and keyed his clock at the box.", effects = ["move:crouch:pompeian_court"] },
+  { when = ["eq:round:8", "loc:crouch:north_end"], effects = ["move:crouch:pompeian_court"] },
+  { when = ["eq:round:12", "loc:crouch:pompeian_court", "at:alhambra_court"], text = "Crouch came in under the horseshoe arch, unlocked the narrow door to the gallery stair, and set it open. \"There you are, sir, if you want to go up. I'll lock it when I go on.\"", effects = ["move:crouch:alhambra_court"] },
+  { when = ["eq:round:12", "loc:crouch:pompeian_court"], effects = ["move:crouch:alhambra_court"] },
+  { when = ["eq:round:16", "loc:crouch:alhambra_court", "at:south_nave"], text = "Crouch came down the nave with his lantern swinging and keyed his clock at the pier.", effects = ["move:crouch:south_nave"] },
+  { when = ["eq:round:16", "loc:crouch:alhambra_court"], effects = ["move:crouch:south_nave"] },
+  { when = ["eq:round:20", "loc:crouch:south_nave", "at:south_transept"], text = "Crouch came through from the nave and keyed his clock at the box by the colonnade doors.", effects = ["move:crouch:south_transept"] },
+  { when = ["eq:round:20", "loc:crouch:south_nave"], effects = ["move:crouch:south_transept"] },
+  { when = ["eq:round:24", "loc:crouch:south_transept", "at:watch_house"], text = "Crouch came in, stamping, hung up his lantern and put the kettle on.", effects = ["move:crouch:watch_house"] },
+  { when = ["eq:round:24", "loc:crouch:south_transept"], effects = ["move:crouch:watch_house"] },
+]
+
+status = [
+  { when = "loc:crouch:centre_transept", text = "[Crouch is on his round, in the centre transept.]" },
+  { when = "loc:crouch:north_end", text = "[Crouch is on his round, in the north end.]" },
+  { when = "loc:crouch:pompeian_court", text = "[Crouch is on his round, in the Pompeian Court.]" },
+  { when = "loc:crouch:alhambra_court", text = "[Crouch is on his round, in the Alhambra Court. The gallery stair is open while he is there.]" },
+  { when = "loc:crouch:south_nave", text = "[Crouch is on his round, in the south nave.]" },
+  { when = "loc:crouch:south_transept", text = "[Crouch is on his round, in the south transept.]" },
+  { when = "loc:crouch:watch_house", text = "[Crouch is at his tea in the watch-house.]" },
+]
+
+[verbs]
+unlock = ["unlock"]
+light = ["light", "kindle"]
+turn = ["turn", "twist"]
+
+# ================================================================ clues
+
+[clues.found]
+text = "Hopkins's wire: Daniel Pike, night-watchman at the Crystal Palace, found dead at 11:50 on Thursday night (fireworks night) in the Alhambra Court, under the gallery, skull broken, by the other watchman, Abel Crouch. The police surgeon says he fell."
+
+[clues.walk_time]
+text = "Holmes has walked it: from the north end of the Palace to the south transept is six minutes at a smart pace, and down the colonnade to the Low Level barrier three more."
+
+[clues.attendance_board]
+text = "The attendance board in the centre transept: Thursday (fireworks), 27,840 persons. Certified by B. Lusk, Superintendent."
+
+[clues.key_register]
+text = "The key register: 1 Centre Transept, 2 South Nave, 3 Terrace Doors, 4 Byzantine Court, 5 Tropical Department, 6 Colonnade Stair, 7 Pompeian Court, 8 Picture Gallery, 9 North End Screen, 10 Sculpture Gallery, 11 South Transept, 12 Egyptian Court, 13 Concert Room, 14 Theatre, 15 Alhambra Gallery, 16 Refreshment Rooms."
+
+[clues.round_card]
+text = "The order of the rounds, each beginning and ending at Station 1. North round: 1, 4, 12, 9, 7, 15, 8, 10, 1. South round: 1, 2, 11, 6, 14, 13, 16, 5, 3, 1. Tea together in the watch-house after the first round."
+
+[clues.watch_rules]
+text = "The watchmen's rules: lanterns lit when the gas is reduced, not before. Gallery stair doors unlocked going up, locked behind on the way down, never left open."
+
+[clues.pike_notebook]
+text = "Pike's private notebook, since July: each night the turnstile counters as he read them, and the next day's attendance board, always about a tenth lower. Thursday: counters 30,912. 'Told Mr L. today I go to the Secretary Friday. He says I am mistook, and he will make it right with me. Shan't take it.'"
+
+[clues.gate_book]
+text = "The gate book, all in Lusk's hand: Thursday's turnstile total 27,840. Through the summer the paper under many of the figures is rough, as if scraped with a knife."
+
+[clues.lusk_keys]
+text = "Lusk's watch-chain carries two keys: a little barrel-shaped brass one and a steel one with a three-cornered bow."
+
+[clues.lusk_story]
+text = "Lusk's account: left his office about 10:25; spoke to Wicks at the meter house about the night lights; walked the colonnade; took the 10:42 to Victoria; home at Clapham by 11:30."
+
+[clues.lusk_figures]
+text = "Lusk on the gate figures: the counters 'overrun' in a crowd, and he corrects the totals each morning by the check-takers' returns. He says he explained this to Pike on Thursday."
+
+[clues.lusk_set_detector]
+text = "Hopkins: on Friday at 8 a.m. Lusk opened Pike's detector for him, gave him the dial, and wound the clock and set it right, 'for it was all anyhow'."
+
+[clues.pidgeon_thursday]
+text = "Pidgeon: every morning at seven Lusk opens the detectors with the little brass barrel key on his chain, and Pidgeon reads him the transept clock to set them by. On Thursday morning, alone of all mornings in six years, Lusk sent him to the stores first, and when he came back ten minutes later the clocks were set."
+
+[clues.detector_rules]
+text = "Rules for the time detectors: opened only by the Superintendent, who keeps the key and parts with it to no one; each morning at seven, in the time-clerk's presence, he takes out the dials, fits fresh ones, winds the clocks and sets them by the transept clock."
+
+[clues.crouch_dial]
+text = "Crouch's dial for Thursday: 1 at 10:05; 2 at 10:11; 11 at 10:17; 6 at 10:22; 14 at 10:31; 13 at 10:37; 16 at 10:44; 5 at 10:52; 3 at 10:58; 1 at 11:04; 1 at 11:41."
+
+[clues.pike_dial]
+text = "Pike's dial for Thursday, from his detector: 1 at 10:15; 4 at 10:20; 12 at 10:26; 9 at 10:32; 7 at 10:40. Nothing after."
+
+[clues.surgeon]
+text = "The police surgeon, Dr Ord: Pike fell from the gallery and broke his skull on the lip of the fountain basin; death about eleven. He did not stay long."
+
+[clues.hopkins_theory]
+text = "Hopkins's theory: accident, or a sneak-thief from the fireworks crowd hidden in the courts at closing, whom Pike came upon. Somebody tried the jeweller's shutter in the south nave that night."
+
+[clues.wound]
+text = "Pike's wound: a single blow from behind, a little left: a straight narrow dent four inches long ending in a deeper square-cornered mark the size of the end of a thumb, as from the head of an iron bar. No other injury. His collar is soaked, his coat hardly marked."
+
+[clues.hands]
+text = "Pike's hands: palms unmarked, wrists sound. A man falling twenty-five feet throws out his hands and breaks or grazes them. He did not fall; he was struck from behind and dropped."
+
+[clues.lantern_unlit]
+text = "Pike's lantern: full of oil, the wick new-trimmed and white, never lit; no soot at all. Wherever he died, he had not yet lit it."
+
+[clues.crouch_night]
+text = "Crouch: came back from his south round to the watch-house at eleven for tea; Pike never came. At half past he went north after him, and at 11:50 found him by the Alhambra fountain, his lantern on his belt."
+
+[clues.bone_to_pick]
+text = "Crouch: on Thursday Pike said, 'Abel, I've a bone to pick with the Super, and tomorrow I'll pick it.'"
+
+[clues.together]
+text = "Crouch: every night at 10:05 he and Pike meet at Station 1, the centre transept, and key their clocks there together, one after the other, and Pike gives him a pinch of snuff. Thursday as always."
+
+[clues.crouch_dark]
+text = "Crouch: the watchmen light their lanterns when the gas goes down at half past ten, not before; and the key-boxes in the courts cannot be found in the dark without one."
+
+[clues.gallery_locked]
+text = "Crouch: when he came into the Alhambra Court on Thursday night the gallery stair door was locked. A watchman unlocks it going up and locks it coming down."
+
+[clues.kell_heard]
+text = "Kell, the organ tuner: he counted the half-hour striking on the transept clock on Thursday, and just after, not a minute after, heard a short cry from the north, in the courts, and a heavy fall."
+
+[clues.kell_fined]
+text = "Kell: Pike reported him a fortnight ago for smoking a pipe in the organ loft, and the Company fined him five shillings."
+
+[clues.clock_true]
+text = "Kell: the transept clock is set every morning by the Greenwich signal over the telegraph, and keeps true time; only its chime is flat."
+
+[clues.gas_book]
+text = "The gas book for Thursday: night lights by the transept clock from 10:30: South Nave 10:30, Centre 10:31, North Nave and Courts 10:33, Galleries 10:34, all done 10:35."
+
+[clues.wicks_alone]
+text = "Wicks: he was alone at the meter house from 10:25 to 10:40 on Thursday; nobody came down. The Superintendent never comes there."
+
+[clues.sayer_saw]
+text = "Sayer, the collector: at his barrier from 10:20. Lusk came through at 10:40 by the station clock, not before, out of breath and sweating as if he had run the colonnade, asked whether the clock was right, repeated 'twenty to eleven' as though noting it, and took the 10:42."
+
+[clues.train_times]
+text = "Sayer: trains to Victoria every twenty minutes on a fireworks night (10:22, 10:42, 11:02 ...); the station clock is set by the telegraph each morning."
+
+[clues.firing_times]
+text = "Hatch: Thursday's display began at 9:00, the set piece lit at 9:32, the last bombardment ended at 9:41."
+
+[clues.hatch_watch]
+text = "Hatch: from 9:45 to 10:45 he, his men and the firemen Rudd and Gill walked the grounds for sparks, all in each other's sight; none of them went inside."
+
+[clues.hatch_quarrel]
+text = "Hatch had words with Pike on Wednesday over a frame left on the terrace walk."
+
+[clues.rudd_cases]
+text = "Rudd: every hydrant case was right at 9:30 on Thursday. At 7:00 on Friday the Pompeian case was shut and locked, glass whole, the bar gone. It was opened with a key."
+
+[clues.hydrant_keys]
+text = "Rudd: only two keys open the hydrant cases: the fire station's, which never left their hooks (Bowles kept the station all night), and the Superintendent's master key, steel with a three-cornered bow, on his chain."
+
+[clues.fire_log]
+text = "The fire log: Thursday 9:30 cases correct; 9:45 to 10:45 grounds watched by Rudd and Gill; Bowles kept the station; 11:55 rattle, Rudd attended. Friday 7:00 Pompeian case shut, glass whole, bar missing."
+
+[clues.hydrant_case]
+text = "The hydrant case in the Pompeian Court: glass whole, lock shut, and the hooks for the hydrant bar empty."
+
+[clues.bar_found]
+text = "The hydrant bar, found in the impluvium of the Pompeian Court, washed clean: three feet of iron with a square-cornered socket head the size of the end of a thumb."
+
+[clues.pompeian_blood]
+text = "The Pompeian Court: the mosaic between the pool and the hydrant case has been wiped lately, but there is blood in the joints of the stones, in a patch the size of a dinner plate."
+
+[clues.alhambra_stain]
+text = "Where Pike lay in the Alhambra Court there is a stain no bigger than a saucer. He did his bleeding somewhere else."
+
+[clues.gallery_dust]
+text = "The Alhambra gallery: the summer's dust lies thick and unbroken on the walk and on the rail; no footprints but mine. Key-box 15 is furred with dust. Nobody has been up there for weeks."
+
+[clues.shutter]
+text = "The jeweller's stall in the south nave: fresh scratches round the padlock-hasp, but the padlock held."
+
+[clues.colonnade_board]
+text = "The colonnade board: 'Three minutes' walk' from the south transept to the Low Level station."
+
+# ================================================================ actions
+
+[[actions]]
+id = "locker_locked"
+verb = ["open", "unlock"]
+target = "pike_locker"
+when = "!has:pike_keys"
+text = "Pike's locker was locked. His keys, I supposed, were with his other things."
+
+[[actions]]
+id = "locker_unlock"
+verb = "unlock"
+target = "pike_locker"
+when = "!open:pike_locker"
+text = "The smallest key on Pike's bunch turned the lock, and the door swung open."
+effects = ["open:pike_locker"]
+
+[[actions]]
+id = "hydrant_locked"
+verb = ["open", "unlock"]
+target = "hydrant_case"
+text = "The case was locked. The firemen, I supposed, kept the keys to such things."
+
+[[actions]]
+id = "turn_key"
+verb = ["use", "turn", "open"]
+target = ["key_box_1", "key_box_2", "key_box_4", "key_box_7", "key_box_9", "key_box_11", "key_box_12", "key_box_15"]
+text = "Without a watchman's clock to turn it in, the key on its chain was no use to anybody."
+
+[[actions]]
+id = "light_pike_lantern"
+verb = "light"
+target = "pike_lantern"
+text = "I would not; Hopkins would want it as it was."
+
+[[actions]]
+id = "light_lantern"
+verb = "light"
+target = "lantern"
+text = "It was burning already."
+
+[[actions]]
+id = "gallery_door_open"
+verb = ["open", "unlock"]
+target = "gallery_door"
+when = "loc:crouch:alhambra_court"
+text = "Crouch had it open already. The stair went UP."
+
+[[actions]]
+id = "gallery_door_shut"
+verb = ["open", "unlock"]
+target = "gallery_door"
+text = "It was locked, and Crouch had the key. He would open it when his round brought him here."
+
+# ================================================================ hints
+
+[[hints]]
+id = "lantern"
+done = "has:lantern"
+texts = [
+  "\"Half the rooms in this house are as dark as a coal-hole. You will want a light, and the watchmen keep them.\"",
+]
+
+[[hints.parts]]
+done = "has:lantern"
+text = "Go WEST from the transept into the watch-house and TAKE A LANTERN."
+
+[[hints]]
+id = "hopkins"
+done = ["clue:surgeon", "clue:hopkins_theory", "clue:lusk_set_detector", "clue:pike_dial"]
+texts = [
+  "\"Hopkins asked us here. He is in the ambulance room with the body, and he has something of Pike's he has not shown to the Company.\"",
+]
+
+[[hints.parts]]
+done = "clue:surgeon"
+text = "Go SOUTH twice to the south transept and EAST to the ambulance room. TALK TO HOPKINS and ASK HIM ABOUT THE SURGEON."
+
+[[hints.parts]]
+done = "clue:hopkins_theory"
+text = "Ask Hopkins ABOUT HIS THEORY."
+
+[[hints.parts]]
+done = "clue:lusk_set_detector"
+text = "Ask Hopkins ABOUT MR LUSK."
+
+[[hints.parts]]
+done = "clue:pike_dial"
+text = "Ask Hopkins ABOUT THE DIAL, and EXAMINE PIKE'S DIAL."
+
+[[hints]]
+id = "body"
+done = ["clue:wound", "clue:hands", "clue:lantern_unlit"]
+texts = [
+  "\"You are the medical man. Look at him as a doctor, Watson, not as a policeman; and look at what he carried.\"",
+]
+
+[[hints.parts]]
+done = "clue:wound"
+text = "In the ambulance room, EXAMINE THE BODY."
+
+[[hints.parts]]
+done = "clue:hands"
+text = "In the ambulance room, EXAMINE HIS HANDS."
+
+[[hints.parts]]
+done = "clue:lantern_unlit"
+text = "In the ambulance room, EXAMINE PIKE'S LANTERN."
+
+[[hints]]
+id = "crouch"
+done = ["clue:crouch_night", "clue:bone_to_pick", "clue:together", "clue:crouch_dark", "clue:gallery_locked"]
+texts = [
+  "\"Crouch walked this house with Pike for eight years. Hear all he has to say: of that night, of the man, and of the work.\"",
+]
+
+[[hints.parts]]
+done = "clue:crouch_night"
+text = "Find Crouch (STATUS shows where he is), TALK TO CROUCH and ASK HIM ABOUT LAST NIGHT."
+
+[[hints.parts]]
+done = "clue:bone_to_pick"
+text = "Ask Crouch ABOUT DAN."
+
+[[hints.parts]]
+done = "clue:together"
+text = "Ask Crouch ABOUT THE ROUND."
+
+[[hints.parts]]
+done = "clue:crouch_dark"
+text = "Ask Crouch ABOUT THE LANTERNS."
+
+[[hints.parts]]
+done = "clue:gallery_locked"
+text = "Ask Crouch ABOUT THE GALLERY DOOR."
+
+[[hints]]
+id = "watch_house"
+done = ["clue:key_register", "clue:round_card", "clue:watch_rules"]
+texts = [
+  "\"The watchmen's own room has their whole trade written on its walls.\"",
+]
+
+[[hints.parts]]
+done = "clue:key_register"
+text = "In the watch-house, EXAMINE THE REGISTER."
+
+[[hints.parts]]
+done = "clue:round_card"
+text = "In the watch-house, EXAMINE THE ROUNDS card."
+
+[[hints.parts]]
+done = "clue:watch_rules"
+text = "In the watch-house, EXAMINE THE RULES."
+
+[[hints]]
+id = "found_place"
+when = "has:lantern"
+done = "clue:alhambra_stain"
+texts = [
+  "\"Go and stand where he was found.\"",
+]
+
+[[hints.parts]]
+done = "clue:alhambra_stain"
+text = "Go NORTH twice to the north end, EAST into the Alhambra Court, and EXAMINE THE CHALK RING."
+
+[[hints]]
+id = "gallery"
+when = "visited:alhambra_court"
+done = "clue:gallery_dust"
+texts = [
+  "\"The surgeon says he fell from the gallery. Go up and look at it. You will need Crouch to let you up.\"",
+]
+
+[[hints.parts]]
+done = "clue:gallery_dust"
+text = "WAIT in the Alhambra Court until Crouch comes and opens the gallery stair, then go UP and EXAMINE THE DUST."
+
+[[hints]]
+id = "pompeian"
+when = ["has:lantern", "clue:pike_dial"]
+done = ["clue:hydrant_case", "clue:pompeian_blood", "clue:bar_found"]
+texts = [
+  "\"Read his dial, Watson, with the register beside it. Where did he key his clock for the last time? Go there.\"",
+]
+
+[[hints.parts]]
+done = "clue:hydrant_case"
+text = "Go to the north end and WEST into the Pompeian Court. EXAMINE THE HYDRANT CASE."
+
+[[hints.parts]]
+done = "clue:pompeian_blood"
+text = "In the Pompeian Court, EXAMINE THE MOSAIC."
+
+[[hints.parts]]
+done = "clue:bar_found"
+text = "In the Pompeian Court, EXAMINE THE IMPLUVIUM, TAKE THE BAR and EXAMINE it."
+
+[[hints]]
+id = "locker"
+when = "clue:bone_to_pick"
+done = "clue:pike_notebook"
+texts = [
+  "\"A bone to pick. A careful man writes such things down, and keeps what he writes where it is safe.\"",
+]
+
+[[hints.parts]]
+done = "has:pike_keys|clue:pike_notebook"
+text = "In the ambulance room, TAKE PIKE'S KEYS."
+
+[[hints.parts]]
+done = "clue:pike_notebook"
+text = "In the watch-house, UNLOCK THE LOCKER, TAKE THE NOTEBOOK and EXAMINE it."
+
+[[hints]]
+id = "lusk"
+done = ["clue:lusk_story", "clue:lusk_figures", "clue:lusk_keys", "clue:gate_book"]
+texts = [
+  "\"The Superintendent is in his office, very anxious to help. Let him.\"",
+]
+
+[[hints.parts]]
+done = "clue:lusk_story"
+text = "In the south transept go WEST to the Superintendent's office. TALK TO LUSK and ASK HIM ABOUT THURSDAY NIGHT."
+
+[[hints.parts]]
+done = "clue:lusk_figures"
+text = "Ask Lusk ABOUT THE GATE FIGURES."
+
+[[hints.parts]]
+done = "clue:lusk_keys"
+text = "EXAMINE LUSK."
+
+[[hints.parts]]
+done = "clue:gate_book"
+text = "In Lusk's office, EXAMINE THE GATE BOOK."
+
+[[hints]]
+id = "attendance"
+when = "clue:pike_notebook|clue:gate_book"
+done = "clue:attendance_board"
+texts = [
+  "\"The Company publishes its figures for all the world to see.\"",
+]
+
+[[hints.parts]]
+done = "clue:attendance_board"
+text = "In the centre transept, EXAMINE THE BOARD."
+
+[[hints]]
+id = "time_office"
+done = ["clue:detector_rules", "clue:crouch_dial", "clue:pidgeon_thursday"]
+texts = [
+  "\"Every night's dials end up in one little room in the south transept, with one anxious little man.\"",
+]
+
+[[hints.parts]]
+done = "clue:detector_rules"
+text = "From the south transept go IN to the time office and EXAMINE THE RULES."
+
+[[hints.parts]]
+done = "clue:crouch_dial"
+text = "In the time office, EXAMINE THE DIAL BOOK, TAKE CROUCH'S DIAL and EXAMINE it."
+
+[[hints.parts]]
+done = "clue:pidgeon_thursday"
+text = "TALK TO PIDGEON and ASK HIM ABOUT THURSDAY MORNING."
+
+[[hints]]
+id = "kell"
+done = ["clue:kell_heard", "clue:kell_fined", "clue:clock_true"]
+texts = [
+  "\"There was a man in the building on Thursday night with nothing to do but listen.\"",
+]
+
+[[hints.parts]]
+done = "clue:kell_heard"
+text = "From the centre transept go UP to the organ loft. TALK TO KELL and ASK HIM ABOUT WHAT HE HEARD."
+
+[[hints.parts]]
+done = "clue:kell_fined"
+text = "Ask Kell ABOUT HIS PIPE."
+
+[[hints.parts]]
+done = "clue:clock_true"
+text = "Ask Kell ABOUT THE CLOCK."
+
+[[hints]]
+id = "wicks"
+done = ["clue:gas_book", "clue:wicks_alone"]
+texts = [
+  "\"The gas went down at a fixed hour on Thursday. The man who put it down is under your feet.\"",
+]
+
+[[hints.parts]]
+done = "clue:gas_book"
+text = "From the south transept go DOWN to the meter house and EXAMINE THE GAS BOOK."
+
+[[hints.parts]]
+done = "clue:wicks_alone"
+text = "TALK TO WICKS and ASK HIM ABOUT WHO CAME BY."
+
+[[hints]]
+id = "station"
+done = ["clue:sayer_saw", "clue:colonnade_board"]
+texts = [
+  "\"Follow the Superintendent's road home, Watson, as far as the railway.\"",
+]
+
+[[hints.parts]]
+done = "clue:colonnade_board"
+text = "Go SOUTH from the south transept into the colonnade and EXAMINE THE BOARD."
+
+[[hints.parts]]
+done = "clue:sayer_saw"
+text = "Go SOUTH to the Low Level station. TALK TO SAYER and ASK HIM ABOUT MR LUSK."
+
+[[hints]]
+id = "rudd"
+done = ["clue:rudd_cases", "clue:hydrant_keys"]
+texts = [
+  "\"Somebody looks after the fire hydrants in this house. Find him.\"",
+]
+
+[[hints.parts]]
+done = "clue:rudd_cases"
+text = "Go EAST from the transept to the terrace and SOUTH to the fire station. TALK TO RUDD and ASK HIM ABOUT THE HYDRANT CASES."
+
+[[hints.parts]]
+done = "clue:hydrant_keys"
+text = "Ask Rudd ABOUT THE KEYS."
+
+[[hints]]
+id = "reckoning"
+texts = [
+  "\"Two clocks that were turned in the same minute should tell the same time, Watson. Do they? Lay Pike's dial beside Crouch's, with the register, and remember what Crouch told you of the round.\"",
+  "\"Pike's lantern was never lit, and he could not find a key-box in the dark; and the courts went dark at 10:33. Could he have keyed the Pompeian Court at 10:40? Then what is his dial worth, who can open a detector, and when did he last do it?\"",
+  "\"Pike's clock was ten minutes fast: station 1 is 10:15 on his dial and 10:05 on Crouch's, and they turned it together. So he keyed the Pompeian Court at 10:30 and was struck down there a minute later, as Kell heard. Only the Superintendent can set a detector, and on Thursday morning he set them alone. Nine minutes from the north end to the barrier: he was there at 10:40. ACCUSE.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "accuse"
+intro = "I came back to the centre transept a little before two in the morning. Holmes had not moved from the rim of the fountain. He looked up at the clock, and then at me. \"Well, Watson?\""
+good = "solved"
+default_wrong = "lusk_walks"
+
+[[final.questions]]
+id = "who"
+prompt = "Who killed Daniel Pike?"
+options = [
+  { id = "lusk", label = "Mr Lusk, the Superintendent", when = "met:lusk" },
+  { id = "kell", label = "Mr Kell, the organ tuner", when = "met:kell" },
+  { id = "hatch", label = "Hatch, Brock's foreman", when = "met:hatch" },
+  { id = "crouch", label = "Abel Crouch, the other watchman", when = "met:crouch" },
+  { id = "wicks", label = "Wicks, the gasman", when = "met:wicks" },
+  { id = "thief", label = "A thief from the fireworks crowd, hidden in the courts" },
+  { id = "nobody", label = "Nobody: he fell" },
+]
+
+[[final.questions]]
+id = "where"
+prompt = "Where was he struck down?"
+options = [
+  { id = "gallery", label = "Nowhere: he fell from the Alhambra gallery" },
+  { id = "alhambra", label = "In the Alhambra Court, by the fountain, where he was found", when = "visited:alhambra_court" },
+  { id = "pompeian", label = "In the Pompeian Court", when = "visited:pompeian_court" },
+  { id = "egyptian", label = "In the Egyptian Court", when = "visited:egyptian_court" },
+]
+
+[[final.questions]]
+id = "when"
+prompt = "When did he die?"
+options = [
+  { id = "late", label = "Not long before Crouch found him at 11:50" },
+  { id = "eleven", label = "About eleven o'clock, as the police surgeon says", when = "clue:surgeon" },
+  { id = "after_dial", label = "Soon after 10:40, when his dial shows him keying the Pompeian Court", when = "clue:pike_dial" },
+  { id = "half_past", label = "A minute or so after 10:30, while the courts were still lit", when = "clue:kell_heard|clue:gas_book" },
+]
+
+[[final.questions]]
+id = "trick"
+prompt = "What is wrong with the times?"
+options = [
+  { id = "none", label = "Nothing: the times are true" },
+  { id = "transept", label = "The transept clock was wrong on Thursday night", when = "clue:kell_heard|clue:gas_book|clue:clock_true" },
+  { id = "carried", label = "The murderer took Pike's clock on and keyed the Pompeian station himself", when = "clue:pike_dial" },
+  { id = "fast", label = "Pike's clock had been set ten minutes fast, so every time on his dial is ten minutes late", when = "clue:pike_dial" },
+]
+
+[[final.questions]]
+id = "weapon"
+prompt = "What killed him?"
+options = [
+  { id = "fall", label = "The fall, on the lip of the fountain" },
+  { id = "lantern", label = "A blow with his own lantern", when = "clue:lantern_unlit" },
+  { id = "stick", label = "A rocket-stick from Brock's troughs", when = "met:hatch" },
+  { id = "bar", label = "A blow with the hydrant bar from the Pompeian Court", when = "clue:bar_found|clue:hydrant_case" },
+]
+
+[[final.questions]]
+id = "why"
+prompt = "Why was he killed?"
+options = [
+  { id = "accident", label = "He was not killed; it was an accident" },
+  { id = "thief", label = "He came upon a thief", when = "clue:hopkins_theory|clue:shutter" },
+  { id = "pipe", label = "He had reported a man for smoking in the organ", when = "clue:kell_fined" },
+  { id = "frames", label = "He had quarrelled over the fireworks frames", when = "clue:hatch_quarrel" },
+  { id = "figures", label = "He had found that the attendance figures were being cut, and meant to tell the Secretary", when = "clue:pike_notebook|clue:lusk_figures" },
+]
+
+[final.solution]
+who = "lusk"
+where = "pompeian"
+when = "half_past"
+trick = "fast"
+weapon = "bar"
+why = "figures"
+
+[[final.wrong]]
+answers = { who = "nobody" }
+ending = "accident"
+
+[[final.wrong]]
+answers = { who = "thief" }
+ending = "thief"
+
+[[final.wrong]]
+answers = { who = "kell" }
+ending = "kell_taken"
+
+[[final.wrong]]
+answers = { who = "hatch" }
+ending = "hatch_taken"
+
+[[final.wrong]]
+answers = { who = "crouch" }
+ending = "crouch_taken"
+
+[[final.wrong]]
+answers = { who = "wicks" }
+ending = "wicks_taken"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "Ten Minutes Fast"
+text = """
+I told it him, as I had pieced it together, under the great clock.
+
+"Pike's dial says he keyed the Pompeian Court at twenty to eleven," I said. "He did not. His lantern was never lit, and Crouch says no man can find those boxes in the dark; and Wicks's book has the courts dark at 10:33. So the dial is wrong, and it is wrong by ten minutes exactly, for it says Pike keyed Number One at a quarter past ten, and Crouch's says five past, and they turned their keys in the same minute, as they had every night for eight years. Kell heard the cry just after the half-hour struck. Pike keyed the Pompeian Court at half past ten, by true time, and a minute later he was struck down there from behind, with the bar out of the hydrant case. The blood is in the floor still, under the wiping; the bar was in the pool.
+
+"Then he was carried across to the Alhambra Court and laid under the gallery, to pass for a fall. But nobody has walked that gallery since June; the dust says so. And the door was locked, and a watchman who goes up unlocks it. And a man who falls twenty-five feet does not keep his palms as clean as a parson's.
+
+"Only one man in this house can open a detector, Holmes, and set its clock: the man with the little brass key on his watch-chain. On Thursday morning, for the first time in six years, he sent his clerk out of the room while he did it. The same man carries the master key to the hydrant cases on the same chain. He told Hopkins he left his office at twenty-five past ten, and spoke to Wicks on his way; Wicks saw nobody. He reached the barrier at twenty to eleven, running, and made the collector note the time for him. From the north end to the barrier is nine minutes. He had them, and one to spare.
+
+"And Pike had found him out. Thirty thousand nine hundred people through the turnstiles on Thursday, and twenty-seven thousand eight hundred on the board, certified, B. Lusk. Pike was going to the Secretary in the morning. Lusk said he would make it right with him; and when Pike would not take it, he did."
+
+Holmes was silent a long moment, looking up at the clock.
+
+"It is the vice of the clever criminal, Watson," he said at last, "that he will always do one thing too many. Had Mr Lusk simply struck the man down and gone home, he might have been one of thirty thousand. He would have an alibi, and a perfect one, and he went to some trouble for it; and it is the only thing in the whole affair that points at him." He stood up and stretched. "Hopkins is asleep on a stretcher in the ambulance room. Let us wake him."
+
+Lusk was taken at his house at Clapham at seven that morning, in his dressing-gown. He fought the case to the end, and his counsel made a great deal of the turnstiles. But the dial book of the Crystal Palace Company was produced at the Old Bailey, and the gate book, with the knife marks in it, and little Mr Pidgeon in his best coat; and Pike's notebook was read to the jury, line by line, in his own square hand. The Company found some eleven hundred pounds wanting when the books were gone through. Abel Crouch walks his rounds alone now, and keys Number One at five past ten, and has nobody to take snuff with.
+"""
+
+[endings.lusk_walks]
+title = "Twenty to Eleven"
+text = """
+I gave Holmes my account, and the name in it, and he heard me out with his eyes on the clock.
+
+"The man is right, Watson," he said. "But you have not broken his alibi. You have only quarrelled with it. Pike's dial has him alive at twenty to eleven, and the collector has Lusk at the barrier at the same minute, and your account leaves it so. Any counsel would ask the jury how a man can be in two places at once, and the jury would not know."
+
+Hopkins took Lusk's statement again, and Lusk gave it again, word for word, and sent his compliments to Mr Holmes. The inquest found that Daniel Pike died by a fall. In the spring the Crystal Palace Company's accounts were examined, and Mr Lusk resigned his post for reasons of health and went to live at Brighton.
+"""
+
+[endings.accident]
+title = "Found Dead"
+text = """
+"He fell," I said. "An old man, alone, in the dark."
+
+Holmes said nothing at all, and that was worse than anything he could have said.
+
+The inquest at Norwood found that Daniel Pike died by misadventure, having fallen from the gallery of the Alhambra Court in the course of his duty. The Company paid for the funeral. Mr Lusk sent a wreath, a very large one. Crouch did not go to the inquest; he said he had nothing to say that anyone wanted to hear.
+"""
+
+[endings.thief]
+title = "One of Thirty Thousand"
+text = """
+"A thief," I said. "Hidden in the courts at closing, as Hopkins says. Pike came on him, and he struck him down and got away."
+
+"Got away where, Watson?" said Holmes gently. "With a hydrant bar from a locked case? Having first wiped the floor?" But Hopkins's superintendent was very well pleased with it.
+
+Half the sneak-thieves in South London were taken up and let go again that autumn. The case was never closed. Mr Lusk, I understand, gave evidence of the greatest helpfulness, and the attendance board went on being a tenth lower than the turnstiles, until the Company's auditors noticed it two years later.
+"""
+
+[endings.kell_taken]
+title = "A Quarter-Tone Flat"
+text = """
+"Kell," I said. "Pike had him fined, and he was in the building, and he heard it all, he says, and never went down."
+
+"He never went down, Watson," said Holmes, "because he was forty feet up an organ, with the only stair in plain sight of the transept. And he told you the time of the murder to the minute. Murderers seldom do."
+
+Hopkins took Kell to Norwood and kept him a night, and let him go in the morning, and the Company, fearing scandal, dispensed with his services. The organ of the Handel orchestra is a quarter-tone flatter today than ever it was. The man who killed Daniel Pike certified the attendance figures the following Monday, as usual.
+"""
+
+[endings.hatch_taken]
+title = "Words on the Terrace"
+text = """
+"Hatch," I said. "He and Pike had words."
+
+"So they had," said Holmes, "on Wednesday, over a frame; and on Thursday night he was on the terrace with a dozen of his men and two of the Company's firemen, from the end of his show until a quarter to eleven, and not one of them out of the others' sight. Words are cheap, Watson. So, I am afraid, was that."
+
+Hopkins would not take the information, and Mr Brock, when he heard of it, wrote a letter to the Company that I am told was framed. The inquest found misadventure.
+"""
+
+[endings.crouch_taken]
+title = "Eight Years"
+text = """
+"Crouch," I said. "He found him. Who else knew the round so well?"
+
+Holmes looked at me as if I had struck him. "His own dial puts him at the far end of the house from ten o'clock to eleven, Watson, station after station, and he came back for his tea and waited half an hour for his friend. I had hoped for better."
+
+Crouch was held for two days, and released, and went back to his rounds; but he would not speak to me afterwards, and I do not blame him. The inquest found misadventure.
+"""
+
+[endings.wicks_taken]
+title = "Night Lights"
+text = """
+"Wicks," I said. "He was alone, and nobody can speak for him."
+
+"Nor for half the men in London," said Holmes. "He was in the cellar at the far end of the house with his valve-wheels, putting the gas down to the minute, and his book shows it. What reason had he?" I had none.
+
+Hopkins would not act on it, and the inquest found misadventure. Wicks puts the night lights down at half past ten still, by the transept clock.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "talk to holmes", "ask holmes about the case", "ask holmes about the house", "ask holmes about sixpences",
+  "examine fountain", "take sixpence", "examine orchestra", "take sixpence", "examine board",
+  "examine clock", "examine key-box", "examine organ", "talk to crouch", "ask crouch about last night",
+  "ask crouch about dan", "ask crouch about the round", "ask crouch about the clocks",
+  "ask crouch about the lanterns", "ask crouch about the gallery door", "w", "examine register",
+  "examine rounds", "examine rules", "examine lockers", "examine locker", "examine shelf",
+  "take lantern", "e", "up", "talk to kell", "ask kell about what i heard", "ask kell about my pipe",
+  "ask kell about the clock", "examine console", "examine rail", "down", "e", "talk to hatch",
+  "ask hatch about the show", "ask hatch about the fire-watch", "ask hatch about words",
+  "examine frames", "examine balustrade", "s", "talk to rudd", "ask rudd about hydrant cases",
+  "ask rudd about the keys", "ask rudd about thursday night", "examine log", "examine hooks",
+  "examine engine", "n", "down", "examine monsters", "examine bench", "take sixpence",
+  "up", "w", "s", "examine jeweller's", "examine key-box", "s", "examine key-box",
+  "e", "talk to hopkins", "ask hopkins about the surgeon", "ask hopkins about my theory",
+  "ask hopkins about mr lusk", "ask hopkins about the dial", "examine body", "examine hands",
+  "examine pike's lantern", "take keys", "examine snuff-box", "examine pike's dial",
+  "w", "w", "talk to lusk", "examine lusk", "ask lusk about thursday night", "ask lusk about poor pike",
+  "ask lusk about gate figures", "ask lusk about his clock", "examine gate book", "examine plan",
+  "show pike's dial to lusk", "e", "in", "talk to pidgeon", "ask pidgeon about the dials",
+  "ask pidgeon about the clocks", "ask pidgeon about thursday morning",
+  "examine rules", "examine dial book", "take crouch's dial", "examine crouch's dial",
+  "out", "down", "talk to wicks", "ask wicks about night lights", "ask wicks about who came by",
+  "examine gas book", "examine meters", "up", "s", "examine board", "examine benches",
+  "take sixpence", "s", "talk to sayer", "ask sayer about mr lusk", "ask sayer about the trains",
+  "examine clock", "examine bench", "take sixpence", "n", "n", "n", "n", "w", "unlock locker", "examine locker",
+  "take notebook", "examine notebook", "e", "n", "examine stalls", "e", "examine lions",
+  "take sixpence", "examine key-box", "w", "w", "examine font", "take sixpence", "examine key-box",
+  "e", "n", "examine screen", "take sixpence", "examine key-box", "w", "examine key-box",
+  "examine hydrant case", "examine mosaic", "examine impluvium", "take bar", "examine bar",
+  "e", "e", "examine chalk ring", "examine fountain", "examine gallery", "examine door",
+  "wait", "wait", "up", "examine dust", "examine key-box", "down", "w", "s", "s", "s",
+  "s", "e", "show bar to hopkins", "show notebook to hopkins", "w", "n", "n", "hint",
+  "y", "hint", "y", "hint", "y", "accuse", "lusk", "pompeian", "still lit", "fast", "bar",
+  "figures", "y",
+]
+wrong_path = [
+  "accuse", "nobody", "gallery", "not long", "nothing", "fall", "accident", "y", "",
+]

@@ -1,0 +1,245 @@
+# ================================================================ the centre of the house
+
+[rooms.centre_transept]
+name = "The Centre Transept"
+aliases = ["centre transept", "center transept", "transept", "centre", "center"]
+description = """
+I stood under the great glass vault of the centre transept, a hundred and seventy feet above my head, where the night showed black through ten thousand panes. The gas had been put down to its night lights, and all down the endless nave on either hand ran two lines of little blue beads of flame, like a street seen from a hill, dwindling away to nothing. Before me, in its basin, stood the Crystal Fountain, a great glittering tree of glass, silent now. Behind it the tiers of the Handel orchestra went up in a huge fan of empty benches to the organ, whose gilt pipes caught what little light there was; and over the organ hung the transept clock, its white face lit from behind like a moon. On an easel by the fountain stood the attendance board. A watchmen's key-box was bolted to the nearest iron pier. The nave ran north and south; a door under the orchestra, to the west, was lettered WATCHMEN; a stair beside it went up to the organ, and the glass doors to the east gave on to the terrace.
+"""
+on_enter = [
+  { once = true, text = "[I opened my notebook and set down what Hopkins's wire had told us.]", effects = ["clue:found"] },
+]
+[rooms.centre_transept.exits]
+north = { to = "north_nave", aliases = ["north nave", "nave north"] }
+south = { to = "south_nave", aliases = ["south nave", "nave south"] }
+west = { to = "watch_house", aliases = ["watch-house", "watch house", "watchmen", "door under the orchestra", "watchmen's room"] }
+up = { to = "organ_loft", aliases = ["organ", "stair", "organ loft", "orchestra stair"] }
+east = { to = "upper_terrace", aliases = ["terrace", "glass doors", "garden", "gardens", "out"] }
+out = { to = "upper_terrace", aliases = ["terrace"] }
+
+[rooms.organ_loft]
+name = "The Organ Loft"
+aliases = ["organ loft", "loft", "organ"]
+description = """
+A cramped, dusty platform high at the back of the orchestra, behind the great front pipes, among a forest of lesser ones: wood and metal, fat and thin, standing in their ranks like a regiment. The console stood at the edge of the platform with its four keyboards and its banks of stops, lit by a single candle-lamp. From the rail at the front I could look down over the empty tiers and the fountain to the whole length of the nave, north and south, picked out in its blue night lights. The stair went down to the transept.
+"""
+[rooms.organ_loft.exits]
+down = { to = "centre_transept", aliases = ["stair", "transept", "centre transept"] }
+
+[rooms.watch_house]
+name = "The Watch-House"
+aliases = ["watch-house", "watch house", "watchmen's room"]
+description = """
+A low, snug room under the orchestra, warm and close and smelling of paraffin and strong tea. A fire burned in a little range, with a kettle on it. Along one wall stood a row of painted lockers, each with a name on a card; along another, a shelf of bull's-eye lanterns, burnished and ready. Over the range hung a framed key register, and beside the door two printed cards: the order of the rounds, and the watchmen's rules. The transept was to the east.
+"""
+[rooms.watch_house.exits]
+east = { to = "centre_transept", aliases = ["transept", "centre transept", "door"] }
+out = { to = "centre_transept", aliases = ["transept"] }
+
+# ================================================================ the north nave and its courts
+
+[rooms.north_nave]
+name = "The North Nave"
+aliases = ["north nave", "nave"]
+description = """
+The nave stretched away north under its iron ribs, a long glass street with the gas turned down to beads. On either hand the shops and stalls stood shuttered for the night, and among them, ghostly in the half-dark, rose the plaster statues of the Palace's great collection: emperors, nymphs and generals, all in the same dead white, and between them tall palms in tubs. Through a dark archway to the east I could make out the shapes of great beasts couchant: the Egyptian Court. To the west a rounder arch led into the Byzantine Court. The nave went on north to the far end of the house, and south to the transept.
+"""
+[rooms.north_nave.exits]
+south = { to = "centre_transept", aliases = ["transept", "centre transept", "centre"] }
+north = { to = "north_end", aliases = ["north end", "end", "screen"] }
+east = { to = "egyptian_court", when = "has:lantern", blocked = "Beyond the archway the Egyptian Court was black as a cellar; the night lights in the nave did not reach a yard inside. I should want a lantern.", aliases = ["egyptian court", "egyptian", "archway"] }
+west = { to = "byzantine_court", when = "has:lantern", blocked = "The Byzantine Court was quite dark. I should want a lantern before I went in.", aliases = ["byzantine court", "byzantine", "arch"] }
+
+[rooms.egyptian_court]
+name = "The Egyptian Court"
+aliases = ["egyptian court"]
+dark_when = "!has:lantern"
+dark_text = "It was too dark to see anything at all."
+description = """
+My lantern made a little yellow cave in the dark, and out of it, one after another, came the great painted columns of the court, thick as oaks and crowded with gods and birds and staring eyes in red and blue and green. An avenue of lions with the faces of men lay along the entrance, each on his plinth, and stared at nothing. On a column by the entrance was a watchmen's key-box. The north nave was to the west.
+"""
+[rooms.egyptian_court.exits]
+west = { to = "north_nave", aliases = ["nave", "north nave", "out"] }
+out = { to = "north_nave", aliases = ["nave"] }
+
+[rooms.byzantine_court]
+name = "The Byzantine Court"
+aliases = ["byzantine court"]
+dark_when = "!has:lantern"
+dark_text = "It was too dark to see anything at all."
+description = """
+Round arches on squat columns, carved like lace, and above them a glimmer of gold mosaic where my lantern caught it. In the middle of the court stood a great stone font, carved with beasts and knotwork, copied from some church on the Rhine. A watchmen's key-box was fixed beside the arch. The north nave was to the east.
+"""
+[rooms.byzantine_court.exits]
+east = { to = "north_nave", aliases = ["nave", "north nave", "out"] }
+out = { to = "north_nave", aliases = ["nave"] }
+
+[rooms.north_end]
+name = "The North End"
+aliases = ["north end", "end"]
+description = """
+Here the nave ended, and not as an architect would have ended it. A high screen of tarred boarding, with a small locked door in it, closed the whole width of the building; behind it, I knew, lay the open sky and the stumps of the north transept that burned in 'sixty-six and was never rebuilt. A cold draught came under the boards. A single night light burned on the screen beside a watchmen's key-box. To the west a doorway with painted pillars led into the Pompeian Court; to the east a horseshoe arch, fretted like a biscuit, opened on the Alhambra Court. The nave ran back south.
+"""
+[rooms.north_end.exits]
+south = { to = "north_nave", aliases = ["nave", "north nave"] }
+west = { to = "pompeian_court", when = "has:lantern", blocked = "The Pompeian Court lay quite dark beyond its painted doorway. I should want a lantern.", aliases = ["pompeian court", "pompeian", "pompeian house", "house", "doorway"] }
+east = { to = "alhambra_court", when = "has:lantern", blocked = "Through the horseshoe arch the Alhambra Court was a pit of darkness. I should want a lantern.", aliases = ["alhambra court", "alhambra", "horseshoe arch", "arch"] }
+north = { blocked = "The little door in the screen was padlocked, and beyond it lay only the burnt ground and the night.", aliases = ["screen", "door", "transept", "north transept"] }
+
+[rooms.pompeian_court]
+name = "The Pompeian Court"
+aliases = ["pompeian court", "pompeian house"]
+dark_when = "!has:lantern"
+dark_text = "It was too dark to see anything at all."
+description = """
+A Roman house, built whole: I stood in its atrium, open to the glass roof far above, with rooms opening off it on every side, their walls painted in deep red and yellow and black with little floating figures and garlands. In the middle of the floor lay the impluvium, a shallow square pool lined with marble, to catch the rain that never fell here, and beyond it the columns of a peristyle, a little garden court, black between the pillars. The floor was a mosaic of black and white, and at the threshold, in tesserae, a chained dog bared his teeth. Inside the doorway, absurd among the frescoes, a glass-fronted fire-hydrant case was fixed to the wall, and beside it a watchmen's key-box. The north end of the nave was to the east.
+"""
+[rooms.pompeian_court.exits]
+east = { to = "north_end", aliases = ["north end", "nave", "out", "doorway"] }
+out = { to = "north_end", aliases = ["north end"] }
+
+[rooms.alhambra_court]
+name = "The Alhambra Court"
+aliases = ["alhambra court", "alhambra", "court of lions"]
+dark_when = "!has:lantern"
+dark_text = "It was too dark to see anything at all."
+description = """
+The Court of Lions, or a piece of it: slender paired columns holding up arches cut and pierced like paper, all coloured in blue and red and gold, round a fountain whose basin stood on the backs of a ring of little stone lions. Above the arcade on the nave side ran the iron gallery of the nave, twenty-five feet up, with its rail black against the glass. Near the fountain, on the tiles, the police had drawn a chalk ring. In the corner of the arcade was a narrow door to the gallery stair. The north end was to the west.
+"""
+[rooms.alhambra_court.exits]
+west = { to = "north_end", aliases = ["north end", "nave", "out", "arch"] }
+out = { to = "north_end", aliases = ["north end"] }
+up = { to = "alhambra_gallery", when = "loc:crouch:alhambra_court", blocked = "The door to the gallery stair was locked. Crouch had the key; he would open it when his round brought him here.", aliases = ["gallery", "stair", "gallery stair", "door", "narrow door"] }
+
+[rooms.alhambra_gallery]
+name = "The Alhambra Gallery"
+aliases = ["alhambra gallery", "gallery"]
+dark_when = "!has:lantern"
+dark_text = "It was too dark to see anything at all."
+description = """
+A narrow iron walk, railed at shoulder height, running along the side of the nave twenty-five feet above the floor, with the arches of the Alhambra Court falling away below it. Up here the dust of the whole summer lay thick and grey on everything: the plates of the floor, the top of the rail, the ledges of the girders. At the far end, where the walk turned, a watchmen's key-box was bolted to a stanchion. The stair went down; its door had a spring latch that opened from this side.
+"""
+[rooms.alhambra_gallery.exits]
+down = { to = "alhambra_court", aliases = ["stair", "court", "alhambra court"] }
+
+# ================================================================ the south of the house
+
+[rooms.south_nave]
+name = "The South Nave"
+aliases = ["south nave"]
+description = """
+The south nave was all shops: rows of little stalls with their shutters up and their wares hidden, a confectioner's, a photographer's, a fancy-goods dealer's, a jeweller's with a gilt sign. The blue night lights showed the white of more statues among the palms. A watchmen's key-box was bolted to a pier. The transept lay north; to the south the nave opened into the south transept.
+"""
+[rooms.south_nave.exits]
+north = { to = "centre_transept", aliases = ["transept", "centre transept", "centre"] }
+south = { to = "south_transept", aliases = ["south transept"] }
+
+[rooms.south_transept]
+name = "The South Transept"
+aliases = ["south transept"]
+description = """
+The south transept, lofty and bare, with a few palms and a dry fountain. Here the Company kept its offices: to the west a mahogany door with a brass plate, SUPERINTENDENT OF THE BUILDING; at the north-west a smaller one marked TIME OFFICE; to the east a door with a red cross painted on it, where the ambulance men worked on fête days. To the south, glass doors and a broad stair went down into the colonnade for the Low Level station; and in a corner an iron stair went down to the meter house. A watchmen's key-box was bolted by the colonnade doors. The nave lay north.
+"""
+[rooms.south_transept.exits]
+north = { to = "south_nave", aliases = ["nave", "south nave"] }
+west = { to = "superintendent_office", aliases = ["superintendent", "superintendent's office", "office", "mahogany door"] }
+northwest = { to = "time_office", aliases = ["time office", "time-office"] }
+in = { to = "time_office", aliases = ["time office"] }
+east = { to = "ambulance_room", aliases = ["ambulance room", "red cross", "red cross door", "ambulance"] }
+south = { to = "colonnade", aliases = ["colonnade", "glass doors", "low level", "station"] }
+down = { to = "meter_house", aliases = ["meter house", "iron stair", "meters", "gas"] }
+
+[rooms.superintendent_office]
+name = "The Superintendent's Office"
+aliases = ["superintendent's office", "office"]
+description = """
+A handsome room for a servant of a company in difficulties: Turkey carpet, a mahogany desk with a green leather top, a glass-fronted bookcase of bound reports, and on the wall a great framed plan of the Palace and its grounds. On the desk, squared to its edge, lay a long ledger: the gate book. The transept was to the east.
+"""
+[rooms.superintendent_office.exits]
+east = { to = "south_transept", aliases = ["transept", "south transept", "out"] }
+out = { to = "south_transept", aliases = ["transept"] }
+
+[rooms.time_office]
+name = "The Time Office"
+aliases = ["time office"]
+description = """
+A narrow clerk's room with a high desk and a stool, and the walls all pigeon-holes. On the desk lay a big flat book, the dial book, in which the night's dials were pinned each morning; on a shelf stood a box of fresh paper dials; and on the wall, framed, hung a card of the Company's rules for the time detectors. The transept was outside.
+"""
+[rooms.time_office.exits]
+out = { to = "south_transept", aliases = ["transept", "south transept"] }
+southeast = { to = "south_transept", aliases = ["transept"] }
+
+[rooms.ambulance_room]
+name = "The Ambulance Room"
+aliases = ["ambulance room"]
+description = """
+A whitewashed room with a stretcher on the wall, a cupboard of splints and bandages, and two trestle tables. On one, under a sheet, lay the body of Daniel Pike. On the other the police had set out his effects: his lantern, his bunch of keys, his snuff-box and his whistle. The transept was to the west.
+"""
+[rooms.ambulance_room.exits]
+west = { to = "south_transept", aliases = ["transept", "south transept", "out"] }
+out = { to = "south_transept", aliases = ["transept"] }
+
+[rooms.meter_house]
+name = "The Meter House"
+aliases = ["meter house", "meters"]
+description = """
+A hot brick vault under the south transept, roaring softly with gas. Huge iron meters stood along one wall, and along the other ran a row of great valve-wheels, each painted with the name of the part of the house it fed: SOUTH NAVE, CENTRE, NORTH NAVE AND COURTS, TERRACE, and so on, with a dial over each. On a sloping desk lay the gas book. The iron stair went up to the transept.
+"""
+[rooms.meter_house.exits]
+up = { to = "south_transept", aliases = ["stair", "transept", "iron stair", "out"] }
+out = { to = "south_transept", aliases = ["transept"] }
+
+[rooms.colonnade]
+name = "The Colonnade"
+aliases = ["colonnade"]
+description = """
+A long glazed passage, a full furlong of it, running gently down from the Palace to the Low Level station, with arched windows on either hand and benches between them for weary trippers. A few gas jets burned along it. A painted board at the top of the stair said TO THE LOW LEVEL STATION, and a smaller one under it gave the time of the walk. The stair to the south transept was to the north; the station lay at the foot, south.
+"""
+[rooms.colonnade.exits]
+north = { to = "south_transept", aliases = ["transept", "south transept", "stair", "palace", "up"] }
+up = { to = "south_transept", aliases = ["transept"] }
+south = { to = "low_level", aliases = ["station", "low level", "low level station", "platform", "down"] }
+down = { to = "low_level", aliases = ["station"] }
+
+[rooms.low_level]
+name = "The Low Level Station"
+aliases = ["low level station", "low level", "station", "platform"]
+description = """
+A big echoing station under an iron roof, built to take the crowds of a fête day and almost empty now. At the head of the platform stood the ticket barrier, with a collector's box beside it, and above it the station clock. A bench stood against the wall. The colonnade went up to the north.
+"""
+[rooms.low_level.exits]
+north = { to = "colonnade", aliases = ["colonnade", "up", "palace"] }
+up = { to = "colonnade", aliases = ["colonnade"] }
+
+# ================================================================ the grounds
+
+[rooms.upper_terrace]
+name = "The Upper Terrace"
+aliases = ["upper terrace", "terrace"]
+description = """
+The night air was sweet after the Palace. The great terrace ran the length of the building, its balustrade crowded with statues, and below it the gardens fell away in terrace after terrace into the dark, towards the lakes. Along the walk stood the scorched wooden frames of Thursday's set pieces, and a row of iron rocket troughs, and a cart, where some of Brock's men were packing up by lantern-light. The Palace doors were to the west. South along the terrace a red lamp showed the Company's fire station, and a flight of steps went down towards the lakes.
+"""
+[rooms.upper_terrace.exits]
+west = { to = "centre_transept", aliases = ["palace", "doors", "glass doors", "transept", "in"] }
+in = { to = "centre_transept", aliases = ["palace"] }
+south = { to = "fire_station", aliases = ["fire station", "red lamp", "station"] }
+down = { to = "lake", aliases = ["steps", "lake", "lakes", "gardens"] }
+
+[rooms.fire_station]
+name = "The Fire Station"
+aliases = ["fire station"]
+description = """
+A brick engine-house with its doors open on the terrace, the brass of a steam fire-engine shining in the lamplight, and hose hung up to dry like great grey eels. On the wall by the door hung a board of hooks with keys on them, and beside it the fire log. The terrace was to the north.
+"""
+[rooms.fire_station.exits]
+north = { to = "upper_terrace", aliases = ["terrace", "out"] }
+out = { to = "upper_terrace", aliases = ["terrace"] }
+
+[rooms.lake]
+name = "The Lower Lake"
+aliases = ["lower lake", "lake"]
+description = """
+At the bottom of the gardens lay the lake, black and still under a sky full of stars, and on its islands stood the great beasts: Mr Hawkins's monsters of the old world, iguanodons and megalosaurs, life-size in brick and iron and plaster, grazing and gaping in the starlight as they had for forty years. On the bank by the path stood an iron bench. The steps went back up to the terrace.
+"""
+[rooms.lake.exits]
+up = { to = "upper_terrace", aliases = ["steps", "terrace"] }

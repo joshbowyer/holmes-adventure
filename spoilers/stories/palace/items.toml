@@ -1,0 +1,784 @@
+# ================================================================ the centre transept
+
+[items.vault]
+name = "glass vault"
+aliases = ["vault", "glass", "roof", "panes", "glass roof"]
+location = "centre_transept"
+scenery = true
+description = "Rib upon iron rib, pane upon pane, up and up into the dark. A few stars showed through it. It is a strange thing to stand at night in a building that is nearly all window."
+
+[items.night_lights]
+name = "night lights"
+aliases = ["gas", "night light", "lights", "beads", "flames", "gas jets"]
+location = "centre_transept"
+scenery = true
+description = "Every twentieth jet along the nave had been left burning, turned down to a bead of blue flame no bigger than a pea, enough to show a man the shape of the floor and no more."
+
+[items.crystal_fountain]
+name = "Crystal Fountain"
+aliases = ["fountain", "crystal fountain", "glass fountain", "basin", "tree of glass"]
+location = "centre_transept"
+scenery = true
+container = true
+description = "Osler's great fountain of glass, a branching tree of crystal twenty-seven feet high, in a wide shallow basin. It does not play at night. The trippers throw coins into the basin for luck, and the Company's men rake them out on Mondays."
+details = [ { when = "loc:coin_fountain:crystal_fountain", text = "Among the leaves and orange-peel at the bottom of the basin, near the rim, something silver caught the light: a sixpence." } ]
+
+[items.coin_fountain]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "crystal_fountain"
+coin = true
+description = "A wet sixpence with the old Queen's young head on it, rubbed almost smooth."
+take_text = "I fished the sixpence out of the basin and dried it on my handkerchief."
+
+[items.orchestra]
+name = "Handel orchestra"
+aliases = ["orchestra", "tiers", "benches", "handel orchestra", "empty benches"]
+location = "centre_transept"
+scenery = true
+container = true
+description = "Tier upon tier of benches, rising in a great fan, where four thousand singers sit for the Handel Festival. Tonight they were empty to the last row."
+details = [ { when = "loc:coin_orchestra:orchestra", text = "On the lowest bench, where some chorister had sat in a puddle of summer dust, a sixpence lay forgotten." } ]
+
+[items.coin_orchestra]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "orchestra"
+coin = true
+description = "A sixpence, dusty."
+take_text = "I took the sixpence from the bench."
+
+[items.organ_front]
+name = "organ"
+aliases = ["organ pipes", "gilt pipes", "front pipes", "great organ"]
+location = "centre_transept"
+scenery = true
+description = "The great organ of the Handel orchestra, its gilt front pipes rising like the pillars of a temple. A faint candle-light moved behind them: someone was up there."
+
+[items.transept_clock]
+name = "transept clock"
+aliases = ["clock", "face", "white face", "great clock", "palace clock"]
+location = "centre_transept"
+scenery = true
+description = "A great clock with a white glass face lit from behind, hung over the organ so that the whole transept may see it. It chimes the quarters, and strikes the hours on a bell deep enough to be heard in the furthest court. By it, I knew, the Palace kept its time, and the gasmen and watchmen theirs."
+
+[items.attendance_board]
+name = "attendance board"
+aliases = ["board", "easel", "attendance"]
+location = "centre_transept"
+scenery = true
+clue = "attendance_board"
+description = "A black board on an easel, painted in white: CRYSTAL PALACE. ATTENDANCE. Below, in chalk, the figures of the week: Monday 4,112; Tuesday 3,870; Wednesday 4,406; Thursday (Fireworks) 27,840; Friday, not yet entered. At the foot: 'Certified, B. Lusk, Superintendent.'"
+
+[items.key_box_1]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box", "pier", "iron pier"]
+location = "centre_transept"
+scenery = true
+description = "A small iron box bolted to the pier at the height of a man's chest, with a hinged lid. Inside, on a short chain, hung a steel key with a curious toothed end, stamped with the figure 1. The number was painted on the lid as well."
+
+# ================================================================ the organ loft
+
+[items.console]
+name = "console"
+aliases = ["keyboards", "stops", "candle-lamp", "candle lamp", "manuals"]
+location = "organ_loft"
+scenery = true
+description = "Four keyboards, one above another, yellow as old teeth, and banks of ivory stop-knobs on either side with names on them in black letter. A candle-lamp stood on the music desk, among a litter of tuning cones and a tuner's notebook."
+
+[items.loft_pipes]
+name = "pipes"
+aliases = ["regiment", "ranks", "wood pipes", "metal pipes", "lesser pipes"]
+location = "organ_loft"
+scenery = true
+description = "Hundreds of pipes, from great wooden boxes I could have crawled into to little metal ones no bigger than a pencil, each in its place in its rank."
+
+[items.loft_rail]
+name = "rail"
+aliases = ["front", "view", "nave", "edge"]
+location = "organ_loft"
+scenery = true
+description = "From the rail I could look down the whole length of the house, a third of a mile of it, and see the night lights dwindle away north and south. I could see the dark mouths of the courts along the nave; what was in them, I could not see at all."
+
+# ================================================================ the watch-house
+
+[items.range]
+name = "range"
+aliases = ["fire", "kettle", "tea", "teapot"]
+location = "watch_house"
+scenery = true
+description = "A little black range, very hot, with a kettle singing on it and a brown teapot keeping warm on the hob. Two mugs stood ready on the shelf above."
+
+[items.lockers]
+name = "lockers"
+aliases = ["row of lockers", "painted lockers", "crouch's locker", "cards", "names"]
+location = "watch_house"
+scenery = true
+description = "A row of tall green lockers with name-cards in brass frames: A. CROUCH; D. PIKE; and two spare. Crouch's stood open, with his coat and his tea-tin in it. Pike's locker was shut and locked."
+
+[items.pike_locker]
+name = "Pike's locker"
+aliases = ["locker", "pike's locker", "his locker", "d pike"]
+location = "watch_house"
+scenery = true
+container = true
+openable = true
+description = "Pike's locker: a tall green tin cupboard with D. PIKE on its card, and a stout lock."
+open_text = "The smallest key on Pike's bunch turned the lock, and the door swung open."
+details = [ { when = ["open:pike_locker", "loc:pike_notebook:pike_locker"], text = "Inside hung a greatcoat and a spare cap, and on the shelf, tucked behind a tin of tobacco, lay a little black notebook." } ]
+
+[items.pike_notebook]
+name = "Pike's notebook"
+aliases = ["notebook", "black notebook", "little black notebook", "pike's notebook", "his notebook"]
+location = "pike_locker"
+clue = "pike_notebook"
+description = """
+A little black notebook in a careful, square, old soldier's hand. Page after page ran the same way, one line a night since the middle of July: the date; the total of the turnstile counters as Pike had read them at closing; and, copied beside it, the figure posted next day on the attendance board. Every night the board was lower, by a tenth or near it. The last entry read:
+
+'Thurs. 12th. Fireworks. Counters 30,912. (Board tomorrow will say what he likes.) Told Mr L. today I go to the Secretary Friday. He says I am mistook, and he will make it right with me. Shan't take it.'
+"""
+
+[items.lanterns_shelf]
+name = "shelf of lanterns"
+aliases = ["shelf", "lanterns", "bull's-eye lanterns", "bull's-eyes"]
+location = "watch_house"
+scenery = true
+description = "A shelf of bull's-eye lanterns, polished like brass buttons, with their wicks trimmed. The watchmen light them when the gas goes down."
+
+[items.lantern]
+name = "lantern"
+aliases = ["bull's-eye", "bull's eye", "bullseye", "my lantern", "light"]
+location = "watch_house"
+description = "A bull's-eye lantern, burning steadily. The shutter slid round to darken it."
+take_text = "I took a bull's-eye from the shelf and lit it at the range."
+
+[items.key_register]
+name = "key register"
+aliases = ["register", "framed register", "key-register"]
+location = "watch_house"
+scenery = true
+clue = "key_register"
+description = """
+A framed list, in copperplate:
+
+THE WATCHMEN'S STATIONS
+1 Centre Transept. 2 South Nave. 3 Terrace Doors. 4 Byzantine Court. 5 Tropical Department. 6 Colonnade Stair. 7 Pompeian Court. 8 Picture Gallery. 9 North End Screen. 10 Sculpture Gallery. 11 South Transept. 12 Egyptian Court. 13 Concert Room. 14 Theatre. 15 Alhambra Gallery. 16 Refreshment Rooms.
+"""
+
+[items.round_card]
+name = "order of the rounds"
+aliases = ["rounds", "round card", "order", "card", "printed card", "order of rounds"]
+location = "watch_house"
+scenery = true
+clue = "round_card"
+description = """
+A printed card:
+
+ORDER OF THE ROUNDS. Each round begins and ends at Station 1.
+NORTH ROUND: 1, 4, 12, 9, 7, 15, 8, 10, 1.
+SOUTH ROUND: 1, 2, 11, 6, 14, 13, 16, 5, 3, 1.
+The watchmen shall take their refreshment together in the watch-house after the first round, and not elsewhere.
+"""
+
+[items.rules_card]
+name = "watchmen's rules"
+aliases = ["rules", "rules card", "watchmen's rules", "regulations"]
+location = "watch_house"
+scenery = true
+clue = "watch_rules"
+description = """
+A printed card, fly-spotted:
+
+RULES FOR THE WATCHMEN. Lanterns are to be lighted when the gas is reduced, and not before. The doors of the gallery stairs are to be unlocked by the watchman on his way up, and locked behind him on his way down, and on no account left open. A watchman finding anything amiss shall spring his rattle.
+"""
+
+# ================================================================ the north nave
+
+[items.north_stalls]
+name = "stalls"
+aliases = ["shops", "shutters", "stall"]
+location = "north_nave"
+scenery = true
+description = "Little shops with their shutters up and padlocked: a stationer's, a toy-seller's, a dealer in views of the Palace. Nothing here had been disturbed."
+
+[items.north_statues]
+name = "statues"
+aliases = ["statue", "emperors", "nymphs", "generals", "plaster"]
+location = "north_nave"
+scenery = true
+description = "Plaster casts of the sculpture of every age, all the same dead white in the blue light. A Roman emperor stared at me with blank eyes."
+
+[items.palms]
+name = "palms"
+aliases = ["palm", "tubs", "palm trees"]
+location = "north_nave"
+scenery = true
+description = "Tall palms in green tubs, their fronds black against the glass."
+
+# ================================================================ the Egyptian court
+
+[items.columns_egypt]
+name = "columns"
+aliases = ["painted columns", "column", "gods", "birds", "eyes"]
+location = "egyptian_court"
+scenery = true
+description = "Great columns painted with gods and hawks and lotus flowers, and the staring eye of Horus over and over again."
+
+[items.lions_egypt]
+name = "lions"
+aliases = ["avenue", "avenue of lions", "lion", "beasts", "plinths", "plinth", "sphinxes"]
+location = "egyptian_court"
+scenery = true
+container = true
+description = "Lions with the faces of men, a row of them, each on his plinth, their great paws stretched out before them."
+details = [ { when = "loc:coin_egypt:lions_egypt", text = "Between the paws of the nearest, where a child had perhaps left it as an offering, lay a sixpence." } ]
+
+[items.coin_egypt]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "lions_egypt"
+coin = true
+description = "A bright new sixpence of this year."
+take_text = "I took the sixpence from between the lion's paws."
+
+[items.key_box_12]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box"]
+location = "egyptian_court"
+scenery = true
+description = "A watchmen's key-box on the column, its key on its chain inside, stamped 12."
+
+# ================================================================ the Byzantine court
+
+[items.arches_byz]
+name = "arches"
+aliases = ["arch", "round arches", "columns", "mosaic", "gold mosaic"]
+location = "byzantine_court"
+scenery = true
+description = "Squat columns carved all over like lace, and above them round arches, and gold mosaic glimmering."
+
+[items.font]
+name = "font"
+aliases = ["stone font", "great font", "knotwork"]
+location = "byzantine_court"
+scenery = true
+container = true
+description = "A great stone font, its bowl carved with beasts biting one another's tails."
+details = [ { when = "loc:coin_byz:font", text = "In the dry bowl of the font lay a sixpence." } ]
+
+[items.coin_byz]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "font"
+coin = true
+description = "A sixpence, with a hole bored in it for a watch-chain."
+take_text = "I took the sixpence out of the font."
+
+[items.key_box_4]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box"]
+location = "byzantine_court"
+scenery = true
+description = "A watchmen's key-box beside the arch, its key on its chain inside, stamped 4."
+
+# ================================================================ the north end
+
+[items.screen]
+name = "screen"
+aliases = ["boarding", "tarred boarding", "boards", "little door", "draught"]
+location = "north_end"
+scenery = true
+container = true
+description = "Rough tarred boards on a frame of timber, closing off the end of the nave where the north transept burned. The fire of 'sixty-six took the Assyrian Court and the tropical houses and the great Egyptian figures with it, and the Company never found the money to build again."
+details = [ { when = "loc:coin_screen:screen", text = "At the foot of the boards, where the draught had blown it into a corner with the dead leaves, lay a sixpence." } ]
+
+[items.coin_screen]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "screen"
+coin = true
+description = "A sixpence, cold from the draught."
+take_text = "I picked the sixpence out of the leaves."
+
+[items.key_box_9]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box"]
+location = "north_end"
+scenery = true
+description = "A watchmen's key-box on the screen, under the night light, its key on its chain, stamped 9."
+
+[items.screen_light]
+name = "night light"
+aliases = ["light", "gas", "jet"]
+location = "north_end"
+scenery = true
+description = "A single gas jet on a bracket on the screen, turned down to a blue bead."
+
+# ================================================================ the Pompeian court
+
+[items.frescoes]
+name = "painted walls"
+aliases = ["walls", "frescoes", "figures", "garlands", "rooms", "paintings"]
+location = "pompeian_court"
+scenery = true
+description = "Red and yellow and black, with dancing girls and birds and little gods floating on nothing, copied from the houses dug out at Pompeii. The little rooms off the atrium were furnished with copies of bronze lamps and couches."
+
+[items.impluvium]
+name = "impluvium"
+aliases = ["pool", "basin", "marble pool", "water"]
+location = "pompeian_court"
+scenery = true
+container = true
+description = "A shallow square pool sunk in the floor, lined with marble and a foot of still black water."
+details = [ { when = "loc:hydrant_bar:impluvium", text = "I turned my lantern on the water, and saw on the bottom, close under the near edge, a long dark shape that was not marble: an iron bar." } ]
+
+[items.hydrant_bar]
+name = "hydrant bar"
+aliases = ["bar", "iron bar", "key", "hydrant key", "t-bar"]
+location = "impluvium"
+clue = "bar_found"
+description = "An iron bar near three feet long, with a cross-piece at one end for the hands and, at the other, a square-cornered socket head, made to turn the valve of a fire hydrant. It had lain in the water long enough to be washed quite clean. The square head was about the size of the end of my thumb."
+take_text = "I rolled back my sleeve and lifted the bar out of the pool. It was heavy."
+
+[items.peristyle]
+name = "peristyle"
+aliases = ["columns", "pillars", "garden", "garden court", "little garden"]
+location = "pompeian_court"
+scenery = true
+description = "Beyond the pool, a little colonnaded garden, with painted pillars and plaster shrubs. Between the pillars it was very dark; a man could stand there unseen by anyone in the atrium, if he kept still."
+
+[items.mosaic]
+name = "mosaic"
+aliases = ["floor", "mosaic floor", "dog", "tesserae", "chained dog", "joints"]
+location = "pompeian_court"
+scenery = true
+clue = "pompeian_blood"
+description = "Black and white tesserae, with the chained dog snarling at the threshold. I went over the floor with my lantern close. Between the pool and the hydrant case it had been wiped, and lately: it was cleaner there than anywhere else. But a wiped floor is not a scrubbed one. In the joints between the little stones, in a patch the size of a dinner plate, there was a rusty brown that I had seen too often to mistake. It was blood."
+
+[items.hydrant_case]
+name = "hydrant case"
+aliases = ["case", "fire-hydrant case", "fire hydrant case", "hydrant", "glass case", "glass-fronted case"]
+location = "pompeian_court"
+scenery = true
+clue = "hydrant_case"
+description = "A glass-fronted cupboard painted red, lettered FIRE HYDRANT, with a coiled hose in it and the brass valve of the hydrant below. Beside the hose were two iron hooks for the hydrant bar, and the hooks were empty. The glass was whole; the little lock was shut. Whoever had taken the bar had opened the case with a key, and locked it after."
+
+[items.key_box_7]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box"]
+location = "pompeian_court"
+scenery = true
+description = "A watchmen's key-box inside the doorway, its key on its chain, stamped 7."
+
+# ================================================================ the Alhambra court
+
+[items.alhambra_arches]
+name = "arches"
+aliases = ["columns", "arcade", "paired columns", "arch"]
+location = "alhambra_court"
+scenery = true
+description = "Slender columns in pairs, holding up arches cut as fine as paper and painted blue and red and gold. Lovely by day, I daresay; by a bull's-eye at night they made a forest of shadows."
+
+[items.lion_fountain]
+name = "fountain"
+aliases = ["lion fountain", "lions", "basin", "stone lions", "fountain of lions"]
+location = "alhambra_court"
+scenery = true
+description = "A round stone basin on the backs of a ring of little lions, rather like dogs. Dry. Its lip was of plain stone, and on it I could see no mark of anything."
+
+[items.gallery_above]
+name = "gallery"
+aliases = ["iron gallery", "rail", "gallery rail", "above"]
+location = "alhambra_court"
+scenery = true
+description = "The gallery ran twenty-five feet above the tiles, its rail a black line against the faint glass. A man who went over that rail would come down where the chalk ring was, near enough."
+
+[items.chalk_ring]
+name = "chalk ring"
+aliases = ["chalk", "ring", "tiles", "stain", "mark", "where he lay"]
+location = "alhambra_court"
+scenery = true
+clue = "alhambra_stain"
+description = "The police had chalked round where Pike lay. Within the ring, where his head had been, was a stain on the tiles no bigger than a saucer, and that was all. I have seen a good many broken heads in my time. A scalp wound bleeds like a pig; this man had done his bleeding somewhere else."
+
+[items.gallery_door]
+name = "gallery stair door"
+aliases = ["door", "narrow door", "stair door", "gallery door"]
+location = "alhambra_court"
+scenery = true
+description = "A narrow iron door in the corner of the arcade, painted to look like part of it, with a stout lock. Behind it a stair went up to the gallery."
+
+# ================================================================ the Alhambra gallery
+
+[items.dust]
+name = "dust"
+aliases = ["floor", "plates", "rail", "ledges", "girders", "walk", "iron walk"]
+location = "alhambra_gallery"
+scenery = true
+clue = "gallery_dust"
+description = "I went along the walk slowly, holding my lantern low. The dust lay on the iron plates like grey felt, and in it were my own footprints and no others, not one, from the stair-head to the turn. The top of the rail was furred with it from end to end, unbroken. Nobody had climbed that rail, or leaned on it, or walked this gallery, for weeks."
+
+[items.key_box_15]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box", "stanchion"]
+location = "alhambra_gallery"
+scenery = true
+description = "A watchmen's key-box on the stanchion at the turn, stamped 15. Dust lay thick on its lid, and when I lifted it the dust on the chain inside was as thick."
+
+# ================================================================ the south nave
+
+[items.south_stalls]
+name = "stalls"
+aliases = ["shops", "confectioner's", "photographer's", "fancy-goods", "stall"]
+location = "south_nave"
+scenery = true
+description = "Shuttered stalls in a row, their names painted over them. The jeweller's was the grandest, with a gilt sign."
+
+[items.jeweller]
+name = "jeweller's stall"
+aliases = ["jeweller's", "jeweller", "jeweller's shutter", "gilt sign", "shutter"]
+location = "south_nave"
+scenery = true
+clue = "shutter"
+description = "The jeweller's shutter had been tried, by somebody with a chisel or a stout knife: there were fresh bright scratches about the padlock-hasp, and a splinter gone from the frame. But the padlock held, and whoever tried it had given up."
+
+[items.south_statues]
+name = "statues"
+aliases = ["statue", "palms", "palm"]
+location = "south_nave"
+scenery = true
+description = "More white statues among the palms: a wrestler, a Venus, a dying Gaul."
+
+[items.key_box_2]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box", "pier"]
+location = "south_nave"
+scenery = true
+description = "A watchmen's key-box on a pier, stamped 2."
+
+# ================================================================ the south transept
+
+[items.dry_fountain]
+name = "dry fountain"
+aliases = ["fountain", "palms", "palm"]
+location = "south_transept"
+scenery = true
+description = "A stone fountain, dry, among a few palms."
+
+[items.office_doors]
+name = "doors"
+aliases = ["mahogany door", "brass plate", "plate", "red cross", "time office door"]
+location = "south_transept"
+scenery = true
+description = "The Company's doors: the Superintendent's, of mahogany with a brass plate; the time office's, plainer; and the ambulance room's, with its red cross."
+
+[items.key_box_11]
+name = "key-box"
+aliases = ["key box", "box", "keybox", "watchmen's key-box"]
+location = "south_transept"
+scenery = true
+description = "A watchmen's key-box by the colonnade doors, stamped 11."
+
+# ================================================================ the Superintendent's office
+
+[items.lusk_desk]
+name = "desk"
+aliases = ["mahogany desk", "green leather"]
+location = "superintendent_office"
+scenery = true
+description = "A fine desk, very tidy. Nothing lay on it but the gate book, an inkstand and a blotter."
+
+[items.bookcase]
+name = "bookcase"
+aliases = ["reports", "bound reports"]
+location = "superintendent_office"
+scenery = true
+description = "The Company's annual reports, bound in green calf, back to 1854. The later volumes were very much thinner than the early ones."
+
+[items.palace_plan]
+name = "plan"
+aliases = ["framed plan", "great plan", "map", "plan of the palace"]
+location = "superintendent_office"
+scenery = true
+description = "A great engraved plan of the Palace and its grounds. The building ran north and south a third of a mile, from the burnt north end to the south transept, and the colonnade went down from the south transept to the Low Level station. Somebody had pencilled times along the margin: 'N. end to S. transept, 6 min. Colonnade, 3 min.'"
+
+[items.gate_book]
+name = "gate book"
+aliases = ["ledger", "long ledger", "book", "gate-book"]
+location = "superintendent_office"
+scenery = true
+clue = "gate_book"
+description = "The Company's gate book: for every day, the reading of every turnstile, totalled, and the takings. The figures were all in one neat hand, and signed B. L. On Thursday's line the total was 27,840. Here and there through the summer, if I tilted the page to my lantern, the paper was a little rough under the figures, as if a knife had been at it."
+
+# ================================================================ the time office
+
+[items.time_desk]
+name = "high desk"
+aliases = ["desk", "stool", "pigeon-holes", "pigeonholes"]
+location = "time_office"
+scenery = true
+description = "A clerk's high desk and stool, and pigeon-holes up to the ceiling, every one labelled."
+
+[items.dial_book]
+name = "dial book"
+aliases = ["book", "flat book", "dials", "dial-book"]
+location = "time_office"
+scenery = true
+container = true
+description = "A big flat book with cardboard leaves, one leaf to a night, and on each leaf two paper discs pinned side by side: the watchmen's dials, taken out of their clocks each morning."
+details = [ { when = "loc:crouch_dial:dial_book", text = "On the leaf for Thursday night only one dial was pinned, Crouch's, with his name pencilled under it; the place beside it, where Pike's should have been, was empty." } ]
+
+[items.crouch_dial]
+name = "Crouch's dial"
+aliases = ["dial", "crouch's dial", "paper dial", "disc"]
+location = "dial_book"
+clue = "crouch_dial"
+description = """
+A disc of stiff paper, ruled round its edge in hours and minutes. Round the rim, where the station keys had stamped it, ran little punched figures, each against its time. Pencilled under it: 'A. Crouch, Thurs. 12th.'
+
+1 at 10:05. 2 at 10:11. 11 at 10:17. 6 at 10:22. 14 at 10:31. 13 at 10:37. 16 at 10:44. 5 at 10:52. 3 at 10:58. 1 at 11:04. 1 at 11:41.
+
+Nothing after that.
+"""
+
+[items.dials_box]
+name = "box of dials"
+aliases = ["fresh dials", "box of fresh dials", "shelf", "dials box"]
+location = "time_office"
+scenery = true
+description = "A pasteboard box of blank paper dials, a gross to the box, from the makers in Clerkenwell."
+
+[items.detector_rules]
+name = "rules for the time detectors"
+aliases = ["rules", "card", "framed card", "detector rules", "rules card"]
+location = "time_office"
+scenery = true
+clue = "detector_rules"
+description = """
+A framed card:
+
+RULES FOR THE TIME DETECTORS. The detectors are to be opened only by the Superintendent, who shall keep the key in his own possession and part with it to no person. Each morning at seven the Superintendent shall open the detectors in the presence of the time-clerk, remove the dials, fit fresh dials, wind the clocks, and set them by the transept clock. The time-clerk shall enter the dials.
+"""
+
+# ================================================================ the ambulance room
+
+[items.pike_body]
+name = "body"
+aliases = ["pike", "daniel pike", "dead man", "corpse", "sheet", "head", "wound"]
+location = "ambulance_room"
+scenery = true
+clue = "wound"
+description = "I turned back the sheet. Daniel Pike was a small, wiry, grizzled man with a soldier's moustache. He had been killed by a single blow at the back of the head, a little to the left: a straight, narrow depression of the skull some four inches long, ending below in a deeper mark with square corners, no bigger than the end of my thumb, as if from the head of an iron bar. There was no other injury on him that I could find. His collar was stiff with blood, but his coat below it hardly marked. I looked next at his hands."
+
+[items.pike_hands]
+name = "hands"
+aliases = ["his hands", "palms", "pike's hands", "knuckles", "wrists"]
+location = "ambulance_room"
+scenery = true
+clue = "hands"
+description = "Hard, horny, clean old hands, the palms unmarked: not a graze, not a bruise, the wrists sound. A man who falls twenty-five feet on to tiles throws out his hands as surely as he breathes, and breaks a wrist or an arm or a collarbone, and grazes his palms to the bone. This man had fallen nowhere. He had been struck down from behind, and dropped where he stood."
+
+[items.ambulance_things]
+name = "stretcher"
+aliases = ["cupboard", "splints", "bandages", "trestles", "trestle tables", "tables"]
+location = "ambulance_room"
+scenery = true
+description = "The things of a fête-day ambulance: a stretcher, splints, lint, sal volatile, all very clean."
+
+[items.pike_lantern]
+name = "Pike's lantern"
+aliases = ["pike's lantern", "his lantern", "dead man's lantern", "lantern"]
+location = "ambulance_room"
+clue = "lantern_unlit"
+description = "Pike's bull's-eye, the fellow of mine. I opened it. The reservoir was full to the brim. The wick was new-trimmed, square and white, and had never been lit; there was not a speck of soot on the chimney or the glass. Wherever Daniel Pike had been when he died, he had not yet lit his lantern."
+cant_take = "Hopkins put out a hand. \"I'll keep that with his things, Doctor, if you don't mind.\""
+
+[items.pike_keys]
+name = "Pike's keys"
+aliases = ["keys", "bunch of keys", "his keys", "pike's keys", "bunch"]
+location = "ambulance_room"
+description = "A heavy bunch of keys on a steel ring: the keys of the gallery stairs, the screen door, the watch-house, and a little one that looked as if it belonged to a locker."
+take_text = "I took up Pike's keys. Hopkins nodded. \"Bring them back, that's all.\""
+
+[items.snuff_box]
+name = "snuff-box"
+aliases = ["snuff box", "snuffbox", "snuff", "box"]
+location = "ambulance_room"
+scenery = true
+description = "A round horn snuff-box with a silver lid, engraved 'D. Pike, R.A., from the Battery, 1879'."
+
+[items.pike_whistle]
+name = "whistle"
+aliases = ["rattle", "his whistle"]
+location = "ambulance_room"
+scenery = true
+description = "A police-pattern whistle on a chain. It had not been blown; there was dust in the mouth of it."
+
+[items.pike_dial]
+name = "Pike's dial"
+aliases = ["pike's dial", "dial", "paper dial", "disc", "his dial"]
+location = "nowhere"
+clue = "pike_dial"
+description = """
+A disc of stiff paper, like Crouch's, ruled in hours. Pencilled across the back, in Hopkins's hand: 'From D. Pike's detector, opened by Mr Lusk in my presence, Fri. 8 a.m. S.H.' Round the rim, the stations, each against its time:
+
+1 at 10:15. 4 at 10:20. 12 at 10:26. 9 at 10:32. 7 at 10:40.
+
+After that, nothing.
+"""
+
+# ================================================================ the meter house
+
+[items.meters]
+name = "meters"
+aliases = ["meter", "iron meters", "valves", "valve-wheels", "wheels", "valve wheels", "dials"]
+location = "meter_house"
+scenery = true
+description = "Great iron meters, and a row of valve-wheels as big as cart-wheels, each lettered with its part of the house: SOUTH NAVE; CENTRE; NORTH NAVE AND COURTS; TERRACE; GALLERIES. Over each a little dial showed its pressure."
+
+[items.gas_book]
+name = "gas book"
+aliases = ["book", "desk", "sloping desk", "gas-book"]
+location = "meter_house"
+scenery = true
+clue = "gas_book"
+description = """
+The gasman's book, in pencil. Thursday's entry:
+
+'12th. Fireworks. Terrace off 9:00, on 9:45. Night lights by transept clock 10:30: South Nave 10:30, Centre 10:31, North Nave and Courts 10:33, Galleries 10:34, all done 10:35. J.W.'
+
+Every night of the week was the same, to the minute, but for Thursday's terrace.
+"""
+
+# ================================================================ the colonnade and the station
+
+[items.colonnade_windows]
+name = "windows"
+aliases = ["arched windows", "glass", "passage"]
+location = "colonnade"
+scenery = true
+description = "Arched windows down both sides, black now, reflecting the gas jets back at me in two long lines."
+
+[items.colonnade_boards]
+name = "painted board"
+aliases = ["board", "boards", "smaller board", "notice", "time of the walk"]
+location = "colonnade"
+scenery = true
+clue = "colonnade_board"
+description = "TO THE LOW LEVEL STATION, in red and gold; and under it, smaller: 'Three minutes' walk. Trains to Victoria and London Bridge.'"
+
+[items.colonnade_benches]
+name = "benches"
+aliases = ["bench", "seats"]
+location = "colonnade"
+scenery = true
+container = true
+description = "Wooden benches between the windows, much carved with initials."
+details = [ { when = "loc:coin_colonnade:colonnade_benches", text = "Under one of them, against the wall, lay a sixpence." } ]
+
+[items.coin_colonnade]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "colonnade_benches"
+coin = true
+description = "A sixpence, worn thin."
+take_text = "I stooped and took the sixpence from under the bench."
+
+[items.barrier]
+name = "ticket barrier"
+aliases = ["barrier", "collector's box", "box", "gate"]
+location = "low_level"
+scenery = true
+description = "A long wooden barrier with a gate in it and the collector's box beside, through which every passenger must go to reach the platform."
+
+[items.station_clock]
+name = "station clock"
+aliases = ["clock"]
+location = "low_level"
+scenery = true
+description = "A big plain railway clock over the barrier. It agreed with my watch to the minute."
+
+[items.platform_bench]
+name = "bench"
+aliases = ["seat", "wall"]
+location = "low_level"
+scenery = true
+container = true
+description = "A long bench against the wall, for those who have missed their train."
+details = [ { when = "loc:coin_platform:platform_bench", text = "At one end of it lay a sixpence, where somebody had dropped it, feeling for his ticket." } ]
+
+[items.coin_platform]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "platform_bench"
+coin = true
+description = "A sixpence."
+take_text = "I took the sixpence from the bench."
+
+# ================================================================ the terrace and grounds
+
+[items.balustrade]
+name = "balustrade"
+aliases = ["statues", "statue", "gardens", "terraces", "view"]
+location = "upper_terrace"
+scenery = true
+description = "A stone balustrade crowded with statues of the nations and the arts, and below it the dark gardens, falling away in terraces towards the lakes."
+
+[items.frames]
+name = "set-piece frames"
+aliases = ["frames", "set pieces", "set-pieces", "wooden frames", "rocket troughs", "troughs", "cart"]
+location = "upper_terrace"
+scenery = true
+description = "The scorched lattice frames on which Thursday's set pieces had burned, still smelling of powder, and the iron troughs from which the rockets went up. Brock's men were taking them down and loading them on a cart."
+
+[items.engine]
+name = "fire-engine"
+aliases = ["engine", "steam fire-engine", "hose", "brass"]
+location = "fire_station"
+scenery = true
+description = "A Merryweather steam fire-engine, all polished brass and scarlet, with her fire laid ready to light. The hose hung on pegs to dry."
+
+[items.key_hooks]
+name = "board of hooks"
+aliases = ["hooks", "keys", "board", "key board", "hydrant keys"]
+location = "fire_station"
+scenery = true
+description = "A board of hooks, each labelled, with a key on every hook: the hydrant cases of the north nave, the south nave, the courts, the galleries, the terrace. Every hook had its key."
+
+[items.fire_log]
+name = "fire log"
+aliases = ["log", "book"]
+location = "fire_station"
+scenery = true
+clue = "fire_log"
+description = """
+The fire station's log, in a fair round hand. For Thursday:
+
+'9:30. All hydrant cases in the building examined, Rudd. Correct. 9:45 to 10:45, grounds watched for fires after the display, Rudd, Gill. One frame alight on No. 2 terrace, put out. Station kept by Bowles throughout. 11:55, watchman's rattle in north nave; Rudd attended.'
+
+And for Friday: '7:00. Hydrant cases examined, Rudd. Case in Pompeian Court found shut, glass whole, bar missing. Reported to Supt.'
+"""
+
+[items.monsters]
+name = "monsters"
+aliases = ["beasts", "dinosaurs", "iguanodon", "iguanodons", "megalosaurus", "megalosaurs", "islands"]
+location = "lake"
+scenery = true
+description = "Mr Waterhouse Hawkins's great beasts, made under Professor Owen's eye in 'fifty-four, standing about their islands with their mouths open. I believe the men of science have changed their minds about most of them since; but they looked very well by starlight."
+
+[items.lake_bench]
+name = "iron bench"
+aliases = ["bench", "bank", "path"]
+location = "lake"
+scenery = true
+container = true
+description = "An iron bench on the bank, wet with dew."
+details = [ { when = "loc:coin_lake:lake_bench", text = "In the gravel at its foot something glinted: a sixpence." } ]
+
+[items.coin_lake]
+name = "sixpence"
+aliases = ["coin", "silver", "silver sixpence", "sixpence"]
+location = "lake_bench"
+coin = true
+description = "A sixpence, gritty from the gravel."
+take_text = "I picked the sixpence out of the gravel."

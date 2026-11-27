@@ -245,7 +245,18 @@ Exploration premises:
     reading and DECODE/ATTRIBUTE worked; the snag was noise: a minor fault in one
     fist (an occasional short dash) looked like another fist's wobble, and the player
     chased every discrepancy. Removed. **Every visible quirk in a puzzle should mean
-    something; don't add texture that resembles a real tell.**
+    something; don't add texture that resembles a real tell.** Verdict on difficulty
+    (user, 2026-11-27): "wasn't actually that hard". Lots of times and facts turned out
+    superfluous; only a few mattered. Next case harder by **depth, not volume**: some
+    noise is fine, but the solution should need more pieces logically linked, with
+    chains where one inference unlocks the next (fact A + fact B gives C, which only
+    matters beside D), rather than single clues that each settle a point.
+    And `palace` (E3, The Crystal Palace by Night, 1895, 21 rooms, 10 people, 46 clues,
+    8 sixpences; `accuse` with six questions; built for depth per the note above; not
+    yet played). Its timed mechanic: the second watchman walks a round (counter
+    `round`, `move:` effects, `loc:crouch:ROOM` conditions), stands still while Watson
+    is in his room, and a gallery stair opens only while he is there; STATUS shows
+    where he is.
   - **Difficulty trajectory** (user, 2026-11-27): make each new case a little harder than
     the last, unless the user says the latest one was a little too hard. Don't ask about
     difficulty each time; just step it up.
@@ -275,6 +286,7 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: build the next case (the user asked to proceed, 2026-11-27).
-  The remaining deduction cases need new final-puzzle types in `holmes/puzzles/`
-  (record tables, telegram queue, cylinder).
+- Next step from here: the user plays The Crystal Palace by Night and gives feedback
+  (especially whether the linked deductions felt harder in the right way, and how the
+  watchman's round felt to work around). The remaining deduction cases need new
+  final-puzzle types in `holmes/puzzles/` (record tables, telegram queue, cylinder).

@@ -1,0 +1,322 @@
+# ================================================================ Holmes
+
+[characters.holmes]
+name = "Sherlock Holmes"
+aliases = ["holmes", "sherlock", "mr holmes", "sherlock holmes"]
+location = "centre_transept"
+description = "Holmes sat on the rim of the fountain basin with his hat tipped back and his long legs crossed, looking up at the transept clock as another man might look at a picture."
+presence = "Holmes sat on the rim of the fountain basin, watching the transept clock."
+unknown_topic = '''"I should not like to guess, Watson. Go and look."'''
+unknown_show = '''Holmes glanced at it. "Very good. And what does it tell you?"'''
+
+[[characters.holmes.greeting]]
+text = '''"There you are, Watson. I have asked the Company to put the gas down tonight as it was on Thursday, and to let Crouch walk his round as he walked it then, so that we may see the house as the murderer saw it. Ask me about the case, if you want it put shortly; or about the house, which I have walked from end to end; or about sixpences, if you find yourself in want of my advice."'''
+
+[[characters.holmes.topics.case]]
+aliases = ["the case", "murder", "pike", "daniel pike", "what happened", "theory"]
+text = '''"Daniel Pike, night-watchman, found dead at ten minutes to midnight in the Alhambra Court, under the gallery. The police surgeon says he fell. Hopkins is not sure he fell, and neither, I fancy, are you. Hopkins is in the ambulance room with the body. Crouch, the other watchman, is walking his round. The Company's officers are in their offices in the south transept, and the man who tunes the organ is up there behind the pipes, where he was on Thursday night. Begin where you like."'''
+
+[[characters.holmes.topics.house]]
+aliases = ["the house", "palace", "layout", "walk", "walked", "round", "rounds", "crouch"]
+text = '''"A third of a mile of glass, Watson, with the courts opening off the nave like side chapels. The courts are dark at night; you will want a lantern from the watch-house, through the door under the orchestra. The gallery stairs are kept locked, and Crouch has the keys: he unlocks the Alhambra gallery stair when his round brings him to it, so you must go with him or wait for him. STATUS will tell you where he is. I have walked the house tonight with my watch in my hand. From the north end to the south transept is six minutes at a smart pace; down the colonnade to the barrier at the Low Level station, three more."'''
+effects = ["clue:walk_time"]
+
+[[characters.holmes.topics.sixpences]]
+aliases = ["sixpence", "coins", "coin", "hint", "hints", "help", "advice"]
+text = '''"Thirty thousand people were in this building on Thursday, Watson, and a good many of them dropped their change. Bring me a sixpence and I will tell you what I think you should do next. HINT, when you want me."'''
+
+# ================================================================ Hopkins
+
+[characters.hopkins]
+name = "Inspector Hopkins"
+aliases = ["hopkins", "inspector", "stanley hopkins", "inspector hopkins", "police"]
+location = "ambulance_room"
+description = "Stanley Hopkins, young, keen and very much in earnest, in a tweed suit, with his notebook in his hand."
+presence = "Inspector Hopkins stood by the trestles with his notebook."
+unknown_topic = '''"I can't tell you that, Doctor," said Hopkins. "I wish I could."'''
+unknown_show = '''Hopkins looked at it and shook his head. "I don't see what that has to do with it, Doctor."'''
+
+[[characters.hopkins.greeting]]
+text = '''"Dr Watson! I'm very glad Mr Holmes would come. I'll be honest with you: I don't like it, and I can't say why. You'll want the surgeon's opinion, and mine for what it's worth, which is my theory; and you'll want to hear about Mr Lusk, the Superintendent, who has been very helpful. And here's the dial out of the poor fellow's clock; I've kept it."'''
+
+[[characters.hopkins.topics.surgeon]]
+aliases = ["police surgeon", "doctor", "fall", "fell", "time of death", "death"]
+text = '''"Dr Ord, of Norwood. He saw him at half past twelve on Friday morning, where he lay. He says Pike fell from the gallery above, twenty-five feet, and broke his skull on the lip of the fountain basin, and died about eleven o'clock, give or take. He didn't stay long; he'd been up all night with a confinement."'''
+effects = ["clue:surgeon"]
+
+[[characters.hopkins.topics.theory]]
+aliases = ["my theory", "theories", "your theory", "thief", "accident"]
+text = '''"Either it's an accident, as the surgeon says, or it's one of the firework crowd. Thirty thousand of them on Thursday, Doctor, and not all of them went home. Somebody had a go at the jeweller's shutter in the south nave that night; you can see the scratches. Say a sneak-thief hid in the courts at closing, and Pike came on him. That's what my superintendent will want, and I daresay he'll get it."'''
+effects = ["clue:hopkins_theory"]
+
+[[characters.hopkins.topics.lusk]]
+aliases = ["mr lusk", "superintendent", "the superintendent", "helpful"]
+text = '''"Mr Lusk, the Superintendent of the Building. He met me at eight on Friday morning and opened Pike's clock for me himself, for nobody else may; and he wound it and set it right while he was about it, very obliging, for it was all anyhow. He gave me a statement: he left the building on Thursday a little after half past ten and took the 10:42 from the Low Level station. I've asked the collector there, and he bears him out."'''
+effects = ["clue:lusk_set_detector"]
+
+[[characters.hopkins.topics.dial]]
+aliases = ["the dial", "his dial", "pike's dial", "clock", "detector", "poor fellow's clock"]
+text = '''Hopkins took a paper disc out of his pocket-book and gave it to me. "There. It shows him keying his stations up to twenty to eleven, and then nothing. Keep it, Doctor, for tonight; only let me have it back."'''
+effects = ["give:pike_dial"]
+when = "loc:pike_dial:nowhere"
+
+[[characters.hopkins.topics.dial]]
+aliases = ["the dial", "his dial", "pike's dial", "clock", "detector", "poor fellow's clock"]
+text = '''"You have it, Doctor. Mind you give it back."'''
+
+[characters.hopkins.shows.hydrant_bar]
+text = '''Hopkins took the bar and turned it over, and set the square head of it, very gently, against the sheet over Pike's head. He looked at me. "I'll have Dr Ord back," he said quietly. "Where was it, Doctor?"'''
+
+[characters.hopkins.shows.pike_notebook]
+text = '''Hopkins read the last page twice, and whistled softly. "Mr L. There's only one Mr L. in this building that a watchman calls Mister. But he was on the train, Doctor. I've had it from the collector."'''
+
+# ================================================================ Crouch
+
+[characters.crouch]
+name = "Abel Crouch"
+aliases = ["crouch", "abel crouch", "watchman", "other watchman", "abel"]
+location = "watch_house"
+description = "A big, slow, kindly old man in a frieze greatcoat with brass buttons, his lantern on his belt and the black leather case of his time detector slung across him on a strap."
+presence = "Abel Crouch, the watchman, was here, with his lantern and his clock."
+unknown_topic = '''"I couldn't rightly say, sir," said Crouch.'''
+unknown_show = '''Crouch held it up to his lantern and shook his head. "Don't know it, sir."'''
+
+[[characters.crouch.greeting]]
+text = '''"Evening, sir. Crouch, sir; Abel Crouch. I'm walking both rounds tonight, Dan's and my own, so you'll find me all over the house. You'll be wanting about last night, I suppose, and about Dan. Or the round, or the clocks, or the lanterns, or that gallery door, which everybody asks about. Ask away, sir; I'll stand while you ask."'''
+
+[[characters.crouch.topics.night]]
+aliases = ["last night", "thursday", "thursday night", "found him", "how you found him", "found", "body"]
+text = '''"I went my south round, sir, same as always, and come back to the watch-house at eleven for our tea, and Dan never come. I waited till half past, and then I thought, he's took bad. So I went north after him. I found him in the Alhambra Court, at ten minutes to midnight, lying by the fountain, with his lantern on his belt and his head broke. I sprung my rattle and the fireman come, Rudd, and then the police."'''
+effects = ["clue:crouch_night"]
+
+[[characters.crouch.topics.dan]]
+aliases = ["pike", "dan pike", "daniel", "daniel pike", "mr pike", "him"]
+text = '''"Eight years we've walked this house together, sir. Royal Artillery, he was; a proper soldier; did everything by the book and twice over. He'd been close and queer this last month or two. On Thursday he said to me, 'Abel, I've a bone to pick with the Super, and tomorrow I'll pick it.' He wouldn't say no more."'''
+effects = ["clue:bone_to_pick"]
+
+[[characters.crouch.topics.round]]
+aliases = ["the round", "rounds", "station one", "centre", "together", "start"]
+text = '''"Every night, sir, at five past ten, when the house is clear, Dan and me meet at the centre, Number One, under the clock, and key our clocks there together, one after the other, quick as you like. Then he gives me a pinch out of his box, and he goes north and I go south. Eight years, sir, and never missed. We did it Thursday, same as ever."'''
+effects = ["clue:together"]
+
+[[characters.crouch.topics.clocks]]
+aliases = ["the clocks", "clock", "detector", "detectors", "time detector", "dial", "dials", "key"]
+text = '''He patted the leather case on his hip. "The detector, sir. There's a key on a chain in a box at every station, and you put it in the clock and give it a turn, and it marks the number on the paper inside, against the time. That's how the Company knows we've been round. We can't open 'em, sir. Only the Super has the key to that. He takes the papers out of a morning."'''
+
+[[characters.crouch.topics.lanterns]]
+aliases = ["lantern", "lanterns", "light", "gas", "dark", "lighting"]
+text = '''"We light up when Wicks puts the gas down, sir, at half past ten, and not before; the Company counts the oil. And you'd need to. The boxes in the courts are set back in the dark, and you couldn't find one without a light, not if you'd walked the place forty year."'''
+effects = ["clue:crouch_dark"]
+
+[[characters.crouch.topics.gallery]]
+aliases = ["gallery door", "the gallery", "gallery", "door", "stair", "gallery stair"]
+text = '''"That's the thing I can't get over, sir. When I come into the Alhambra Court on Thursday night that door was locked, same as I'm told to leave it. And the rule is, you unlock it going up and you lock it behind you coming down, and never leave it so you can't get back down. If Dan went over that rail, sir, who locked the door after him? Not Dan."'''
+effects = ["clue:gallery_locked"]
+
+[characters.crouch.shows.pike_dial]
+text = '''Crouch held it up to his lantern. "That's Dan's, sir. I can't read his round off it better than you can. The numbers is on the register in the watch-house."'''
+
+[characters.crouch.shows.pike_notebook]
+text = '''Crouch read it slowly, his lips moving. "That's what he meant, then. The bone." He gave it back to me without another word.'''
+
+# ================================================================ Lusk
+
+[characters.lusk]
+name = "Mr Lusk"
+aliases = ["lusk", "mr lusk", "bertram lusk", "superintendent", "super", "the superintendent"]
+location = "superintendent_office"
+description = "Mr Bertram Lusk, Superintendent of the Building: a tall, florid, well-fed man of fifty, very carefully dressed, with a gardenia in his coat. Across his waistcoat hung a heavy gold watch-chain, and on it, besides the seals, two keys: a little brass one, barrel-shaped, and a steel one with a three-cornered bow."
+presence = "Mr Lusk, the Superintendent, sat at his desk."
+clue = "lusk_keys"
+unknown_topic = '''"I'm afraid I can't help you there, Doctor," said Lusk smoothly.'''
+unknown_show = '''Lusk glanced at it. "I don't know it, Doctor."'''
+
+[[characters.lusk.greeting]]
+text = '''Lusk rose and gave me a large soft hand. "Dr Watson. I am entirely at your service, and Mr Holmes's, though I have told the Inspector everything already: where I was on Thursday night, and what I know of poor Pike. I opened his clock for the Inspector myself. And no doubt someone has told you of Pike's notions about the gate figures. Ask me what you please."'''
+
+[[characters.lusk.topics.thursday]]
+aliases = ["thursday night", "where you were", "where i was", "thursday", "alibi", "train"]
+text = '''"I left this office at twenty-five past ten, or very near it, when the house was clear. I went down and had a word with Wicks at the meter house about the night lights, which were late on Tuesday, and then I walked down the colonnade and took the 10:42 to Victoria; the collector will tell you. I was home at Clapham by half past eleven, and my wife will tell you that."'''
+effects = ["clue:lusk_story"]
+
+[[characters.lusk.topics.pike]]
+aliases = ["poor pike", "daniel pike", "watchman", "what you know"]
+text = '''"A good watchman, Doctor, and an honest one, but an old soldier, and obstinate as a mule. A man with a grievance. These people get notions, you know; they sit up all night with nobody to talk to."'''
+
+[[characters.lusk.topics.figures]]
+aliases = ["gate figures", "figures", "notions", "turnstiles", "turnstile", "counters", "attendance", "gate book"]
+text = '''Lusk smiled. "Ah, that. The turnstile counters overrun, Doctor; every one of them counts a few twice when the crowd presses, and on a fireworks night a good many. I correct the totals each morning by the check-takers' returns. Pike read the bare counters and thought he had found a mare's nest. I explained it to him on Thursday. I believe he understood me."'''
+effects = ["clue:lusk_figures"]
+
+[[characters.lusk.topics.clock]]
+aliases = ["his clock", "pike's clock", "clock", "detector", "opened", "key"]
+text = '''"The detectors? I keep the key, as the rules require. I opened Pike's for the Inspector on Friday morning and gave him the dial. The clock had run down, I think, or near it, and I wound it and set it right. It is a habit; I do it every morning."'''
+
+[characters.lusk.shows.pike_dial]
+text = '''Lusk looked at it and handed it back with a faint smile. "There you are, Doctor. The poor fellow keyed the Pompeian at twenty to eleven. I was at the barrier then, as the collector will tell you."'''
+
+[characters.lusk.shows.pike_notebook]
+text = '''Lusk read it, and the colour came up in his face, and went down again. "Poor fellow," he said. "Mistaken to the last. I told him he was mistook. Will that be all, Doctor?"'''
+
+[characters.lusk.shows.hydrant_bar]
+text = '''Lusk's eyes went to it, and away. "A hydrant bar. That is the firemen's business, Doctor, not mine."'''
+
+# ================================================================ Pidgeon
+
+[characters.pidgeon]
+name = "Mr Pidgeon"
+aliases = ["pidgeon", "mr pidgeon", "clerk", "time-clerk", "time clerk"]
+location = "time_office"
+description = "Mr Pidgeon, the time-clerk: a little bald anxious man in sleeve-protectors, perched on his stool as if it were the only safe place in the world."
+presence = "Mr Pidgeon, the time-clerk, sat on his stool."
+unknown_topic = '''"I'm sure I couldn't say, sir," said Pidgeon.'''
+unknown_show = '''Pidgeon peered at it. "Nothing to do with this office, sir."'''
+
+[[characters.pidgeon.greeting]]
+text = '''"Oh! Dr Watson. Mr Holmes asked me to stay. I'm the time-clerk, sir. I can tell you about the dials, and how the clocks are opened of a morning. And I suppose I ought to tell you about Thursday morning, sir, which was not as usual."'''
+
+[[characters.pidgeon.topics.dials]]
+aliases = ["the dials", "dial", "dial book", "reading"]
+text = '''"Each figure round the edge is the number of a station key, sir, and the time it was turned. I pin them in the book each morning, and enter any station missed, and the watchman is fined a shilling for it. Pike's dial for Thursday the Inspector has. Crouch's is in the book."'''
+
+[[characters.pidgeon.topics.morning]]
+aliases = ["how the clocks are opened", "clocks", "opened", "opening", "routine", "every morning"]
+text = '''"At seven, sir, Mr Lusk comes in with his key, and opens the clocks, and takes the dials out, and I put the new ones in. Then he winds them and sets the hands, and I read him the transept clock through the door: I can see it from here, sir, by leaning. He has the key on his watch-chain, the little brass barrel one. Nobody else has one."'''
+
+[[characters.pidgeon.topics.thursday]]
+aliases = ["thursday morning", "thursday", "not as usual", "unusual"]
+text = '''Pidgeon looked unhappy. "On Thursday morning, sir, Mr Lusk sent me down to the stores for a fresh box of dials before we began, though there were a dozen in the old box. I was gone ten minutes. When I came back he had the clocks open and the dials in and the clocks set, and he said he'd managed. He never did that before, sir, in six years."'''
+effects = ["clue:pidgeon_thursday"]
+
+# ================================================================ Kell
+
+[characters.kell]
+name = "Mr Kell"
+aliases = ["kell", "mr kell", "ambrose kell", "tuner", "organ tuner"]
+location = "organ_loft"
+description = "Mr Ambrose Kell, the organ tuner: a lean, irritable, long-haired man in a velvet coat, with a tuning cone in one hand and a pencil behind his ear."
+presence = "Mr Kell, the organ tuner, was at the console with his candle-lamp."
+unknown_topic = '''"I tune organs, sir," said Kell. "I know nothing about anything else."'''
+unknown_show = '''Kell gave it a short-sighted glance. "Not my department."'''
+
+[[characters.kell.greeting]]
+text = '''Kell looked round without pleasure. "Another of you. Well? You'll want to know what I heard on Thursday night, I suppose. And no doubt they've told you about my pipe, and that watchman. And while you're about it, sir, you may tell the Company their clock is a disgrace: right to the second and flat as a pancake."'''
+
+[[characters.kell.topics.heard]]
+aliases = ["what i heard", "heard", "thursday night", "thursday", "cry", "noise"]
+text = '''"I was up here from a quarter past ten, tuning the swell reeds, which is work you do at night when the place is quiet or not at all. The half-hour struck on that clock, and I counted it, as I always do, to hear how flat it was. And just after, not a minute after, there was a cry, a short one, from somewhere north, in the courts, and a sort of heavy fall. I thought it was one of the watchmen had dropped something and swore. I did not go down. One doesn't."'''
+effects = ["clue:kell_heard"]
+
+[[characters.kell.topics.pipe]]
+aliases = ["my pipe", "pipe", "smoking", "watchman", "fine", "fined"]
+text = '''"That watchman, Pike, came up here a fortnight ago at midnight and found me with a pipe going, and reported me. A pipe! In an organ loft forty feet from anything that would burn. The Company fined me five shillings. I'll not pretend I was sorry to hear he was dead, sir, but I'd not have stirred from this stool to kill him."'''
+effects = ["clue:kell_fined"]
+
+[[characters.kell.topics.clock]]
+aliases = ["the clock", "transept clock", "flat", "chime", "right to the second"]
+text = '''"The time is right enough. They get the Greenwich signal down the telegraph at ten every morning and set it by that; the gasmen and the watchmen and the Company all go by it. It's the chime, sir. A quarter-tone flat, and it has been for a year."'''
+effects = ["clue:clock_true"]
+
+# ================================================================ Wicks
+
+[characters.wicks]
+name = "Wicks"
+aliases = ["wicks", "joe wicks", "gasman", "gas man"]
+location = "meter_house"
+description = "Joe Wicks, the gasman: short, thick and bow-legged, in a sweat-dark shirt, with a great spanner in his belt."
+presence = "Wicks, the gasman, was by his valve-wheels."
+unknown_topic = '''"Don't know nothing about that, sir," said Wicks.'''
+unknown_show = '''Wicks wiped his hands and looked at it. "No, sir."'''
+
+[[characters.wicks.greeting]]
+text = '''"Evening, sir. Night lights, is it? Half past ten by the transept clock, every night God sends, and Thursday same as tonight: it's all in the book there. And if you're asking who came by, sir, I'll tell you."'''
+
+[[characters.wicks.topics.lights]]
+aliases = ["night lights", "lights", "gas", "half past ten", "book"]
+text = '''"Half past ten by the transept clock. I come down at twenty-five past, sir, and start the south nave on the stroke, then the centre, then the north nave and the courts, then the galleries. Five minutes, the lot. After that, in the courts, a man can't see his hand without a lantern."'''
+
+[[characters.wicks.topics.came]]
+aliases = ["who came by", "came by", "who", "visitors", "anybody", "mr lusk", "lusk", "superintendent"]
+text = '''"Nobody, sir. I was down here alone from twenty-five past ten till twenty to eleven, and not a soul came down them stairs. The Super? No, sir. He never comes down here; he sends."'''
+effects = ["clue:wicks_alone"]
+
+# ================================================================ Sayer
+
+[characters.sayer]
+name = "Sayer"
+aliases = ["sayer", "collector", "ticket collector", "porter"]
+location = "low_level"
+description = "Sayer, the ticket collector: a brisk little man in the company's uniform, with a clipper on a string."
+presence = "Sayer, the ticket collector, stood at his barrier."
+unknown_topic = '''"Couldn't tell you, sir," said Sayer.'''
+unknown_show = '''Sayer shook his head. "Not railway property, sir."'''
+
+[[characters.sayer.greeting]]
+text = '''"Evening, sir. Mr Lusk? Yes, sir, I saw Mr Lusk Thursday, and I've told the Inspector. And the trains, sir, if you want the trains."'''
+
+[[characters.sayer.topics.lusk]]
+aliases = ["mr lusk", "saw mr lusk", "thursday", "superintendent"]
+text = '''"I was on this barrier from twenty past ten, sir, for the last of the fireworks people. Mr Lusk came through at twenty to eleven by that clock, not before: I'd have seen him. He was blowing like a grampus and his face all wet, as if he'd run the length of the colonnade, though his train wasn't due for two minutes. He showed me his pass and said, 'Is your clock right, Sayer?' and I said, 'To the minute, sir.' He said, 'Twenty to eleven,' like that, as if he was making a note of it, and he took the 10:42."'''
+effects = ["clue:sayer_saw"]
+
+[[characters.sayer.topics.trains]]
+aliases = ["the trains", "train", "times", "timetable"]
+text = '''"Victoria, sir, every twenty minutes on a fireworks night till midnight: 10:22, 10:42, 11:02, and so on. London Bridge on the half-hours. Our clock's set by the telegraph every morning, same as the Palace's."'''
+effects = ["clue:train_times"]
+
+# ================================================================ Hatch
+
+[characters.hatch]
+name = "Hatch"
+aliases = ["hatch", "tom hatch", "foreman", "brock's foreman", "brock's man"]
+location = "upper_terrace"
+description = "Tom Hatch, Brock's foreman: a burly, black-browed man with powder-burns on his hands and a voice hoarse from shouting over rockets."
+presence = "Hatch, Brock's foreman, was directing his men at the frames."
+unknown_topic = '''"Fireworks is my line, sir," said Hatch. "Ask me about fireworks."'''
+unknown_show = '''Hatch glanced at it. "No, sir."'''
+
+[[characters.hatch.greeting]]
+text = '''"Evening, sir. Thursday's show, is it? Or the fire-watch after? Or did somebody tell you me and the watchman had words? We did, and I'll not deny it."'''
+
+[[characters.hatch.topics.show]]
+aliases = ["thursday's show", "the show", "fireworks", "display", "show"]
+text = '''"First rocket at nine sharp, sir, by the transept clock through the glass. The set piece lit at 9:32, the Battle of Trafalgar, and the last bombardment finished at 9:41. Best show of the season, and the last."'''
+effects = ["clue:firing_times"]
+
+[[characters.hatch.topics.watch]]
+aliases = ["the fire-watch", "fire-watch", "fire watch", "after", "watching"]
+text = '''"From a quarter to ten till a quarter to eleven, sir, my men and me and the two firemen, Rudd and Gill, walked the grounds for sparks, as we do after every show. One frame caught on the second terrace and we put it out. Not one of us set foot inside the building, sir; we were all in each other's sight the whole hour."'''
+effects = ["clue:hatch_watch"]
+
+[[characters.hatch.topics.words]]
+aliases = ["had words", "quarrel", "watchman", "pike"]
+text = '''"Pike made me shift a frame off the terrace walk on Wednesday, sir, him and his regulations, and I told him what I thought of him and his regulations. That's all. You don't kill a man for that."'''
+effects = ["clue:hatch_quarrel"]
+
+# ================================================================ Rudd
+
+[characters.rudd]
+name = "Rudd"
+aliases = ["rudd", "fireman", "fireman rudd"]
+location = "fire_station"
+description = "Fireman Rudd of the Company's brigade: a lean, grey, quiet man in a blue tunic, polishing the brass of the engine."
+presence = "Fireman Rudd was polishing the engine."
+unknown_topic = '''"Can't say, sir," said Rudd.'''
+unknown_show = '''Rudd looked it over. "Nothing I know of, sir."'''
+
+[[characters.rudd.greeting]]
+text = '''"Evening, sir. You'll be wanting the hydrant cases, I expect, and the keys to 'em; the Inspector did. And Thursday night. It's all in the log, sir, but ask away."'''
+
+[[characters.rudd.topics.cases]]
+aliases = ["hydrant cases", "cases", "case", "hydrant", "hydrants", "bar"]
+text = '''"Every case in the house I look at twice a day, sir. Thursday at half past nine, before the display, every one was right, bar and hose. Friday at seven, the one in the Pompeian Court was shut and locked and the glass whole, and the bar gone out of it. Somebody opened it with a key, sir. You'd have to."'''
+effects = ["clue:rudd_cases"]
+
+[[characters.rudd.topics.keys]]
+aliases = ["the keys", "keys", "key", "hooks", "master key"]
+text = '''"There's two sets that'll open them cases, sir. Ours, there on the hooks, and Bowles kept this station all Thursday night and never took his eyes off 'em. And the Super's master key: steel, with a three-cornered bow. He wears it on his chain."'''
+effects = ["clue:hydrant_keys"]
+
+[[characters.rudd.topics.thursday]]
+aliases = ["thursday night", "thursday", "night", "rattle"]
+text = '''"Gill and me walked the grounds with Brock's men from a quarter to ten till a quarter to eleven, sir, then came in. At five to twelve I heard a rattle in the north nave and ran, and found Crouch with poor Pike. He'd been dead a good while, sir; I've seen enough of it to know."'''
