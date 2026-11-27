@@ -8,11 +8,13 @@ interface: Puzzle(game, spec).run().
 from __future__ import annotations
 
 from holmes.puzzles.accuse import AccusePuzzle
+from holmes.puzzles.seating import SeatingPuzzle
 from holmes.puzzles.timeline import TimelinePuzzle
 
 PUZZLES = {
     "accuse": AccusePuzzle,
     "timeline": TimelinePuzzle,
+    "seating": SeatingPuzzle,
 }
 
 

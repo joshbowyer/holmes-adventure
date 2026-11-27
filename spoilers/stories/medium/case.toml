@@ -1,0 +1,518 @@
+[case]
+id = "medium"
+title = "The Medium's Last Sitting"
+year = 1890
+order = 40
+start = "street"
+coin_name = "threepenny bit"
+coin_plural = "threepenny bits"
+hint_intro = "I laid a threepenny bit on the arm of Holmes's chair. He turned it over with one long finger, as if it might have a spirit message on the back, and spoke."
+hint_none = "\"You have it all, Watson,\" said Holmes. \"Set out the SEATING, and then ACCUSE.\""
+hint_broke = "I had not a threepenny bit about me. \"Then go and find one,\" said Holmes. \"The sitters in this house drop them like autumn leaves.\""
+intro = """
+It was on a raw morning in the December of 1890, not long after my marriage, when I saw less of my friend Sherlock Holmes than I could have wished, that a telegram was brought to me at breakfast:
+
+| COME AT ONCE TO LAUREL LODGE CLIFTON HILL ST JOHNS WOOD.
+| A MEDIUM HAS BEEN MURDERED BY THE SPIRITS IN A ROOM FULL OF
+| WITNESSES ALL HOLDING HANDS. BRING YOUR STETHOSCOPE AND
+| YOUR SCEPTICISM. HOLMES.
+
+My wife, who had read it over my shoulder, laughed and sent me off; and within the hour my cab set me down in Clifton Hill.
+
+I knew the name of Madame Peake, as all London did that winter: the medium of the season, at whose dark circles a spirit child called Little Wren played musical boxes and floated trumpets and laid her little cold hands upon the faces of baronets. Last night, it seemed, in the middle of such a sitting, with the door sealed and every sitter's hands joined, somebody had driven a blade into her heart.
+"""
+intro_note = "[In this case you must work out who sat where. SEATING shows the table; SEAT <name> AT <number> places a sitter. Threepenny bits found while exploring buy hints from Holmes with HINT.]"
+
+# ================================================================ clues
+
+[clues.found]
+text = "Madame Peake, the medium, was stabbed to death last night in the middle of a dark sitting at Laurel Lodge, with the door sealed and the sitters' hands all joined."
+
+[clues.wound]
+text = "The wound: a small round puncture under the left breast. It runs from her right towards her left and a little backward: struck from her right side, by someone close."
+
+[clues.surgeon]
+text = "Bradstreet: a thin, round, sharp blade, seven or eight inches, straight into the heart; death within a minute, with one cry. Every sitter was searched to the skin, and the room too. No weapon was found."
+
+[clues.hands]
+text = "Her hands: a wedding ring on the left. The tips of the first finger and thumb of the RIGHT hand glow faintly green in the dark, like the luminous paint; the left shows nothing."
+
+[clues.reaching_rod]
+text = "Hidden in a pocket in her skirt: a telescopic tube that draws out to nearly five feet, with a child's kid glove, stuffed and cold, on its tip. Its grip is smeared with luminous paint."
+
+[clues.trumpet]
+text = "The spirit trumpet is painted with luminous bands. Its narrow end, where it would be held, is smudged with the marks of fingers."
+
+[clues.table_size]
+text = "The séance table is a good five feet across. No sitter could reach the far side of it with his hand."
+
+[clues.hatpin]
+text = "A nine-inch steel hatpin with a jet scarab head, stained with blood for six inches, thrust up into the underside of the table under the baize, at the place on Madame's right."
+
+[clues.hat_pin_missing]
+text = "Miss Brayfield came with a pair of jet beetle hatpins in her hat, and left her hat on the hall-stand during the sitting. When she left, one pin was gone."
+
+[clues.hatpin_owner]
+text = "Miss Brayfield knows the bloody hatpin at once: it is the missing one of her pair, taken from her hat in the hall."
+
+[clues.seals]
+text = "Dr Rook sealed the door with signed paper slips at 9:00 and tore them himself at 10:10. Nobody came in or went out."
+
+[clues.shutters]
+text = "The shutters of the séance room were screwed shut from inside with new brass screws."
+
+[clues.window_bed]
+text = "The soft flower-bed under the séance room window, outside, is unmarked."
+
+[clues.effie_door]
+text = "Effie, the maid, sat on the hall chair outside the séance room door from 9:00 until she brought the lamp at 10:10. Nobody passed her."
+
+[clues.gale_hall]
+text = "Effie: after the sitters went in, Mr Gale came out alone for a minute, to fetch the key of the musical box from the hall, where the ladies' hats hung on the stand."
+
+[clues.quarrel]
+text = "Effie heard Madame and Gale quarrel in the office yesterday afternoon: \"You'll answer for every penny of it to a magistrate, Ferdinand, the day after I'm married.\""
+
+[clues.gale_upstairs]
+text = "Effie: when the lamp came, Gale ran straight upstairs, \"for brandy for Sir Walter\", and was gone five minutes."
+
+[clues.gale_fire]
+text = "Mrs Pruett: Gale rang for coals for a fire in his room after half past ten last night. He never has a fire."
+
+[clues.cuff]
+text = "In the grate of Gale's room: a detachable evening shirt-cuff, scorched but not burnt through, spotted with blood on the edge that lies against the wrist."
+
+[clues.conjuror]
+text = "A playbill in Gale's room: he was assistant to Signor Volante, a music-hall conjuror whose act exposed the tricks of the spirit cabinet. \"Ladies and Gentlemen shall HOLD HIS HANDS, and yet the Spirits shall walk!\""
+
+[clues.sittings_book]
+text = "The sittings ledger: last night's circle was Sir W. Brayfield, Miss Brayfield, Dr Rook, Col. Fane, Mrs Quill, Mr Danby and F. Gale (at Madame's right), with Madame: eight. Receipts for November: over 140 guineas."
+
+[clues.passbook]
+text = "Madame's pass-book: only 68 guineas paid into the bank in November, by Gale. Someone has pencilled 140 in the margin and underlined it."
+
+[clues.solicitor_letter]
+text = "Madame's unfinished letter to her solicitor: Gale has been \"keeping back the half of everything these two years\"; she has told him so; once married she means \"to have the law of him\"."
+
+[clues.engagement]
+text = "Sir Walter: he was to marry Madame in January. She would give up public sittings, and meant to prosecute Gale for dishonesty."
+
+[clues.libel]
+text = "Madame was suing Dr Rook for libel (he had called her a cheat in print). The case was to be heard in January."
+
+[clues.rook_tricks]
+text = "Dr Rook: a medium frees a hand by substitution (both neighbours touching one hand of hers) or by a confederate neighbour who holds nothing. He kept her ring under his thumb against the first; Gale has always had her right hand."
+
+[clues.rook_story]
+text = "Dr Rook (on Madame's left; Miss Brayfield on his left): held her LEFT hand in his right all evening, her ring under his thumb. It never left him, and after she cried out it grew still and cold."
+
+[clues.rook_realises]
+text = "Shown the telescopic rod, Dr Rook: \"Then her right hand was free the whole evening, for her left never left mine. And Gale swore he held her right. Then he held nothing at all.\""
+
+[clues.gale_story]
+text = "Gale (on Madame's right): says his left hand held her RIGHT hand, and his right hand held Mrs Quill's left, all evening; she cried out at the end and gripped his hand."
+
+[clues.quill_story]
+text = "Mrs Quill (by the musical box, between Mr Danby and Mr Gale): held Gale's right hand, with its signet ring, all evening, and Danby's left. At the end Gale said, \"She's gone very deep, don't break the circle.\""
+
+[clues.danby_story]
+text = "Mr Danby (back to the fire, between Sir Walter and Mrs Quill): both his hands held all evening. A little cold hand touched the back of his hand on the table."
+
+[clues.walter_story]
+text = "Sir Walter (opposite Madame; Colonel Fane on his right, Danby on his left): both hands held. A little cold hand touched his cheek, twice."
+
+[clues.fane_story]
+text = "Colonel Fane (back to the window; Miss Brayfield on his right, Sir Walter on his left): both hands held. Something tapped the crown of his head, twice, cold."
+
+[clues.cecily_story]
+text = "Miss Brayfield (between Dr Rook and the Colonel, door at her back): held Rook's left hand, with his seal ring, and the Colonel's right, all evening. Nothing touched her."
+
+# ================================================================ hints
+
+[[hints]]
+id = "body"
+done = ["clue:wound", "clue:hands"]
+texts = [
+  "\"You are the medical man, Watson, and the body is behind the curtain.\"",
+  "\"Go NORTH into the séance room and NORTH again through the curtain. EXAMINE THE BODY, then THE WOUND and HER HANDS.\"",
+]
+
+[[hints]]
+id = "skirt"
+when = "clue:hands"
+done = "clue:reaching_rod"
+texts = [
+  "\"Mediums keep their properties about them. Have you searched her as thoroughly as the police searched the sitters?\"",
+  "\"In the cabinet, EXAMINE HER SKIRT, then TAKE THE TUBE and EXAMINE it.\"",
+]
+
+[[hints]]
+id = "inspector"
+done = "clue:surgeon"
+texts = [
+  "\"Bradstreet has been here all night. Let him tell you what the surgeon said.\"",
+  "\"In the séance room, TALK TO BRADSTREET and ASK HIM ABOUT THE SURGEON.\"",
+]
+
+[[hints]]
+id = "table"
+when = "visited:seance_room"
+done = ["clue:table_size", "clue:trumpet", "clue:seals", "clue:shutters"]
+texts = [
+  "\"Look at the room as the sitters left it: the table, what lay on it, and how the room was shut up.\"",
+  "\"In the séance room, EXAMINE THE TABLE, THE TRUMPET, THE SEALS and THE SHUTTERS.\"",
+]
+
+[[hints]]
+id = "weapon"
+when = "clue:surgeon"
+done = "clue:hatpin"
+texts = [
+  "\"Every sitter was searched and nothing was found. Then the blade never left the room. Where could a man put it, sitting at that table, in the dark, with one hand?\"",
+  "\"In the séance room, EXAMINE THE FRINGE of the baize cloth on the table, then TAKE THE HATPIN.\"",
+]
+
+[[hints]]
+id = "hatpin_owner"
+when = "clue:hatpin"
+done = ["clue:hatpin_owner", "clue:hat_pin_missing"]
+texts = [
+  "\"A lady's hatpin. Which lady is short of one?\"",
+  "\"In the front drawing-room, TALK TO MISS BRAYFIELD, ASK HER ABOUT THE HATPIN and SHOW her THE HATPIN.\"",
+]
+
+[[hints]]
+id = "effie"
+done = ["clue:effie_door", "clue:gale_hall", "clue:quarrel", "clue:gale_upstairs"]
+texts = [
+  "\"The maid sat at the door all evening, and has the run of the house. She has more to tell than she knows.\"",
+  "\"In the hall, TALK TO EFFIE and ASK HER ABOUT THE DOOR, THE HATS, THE QUARREL and THE LAMP.\"",
+]
+
+[[hints]]
+id = "sitters"
+done = ["clue:rook_story", "clue:gale_story", "clue:quill_story", "clue:danby_story", "clue:walter_story", "clue:fane_story", "clue:cecily_story"]
+texts = [
+  "\"Seven sitters, Watson, and every one of them can tell you where he sat and whose hands he held. Ask them all.\"",
+  "\"TALK TO each sitter and ASK them ABOUT LAST NIGHT: Dr Rook in the morning-room, Mr Gale in the office, Sir Walter and Miss Brayfield in the drawing-room, the Colonel and Mrs Quill in the dining-room, Mr Danby in the garden.\"",
+]
+
+[[hints]]
+id = "ledger"
+done = "clue:sittings_book"
+texts = [
+  "\"A professional medium keeps books like any other tradesman.\"",
+  "\"In the office, EXAMINE THE SITTINGS LEDGER.\"",
+]
+
+[[hints]]
+id = "rook_tricks"
+when = "clue:rook_story"
+done = ["clue:rook_tricks", "clue:libel"]
+texts = [
+  "\"Dr Rook has made a study of how mediums cheat, and he has his own reasons to be uneasy.\"",
+  "\"ASK ROOK ABOUT THE TRICKS OF THE TRADE, and ABOUT THE LIBEL action.\"",
+]
+
+[[hints]]
+id = "rod"
+when = "clue:reaching_rod"
+done = "clue:rook_realises"
+texts = [
+  "\"The touches reached across a table five feet wide. Someone's hand held that tube. Whose hand was free to hold it, and who swore he was holding that very hand?\"",
+  "\"SHOW THE TUBE TO ROOK, and hear what he makes of it.\"",
+]
+
+[[hints]]
+id = "gale_room"
+when = "clue:gale_upstairs"
+done = ["clue:cuff", "clue:conjuror", "clue:gale_fire"]
+texts = [
+  "\"Why should a man who never has a fire want one at eleven o'clock at night, and why should he go upstairs in such a hurry when the lamp came?\"",
+  "\"Go UP to Mr Gale's room, EXAMINE THE GRATE, TAKE THE CUFF and EXAMINE it, and EXAMINE THE PLAYBILL. Then go DOWN to the kitchen and ASK MRS PRUETT ABOUT THE COALS.\"",
+]
+
+[[hints]]
+id = "motive"
+when = "clue:quarrel"
+done = ["clue:solicitor_letter", "clue:passbook", "clue:engagement"]
+texts = [
+  "\"A quarrel about every penny, and a wedding to come. A woman about to marry a baronet writes letters, Watson. Look in her desk.\"",
+  "\"In Madame's bedroom upstairs, OPEN THE DESK and EXAMINE THE LETTER and THE PASS-BOOK. And ASK SIR WALTER ABOUT THE WEDDING.\"",
+]
+
+[[hints]]
+id = "seating"
+when = ["clue:rook_story", "clue:gale_story", "clue:quill_story", "clue:danby_story", "clue:walter_story", "clue:fane_story", "clue:cecily_story"]
+texts = [
+  "\"You know where every one of them sat. Put them on the SEATING plan, and look at who sits beside whom.\"",
+  "\"Dr Rook on her left at 2, Miss Brayfield by the door, the Colonel by the window, Sir Walter facing her, Danby by the fire, Mrs Quill by the musical box, and Gale on her right at 8.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "seating"
+intro = "I went back to the library and laid my notebook on the arm of Holmes's chair. \"Well, Watson,\" said he, opening his eyes. \"The table first. Who sat where?\""
+good = "solved"
+default_wrong = "escape"
+
+[final.seating]
+intro = "\"Every sitter in his place,\" said Holmes, \"and then we shall see whose hands were where.\""
+note = "Places are numbered round the table to each sitter's left; place 1 is Madame's armchair."
+wrong_ending = "tangle"
+incomplete_ending = "empty_chairs"
+places = [
+  { id = "1", label = "Madame's armchair, back to the cabinet curtain" },
+  { id = "2", label = "on Madame's left" },
+  { id = "3", label = "by the door" },
+  { id = "4", label = "by the shuttered window" },
+  { id = "5", label = "facing Madame across the table" },
+  { id = "6", label = "back to the fireplace" },
+  { id = "7", label = "by the musical box" },
+  { id = "8", label = "on Madame's right" },
+]
+
+[final.seating.people]
+peake = { name = "Madame Peake", aliases = ["madame", "peake", "medium"], fixed = "1" }
+rook = { name = "Dr Rook", aliases = ["rook", "doctor"], when = "met:rook|clue:sittings_book" }
+cecily = { name = "Miss Brayfield", aliases = ["cecily", "brayfield", "miss"], when = "met:cecily|clue:sittings_book" }
+fane = { name = "Colonel Fane", aliases = ["fane", "colonel"], when = "met:fane|clue:sittings_book" }
+walter = { name = "Sir Walter", aliases = ["walter", "sir walter brayfield", "sir"], when = "met:walter|clue:sittings_book" }
+danby = { name = "Mr Danby", aliases = ["danby", "thomas"], when = "met:danby|clue:sittings_book" }
+quill = { name = "Mrs Quill", aliases = ["quill"], when = "met:quill|clue:sittings_book" }
+gale = { name = "Mr Gale", aliases = ["gale", "ferdinand"], when = "met:gale|clue:sittings_book" }
+
+[final.seating.answer]
+"1" = "peake"
+"2" = "rook"
+"3" = "cecily"
+"4" = "fane"
+"5" = "walter"
+"6" = "danby"
+"7" = "quill"
+"8" = "gale"
+
+[[final.questions]]
+id = "who"
+prompt = "Who killed Madame Peake?"
+options = [
+  { id = "nobody", label = "No one in the circle: the circle never broke" },
+  { id = "rook", label = "Dr Anselm Rook", when = "met:rook" },
+  { id = "gale", label = "Mr Ferdinand Gale", when = "met:gale|clue:sittings_book" },
+  { id = "walter", label = "Sir Walter Brayfield", when = "met:walter" },
+  { id = "cecily", label = "Miss Cecily Brayfield", when = "met:cecily|clue:hatpin_owner" },
+  { id = "fane", label = "Colonel Fane", when = "met:fane" },
+  { id = "quill", label = "Mrs Quill", when = "met:quill" },
+  { id = "danby", label = "Mr Danby", when = "met:danby" },
+  { id = "effie", label = "Effie, the maid", when = "met:effie" },
+]
+
+[[final.questions]]
+id = "hand"
+prompt = "How was the murderer's hand free in an unbroken circle?"
+options = [
+  { id = "unbroken", label = "It was not: no hand in the circle was free" },
+  { id = "substitution", label = "He freed it by the substitution trick, letting his two neighbours touch one hand of his" },
+  { id = "confederate", label = "Madame's own right hand was free for her tricks, so the man who swore he held it held nothing", when = "clue:reaching_rod|clue:hands" },
+  { id = "outside", label = "The circle let go in the dark, and someone came from outside it" },
+]
+
+[[final.questions]]
+id = "weapon"
+prompt = "What was the weapon, and where did it go?"
+options = [
+  { id = "carried", label = "A thin blade, carried away on the murderer's person" },
+  { id = "hatpin", label = "Miss Brayfield's hatpin, pushed up into the underside of the table", when = "clue:hatpin" },
+  { id = "rod", label = "The point of Madame's own telescopic rod, hidden in her skirt", when = "clue:reaching_rod" },
+  { id = "trumpet", label = "A blade hidden inside the trumpet", when = "clue:trumpet" },
+]
+
+[[final.questions]]
+id = "why"
+prompt = "Why was she killed?"
+options = [
+  { id = "fraud", label = "In rage at being cheated by a false medium" },
+  { id = "theft", label = "Because she meant to prosecute him for robbing her", when = "clue:quarrel|clue:solicitor_letter" },
+  { id = "marriage", label = "To stop her marrying Sir Walter", when = "clue:engagement|met:cecily" },
+  { id = "libel", label = "To stop her action for libel", when = "clue:libel" },
+]
+
+[final.solution]
+who = "gale"
+hand = "confederate"
+weapon = "hatpin"
+why = "theft"
+
+[[final.wrong]]
+answers = { who = "nobody" }
+ending = "nobody"
+
+[[final.wrong]]
+answers = { who = "rook" }
+ending = "rook"
+
+[[final.wrong]]
+answers = { who = "walter" }
+ending = "walter"
+
+[[final.wrong]]
+answers = { who = "cecily" }
+ending = "cecily"
+
+[[final.wrong]]
+answers = { who = "fane" }
+ending = "others"
+
+[[final.wrong]]
+answers = { who = "quill" }
+ending = "others"
+
+[[final.wrong]]
+answers = { who = "danby" }
+ending = "others"
+
+[[final.wrong]]
+answers = { who = "effie" }
+ending = "effie"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "The Hand That Held Nothing"
+text = """
+Holmes heard me out with his eyes shut, and when I had done he opened them and laughed softly.
+
+"Capital, Watson. Seven honest people and one rogue, and every one of the seven told you the exact truth, and the rogue told you the truth too, all but one word of it. 'I held her right hand.' He never had, not once in three years: that was the whole of their business together. Her right hand was free to wave her trumpet and her little glove on its stick, and so his left was free to do what it liked, and nobody in the world could say so but her. Last night she could not say so, because last night his left hand had a hatpin in it."
+
+We went across the hall together. Gale was at his desk. He heard Holmes to the end with that clever, expressionless face of his, and when Holmes laid the tube on the blotter, and the hatpin beside it, and the scorched cuff beside that, he looked at them for some time.
+
+"She would have put me in the dock," he said at last, quite simply. "After all I made of her. I taught her every trick she had." Then Bradstreet put his hand on his shoulder.
+
+Dr Rook's report on the Laurel Lodge sitting, when at last he finished it, ran to forty pages and was very much admired; but I noticed that he gave Holmes no credit in it, and that the word 'confederate' appeared on every page.
+
+"Spiritualism will survive it, Watson," said Holmes, as we walked down Clifton Hill. "It has survived worse exposures than this. Men will believe that the dead hold their hands in the dark, so long as the dark lasts. It is the living hands you must watch."
+"""
+
+[endings.tangle]
+title = "Hands Across the Table"
+text = """
+Holmes ran his eye round my plan of the table, and shook his head.
+
+"My dear Watson, you have put people in places they have told you plainly they did not sit in. Look: on your showing, a man holds the hand of someone who was the whole width of the table from him. Every word of evidence in this case is about whose hand was next to whose. Until the table is right, the hands are wrong, and until the hands are right, everything is wrong."
+
+I had already given my opinion to Bradstreet, unluckily, and Bradstreet, who liked it, acted on it before lunch. It took a magistrate and a good deal of unpleasantness to undo.
+
+"Go back, Watson," said Holmes. "Ask each of them where he sat, and on which side of him his neighbours were. Then try again."
+"""
+
+[endings.empty_chairs]
+title = "Empty Chairs"
+text = """
+Holmes looked at my plan of the table for some time.
+
+"It is very fair as far as it goes, Watson," said he. "But there are chairs on it with nobody in them, and eight people sat at that table last night. The answer to this case is a matter of who sat next to whom. You cannot leave a gap in the circle and hope the murderer was not sitting in it."
+
+I said that I was sure of my man. Holmes only shrugged, and Bradstreet, who was sure of a different one, went to make his arrest. By the time the matter was put right, the man who had done it had had a week to think, and he used it.
+
+"Go back, Watson," said Holmes. "Every sitter, every place. Then the man."
+"""
+
+[endings.nobody]
+title = "The Spirits Are Acquitted"
+text = """
+"No one in the circle?" Holmes raised his eyebrows. "Then you believe in Little Wren after all, Watson, and she carries a blade. The coroner's jury will be delighted; I gather two of them are spiritualists."
+
+So they were, and they brought it in wilful murder by persons unknown, with a rider about the dangers of dark circles that was printed in every newspaper in London. The murderer read it, I have no doubt, with great satisfaction.
+"""
+
+[endings.rook]
+title = "The Investigator"
+text = """
+"Rook?" said Holmes. "He had her left hand, Watson, with her ring under his thumb the whole evening, and Miss Brayfield had his other. And the blade went in from her right side. Rook disliked her, and she was suing him, and he will tell anyone who asks that he is glad she cannot now. That is the conduct of a man with nothing to hide. Murderers are commonly more agreeable."
+
+But Bradstreet had heard me, and the newspapers had Rook's name by the evening: THE SCEPTIC AND THE SPIRIT. He was never charged, but his libel was proved against him after all, in the court of public opinion. The real murderer, meanwhile, went quietly about his business.
+"""
+
+[endings.walter]
+title = "The Bridegroom"
+text = """
+"Sir Walter?" Holmes looked at me with something like pity. "He sat the whole width of a five-foot table from her, Watson, with an old soldier holding one of his hands and a shipping clerk the other, and a dead child's glove stroking his cheek. He was the one man in that room who wanted her alive more than anything in the world."
+
+I have seldom regretted anything so much. The old man heard of it before I could unsay it, and it finished what the night had begun; he went down to his place in Hampshire and did not come up again. The man who had killed her stayed in London.
+"""
+
+[endings.cecily]
+title = "The Daughter's Hatpin"
+text = """
+"Miss Brayfield?" said Holmes. "Because it was her hatpin? My dear Watson, she left it on the hall-stand in her hat, as anyone might, and she sat two places away from Madame with Dr Rook holding one of her hands and the Colonel the other. Somebody took that pin precisely in order that you should say what you have just said."
+
+Bradstreet arrested her that afternoon, all the same, on the strength of it, and her father had to find bail. The murderer, I think, slept better that night than he had for a week.
+"""
+
+[endings.others]
+title = "Across the Table"
+text = """
+Holmes shook his head before I had finished.
+
+"Look at your own plan of the table, Watson. That sitter was nowhere near her, with a hand held on each side all evening, and a table five feet across in the way. Whoever killed Madame Peake sat close beside her, on her right, and had a hand free. You have chosen one of the few people in the room who could not possibly have done it."
+
+It was some time before I could look that unfortunate person in the face again; and in the meanwhile the guilty one had time to tidy his room.
+"""
+
+[endings.effie]
+title = "The Maid at the Door"
+text = """
+"The maid?" said Holmes. "She sat outside a sealed door, Watson, and the seals were whole when Rook tore them. To have done it she would have had to pass through two inches of oak and the paper of a man who has exposed thirty-one mediums. She is the one person in this business who never set foot in that room until the lamp was lit."
+
+The poor girl was given notice by the solicitors before the week was out, on the strength of my suspicion, and I paid her wages myself until she found a place. It was the least I could do; it was not enough.
+"""
+
+[endings.escape]
+title = "The Right Man, the Wrong Case"
+text = """
+Holmes heard me out, and then shook his head slowly.
+
+"You have the right man, Watson, and you would lose him at the trial. Half your account is wrong, and the half that is wrong is just the half his counsel will choose to talk about. A jury that has seen one leg of a case knocked away will not wait to see whether it stands on the other three."
+
+He was right. Our man listened to Bradstreet with a polite smile, and sent for a solicitor who listened with a less polite one; and by the time he came up before the magistrates there was an answer for everything I had got wrong. He walked out of the court a free man, and opened a séance room of his own in Bayswater the following spring.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "talk to constable", "ask constable about the gate", "examine brass plate", "examine grating", "take threepenny bit",
+  "w", "examine flower-bed", "examine shuttered window", "examine bird-bath", "take threepenny bit",
+  "talk to young man", "ask danby about last night", "ask danby about his brother",
+  "in", "talk to rook", "ask rook about last night", "ask rook about the seals",
+  "ask rook about the tricks", "ask rook about the libel", "examine foolscap",
+  "s", "examine sideboard", "take threepenny bit", "talk to colonel", "ask colonel about last night",
+  "talk to mrs quill", "ask mrs quill about last night", "ask mrs quill about the little one",
+  "e", "talk to maid", "ask effie about the door", "ask effie about the chairs", "ask effie about the hats",
+  "ask effie about the quarrel", "ask effie about the lamp", "examine umbrella stand", "take threepenny bit",
+  "examine hall-stand", "examine hall chair",
+  "e", "talk to sir walter", "ask sir walter about last night", "ask sir walter about january",
+  "talk to miss brayfield", "ask miss brayfield about last night", "ask miss brayfield about the hatpins",
+  "examine sofa", "take threepenny bit", "examine spirit photograph",
+  "w", "n", "talk to bradstreet", "ask bradstreet about the police surgeon", "ask bradstreet about the weapon",
+  "ask bradstreet about rook", "examine table", "examine trumpet", "examine seals", "examine shutters",
+  "examine armchair", "examine musical box", "examine fringe", "take hatpin", "examine hatpin",
+  "n", "examine body", "examine wound", "examine hands", "examine skirt", "take tube", "examine tube",
+  "s", "s", "ne", "talk to gale", "ask gale about last night", "ask gale about the quarrel",
+  "ask gale about the stage", "examine ledger", "show tube to gale", "show hatpin to gale",
+  "sw", "nw", "talk to holmes", "ask holmes about the circle", "ask holmes about the seating",
+  "examine armchairs", "take threepenny bit",
+  "se", "w", "n", "show tube to rook", "s", "e", "e", "show hatpin to miss brayfield",
+  "w", "down", "talk to mrs pruett", "ask mrs pruett about the coals", "examine dresser", "take threepenny bit",
+  "up", "up", "examine fern", "take threepenny bit",
+  "w", "examine grate", "take cuff", "examine cuff", "examine playbill", "examine washstand",
+  "e", "n", "open desk", "take letter", "examine letter", "take pass-book", "examine pass-book",
+  "s", "down",
+  "seating", "seat rook at 2", "seat cecily at 3", "seat colonel at 4", "seat sir walter at 5",
+  "seat danby at 6", "seat quill at 7", "seat gale at 8", "notebook",
+  "accuse", "", "gale", "held nothing", "hatpin", "prosecute", "y",
+]
+wrong_path = [
+  "in", "accuse", "", "1", "1", "1", "1", "y", "",
+]

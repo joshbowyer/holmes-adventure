@@ -12,6 +12,7 @@ from holmes.engine.hints import give_hint
 from holmes.engine.parser import DIRECTIONS, Command, build_verb_map, parse
 from holmes.engine.state import GameState
 from holmes.engine.story import Story, as_list
+from holmes.puzzles.seating import has_seating, seat, show_plan, unseat
 from holmes.puzzles.timeline import arrange, has_timeline, show_board
 
 HELP = """\
@@ -31,7 +32,8 @@ HELP = """\
 # Verbs that take no time in the world: the tide does not turn while you read your notes.
 # (WAIT runs its own turns.)
 UNTIMED = {"notebook", "hint", "help", "save", "quit", "inventory", "exits", "accuse",
-           "status", "look", "wait", "timeline", "arrange"}
+           "status", "look", "wait", "timeline", "arrange",
+           "seating", "seat", "unseat"}
 
 # Typed alone (spaces and case ignored), grants one hint coin. Not listed in HELP.
 CHEAT_WORD = "persianslipper"
@@ -661,6 +663,9 @@ class Game:
         if has_timeline(self):
             text += ("\n| Timeline:       TIMELINE shows the events you can fix to a time;"
                      "\n|                 ARRANGE <letters> puts them in order")
+        if has_seating(self):
+            text += ("\n| Seating:        SEATING shows who sat where; SEAT <name> AT <number>"
+                     "\n|                 places a sitter, UNSEAT <name> takes them out")
         self.say(text, "system")
 
     def do_timeline(self, cmd: Command) -> None:
@@ -675,6 +680,28 @@ class Game:
             return
         text = cmd.raw.split(None, 1)[1] if len(cmd.raw.split(None, 1)) > 1 else ""
         arrange(self, text)
+
+    def _rest(self, cmd: Command) -> str:
+        parts = cmd.raw.split(None, 1)
+        return parts[1] if len(parts) > 1 else ""
+
+    def do_seating(self, cmd: Command) -> None:
+        if not has_seating(self):
+            self.fail("There is no seating plan to be made in this case.")
+            return
+        show_plan(self)
+
+    def do_seat(self, cmd: Command) -> None:
+        if not has_seating(self):
+            self.fail("There is no seating plan to be made in this case.")
+            return
+        seat(self, self._rest(cmd))
+
+    def do_unseat(self, cmd: Command) -> None:
+        if not has_seating(self):
+            self.fail("There is no seating plan to be made in this case.")
+            return
+        unseat(self, self._rest(cmd))
 
     def do_save(self, cmd: Command) -> None:
         self.save()

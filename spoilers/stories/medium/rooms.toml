@@ -1,0 +1,154 @@
+# ================================================================ outside
+
+[rooms.street]
+name = "Clifton Hill"
+aliases = ["street", "clifton hill", "road", "outside"]
+description = """
+Clifton Hill ran down between its plane trees and its stuccoed villas, very quiet and very respectable under a raw December sky. Laurel Lodge stood back from the road behind a low wall and a pair of laurels clipped into balls, a white house with a pillared porch and a brass plate by the door. A constable stood at the gate, and in the gutter beside him an iron grating took the rain from the road. A side gate in the wall led round to the garden.
+"""
+on_enter = [
+  { once = true, text = "[I opened my notebook and set down what Holmes's telegram had told me.]", effects = ["clue:found"] },
+]
+[rooms.street.exits]
+in = { to = "hall", aliases = ["house", "laurel lodge", "porch", "door", "front door", "lodge"] }
+west = { to = "garden", aliases = ["side gate", "garden", "gate"] }
+
+[rooms.garden]
+name = "The Garden"
+aliases = ["garden", "back garden"]
+description = """
+A long, damp town garden of sooty lawn and dripping shrubs, with a stone bird-bath in the middle of it. Along the back of the house ran a narrow flower-bed under the windows: the french window of the morning-room, standing open, and further along a tall window close shuttered from within, which I took to be that of the séance room. A young man in a black coat was walking up and down the path and smoking. The side gate led back to the street.
+"""
+[rooms.garden.exits]
+east = { to = "street", aliases = ["side gate", "street", "gate"] }
+in = { to = "morning_room", aliases = ["french window", "morning-room", "morning room", "house"] }
+
+# ================================================================ ground floor
+
+[rooms.hall]
+name = "The Hall"
+aliases = ["hall", "entrance hall"]
+description = """
+A narrow, lofty hall, smelling of beeswax and of yesterday's lilies, with a stair going up and a baize door to the kitchen stair going down. There was a mahogany hall-stand with its pegs and mirror, an umbrella stand of Chinese porcelain, and a single hall chair set close beside the door at the back of the hall, which stood open upon the séance room. To the east was the front drawing-room, to the west the dining-room; a door to the north-west led to the library, and one to the north-east to a little office.
+"""
+[rooms.hall.exits]
+out = { to = "street", aliases = ["street", "front door", "porch"] }
+north = { to = "seance_room", aliases = ["seance room", "séance room", "back drawing-room", "back drawing room", "back"] }
+east = { to = "drawing_room", aliases = ["drawing-room", "drawing room", "front drawing-room", "front drawing room"] }
+west = { to = "dining_room", aliases = ["dining-room", "dining room"] }
+northwest = { to = "library", aliases = ["library"] }
+northeast = { to = "office", aliases = ["office", "little office"] }
+up = { to = "landing", aliases = ["stair", "stairs", "upstairs"] }
+down = { to = "kitchen", aliases = ["kitchen", "kitchen stair", "baize door"] }
+
+[rooms.drawing_room]
+name = "The Front Drawing-Room"
+aliases = ["drawing-room", "drawing room", "front drawing-room"]
+description = """
+The room where the sitters waited before a sitting: a great deal of plush, a great many palms in brass pots, and on every wall a spirit photograph, a pale face swimming in a fog behind some solemn sitter. A long sofa stood against the wall, and a good fire burned in the grate. The hall was to the west.
+"""
+[rooms.drawing_room.exits]
+west = { to = "hall", aliases = ["hall"] }
+
+[rooms.dining_room]
+name = "The Dining-Room"
+aliases = ["dining-room", "dining room"]
+description = """
+A dark, heavy dining-room of mahogany and turkey carpet, where the remains of somebody's breakfast stood forgotten on the sideboard. A door at the north end gave on the morning-room; the hall was to the east.
+"""
+[rooms.dining_room.exits]
+east = { to = "hall", aliases = ["hall"] }
+north = { to = "morning_room", aliases = ["morning-room", "morning room"] }
+
+[rooms.morning_room]
+name = "The Morning-Room"
+aliases = ["morning-room", "morning room"]
+description = """
+A small bright room at the back of the house, with a work-table, a writing-table and a french window standing open on the garden. The writing-table had been taken over by a quantity of foolscap covered in a close, angry hand. The dining-room lay to the south.
+"""
+[rooms.morning_room.exits]
+south = { to = "dining_room", aliases = ["dining-room", "dining room"] }
+out = { to = "garden", aliases = ["garden", "french window"] }
+
+[rooms.library]
+name = "The Library"
+aliases = ["library"]
+description = """
+A library in which nobody had ever read anything: glass-fronted cases of handsome bindings, the works of the spiritualist writers in green cloth, and a pair of leather armchairs by the fire. The hall was to the south-east.
+"""
+[rooms.library.exits]
+southeast = { to = "hall", aliases = ["hall"] }
+out = { to = "hall", aliases = ["hall"] }
+
+[rooms.office]
+name = "Mr Gale's Office"
+aliases = ["office", "little office"]
+description = """
+A narrow little room that had been a butler's pantry, fitted up as an office with a roll-top desk, a letter-press and a japanned cash-box. On the desk lay a fat ledger bound in red, labelled SITTINGS. The hall was to the south-west.
+"""
+[rooms.office.exits]
+southwest = { to = "hall", aliases = ["hall"] }
+out = { to = "hall", aliases = ["hall"] }
+
+[rooms.seance_room]
+name = "The Séance Room"
+aliases = ["seance room", "séance room", "back drawing-room", "back drawing room"]
+description = """
+The back drawing-room had been made over entirely to the spirits. The walls were papered a deep plum colour, and the tall window was closed with heavy wooden shutters. In the middle stood a round table under a cloth of green baize, with eight chairs set about it: a great carved armchair at the head with its back to a black velvet curtain, which hung across an alcove in the north wall, and seven plain chairs round the rest. A tin trumpet lay on its side on the baize. In one corner beyond the table was a small fireplace, the fire long dead; against the wall on the other side a musical box stood on a stand of its own; and the frame of the door by which I had come in was still hung with torn paper seals. The hall lay to the south, and the curtain to the north.
+"""
+[rooms.seance_room.exits]
+south = { to = "hall", aliases = ["hall", "door"] }
+north = { to = "cabinet", aliases = ["cabinet", "curtain", "alcove", "black curtain", "velvet curtain"] }
+in = { to = "cabinet", aliases = ["cabinet", "alcove"] }
+
+[rooms.cabinet]
+name = "The Cabinet"
+aliases = ["cabinet", "alcove"]
+description = """
+Behind the curtain was a shallow alcove with no window, hung all round with black velvet; it was here, I gathered, that the spirits were supposed to gather their strength. With the curtain fallen behind me there was barely light to see by. On a narrow sofa lay the body of Madame Peake under a sheet, put there by the police until the van should come. The séance room was to the south.
+"""
+[rooms.cabinet.exits]
+south = { to = "seance_room", aliases = ["seance room", "séance room", "curtain", "room"] }
+out = { to = "seance_room", aliases = ["seance room", "séance room"] }
+
+# ================================================================ below and above
+
+[rooms.kitchen]
+name = "The Kitchen"
+aliases = ["kitchen"]
+description = """
+A big warm basement kitchen with a roaring range, a dresser of blue china and a stout woman in a cap rolling pastry at the table as if nothing whatever had happened. The stair went up to the hall.
+"""
+[rooms.kitchen.exits]
+up = { to = "hall", aliases = ["hall", "stair", "stairs"] }
+
+[rooms.landing]
+name = "The Landing"
+aliases = ["landing", "first floor"]
+description = """
+A dim landing with a stained-glass window of lilies on the stair and a tall jardinière holding a fern. Madame Peake's bedroom was to the north, and Mr Gale's room to the west; the stair went down to the hall.
+"""
+[rooms.landing.exits]
+down = { to = "hall", aliases = ["hall", "stair", "stairs"] }
+north = { to = "bedroom", aliases = ["bedroom", "madame's bedroom", "madame peake's bedroom", "her bedroom"] }
+west = { to = "gale_room", aliases = ["gale's room", "mr gale's room", "his room"] }
+
+[rooms.bedroom]
+name = "Madame Peake's Bedroom"
+aliases = ["bedroom", "madame's bedroom"]
+description = """
+A large, over-furnished bedroom, all rose-coloured silk and silver-backed brushes, with a little walnut writing-desk in the window. Everything smelt of patchouli. The landing was to the south.
+"""
+[rooms.bedroom.exits]
+south = { to = "landing", aliases = ["landing"] }
+out = { to = "landing", aliases = ["landing"] }
+
+[rooms.gale_room]
+name = "Mr Gale's Room"
+aliases = ["gale's room", "his room"]
+description = """
+A bachelor's room, neat to the point of fussiness: a narrow bed, a wardrobe, a washstand with a marble top, and a small grate full of ashes. Over the mantel hung a framed playbill. The landing was to the east.
+"""
+[rooms.gale_room.exits]
+east = { to = "landing", aliases = ["landing"] }
+out = { to = "landing", aliases = ["landing"] }

@@ -10,7 +10,7 @@ turns it. Never tell the user which cases these are. Space them irregularly.
 | bellboard | no | built before the rule |
 | bazalgette | no | built before the rule |
 | clocks | no | built before the rule |
-| next case built | **no** | the user asked that the very next case not have one |
+| medium | **no** | the case after Two Clocks; the user asked for no twist here |
 
 For later cases, decide when writing the bible and record it here and in the bible.
 Sketch for a twist case: the suspect the evidence points at has motive, means, a broken

@@ -41,6 +41,9 @@ BUILTIN_VERBS = {
     "status": ["status", "time"],
     "timeline": ["timeline", "board", "events"],
     "arrange": ["arrange", "order", "reorder", "sort"],
+    "seating": ["seating", "seats", "plan", "places"],
+    "seat": ["seat"],
+    "unseat": ["unseat"],
     "again": ["again", "g"],
 }
 

@@ -259,6 +259,39 @@ class GameTests(unittest.TestCase):
         self.assertIn("Gaps.", "".join(g.io.output[mark:]))
         self.assertEqual((g.state.wrong, g.state.solved), (2, False))
 
+    def test_seating_plan_and_final(self):
+        import copy
+        data = copy.deepcopy(FIXTURE)
+        del data["final"]["when"]
+        data["final"].update({"type": "seating", "seating": {
+            "places": [{"id": "1", "label": "Top."}, {"id": "2", "label": "Left."},
+                       {"id": "3", "label": "Right."}],
+            "people": {"host": {"name": "Host", "fixed": "1"},
+                       "bob": {"name": "Bob", "when": "met:bob"},
+                       "ann": {"name": "Ann Lee", "aliases": ["lee"]}},
+            "answer": {"1": "host", "2": "ann", "3": "bob"},
+            "wrong_ending": "lose", "incomplete_ending": "gaps"}})
+        data["endings"]["gaps"] = {"text": "Gaps."}
+        self.assertEqual(validate(data), [])
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.handle("seat bob at 3")                          # not known yet: refused, free
+        self.assertEqual((g.state.seating, g.state.turns), ({}, 0))
+        g.handle("seat host at 2")                         # fixed: refused
+        g.handle("seat lee at 3")
+        g.handle("seat ann lee 2")                         # moves her
+        self.assertEqual(g.state.seating, {"2": "ann"})
+        mark = len(g.io.output)
+        g.io.inputs += ["", "bob", "y", ""]               # Bob unknown: incomplete
+        g.handle("accuse")
+        self.assertIn("Gaps.", "".join(g.io.output[mark:]))
+        g.state.met.add("bob")
+        g.io.inputs += ["seat bob 2", "seat ann 3", "", "bob", "y", ""]   # wrong plan
+        g.handle("accuse")
+        self.assertEqual((g.state.wrong, g.state.solved), (2, False))
+        g.io.inputs += ["seat ann 2", "seat bob 3", "", "bob", "y"]
+        g.handle("accuse")
+        self.assertTrue(g.state.solved)
+
     def test_wrong_then_right_accusation(self):
         g, _ = new_game(["2", "y", "", "1", "y"])
         g.handle("accuse")

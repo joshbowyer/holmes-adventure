@@ -1,0 +1,328 @@
+# ================================================================ Holmes
+
+[characters.holmes]
+name = "Holmes"
+aliases = ["sherlock holmes", "sherlock", "mr holmes"]
+location = "library"
+description = "Holmes lay back in a leather armchair with his eyes half closed, the very picture of a man who has been asked to believe in ghosts before luncheon."
+presence = "Holmes sat in one of the leather armchairs, his long fingers together."
+unknown_topic = '''"That is for you to discover, Watson," said Holmes. "I am only the gentleman in the armchair."'''
+unknown_show = '''Holmes glanced at it. "Yes. And whose hand held it?"'''
+
+[[characters.holmes.greeting]]
+text = '''"Ah, Watson! Good of you to come; I trust Mrs Watson will forgive me." Holmes waved me to the other armchair. "Eight people sat round a table in the dark last night with their hands joined, and when the lamp came, one of them was dead with a hole in her heart, and the other seven swear the circle never broke. Bradstreet is in the séance room and much perplexed. You may ask me about the case, or about the circle and its tricks, or about the seating, which you will want to set out. And I have brought no change, so you must find your own threepenny bits for my opinions."'''
+
+[[characters.holmes.topics.case]]
+aliases = ["murder", "madame peake", "mrs peake", "madame", "death", "bradstreet"]
+text = '''"A woman is killed in the dark by a hand that, on the oath of seven people, was holding another hand at the time," said Holmes. "Either the seven are lying, or one of them is mistaken about what he held. I incline to the second. People are very seldom sure of anything in the dark, Watson, except what they have been told."'''
+
+[[characters.holmes.topics.circle]]
+aliases = ["tricks", "trick", "hands", "hand", "chain", "substitution", "spiritualism", "spirits", "seance", "séance", "sitting"]
+text = '''"There are only two ways for a hand to be free in a dark circle," said Holmes, "and every conjuror knows both. A clever medium can manage, with a little wriggling, to let both her neighbours rest their hands on one of hers, and so free the other: that is substitution. A lazy one simply arranges that one of her neighbours is a friend who holds nothing at all and swears he holds everything. Find out, for every sitter, whose hands he held and how he knew them. Then ask yourself which hands were truly held, and which were only said to be."'''
+
+[[characters.holmes.topics.seating]]
+aliases = ["seats", "places", "plan", "table", "who sat where", "where"]
+text = '''"Type SEATING to see the table, Watson, with its places numbered round to each sitter's left; the first is Madame's own chair. When someone tells you where he sat, SEAT him there: SEAT ROOK AT 2, and so on. You may move them as often as you please. I shall want the plan right before I listen to a word of your conclusions."'''
+
+[[characters.holmes.topics.coins]]
+aliases = ["threepenny bits", "threepenny bit", "coins", "coin", "hint", "hints", "help", "change"]
+text = '''"A threepenny bit a time," said Holmes. "The sitters in this house are careless with their small change: it is the only thing about them that is not calculated."'''
+
+# ================================================================ the street
+
+[characters.constable]
+name = "the constable"
+aliases = ["constable", "policeman", "bobby", "officer", "hearn"]
+location = "street"
+description = "A large, slow, careful constable with a heavy moustache and wet shoulders."
+presence = "A constable stood at the gate."
+unknown_topic = '''"Couldn't say, sir. You'll want Inspector Bradstreet, inside."'''
+unknown_show = '''The constable looked at it gravely. "You'll want to show that to the Inspector, sir."'''
+
+[[characters.constable.greeting]]
+text = '''"Morning, sir. Dr Watson, is it? Mr Holmes said you'd be coming. Inspector Bradstreet's inside, in the back room where it happened. I've been at this gate since two in the morning, and nobody's gone in nor out but them as should."'''
+
+[[characters.constable.topics.gate]]
+aliases = ["gate", "nobody", "in nor out", "morning", "night"]
+text = '''"The sitters went home about one, sir, after the Inspector had took their names and had 'em searched. They've all come back this morning at his asking, for their statements. They're about the house somewhere."'''
+
+# ================================================================ the police
+
+[characters.bradstreet]
+name = "Inspector Bradstreet"
+aliases = ["bradstreet", "inspector", "police"]
+location = "seance_room"
+description = "Inspector Bradstreet, of the Yard: a tall, stout, official-looking man, who was plainly not at ease among the spirits."
+presence = "Inspector Bradstreet stood by the table, frowning at the trumpet."
+unknown_topic = '''"I couldn't tell you that, Doctor," said Bradstreet.'''
+unknown_show = '''Bradstreet looked at it and grunted. "Well, Doctor? What do you make of it?"'''
+
+[[characters.bradstreet.greeting]]
+text = '''"Morning, Doctor." Bradstreet shook hands heavily. "Here's a pretty thing. She's in there in the cabinet, behind the curtain, till the van comes; the police surgeon saw her last night. Stabbed in the heart, in the middle of a sitting, in a room sealed up like a bank vault, and every one of the seven sitters swears his hands were held. I had every one of 'em searched to the skin before they went home, and there's no weapon. There were only two of 'em within reach of her, Doctor: Dr Rook on her left and Mr Gale on her right, and I know which I'd like it to be, but there it is."'''
+
+[[characters.bradstreet.topics.surgeon]]
+aliases = ["police surgeon", "body", "wound", "stabbed", "heart", "cabinet", "van"]
+text = '''"Thin blade, the surgeon says, round and very sharp, seven or eight inches at least, straight into the heart. She'd have been dead in a minute, and never made more than the one cry. Nothing bigger than a knitting-needle, he says, and we've not found so much as a knitting-needle."'''
+effects = ["clue:surgeon"]
+
+[[characters.bradstreet.topics.search]]
+aliases = ["weapon", "searched", "search", "skin", "knitting-needle", "sitters"]
+text = '''"Searched every one, to the skin, and the ladies by the matron from St John's Wood station: pockets, boots, hair, the lot. Searched this room too, every drawer and every chair. Nothing. If it's here, Doctor, it's been spirited away."'''
+effects = ["clue:surgeon"]
+
+[[characters.bradstreet.topics.suspects]]
+aliases = ["gale", "mr gale", "rook", "dr rook", "within reach", "reach", "which"]
+text = '''"Mr Gale's her manager. He quarrelled with her yesterday, the maid says, and he's been a stage conjuror in his time, and I don't like him. But he was at her right hand with Mrs Quill on his other side, and Mrs Quill swears he never let go of her. And Dr Rook, he's a scientific gentleman from the psychical society, as sealed the room; she had him up for libel, so he had cause; but he was holding her left hand, and Miss Brayfield his. That's the whole of it, Doctor. Seven people holding hands, and her dead."'''
+
+# ================================================================ the household
+
+[characters.effie]
+name = "Effie"
+aliases = ["maid", "effie marsh", "girl", "housemaid"]
+location = "hall"
+description = "Effie Marsh, the parlourmaid: a pale, freckled girl of nineteen in a cap and apron, her eyes red with crying."
+presence = "A pale young maid hovered in the hall, twisting her apron."
+unknown_topic = '''"I don't know, sir, I'm sure," said Effie, and sniffed.'''
+unknown_show = '''Effie looked at it and shook her head. "I never saw that, sir."'''
+
+[[characters.effie.greeting]]
+text = '''"Oh, sir!" said the maid. "I'm Effie, sir, the house-parlourmaid. I sat on the hall chair outside the door the whole of the sitting, like Dr Rook said I was to, and nobody went in and nobody came out, I'll swear it on the Book. It was me set the chairs, and took the ladies' hats, and it was me brought the lamp at the end. And oh, sir, she'd been that upset all yesterday, ever since the quarrel."'''
+
+[[characters.effie.topics.door]]
+aliases = ["hall chair", "door", "outside", "sitting", "nobody", "seals", "outside the door"]
+text = '''"I was on that chair from nine o'clock, when Dr Rook stuck his papers on the door, till he called out for the lamp at ten past ten. I never moved, sir, nor dozed. I could hear the musical box through the door, and the raps, and the little voice. Nobody passed me, in nor out."'''
+effects = ["clue:effie_door"]
+
+[[characters.effie.topics.chairs]]
+aliases = ["set the chairs", "eight chairs", "places", "table", "armchair"]
+text = '''"Eight chairs, sir, same as always for a full circle: Madame's big chair at the top with its back to the curtain, and the seven round. The gentlemen and ladies sit where they please, except Mr Gale, who always has Madame's right hand, and the Colonel, who has to have his good ear to the room. Dr Rook asked particular for her left hand last night."'''
+
+[[characters.effie.topics.hats]]
+aliases = ["ladies' hats", "ladies hats", "hat", "hall-stand", "hall stand", "key", "musical box", "music box"]
+text = '''"The ladies took their hats off in the hall, sir, Mrs Quill and Miss Brayfield, and I hung them on the stand. Then they all went in. And then Mr Gale came out again by himself, just for a minute, and said he'd left the key of the musical box on the hall table, and went back in with it. Then Dr Rook shut the door and stuck the papers."'''
+effects = ["clue:gale_hall"]
+
+[[characters.effie.topics.quarrel]]
+aliases = ["upset", "yesterday", "row", "argument"]
+text = '''"Yesterday after lunch, sir, in the office, her and Mr Gale. I was doing the stairs. I heard her say, loud, 'You'll answer for every penny of it to a magistrate, Ferdinand, the day after I'm married,' and he said something low, and she said, 'Then you should have thought of that before.' And she came out white as paper."'''
+effects = ["clue:quarrel"]
+
+[[characters.effie.topics.lamp]]
+aliases = ["the lamp", "end", "after", "lights", "brandy"]
+text = '''"When Dr Rook called for it I brought the lamp in, sir, and there she was in her chair with her head down, and they thought she was in a trance still, and then Mrs Quill screamed. And Mr Gale said Sir Walter was faint, and ran straight upstairs for his brandy, and was gone five minutes, sir, and came down with it."'''
+effects = ["clue:gale_upstairs"]
+
+[characters.cook]
+name = "Mrs Pruett"
+aliases = ["cook", "pruett", "mrs pruett", "stout woman", "woman"]
+location = "kitchen"
+description = "Mrs Pruett, the cook: stout, red-armed and imperturbable."
+presence = "Mrs Pruett, the cook, was rolling pastry at the table."
+unknown_topic = '''"Couldn't tell you, sir," said Mrs Pruett, rolling away.'''
+unknown_show = '''Mrs Pruett glanced at it. "Not my department, sir."'''
+
+[[characters.cook.greeting]]
+text = '''"Morning, sir. You'll be with the gentleman upstairs." Mrs Pruett did not stop rolling. "Spirits! I never held with them. I've cooked for Madame six years and never sat in, nor never will. And a deal of good they did her. You'll want to know about last night, I dare say, and all I know is the coals."'''
+
+[[characters.cook.topics.coals]]
+aliases = ["last night", "night", "coals", "coal", "fire", "fires", "mr gale"]
+text = '''"Mr Gale rang down for a scuttle of coals for his room, after the police come, gone half past ten. He never has a fire up there, winter nor summer; says he can't abide the stuffiness. I sent Effie up with it, and the poor child was in no state to carry coals, I can tell you."'''
+effects = ["clue:gale_fire"]
+
+[[characters.cook.topics.madame]]
+aliases = ["madame peake", "mrs peake", "spirits", "mistress"]
+text = '''"She was a good mistress to me, sir, I'll say that, whatever she was to them upstairs. And she was going to be Lady Brayfield, and give it all up, and I was to go with her. Now look."'''
+
+# ================================================================ the manager
+
+[characters.gale]
+name = "Mr Gale"
+aliases = ["gale", "ferdinand gale", "manager", "secretary", "ferdinand"]
+location = "office"
+description = "Mr Ferdinand Gale: a slim, dark, quick man of eight-and-thirty, very well brushed, with clever hands and a signet ring on the little finger of the right."
+presence = "Mr Gale sat at the roll-top desk, writing."
+unknown_topic = '''Gale spread his clever hands. "I'm afraid I can't help you there, Doctor."'''
+unknown_show = '''Gale glanced at it. "I've no idea, Doctor."'''
+
+[[characters.gale.greeting]]
+text = '''Gale rose. "Ferdinand Gale, Madame's secretary, and manager, I suppose you'd say. A dreadful thing, Doctor; I've not slept. I sat at her right hand last night, as I always do, and I held it from first to last; the circle never broke, I'll swear to that in any court. You'll hear about yesterday's quarrel, no doubt; it was nothing. And you'll hear I was once on the stage. That's why I can tell you no trick was played in that room last night."'''
+
+[[characters.gale.topics.sitting]]
+aliases = ["last night", "night", "her right hand", "right hand", "circle", "hands", "held", "seance", "séance"]
+text = '''"I sat at her right, Doctor, as always. My left hand held her right hand, my right hand held Mrs Quill's left, and I never let go of either from the moment Rook sealed the door. Towards the end, when the music stopped, she gave a great cry, and gripped my hand hard, and then went limp. I thought it was the trance; she often went off like that. I asked them to wait before the lamp. I'll never forgive myself for that."'''
+effects = ["clue:gale_story"]
+
+[[characters.gale.topics.quarrel]]
+aliases = ["yesterday", "accounts", "row", "argument", "money"]
+text = '''"A difference over the accounts, Doctor, nothing more. She was going to be married, and she'd got it into her head that the books didn't balance. Women have no head for figures." He smiled. "It would have been put right."'''
+
+[[characters.gale.topics.stage]]
+aliases = ["on the stage", "conjuror", "volante", "signor volante", "music hall", "conjuring"]
+text = '''"I was with Volante for six years, when I was young. We exposed the spirit-mongers, every trick of the trade. So you see, Doctor, I'd know if anything were done; and nothing was. That's what brought me to her. She was the real thing."'''
+
+[[characters.gale.topics.musical_box]]
+aliases = ["musical box", "music box", "key"]
+text = '''"I wind it before every sitting. I'd left the key on the hall table, like a fool, and had to go out for it. It plays for half an hour or so, and the spirits like music."'''
+
+[characters.gale.shows.reaching_rod]
+text = '''Gale looked at the tube for a long moment without any expression whatever. "I have never seen it before in my life," said he. "Some rubbish of the police, I suppose."'''
+
+[characters.gale.shows.hatpin]
+text = '''"A hatpin," said Gale. "Is it the weapon? Good God." His face did not change. "It's not mine, Doctor. I don't wear hats with pins."'''
+
+[characters.gale.shows.cuff]
+text = '''Gale looked at the cuff, and then at me. "Where did you get that?" he said, very quietly; and then, recovering himself: "I cut myself shaving yesterday. I threw it on the fire."'''
+
+# ================================================================ the investigator
+
+[characters.rook]
+name = "Dr Rook"
+aliases = ["rook", "anselm rook", "doctor rook", "investigator", "scientist"]
+location = "morning_room"
+description = "Dr Anselm Rook: a lean, sallow, irritable man of fifty with a great beak of a nose and ink on his fingers; on his left hand a heavy seal ring."
+presence = "Dr Rook sat at the writing-table among his foolscap."
+unknown_topic = '''"I have nothing to say to that, sir," said Rook irritably.'''
+unknown_show = '''Rook peered at it. "And what is that supposed to be?"'''
+
+[[characters.rook.greeting]]
+text = '''"Rook. You are Holmes's man? Good. I sat on her left last night and held her left hand myself from first to last; I sealed the door and screwed the shutters with my own hands; I have exposed thirty-one mediums in my time and I tell you the conditions were perfect. And yet she is dead, and the phenomena went on all evening. I will not pretend I liked the woman: she was suing me for libel. You may ask me what you please about the sitting, the seals, or the tricks of the trade."'''
+
+[[characters.rook.topics.sitting]]
+aliases = ["last night", "night", "left hand", "her left hand", "hands", "held", "circle", "phenomena", "seance", "séance"]
+text = '''"I took the place at her left: Miss Brayfield sat on my own left, by the door. I held Madame's left hand in my right the whole sitting, with her wedding ring under my thumb, and I never let it go for an instant: I promise you that. Miss Brayfield held my left. And yet the phenomena went on all over the table: raps, the trumpet floating, the touches on the far side, on Sir Walter's face, on Danby. Gale vouched for her right hand. Towards the end, as the musical box ran down, she cried out, and the trumpet fell, and after that her hand in mine was quite still; and it grew cold, sir, cold, while I sat holding it."'''
+effects = ["clue:rook_story"]
+
+[[characters.rook.topics.seals]]
+aliases = ["seal", "door", "shutters", "screws", "papers", "conditions"]
+text = '''"Two slips across the door, sealed and signed at nine. I tore them myself at ten past ten. The shutters I screwed. The maid was outside the door. Nobody came into that room, sir, and nobody left it."'''
+effects = ["clue:seals"]
+
+[[characters.rook.topics.tricks]]
+aliases = ["tricks of the trade", "trade", "trick", "substitution", "confederate", "exposed", "mediums", "thirty-one mediums"]
+text = '''"There are two ways for a medium to free a hand in a circle," said Rook. "Substitution, where she lets both neighbours touch one hand of hers; I guarded against that by keeping her ring under my thumb all evening. And a confederate on the other side. I asked to hold both her hands, but Gale would not hear of it; he has had her right hand for three years. Mrs Quill had his other hand; and Gale was once a conjuror's man, so I watched for him. I felt nothing wrong."'''
+effects = ["clue:rook_tricks"]
+
+[[characters.rook.topics.libel]]
+aliases = ["suing", "lawsuit", "action", "peake v rook", "slander"]
+text = '''"Peake versus Rook. I called her a cheat in print, and she sued. It was to be heard in January, and I should have proved it." He laughed shortly. "I should have proved it, sir. And now I shall never be able to."'''
+effects = ["clue:libel"]
+
+[characters.rook.shows.reaching_rod]
+text = '''Rook took the tube from me and drew it out, joint by joint, to its full length, and stared at the little stuffed glove at the end of it. "In her skirt?" he said. "Then her right hand was free the whole evening, for her left never left mine. And Gale swore, Gale swore to my face, that he held her right hand from first to last." He sat down slowly. "Then he held nothing, sir. Nothing at all."'''
+effects = ["clue:rook_realises"]
+
+[characters.rook.shows.hatpin]
+text = '''Rook looked at the pin and its brown film, and his sallow face went grey. "That? In the dark? Good heavens."'''
+
+# ================================================================ the Brayfields
+
+[characters.walter]
+name = "Sir Walter Brayfield"
+aliases = ["sir walter", "walter", "brayfield", "sir walter brayfield", "baronet"]
+location = "drawing_room"
+description = "Sir Walter Brayfield, Bart.: a big, grey, broken old man in deep mourning that he had not had time to buy, sitting with his hands hanging between his knees."
+presence = "Sir Walter Brayfield sat by the fire, staring into it."
+unknown_topic = '''Sir Walter shook his head without looking up.'''
+unknown_show = '''Sir Walter looked at it dully. "I don't understand."'''
+
+[[characters.walter.greeting]]
+text = '''"Brayfield." He did not rise. "We were to have been married in January, Doctor. In January. I sat opposite her last night, as I always do, so that I might see the lights about her head, and the little one came to me; I felt her hand on my cheek, as plain as I feel the fire now. And all the while she was dying, across the table from me, and I never knew."'''
+
+[[characters.walter.topics.sitting]]
+aliases = ["last night", "night", "opposite", "lights", "little one", "hand", "cheek", "seance", "séance", "touch"]
+text = '''"Opposite her, as always, Doctor. Colonel Fane on my right, young Danby on my left; I held them both. The little one, Little Wren, came twice and touched my cheek with her little cold hand, and spoke to me from the trumpet in the air. I would stake my soul she was there."'''
+effects = ["clue:walter_story"]
+
+[[characters.walter.topics.married]]
+aliases = ["married", "marriage", "january", "wedding", "engagement", "engaged"]
+text = '''"She had promised me to give up the public sittings when she was my wife. She was tired, Doctor. And she was to be rid of that fellow Gale; she had found him out in some dishonesty, and I told her to have the law of him, and she meant to."'''
+effects = ["clue:engagement"]
+
+[characters.cecily]
+name = "Miss Brayfield"
+aliases = ["cecily", "miss brayfield", "cecily brayfield", "daughter", "miss cecily"]
+location = "drawing_room"
+description = "Miss Cecily Brayfield: a tall, fair, composed young woman of four-and-twenty, with a decided chin and a hat skewered with a single jet pin."
+presence = "Miss Brayfield stood at the window with her back to the room."
+unknown_topic = '''"I'm sure I don't know," said Miss Brayfield.'''
+unknown_show = '''Miss Brayfield glanced at it. "What of it?"'''
+
+[[characters.cecily.greeting]]
+text = '''"I'm Cecily Brayfield." She turned from the window. "You needn't look at me so, Doctor; everyone knows I couldn't abide her. She was robbing my father with her spirits and she meant to marry him for the rest. I sat in last night to see her caught out, and nothing touched me all evening, I promise you. And on top of everything, somebody stole one of my hatpins."'''
+
+[[characters.cecily.topics.sitting]]
+aliases = ["last night", "night", "caught out", "nothing touched", "touched", "seance", "séance", "circle"]
+text = '''"I sat between Dr Rook and the Colonel, with the door at my back. I held Dr Rook's left hand in my right; he wears a great seal ring, I felt it the whole time; and the Colonel's right in my left. I never let go of either, and neither of them let go of me. Nothing touched me. The spirits knew better."'''
+effects = ["clue:cecily_story"]
+
+[[characters.cecily.topics.hatpin]]
+aliases = ["hatpins", "pin", "pins", "stole", "hat", "jet"]
+text = '''"I had two in my hat when I came, a pair, jet beetles; my mother's. I left the hat on the stand in the hall, and when we came away at one o'clock there was only the one. I thought I'd dropped it. I've this one left." She touched her hat.'''
+effects = ["clue:hat_pin_missing"]
+
+[characters.cecily.shows.hatpin]
+text = '''Miss Brayfield's hand went to her hat. "That's mine. That's my other beetle." She looked at the brown film on the steel, and for the first time her composure went. "Oh," she said. "Oh, no. Someone took it from my hat, Doctor, in the hall. I never touched it after I took my hat off, I swear it."'''
+effects = ["clue:hatpin_owner"]
+
+# ================================================================ the dining-room
+
+[characters.fane]
+name = "Colonel Fane"
+aliases = ["fane", "colonel", "colonel fane", "hilary fane"]
+location = "dining_room"
+description = "Colonel Hilary Fane, late of the Bengal Staff Corps: a little, brown, wiry, bald old gentleman with a white moustache, who turned his right ear to whoever spoke to him."
+presence = "Colonel Fane sat bolt upright at the dining-table."
+unknown_topic = '''"Eh? What?" said the Colonel. "Can't help you there, sir."'''
+unknown_show = '''The Colonel screwed up his eyes at it. "Never seen it, sir."'''
+
+[[characters.fane.greeting]]
+text = '''"Eh? Fane. Colonel. Bengal Staff Corps." He turned his right ear to me. "Deaf as a post on the left side, sir; a gun at Sobraon. Sat in at a hundred sittings and never saw the like of last night. The spirit touched my head, sir, my bald head, as I sat there with my back to the window."'''
+
+[[characters.fane.topics.sitting]]
+aliases = ["last night", "night", "touched", "head", "bald head", "window", "back to the window", "seance", "séance"]
+text = '''"Back to the window, sir. Miss Brayfield on my right hand, my good side; Sir Walter on my left. Held 'em both, never let go. Something tapped me on the crown of the head, twice, cold, like a child's fingers; and then the trumpet went by over my head, singing. And at the end, when the music stopped, a cry from the far end, from Madame, and a clatter, and then nothing."'''
+effects = ["clue:fane_story"]
+
+[characters.quill]
+name = "Mrs Quill"
+aliases = ["quill", "mrs quill", "hester quill", "widow"]
+location = "dining_room"
+description = "Mrs Hester Quill: a small, plump, faded widow in black bombazine, with a jet locket and a damp handkerchief."
+presence = "Mrs Quill sat beside him, weeping softly into a handkerchief."
+unknown_topic = '''Mrs Quill only wept.'''
+unknown_show = '''Mrs Quill looked at it through her tears and shook her head.'''
+
+[[characters.quill.greeting]]
+text = '''"Oh, Doctor, Doctor!" Mrs Quill caught my hand. "She was the best of women, and the truest medium in London. I've sat with her every week since my Albert passed. I was beside Mr Gale last night, by the musical box, and I held his hand all through, and when it stopped she cried out so. We thought it was the little one coming."'''
+
+[[characters.quill.topics.sitting]]
+aliases = ["last night", "night", "musical box", "music box", "stopped", "cried out", "his hand", "mr gale", "gale", "seance", "séance"]
+text = '''"I sat by the musical box, Doctor, between young Mr Danby and Mr Gale. I had Mr Gale's right hand in my left the whole evening, I felt his ring, the little signet, and he never once let go of me, never once; and Mr Danby's hand in my right. Then the music ran down and she gave such a cry, and the trumpet fell, and Mr Gale said, 'Hush, she's gone very deep, don't break the circle.' And we sat. Oh, we sat there, and she was dead."'''
+effects = ["clue:quill_story"]
+
+[[characters.quill.topics.little_wren]]
+aliases = ["little one", "little wren", "wren", "spirit", "albert"]
+text = '''"Little Wren is her guide, Doctor, a little girl that died in the year of the Exhibition. She speaks through the trumpet, in the sweetest little voice."'''
+
+# ================================================================ the garden
+
+[characters.danby]
+name = "Mr Danby"
+aliases = ["danby", "thomas danby", "tom danby", "young man", "young danby"]
+location = "garden"
+description = "Mr Thomas Danby: a thin, white young man of three-and-twenty in a clerk's black coat, with bitten nails and a cigarette."
+presence = "A thin young man in a black coat paced the path, smoking."
+unknown_topic = '''"Don't ask me," said Danby, and lit another cigarette.'''
+unknown_show = '''Danby looked at it and away. "No."'''
+
+[[characters.danby.greeting]]
+text = '''"Danby." He threw away his cigarette and lit another. "I'm a shipping clerk; I came to hear my brother. He was drowned off the Nore in March. Five guineas a time she charged me, and he spoke to me last night, or something did, and something touched my hand on the table with a little cold hand. I had to come out of the house."'''
+
+[[characters.danby.topics.sitting]]
+aliases = ["last night", "night", "touched", "hand", "my hand", "table", "seance", "séance", "cold hand"]
+text = '''"I sat with my back to the fire, between Sir Walter and Mrs Quill. Sir Walter had my right hand, and Mrs Quill my left, both the whole time. Something touched the back of my right hand where it lay on the table, a little cold hand, light as a leaf. The trumpet spoke right in front of me. Then the music stopped, and she cried out, and that was all."'''
+effects = ["clue:danby_story"]
+
+[[characters.danby.topics.brother]]
+aliases = ["drowned", "nore", "five guineas", "guineas", "fees"]
+text = '''"Five guineas a sitting. I've paid her forty since the spring, and I'm paid thirty shillings a week. I'd have paid her a hundred to hear him." He laughed, not pleasantly. "Well, I can keep my money now."'''

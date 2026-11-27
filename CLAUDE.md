@@ -108,7 +108,7 @@ must never learn it outside the game.
 |---|---|---|---|
 | 1 | The Wax Cylinder Will | 1894 | Sound deduction (sounds described in text) |
 | 2 | The Two Clocks of Hatherleigh | 1881 | Timeline building |
-| 3 | The Medium's Last Sitting | 1892 | Seating / hand-chain logic |
+| 3 | The Medium's Last Sitting | 1890 | Seating / hand-chain logic |
 | 4 | The Operator's Fist | 1887 | Morse decoding & timing |
 | 5 | Census Night | 1891 | Record cross-checking; collection finale |
 | Unlock | Letters from Sussex | 1905 | Delayed-telegram strategy |
@@ -138,7 +138,8 @@ five"; needs revisiting now there are more cases).
    suspect has an airtight alibi by one clock or the other. The player assembles statements
    into a timeline that the game validates. (A rejected idea — rival editions of Bradshaw's
    railway timetable — could be folded in here as a sub-clue if it fits.)
-3. **The Medium's Last Sitting.** A fashionable medium dies mid-séance in a pitch-dark room;
+3. **The Medium's Last Sitting** (moved from 1892 to 1890: Holmes is "dead" from May
+   1891 to 1894; mind the Great Hiatus when dating cases). A fashionable medium dies mid-séance in a pitch-dark room;
    all sitters swear the hand-held circle never broke. Built on the real *hand substitution*
    trick. The player deduces from testimony whose hand was actually free. (Nice irony: Doyle
    himself became a committed spiritualist.)
@@ -196,7 +197,12 @@ Exploration premises:
     `{event, says = {clue: statement}}`: whichever is heard first deals it, and the label
     lists every statement heard. `test_timed_statements_deal_cards` scans timeline cases
     for clock readings in texts that deal no card; timetables and appointments go in
-    `[test] untimed` by path. `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
+    `[test] untimed` by path. `seating` (accuse plus a seating plan: `final.seating` has
+    `places` [{id, label}] in order round to each sitter's left, the first at the top;
+    `people` {key: {name, aliases, when, fixed}}; `answer` {place: person};
+    `wrong_ending`, `incomplete_ending`. SEATING draws the round table, SEAT <name> AT <n>
+    and UNSEAT <name> edit `state.seating`; sitters appear once their `when` holds).
+    `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
   - Story sources: `spoilers/stories/<id>/*.toml` (all files in a folder are merged).
     `python -m holmes.build` validates and writes scrambled `holmes/data/<id>.case`.
   - Each source has a private `[test]` section: `walkthrough` (must solve the case, find
@@ -208,7 +214,10 @@ Exploration premises:
     than the previous one" because the syntax had grown and the text hadn't caught up,
     since fixed by the signposting rule) and `clocks` (deduction case 2, The Two Clocks of
     Hatherleigh, 21 rooms, 14 people, 39 clues, 9 timeline cards, 8 halfpence; first
-    `timeline` case; set "a little harder" than E2 at the user's request; not yet played).
+    `timeline` case; set "a little harder" than E2 at the user's request; played and
+    finished: "very good case") and `medium` (deduction case 3, The Medium's Last
+    Sitting, 14 rooms, 12 people, 34 clues, 8 threepenny bits; first `seating` case;
+    difficulty "about the same" as Two Clocks; not yet played).
     Bibles live in
     `spoilers/stories/<id>/bible.md`.
   - Timed cases (added for E2): `case.counters` (named ints), conditions `lt:/ge:/eq:NAME:N`,
@@ -230,8 +239,7 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user is partway through The Two Clocks of Hatherleigh (save
-  in progress) and will give feedback (especially on the TIMELINE/ARRANGE board and the
-  difficulty). Then pick the next case;
-  the remaining deduction cases need new final-puzzle types in `holmes/puzzles/` (seating,
-  Morse tape, record tables, telegram queue, cylinder).
+- Next step from here: the user plays The Medium's Last Sitting and gives feedback
+  (especially on the SEATING board). Then pick the next case; the remaining deduction
+  cases need new final-puzzle types in `holmes/puzzles/` (Morse tape, record tables,
+  telegram queue, cylinder).

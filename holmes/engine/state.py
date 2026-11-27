@@ -25,6 +25,7 @@ class GameState:
     solved: bool = False
     counters: dict = field(default_factory=dict)     # name -> int (tide, lamp oil...)
     arrangement: list = field(default_factory=list)  # timeline card ids, player's order
+    seating: dict = field(default_factory=dict)      # place id -> sitter, player's plan
 
     @classmethod
     def new(cls, story) -> "GameState":

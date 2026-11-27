@@ -151,7 +151,26 @@ def validate(data: dict) -> list[str]:
     final = data.get("final")
     if not final:
         errs.append("final: missing")
-    elif final.get("type", "accuse") in ("accuse", "timeline"):
+    elif final.get("type", "accuse") in ("accuse", "timeline", "seating"):
+        if final.get("type") == "seating":
+            sp = final.get("seating", {})
+            seat_ids = [pl.get("id") for pl in sp.get("places", [])]
+            people, answer = sp.get("people", {}), sp.get("answer", {})
+            if len(seat_ids) < 3 or len(set(seat_ids)) != len(seat_ids):
+                errs.append("final seating: needs three or more places with distinct ids")
+            if set(answer) != set(seat_ids):
+                errs.append("final seating: answer must seat every place")
+            if sorted(answer.values()) != sorted(people):
+                errs.append("final seating: answer must place every sitter exactly once")
+            for k, pp in people.items():
+                if not pp.get("name"):
+                    errs.append(f"final seating: sitter {k!r} has no name")
+                if pp.get("fixed") and answer.get(pp["fixed"]) != k:
+                    errs.append(f"final seating: sitter {k!r} is fixed at the wrong place")
+                conds.append((f"final seating sitter {k}.when", pp.get("when")))
+            for key in ("wrong_ending", "incomplete_ending"):
+                if (key in sp or key == "wrong_ending") and sp.get(key) not in endings:
+                    errs.append(f"final seating: {key} {sp.get(key)!r} does not exist")
         if final.get("type") == "timeline":
             tl = final.get("timeline", {})
             cards, order = tl.get("cards", {}), tl.get("order", [])

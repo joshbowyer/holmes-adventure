@@ -1,0 +1,520 @@
+# ================================================================ outside
+
+[items.laurels]
+name = "laurels"
+aliases = ["laurel", "wall", "low wall"]
+location = "street"
+scenery = true
+description = "Two laurels clipped into dark green balls, one on either side of the gate, and a low wall of yellow brick between the garden and the pavement."
+
+[items.brass_plate]
+name = "brass plate"
+aliases = ["plate"]
+location = "street"
+scenery = true
+description = "A small, very bright brass plate: MADAME PEAKE. AT HOME TUESDAYS AND FRIDAYS. PRIVATE SITTINGS BY ARRANGEMENT."
+
+[items.grating]
+name = "grating"
+aliases = ["iron grating", "gutter", "drain"]
+location = "street"
+scenery = true
+container = true
+description = "An iron grating in the gutter, choked with plane leaves."
+details = [ { when = "loc:coin_street:grating", text = "Among the leaves on the bars something small and silver had lodged." } ]
+
+[items.coin_street]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "grating"
+coin = true
+description = "A little silver threepenny bit, worn thin."
+take_text = "I worked the threepenny bit out from among the leaves and pocketed it."
+
+[items.bird_bath]
+name = "bird-bath"
+aliases = ["bird bath", "birdbath", "bath", "basin"]
+location = "garden"
+scenery = true
+container = true
+description = "A stone bird-bath, its basin full of rain and dead leaves."
+details = [ { when = "loc:coin_garden:bird_bath", text = "At the bottom of the water a small coin lay shining among the leaves." } ]
+
+[items.coin_garden]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "bird_bath"
+coin = true
+description = "A threepenny bit, wet from the bird-bath; somebody's wish, no doubt."
+take_text = "I fished the threepenny bit out of the bird-bath and dried it on my handkerchief."
+
+[items.flower_bed]
+name = "flower-bed"
+aliases = ["flower bed", "bed", "earth", "soil", "beds"]
+location = "garden"
+scenery = true
+clue = "window_bed"
+description = "The bed under the back windows had been dug over for the winter, and the night's rain had left the earth soft and smooth as a pudding. Under the shuttered window of the séance room there was not a mark on it: no footprint, no ladder-foot, not so much as a cat's paw."
+
+[items.outside_shutters]
+name = "shuttered window"
+aliases = ["window", "tall window", "shutters", "seance room window", "séance room window"]
+location = "garden"
+scenery = true
+description = "From outside, the tall window of the séance room showed nothing but the backs of its wooden shutters, close drawn behind the glass. The sash was fastened."
+
+# ================================================================ the hall
+
+[items.hall_stand]
+name = "hall-stand"
+aliases = ["hall stand", "stand", "pegs", "mirror", "hats"]
+location = "hall"
+scenery = true
+description = "A mahogany hall-stand with a long mirror, brass pegs for coats and hats, and a little shelf with a dish for cards. Last night, I supposed, the sitters' coats and hats had hung here; this morning there was nothing on it but a gentleman's grey overcoat."
+
+[items.umbrella_stand]
+name = "umbrella stand"
+aliases = ["umbrella-stand", "porcelain", "umbrellas", "chinese porcelain"]
+location = "hall"
+scenery = true
+container = true
+description = "A tall jar of blue-and-white Chinese porcelain full of umbrellas and walking-sticks."
+details = [ { when = "loc:coin_hall:umbrella_stand", text = "At the bottom of it, under the ferrules, something clinked when I moved the sticks." } ]
+
+[items.coin_hall]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "umbrella_stand"
+coin = true
+description = "A threepenny bit, fallen, I suppose, from some sitter's pocket with his umbrella."
+take_text = "I fished out the threepenny bit from among the sticks."
+
+[items.hall_chair]
+name = "hall chair"
+aliases = ["chair", "hall-chair"]
+location = "hall"
+scenery = true
+description = "A hard hall chair of carved oak, drawn up close beside the door of the séance room, so that anyone sitting on it would have had the door at his elbow."
+
+# ================================================================ the front drawing-room
+
+[items.photographs]
+name = "spirit photographs"
+aliases = ["photographs", "photograph", "photos", "spirit photograph", "faces"]
+location = "drawing_room"
+scenery = true
+description = "Spirit photographs by the dozen: a sitter, very stiff and solemn, and behind him a misty face with a look of muslin about it. I counted Madame Peake's own handsome features, decently veiled, behind no fewer than four of the departed."
+
+[items.palms]
+name = "palms"
+aliases = ["palm", "pots", "brass pots", "plush"]
+location = "drawing_room"
+scenery = true
+description = "Palms in brass pots, a little dusty, and plush everywhere a body might sit."
+
+[items.drawing_sofa]
+name = "sofa"
+aliases = ["long sofa", "cushions", "cushion"]
+location = "drawing_room"
+scenery = true
+container = true
+description = "A long sofa upholstered in crimson plush, with deep buttoned cushions."
+details = [ { when = "loc:coin_drawing:drawing_sofa", text = "Down at the back of the cushions my fingers met a small coin." } ]
+
+[items.coin_drawing]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "drawing_sofa"
+coin = true
+description = "A threepenny bit, warm from the cushions."
+take_text = "I drew the threepenny bit out from the back of the cushions."
+
+[items.drawing_fire]
+name = "fire"
+aliases = ["grate", "fireplace"]
+location = "drawing_room"
+scenery = true
+description = "A good coal fire, which the sitters must have been glad of last night."
+
+# ================================================================ dining-room and morning-room
+
+[items.sideboard]
+name = "sideboard"
+aliases = ["breakfast", "dishes", "remains"]
+location = "dining_room"
+scenery = true
+container = true
+description = "A massive mahogany sideboard bearing the wreck of a breakfast: cold kidneys, a cold rack of toast, a coffee-pot gone cold."
+details = [ { when = "loc:coin_dining:sideboard", text = "Beside the toast-rack lay a small coin, left, perhaps, for the maid." } ]
+
+[items.coin_dining]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "sideboard"
+coin = true
+description = "A bright threepenny bit."
+take_text = "I took up the threepenny bit. The maid, I resolved, should have a shilling of mine instead."
+
+[items.foolscap]
+name = "foolscap"
+aliases = ["papers", "notes", "report", "writing-table", "writing table", "hand"]
+location = "morning_room"
+scenery = true
+description = "Sheet upon sheet of foolscap in a close, angry hand, headed REPORT OF A SITTING AT LAUREL LODGE, 3RD DECEMBER, and scored through and begun again a dozen times. The writer had evidently got as far as 'the conditions were in every respect satisfactory' and could get no further."
+
+[items.work_table]
+name = "work-table"
+aliases = ["work table", "workbox"]
+location = "morning_room"
+scenery = true
+description = "A lady's work-table with a silk bag beneath it, full of crochet. Nobody, I thought, would be crocheting in this house for some time."
+
+# ================================================================ the library
+
+[items.bookcases]
+name = "bookcases"
+aliases = ["cases", "books", "bindings", "spiritualist writers", "glass-fronted cases"]
+location = "library"
+scenery = true
+description = "The spiritualist writers in a long green row, the pages of most of them still uncut, and below them a row of bound volumes of a spiritualist weekly."
+
+[items.armchairs]
+name = "armchairs"
+aliases = ["armchair", "leather armchairs", "chairs", "chair"]
+location = "library"
+scenery = true
+container = true
+description = "A pair of deep leather armchairs drawn up to the library fire."
+details = [ { when = "loc:coin_library:armchairs", text = "Something small had slipped down between the seat and the arm of the further one." } ]
+
+[items.coin_library]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "armchairs"
+coin = true
+description = "A threepenny bit, a little tarnished."
+take_text = "I worked the threepenny bit out from the side of the armchair."
+
+# ================================================================ the office
+
+[items.roll_top]
+name = "roll-top desk"
+aliases = ["roll top desk", "desk", "roll-top"]
+location = "office"
+scenery = true
+description = "A roll-top desk, very orderly: pigeon-holes of receipts, a rack of pens, a blotter. Its owner's habits were plainly neat."
+
+[items.letter_press]
+name = "letter-press"
+aliases = ["letter press", "press"]
+location = "office"
+scenery = true
+description = "A copying letter-press of iron, for taking copies of letters into a book."
+
+[items.cash_box]
+name = "cash-box"
+aliases = ["cash box", "box", "japanned cash-box"]
+location = "office"
+scenery = true
+cant_take = "It was locked, and not mine to carry off."
+description = "A japanned cash-box, locked."
+
+[items.sittings_book]
+name = "sittings ledger"
+aliases = ["ledger", "sittings", "sittings book", "book", "red ledger"]
+location = "office"
+scenery = true
+clue = "sittings_book"
+description = """
+A ledger in Gale's neat clerkly hand: every sitting for three years, with the sitters' names and what each had paid. The last entry read:
+
+| Weds. 3rd Dec. Dark circle, 9 p.m. Conditions by Dr Rook.
+|   Sir W. Brayfield .................... (guest)
+|   Miss Brayfield ...................... (guest)
+|   Dr A. Rook ......................... 2 gns.
+|   Col. H. Fane ....................... 2 gns.
+|   Mrs H. Quill ....................... 2 gns.
+|   Mr T. Danby ........................ 5 gns.
+|   F. G. (at Madame's right)
+|                          Received ... 11 gns.
+
+The receipts for November alone came, by my reckoning, to more than a hundred and forty guineas.
+"""
+
+# ================================================================ the séance room
+
+[items.seance_table]
+name = "round table"
+aliases = ["table", "seance table", "séance table"]
+location = "seance_room"
+scenery = true
+clue = "table_size"
+description = "A heavy round table of mahogany on a pillar foot. I measured it with my arms: a good five feet across. A sitter's hand laid on its edge was very far from the middle of it, and further still from the other side. A cloth of green baize covered it, with a fringe that hung down a hand's breadth all round."
+
+[items.baize]
+name = "baize"
+aliases = ["green baize", "cloth", "fringe", "underside", "under the table", "beneath the table", "table-top", "table top"]
+location = "seance_room"
+scenery = true
+description = "Thick green baize, fringed, hanging down a hand's breadth below the edge of the table all round."
+on_examine = [
+  { once = true, text = "I went round the table on my knees, lifting the fringe and running my fingers along the underside of the table-top. On the right hand of Madame's armchair, as one would sit in it, at the place next to hers, my finger was pricked by something sharp. A long steel hatpin had been thrust up into the wood from below, under the fringe, so that only its head hung down; I could see it now, a black bead in the shadow of the baize.", effects = ["move:hatpin:seance_room"] },
+]
+
+[items.hatpin]
+name = "hatpin"
+aliases = ["pin", "hat-pin", "steel hatpin", "jet", "beetle", "scarab"]
+location = "nowhere"
+clue = "hatpin"
+description = "A lady's hatpin, nine inches of fine steel, with a head of carved jet in the shape of a scarab beetle. The steel was dulled with a dry brown film for six inches of its length, and I had seen enough of such films to know it."
+take_text = "I worked the hatpin out of the wood with my handkerchief and wrapped it carefully."
+
+[items.chairs]
+name = "chairs"
+aliases = ["plain chairs", "seven chairs", "eight chairs", "chair"]
+location = "seance_room"
+scenery = true
+description = "Seven plain chairs with cane seats set round the table, close enough for the sitters' hands to meet on the baize, and the great carved armchair at the head."
+
+[items.armchair]
+name = "carved armchair"
+aliases = ["great armchair", "armchair", "madame's armchair", "medium's chair", "her chair"]
+location = "seance_room"
+scenery = true
+description = "A great armchair of carved oak, very like a bishop's throne, with its back to the curtain of the cabinet. It was here, I gathered, that Madame sat, and here that she had died. There was a small stain on the right arm of it, nearest the next place."
+
+[items.cabinet_curtain]
+name = "black curtain"
+aliases = ["curtain", "velvet curtain", "black velvet", "velvet"]
+location = "seance_room"
+scenery = true
+description = "A heavy curtain of black velvet hung across an alcove behind Madame's chair. The alcove beyond it was what the spiritualists call the cabinet."
+
+[items.trumpet]
+name = "trumpet"
+aliases = ["tin trumpet", "spirit trumpet", "cone", "speaking trumpet"]
+location = "seance_room"
+scenery = true
+clue = "trumpet"
+description = "A cone of tin some two feet long, painted round with bands of some luminous preparation which shows pale green in the dark. Its rim was freshly dented where it had fallen on the table. On the narrow end, where it would be held, the luminous paint was smudged and rubbed with the marks of fingers."
+
+[items.musical_box]
+name = "musical box"
+aliases = ["music box", "box", "stand", "musical-box"]
+location = "seance_room"
+scenery = true
+description = "A large Swiss musical box in a rosewood case, on a stand of its own by the west wall. It plays, the card in its lid informed me, eight airs, of which the fourth is The Last Rose of Summer. Its key was in it."
+
+[items.seance_fireplace]
+name = "fireplace"
+aliases = ["fire", "grate", "hearth"]
+location = "seance_room"
+scenery = true
+description = "A small fireplace in the south-west corner, the fire long out. A fire would have given light, and a dark circle wants none."
+
+[items.shutters]
+name = "shutters"
+aliases = ["window", "tall window", "wooden shutters", "screws"]
+location = "seance_room"
+scenery = true
+clue = "shutters"
+description = "Heavy wooden shutters across the tall window, and through the bar that held them, two new brass screws, driven well home. I learned afterwards that Dr Rook carries a screwdriver to every sitting for this purpose. Whatever had come into this room last night had not come by the window."
+
+[items.seals]
+name = "paper seals"
+aliases = ["seals", "seal", "paper", "slips", "wax", "door frame", "frame"]
+location = "seance_room"
+scenery = true
+clue = "seals"
+description = "Two slips of paper had been pasted across the crack of the door, top and bottom, each sealed with red wax and signed 'A.R., 9 p.m.' They had been torn clean across where the door was opened at last, and in no other way."
+
+# ================================================================ the cabinet
+
+[items.body]
+name = "body"
+aliases = ["madame peake", "mrs peake", "madame", "corpse", "sheet", "dead woman", "sofa", "narrow sofa"]
+location = "cabinet"
+scenery = true
+cant_take = "That was for the police and the undertaker."
+description = "I turned back the sheet. Madame Peake had been a handsome, heavy, dark woman, and death had not yet taken that from her. She lay in a gown of black silk, with a long black silk skirt, and her hands had been folded on her breast. On the bodice, below the left breast, there was a small dark stain, and in the middle of it the wound."
+
+[items.wound]
+name = "wound"
+aliases = ["stain", "bodice", "puncture", "breast"]
+location = "cabinet"
+scenery = true
+clue = "wound"
+description = "I unfastened the bodice. The wound was a small round puncture a little below the left breast, hardly bigger than a pea, with very little blood outside: the bleeding had all been within. A probe, had I had one, would hardly have been needed; feeling the course of it I was sure. It ran not straight in, but from her right towards her left and a little backward, driven up into the heart from a hand on her right side, and close."
+
+[items.hands]
+name = "hands"
+aliases = ["her hands", "hand", "fingers", "left hand", "right hand", "ring", "fingertips"]
+location = "cabinet"
+scenery = true
+clue = "hands"
+description = "I took her hands one after the other. On the third finger of the left was a heavy wedding ring, worn thin; nothing on the right. The curtain had fallen behind me and the alcove was very dim, and as I turned the right hand over I saw that the tips of its first finger and thumb gave off a faint greenish glow, like the ghost of a light. The left hand showed nothing of the kind."
+
+[items.skirt]
+name = "skirt"
+aliases = ["black skirt", "silk skirt", "gown", "pocket", "placket", "black silk"]
+location = "cabinet"
+scenery = true
+description = "A full skirt of heavy black silk, much gathered."
+on_examine = [
+  { once = true, text = "Running my hand down the folds of it, I found that there was a deep pocket hidden in the placket, where no dressmaker puts one, and in it something long and hard. I drew it out and laid it on the sofa beside her: a slender tube of black japanned metal.", effects = ["move:reaching_rod:cabinet"] },
+]
+
+[items.reaching_rod]
+name = "black tube"
+aliases = ["tube", "rod", "reaching rod", "japanned tube", "metal tube", "glove"]
+location = "nowhere"
+clue = "reaching_rod"
+description = "A slender tube of black japanned metal about a foot long, which drew out, joint after joint, like a telescope, until it was nearly five feet in length. At its tip was fixed a little kid glove, a child's, stuffed hard with cotton-wool, and very cold to the touch. The grip at the other end was smeared with the same green luminous paint as the trumpet, and shone faintly in the dimness."
+take_text = "I closed the tube up again and put it in my pocket."
+
+[items.velvet]
+name = "black velvet"
+aliases = ["hangings", "walls", "alcove walls"]
+location = "cabinet"
+scenery = true
+description = "Black velvet on every wall, rubbed and shabby where shoulders had leaned against it."
+
+# ================================================================ the kitchen
+
+[items.range]
+name = "range"
+aliases = ["kitchen range", "oven"]
+location = "kitchen"
+scenery = true
+description = "A great black range, roaring. Whatever else had happened in Laurel Lodge, luncheon would be served."
+
+[items.dresser]
+name = "dresser"
+aliases = ["china", "blue china", "plates"]
+location = "kitchen"
+scenery = true
+container = true
+description = "A tall dresser of blue-and-white china."
+details = [ { when = "loc:coin_kitchen:dresser", text = "In a cracked cup on the bottom shelf, with the buttons and the string, lay a small silver coin." } ]
+
+[items.coin_kitchen]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "dresser"
+coin = true
+description = "A threepenny bit from the cook's button-cup."
+take_text = "I took the threepenny bit from the cup, and left a sixpence of my own in its place."
+
+# ================================================================ upstairs
+
+[items.stained_glass]
+name = "stained-glass window"
+aliases = ["stained glass", "stained glass window", "lilies", "window"]
+location = "landing"
+scenery = true
+description = "A window of coloured glass, a design of white lilies on a blue ground, through which the December light came very dimly."
+
+[items.jardiniere]
+name = "jardinière"
+aliases = ["jardiniere", "fern", "pot"]
+location = "landing"
+scenery = true
+container = true
+description = "A tall jardinière of glazed earthenware holding a fern."
+details = [ { when = "loc:coin_landing:jardiniere", text = "On the earth at the foot of the fern something small and silver caught the light." } ]
+
+[items.coin_landing]
+name = "threepenny bit"
+aliases = ["coin", "threepence", "joey", "bit", "silver"]
+location = "jardiniere"
+coin = true
+description = "A threepenny bit, a little earthy."
+take_text = "I picked the threepenny bit off the earth in the pot."
+
+[items.bedroom_desk]
+name = "writing-desk"
+aliases = ["writing desk", "desk", "walnut desk", "walnut writing-desk"]
+location = "bedroom"
+scenery = true
+container = true
+openable = true
+description = "A little walnut writing-desk with a sloping lid, standing in the window."
+open_text = "The lid was not locked. I let it down."
+
+[items.letter_draft]
+name = "draft letter"
+aliases = ["letter", "draft", "solicitor", "fennimore"]
+location = "bedroom_desk"
+clue = "solicitor_letter"
+description = """
+A letter, unfinished and unsigned, in a large untidy hand, much blotted:
+
+| Laurel Lodge, Weds.
+| Dear Mr Fennimore, I must see you about F.G. before the wedding. I have
+| been through the pass-book and the sittings book together and he has been
+| keeping back the half of everything these two years, I am sure of it now.
+| I have told him so to his face. As soon as I am Lady B. I mean to have the
+| law of him, and Sir W. agrees I should. Will you come on Friday
+"""
+
+[items.passbook]
+name = "pass-book"
+aliases = ["passbook", "pass book", "bank book", "bank-book"]
+location = "bedroom_desk"
+clue = "passbook"
+description = "Her bank pass-book, with the London and Westminster Bank. The sums paid in for November came to sixty-eight guineas, in Mr Gale's hand on the paying-in slips. Somebody, in pencil, had added the figure 140 in the margin, and underlined it twice."
+
+[items.brushes]
+name = "silver brushes"
+aliases = ["brushes", "dressing-table", "dressing table", "patchouli", "silk"]
+location = "bedroom"
+scenery = true
+description = "Silver-backed brushes and a great many little bottles on a dressing-table draped in rose silk."
+
+[items.washstand]
+name = "washstand"
+aliases = ["basin", "jug", "marble", "wash-stand"]
+location = "gale_room"
+scenery = true
+description = "A marble-topped washstand with jug and basin. The basin had been used and emptied, and the towel beside it was still damp."
+
+[items.wardrobe]
+name = "wardrobe"
+aliases = ["clothes", "bed", "narrow bed"]
+location = "gale_room"
+scenery = true
+description = "A plain wardrobe holding two suits and a suit of evening clothes, very well brushed; and a narrow bed, made with military neatness."
+
+[items.gale_grate]
+name = "grate"
+aliases = ["ashes", "small grate", "fireplace", "fire"]
+location = "gale_room"
+scenery = true
+container = true
+description = "A small grate, full of ashes. Paper had been burnt in it, and something else that had not burnt so well."
+details = [ { when = "loc:cuff:gale_grate", text = "Among the ashes, scorched brown but not burnt through, lay a curl of starched white linen." } ]
+
+[items.cuff]
+name = "cuff"
+aliases = ["linen", "starched linen", "shirt-cuff", "shirt cuff", "curl"]
+location = "gale_grate"
+clue = "cuff"
+description = "A gentleman's detachable shirt-cuff, of the kind worn with evening dress, scorched brown along one side. On the unburnt edge, the edge that would lie against the wrist, were three or four small brown spots and a smear. I am a medical man; I knew them for what they were."
+take_text = "I lifted the cuff out of the ashes and put it in an envelope."
+
+[items.playbill]
+name = "playbill"
+aliases = ["bill", "framed playbill", "poster", "volante", "mantel"]
+location = "gale_room"
+scenery = true
+clue = "conjuror"
+description = """
+A framed playbill, yellow with age:
+
+| THE CAMBRIDGE MUSIC HALL. Twice Nightly.
+| SIGNOR VOLANTE, The Wizard of the South,
+| in his Celebrated Exposure of THE SPIRIT CABINET!
+| Ladies and Gentlemen shall HOLD HIS HANDS,
+| and yet the Spirits shall walk!
+| Assisted by MR F. GALE.
+"""
