@@ -14,7 +14,7 @@ from holmes.engine.parser import DIRECTIONS, Command, build_verb_map, parse
 PRONOUNS = {"him", "her", "them", "he", "she"}
 from holmes.engine.state import GameState
 from holmes.engine.story import Story, as_list
-from holmes.puzzles import morse
+from holmes.puzzles import cylinder, morse
 from holmes.puzzles.seating import has_seating, seat, show_plan, unseat
 from holmes.puzzles.timeline import arrange, has_timeline, show_board
 
@@ -37,7 +37,8 @@ HELP = """\
 UNTIMED = {"notebook", "hint", "help", "save", "quit", "inventory", "exits", "accuse",
            "status", "look", "wait", "timeline", "arrange",
            "seating", "seat", "unseat",
-           "tapes", "tape", "decode", "attribute", "codebook"}
+           "tapes", "tape", "decode", "attribute", "codebook",
+           "cylinders", "play", "source"}
 
 # Typed alone (spaces and case ignored), grants one hint coin. Not listed in HELP.
 CHEAT_WORD = "persianslipper"
@@ -444,6 +445,7 @@ class Game:
         if t.get("clue"):
             self.add_clue(t["clue"])
             morse.show_item_tape(self, t["clue"])
+            cylinder.note_item_cylinder(self, t["clue"])
         self.run_all(t.get("on_examine"), f"examine:{tid}")
 
     def do_take(self, cmd: Command) -> None:
@@ -707,6 +709,11 @@ class Game:
                      "\n|                 TAPE <letter> shows its marks; CODEBOOK the alphabet"
                      "\n|                 DECODE <letter> AS <words> tries a reading"
                      "\n|                 ATTRIBUTE <letter> TO <name> says who sent it")
+        if cylinder.has_cylinder(self):
+            text += ("\n| Cylinders:      CYLINDERS lists the cylinders you hold;"
+                     "\n|                 PLAY <letter> AT <speed> plays one at the machine"
+                     "\n|                 SOURCE <number> FROM <letter> says where a part of"
+                     "\n|                 the questioned cylinder was copied from")
         self.say(text, "system")
 
     def _no_tapes(self) -> bool:
@@ -734,6 +741,24 @@ class Game:
     def do_codebook(self, cmd: Command) -> None:
         if not self._no_tapes():
             morse.show_codebook(self)
+
+    def _no_cylinders(self) -> bool:
+        if cylinder.has_cylinder(self):
+            return False
+        self.fail("There are no phonograph cylinders to be played in this case.")
+        return True
+
+    def do_cylinders(self, cmd: Command) -> None:
+        if not self._no_cylinders():
+            cylinder.show_board(self)
+
+    def do_play(self, cmd: Command) -> None:
+        if not self._no_cylinders():
+            cylinder.play(self, self._rest(cmd))
+
+    def do_source(self, cmd: Command) -> None:
+        if not self._no_cylinders():
+            cylinder.source(self, self._rest(cmd))
 
     def do_timeline(self, cmd: Command) -> None:
         if not has_timeline(self):

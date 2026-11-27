@@ -49,6 +49,9 @@ BUILTIN_VERBS = {
     "decode": ["decode", "transcribe", "translate", "decipher"],
     "attribute": ["attribute", "ascribe", "assign", "credit"],
     "codebook": ["codebook", "alphabet", "morse"],
+    "cylinders": ["cylinders", "records"],
+    "play": ["play", "listen"],
+    "source": ["source"],
     "again": ["again", "g"],
 }
 

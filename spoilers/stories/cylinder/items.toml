@@ -1,0 +1,566 @@
+# ================================================================ the gate
+
+[items.larches_trees]
+name = "larches"
+aliases = ["trees", "row of larches", "blinds", "gravel", "gravel sweep", "sweep", "house"]
+location = "gate"
+scenery = true
+description = "Dark larches, a gravel sweep, and the front windows of the house blind with drawn holland for a death."
+
+[items.london_view]
+name = "view"
+aliases = ["london", "roofs", "kentish town", "bowl", "smoke"]
+location = "gate"
+scenery = true
+description = "From the top of Highgate Hill the whole of London lies spread out below, under its own smoke, with the dome of St Paul's floating on it like a bubble. Kentish Town is the nearest part, at the foot of the hill: a mile of grey roofs and railway lines."
+
+[items.cab_highgate]
+name = "cab"
+aliases = ["four-wheeler", "horse", "cabman", "verge"]
+location = "gate"
+scenery = true
+description = "A four-wheeler, hired for the day, with a patient horse. The cabman touched his hat. \"Kentish Town whenever you like, sir.\""
+
+# ================================================================ the hall
+
+[items.hall_clock]
+name = "tall clock"
+aliases = ["clock", "long-case clock", "grandfather clock"]
+location = "hall"
+scenery = true
+description = "A long-case clock, stopped at four o'clock, the hour of his death, as the old custom is."
+
+[items.umbrella_stand]
+name = "umbrella stand"
+aliases = ["stand", "umbrellas", "mirror"]
+location = "hall"
+scenery = true
+container = true
+description = "A carved oak stand with a mirror over it, holding umbrellas and an old man's blackthorn."
+details = [ { when = "loc:coin_hall:umbrella_stand", text = "In the drip-tray at the bottom lay a shilling." } ]
+
+[items.coin_hall]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "umbrella_stand"
+coin = true
+description = "A shilling."
+take_text = "I fished the shilling out of the drip-tray."
+
+[items.staircase]
+name = "staircase"
+aliases = ["stairs", "tiles", "encaustic tiles", "floor"]
+location = "hall"
+scenery = true
+description = "A broad staircase with a mahogany rail, going up into the dimness of the bedroom floor."
+
+# ================================================================ the library
+
+[items.library_table]
+name = "table"
+aliases = ["papers", "deed-box", "deed box", "japanned deed-box", "books"]
+location = "library"
+scenery = true
+description = "Mr Tulliver's papers, in tidy heaps, and his black deed-box lettered C. VANE, ESQ."
+
+[items.safe]
+name = "safe"
+aliases = ["iron safe", "small safe"]
+location = "library"
+scenery = true
+description = "A small iron safe, its door ajar. Mr Tulliver had the key of it on his ring."
+
+[items.hearth]
+name = "hearth"
+aliases = ["fire", "fireplace", "carpet", "turkey carpet"]
+location = "library"
+scenery = true
+description = "A small coal fire in a black-leaded grate."
+
+# ================================================================ the passage
+
+[items.felt_door]
+name = "felt door"
+aliases = ["green felt", "heavy door"]
+location = "passage"
+scenery = true
+description = "A heavy door covered in green felt, to keep the noise of the laboratory from the house, or the noise of the house from the laboratory."
+
+# ================================================================ the study
+
+[items.study_desk]
+name = "desk"
+aliases = ["plain desk", "big desk", "square", "clean square", "bare wood", "dust"]
+location = "study"
+scenery = true
+container = true
+clue = "machine_gone"
+description = "A big deal desk, dusty, for the housemaid had orders never to touch it. In the middle of it was a clean square of bare wood, about a foot each way, with the marks of four small feet at its corners: something heavy had stood there for years, and had lately been lifted away. In front of it the dust had been rubbed into an arc, as by the base of a horn."
+details = [ { when = "loc:syndicate_letter:study_desk", text = "Under a paperweight at the corner lay a letter on thin foreign paper." } ]
+
+[items.syndicate_letter]
+name = "letter"
+aliases = ["foreign letter", "thin letter", "syndicate letter", "paper"]
+location = "study_desk"
+clue = "syndicate_letter"
+description = """
+A letter on thin paper, headed THE COLUMBIAN PHONOGRAPH SYNDICATE, BROADWAY, NEW YORK, and dated from their London agent, 5th May 1894:
+
+'Dear Mr Vane, We are still without the signed assignment of your British and Colonial patents, which Mr Orme assured us on the 1st inst. you would execute on the 2nd. Our principals are pressing. May we beg you to sign and return it at your earliest convenience?'
+"""
+
+[items.cabinet]
+name = "cabinet"
+aliases = ["pigeon-holes", "pigeonholes", "tubes", "tall cabinet", "cylinders"]
+location = "study"
+scenery = true
+container = true
+clue = "cabinet_gaps"
+description = "A tall cabinet of pigeon-holes, numbered 1 to 30, each holding a cylinder in a cardboard tube with a label. Most were full. Four were empty: Numbers 9, 14, 17 and 21, and in each the dust on the floor of the hole had been disturbed lately."
+details = [ { when = "loc:cyl_s5:cabinet", text = "In Number 19, the newest, was a tube labelled 'Notes on the siren, Feb. 1894'." } ]
+
+[items.catalogue]
+name = "catalogue"
+aliases = ["thick catalogue", "book", "list"]
+location = "study"
+scenery = true
+clue = "catalogue"
+description = """
+Mr Vane's catalogue of his cylinders, in his own hand until Christmas last and in Miss Vane's after it. Each entry gave the number, the date, what was spoken, where, and on which machine: O for the old Edison in the study, N for the new machine in the laboratory. Among them:
+
+'9. 3 Nov. 1893. To Clara, on her birthday. Morning room. N.'
+'14. 15 Jan. 1894. Statement for the patent hearing. Study. O.'
+'17. 12 Mar. 1894. Letter to the Columbian Syndicate. Study. N.'
+'19. Feb. 1894. Notes on the siren. Laboratory. N.'
+'21. 20 Apr. 1894. Notes for Orme. Laboratory. O.'
+
+On the flyleaf, in Miss Vane's hand: 'O: governor seized 28 March. Runs at 120 only. N: set at 160 for all recording.'
+"""
+
+[items.regulator]
+name = "regulator clock"
+aliases = ["regulator", "clock", "wall clock"]
+location = "study"
+scenery = true
+clue = "regulator"
+description = "A plain mahogany regulator with a long pendulum beating seconds, sixty to the minute, with a heavy tick that filled the room. Any cylinder made in this room would have it ticking in the background, I thought, like a second heart."
+
+[items.fork_case]
+name = "leather case"
+aliases = ["case", "little case", "fork", "tuning fork", "tuning-fork"]
+location = "study"
+scenery = true
+clue = "fork"
+description = "A little leather case, and in it, on velvet, a steel tuning fork stamped 'A 435. Diapason normal.' The French pitch, as I understood it; the standard of the Paris Conservatoire."
+
+# ================================================================ the laboratory
+
+[items.new_phonograph]
+name = "new phonograph"
+aliases = ["phonograph", "machine", "new machine", "regulator", "speed regulator", "horn", "great horn"]
+location = "laboratory"
+scenery = true
+description = "A fine new phonograph of mahogany and nickel, with a great brass horn and a speed regulator: a little dial and lever by which it could be made to turn its cylinder at anything from 60 to 240 times a minute. Holmes had it ready for me."
+
+[items.siren]
+name = "siren"
+aliases = ["brass siren", "bellows", "stand", "tube"]
+location = "laboratory"
+scenery = true
+description = "Cagniard de la Tour's siren: a brass disc pierced with holes, spun by a jet of air from the bellows, with a counter on top. Turned up until its note matches a sound, it tells how many vibrations a second that sound has. Holmes, with his violinist's ear, could match a note on it in a moment."
+
+[items.dynamo]
+name = "dynamo"
+aliases = ["gas-engine", "gas engine", "engine", "whine"]
+location = "laboratory"
+scenery = true
+clue = "dynamo"
+description = "A little gas-engine driving a dynamo, for the laboratory's arc-lamp and its batteries. It whined as it ran, steadily, a thin high note. Holmes put the siren to it for me: two hundred vibrations, and never varying."
+
+[items.lab_benches]
+name = "benches"
+aliases = ["bench", "lathes", "coils", "jars", "pieces"]
+location = "laboratory"
+scenery = true
+container = true
+description = "Benches all round the room, covered with the litter of a lifetime's work: lathes, coils, jars, diaphragms of glass and mica, wax shavings."
+details = [ { when = "loc:coin_lab:lab_benches", text = "Among the wax shavings at the end of one lay a shilling." } ]
+
+[items.coin_lab]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "lab_benches"
+coin = true
+description = "A shilling, waxy."
+take_text = "I picked the shilling out of the shavings."
+
+[items.orme_bench]
+name = "Orme's bench"
+aliases = ["tidy bench", "card", "f orme", "orme's bench"]
+location = "laboratory"
+scenery = true
+description = "Orme's bench: everything squared and in its place, tools in a rack, and a box of blank cylinders, the new hard brown wax, a dozen to the box, of which two were gone."
+
+[items.skylight_lab]
+name = "skylight"
+aliases = ["glass roof", "roof"]
+location = "laboratory"
+scenery = true
+description = "A long skylight, clean, through which the May sun came down on the benches."
+
+# ================================================================ the morning room
+
+[items.piano]
+name = "piano"
+aliases = ["cottage piano", "keys"]
+location = "morning_room"
+scenery = true
+container = true
+description = "A little cottage piano, much used, with Mendelssohn open on the stand."
+details = [ { when = "loc:coin_morning:piano", text = "On top of it, by a vase of tulips, lay a shilling." } ]
+
+[items.coin_morning]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "piano"
+coin = true
+description = "A shilling."
+take_text = "I took the shilling from the top of the piano."
+
+[items.canary]
+name = "canary"
+aliases = ["cage", "brass cage", "bird"]
+location = "morning_room"
+scenery = true
+clue = "canary"
+description = "A canary in a brass cage, trilling as if its throat would burst. It had sung through every word ever spoken in this room, I supposed. Holmes had measured it with his siren when we came in: three thousand vibrations, near enough."
+
+[items.embroidery]
+name = "embroidery"
+aliases = ["chair", "chintz", "sewing"]
+location = "morning_room"
+scenery = true
+description = "A half-finished piece of embroidery, the needle left in it."
+
+# ================================================================ the drawing room
+
+[items.sofa]
+name = "sofa"
+aliases = ["plush", "cushions"]
+location = "drawing_room"
+scenery = true
+container = true
+description = "A great plush sofa, buttoned and fringed."
+details = [ { when = "loc:coin_drawing:sofa", text = "Down the side of the cushion, where it had slipped from somebody's pocket, was a shilling." } ]
+
+[items.coin_drawing]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "sofa"
+coin = true
+description = "A shilling."
+take_text = "I took the shilling from down the side of the cushion."
+
+[items.curiosities]
+name = "cabinet of curiosities"
+aliases = ["curiosities", "cabinet", "gilt"]
+location = "drawing_room"
+scenery = true
+description = "Shells, minerals, a stuffed humming-bird, and a gold medal from the Paris Exhibition of 'seventy-eight, for an improvement in the telephone."
+
+[items.decanter]
+name = "decanter"
+aliases = ["side table", "brandy", "whisky"]
+location = "drawing_room"
+scenery = true
+description = "A decanter of brandy, two-thirds gone, and a used glass."
+
+# ================================================================ the kitchen
+
+[items.dresser]
+name = "dresser"
+aliases = ["plates", "blue-and-white plates"]
+location = "kitchen"
+scenery = true
+container = true
+description = "A tall dresser of blue-and-white plates, very clean."
+details = [ { when = "loc:coin_kitchen:dresser", text = "On the lowest shelf, among the egg-cups, lay a shilling." } ]
+
+[items.coin_kitchen]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "dresser"
+coin = true
+description = "A shilling."
+take_text = "I took the shilling from among the egg-cups."
+
+[items.kitchen_range]
+name = "range"
+aliases = ["table", "scrubbed table"]
+location = "kitchen"
+scenery = true
+description = "A great black range, and a scrubbed deal table you could have eaten your dinner off without a plate."
+
+# ================================================================ the bedroom
+
+[items.medicines]
+name = "medicine bottles"
+aliases = ["bottles", "medicines", "washstand", "digitalis", "drops"]
+location = "bedroom"
+scenery = true
+description = "Bottles from the chemist in the village: amyl nitrite in pearls, for the attacks; bromide; and a small bottle of tincture of digitalis, two-thirds full, with a dropper."
+
+[items.medicine_book]
+name = "little book"
+aliases = ["book", "medicine book", "doses"]
+location = "bedroom"
+scenery = true
+clue = "medicine_book"
+description = "A little book in Miss Vane's hand, recording every dose given since April: digitalis, ten drops at night, and the bottle measured each Sunday. The drops given and the drops gone out of the bottle agreed to the last week. On the morning of the 7th, the last entry: 'Father died about 4. Dr Lammas came at 7.'"
+
+[items.spectacles]
+name = "spectacles"
+aliases = ["glasses", "lenses", "bedside table"]
+location = "bedroom"
+scenery = true
+clue = "spectacles"
+description = "Cataract spectacles, the lenses thick as the bottom of a tumbler. Even with them, I knew, a man with cataracts as far advanced as these lenses suggested could not have read a line of print, or a line of anything."
+
+[items.bed]
+name = "bed"
+aliases = ["stripped bed", "blinds"]
+location = "bedroom"
+scenery = true
+description = "A plain iron bed, stripped."
+
+# ================================================================ the garden
+
+[items.lawn]
+name = "lawn"
+aliases = ["mulberry", "mulberry tree", "tree", "kitchen garden"]
+location = "garden"
+scenery = true
+container = true
+description = "A shaggy lawn under an old mulberry tree, and beyond it rows of peas and beans."
+details = [ { when = "loc:coin_garden:lawn", text = "In the grass under the mulberry lay a shilling." } ]
+
+[items.coin_garden]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "lawn"
+coin = true
+description = "A shilling, damp from the grass."
+take_text = "I picked the shilling out of the grass."
+
+[items.rain_gauge]
+name = "rain gauge"
+aliases = ["gauge", "brass rain gauge", "post"]
+location = "garden"
+scenery = true
+description = "A brass rain gauge of the Meteorological Society's pattern, on a post of its own in the open lawn, with a measuring glass hung beside it."
+
+[items.shed]
+name = "potting shed"
+aliases = ["shed", "door"]
+location = "garden"
+scenery = true
+container = true
+description = "A tarred potting shed with its door open: pots, sieves, seed-trays, a smell of earth."
+details = [ { when = "loc:rain_book:shed", text = "On a nail inside the door hung a fat little book with a pencil on a string." } ]
+
+[items.rain_book]
+name = "rain book"
+aliases = ["book", "fat little book", "rain-book", "gauge book"]
+location = "shed"
+clue = "rain_book"
+description = """
+The rain book, kept by Bates at the old gentleman's wish, the gauge read every morning at nine. For May:
+
+'1st. Nil. 2nd. Nil, fine all day. 3rd. Nil by day; rain from 10 p.m. 4th, 9 a.m.: 31 hundredths. 5th to 9th, 9 a.m.: nil. 9th: rain from 9 p.m. till 2 in the morning. 10th, 9 a.m.: 44 hundredths. 11th to 14th: nil.'
+"""
+
+# ================================================================ Kentish Town
+
+[items.cab_kentish]
+name = "cab"
+aliases = ["four-wheeler", "horse", "cabman"]
+location = "kentish_street"
+scenery = true
+description = "Our four-wheeler, waiting. \"Back up the hill, sir, whenever you like.\""
+
+[items.terrace_houses]
+name = "houses"
+aliases = ["grey houses", "terrace", "cutting", "railway", "steam", "card", "apartments", "number 14"]
+location = "kentish_street"
+scenery = true
+description = "Narrow houses in a grey row, backing on to the Midland Railway's cutting. A train went by behind them as I looked, and the windows rattled all along the street."
+
+[items.step]
+name = "step"
+aliases = ["whitened step", "doorstep"]
+location = "kentish_street"
+scenery = true
+container = true
+description = "A doorstep, whitened that morning with hearthstone."
+details = [ { when = "loc:coin_street:step", text = "In the angle of the step and the railings lay a shilling." } ]
+
+[items.coin_street]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "step"
+coin = true
+description = "A shilling."
+take_text = "I took the shilling from beside the step."
+
+[items.tower]
+name = "church tower"
+aliases = ["tower", "church"]
+location = "kentish_street"
+scenery = true
+description = "A soot-black tower of the 'forties, with a clock face. St Cuthbert's, by the board at the gate."
+
+[items.hat_stand]
+name = "hat-stand"
+aliases = ["hat stand", "oilcloth", "kitchen", "stair"]
+location = "prout_hall"
+scenery = true
+description = "A bentwood hat-stand with a bowler on it, and a strip of worn oilcloth up the passage."
+
+# ================================================================ Orme's room
+
+[items.orme_skylight]
+name = "skylight"
+aliases = ["dirty glass", "glass", "roof", "sloping roof", "stain"]
+location = "orme_room"
+scenery = true
+clue = "orme_skylight"
+description = "A skylight of dirty glass let into the slope of the roof, right over the table. Rain had leaked in round its frame not long since: there was a fresh brown stain on the ceiling below it. A shower on that glass would drum like a kettledrum."
+
+[items.orme_window]
+name = "window"
+aliases = ["cutting", "railway", "railway cutting"]
+location = "orme_room"
+scenery = true
+description = "A window right over the cutting of the Midland. A goods train went through as I stood there, whistling for the junction, and the floor shook under me."
+
+[items.orme_table]
+name = "table"
+aliases = ["chairs", "books", "shelf", "bachelor's room"]
+location = "orme_room"
+scenery = true
+description = "A deal table and two chairs, a shelf of works on acoustics and electricity, and a litter of wax shavings."
+
+[items.orme_phonograph]
+name = "Orme's phonograph"
+aliases = ["new machine", "clean machine", "common machine", "orme's phonograph", "orme's machine"]
+location = "orme_room"
+scenery = true
+clue = "orme_machine"
+description = "A cheap, clean phonograph of the common sort, set up to record: its recording diaphragm was in place, not the reproducer. Its governor had been set with a screw, and a pencil mark scratched on the dial against the figure 150."
+
+[items.old_machine]
+name = "old phonograph"
+aliases = ["old machine", "edison", "black and gold", "old edison", "old phonograph"]
+location = "orme_room"
+scenery = true
+clue = "old_machine_here"
+description = "An old Edison phonograph of the first pattern, black and gold, with its brass horn. On its base, in white paint, a number: C.V. 1. Its governor was rusted solid. I tried the handle: the mandrel turned, and the governor balls stood out at the one speed they could, which the marks on the dial put at 120. It was set up to play, not to record."
+
+[items.horns]
+name = "horns"
+aliases = ["brass horns", "cord", "muffler", "join", "lashed horns"]
+location = "orme_room"
+scenery = true
+clue = "horns"
+description = "The two brass horns, the old machine's and the new one's, turned mouth to mouth and lashed together with cord, and a woollen muffler wrapped round the join to keep out the noises of the room. Whatever the old machine played, the new one would take down; and whatever else was in the room would get in through the muffler as well, I fancied, if it were loud enough."
+
+[items.hatbox]
+name = "hatbox"
+aliases = ["hat-box", "hat box", "box", "bed"]
+location = "orme_room"
+scenery = true
+container = true
+description = "A leather hatbox under the bed. It held no hat."
+details = [ { when = "loc:cyl_s1:hatbox|loc:cyl_s2:hatbox|loc:cyl_s3:hatbox|loc:cyl_s4:hatbox", text = "It held cylinders, in cardboard tubes, labelled like those in the study cabinet." } ]
+
+# ================================================================ St Cuthbert's
+
+[items.bell_board]
+name = "board of the bells"
+aliases = ["board", "bells", "painted board", "bell board"]
+location = "church_porch"
+scenery = true
+clue = "cuthbert_bell"
+description = """
+A painted board:
+
+THE BELLS OF ST CUTHBERT'S, KENTISH TOWN. Treble, G, cast 1846. Second, F. Third, E. Fourth, D. Tenor, C (262 vibrations), cast 1846, cracked 1889; the clock strikes the hours upon it.
+"""
+
+[items.notice]
+name = "notice of services"
+aliases = ["notice", "services"]
+location = "church_porch"
+scenery = true
+description = "Services on Sundays at 8, 11 and 6:30; on weekdays at 8. Choir practice Fridays."
+
+[items.porch_benches]
+name = "stone bench"
+aliases = ["bench", "benches", "stone benches"]
+location = "church_porch"
+scenery = true
+container = true
+description = "Stone benches worn smooth by generations of waiting."
+details = [ { when = "loc:coin_porch:porch_benches", text = "On one of them, left perhaps by a forgetful bridegroom, lay a shilling." } ]
+
+[items.coin_porch]
+name = "shilling"
+aliases = ["coin", "silver", "shilling"]
+location = "porch_benches"
+coin = true
+description = "A shilling."
+take_text = "I took the shilling from the bench."
+
+# ================================================================ the cylinders
+
+[items.will_cylinder]
+name = "will cylinder"
+aliases = ["will", "cylinder", "the will", "brown cylinder", "questioned cylinder"]
+location = "nowhere"
+clue = "will_cyl"
+description = "A cylinder of the new hard brown wax in a cardboard tube, the tube labelled in a small neat hand: 'My Will. 2nd May 1894. C. Vane.'"
+
+[items.cyl_s5]
+name = "siren cylinder"
+aliases = ["siren cylinder", "notes on the siren", "tube", "number 19", "19"]
+location = "cabinet"
+clue = "cyl_siren"
+description = "A cylinder in its tube, labelled in Miss Vane's hand: '19. Notes on the siren. Feb. 1894. Lab. N.'"
+
+[items.cyl_s1]
+name = "Syndicate cylinder"
+aliases = ["syndicate cylinder", "letter to the columbian syndicate", "number 17", "17"]
+location = "hatbox"
+clue = "cyl_syndicate"
+description = "A cylinder in a tube labelled in Miss Vane's hand: '17. Letter to the Columbian Syndicate. 12 Mar. 1894. Study. N.' The wax was scored with fine new scratches, as if it had been played many times lately."
+
+[items.cyl_s2]
+name = "Orme cylinder"
+aliases = ["orme cylinder", "notes for orme", "number 21", "21"]
+location = "hatbox"
+clue = "cyl_orme"
+description = "A cylinder in a tube labelled: '21. Notes for Orme. 20 Apr. 1894. Lab. O.', in Miss Vane's hand."
+
+[items.cyl_s3]
+name = "birthday cylinder"
+aliases = ["birthday cylinder", "to clara", "clara cylinder", "number 9", "9"]
+location = "hatbox"
+clue = "cyl_birthday"
+description = "A cylinder in a tube labelled in Mr Vane's hand: '9. To Clara, on her birthday. 3 Nov. 1893. Morning room. N.'"
+
+[items.cyl_s4]
+name = "hearing cylinder"
+aliases = ["hearing cylinder", "statement", "patent hearing", "number 14", "14"]
+location = "hatbox"
+clue = "cyl_hearing"
+description = "A cylinder in a tube labelled in Miss Vane's hand: '14. Statement for the patent hearing. 15 Jan. 1894. Study. O.'"

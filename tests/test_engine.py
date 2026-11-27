@@ -377,6 +377,60 @@ class GameTests(unittest.TestCase):
         g.handle("accuse")
         self.assertTrue(g.state.solved)
 
+    def test_cylinder_play_and_final(self):
+        import copy
+        data = copy.deepcopy(FIXTURE)
+        del data["final"]["when"]
+        data["final"].update({"type": "cylinder", "cylinder": {
+            "play_when": "at:b", "play_refused": "No machine.",
+            "sounds": {"v": {"name": "a voice", "freq": 100, "voice": True},
+                       "f": {"name": "a fork", "freq": 400},
+                       "t": {"name": "a tick", "rate": 60}},
+            "cylinders": {
+                "q": {"deal": "found_key", "label": "Questioned.",
+                      "parts": [{"id": "q1", "voice": "v", "words": "Hello there.",
+                                 "true_speed": 200, "sounds": ["f"]},
+                                {"id": "q2", "voice": "v", "words": "Goodbye.",
+                                 "true_speed": 150}],
+                      "background": [{"sound": "t", "true_speed": 150, "clue": "rope_pulled"}]},
+                "s": {"deal": "found_key", "label": "Source.",
+                      "parts": [{"id": "s1", "voice": "v", "words": "Hello there. Goodbye.",
+                                 "true_speed": 160}]},
+            },
+            "answer": {"q1": "s", "q2": "s"},
+            "wrong_ending": "lose", "incomplete_ending": "gaps"}})
+        data["endings"]["gaps"] = {"text": "Gaps."}
+        data["actions"] = []
+        self.assertEqual(validate(data), [])
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.state.clues.append("found_key")
+        g.handle("play a at 150")                            # not at the machine
+        self.assertTrue(g.failed)
+        g.state.room = "b"
+        g.handle("play a at 300")                            # out of the governor's range
+        self.assertTrue(g.failed)
+        mark = len(g.io.output)
+        g.handle("play a at 150")
+        out = " ".join("".join(g.io.output[mark:]).split())
+        self.assertIn("a fork, about 300 vibrations", out)   # 400 x 150/200
+        self.assertIn("A tick, 60 to the minute", out)        # background true at 150
+        self.assertIn('natural (about 100 vibrations a second): "Goodbye."', out)
+        self.assertIn("rope_pulled", g.state.clues)          # clue for hearing it true
+        mark = len(g.io.output)
+        g.handle("play a at 60")                             # far too slow: no words
+        self.assertNotIn("Hello there", "".join(g.io.output[mark:]))
+        g.handle("source 1 from a")                          # not from itself
+        self.assertEqual(g.state.attribution, {})
+        g.handle("source 1 from b")
+        self.assertEqual(g.state.attribution, {"q1": "s"})
+        g.io.inputs += [""]                                  # part 2 unsettled: Enter stops
+        g.handle("accuse")
+        self.assertFalse(g.state.solved)
+        self.assertEqual(g.io.inputs, [])
+        g.io.inputs += ["source 2 from b", "", "bob", "y"]
+        g.handle("accuse")
+        self.assertTrue(g.state.solved)
+
     def test_wrong_then_right_accusation(self):
         g, _ = new_game(["2", "y", "", "1", "y"])
         g.handle("accuse")

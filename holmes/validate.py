@@ -160,7 +160,65 @@ def validate(data: dict) -> list[str]:
     final = data.get("final")
     if not final:
         errs.append("final: missing")
-    elif final.get("type", "accuse") in ("accuse", "timeline", "seating", "morse"):
+    elif final.get("type", "accuse") in ("accuse", "timeline", "seating", "morse", "cylinder"):
+        if final.get("type") == "cylinder":
+            cs = final.get("cylinder", {})
+            sounds, cyls, answer = cs.get("sounds", {}), cs.get("cylinders", {}), cs.get("answer", {})
+            conds.append(("final cylinder.play_when", cs.get("play_when")))
+            lo, hi = cs.get("min_speed", 60), cs.get("max_speed", 240)
+            for k, snd in sounds.items():
+                if not snd.get("name"):
+                    errs.append(f"final cylinder: sound {k!r} has no name")
+                if snd.get("voice") and not isinstance(snd.get("freq"), (int, float)):
+                    errs.append(f"final cylinder: voice {k!r} needs a freq")
+            if len(cyls) > 26:
+                errs.append("final cylinder: more than 26 cylinders")
+            part_ids: dict[str, str] = {}
+            for cid, c in cyls.items():
+                if c.get("deal") not in clues:
+                    errs.append(f"final cylinder: {cid!r} is dealt by unknown clue {c.get('deal')!r}")
+                if not c.get("label"):
+                    errs.append(f"final cylinder: {cid!r} has no label")
+                if not c.get("parts"):
+                    errs.append(f"final cylinder: {cid!r} has no parts")
+                layers = [(p, p.get("sounds", [])) for p in c.get("parts", [])]
+                for p, snds in layers:
+                    pid = p.get("id")
+                    if not pid or pid in part_ids:
+                        errs.append(f"final cylinder: {cid!r} has a part with a missing or repeated id {pid!r}")
+                    part_ids[pid] = cid
+                    ts = p.get("true_speed")
+                    if not isinstance(ts, (int, float)) or not lo <= ts <= hi:
+                        errs.append(f"final cylinder: part {pid!r} needs a true_speed within the machine's range")
+                    if p.get("voice") and p["voice"] not in sounds:
+                        errs.append(f"final cylinder: part {pid!r} has unknown voice {p['voice']!r}")
+                    for s in snds:
+                        if s not in sounds:
+                            errs.append(f"final cylinder: part {pid!r} has unknown sound {s!r}")
+                    if p.get("clue"):
+                        if p["clue"] not in clues:
+                            errs.append(f"final cylinder: part {pid!r} gives unknown clue {p['clue']!r}")
+                        clue_from_decoding.add(p["clue"])
+                for b in c.get("background", []):
+                    if b.get("sound") not in sounds:
+                        errs.append(f"final cylinder: {cid!r} has unknown background sound {b.get('sound')!r}")
+                    ts = b.get("true_speed")
+                    if not isinstance(ts, (int, float)) or not lo <= ts <= hi:
+                        errs.append(f"final cylinder: {cid!r} background needs a true_speed within range")
+                    if b.get("clue"):
+                        if b["clue"] not in clues:
+                            errs.append(f"final cylinder: {cid!r} background gives unknown clue {b['clue']!r}")
+                        clue_from_decoding.add(b["clue"])
+            if not answer:
+                errs.append("final cylinder: answer is empty")
+            for pid, cid in answer.items():
+                if pid not in part_ids:
+                    errs.append(f"final cylinder: answer for unknown part {pid!r}")
+                elif cid not in cyls or cid == part_ids[pid]:
+                    errs.append(f"final cylinder: part {pid!r} answer must name another cylinder")
+            for key in ("wrong_ending", "incomplete_ending"):
+                if (key in cs or key == "wrong_ending") and cs.get(key) not in endings:
+                    errs.append(f"final cylinder: {key} {cs.get(key)!r} does not exist")
         if final.get("type") == "morse":
             from holmes.puzzles.morse import MORSE
             ms = final.get("morse", {})

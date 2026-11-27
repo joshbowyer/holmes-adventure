@@ -222,6 +222,16 @@ Exploration premises:
     states it. Commands: TAPES, TAPE <letters>, DECODE <letter> AS <words> (accepts the
     literal reading of split letters; on a miss it says how many letters fit),
     ATTRIBUTE <letters> TO <name>, CODEBOOK; state in `state.decoded`/`attribution`).
+    `cylinder` (accuse plus tracing a questioned cylinder's parts to their sources:
+    `final.cylinder` has `sounds` {key: {name, freq? | rate?, voice?}} at true pitch,
+    `cylinders` {cid: {deal, label, parts [{id, voice?, words?, true_speed, sounds?,
+    clue?}], background? [{sound, true_speed, clue?}]}}, `answer` {part: source cid},
+    `play_when`, `min_speed`/`max_speed`, `wrong_ending`, `incomplete_ending`. PLAY
+    <letter> AT <speed> describes every sound with pitch/rate scaled by speed /
+    true_speed and says how voices sound (words lost when far off); a `clue` is noted
+    on first hearing that part or sound within 2% of its true speed. Parts of the
+    questioned cylinder are numbered; SOURCE <n> FROM <letter>; CYLINDERS lists.
+    Sources kept in `state.attribution`).
     `holmes/menu.py`: story select. `holmes/validate.py`: structural checks.
   - Story sources: `spoilers/stories/<id>/*.toml` (all files in a folder are merged).
     `python -m holmes.build` validates and writes scrambled `holmes/data/<id>.case`.
@@ -252,11 +262,16 @@ Exploration premises:
     chains where one inference unlocks the next (fact A + fact B gives C, which only
     matters beside D), rather than single clues that each settle a point.
     And `palace` (E3, The Crystal Palace by Night, 1895, 21 rooms, 10 people, 46 clues,
-    8 sixpences; `accuse` with six questions; built for depth per the note above; not
-    yet played). Its timed mechanic: the second watchman walks a round (counter
+    8 sixpences; `accuse` with six questions; built for depth per the note above;
+    played and finished 2026-11-27: "that was good"; one bug, Pike's keys named a
+    screen door they could not open, fixed). Its timed mechanic: the second watchman walks a round (counter
     `round`, `move:` effects, `loc:crouch:ROOM` conditions), stands still while Watson
     is in his room, and a gallery stair opens only while he is there; STATUS shows
     where he is.
+    And `cylinder` (deduction case 1, The Wax Cylinder Will, 1894, 15 rooms, 10 people,
+    54 clues, 8 shillings; first `cylinder` case; a step above the Palace: the
+    questioned cylinder has parts true at two speeds, and several parts' words fit
+    two sources; not yet played).
   - **Difficulty trajectory** (user, 2026-11-27): make each new case a little harder than
     the last, unless the user says the latest one was a little too hard. Don't ask about
     difficulty each time; just step it up.
@@ -286,7 +301,7 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays The Crystal Palace by Night and gives feedback
-  (especially whether the linked deductions felt harder in the right way, and how the
-  watchman's round felt to work around). The remaining deduction cases need new
-  final-puzzle types in `holmes/puzzles/` (record tables, telegram queue, cylinder).
+- Next step from here: the user plays The Wax Cylinder Will and gives feedback
+  (especially on PLAY and the speed reasoning, and the SOURCE step). Remaining after
+  it: E4 Ice Wells, E5 Margaret Ainsley, Census Night (finale, needs record tables)
+  and Letters from Sussex (needs the telegram queue).

@@ -1,0 +1,801 @@
+[case]
+id = "cylinder"
+title = "The Wax Cylinder Will"
+year = 1894
+order = 70
+start = "gate"
+coin_name = "shilling"
+coin_plural = "shillings"
+hint_intro = "I gave Holmes a shilling. He dropped it into his waistcoat pocket without looking at it, and spoke with his eyes on the turning cylinder."
+hint_none = "\"You have every piece, Watson,\" said Holmes. \"Settle where each part of that cylinder came from, and ACCUSE.\""
+hint_broke = "I had not a shilling about me. \"Look about you,\" said Holmes. \"A house in mourning is careless of its change.\""
+intro = """
+It was in the May of 1894, not many weeks after my friend's return to London from the dead, that Miss Clara Vane called upon us in Baker Street, in deep mourning and very composed, and laid before Holmes the strangest piece of evidence I think he ever had to weigh: a cylinder of brown wax.
+
+Her father, Mr Cornelius Vane, the electrician and inventor, whose improvements to the phonograph had made his name, had died in his sleep on the 7th of the month at his house in Highgate. Five days before his death, blind and failing, he had signed a will which left everything he had to his young assistant, Mr Felix Orme. His children had disputed it, saying that the old man could not have known what he signed; and Mr Orme had answered them with the cylinder, on which, he said, Mr Vane had spoken his last wishes aloud on the very afternoon of the signing, in his own voice, for all the world to hear.
+
+"It is my father's voice, Mr Holmes," said Miss Vane. "I cannot pretend that it is not. And yet I know that he never said those words."
+
+Holmes had sat through it all with his eyes closed. Now he opened them.
+
+"A phonograph cylinder, Miss Vane," said he, "is a very good witness to a man's voice. It is a very poor witness to anything else, unless one knows how to question it. Watson, your hat."
+
+So it was that before noon that day our cab drew up at the gate of the Larches, on the top of Highgate Hill.
+"""
+intro_note = "[In this case you must listen to phonograph cylinders. At the machine in the laboratory, PLAY <letter> AT <speed> plays one, and Holmes measures every sound on it; CYLINDERS lists what you have. The cab takes you between Highgate and Kentish Town: GO CAB. Shillings found while exploring buy hints from Holmes with HINT.]"
+
+[verbs]
+take_cab = ["hail", "board", "ride", "drive"]
+
+# ================================================================ clues
+
+[clues.found]
+text = "Miss Vane's account: her father, Cornelius Vane, inventor, signed a will on 2 May leaving all to his assistant Felix Orme, and died on 7 May. Orme has produced a cylinder of Vane's voice, which he says was spoken on 2 May, confirming it. Miss Vane says her father never said those words."
+
+[clues.speed_rule]
+text = "Holmes: a cylinder played faster than it was made goes up in pitch and quickens; slower, it drops and drags, every sound in the same proportion. A sound whose true pitch or rate is known is a key to the speed a cylinder was made at."
+
+[clues.orme_story]
+text = "Orme: Vane spoke the cylinder himself in his study on the afternoon of 2 May, after signing, on the new machine brought in from the laboratory, at 160 as they always recorded; Orme labelled it, as Vane could not write, and put it in the cabinet."
+
+[clues.orme_machine_lie]
+text = "Orme: the old Edison's governor seized in March, and he has taken it to a man in Clerkenwell to be mended."
+
+[clues.orme_lodgings]
+text = "Orme: he has not slept at his lodgings in Kentish Town since April."
+
+[clues.fork_habit]
+text = "Miss Vane: her father always struck his tuning fork, A 435, the French pitch, before speaking to a phonograph, 'so that anyone who plays me may know how fast I went round'. His voice was deep and slow."
+
+[clues.blind_clara]
+text = "Miss Vane: after Christmas her father could not read or write; she kept his catalogue and wrote his labels."
+
+[clues.judes_bell]
+text = "Miss Vane: St Jude's, Highgate, which can be heard all over this side of the house, is an E flat, 311 vibrations by her father's siren, and strikes the quarters as well as the hours."
+
+[clues.orme_cough]
+text = "Miss Vane: Orme lodges at Mrs Prout's, Bartholomew Terrace, Kentish Town. He has had a short dry double cough since the winter."
+
+[clues.will_label]
+text = "Miss Vane: the label on the will cylinder, 'My Will. 2nd May 1894. C. Vane.', is not her father's hand nor hers. It is Orme's."
+
+[clues.edmund_claim]
+text = "Edmund Vane says his father was poisoned with his digitalis drops, which Orme gave him at night."
+
+[clues.edmund_debts]
+text = "Edmund owes eleven hundred pounds, and would have half under the old will. He says he was at Brighton from 1 to 10 May."
+
+[clues.old_will]
+text = "Tulliver: the old will of 1889 left everything to Clara and Edmund equally."
+
+[clues.new_will]
+text = "Tulliver: the new will, dated 2 May 1894, leaves all to Orme; signed in a blind man's scrawl; witnessed by Mrs Dunn and Bates; produced by Orme from the study desk on the day of the death. To upset it the family must show Vane did not know and approve what he signed."
+
+[clues.cylinder_law]
+text = "Tulliver: a spoken will is no will, but the cylinder is evidence that Vane knew what he signed. If the cylinder is false, it is a fraud on the court, and the will falls with it."
+
+[clues.lammas_death]
+text = "Dr Lammas: angina for three years, worse since March; Vane died in his sleep about 4 a.m. on 7 May. A natural death; he certified it without doubt."
+
+[clues.blind]
+text = "Dr Lammas: double cataract, far gone. Vane could not have read a line since Christmas; he signed by feel."
+
+[clues.lammas_digitalis]
+text = "Dr Lammas: digitalis poisoning means vomiting and a wild pulse, not a quiet death in sleep; and Miss Vane kept a book of every drop."
+
+[clues.dunn_signing]
+text = "Mrs Dunn: on 2 May, in the afternoon, Orme read aloud a long paper about patents and the American gentlemen; Vane said, 'That's the American business,' and signed where Orme put his hand, two or three times; she and Bates witnessed without reading."
+
+[clues.bates_signing]
+text = "Bates: on 2 May Orme read out something about patents; Vane said, 'This is the American business, Bates,' and signed. A fine day; Bates had been mowing."
+
+[clues.dunn_nights]
+text = "Mrs Dunn: Orme sat up with Vane every night from Thursday 3 May until the death in the early morning of Monday the 7th. After the death he was mostly away at night."
+
+[clues.machine_taken]
+text = "Mrs Dunn: Orme took the old study machine away in a cab on Tuesday 8 May, the day after the death, 'to be mended'."
+
+[clues.prout_orme]
+text = "Mrs Prout: Orme has lodged with her three years; up at Highgate mostly since April; last Tuesday he came back in a cab with a great black-and-gold machine, and has been in and out at night since."
+
+[clues.prout_night]
+text = "Mrs Prout: one night last week (she does not know which), late, in pouring rain, she heard through the ceiling the old gentleman's slow deep voice, stopping and starting, sometimes squeaky, sometimes slow; St Cuthbert's struck eleven while it went on, and Orme coughed."
+
+[clues.gosling_bell]
+text = "The verger of St Cuthbert's: the tenor is a C, cracked in 1889, and buzzes; the clock strikes the hours on it, and no quarters."
+
+[clues.machine_gone]
+text = "The study desk: a clean square in the dust where something heavy stood on four small feet until lately, with an arc rubbed by the base of a horn."
+
+[clues.syndicate_letter]
+text = "The Syndicate's letter of 5 May: they are still without the signed assignment of Vane's patents, which Orme told them Vane would sign on the 2nd."
+
+[clues.cabinet_gaps]
+text = "The study cabinet: pigeon-holes 9, 14, 17 and 21 are empty, the dust in them lately disturbed."
+
+[clues.catalogue]
+text = "Vane's catalogue: 9, To Clara, birthday, 3 Nov. 1893, morning room, N. 14, Statement for the patent hearing, 15 Jan. 1894, study, O. 17, Letter to the Columbian Syndicate, 12 Mar. 1894, study, N. 19, Notes on the siren, Feb. 1894, laboratory, N. 21, Notes for Orme, 20 Apr. 1894, laboratory, O. Flyleaf: O (old Edison) seized 28 March, runs at 120 only; N (new machine) set at 160 for all recording."
+
+[clues.regulator]
+text = "The study regulator beats seconds: sixty to the minute, loud enough to tick on any cylinder made in the study."
+
+[clues.fork]
+text = "Vane's tuning fork, on his study desk: A 435, diapason normal."
+
+[clues.dynamo]
+text = "The laboratory dynamo whines steadily at 200 vibrations a second (Holmes's siren)."
+
+[clues.canary]
+text = "Miss Vane's canary in the morning room sings at about 3,000 vibrations a second (Holmes's siren)."
+
+[clues.medicine_book]
+text = "Miss Vane's medicine book: digitalis, ten drops at night since April, the bottle measured weekly; the drops given and the drops gone agree to the last week."
+
+[clues.spectacles]
+text = "Vane's cataract spectacles: lenses as thick as a tumbler's bottom. With such eyes he could read nothing."
+
+[clues.rain_book]
+text = "Bates's rain book for May, read at 9 a.m.: 1st and 2nd nil, fine all day on the 2nd; rain from 10 p.m. on the 3rd; nil from the 5th to the 9th at 9 a.m.; rain on the 9th from 9 p.m. till 2 in the morning; nil from the 11th."
+
+[clues.orme_skylight]
+text = "Orme's room in Kentish Town has a skylight right over the table, which leaked in recent rain; a shower on it would drum loudly."
+
+[clues.orme_machine]
+text = "Orme's own phonograph, in his room, set up to record, its governor screwed fast at 150."
+
+[clues.old_machine_here]
+text = "Vane's old study Edison (C.V. 1) is in Orme's room, not at any mender's, set up to play; its governor rusted solid at 120."
+
+[clues.horns]
+text = "In Orme's room the horns of the two machines are lashed mouth to mouth, with a muffler round the join: whatever the old machine plays, the new one records."
+
+[clues.cuthbert_bell]
+text = "The bells of St Cuthbert's, Kentish Town: the tenor is C, 262 vibrations, cracked 1889; the clock strikes the hours on it."
+
+[clues.will_cyl]
+text = "Tulliver gave me Orme's cylinder, labelled 'My Will. 2nd May 1894. C. Vane.'"
+
+[clues.cyl_siren]
+text = "From the study cabinet: cylinder 19, Notes on the siren, Feb. 1894."
+
+[clues.cyl_syndicate]
+text = "From the hatbox in Orme's room: cylinder 17, Letter to the Columbian Syndicate, 12 Mar. 1894, lately much played."
+
+[clues.cyl_orme]
+text = "From the hatbox in Orme's room: cylinder 21, Notes for Orme, 20 Apr. 1894."
+
+[clues.cyl_birthday]
+text = "From the hatbox in Orme's room: cylinder 9, To Clara, on her birthday, 3 Nov. 1893."
+
+[clues.cyl_hearing]
+text = "From the hatbox in Orme's room: cylinder 14, Statement for the patent hearing, 15 Jan. 1894."
+
+[clues.will_bell_true]
+text = "Played at 150, everything behind the voice on the will cylinder sounds as it should: rain drumming on glass, a church bell with a cracked buzz striking eleven at 262 vibrations, a railway whistle, a man's short dry double cough."
+
+[clues.will_fork_true]
+text = "Played at 200, the tuning-fork note at the start of the will cylinder sounds at 435."
+
+[clues.s1_true]
+text = "The Syndicate cylinder plays true at 160: its fork sounds at 435."
+
+[clues.s2_true]
+text = "The Notes for Orme cylinder plays true at 120: its fork sounds at 435."
+
+[clues.s3_true]
+text = "The birthday cylinder plays true at 160: its fork sounds at 435."
+
+[clues.s4_true]
+text = "The patent hearing cylinder plays true at 120: its fork sounds at 435."
+
+[clues.s5_true]
+text = "The siren cylinder plays true at 160: its fork sounds at 435."
+
+# ================================================================ actions
+
+[[actions]]
+id = "cab_to_kentish"
+verb = ["take", "use", "take_cab"]
+target = "cab_highgate"
+text = "I climbed into the cab, and we went rattling down the long hill into Kentish Town."
+effects = ["goto:kentish_street"]
+
+[[actions]]
+id = "cab_to_highgate"
+verb = ["take", "use", "take_cab"]
+target = "cab_kentish"
+text = "I climbed into the cab, and the horse toiled back up the hill to Highgate."
+effects = ["goto:gate"]
+
+[[actions]]
+id = "take_machine"
+verb = "take"
+target = ["old_machine", "orme_phonograph", "new_phonograph"]
+text = "It was a good deal too heavy to carry off under my arm, and better left as it stood, for others to see."
+
+# ================================================================ hints
+
+[[hints]]
+id = "machine"
+done = "clue:speed_rule"
+texts = [ "\"Before you listen to anything, Watson, learn how to listen.\"" ]
+
+[[hints.parts]]
+done = "clue:speed_rule"
+text = "Go to the laboratory (NORTH from the hall, then NORTH again), TALK TO HOLMES and ASK HIM ABOUT THE MACHINE."
+
+[[hints]]
+id = "will_cyl"
+done = "clue:will_cyl"
+texts = [ "\"The family's solicitor has the cylinder in his safe. Ask him for it.\"" ]
+
+[[hints.parts]]
+done = "clue:will_cyl"
+text = "Go WEST from the hall to the library. TALK TO TULLIVER and ASK HIM ABOUT THE CYLINDER; then EXAMINE THE WILL CYLINDER."
+
+[[hints]]
+id = "tulliver"
+done = ["clue:old_will", "clue:new_will", "clue:cylinder_law"]
+texts = [ "\"Hear what Mr Tulliver has to say of the law. It decides what we must prove.\"" ]
+
+[[hints.parts]]
+done = "clue:old_will"
+text = "In the library, ASK TULLIVER ABOUT THE OLD WILL."
+
+[[hints.parts]]
+done = "clue:new_will"
+text = "Ask Tulliver ABOUT THE NEW WILL."
+
+[[hints.parts]]
+done = "clue:cylinder_law"
+text = "Ask Tulliver ABOUT THE LAW."
+
+[[hints]]
+id = "clara"
+done = ["clue:fork_habit", "clue:judes_bell", "clue:orme_cough", "clue:will_label"]
+texts = [ "\"Miss Vane knew her father's habits better than anyone. One of them may be the key to all this.\"" ]
+
+[[hints.parts]]
+done = "clue:fork_habit"
+text = "In the morning room (EAST off the back passage), TALK TO MISS VANE and ASK HER ABOUT HER FATHER."
+
+[[hints.parts]]
+done = "clue:judes_bell"
+text = "Ask Miss Vane ABOUT THE BELL."
+
+[[hints.parts]]
+done = "clue:orme_cough"
+text = "Ask Miss Vane ABOUT MR ORME."
+
+[[hints.parts]]
+done = "clue:will_label"
+text = "Ask Miss Vane ABOUT THE LABEL."
+
+[[hints]]
+id = "orme"
+done = ["clue:orme_story", "clue:orme_machine_lie", "clue:orme_lodgings"]
+texts = [ "\"Mr Orme is anxious to help. Let him tell you exactly how it was done; every detail.\"" ]
+
+[[hints.parts]]
+done = "clue:orme_story"
+text = "In the laboratory, TALK TO ORME and ASK HIM ABOUT THE WILL."
+
+[[hints.parts]]
+done = "clue:orme_machine_lie"
+text = "Ask Orme ABOUT THE OLD MACHINE."
+
+[[hints.parts]]
+done = "clue:orme_lodgings"
+text = "Ask Orme ABOUT HIS LODGINGS (ask him ABOUT MY LODGINGS, as he put it)."
+
+[[hints]]
+id = "study"
+done = ["clue:fork", "clue:regulator", "clue:catalogue", "clue:cabinet_gaps", "clue:machine_gone", "clue:syndicate_letter"]
+texts = [ "\"The old man's study will tell you what he used, and what is missing.\"" ]
+
+[[hints.parts]]
+done = "clue:fork"
+text = "In the study (WEST off the back passage), EXAMINE THE CASE."
+
+[[hints.parts]]
+done = "clue:regulator"
+text = "In the study, EXAMINE THE REGULATOR."
+
+[[hints.parts]]
+done = "clue:catalogue"
+text = "In the study, EXAMINE THE CATALOGUE."
+
+[[hints.parts]]
+done = "clue:cabinet_gaps"
+text = "In the study, EXAMINE THE CABINET."
+
+[[hints.parts]]
+done = "clue:machine_gone|clue:syndicate_letter"
+text = "In the study, EXAMINE THE DESK."
+
+[[hints.parts]]
+done = "clue:syndicate_letter"
+text = "TAKE THE LETTER from the study desk and EXAMINE it."
+
+[[hints]]
+id = "reference"
+when = "clue:speed_rule"
+done = ["clue:dynamo", "clue:canary", "clue:s5_true"]
+texts = [ "\"Every room in this house has its own voice, Watson, and every cylinder made in it carries that voice. Learn them. And learn the method on a cylinder you can trust.\"" ]
+
+[[hints.parts]]
+done = "clue:dynamo"
+text = "In the laboratory, EXAMINE THE DYNAMO."
+
+[[hints.parts]]
+done = "clue:canary"
+text = "In the morning room, EXAMINE THE CANARY."
+
+[[hints.parts]]
+done = "clue:s5_true"
+text = "TAKE THE SIREN CYLINDER from the study cabinet, and in the laboratory PLAY it at different speeds until the fork sounds at 435."
+
+[[hints]]
+id = "household"
+done = ["clue:dunn_signing", "clue:dunn_nights", "clue:machine_taken", "clue:bates_signing"]
+texts = [ "\"The two witnesses to that signature are in the kitchen and the garden. Servants see a great deal.\"" ]
+
+[[hints.parts]]
+done = "clue:dunn_signing"
+text = "In the kitchen (NORTH-EAST from the hall), TALK TO MRS DUNN and ASK HER ABOUT THE SECOND OF MAY."
+
+[[hints.parts]]
+done = "clue:dunn_nights"
+text = "Ask Mrs Dunn ABOUT THE NIGHTS."
+
+[[hints.parts]]
+done = "clue:machine_taken"
+text = "Ask Mrs Dunn ABOUT THE OLD MACHINE."
+
+[[hints.parts]]
+done = "clue:bates_signing"
+text = "In the garden, TALK TO BATES and ASK HIM ABOUT THE SECOND OF MAY."
+
+[[hints]]
+id = "rain"
+done = "clue:rain_book"
+texts = [ "\"An inventor's house keeps records of everything, Watson, even the weather.\"" ]
+
+[[hints.parts]]
+done = "clue:rain_book"
+text = "In the garden, EXAMINE THE SHED, TAKE THE RAIN BOOK and EXAMINE it."
+
+[[hints]]
+id = "doctor"
+done = ["clue:lammas_death", "clue:blind", "clue:lammas_digitalis"]
+texts = [ "\"There is a medical man in the hall, Watson, who saw him dead. Talk to him as one doctor to another.\"" ]
+
+[[hints.parts]]
+done = "clue:lammas_death"
+text = "In the hall, TALK TO LAMMAS and ASK HIM ABOUT HIS DEATH."
+
+[[hints.parts]]
+done = "clue:blind"
+text = "Ask Lammas ABOUT HIS EYES."
+
+[[hints.parts]]
+done = "clue:lammas_digitalis"
+text = "Ask Lammas ABOUT MR EDMUND'S NOTIONS."
+
+[[hints]]
+id = "kentish"
+when = "clue:orme_cough|clue:orme_lodgings"
+done = ["clue:prout_orme", "clue:prout_night", "clue:horns", "clue:orme_machine", "clue:old_machine_here", "clue:orme_skylight"]
+texts = [ "\"Mr Orme has not been near his lodgings in a month, he says. I should go and look at them.\"" ]
+
+[[hints.parts]]
+done = "clue:prout_orme"
+text = "At the gate, GO CAB to Kentish Town, go IN to number 14, TALK TO MRS PROUT and ASK HER ABOUT MR ORME."
+
+[[hints.parts]]
+done = "clue:prout_night"
+text = "Ask Mrs Prout ABOUT THAT NIGHT."
+
+[[hints.parts]]
+done = "clue:horns"
+text = "Ask Mrs Prout ABOUT HIS ROOMS, go UP, and EXAMINE THE HORNS."
+
+[[hints.parts]]
+done = "clue:orme_machine"
+text = "In Orme's room, EXAMINE THE NEW MACHINE."
+
+[[hints.parts]]
+done = "clue:old_machine_here"
+text = "In Orme's room, EXAMINE THE OLD MACHINE."
+
+[[hints.parts]]
+done = "clue:orme_skylight"
+text = "In Orme's room, EXAMINE THE SKYLIGHT."
+
+[[hints]]
+id = "hatbox"
+when = "visited:orme_room"
+done = ["clue:cyl_syndicate", "clue:cyl_orme", "clue:cyl_birthday", "clue:cyl_hearing"]
+texts = [ "\"Four pigeon-holes in the study are empty. A thief keeps what he steals close by him.\"" ]
+
+[[hints.parts]]
+done = ["clue:cyl_syndicate", "clue:cyl_orme", "clue:cyl_birthday", "clue:cyl_hearing"]
+text = "In Orme's room, EXAMINE THE HATBOX, and TAKE and EXAMINE each cylinder in it: the SYNDICATE CYLINDER, the ORME CYLINDER, the BIRTHDAY CYLINDER and the HEARING CYLINDER."
+
+[[hints]]
+id = "church"
+when = "visited:kentish_street"
+done = ["clue:cuthbert_bell", "clue:gosling_bell"]
+texts = [ "\"There is a church at the corner of Orme's street. Every church has a voice too.\"" ]
+
+[[hints.parts]]
+done = "clue:cuthbert_bell"
+text = "In Bartholomew Terrace go EAST to the porch of St Cuthbert's and EXAMINE THE BOARD."
+
+[[hints.parts]]
+done = "clue:gosling_bell"
+text = "TALK TO GOSLING and ASK HIM ABOUT THE BELLS."
+
+[[hints]]
+id = "sources"
+when = ["clue:cyl_syndicate", "clue:speed_rule"]
+done = ["clue:s1_true", "clue:s2_true", "clue:s3_true", "clue:s4_true"]
+texts = [ "\"Find the speed every one of those cylinders was made at. Mr Vane told you how: he left his fork on every one.\"" ]
+
+[[hints.parts]]
+done = ["clue:s1_true", "clue:s2_true", "clue:s3_true", "clue:s4_true"]
+text = "In the laboratory, PLAY each of the four cylinders from the hatbox at speeds from 60 to 240 until its fork sounds at 435. Two are made at one speed, two at another; the catalogue says which machine made which."
+
+[[hints]]
+id = "will_speeds"
+when = ["clue:will_cyl", "clue:speed_rule"]
+done = ["clue:will_bell_true", "clue:will_fork_true"]
+texts = [
+  "\"Play the will cylinder at the speed Orme swears to. Then find the speed at which the fork is true, and the speed at which everything else is. Are they the same?\"",
+]
+
+[[hints.parts]]
+done = "clue:will_fork_true"
+text = "In the laboratory, PLAY THE WILL CYLINDER AT 200, and look at the fork."
+
+[[hints.parts]]
+done = "clue:will_bell_true"
+text = "In the laboratory, PLAY THE WILL CYLINDER AT 150, and look at everything behind the voice."
+
+[[hints]]
+id = "edmund"
+done = ["clue:edmund_claim", "clue:edmund_debts"]
+texts = [ "\"Mr Edmund Vane has a theory. He has a debt or two as well.\"" ]
+
+[[hints.parts]]
+done = "clue:edmund_claim"
+text = "In the drawing room (EAST from the hall), TALK TO EDMUND and ASK HIM ABOUT POISON."
+
+[[hints.parts]]
+done = "clue:edmund_debts"
+text = "Ask Edmund ABOUT HIS DEBTS."
+
+[[hints]]
+id = "bedroom"
+done = ["clue:medicine_book", "clue:spectacles"]
+texts = [ "\"Look at the room where he died, Watson, with a doctor's eye.\"" ]
+
+[[hints.parts]]
+done = "clue:medicine_book"
+text = "Go UP from the hall to the bedroom and EXAMINE THE LITTLE BOOK."
+
+[[hints.parts]]
+done = "clue:spectacles"
+text = "In the bedroom, EXAMINE THE SPECTACLES."
+
+[[hints]]
+id = "reckoning"
+texts = [
+  "\"Two speeds on one cylinder, Watson. A man speaking into a machine makes one cylinder at one speed. What makes a cylinder with two? And at which of the two does the room behind the voice sound true, and what room is it?\"",
+  "\"Every part of the will that sounds true at 200 was made at 160 and played back at 120; every part true at 150 was made at 120 and played back at 120. The old Edison runs at 120 and nothing else, and Orme's machine records at 150. Match each part's words to a source cylinder, and where the words fit two, let the speed and the sounds under it decide. Then the bell, the rain book and Mrs Dunn will tell you where and when.\"",
+  "\"The bell at 150 is St Cuthbert's cracked tenor, not St Jude's; there are no quarters. It rained at eleven at night only on the 3rd and the 9th, and on the 3rd Orme was sitting up at the Larches. So the cylinder was put together in Orme's room on the night of the 9th, two days after the old man died, from the four cylinders in the hatbox. What Vane signed on the 2nd, he signed as the American assignment. And he died of his heart. SOURCE each part, and ACCUSE.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "cylinder"
+intro = "I went back to the laboratory with my cylinders in a basket, like a man come back from market. Holmes looked up from the siren. \"Well, Watson?\""
+good = "solved"
+default_wrong = "orme_walks"
+
+[final.cylinder]
+intro = "\"The cylinder first,\" said Holmes. \"Seven parts. Where did each of them come from?\""
+play_when = "at:laboratory"
+play_refused = "There was no machine to play it on nearer than the laboratory at the Larches."
+min_speed = 60
+max_speed = 240
+wrong_ending = "crossed"
+incomplete_ending = "loose_ends"
+
+[final.cylinder.sounds]
+vane = { name = "an old man's voice", freq = 110, voice = true }
+fork = { name = "a tuning-fork note", freq = 435 }
+tick = { name = "a clock ticking", rate = 60 }
+canary = { name = "a canary singing", freq = 3000 }
+dynamo = { name = "the whine of some machine", freq = 200 }
+cough = { name = "a man's short dry cough, twice" }
+rain = { name = "rain drumming on glass" }
+bell = { name = "a church bell striking eleven, with a harsh cracked buzz in it", freq = 262 }
+train = { name = "a railway whistle, far off", freq = 680 }
+
+[final.cylinder.cylinders.will]
+deal = "will_cyl"
+label = "the will cylinder, 'My Will. 2nd May 1894'"
+parts = [
+  { id = "w1", voice = "vane", words = "My name is Cornelius Vane, of the Larches, Highgate.", true_speed = 200, sounds = ["fork", "tick"], clue = "will_fork_true" },
+  { id = "w2", voice = "vane", words = "I know very well what I have signed.", true_speed = 150, sounds = ["tick"] },
+  { id = "w3", voice = "vane", words = "Everything I have", true_speed = 200, sounds = ["canary"] },
+  { id = "w4", voice = "vane", words = "I leave", true_speed = 200, sounds = ["tick"] },
+  { id = "w5", voice = "vane", words = "to Felix Orme, my faithful assistant,", true_speed = 150, sounds = ["dynamo"] },
+  { id = "w6", voice = "vane", words = "who has been a son to me.", true_speed = 150, sounds = ["dynamo"] },
+  { id = "w7", voice = "vane", words = "My children will understand.", true_speed = 200, sounds = ["canary"] },
+]
+background = [
+  { sound = "rain", true_speed = 150 },
+  { sound = "bell", true_speed = 150, clue = "will_bell_true" },
+  { sound = "train", true_speed = 150 },
+  { sound = "cough", true_speed = 150 },
+]
+
+[final.cylinder.cylinders.siren]
+deal = "cyl_siren"
+label = "No. 19, Notes on the siren, Feb. 1894"
+parts = [
+  { id = "s5", voice = "vane", words = "Notes on the siren. The new disc has forty holes. At a steady blast it gives a clean note, and the counter is to be trusted to a vibration. Orme to make a second disc.", true_speed = 160, sounds = ["fork", "dynamo"], clue = "s5_true" },
+]
+
+[final.cylinder.cylinders.syndicate]
+deal = "cyl_syndicate"
+label = "No. 17, Letter to the Columbian Syndicate, 12 Mar. 1894"
+parts = [
+  { id = "s1", voice = "vane", words = "My name is Cornelius Vane, of the Larches, Highgate. Gentlemen, I have your letter of the 2nd. I have asked Felix Orme, my faithful assistant, to send you the drawings. As to the terms, I leave the matter in your hands.", true_speed = 160, sounds = ["fork", "tick"], clue = "s1_true" },
+]
+
+[final.cylinder.cylinders.orme_notes]
+deal = "cyl_orme"
+label = "No. 21, Notes for Orme, 20 Apr. 1894"
+parts = [
+  { id = "s2", voice = "vane", words = "Notes for Orme. Felix Orme, my faithful assistant, who has been a son to me in this laboratory, will find the new diaphragms in the second drawer. Everything I have learned of mica, he knows.", true_speed = 120, sounds = ["fork", "dynamo", "cough"], clue = "s2_true" },
+]
+
+[final.cylinder.cylinders.birthday]
+deal = "cyl_birthday"
+label = "No. 9, To Clara, on her birthday, 3 Nov. 1893"
+parts = [
+  { id = "s3", voice = "vane", words = "My dear Clara. Many happy returns of the day. Everything I have, and everything I am, I owe to your patience. My children will understand one day why I worked so hard.", true_speed = 160, sounds = ["fork", "canary"], clue = "s3_true" },
+]
+
+[final.cylinder.cylinders.hearing]
+deal = "cyl_hearing"
+label = "No. 14, Statement for the patent hearing, 15 Jan. 1894"
+parts = [
+  { id = "s4", voice = "vane", words = "My name is Cornelius Vane, of the Larches, Highgate, and I make this statement for the hearing. I have signed the specification today, and I know very well what I have signed. I leave it to the court.", true_speed = 120, sounds = ["fork", "tick"], clue = "s4_true" },
+]
+
+[final.cylinder.answer]
+w1 = "syndicate"
+w2 = "hearing"
+w3 = "birthday"
+w4 = "syndicate"
+w5 = "orme_notes"
+w6 = "orme_notes"
+w7 = "birthday"
+
+[[final.questions]]
+id = "who"
+prompt = "Who made the will cylinder?"
+options = [
+  { id = "vane", label = "Nobody but Mr Vane himself: it is his own" },
+  { id = "orme", label = "Felix Orme, the assistant", when = "met:orme" },
+  { id = "edmund", label = "Edmund Vane, the son", when = "met:edmund" },
+  { id = "clara", label = "Clara Vane, the daughter", when = "met:clara" },
+  { id = "dunn", label = "Mrs Dunn, the housekeeper", when = "met:dunn" },
+]
+
+[[final.questions]]
+id = "what"
+prompt = "What is the will cylinder?"
+options = [
+  { id = "genuine", label = "Genuine: Mr Vane spoke it, as Orme says" },
+  { id = "another_day", label = "Mr Vane's own words, spoken on some other day than Orme says", when = "clue:rain_book|clue:will_bell_true" },
+  { id = "imitation", label = "Another man imitating Mr Vane's voice", when = "met:edmund" },
+  { id = "pieced", label = "A copy pieced together from parts of Mr Vane's other cylinders", when = "clue:will_fork_true|clue:horns" },
+]
+
+[[final.questions]]
+id = "where"
+prompt = "Where was it made?"
+options = [
+  { id = "study", label = "In Mr Vane's study at the Larches" },
+  { id = "laboratory", label = "In the laboratory at the Larches", when = "visited:laboratory" },
+  { id = "kentish", label = "In Orme's rooms in Kentish Town", when = "visited:orme_room" },
+]
+
+[[final.questions]]
+id = "when"
+prompt = "When was it made?"
+options = [
+  { id = "second", label = "On the afternoon of 2 May, as Orme says" },
+  { id = "third", label = "Late on the night of 3 May", when = "clue:rain_book" },
+  { id = "ninth", label = "Late on the night of 9 May, two days after Mr Vane died", when = "clue:rain_book" },
+  { id = "eleventh", label = "On the morning of 11 May, before it was produced", when = "clue:new_will|clue:orme_story" },
+]
+
+[[final.questions]]
+id = "signed"
+prompt = "What did Mr Vane believe he was signing on 2 May?"
+options = [
+  { id = "will", label = "His new will, knowing what it was" },
+  { id = "assignment", label = "The assignment of his patents to the American syndicate", when = "clue:dunn_signing|clue:bates_signing" },
+  { id = "nothing", label = "Nothing: his signature was forged", when = "clue:new_will" },
+]
+
+[[final.questions]]
+id = "death"
+prompt = "How did Mr Vane die?"
+options = [
+  { id = "natural", label = "Naturally, of his heart, in his sleep" },
+  { id = "poison", label = "Poisoned with his digitalis drops", when = "clue:edmund_claim" },
+  { id = "overdose", label = "An overdose given by mistake", when = "clue:medicine_book" },
+]
+
+[final.solution]
+who = "orme"
+what = "pieced"
+where = "kentish"
+when = "ninth"
+signed = "assignment"
+death = "natural"
+
+[[final.wrong]]
+answers = { who = "vane" }
+ending = "genuine"
+
+[[final.wrong]]
+answers = { who = "edmund" }
+ending = "edmund_taken"
+
+[[final.wrong]]
+answers = { who = "clara" }
+ending = "clara_taken"
+
+[[final.wrong]]
+answers = { who = "dunn" }
+ending = "dunn_taken"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "Two Speeds"
+text = """
+"It is his voice," I said, "and every word of it he spoke. But he never spoke them together, nor in that order, nor on that day.
+
+"Every cylinder he ever made begins with his fork, so that anyone who plays him may know how fast he went round. On the will the fork sounds true at 200, and so do four parts of the voice. Three other parts sound true at 150, and so does everything behind the voice from first to last: the rain, the cough, the train, and a cracked bell striking eleven. A man speaking once into a machine makes a cylinder with one true speed, Holmes. This one has two, and neither of them is the 160 that Orme swears to.
+
+"It is a copy, made in pieces, horn to horn. Somebody played fragments of Vane's own cylinders on a machine that runs at 120 and nothing else, his old Edison with the seized governor, into a machine recording at 150. What Vane made at 160 comes out true at 200; what he made at 120 comes out true at 150, with the room it was copied in. And the pieces are all in the hatbox under Orme's bed: the letter to the Syndicate, for his name and 'I leave'; the statement for the patent hearing, for 'I know very well what I have signed', which he said of a patent specification; Miss Vane's birthday cylinder, canary and all, for 'Everything I have' and 'My children will understand'; and the notes Vane left for Orme in the laboratory, for 'Felix Orme, my faithful assistant, who has been a son to me', with the dynamo whining under it. The words fit two cylinders in more than one place; the speeds never do.
+
+"The room behind it all has a skylight that drums in the rain, and a railway under its window, and a church bell at the corner that is a cracked C with no quarters: St Cuthbert's, not St Jude's. It rained at eleven at night on two nights only, the 3rd and the 9th; on the 3rd Orme was sitting up with the old man at the Larches. It was the 9th. Orme had taken the old machine away the day before, 'to be mended', and his landlady heard a dead man talking through her ceiling while St Cuthbert's struck eleven. Cornelius Vane had been dead two days.
+
+"As for the 2nd of May, he signed what Orme read him, and Orme read him the American assignment. The Syndicate is still waiting for it. And he died of his heart, in his sleep, as Lammas says. Orme did not kill him. He only robbed him, which he found easier with the old man dead."
+
+Holmes had listened with his eyes half closed and his fingertips together.
+
+"A phonograph, Watson," said he, "is a perfectly honest witness. It tells you everything it heard, including a great deal its owner would much rather it had not. Mr Orme was a clever young man with his hands; but he forgot that the walls of his room had a voice too." He rose. "Let us go and see Mr Tulliver. He will want to put this in proper form; and then, I think, Mr Orme will want a solicitor of his own."
+
+The will of the 2nd of May was pronounced against in the Probate Division that autumn, and Felix Orme was tried at the Old Bailey for fraud and forgery, and got five years. The cylinder was produced at his trial and played to the jury, at 150 and at 200, by an expert from the Edison company, with Holmes's evidence; I believe it is the only time a bell in Kentish Town has given evidence at the Central Criminal Court. Miss Vane keeps her father's birthday cylinder still. She has never been able to bring herself to play it.
+"""
+
+[endings.orme_walks]
+title = "His Master's Voice"
+text = """
+I gave Holmes my account, with Orme's name in it, and he heard me to the end.
+
+"You are right about the man, Watson," said he, "and you will not hang a dog on it. You have not shown what the cylinder is, or where it was made, or when, or you have shown it wrongly; and Mr Orme's counsel will play that cylinder to the court at 160, and every soul in the room will hear Cornelius Vane say that he knows very well what he has signed."
+
+And so it fell out. The will of the 2nd of May was admitted to probate. Felix Orme sold the Larches within the year and went to America, where I am told he does very well in the phonograph business.
+"""
+
+[endings.genuine]
+title = "In His Own Voice"
+text = """
+"It is genuine," I said. "His own voice, and his own words. I don't see how we can go behind it."
+
+Holmes said nothing whatever, and I had the uncomfortable feeling that I had failed a test.
+
+The will was admitted to probate. Miss Vane went to be a governess in Cheltenham, and Mr Edmund Vane to the Argentine. Mr Orme was very civil to them both. The Larches was sold, and the old study cabinet, I heard, went with the house, with four pigeon-holes in it empty.
+"""
+
+[endings.edmund_taken]
+title = "The Prodigal"
+text = """
+"Edmund," I said. "He had debts, and the most to gain from upsetting the will."
+
+"From upsetting it, Watson," said Holmes, "not from making the cylinder that supports it. You have him forging evidence against himself. And he was in Brighton, which half the Metropole will swear to."
+
+Nothing came of it but a quarrel between brother and sister, and the will stood.
+"""
+
+[endings.clara_taken]
+title = "The Daughter"
+text = """
+"Miss Vane," I said. "She kept his catalogue and wrote his labels, and she knew every cylinder he ever made."
+
+Holmes looked at me for a long moment. "She brought us the case, Watson," he said, "and asked us to prove the very thing you now say she did. It would be a curious way to commit a fraud."
+
+The will stood, and I could not look Miss Vane in the face when we left the house.
+"""
+
+[endings.dunn_taken]
+title = "The Witness"
+text = """
+"Mrs Dunn," I said. "She witnessed the signing."
+
+"She witnessed a signature," said Holmes, "and could not have made a phonograph cylinder if her life depended on it. Come, Watson."
+
+The will stood.
+"""
+
+[endings.crossed]
+title = "Crossed Wires"
+text = """
+I told Holmes where each part of the cylinder had come from, and he heard me with growing gloom.
+
+"That will not do, Watson," he said. "Put that before an expert, and the first part you have wrong will undo all the rest. The words fit more than one cylinder in more than one place. It is the speeds that decide it, and the sounds beneath the words."
+
+He was right, and Orme's counsel would have been quicker to see it than he. The case was never brought.
+"""
+
+[endings.loose_ends]
+title = "Loose Ends"
+text = """
+"You have some of it, Watson," said Holmes, "and all of it right, so far as it goes. But a cylinder pieced together from four is only proved so when every piece is traced, and you have not traced every piece. Go back and find the rest."
+
+Without it, the will stood.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "examine larches", "examine london", "examine cab", "n", "talk to lammas", "ask lammas about his death",
+  "ask lammas about his eyes", "ask lammas about mr edmund's notions", "examine umbrella stand",
+  "take shilling", "examine clock", "examine staircase", "w", "talk to tulliver", "ask tulliver about the old will",
+  "ask tulliver about the new will", "ask tulliver about this cylinder", "ask tulliver about the law",
+  "examine will cylinder", "examine table", "examine safe", "e", "e", "talk to edmund",
+  "ask edmund about poison", "ask edmund about my debts", "examine sofa", "take shilling",
+  "examine decanter", "examine curiosities", "w", "ne", "talk to dunn", "ask dunn about the second of may",
+  "ask dunn about the nights", "ask dunn about the old machine", "examine dresser", "take shilling",
+  "e", "talk to bates", "ask bates about the rain gauge", "ask bates about the second of may",
+  "examine lawn", "take shilling", "examine rain gauge", "examine shed", "take rain book",
+  "examine rain book", "w", "sw", "up", "examine bottles", "examine little book", "examine spectacles",
+  "down", "n", "w", "examine case", "examine regulator", "examine catalogue", "examine cabinet",
+  "take siren cylinder", "examine siren cylinder", "examine desk", "take letter", "examine letter",
+  "e", "e", "talk to miss vane", "ask clara about my father", "ask clara about the bell",
+  "ask clara about mr orme", "ask clara about that label", "examine canary", "examine piano",
+  "take shilling", "w", "n", "talk to holmes", "ask holmes about the case", "ask holmes about the machine",
+  "ask holmes about shillings", "talk to orme", "ask orme about the will", "ask orme about the second of may",
+  "ask orme about the old machine", "ask orme about my lodgings", "examine dynamo", "examine benches",
+  "take shilling", "examine siren", "examine phonograph", "examine card", "play b at 120",
+  "play b at 160", "play a at 160", "play a at 150", "play a at 200", "cylinders", "s",
+  "s", "s", "go cab", "examine houses", "examine step", "take shilling", "examine tower",
+  "e", "examine board", "talk to gosling", "ask gosling about the bells", "ask gosling about the clock",
+  "examine bench", "take shilling", "w", "in", "talk to prout", "ask prout about mr orme",
+  "ask prout about that night", "ask prout about his rooms", "up", "examine skylight",
+  "examine window", "examine table", "examine new machine", "examine old machine",
+  "examine horns", "examine hatbox", "take syndicate cylinder", "examine syndicate cylinder",
+  "take orme cylinder", "examine orme cylinder", "take birthday cylinder", "examine birthday cylinder",
+  "take hearing cylinder", "examine hearing cylinder", "down", "out", "go cab", "n",
+  "n", "n", "play c at 160", "play d at 120", "play e at 160", "play f at 120", "hint",
+  "y", "hint", "y", "hint", "y", "accuse", "source 1 from c", "source 2 from f", "source 3 from e",
+  "source 4 from c", "source 5 from d", "source 6 from d", "source 7 from e", "", "orme",
+  "pieced", "kentish", "two days after", "assignment", "naturally", "y",
+]
+wrong_path = [
+  "accuse", "", "nobody", "genuine", "study", "afternoon", "knowing", "naturally", "y", "",
+]

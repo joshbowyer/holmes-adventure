@@ -1,0 +1,168 @@
+# ================================================================ the Larches, Highgate
+
+[rooms.gate]
+name = "The Gate of the Larches"
+aliases = ["gate", "the larches", "larches", "road"]
+description = """
+A tall red-brick house of the 'sixties stood back from the road behind a row of dark larches, with a gravel sweep before it, the blinds of its front windows drawn down for a death. Across the road the ground fell away steeply, and over the roofs of Kentish Town I could see the whole smoky bowl of London lying in the May sunshine. A cab waited by the kerb to the south, its horse cropping at the verge. The front door stood open to the north; a side path ran round the house to the garden, north-east.
+"""
+on_enter = [
+  { once = true, text = "[I opened my notebook and set down what Miss Vane had told us in Baker Street.]", effects = ["clue:found"] },
+]
+[rooms.gate.exits]
+north = { to = "hall", aliases = ["house", "door", "front door", "in"] }
+in = { to = "hall", aliases = ["house"] }
+northeast = { to = "garden", aliases = ["garden", "side path", "path"] }
+south = { to = "kentish_street", text = "I climbed into the cab, and we went rattling down the long hill into Kentish Town.", aliases = ["cab", "kentish town", "bartholomew terrace", "down the hill", "hill"] }
+
+[rooms.hall]
+name = "The Hall"
+aliases = ["hall", "entrance hall"]
+description = """
+A dim, lofty hall with a floor of encaustic tiles, a tall clock against the wall, and an umbrella stand of carved oak by the door with a mirror over it. A staircase went up to the bedrooms. Doors opened west to the library and east to the drawing room; a passage at the back led north past the study to the laboratory, and a green baize door to the north-east let into the kitchen. The front door was to the south.
+"""
+[rooms.hall.exits]
+south = { to = "gate", aliases = ["out", "front door", "gate"] }
+out = { to = "gate", aliases = ["gate"] }
+west = { to = "library", aliases = ["library"] }
+east = { to = "drawing_room", aliases = ["drawing room", "drawing-room"] }
+north = { to = "passage", aliases = ["passage", "back"] }
+northeast = { to = "kitchen", aliases = ["kitchen", "baize door", "green baize door"] }
+up = { to = "bedroom", aliases = ["stairs", "staircase", "upstairs", "bedroom"] }
+
+[rooms.passage]
+name = "The Back Passage"
+aliases = ["passage", "back passage"]
+description = """
+A flagged passage at the back of the house, smelling faintly of acid and hot metal. The door of the study stood on the west; on the east the morning room, with a canary singing somewhere inside it. At the end of the passage, to the north, a heavy door covered in green felt opened into the laboratory. The hall was south.
+"""
+[rooms.passage.exits]
+south = { to = "hall", aliases = ["hall"] }
+west = { to = "study", aliases = ["study"] }
+east = { to = "morning_room", aliases = ["morning room", "morning-room"] }
+north = { to = "laboratory", aliases = ["laboratory", "lab", "felt door"] }
+
+[rooms.library]
+name = "The Library"
+aliases = ["library"]
+description = """
+A brown, book-lined room, with a Turkey carpet, a table covered in papers and a black japanned deed-box, and a small iron safe in the corner with its door ajar. A fire burned in the hearth. The hall was east.
+"""
+[rooms.library.exits]
+east = { to = "hall", aliases = ["hall", "out"] }
+out = { to = "hall", aliases = ["hall"] }
+
+[rooms.study]
+name = "Mr Vane's Study"
+aliases = ["study"]
+description = """
+The dead man's study was a working room and nothing else: bare boards, a big plain desk under the window, and a horsehair chair. In the middle of the desk, among the dust, was a clean square of bare wood where something heavy had lately stood. Against one wall stood a tall cabinet of pigeon-holes, each holding a cylinder in a cardboard tube, and on a shelf beside it lay a thick catalogue. A regulator clock ticked heavily on the wall, loud in the silence. On the desk, by the machine, lay a little leather case. The passage was to the east.
+"""
+[rooms.study.exits]
+east = { to = "passage", aliases = ["passage", "out"] }
+out = { to = "passage", aliases = ["passage"] }
+
+[rooms.laboratory]
+name = "The Laboratory"
+aliases = ["laboratory", "lab"]
+description = """
+A long whitewashed room built out into the garden, with a skylight, benches all round it covered with lathes and coils and jars and pieces of phonographs in every stage of being taken apart, and a little gas-engine and dynamo in a corner that whined softly as it turned. On the centre bench stood a new phonograph, a handsome thing of mahogany and nickel with a great horn and a speed regulator, and beside it a brass siren on a stand, connected by a tube to a bellows. A bench by the window, tidier than the rest, had a card on it: F. ORME. The passage was to the south.
+"""
+[rooms.laboratory.exits]
+south = { to = "passage", aliases = ["passage", "out"] }
+out = { to = "passage", aliases = ["passage"] }
+
+[rooms.morning_room]
+name = "The Morning Room"
+aliases = ["morning room", "morning-room"]
+description = """
+A small, bright room full of chintz and sunshine, with a cottage piano against one wall and, in the window, a brass cage in which a canary sang its heart out. Embroidery lay on a chair. The passage was to the west.
+"""
+[rooms.morning_room.exits]
+west = { to = "passage", aliases = ["passage", "out"] }
+out = { to = "passage", aliases = ["passage"] }
+
+[rooms.drawing_room]
+name = "The Drawing Room"
+aliases = ["drawing room", "drawing-room"]
+description = """
+A large, cold, overfurnished room with the blinds down, a great deal of plush and gilt, a sofa and a cabinet of curiosities. It had the air of a room nobody used. On a side table stood a decanter, much lower than it should have been at that hour. The hall was west.
+"""
+[rooms.drawing_room.exits]
+west = { to = "hall", aliases = ["hall", "out"] }
+out = { to = "hall", aliases = ["hall"] }
+
+[rooms.kitchen]
+name = "The Kitchen"
+aliases = ["kitchen"]
+description = """
+A big stone-floored kitchen, warm and clean, with a range, a long scrubbed table, and a dresser of blue-and-white plates. A door stood open on the garden to the east. The green baize door led back to the hall, south-west.
+"""
+[rooms.kitchen.exits]
+southwest = { to = "hall", aliases = ["hall", "baize door"] }
+east = { to = "garden", aliases = ["garden", "out", "back door"] }
+out = { to = "garden", aliases = ["garden"] }
+
+[rooms.bedroom]
+name = "Mr Vane's Bedroom"
+aliases = ["bedroom", "sickroom"]
+description = """
+A plain bedroom with the blinds half down and the bed stripped. On the washstand stood a row of medicine bottles and a little book, and on the bedside table, where he had left them, a pair of spectacles with lenses as thick as the bottom of a tumbler. The stairs went down.
+"""
+[rooms.bedroom.exits]
+down = { to = "hall", aliases = ["stairs", "hall", "downstairs"] }
+
+[rooms.garden]
+name = "The Garden"
+aliases = ["garden"]
+description = """
+A long walled garden running down behind the house, with a lawn, a mulberry tree, and a kitchen garden at the bottom. On the lawn, on a little post of its own, stood a brass rain gauge, and against the wall a potting shed with its door open. The long glass roof of the laboratory came out from the house to the north. A side path ran round to the front of the house, south-west, and the kitchen door opened on the garden to the west.
+"""
+[rooms.garden.exits]
+southwest = { to = "gate", aliases = ["side path", "front", "gate", "path"] }
+west = { to = "kitchen", aliases = ["kitchen", "kitchen door", "back door"] }
+in = { to = "kitchen", aliases = ["kitchen"] }
+
+# ================================================================ Kentish Town
+
+[rooms.kentish_street]
+name = "Bartholomew Terrace, Kentish Town"
+aliases = ["bartholomew terrace", "kentish town", "street", "terrace"]
+description = """
+A grey street of narrow grey houses, all alike, backing on to the cutting of the Midland Railway, so that every few minutes the whole terrace shook and a plume of steam went up behind it. At the corner rose the soot-black tower of a church. Number 14 had a card in the window, APARTMENTS, and a step whitened that morning. The cab waited at the kerb to the west, to take me back to Highgate.
+"""
+[rooms.kentish_street.exits]
+in = { to = "prout_hall", aliases = ["number 14", "14", "house", "door", "apartments"] }
+north = { to = "prout_hall", aliases = ["number 14", "house"] }
+east = { to = "church_porch", aliases = ["church", "tower", "corner", "st cuthbert's"] }
+west = { to = "gate", text = "I climbed into the cab, and the horse toiled back up the hill to Highgate.", aliases = ["cab", "highgate", "larches", "the larches", "back", "up the hill"] }
+
+[rooms.prout_hall]
+name = "Mrs Prout's Hall"
+aliases = ["hall", "mrs prout's hall", "passage"]
+description = """
+A narrow, brown-papered passage smelling of cabbage and furniture polish, with a hat-stand, a strip of oilcloth and a steep stair going up. A door at the back stood open on a kitchen. The street was outside.
+"""
+[rooms.prout_hall.exits]
+out = { to = "kentish_street", aliases = ["street", "terrace"] }
+south = { to = "kentish_street", aliases = ["street"] }
+up = { to = "orme_room", when = "flag:prout_ok", blocked = "Mrs Prout planted herself at the foot of the stairs. \"Them's Mr Orme's rooms, sir, and he pays for them.\"", aliases = ["stairs", "stair", "orme's rooms", "upstairs"] }
+
+[rooms.orme_room]
+name = "Mr Orme's Sitting-Room"
+aliases = ["sitting-room", "sitting room", "orme's room", "orme's rooms"]
+description = """
+A top-floor room under a sloping roof, with a skylight of dirty glass set in it, and a window looking down into the railway cutting. It was a bachelor's room, and an untidy one: a table, two chairs, a shelf of books, and under the bed a hatbox. But on the table, side by side, stood two phonographs: one a clean new machine of a common sort, and the other, I saw with a start, an old machine of the first Edison pattern, black and gold. Their brass horns had been turned mouth to mouth and lashed together with cord, with a muffler wrapped round the join. The stairs went down.
+"""
+[rooms.orme_room.exits]
+down = { to = "prout_hall", aliases = ["stairs", "hall", "downstairs"] }
+
+[rooms.church_porch]
+name = "The Porch of St Cuthbert's"
+aliases = ["porch", "church porch", "st cuthbert's", "church"]
+description = """
+A deep stone porch under the black tower, cold even in May. On the wall hung a painted board of the bells, and a notice of services; a stone bench ran along either side. Inside, through the open door, I could see an old man in a cassock sweeping the aisle. The street was to the west.
+"""
+[rooms.church_porch.exits]
+west = { to = "kentish_street", aliases = ["street", "terrace", "out"] }
+out = { to = "kentish_street", aliases = ["street"] }
