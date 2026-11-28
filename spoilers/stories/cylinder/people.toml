@@ -13,8 +13,8 @@ unknown_show = '''Holmes turned it over. "Interesting. Play it, if it will play.
 text = '''"Ah, Watson. Here is the machine, and here is the siren, and here, presently, will be every cylinder you can lay your hands on. Ask me about the case, if you want it shortly; or about the machine, and I will show you how we shall listen; or about shillings, when you want my advice and are prepared to pay for it."'''
 
 [[characters.holmes.topics.case]]
-aliases = ["the case", "will", "what happened", "vane", "mr vane"]
-text = '''"Cornelius Vane signed a will on the 2nd of May leaving everything to his assistant, and died on the 7th. His children say he never knew what he signed. The assistant, Orme, has produced a cylinder on which Vane's own voice says that he did. Mr Tulliver, the family's solicitor, has the cylinder in the library. Miss Vane is in the morning room, her brother in the drawing room, the doctor in the hall, and Mr Orme, as you see, is here with us. A cylinder is a witness, Watson, that cannot be cross-examined; but it can be listened to."'''
+aliases = ["the case", "will", "what happened", "ashdown", "mr ashdown"]
+text = '''"Cornelius Ashdown signed a will on the 2nd of May leaving everything to his assistant, and died on the 7th. His children say he never knew what he signed. The assistant, Quarrie, has produced a cylinder on which Ashdown's own voice says that he did. Mr Tulliver, the family's solicitor, has the cylinder in the library. Miss Ashdown is in the morning room, her brother in the drawing room, the doctor in the hall, and Mr Quarrie, as you see, is here with us. A cylinder is a witness, Watson, that cannot be cross-examined; but it can be listened to."'''
 
 [[characters.holmes.topics.machine]]
 aliases = ["the machine", "phonograph", "siren", "speed", "speeds", "listen", "how we shall listen"]
@@ -25,28 +25,28 @@ effects = ["clue:speed_rule"]
 aliases = ["shilling", "coins", "coin", "hint", "hints", "help", "advice"]
 text = '''"A shilling a time, Watson, and cheap at the price. There is loose silver about any house in mourning; people forget their pockets. HINT, when you want me."'''
 
-# ================================================================ Orme
+# ================================================================ Quarrie
 
 [characters.orme]
-name = "Mr Orme"
-aliases = ["orme", "felix orme", "mr orme", "assistant", "felix"]
+name = "Mr Quarrie"
+aliases = ["quarrie", "felix quarrie", "mr quarrie", "assistant", "felix"]
 location = "laboratory"
-description = "Mr Felix Orme: a slim, dark, quiet young man of thirty, very neat, with clever hands stained with acid and a pale, composed face. Now and then he gave a short dry cough, twice, behind his hand."
-presence = "Mr Orme sat at his own bench, watching us."
-unknown_topic = '''"I don't see that it signifies, Doctor," said Orme.'''
-unknown_show = '''Orme looked at it without expression. "I can't help you with that."'''
+description = "Mr Felix Quarrie: a slim, dark, quiet young man of thirty, very neat, with clever hands stained with acid and a pale, composed face. Now and then he gave a short dry cough, twice, behind his hand."
+presence = "Mr Quarrie sat at his own bench, watching us."
+unknown_topic = '''"I don't see that it signifies, Doctor," said Quarrie.'''
+unknown_show = '''Quarrie looked at it without expression. "I can't help you with that."'''
 
 [[characters.orme.greeting]]
-text = '''Orme rose. "Dr Watson." He gave his short dry cough, twice. "Ask me what you like: about the will, about the second of May, about the old machine, which I am having mended. I have nothing to hide. I have been living here since Mr Vane fell ill; I have not been near my lodgings in a month."'''
+text = '''Quarrie rose. "Dr Watson." He gave his short dry cough, twice. "Ask me what you like: about the will, about the second of May, about the old machine, which I am having mended. I have nothing to hide. I have been living here since Mr Ashdown fell ill; I have not been near my lodgings in a month."'''
 
 [[characters.orme.topics.will]]
 aliases = ["the will", "cylinder", "the cylinder", "recording"]
-text = '''"Mr Vane spoke it himself, in his study, on the afternoon of the 2nd, after he had signed. He wished there to be no doubt. I brought in the new machine from here and set it up for him, at 160, as we always recorded, and he spoke it straight through, and I labelled it for him, as he could not see to write. I put it away in the cabinet, and brought it to Mr Tulliver when I heard the will was to be disputed."'''
+text = '''"Mr Ashdown spoke it himself, in his study, on the afternoon of the 2nd, after he had signed. He wished there to be no doubt. I brought in the new machine from here and set it up for him, at 160, as we always recorded, and he spoke it straight through, and I labelled it for him, as he could not see to write. I put it away in the cabinet, and brought it to Mr Tulliver when I heard the will was to be disputed."'''
 effects = ["clue:orme_story"]
 
 [[characters.orme.topics.second]]
 aliases = ["the second of may", "second of may", "2nd of may", "may", "signing", "signed"]
-text = '''"I read the will to him, Doctor, every word of it, and he signed it, and Mrs Dunn and Bates witnessed it. He knew very well what he was doing. His children had not been near him for a year, except to ask for money."'''
+text = '''"I read the will to him, Doctor, every word of it, and he signed it, and Mrs Tebbutt and Bates witnessed it. He knew very well what he was doing. His children had not been near him for a year, except to ask for money."'''
 
 [[characters.orme.topics.machine]]
 aliases = ["the old machine", "old machine", "machine", "mended", "edison"]
@@ -59,24 +59,24 @@ text = '''"In Kentish Town. I have not slept there since April, Doctor. I have b
 effects = ["clue:orme_lodgings"]
 
 [characters.orme.shows.will_cylinder]
-text = '''Orme looked at it with a faint smile. "Play it, Doctor. It is his voice. You'll hear."'''
+text = '''Quarrie looked at it with a faint smile. "Play it, Doctor. It is his voice. You'll hear."'''
 
-# ================================================================ Clara
+# ================================================================ Beatrice
 
 [characters.clara]
-name = "Miss Vane"
-aliases = ["clara", "clara vane", "miss vane", "daughter"]
+name = "Miss Ashdown"
+aliases = ["beatrice", "beatrice ashdown", "miss ashdown", "daughter"]
 location = "morning_room"
-description = "Miss Clara Vane: tall, plain, quiet, in deep black, with her father's high forehead and very steady grey eyes red with crying."
-presence = "Miss Vane sat by the window, with the canary singing over her head."
-unknown_topic = '''"I'm afraid I don't know, Dr Watson," said Miss Vane.'''
-unknown_show = '''Miss Vane shook her head. "I don't know it."'''
+description = "Miss Beatrice Ashdown: tall, plain, quiet, in deep black, with her father's high forehead and very steady grey eyes red with crying."
+presence = "Miss Ashdown sat by the window, with the canary singing over her head."
+unknown_topic = '''"I'm afraid I don't know, Dr Watson," said Miss Ashdown.'''
+unknown_show = '''Miss Ashdown shook her head. "I don't know it."'''
 
 [[characters.clara.greeting]]
-text = '''"Dr Watson. Thank you for coming." She gave me her hand. "Ask me anything, about my father, or Mr Orme, or that label on the cylinder, which my father never wrote. I can hear the bell from here. Listen: St Jude's is striking. I have listened to it all my life."'''
+text = '''"Dr Watson. Thank you for coming." She gave me her hand. "Ask me anything, about my father, or Mr Quarrie, or that label on the cylinder, which my father never wrote. I can hear the bell from here. Listen: St Jude's is striking. I have listened to it all my life."'''
 
 [[characters.clara.topics.father]]
-aliases = ["my father", "your father", "mr vane", "habits", "voice", "fork"]
+aliases = ["my father", "your father", "mr ashdown", "habits", "voice", "fork"]
 text = '''"He could not see to read or write after Christmas; the cataracts. So I kept his catalogue for him and wrote his labels. He went on speaking to his machines, though, every day. He always began by striking his fork, the A, four hundred and thirty-five, the French pitch: 'so that anyone who plays me may know how fast I went round,' he used to say. He had a deep, slow voice."'''
 effects = ["clue:fork_habit", "clue:blind_clara"]
 
@@ -85,36 +85,36 @@ aliases = ["the bell", "st jude's", "st judes", "church", "striking"]
 text = '''"St Jude's, in the village. It's an E flat, a little sharp; father measured it with his siren once, for fun: three hundred and eleven. You can hear it in every room on this side of the house. It strikes the hours, and the quarters too."'''
 effects = ["clue:judes_bell"]
 
-[[characters.clara.topics.orme]]
-aliases = ["mr orme", "felix orme", "assistant"]
+[[characters.clara.topics.quarrie]]
+aliases = ["mr quarrie", "felix quarrie", "assistant"]
 text = '''"He came three years ago. Father thought the world of his hands. He lodges in Kentish Town, at a Mrs Prout's in Bartholomew Terrace, though he has been here a good deal since April. He has had that little double cough since the winter; you'll have heard it."'''
 effects = ["clue:orme_cough"]
 
 [[characters.clara.topics.label]]
 aliases = ["that label", "the label", "label", "hand", "writing"]
-text = '''"'My Will. 2nd May 1894. C. Vane.' My father could not have written a word by May, and that is not my hand. It is Mr Orme's. He makes his sevens and his nines exactly so."'''
+text = '''"'My Will. 2nd May 1894. C. Ashdown.' My father could not have written a word by May, and that is not my hand. It is Mr Quarrie's. He makes his sevens and his nines exactly so."'''
 effects = ["clue:will_label"]
 
 [characters.clara.shows.will_cylinder]
-text = '''She would not touch it. "Mr Orme's hand," she said quietly.'''
+text = '''She would not touch it. "Mr Quarrie's hand," she said quietly.'''
 
-# ================================================================ Edmund
+# ================================================================ Hubert
 
 [characters.edmund]
-name = "Mr Edmund Vane"
-aliases = ["edmund", "edmund vane", "mr edmund", "mr edmund vane", "son", "brother"]
+name = "Mr Hubert Ashdown"
+aliases = ["hubert", "hubert ashdown", "mr hubert", "mr hubert ashdown", "son", "brother"]
 location = "drawing_room"
-description = "Mr Edmund Vane: a heavy, handsome, ruined-looking man of forty, red about the eyes and not from crying, in a good coat gone shiny."
-presence = "Mr Edmund Vane lounged on the sofa with a glass."
-unknown_topic = '''"No idea," said Edmund, and drank.'''
-unknown_show = '''Edmund glanced at it. "What's that to me?"'''
+description = "Mr Hubert Ashdown: a heavy, handsome, ruined-looking man of forty, red about the eyes and not from crying, in a good coat gone shiny."
+presence = "Mr Hubert Ashdown lounged on the sofa with a glass."
+unknown_topic = '''"No idea," said Hubert, and drank.'''
+unknown_show = '''Hubert glanced at it. "What's that to me?"'''
 
 [[characters.edmund.greeting]]
-text = '''"Holmes's man? Good. I'll tell you what nobody else in this house will, Doctor: my father was poisoned. Poison, sir: and that fellow Orme had the giving of his drops. And you'll want to know about my debts, I daresay; everybody does."'''
+text = '''"Holmes's man? Good. I'll tell you what nobody else in this house will, Doctor: my father was poisoned. Poison, sir: and that fellow Quarrie had the giving of his drops. And you'll want to know about my debts, I daresay; everybody does."'''
 
 [[characters.edmund.topics.poison]]
 aliases = ["poisoned", "poison", "drops", "digitalis", "my father", "death"]
-text = '''"Digitalis. Heart drops. Orme had the giving of them, nights, while my sister slept. A man who'd forge a will would do that. Find the bottle, Doctor; you'll see."'''
+text = '''"Digitalis. Heart drops. Quarrie had the giving of them, nights, while my sister slept. A man who'd forge a will would do that. Find the bottle, Doctor; you'll see."'''
 effects = ["clue:edmund_claim"]
 
 [[characters.edmund.topics.debts]]
@@ -134,26 +134,26 @@ unknown_topic = '''"I cannot assist you there, Doctor," said Mr Tulliver.'''
 unknown_show = '''Mr Tulliver adjusted his pince-nez. "It does not bear on the matter, I think."'''
 
 [[characters.tulliver.greeting]]
-text = '''"Dr Watson. Sit down. I act for the family, and have done for thirty years. You will want to know about the old will, and the new will, and this cylinder of Mr Orme's, which I have in my safe; and something of the law, perhaps, which is plainer than people think."'''
+text = '''"Dr Watson. Sit down. I act for the family, and have done for thirty years. You will want to know about the old will, and the new will, and this cylinder of Mr Quarrie's, which I have in my safe; and something of the law, perhaps, which is plainer than people think."'''
 
 [[characters.tulliver.topics.old_will]]
 aliases = ["the old will", "old will", "1889"]
-text = '''"Made in 1889, in my office: everything to his two children in equal shares, with a legacy of two hundred pounds to the assistant of the day. Mr Vane never spoke to me of changing it."'''
+text = '''"Made in 1889, in my office: everything to his two children in equal shares, with a legacy of two hundred pounds to the assistant of the day. Mr Ashdown never spoke to me of changing it."'''
 effects = ["clue:old_will"]
 
 [[characters.tulliver.topics.new_will]]
 aliases = ["the new will", "new will", "will"]
-text = '''"Dated the 2nd of May 1894, on a form from a law stationer's, everything to Felix Orme. Signed C. Vane, in a great sprawling hand, as a blind man signs; witnessed by the housekeeper and the gardener. Mr Orme produced it from the desk in the study on the day of the death. It is in proper form. If the family are to upset it, they must show that the old man did not know and approve what he signed."'''
+text = '''"Dated the 2nd of May 1894, on a form from a law stationer's, everything to Felix Quarrie. Signed C. Ashdown, in a great sprawling hand, as a blind man signs; witnessed by the housekeeper and the gardener. Mr Quarrie produced it from the desk in the study on the day of the death. It is in proper form. If the family are to upset it, they must show that the old man did not know and approve what he signed."'''
 effects = ["clue:new_will"]
 
 [[characters.tulliver.topics.cylinder]]
-aliases = ["this cylinder", "the cylinder", "cylinder", "mr orme's cylinder", "safe"]
-text = '''He unlocked the safe and took out a cardboard tube, and gave it to me. "Mr Orme brought it to me on Friday the 11th. He says Mr Vane spoke it on the afternoon of the 2nd, after signing. If it is what he says, the family have no case. Take it, Doctor; Mr Holmes has my leave. Only bring it back."'''
+aliases = ["this cylinder", "the cylinder", "cylinder", "mr quarrie's cylinder", "safe"]
+text = '''He unlocked the safe and took out a cardboard tube, and gave it to me. "Mr Quarrie brought it to me on Friday the 11th. He says Mr Ashdown spoke it on the afternoon of the 2nd, after signing. If it is what he says, the family have no case. Take it, Doctor; Mr Holmes has my leave. Only bring it back."'''
 effects = ["give:will_cylinder"]
 when = "loc:will_cylinder:nowhere"
 
 [[characters.tulliver.topics.cylinder]]
-aliases = ["this cylinder", "the cylinder", "cylinder", "mr orme's cylinder", "safe"]
+aliases = ["this cylinder", "the cylinder", "cylinder", "mr quarrie's cylinder", "safe"]
 text = '''"You have it, Doctor. Take care of it."'''
 
 [[characters.tulliver.topics.law]]
@@ -173,7 +173,7 @@ unknown_topic = '''"Couldn't say, my dear sir," said Dr Lammas.'''
 unknown_show = '''Dr Lammas shook his head. "Not a medical matter."'''
 
 [[characters.lammas.greeting]]
-text = '''"Dr Watson? A colleague. I'm glad of it. You'll want his death from me, I expect, and his eyes, and Mr Edmund's notions, which I'd sooner you heard from me than from him."'''
+text = '''"Dr Watson? A colleague. I'm glad of it. You'll want his death from me, I expect, and his eyes, and Mr Hubert's notions, which I'd sooner you heard from me than from him."'''
 
 [[characters.lammas.topics.death]]
 aliases = ["his death", "death", "died", "heart", "angina"]
@@ -186,37 +186,37 @@ text = '''"Double cataract, far gone. He could tell light from dark, and a face 
 effects = ["clue:blind"]
 
 [[characters.lammas.topics.notions]]
-aliases = ["mr edmund's notions", "notions", "edmund", "poison", "digitalis"]
-text = '''"Poison? Digitalis? My dear sir, I prescribed it. A man killed with digitalis vomits, and his pulse goes all anyhow, and it is not quiet. Vane died in his sleep without waking his daughter in the next room. And Miss Vane kept a book of every drop. Mr Edmund is unhappy, and he drinks."'''
+aliases = ["mr hubert's notions", "notions", "hubert", "poison", "digitalis"]
+text = '''"Poison? Digitalis? My dear sir, I prescribed it. A man killed with digitalis vomits, and his pulse goes all anyhow, and it is not quiet. Ashdown died in his sleep without waking his daughter in the next room. And Miss Ashdown kept a book of every drop. Mr Hubert is unhappy, and he drinks."'''
 effects = ["clue:lammas_digitalis"]
 
-# ================================================================ Mrs Dunn
+# ================================================================ Mrs Tebbutt
 
 [characters.dunn]
-name = "Mrs Dunn"
-aliases = ["dunn", "mrs dunn", "housekeeper", "cook"]
+name = "Mrs Tebbutt"
+aliases = ["tebbutt", "mrs tebbutt", "housekeeper", "cook"]
 location = "kitchen"
-description = "Mrs Dunn, the housekeeper: a stout, rosy, anxious woman of sixty in a black stuff gown, with her keys at her waist."
-presence = "Mrs Dunn was at the kitchen table, polishing spoons that did not need it."
-unknown_topic = '''"I couldn't say, sir, I'm sure," said Mrs Dunn.'''
-unknown_show = '''Mrs Dunn looked at it doubtfully. "No, sir."'''
+description = "Mrs Tebbutt, the housekeeper: a stout, rosy, anxious woman of sixty in a black stuff gown, with her keys at her waist."
+presence = "Mrs Tebbutt was at the kitchen table, polishing spoons that did not need it."
+unknown_topic = '''"I couldn't say, sir, I'm sure," said Mrs Tebbutt.'''
+unknown_show = '''Mrs Tebbutt looked at it doubtfully. "No, sir."'''
 
 [[characters.dunn.greeting]]
 text = '''"Oh, sir. It's about the second of May, I suppose, and the paper we signed, Bates and me. Or the nights, when the master was so bad. Or the old machine. I'll tell you anything, sir, I'm sure."'''
 
 [[characters.dunn.topics.signing]]
 aliases = ["the second of may", "second of may", "the paper", "paper", "signed", "signing", "witness"]
-text = '''"Mr Orme called me and Bates into the study, sir, in the afternoon. There was two or three papers. Mr Orme read out a long piece about patents and the American gentlemen, and the master said, 'That's the American business, Mrs Dunn; I'm glad to have it off my mind,' and signed where Mr Orme put his hand, two or three times, and we signed after. I didn't read it, sir. It isn't my place to read the master's papers."'''
+text = '''"Mr Quarrie called me and Bates into the study, sir, in the afternoon. There was two or three papers. Mr Quarrie read out a long piece about patents and the American gentlemen, and the master said, 'That's the American business, Mrs Tebbutt; I'm glad to have it off my mind,' and signed where Mr Quarrie put his hand, two or three times, and we signed after. I didn't read it, sir. It isn't my place to read the master's papers."'''
 effects = ["clue:dunn_signing"]
 
 [[characters.dunn.topics.nights]]
 aliases = ["the nights", "nights", "sat up", "bad", "illness"]
-text = '''"From the Thursday, sir, the 3rd, the master was so bad that somebody sat up with him every night, and it was Mr Orme, every night, I'll say that for him, Thursday, Friday, Saturday and Sunday; and the master went in the early morning of the Monday. After the master died Mr Orme was mostly away of nights, sir, at his lodgings I suppose."'''
+text = '''"From the Thursday, sir, the 3rd, the master was so bad that somebody sat up with him every night, and it was Mr Quarrie, every night, I'll say that for him, Thursday, Friday, Saturday and Sunday; and the master went in the early morning of the Monday. After the master died Mr Quarrie was mostly away of nights, sir, at his lodgings I suppose."'''
 effects = ["clue:dunn_nights"]
 
 [[characters.dunn.topics.machine]]
 aliases = ["the old machine", "old machine", "machine", "edison"]
-text = '''"The old one from the study, sir, that the master used to talk to? Mr Orme took it away in a cab on the Tuesday, the day after the master died. To be mended, he said."'''
+text = '''"The old one from the study, sir, that the master used to talk to? Mr Quarrie took it away in a cab on the Tuesday, the day after the master died. To be mended, he said."'''
 effects = ["clue:machine_taken"]
 
 # ================================================================ Bates
@@ -239,7 +239,7 @@ text = '''"Every morning at nine, sir, for eleven year, as the master learned me
 
 [[characters.bates.topics.signing]]
 aliases = ["the second of may", "second of may", "signed", "signing", "what was said"]
-text = '''"Mr Orme read out something long about patents, sir. The master says, 'This is the American business, Bates,' and signs, and I signs. That's all. A fine day it was, too; I'd been mowing."'''
+text = '''"Mr Quarrie read out something long about patents, sir. The master says, 'This is the American business, Bates,' and signs, and I signs. That's all. A fine day it was, too; I'd been mowing."'''
 effects = ["clue:bates_signing"]
 
 # ================================================================ Mrs Prout
@@ -254,10 +254,10 @@ unknown_topic = '''"Couldn't say, I'm sure," said Mrs Prout.'''
 unknown_show = '''Mrs Prout sniffed at it. "No."'''
 
 [[characters.prout.greeting]]
-text = '''"Mr Orme? He's not in. If you're friends of his you can wait in the street. If you're from Mr Holmes, which the cabman says you are, that's another thing. What do you want to know: about Mr Orme, or his rooms, or that night?"'''
+text = '''"Mr Quarrie? He's not in. If you're friends of his you can wait in the street. If you're from Mr Holmes, which the cabman says you are, that's another thing. What do you want to know: about Mr Quarrie, or his rooms, or that night?"'''
 
-[[characters.prout.topics.orme]]
-aliases = ["mr orme", "orme", "lodger"]
+[[characters.prout.topics.quarrie]]
+aliases = ["mr quarrie", "quarrie", "lodger"]
 text = '''"Three years he's had my top floor. Quiet, pays regular, always fiddling with his machines. Since April he's been up at Highgate with the old gentleman mostly. Then last Tuesday week, no, Tuesday last, he come back in a cab with a great black-and-gold machine he carried up himself, and he's been in and out of nights since."'''
 effects = ["clue:prout_orme"]
 
@@ -268,7 +268,7 @@ effects = ["set:prout_ok"]
 
 [[characters.prout.topics.night]]
 aliases = ["that night", "night", "the night", "voice", "noise"]
-text = '''"One night last week, it was, late. I don't know which; one's much like another. Pouring with rain, I know, for his skylight leaks and I'd told him of it. I heard voices through my ceiling, and one of them was the old gentleman's, as had been here once, for I'd heard him on the stairs: slow and deep he spoke. Only it kept stopping and starting, and once it came out all squeaky, and once all slow, like a man drunk. And St Cuthbert's struck eleven while it was going on, and Mr Orme coughing his little cough. It gave me a turn, I can tell you, for they'd told me the old gentleman was dead."'''
+text = '''"One night last week, it was, late. I don't know which; one's much like another. Pouring with rain, I know, for his skylight leaks and I'd told him of it. I heard voices through my ceiling, and one of them was the old gentleman's, as had been here once, for I'd heard him on the stairs: slow and deep he spoke. Only it kept stopping and starting, and once it came out all squeaky, and once all slow, like a man drunk. And St Cuthbert's struck eleven while it was going on, and Mr Quarrie coughing his little cough. It gave me a turn, I can tell you, for they'd told me the old gentleman was dead."'''
 effects = ["clue:prout_night"]
 
 # ================================================================ Gosling

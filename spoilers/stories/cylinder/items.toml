@@ -61,7 +61,7 @@ name = "table"
 aliases = ["papers", "deed-box", "deed box", "japanned deed-box", "books"]
 location = "library"
 scenery = true
-description = "Mr Tulliver's papers, in tidy heaps, and his black deed-box lettered C. VANE, ESQ."
+description = "Mr Tulliver's papers, in tidy heaps, and his black deed-box lettered C. ASHDOWN, ESQ."
 
 [items.safe]
 name = "safe"
@@ -106,7 +106,7 @@ clue = "syndicate_letter"
 description = """
 A letter on thin paper, headed THE COLUMBIAN PHONOGRAPH SYNDICATE, BROADWAY, NEW YORK, and dated from their London agent, 5th May 1894:
 
-'Dear Mr Vane, We are still without the signed assignment of your British and Colonial patents, which Mr Orme assured us on the 1st inst. you would execute on the 2nd. Our principals are pressing. May we beg you to sign and return it at your earliest convenience?'
+'Dear Mr Ashdown, We are still without the signed assignment of your British and Colonial patents, which Mr Quarrie assured us on the 1st inst. you would execute on the 2nd. Our principals are pressing. May we beg you to sign and return it at your earliest convenience?'
 """
 
 [items.cabinet]
@@ -126,15 +126,15 @@ location = "study"
 scenery = true
 clue = "catalogue"
 description = """
-Mr Vane's catalogue of his cylinders, in his own hand until Christmas last and in Miss Vane's after it. Each entry gave the number, the date, what was spoken, where, and on which machine: O for the old Edison in the study, N for the new machine in the laboratory. Among them:
+Mr Ashdown's catalogue of his cylinders, in his own hand until Christmas last and in Miss Ashdown's after it. Each entry gave the number, the date, what was spoken, where, and on which machine: O for the old Edison in the study, N for the new machine in the laboratory. Among them:
 
-'9. 3 Nov. 1893. To Clara, on her birthday. Morning room. N.'
+'9. 3 Nov. 1893. To Beatrice, on her birthday. Morning room. N.'
 '14. 15 Jan. 1894. Statement for the patent hearing. Study. O.'
 '17. 12 Mar. 1894. Letter to the Columbian Syndicate. Study. N.'
 '19. Feb. 1894. Notes on the siren. Laboratory. N.'
-'21. 20 Apr. 1894. Notes for Orme. Laboratory. O.'
+'21. 20 Apr. 1894. Notes for Quarrie. Laboratory. O.'
 
-On the flyleaf, in Miss Vane's hand: 'O: governor seized 28 March. Runs at 120 only. N: set at 160 for all recording.'
+On the flyleaf, in Miss Ashdown's hand: 'O: governor seized 28 March. Runs at 120 only. N: set at 160 for all recording.'
 """
 
 [items.regulator]
@@ -195,11 +195,11 @@ description = "A shilling, waxy."
 take_text = "I picked the shilling out of the shavings."
 
 [items.orme_bench]
-name = "Orme's bench"
-aliases = ["tidy bench", "card", "f orme", "orme's bench"]
+name = "Quarrie's bench"
+aliases = ["tidy bench", "card", "f quarrie", "quarrie's bench"]
 location = "laboratory"
 scenery = true
-description = "Orme's bench: everything squared and in its place, tools in a rack, and a box of blank cylinders, the new hard brown wax, a dozen to the box, of which two were gone."
+description = "Quarrie's bench: everything squared and in its place, tools in a rack, and a box of blank cylinders, the new hard brown wax, a dozen to the box, of which two were gone."
 
 [items.skylight_lab]
 name = "skylight"
@@ -316,7 +316,7 @@ aliases = ["book", "medicine book", "doses"]
 location = "bedroom"
 scenery = true
 clue = "medicine_book"
-description = "A little book in Miss Vane's hand, recording every dose given since April: digitalis, ten drops at night, and the bottle measured each Sunday. The drops given and the drops gone out of the bottle agreed to the last week. On the morning of the 7th, the last entry: 'Father died about 4. Dr Lammas came at 7.'"
+description = "A little book in Miss Ashdown's hand, recording every dose given since April: digitalis, ten drops at night, and the bottle measured each Sunday. The drops given and the drops gone out of the bottle agreed to the last week. On the morning of the 7th, the last entry: 'Father died about 4. Dr Lammas came at 7.'"
 
 [items.spectacles]
 name = "spectacles"
@@ -426,7 +426,7 @@ location = "prout_hall"
 scenery = true
 description = "A bentwood hat-stand with a bowler on it, and a strip of worn oilcloth up the passage."
 
-# ================================================================ Orme's room
+# ================================================================ Quarrie's room
 
 [items.orme_skylight]
 name = "skylight"
@@ -451,8 +451,8 @@ scenery = true
 description = "A deal table and two chairs, a shelf of works on acoustics and electricity, and a litter of wax shavings."
 
 [items.orme_phonograph]
-name = "Orme's phonograph"
-aliases = ["new machine", "clean machine", "common machine", "orme's phonograph", "orme's machine"]
+name = "Quarrie's phonograph"
+aliases = ["new machine", "clean machine", "common machine", "quarrie's phonograph", "quarrie's machine"]
 location = "orme_room"
 scenery = true
 clue = "orme_machine"
@@ -464,7 +464,7 @@ aliases = ["old machine", "edison", "black and gold", "old edison", "old phonogr
 location = "orme_room"
 scenery = true
 clue = "old_machine_here"
-description = "An old Edison phonograph of the first pattern, black and gold, with its brass horn. On its base, in white paint, a number: C.V. 1. Its governor was rusted solid. I tried the handle: the mandrel turned, and the governor balls stood out at the one speed they could, which the marks on the dial put at 120. It was set up to play, not to record."
+description = "An old Edison phonograph of the first pattern, black and gold, with its brass horn. On its base, in white paint, a number: C.A. 1. Its governor was rusted solid. I tried the handle: the mandrel turned, and the governor balls stood out at the one speed they could, which the marks on the dial put at 120. It was set up to play, not to record."
 
 [items.horns]
 name = "horns"
@@ -528,39 +528,39 @@ name = "will cylinder"
 aliases = ["will", "cylinder", "the will", "brown cylinder", "questioned cylinder"]
 location = "nowhere"
 clue = "will_cyl"
-description = "A cylinder of the new hard brown wax in a cardboard tube, the tube labelled in a small neat hand: 'My Will. 2nd May 1894. C. Vane.'"
+description = "A cylinder of the new hard brown wax in a cardboard tube, the tube labelled in a small neat hand: 'My Will. 2nd May 1894. C. Ashdown.'"
 
 [items.cyl_s5]
 name = "siren cylinder"
 aliases = ["siren cylinder", "notes on the siren", "tube", "number 19", "19"]
 location = "cabinet"
 clue = "cyl_siren"
-description = "A cylinder in its tube, labelled in Miss Vane's hand: '19. Notes on the siren. Feb. 1894. Lab. N.'"
+description = "A cylinder in its tube, labelled in Miss Ashdown's hand: '19. Notes on the siren. Feb. 1894. Lab. N.'"
 
 [items.cyl_s1]
 name = "Syndicate cylinder"
 aliases = ["syndicate cylinder", "letter to the columbian syndicate", "number 17", "17"]
 location = "hatbox"
 clue = "cyl_syndicate"
-description = "A cylinder in a tube labelled in Miss Vane's hand: '17. Letter to the Columbian Syndicate. 12 Mar. 1894. Study. N.' The wax was scored with fine new scratches, as if it had been played many times lately."
+description = "A cylinder in a tube labelled in Miss Ashdown's hand: '17. Letter to the Columbian Syndicate. 12 Mar. 1894. Study. N.' The wax was scored with fine new scratches, as if it had been played many times lately."
 
 [items.cyl_s2]
-name = "Orme cylinder"
-aliases = ["orme cylinder", "notes for orme", "number 21", "21"]
+name = "Quarrie cylinder"
+aliases = ["quarrie cylinder", "notes for quarrie", "number 21", "21"]
 location = "hatbox"
 clue = "cyl_orme"
-description = "A cylinder in a tube labelled: '21. Notes for Orme. 20 Apr. 1894. Lab. O.', in Miss Vane's hand."
+description = "A cylinder in a tube labelled: '21. Notes for Quarrie. 20 Apr. 1894. Lab. O.', in Miss Ashdown's hand."
 
 [items.cyl_s3]
 name = "birthday cylinder"
-aliases = ["birthday cylinder", "to clara", "clara cylinder", "number 9", "9"]
+aliases = ["birthday cylinder", "to beatrice", "beatrice cylinder", "number 9", "9"]
 location = "hatbox"
 clue = "cyl_birthday"
-description = "A cylinder in a tube labelled in Mr Vane's hand: '9. To Clara, on her birthday. 3 Nov. 1893. Morning room. N.'"
+description = "A cylinder in a tube labelled in Mr Ashdown's hand: '9. To Beatrice, on her birthday. 3 Nov. 1893. Morning room. N.'"
 
 [items.cyl_s4]
 name = "hearing cylinder"
 aliases = ["hearing cylinder", "statement", "patent hearing", "number 14", "14"]
 location = "hatbox"
 clue = "cyl_hearing"
-description = "A cylinder in a tube labelled in Miss Vane's hand: '14. Statement for the patent hearing. 15 Jan. 1894. Study. O.'"
+description = "A cylinder in a tube labelled in Miss Ashdown's hand: '14. Statement for the patent hearing. 15 Jan. 1894. Study. O.'"

@@ -7,7 +7,7 @@ description = """
 A tall red-brick house of the 'sixties stood back from the road behind a row of dark larches, with a gravel sweep before it, the blinds of its front windows drawn down for a death. Across the road the ground fell away steeply, and over the roofs of Kentish Town I could see the whole smoky bowl of London lying in the May sunshine. A cab waited by the kerb to the south, its horse cropping at the verge. The front door stood open to the north; a side path ran round the house to the garden, north-east.
 """
 on_enter = [
-  { once = true, text = "[I opened my notebook and set down what Miss Vane had told us in Baker Street.]", effects = ["clue:found"] },
+  { once = true, text = "[I opened my notebook and set down what Miss Ashdown had told us in Baker Street.]", effects = ["clue:found"] },
 ]
 [rooms.gate.exits]
 north = { to = "hall", aliases = ["house", "door", "front door", "in"] }
@@ -53,7 +53,7 @@ east = { to = "hall", aliases = ["hall", "out"] }
 out = { to = "hall", aliases = ["hall"] }
 
 [rooms.study]
-name = "Mr Vane's Study"
+name = "Mr Ashdown's Study"
 aliases = ["study"]
 description = """
 The dead man's study was a working room and nothing else: bare boards, a big plain desk under the window, and a horsehair chair. In the middle of the desk, among the dust, was a clean square of bare wood where something heavy had lately stood. Against one wall stood a tall cabinet of pigeon-holes, each holding a cylinder in a cardboard tube, and on a shelf beside it lay a thick catalogue. A regulator clock ticked heavily on the wall, loud in the silence. On the desk, by the machine, lay a little leather case. The passage was to the east.
@@ -66,7 +66,7 @@ out = { to = "passage", aliases = ["passage"] }
 name = "The Laboratory"
 aliases = ["laboratory", "lab"]
 description = """
-A long whitewashed room built out into the garden, with a skylight, benches all round it covered with lathes and coils and jars and pieces of phonographs in every stage of being taken apart, and a little gas-engine and dynamo in a corner that whined softly as it turned. On the centre bench stood a new phonograph, a handsome thing of mahogany and nickel with a great horn and a speed regulator, and beside it a brass siren on a stand, connected by a tube to a bellows. A bench by the window, tidier than the rest, had a card on it: F. ORME. The passage was to the south.
+A long whitewashed room built out into the garden, with a skylight, benches all round it covered with lathes and coils and jars and pieces of phonographs in every stage of being taken apart, and a little gas-engine and dynamo in a corner that whined softly as it turned. On the centre bench stood a new phonograph, a handsome thing of mahogany and nickel with a great horn and a speed regulator, and beside it a brass siren on a stand, connected by a tube to a bellows. A bench by the window, tidier than the rest, had a card on it: F. QUARRIE. The passage was to the south.
 """
 [rooms.laboratory.exits]
 south = { to = "passage", aliases = ["passage", "out"] }
@@ -104,7 +104,7 @@ east = { to = "garden", aliases = ["garden", "out", "back door"] }
 out = { to = "garden", aliases = ["garden"] }
 
 [rooms.bedroom]
-name = "Mr Vane's Bedroom"
+name = "Mr Ashdown's Bedroom"
 aliases = ["bedroom", "sickroom"]
 description = """
 A plain bedroom with the blinds half down and the bed stripped. On the washstand stood a row of medicine bottles and a little book, and on the bedside table, where he had left them, a pair of spectacles with lenses as thick as the bottom of a tumbler. The stairs went down.
@@ -146,11 +146,11 @@ A narrow, brown-papered passage smelling of cabbage and furniture polish, with a
 [rooms.prout_hall.exits]
 out = { to = "kentish_street", aliases = ["street", "terrace"] }
 south = { to = "kentish_street", aliases = ["street"] }
-up = { to = "orme_room", when = "flag:prout_ok", blocked = "Mrs Prout planted herself at the foot of the stairs. \"Them's Mr Orme's rooms, sir, and he pays for them.\"", aliases = ["stairs", "stair", "orme's rooms", "upstairs"] }
+up = { to = "orme_room", when = "flag:prout_ok", blocked = "Mrs Prout planted herself at the foot of the stairs. \"Them's Mr Quarrie's rooms, sir, and he pays for them.\"", aliases = ["stairs", "stair", "quarrie's rooms", "upstairs"] }
 
 [rooms.orme_room]
-name = "Mr Orme's Sitting-Room"
-aliases = ["sitting-room", "sitting room", "orme's room", "orme's rooms"]
+name = "Mr Quarrie's Sitting-Room"
+aliases = ["sitting-room", "sitting room", "quarrie's room", "quarrie's rooms"]
 description = """
 A top-floor room under a sloping roof, with a skylight of dirty glass set in it, and a window looking down into the railway cutting. It was a bachelor's room, and an untidy one: a table, two chairs, a shelf of books, and under the bed a hatbox. But on the table, side by side, stood two phonographs: one a clean new machine of a common sort, and the other, I saw with a start, an old machine of the first Edison pattern, black and gold. Their brass horns had been turned mouth to mouth and lashed together with cord, with a muffler wrapped round the join. The stairs went down.
 """

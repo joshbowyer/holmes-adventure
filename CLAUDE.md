@@ -52,6 +52,9 @@ must never learn it outside the game.
   - church change-ringing alibis (Dorothy Sayers, *The Nine Tailors*)
   - typewriter identification (canon, *A Case of Identity*); the Underground (*Bruce-Partington*)
 - Canon characters (Holmes, Watson, Mrs Hudson, Lestrade, Mycroft, Wiggins…) are fine to use.
+- **Never reuse a name across cases** (user, 2026-11-27: the Wax Cylinder Will reused Vane,
+  Orme, Clara, Edmund from the Bell-Board and Dunn from Bazalgette; renamed). Check every
+  new character's first and last names against all other cases' sources before writing.
 - The Irregulars are **street urchins**. Don't call them "street Arabs" (the user's request,
   2026-11-26, even though the canon uses the phrase).
 - **Prose must match the game state** (user feedback on the practice case, 2026-11-26):
