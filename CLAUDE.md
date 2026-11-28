@@ -274,7 +274,11 @@ Exploration premises:
     And `cylinder` (deduction case 1, The Wax Cylinder Will, 1894, 15 rooms, 10 people,
     54 clues, 8 shillings; first `cylinder` case; a step above the Palace: the
     questioned cylinder has parts true at two speeds, and several parts' words fit
-    two sources; not yet played).
+    two sources; played and finished 2026-11-27: "that was tricky", but it "got easy
+    once I realized" the source cylinders fell into two speed groups; after that the
+    SOURCE step was just matching phrases. Lesson: **a final puzzle should not collapse
+    to bookkeeping after one insight**; build in a second, independent insight (or a
+    group that splits again) so the last stretch still needs thought).
   - **Difficulty trajectory** (user, 2026-11-27): make each new case a little harder than
     the last, unless the user says the latest one was a little too hard. Don't ask about
     difficulty each time; just step it up.
@@ -304,7 +308,6 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: the user plays The Wax Cylinder Will and gives feedback
-  (especially on PLAY and the speed reasoning, and the SOURCE step). Remaining after
-  it: E4 Ice Wells, E5 Margaret Ainsley, Census Night (finale, needs record tables)
+- Next step from here: build the next case (user asked to proceed, 2026-11-27).
+  Remaining: E4 Ice Wells, E5 Margaret Ainsley, Census Night (finale, needs record tables)
   and Letters from Sussex (needs the telegram queue).
