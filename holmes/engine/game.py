@@ -274,6 +274,7 @@ class Game:
                 st.locations[args[0]] = args[1]
             elif kind == "give":
                 st.locations[args[0]] = "player"
+                self._came_to_hand(args[0])
             elif kind == "remove":
                 st.locations[args[0]] = "nowhere"
             elif kind == "open":
@@ -479,7 +480,18 @@ class Game:
             return
         st.locations[tid] = "player"
         self.say(it.get("take_text", "Taken."))
+        self._came_to_hand(tid)
         self.apply(it.get("on_take"))
+
+    def _came_to_hand(self, tid: str) -> None:
+        """A cylinder or a piece of tape is the player's to play or read as soon as he
+        holds it, without waiting to be examined."""
+        clue = self.story.items.get(tid, {}).get("clue")
+        if not clue or clue in self.state.clues:
+            return
+        if cylinder.cylinders_dealt_by(self, clue) or morse.passages_dealt_by(self, clue):
+            self.add_clue(clue)
+            cylinder.note_item_cylinder(self, clue)
 
     def do_drop(self, cmd: Command) -> None:
         if not cmd.obj:

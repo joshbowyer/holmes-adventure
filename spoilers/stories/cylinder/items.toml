@@ -535,7 +535,7 @@ name = "siren cylinder"
 aliases = ["siren cylinder", "notes on the siren", "tube", "number 19", "19"]
 location = "cabinet"
 clue = "cyl_siren"
-description = "A cylinder in its tube, labelled in Miss Ashdown's hand: '19. Notes on the siren. Feb. 1894. Lab. N.'"
+description = "A cylinder in its tube, labelled in Miss Ashdown's hand: '19. Notes on the siren. Feb. 1894. Lab. N.' Mr Ashdown's own spoken notes, I supposed, on the very instrument Holmes was using in the laboratory."
 
 [items.cyl_s1]
 name = "Syndicate cylinder"

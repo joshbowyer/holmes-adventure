@@ -403,6 +403,10 @@ class GameTests(unittest.TestCase):
         data["actions"] = []
         self.assertEqual(validate(data), [])
         g = Game(Story(data), ScriptedConsole([]), autosave=False)
+        g.handle("open box")
+        g.handle("take key")                                 # holding it is enough
+        self.assertIn("found_key", g.state.clues)
+        g = Game(Story(data), ScriptedConsole([]), autosave=False)
         g.state.clues.append("found_key")
         g.handle("play a at 150")                            # not at the machine
         self.assertTrue(g.failed)
