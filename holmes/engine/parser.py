@@ -15,6 +15,9 @@ DIRECTIONS = {
     "se": "southeast", "southeast": "southeast", "sw": "southwest", "southwest": "southwest",
     "u": "up", "up": "up", "upstairs": "up", "d": "down", "down": "down", "downstairs": "down",
     "in": "in", "inside": "in", "out": "out", "outside": "out",
+    # aboard ship: the bow is north, the stern south
+    "fore": "north", "forward": "north", "for'ard": "north", "aft": "south", "astern": "south",
+    "port": "west", "starboard": "east",
 }
 
 BUILTIN_VERBS = {

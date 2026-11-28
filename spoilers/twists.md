@@ -14,6 +14,7 @@ turns it. Never tell the user which cases these are. Space them irregularly.
 | fist | **YES** | Tagg obvious; Miss Nance (at her key a mile off) did it; lynchpin = dummy battery cell (wreck tape with her split C + blackmail book) |
 | palace | no | Lusk obvious and guilty; proof by linked chains (fast detector clock) |
 | cylinder | no | Quarrie obvious and guilty; proof by speeds, rain book, bell, his rooms |
+| ainsley | **YES** | Laverty obvious (watch, threats, aboard); Captain Haldane (left by gangway, 'only way aboard') did it; lynchpin = red-leaded tweed coat in the coal box + shred on the burr of the cut plating |
 
 For later cases, decide when writing the bible and record it here and in the bible.
 Sketch for a twist case: the suspect the evidence points at has motive, means, a broken

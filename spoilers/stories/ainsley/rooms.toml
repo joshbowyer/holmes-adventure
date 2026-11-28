@@ -1,0 +1,208 @@
+# ================================================================ the dockside
+
+[rooms.dock_gate]
+name = "The Gate of Pellew's Dry Dock"
+aliases = ["gate", "dock gate", "rotherhithe street"]
+description = """
+Rotherhithe Street ran crooked between high warehouse walls, hung for the Jubilee with flags and bunting and a great banner, GOD BLESS HER, across from wall to wall. Here a pair of tall iron gates stood open in a brick wall, with PELLEW'S DRY DOCK painted over them, and a little wicket door let into one of them for use at night. Beside the gates was a gatehouse with a window, and in the window a board of keys. The quay lay through the gates to the north.
+"""
+on_enter = [
+  { once = true, text = "[I opened my notebook and set down what Lestrade's wire had told us.]", effects = ["clue:found"] },
+]
+[rooms.dock_gate.exits]
+north = { to = "quay", aliases = ["quay", "dock", "gates", "in", "dry dock"] }
+in = { to = "quay", aliases = ["quay", "dock"] }
+
+[rooms.quay]
+name = "The Quay"
+aliases = ["quay", "dockside"]
+description = """
+I stood at the edge of the dry dock, and looked down. It was a great stone trough, a hundred yards long, stepped all down its sides like the seats of an amphitheatre, and in it, high and dry on her keel-blocks and held upright by a forest of timber shores, sat the steamer Margaret Ainsley, her black side towering above me with the rust running down it in streaks. Her bow pointed at the head of the dock, where I stood; her stern was away at the far end against the dock gate, beyond which ran the river. A steep gangway went up from the quay to her deck. Stone steps went down the side of the dock to the floor. Along the quay stood the dock office, a timber hut with TOLLAND & MARR on its door, and a painters' shed. The street gate was to the south.
+"""
+[rooms.quay.exits]
+south = { to = "dock_gate", aliases = ["gate", "street", "out"] }
+up = { to = "main_deck", aliases = ["gangway", "ship", "aboard", "deck", "margaret ainsley"] }
+down = { to = "under_bow", aliases = ["steps", "stone steps", "dock floor", "floor", "dock"] }
+north = { to = "dock_office", aliases = ["dock office", "office"] }
+east = { to = "owners_hut", aliases = ["hut", "timber hut", "tolland & marr", "owners' hut", "tolland and marr"] }
+west = { to = "paint_shed", aliases = ["painters' shed", "paint shed", "shed", "painters"] }
+
+[rooms.dock_office]
+name = "The Dock Office"
+aliases = ["dock office", "office"]
+description = """
+A plain brick office with a high desk, a stove, a tide-table on the wall and a window over the dock. On a hand-barrow under the window, covered with a tarpaulin, lay the body of the dead man. On a bench against the wall sat a big, red-headed seaman in handcuffs, with a constable beside him. The quay was to the south.
+"""
+[rooms.dock_office.exits]
+south = { to = "quay", aliases = ["quay", "out"] }
+out = { to = "quay", aliases = ["quay"] }
+
+[rooms.owners_hut]
+name = "The Owners' Hut"
+aliases = ["owners' hut", "hut", "tolland & marr"]
+description = """
+A timber hut put up on the quay for the owners' people while their ship was in dock: a table spread with plans of the ship, two chairs, a shelf of ledgers, a little iron stove with a coal box beside it, and a row of pegs by the door with a dust-coat and a bowler hat on them. The quay was to the west.
+"""
+[rooms.owners_hut.exits]
+west = { to = "quay", aliases = ["quay", "out"] }
+out = { to = "quay", aliases = ["quay"] }
+
+[rooms.paint_shed]
+name = "The Painters' Shed"
+aliases = ["painters' shed", "paint shed", "shed"]
+description = """
+A low shed reeking of turpentine and red lead, stacked with paint-kegs, brushes in jars of spirit, and pots of red lead the colour of dried blood. On a nail hung a greasy paint book. The quay was to the east.
+"""
+[rooms.paint_shed.exits]
+east = { to = "quay", aliases = ["quay", "out"] }
+out = { to = "quay", aliases = ["quay"] }
+
+# ================================================================ the dock floor
+
+[rooms.under_bow]
+name = "The Dock Floor, under the Bow"
+aliases = ["dock floor", "under the bow", "floor"]
+description = """
+I stood on the floor of the dock, thirty feet below the quay, in a wet half-light that smelled of weed and mud. Above me the bow of the Margaret Ainsley went up like a cliff, her stem curving over my head, and along her forecastle, far up, I could see the gap where her rails had been taken down. On the stones beneath it, among the keel-blocks, the police had chalked an outline. Her anchors had been hove out of their hawse-pipes and laid on the dock floor with their cables ranged beside them in great rusty fakes. The steps went up to the quay; aft, under the ship's bottom, the floor ran away into the shadow of her hull.
+"""
+[rooms.under_bow.exits]
+up = { to = "quay", aliases = ["steps", "quay"] }
+south = { to = "under_hold", aliases = ["under the hull", "hull"] }
+
+[rooms.under_hold]
+name = "The Dock Floor, under No. 1 Hold"
+aliases = ["under no. 1", "under the hold", "under number one"]
+description = """
+Here I was under the ship's bottom itself, in a gloomy space between the dock floor and the curve of her plating, among shores and keel-blocks, stooping to keep my hat on. On the port side a light timber staging had been built up to her bottom, and above it, where the riveters had cut out four of her plates, there was a black square hole in the ship, a yard across, the raw edges of it painted bright red with red lead. Beside the staging, with a lamp hung on a shore, a man in a frock coat and a bowler was examining the hole through a glass. Forward lay the bow; aft, the floor ran on under the hull to the stern.
+"""
+[rooms.under_hold.exits]
+north = { to = "under_bow", aliases = ["bow"] }
+south = { to = "under_stern", aliases = ["stern"] }
+up = { to = "double_bottom", aliases = ["hole", "staging", "opening", "into the ship", "plates"] }
+
+[rooms.under_stern]
+name = "The Dock Floor, under the Stern"
+aliases = ["under the stern", "stern"]
+description = """
+At the far end of the dock her stern hung over me, with the great blade of her rudder and, below it, the empty bossing where her propeller had been drawn off. The propeller itself, four blades of dull bronze taller than a man, lay propped against the dock wall. Beyond it the iron caisson of the dock gate held back the Thames; I could hear the river slapping on the other side of it, higher than my head. Forward, the floor ran back under the hull.
+"""
+[rooms.under_stern.exits]
+north = { to = "under_hold", aliases = ["hull"] }
+
+# ================================================================ inside the bottom and the hold
+
+[rooms.double_bottom]
+name = "The Double Bottom"
+aliases = ["double bottom", "tank"]
+dark_when = "!has:lantern"
+dark_text = "It was pitch dark in there. I could feel iron all round me and hear water dripping."
+description = """
+I hauled myself up through the hole into a low iron cellar, not three feet high, between the ship's outer skin below me and her inner bottom over my head, divided every two feet by iron frames, each with a lightening-hole in it to crawl through. It was rusty and wet and smelt of bilge. A little way along, over my head, a round manhole stood open in the iron ceiling, and a faint light came down through it. The hole in the bottom was below me.
+"""
+[rooms.double_bottom.exits]
+down = { to = "under_hold", aliases = ["hole", "out", "dock floor", "staging"] }
+up = { to = "no1_hold", aliases = ["manhole", "hold", "number one", "no. 1"] }
+
+[rooms.no1_hold]
+name = "No. 1 Hold"
+aliases = ["no. 1 hold", "hold", "number one hold"]
+dark_when = "!has:lantern"
+dark_text = "The hold was a cavern of darkness, with only a grey square of sky far overhead."
+description = """
+A great empty iron cavern, swept clean of her maize, with a grey square of daylight thirty feet over my head where the hatch boards had been taken off. Her ribs went up on either side like the ribs of a whale. The floor of it was the tank top, iron plates studded with rivets, with the open manhole in it near the port side, and around it lay the riveters' gear: a portable forge, a bag of rivets, tongs and hammers. An iron ladder went straight up the forward bulkhead to the deck.
+"""
+[rooms.no1_hold.exits]
+up = { to = "foredeck", aliases = ["ladder", "deck", "hatch", "iron ladder"] }
+down = { to = "double_bottom", aliases = ["manhole", "double bottom", "tank"] }
+
+# ================================================================ the ship
+
+[rooms.main_deck]
+name = "The Main Deck"
+aliases = ["main deck", "deck", "gangway"]
+description = """
+The head of the gangway brought me on to her main deck amidships, by the engine-room casing, among a litter of riveters' gear and coils of hose. A wooden sentry-box had been lashed to the rail at the gangway head, for the dock company's watchman, with a lantern hanging in it, a spare lantern on a hook outside, and a book on a shelf. Forward lay the foredeck and No. 1 hatch; a door in the midship house led in to the saloon; a ladder went up to the bridge; and aft, at the break of the poop, was the carpenter's shop. The gangway went down to the quay.
+"""
+[rooms.main_deck.exits]
+down = { to = "quay", aliases = ["gangway", "quay", "ashore"] }
+north = { to = "foredeck", aliases = ["foredeck"] }
+in = { to = "saloon", aliases = ["saloon", "midship house", "door"] }
+up = { to = "chartroom", aliases = ["bridge", "ladder", "chartroom", "chart room"] }
+south = { to = "carpenter_shop", aliases = ["carpenter's shop"] }
+
+[rooms.foredeck]
+name = "The Foredeck"
+aliases = ["foredeck"]
+description = """
+The well deck forward, with No. 1 hatch yawning in the middle of it: the hatch boards stacked to one side, the hold open below, and an iron ladder going down into it at the forward end. A door under the forecastle led into the seamen's fo'c'sle; a short ladder went up to the forecastle head. The main deck was aft.
+"""
+[rooms.foredeck.exits]
+south = { to = "main_deck", aliases = ["main deck"] }
+down = { to = "no1_hold", when = "has:lantern", blocked = "I put my foot on the ladder and looked down into the hold. It was black as a well below the first few rungs. I should want a lantern.", aliases = ["hatch", "hold", "ladder", "no. 1 hold"] }
+in = { to = "fo_c_sle", aliases = ["fo'c'sle", "forecastle", "door", "seamen's quarters"] }
+up = { to = "forecastle_head", aliases = ["forecastle head", "fo'c'sle head", "ladder"] }
+
+[rooms.forecastle_head]
+name = "The Forecastle Head"
+aliases = ["forecastle head", "fo'c'sle head"]
+description = """
+The very bow of the ship, high over the dock, with the windlass squatting in the middle and the two hawse-pipes at either side, empty now that the cables were out. On the port side a length of the rail had been unbolted and taken down for the riveters, and a rope stretched across the gap on two stanchions. Over the edge there was nothing between me and the dock floor but thirty feet of air. The ladder went down to the foredeck.
+"""
+[rooms.forecastle_head.exits]
+down = { to = "foredeck", aliases = ["ladder", "foredeck"] }
+
+[rooms.fo_c_sle]
+name = "The Fo'c'sle"
+aliases = ["fo'c'sle", "forecastle", "seamen's quarters"]
+description = """
+The seamen's quarters under the forecastle: a dark, triangular, stinking den with bunks two high along both sides, a table down the middle, and a hurricane lamp swinging from a beam. The men had gone with their pay on Monday; their bunks were bare boards, but under one there was an empty space in the dust where something square had stood until lately. The door led out to the foredeck.
+"""
+[rooms.fo_c_sle.exits]
+out = { to = "foredeck", aliases = ["foredeck", "door"] }
+
+[rooms.saloon]
+name = "The Saloon"
+aliases = ["saloon"]
+description = """
+The officers' saloon: a long mahogany table under a skylight, swivel chairs bolted to the deck, a sideboard, and doors opening off it on either hand into the officers' cabins. At the forward end a hatch with a shelf opened into the steward's pantry. A door to port was lettered CHIEF OFFICER; the master's cabin was aft, across from the pantry. The deck was outside.
+"""
+[rooms.saloon.exits]
+out = { to = "main_deck", aliases = ["deck", "main deck"] }
+west = { to = "mate_cabin", aliases = ["mate's cabin"] }
+south = { to = "captain_cabin", aliases = ["master's cabin"] }
+
+[rooms.mate_cabin]
+name = "The Chief Officer's Cabin"
+aliases = ["mate's cabin", "chief officer's cabin", "fairlie's cabin"]
+description = """
+A small, very neat cabin: a bunk with drawers under it, a washstand, a desk with a shelf of navigation books over it, a hook on the bulkhead by the desk with nothing on it, and a photograph of a young woman in a frame. The saloon was outside.
+"""
+[rooms.mate_cabin.exits]
+out = { to = "saloon", aliases = ["saloon"] }
+
+[rooms.captain_cabin]
+name = "The Master's Cabin"
+aliases = ["master's cabin", "captain's cabin"]
+description = """
+A larger cabin than the mate's, and a good deal less tidy, with a bunk, a sofa, a desk, and a strong smell of whisky. The saloon was outside.
+"""
+[rooms.captain_cabin.exits]
+out = { to = "saloon", aliases = ["saloon"] }
+
+[rooms.chartroom]
+name = "The Chartroom"
+aliases = ["chartroom", "chart room", "bridge"]
+description = """
+A little wooden house at the back of the bridge, with a chart table under a lamp, a rack of rolled charts, a barometer, and the ship's log book in a brass-bound case. The ladder went down to the main deck.
+"""
+[rooms.chartroom.exits]
+down = { to = "main_deck", aliases = ["ladder", "main deck", "deck"] }
+
+[rooms.carpenter_shop]
+name = "The Carpenter's Shop"
+aliases = ["carpenter's shop", "shop"]
+description = """
+A cramped shop under the poop, with a bench and a vice, saws and adzes hung on the bulkhead, a grindstone, and shavings ankle-deep. A model of the ship's midship section, in pine, stood on a shelf. The main deck was forward.
+"""
+[rooms.carpenter_shop.exits]
+north = { to = "main_deck", aliases = ["main deck"] }

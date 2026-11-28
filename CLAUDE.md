@@ -279,6 +279,11 @@ Exploration premises:
     SOURCE step was just matching phrases. Lesson: **a final puzzle should not collapse
     to bookkeeping after one insight**; build in a second, independent insight (or a
     group that splits again) so the last stretch still needs thought).
+    And `ainsley` (E5, The Margaret Ainsley in Dry Dock, 1897, 19 rooms, 12 people,
+    40 clues, 8 florins; `accuse` with six questions; a vertical maze from the
+    forecastle head to the dock floor; aboard ship FORE/AFT/PORT/STARBOARD are parser
+    directions (north/south/west/east); built per the lesson above, with several
+    independent strands; not yet played).
   - **Difficulty trajectory** (user, 2026-11-27): make each new case a little harder than
     the last, unless the user says the latest one was a little too hard. Don't ask about
     difficulty each time; just step it up.
@@ -308,6 +313,6 @@ Exploration premises:
 ## Working with the user
 
 - They pay per token on other plans; this plan has no usage cost, so thoroughness is fine.
-- Next step from here: build the next case (user asked to proceed, 2026-11-27).
-  Remaining: E4 Ice Wells, E5 Margaret Ainsley, Census Night (finale, needs record tables)
+- Next step from here: the user plays The Margaret Ainsley in Dry Dock and gives
+  feedback. Remaining after it: E4 Ice Wells, Census Night (finale, needs record tables)
   and Letters from Sussex (needs the telegram queue).

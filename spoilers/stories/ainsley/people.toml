@@ -1,0 +1,349 @@
+# ================================================================ Holmes
+
+[characters.holmes]
+name = "Sherlock Holmes"
+aliases = ["holmes", "sherlock", "mr holmes", "sherlock holmes"]
+location = "quay"
+description = "Holmes stood at the edge of the dock with his hands behind him, looking down into it as a man looks into a well."
+presence = "Holmes stood at the edge of the dock, looking down at the ship."
+unknown_topic = '''"Go and look, Watson. She will tell you more than I can."'''
+unknown_show = '''Holmes looked at it narrowly. "Yes. And where did you find it?"'''
+
+[[characters.holmes.greeting]]
+text = '''"Here she is, Watson: a ship with her feet out of the water, which is the only time a ship ever tells the truth about herself. Ask me about the case, if you want it shortly, or about the ship, and how to find your way about her; or about florins, when you want my advice and can pay for it."'''
+
+[[characters.holmes.topics.case]]
+aliases = ["the case", "what happened", "fairlie", "murder"]
+text = '''"Robert Fairlie, chief officer of this ship, was found at six this morning on the floor of the dock under her bow, with his head broken, thirty feet below the place where her forecastle rail is down. Lestrade has a boatswain in handcuffs in the dock office who threatened him, was aboard last night, and pawned his watch this morning. Lestrade is very well satisfied. The owners' superintendent, Captain Haldane, is in the hut on the quay, and the master is aboard. I should look at everything, Watson, top to bottom; and I mean bottom."'''
+
+[[characters.holmes.topics.ship]]
+aliases = ["the ship", "ship", "find your way", "directions", "fore and aft"]
+text = '''"Up the gangway to her deck, and down the steps to the floor of the dock beneath her. Aboard, as on the dock floor, the bow is north and the stern south; you may say FORE or AFT, or PORT for west and STARBOARD for east, if it pleases you. Her holds are dark; the watchman at the gangway has a spare lantern."'''
+effects = ["clue:ship_ways"]
+
+[[characters.holmes.topics.florins]]
+aliases = ["florin", "coins", "coin", "hint", "hints", "help", "advice"]
+text = '''"A florin a time, Watson. Riggers and painters drop their money everywhere; I never saw a ship in dock yet without a few shillings lying about her. HINT, when you want me."'''
+
+# ================================================================ Lestrade
+
+[characters.lestrade]
+name = "Inspector Lestrade"
+aliases = ["lestrade", "inspector", "inspector lestrade", "police"]
+location = "dock_office"
+description = "Lestrade, lean and ferrety, very pleased with himself, stood with his back to the stove."
+presence = "Lestrade stood with his back to the stove."
+unknown_topic = '''"I don't see what that's got to do with it, Doctor," said Lestrade.'''
+unknown_show = '''Lestrade sniffed at it. "Very interesting, I'm sure."'''
+
+[[characters.lestrade.greeting]]
+text = '''"Ah, Doctor Watson. You've come too late, I'm afraid; it's all over bar the shouting. There's my man on the bench. Ask me about my case against him, or the surgeon, or the watch, which he pawned this morning in Rotherhithe Street, if you please."'''
+
+[[characters.lestrade.topics.case]]
+aliases = ["my case", "case", "theory", "laverty", "your case", "him"]
+text = '''"Michael Laverty, boatswain of this ship till Monday. The mate logged him for drunkenness at sea and stopped his pay, and at the pay table on Monday, before the shipping master, he said, 'I'll see you in the dock, Mister.' Well, he did. He came aboard last night at twenty past eleven, drunk, the watchman's book has it, and went off again at ten to twelve; and in between he pitched the mate off the forecastle head into the dock, and took his watch. Plain as a pikestaff."'''
+effects = ["clue:lestrade_case"]
+
+[[characters.lestrade.topics.surgeon]]
+aliases = ["the surgeon", "surgeon", "doctor", "death", "time"]
+text = '''"Dr Craven, the divisional surgeon. Skull broken on the stones, he says, falling from that height; and he puts the death between midnight and two in the morning, though they always hedge. Near enough for me."'''
+effects = ["clue:surgeon"]
+
+[[characters.lestrade.topics.watch]]
+aliases = ["the watch", "gold watch", "pawned", "pawnshop"]
+text = '''"A gold hunter, the mate's, with his name inside the case. Laverty pawned it at Brough's in Rotherhithe Street at eight this morning, for four pounds ten, and old Brough knew it for an officer's watch that no sailor of Laverty's sort ever owned, and sent for us. We took Laverty at ten, in the Angel, drinking the proceeds."'''
+effects = ["clue:pawned"]
+
+# ================================================================ Laverty
+
+[characters.laverty]
+name = "Laverty"
+aliases = ["laverty", "michael laverty", "mick laverty", "bosun", "boatswain", "seaman", "mick"]
+location = "dock_office"
+description = "Michael Laverty, the boatswain: a big, red-headed, battered man with a broken nose and enormous tattooed hands, handcuffed on the bench, very sullen and very much frightened."
+presence = "Laverty sat handcuffed on the bench, with a constable beside him."
+unknown_topic = '''"Don't know nothin' about that," said Laverty.'''
+unknown_show = '''Laverty looked at it and shook his head.'''
+
+[[characters.laverty.greeting]]
+text = '''Laverty looked up. "You a doctor? Then tell them I never killed him. I took the watch, I'll own that, and I'll do my time for it; but I never laid a finger on him. Ask me about Thursday night, or the watch, or him; or the grounding, if you want to know what sort of a ship she is."'''
+
+[[characters.laverty.topics.thursday]]
+aliases = ["thursday night", "thursday", "night", "last night", "aboard"]
+text = '''"I come aboard for my ditty box, that I'd left under my bunk, and I'd had a few. Kerr let me up. I got my box out of the fo'c'sle, and then I thought, I'll just go aft and tell Mr Fairlie what I think of him. So I went into the saloon, quiet, and his door was open, and his lamp lit, and him not there. And his watch hanging on its hook. So I took it. I thought, he stopped my pay, this'll square it. Then I went ashore, and Kerr saw me go. I never saw the mate at all."'''
+effects = ["clue:laverty_story"]
+
+[[characters.laverty.topics.watch]]
+aliases = ["the watch", "gold watch", "hook"]
+text = '''"It was on its hook by his desk, where he always hung it when he sat to write. Nobody in the cabin, I tell you; nobody in the saloon but the old man snoring through his door, and the steward's pantry dark."'''
+
+[[characters.laverty.topics.fairlie]]
+aliases = ["him", "mr fairlie", "fairlie", "the mate", "mate", "quarrel"]
+text = '''"He logged me, and I said things. But he was a square man, I'll say that; square and sober, which is more than the old man is. I'd not have hurt him. I'd have had words with him, that's all."'''
+
+[[characters.laverty.topics.grounding]]
+aliases = ["the grounding", "grounding", "plate", "ortiz bank", "bank", "what sort of a ship"]
+text = '''"There was no current that night, Doctor, whatever the log says. I was on deck. The old man come up at two bells and gave the man at the wheel a new course himself, and Mr Fairlie said something to him sharp, and the old man told him to mind his own business. An hour later she was on the bank, full ahead, slap. Mr Fairlie wrote it all down in his little black book. Everybody forrard knew."'''
+effects = ["clue:laverty_grounding"]
+
+# ================================================================ Haldane
+
+[characters.haldane]
+name = "Captain Haldane"
+aliases = ["haldane", "captain haldane", "gideon haldane", "superintendent", "marine superintendent"]
+location = "owners_hut"
+description = "Captain Gideon Haldane, marine superintendent of Tolland & Marr: a tall, grave, grey-bearded man of fifty in a dark suit, with a quarter-deck manner and a seaman's steady eye. He looked very tired."
+presence = "Captain Haldane sat at the table over the ship's plans."
+unknown_topic = '''"I'm afraid I can't help you there, Doctor," said Haldane gravely.'''
+unknown_show = '''Haldane glanced at it. "I don't know it, Doctor."'''
+
+[[characters.haldane.greeting]]
+text = '''Haldane rose and gave me his hand. "Dr Watson. A terrible business. Fairlie was a good officer. I'll help you all I can: about Thursday, if you want my movements, or about that man Laverty, or the grounding, or the inquiry on Monday, which this will make very difficult for all of us."'''
+
+[[characters.haldane.topics.thursday]]
+aliases = ["thursday", "my movements", "movements", "last night", "thursday night"]
+text = '''"I was aboard in the afternoon with the master and Fairlie, going over the damage, and went ashore at ten past six; the watchman's book will tell you. I dined at the Jerusalem, and took the train home to Greenwich, and was in bed by eleven. My wife can tell you so, poor woman, though she was asleep. I came back at nine this morning to hear the news."'''
+effects = ["clue:haldane_story"]
+
+[[characters.haldane.topics.laverty]]
+aliases = ["that man laverty", "laverty", "bosun", "boatswain"]
+text = '''"A violent, drunken brute, Doctor. I was at the pay table on Monday and heard him threaten Fairlie with my own ears. I hope they hang him."'''
+
+[[characters.haldane.topics.grounding]]
+aliases = ["the grounding", "grounding", "ortiz bank", "current"]
+text = '''"A bad current on the Ortiz Bank, unknown and unforeseen. It happens in the Plate, Doctor, every year. The master did all a seaman could."'''
+
+[[characters.haldane.topics.inquiry]]
+aliases = ["the inquiry", "inquiry", "monday", "board of trade"]
+text = '''"The Board of Trade inquiry into the grounding opens on Monday. Fairlie was to give evidence. Now he can't; and they'll make of that what they like."'''
+
+[characters.haldane.shows.haldane_coat]
+text = '''Haldane looked at the coat, and then at me, and for a long moment said nothing at all. Then he sat down, slowly, and put his hands flat on the table. "I think, Doctor," he said quietly, "that I had better wait for your friend."'''
+
+[characters.haldane.shows.mate_lantern]
+text = '''Haldane looked at it steadily. "One of the ship's lanterns. They are everywhere aboard, Doctor."'''
+
+# ================================================================ Jessop
+
+[characters.jessop]
+name = "Jessop"
+aliases = ["jessop", "gatekeeper", "gate-keeper", "porter"]
+location = "dock_gate"
+description = "Jessop, the gatekeeper: an old pensioner with one arm and a row of medals on his waistcoat."
+presence = "Jessop, the gatekeeper, sat in the door of his gatehouse."
+unknown_topic = '''"Can't say, sir," said Jessop.'''
+unknown_show = '''Jessop shook his head. "Not one of ours, sir."'''
+
+[[characters.jessop.greeting]]
+text = '''"Morning, sir. If it's the gate you're asking about, or the keys, or Thursday night, the police have had it all already, but I'll tell you."'''
+
+[[characters.jessop.topics.gate]]
+aliases = ["the gate", "gate", "gates", "wicket", "locked"]
+text = '''"I lock the gates at ten every night and go home, sir. After that there's no getting in from the street but by the wicket, and the wicket wants a pass-key. The watchman's aboard the ship, at the gangway, not at the gate. Thursday I locked up at ten, and Friday at six I found the wicket locked, just as I left it. A man with a key would leave it so."'''
+effects = ["clue:gate"]
+
+[[characters.jessop.topics.keys]]
+aliases = ["the keys", "keys", "pass-key", "pass-keys", "pass key", "pass keys"]
+text = '''"Four pass-keys to the wicket, sir, numbered, and I know where every one is. Number 1, Mr Hollis, the dockmaster, who's in Kent all this week for his daughter's wedding. Number 2, Sowerby, the painters' foreman, for his early starts. Number 3, Mr Dalziel of Lloyd's, the surveyor. Number 4, Captain Haldane, the owners' gentleman, while his ship's in dock."'''
+effects = ["clue:pass_keys"]
+
+[[characters.jessop.topics.thursday]]
+aliases = ["thursday night", "thursday", "night"]
+text = '''"Quiet as the grave, sir, when I left. The painters went off at half past six, and the riveters before them. I locked up at ten."'''
+
+# ================================================================ Sowerby
+
+[characters.sowerby]
+name = "Sowerby"
+aliases = ["sowerby", "foreman", "painters' foreman", "painter"]
+location = "paint_shed"
+description = "Sowerby, the painters' foreman: a short, square, cheerful man in white overalls blotched with every colour, red predominating."
+presence = "Sowerby, the painters' foreman, was stirring a pot of red lead."
+unknown_topic = '''"Couldn't tell you, sir," said Sowerby.'''
+unknown_show = '''Sowerby squinted at it. "Not mine, sir."'''
+
+[[characters.sowerby.greeting]]
+text = '''"Morning, sir. It was my lads found him, at six, when we came in. Ask me what you like: about that, or about the red lead, or where I was Thursday night, which the police were very particular about."'''
+
+[[characters.sowerby.topics.found]]
+aliases = ["found him", "that", "body", "six", "my lads"]
+text = '''"We came down the steps at six to start on the bottom, and there he was under the bow, on his back. We sent for the police and the watchman. That's all, sir."'''
+
+[[characters.sowerby.topics.red_lead]]
+aliases = ["the red lead", "red lead", "paint", "hole", "edges"]
+text = '''"Two coats of red lead on the edges of that hole under number one, sir, at half past five on Thursday, after the riveters cut her plates out; it's in my book. That's twelve hours before it's dry, and longer in a damp dock. You couldn't touch them edges Thursday night without taking it away on you, and it don't come off for turps or prayers."'''
+effects = ["clue:red_lead"]
+
+[[characters.sowerby.topics.night]]
+aliases = ["where i was", "thursday night", "thursday", "night", "where you were"]
+text = '''"Home in Deptford, sir, with my missus and our six, and my pass-key on my watch-chain, as it always is." He showed it me: a brass tag, No. 2. "And I've no coat but this, and you can see what colour that is."'''
+effects = ["clue:sowerby_alibi"]
+
+# ================================================================ Dalziel
+
+[characters.dalziel]
+name = "Mr Dalziel"
+aliases = ["dalziel", "mr dalziel", "surveyor", "lloyd's surveyor", "man in a frock coat"]
+location = "under_hold"
+description = "Mr Dalziel, the surveyor from Lloyd's Register: a small precise Scotsman in a frock coat and a bowler, with a magnifying glass and a pocket rule."
+presence = "Mr Dalziel, the surveyor, was examining the hole in the ship's bottom with his glass."
+unknown_topic = '''"I couldna say, Doctor," said Mr Dalziel.'''
+unknown_show = '''Mr Dalziel examined it through his glass. "Not my department."'''
+
+[[characters.dalziel.greeting]]
+text = '''"Dalziel, Lloyd's Register. You'll be wanting the damage, I suppose, and you'll hear about the insurance whether you want it or no. And Thursday night, if you're asking everybody, I was at our annual dinner and then on the night mail."'''
+
+[[characters.dalziel.topics.damage]]
+aliases = ["the damage", "damage", "plates", "grounding", "hole"]
+text = '''"Four plates set in on the port bow, Doctor, evenly, fore and aft, and the frames behind them bent straight back. That's a ship driven on to a bank head first, at a good speed, in slack water. A ship set on by a current comes on sideways, and is damaged sideways. I'll say so on Monday. I don't know what the master will say."'''
+effects = ["clue:damage"]
+
+[[characters.dalziel.topics.insurance]]
+aliases = ["the insurance", "insurance", "insured", "value"]
+text = '''"Insured for twenty-eight thousand pounds, hull and machinery, with her cargo besides. She'd fetch fifteen at most, the old tin kettle. If she'd gone down in the Plate, Tolland & Marr would have been the richest owners on the Baltic Exchange."'''
+effects = ["clue:overinsured"]
+
+[[characters.dalziel.topics.thursday]]
+aliases = ["thursday night", "thursday", "night", "dinner", "night mail"]
+text = '''"The Register's annual dinner at the Cannon Street Hotel, Doctor, till eleven, and then the 11:50 to Liverpool from Euston, sleeping car, with a dozen colleagues. Back on the morning train. My pass-key's been in my bag the whole time; here it is: No. 3."'''
+effects = ["clue:dalziel_alibi"]
+
+# ================================================================ Kerr
+
+[characters.kerr]
+name = "Kerr"
+aliases = ["kerr", "alec kerr", "watchman"]
+location = "main_deck"
+description = "Alec Kerr, the dock company's watchman: an old, grey, slow Scot with a pipe, sitting in his sentry-box as if he had grown there."
+presence = "Kerr, the watchman, sat in his box at the head of the gangway."
+unknown_topic = '''"Couldna say," said Kerr.'''
+unknown_show = '''Kerr looked at it and took his pipe out. "No."'''
+
+[[characters.kerr.greeting]]
+text = '''"Aye. You'll want my book, I doot, like the police. Or Thursday night. Or the mate, poor fellow. I've a spare lantern on the hook if you're going below."'''
+
+[[characters.kerr.topics.book]]
+aliases = ["my book", "book", "gangway book"]
+text = '''"Every soul that comes up or goes down that gangway goes in the book. It's the only way aboard her, and I'm sitting on it."'''
+
+[[characters.kerr.topics.night]]
+aliases = ["thursday night", "thursday", "night", "last night"]
+text = '''"Laverty came up at twenty past eleven for his box, fu', and went down again at ten to twelve wi' it; I let him, he'd a right to his gear. After that, not a soul, up or down, till the painters at six. I'll swear to it. Except the mate himself, aboard: I saw his lantern go forrard along the deck a wee bit before one o'clock, and go down the ladder into number one. I thought he was having a last look at her bottom."'''
+effects = ["clue:kerr_lantern"]
+
+[[characters.kerr.topics.mate]]
+aliases = ["the mate", "mate", "mr fairlie", "fairlie", "poor fellow"]
+text = '''"He came by about eleven and said he'd be sitting up writing, and not to mind him. A quiet, decent man. I never heard him go over. I'd have heard that, I think, on the stones."'''
+
+# ================================================================ Pennock
+
+[characters.pennock]
+name = "Pennock"
+aliases = ["pennock", "jabez pennock", "steward"]
+location = "saloon"
+description = "Jabez Pennock, the steward: a small, bald, soft-footed man of sixty in a white jacket, with a face like a worried rabbit."
+presence = "Pennock, the steward, was polishing glasses at the pantry hatch."
+unknown_topic = '''"I'm sure I couldn't say, sir," said Pennock.'''
+unknown_show = '''Pennock looked at it unhappily. "No, sir."'''
+
+[[characters.pennock.greeting]]
+text = '''"Good morning, sir. I'm keeping ship, sir, now the hands are paid off. You'll be asking after poor Mr Fairlie, I expect; or the captain, sir; or his cocoa, which the police never thought to ask about."'''
+
+[[characters.pennock.topics.cocoa]]
+aliases = ["his cocoa", "cocoa", "can", "pantry"]
+text = '''"At half past twelve, sir, by the saloon clock, Mr Fairlie came to the pantry hatch and asked for a can of cocoa, and I made it for him, and he took it in one hand and his lantern in the other and went out on deck, forrard. He said, 'I shan't want you again, Pennock; go to bed.' Those were the last words I had of him, sir."'''
+effects = ["clue:cocoa"]
+
+[[characters.pennock.topics.captain]]
+aliases = ["the captain", "captain", "master", "wedderburn"]
+text = '''"The captain went to his bed at nine, sir, not well, if you take my meaning. I sat up in my pantry till two, as I do when he's like that, in case he wanted me, with the hatch open on the saloon and his door right across from me. He never stirred, sir. You could hear him through the bulkhead."'''
+effects = ["clue:captain_alibi"]
+
+[[characters.pennock.topics.fairlie]]
+aliases = ["poor mr fairlie", "mr fairlie", "fairlie", "mate"]
+text = '''"A very quiet gentleman, sir. Engaged to be married, to a young lady in Greenock. He'd been very low since the Plate, and then the last day or two very cheerful, as if something had come right for him. He said to me Thursday, 'Pennock, I'll be married by Michaelmas after all.'"'''
+effects = ["clue:cheerful"]
+
+# ================================================================ Wedderburn
+
+[characters.wedderburn]
+name = "Captain Wedderburn"
+aliases = ["wedderburn", "captain wedderburn", "silas wedderburn", "master", "captain", "old man"]
+location = "captain_cabin"
+description = "Captain Silas Wedderburn, master of the Margaret Ainsley: a heavy, purple-faced man of fifty-five in a shabby uniform coat, with shaking hands and bloodshot eyes."
+presence = "Captain Wedderburn sat on his sofa, holding his head."
+unknown_topic = '''"No idea," said the captain thickly.'''
+unknown_show = '''The captain stared at it. "What's that to me?"'''
+
+[[characters.wedderburn.greeting]]
+text = '''The captain looked up without getting up. "Doctor, is it? I've had the police. I've told them. I was asleep. Ask about Thursday, or Fairlie, or the grounding, and you'll get the same as they did, and be damned to you."'''
+
+[[characters.wedderburn.topics.thursday]]
+aliases = ["thursday", "thursday night", "night", "asleep"]
+text = '''"I turned in at nine. I wasn't well. I slept till they woke me at six to tell me. That's all."'''
+
+[[characters.wedderburn.topics.fairlie]]
+aliases = ["fairlie", "mr fairlie", "mate", "the mate"]
+text = '''"A good officer. Too good, some might say. Ambitious. Always writing things down." He reached for the bottle and found it empty.'''
+
+[[characters.wedderburn.topics.grounding]]
+aliases = ["the grounding", "grounding", "ortiz bank", "current", "course"]
+text = '''"A current. A current setting to the south'ard, unknown and unforeseen. It's in the log. Ask Haldane; ask the owners; ask anybody." He would not meet my eye.'''
+effects = ["clue:master_story"]
+
+# ================================================================ Quayle
+
+[characters.quayle]
+name = "Mr Quayle"
+aliases = ["quayle", "mr quayle", "second officer", "second mate"]
+location = "chartroom"
+description = "Mr Quayle, the second officer: a thin, nervous young man in a reefer jacket, kept aboard by the owners for the inquiry."
+presence = "Mr Quayle, the second officer, stood at the chart table."
+unknown_topic = '''"I don't know, sir," said Mr Quayle.'''
+unknown_show = '''Mr Quayle looked at it. "I couldn't say, sir."'''
+
+[[characters.quayle.greeting]]
+text = '''"Dr Watson. I'm the second mate. I've been kept aboard for the inquiry on Monday, God help me. You'll want to know about the grounding, I suppose; or Mr Fairlie's book; or the log. I'll tell you what I can."'''
+
+[[characters.quayle.topics.grounding]]
+aliases = ["the grounding", "grounding", "ortiz bank"]
+text = '''"I was below, sir, off watch; I came up when she struck. The captain and Mr Fairlie were on the bridge. I've been told what I'm to say about the current, sir, and I don't much like it."'''
+
+[[characters.quayle.topics.book]]
+aliases = ["mr fairlie's book", "book", "black book", "fairlie's book", "his book"]
+text = '''"He kept his own log, sir, in a little black notebook, every course and every order, for himself. After the Plate he said to me, 'Quayle, this book is worth more than the ship.' He kept it in the second drawer under his bunk, at the front. And he'd hang his watch on the hook by his desk whenever he sat down to write; regular as the sun."'''
+effects = ["clue:black_book"]
+
+[[characters.quayle.topics.log]]
+aliases = ["the log", "log", "official log", "log book"]
+text = '''"The fair copy's the captain's, sir, in his own hand. He wrote it up in Montevideo. Mr Fairlie wouldn't sign it."'''
+effects = ["clue:unsigned"]
+
+# ================================================================ Lindqvist
+
+[characters.lindqvist]
+name = "Lindqvist"
+aliases = ["lindqvist", "olaf lindqvist", "carpenter", "chips"]
+location = "carpenter_shop"
+description = "Olaf Lindqvist, the ship's carpenter: a vast, slow, flaxen Swede with a pencil behind his ear."
+presence = "Lindqvist, the carpenter, was planing a batten at his bench."
+unknown_topic = '''"I do not know this," said Lindqvist.'''
+unknown_show = '''Lindqvist turned it over in his great hands. "No."'''
+
+[[characters.lindqvist.greeting]]
+text = '''"Good morning. I am the carpenter; they keep me for the repairs. You ask about the rails, maybe, that they say he fell from. Or the bottom. Or Mr Fairlie, who was a good man."'''
+
+[[characters.lindqvist.topics.rails]]
+aliases = ["the rails", "rails", "rail", "forecastle head", "fell"]
+text = '''"I take down the port rail on the forecastle head Thursday morning, for the riveters, and I put a rope across, with a good hitch at each end, so nobody walks over in the dark. It is there still. I have looked. Nobody has touched my rope."'''
+effects = ["clue:rails"]
+
+[[characters.lindqvist.topics.bottom]]
+aliases = ["the bottom", "bottom", "hole", "manhole", "plates"]
+text = '''"They cut four plates out of her bottom Thursday, under number one, and the manhole in the tank top is open above, for the surveyor. So now you can walk into her from the dock floor: up the staging, in at the hole, along the double bottom, and up the manhole into number one hold, and up the ladder to the deck. Nobody would see. I tell the watchman so; he laughs. He says the gangway is the only way."'''
+effects = ["clue:route"]
+
+[[characters.lindqvist.topics.fairlie]]
+aliases = ["mr fairlie", "fairlie", "good man", "mate"]
+text = '''"Thursday afternoon he asks me, 'Chips, is the manhole in number one open?' I say yes, for the surveyor. He says, 'Good,' and goes away whistling. I think nothing of it."'''
+effects = ["clue:fairlie_asked"]

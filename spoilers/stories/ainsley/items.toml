@@ -1,0 +1,539 @@
+# ================================================================ the gate
+
+[items.bunting]
+name = "bunting"
+aliases = ["flags", "banner", "god bless her", "warehouse walls", "walls"]
+location = "dock_gate"
+scenery = true
+description = "Flags and bunting from wall to wall, red, white and blue, for the Queen's Diamond Jubilee next Tuesday. Rotherhithe, which has nothing, had decorated as if it had everything."
+
+[items.wicket]
+name = "wicket"
+aliases = ["wicket door", "little door", "iron gates", "gates"]
+location = "dock_gate"
+scenery = true
+description = "A narrow door let into the left-hand gate, with a stout lock. When the gates are shut at night, it is the only way into the dock yard from the street."
+
+[items.gatehouse]
+name = "gatehouse"
+aliases = ["window", "board of keys", "keys", "board"]
+location = "dock_gate"
+scenery = true
+description = "A little brick gatehouse with a window on the street, and in the window a board of hooks with the dock's keys on them: the dock office, the pump house, the stores. Every hook had its key."
+
+# ================================================================ the quay
+
+[items.dry_dock]
+name = "dry dock"
+aliases = ["dock", "trough", "shores", "timber shores", "keel-blocks", "altars", "sides"]
+location = "quay"
+scenery = true
+description = "A great stone basin stepped down its sides in broad ledges, which the dockmen call altars, so that the timber shores could be set against them to prop the ship upright. At the far end the iron caisson held back the Thames."
+
+[items.ship_side]
+name = "Margaret Ainsley"
+aliases = ["ship", "steamer", "side", "black side", "hull", "rust", "margaret ainsley"]
+location = "quay"
+scenery = true
+description = "An iron screw steamer of perhaps nineteen hundred tons, black-hulled, with a single tall funnel buff with a black top, and TOLLAND & MARR's red cross on it. Her name was on her bow in white letters: MARGARET AINSLEY, LONDON."
+
+[items.gangway_quay]
+name = "gangway"
+aliases = ["steep gangway"]
+location = "quay"
+scenery = true
+description = "A long, steep gangway of planks with battens nailed across, going up from the quay to her deck amidships, where I could see a watchman's box."
+
+[items.dock_steps]
+name = "steps"
+aliases = ["stone steps"]
+location = "quay"
+scenery = true
+description = "Stone steps going down the side of the dock, worn hollow, slimy towards the bottom."
+
+[items.office_huts]
+name = "dock office"
+aliases = ["timber hut", "painters' shed", "huts", "office"]
+location = "quay"
+scenery = true
+description = "The dock company's brick office, the owners' timber hut, and the painters' shed, all in a row along the quay."
+
+# ================================================================ the dock office
+
+[items.office_things]
+name = "desk"
+aliases = ["high desk", "stove", "tide-table", "tide table", "window"]
+location = "dock_office"
+scenery = true
+description = "A high desk with the dock's ledgers, a tortoise stove, and a tide-table for the river."
+
+[items.body]
+name = "body"
+aliases = ["dead man", "fairlie", "robert fairlie", "mr fairlie", "tarpaulin", "hand-barrow", "barrow", "corpse", "mate"]
+location = "dock_office"
+scenery = true
+clue = "body"
+description = "I turned back the tarpaulin. Robert Fairlie was a lean, fair, clean-shaven man of thirty-five, in a blue pilot-cloth jacket. He had been killed by a single heavy blow on the right side of the head, above the ear, which had left a round, depressed fracture as big as a florin: such a mark as a hammer leaves. I turned him over. The back of his jacket, from the shoulders to the skirts, was smeared with red lead, still sticky, and so were the heels of his boots, and the back of his trousers. But the front of him was clean, and his hands were clean, and his knees were clean."
+
+# ================================================================ the owners' hut
+
+[items.plans]
+name = "plans"
+aliases = ["table", "plans of the ship", "ledgers", "shelf", "chairs"]
+location = "owners_hut"
+scenery = true
+description = "Plans of the ship's bottom, with the damaged plates shaded in pencil, and the owners' ledgers."
+
+[items.pegs]
+name = "pegs"
+aliases = ["dust-coat", "dust coat", "bowler", "bowler hat", "hat"]
+location = "owners_hut"
+scenery = true
+description = "A row of pegs by the door with a light alpaca dust-coat on one and a bowler hat on another. Captain Haldane's, I supposed."
+
+[items.hut_stove]
+name = "stove"
+aliases = ["iron stove", "little stove"]
+location = "owners_hut"
+scenery = true
+description = "A little iron stove, cold. It was June."
+
+[items.coal_box]
+name = "coal box"
+aliases = ["coal-box", "box", "coal", "scuttle"]
+location = "owners_hut"
+scenery = true
+container = true
+description = "A wooden coal box beside the stove. The stove was cold, and had been, I judged, for weeks; yet the lid of the box was clean of coal-dust, as if it had lately been opened."
+details = [ { when = "loc:haldane_coat:coal_box", text = "I lifted the lid. There was no coal in it. Rolled up tight and pushed down to the bottom lay a coat of grey tweed." } ]
+
+[items.haldane_coat]
+name = "tweed coat"
+aliases = ["coat", "grey coat", "overcoat", "tweed", "grey tweed coat", "tweed overcoat"]
+location = "coal_box"
+clue = "coat"
+description = "A gentleman's overcoat of grey tweed, good cloth, well cut, by a Leadenhall Street tailor. I unrolled it. Both cuffs were smeared with red lead, dry on top but still tacky in the weave, and so was the skirt in front, at the height of a man's knees, as if he had crawled on them. In the right cuff a little three-cornered tear had been made, the size of my fingernail, as by a nail or a snag of iron. In the pocket was a pass-key on a ring, with a brass tag: PELLEW'S, No. 4."
+
+# ================================================================ the painters' shed
+
+[items.paint_stores]
+name = "paint-kegs"
+aliases = ["kegs", "paint kegs", "brushes", "jars", "spirit", "turpentine"]
+location = "paint_shed"
+scenery = true
+container = true
+description = "Kegs of paint stacked to the roof, and brushes standing in jars of spirit."
+details = [ { when = "loc:coin_paint:paint_stores", text = "On top of a keg, in a ring of dried paint, lay a florin." } ]
+
+[items.coin_paint]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "paint_stores"
+coin = true
+description = "A florin, two shillings, with the Queen's veiled head."
+take_text = "I took the florin from the top of the keg."
+
+[items.red_lead_pots]
+name = "pots of red lead"
+aliases = ["red lead", "pots", "red-lead"]
+location = "paint_shed"
+scenery = true
+description = "Red lead, mixed thick with linseed oil: the colour of dried blood, and the stickiest stuff in the world. It is laid on bare iron to keep the rust off, and takes the better part of a day to dry."
+
+[items.paint_book]
+name = "paint book"
+aliases = ["book", "greasy book", "nail"]
+location = "paint_shed"
+scenery = true
+clue = "paint_book"
+description = """
+The foreman's paint book, in a big round hand. For Thursday, 17th:
+
+'Margaret Ainsley. Forenoon, scrape and prime bottom aft. 5:30 p.m., red lead to edges of opening, No. 1 hold, port, after the riveters. 2 coats. (Wet till morning.) Men off 6:30.'
+"""
+
+# ================================================================ the dock floor: the bow
+
+[items.bow]
+name = "bow"
+aliases = ["stem", "cliff", "gap", "rails", "forecastle"]
+location = "under_bow"
+scenery = true
+description = "Her stem went up over my head, and along the top of the forecastle, thirty feet up, I could see the gap in her port rail with a rope across it."
+
+[items.chalk_outline]
+name = "chalk outline"
+aliases = ["outline", "chalk", "stones", "where he lay", "smear", "smears"]
+location = "under_bow"
+scenery = true
+clue = "drag_marks"
+description = "The police had chalked where he lay: on his back, on the stones under the gap in the rail, his head towards the ship. Very little blood. And then I saw, on the wet stones leading away from the outline under the curve of the hull, aft, a faint broad smear of red at every few feet, as if something painted had been dragged that way, or had been dragged from that way to here."
+
+[items.anchors]
+name = "anchors"
+aliases = ["cables", "anchor", "chain", "fakes", "cable"]
+location = "under_bow"
+scenery = true
+container = true
+description = "Her two bower anchors, laid on the dock floor for the surveyor, with their cables ranged out beside them in great rusty coils, link as big as my two fists."
+details = [ { when = "loc:coin_bow:anchors", text = "Wedged in a link of the starboard cable was a florin, some rigger's loss." } ]
+
+[items.coin_bow]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "anchors"
+coin = true
+description = "A florin, rusty-wet."
+take_text = "I worked the florin out of the link."
+
+# ================================================================ the dock floor: under the hold
+
+[items.staging]
+name = "staging"
+aliases = ["timber staging", "planks"]
+location = "under_hold"
+scenery = true
+description = "A light staging of planks on trestles, built up so that a man could stand under the hole in the ship's bottom and work at it, or climb in."
+
+[items.opening]
+name = "hole"
+aliases = ["opening", "black square hole", "square hole", "plates", "edges", "raw edges", "red lead"]
+location = "under_hold"
+scenery = true
+clue = "opening"
+description = "Four plates had been cut out of her bottom, leaving a square hole a yard across into the double bottom above. The raw edges had been painted thick with red lead. On the lower edge the paint was scraped and smeared away in a broad band, as if something heavy had been hauled out over it; and at the forward corner a jagged burr of iron stood out where the cutters had left it, painted red like the rest."
+
+[items.burr]
+name = "burr"
+aliases = ["jagged burr", "corner", "forward corner", "shred", "snag"]
+location = "under_hold"
+scenery = true
+clue = "tweed_shred"
+description = "I put my glass on it. Caught in the burr, stuck fast in the red lead, was a little three-cornered shred of cloth no bigger than my fingernail: a grey tweed, good stuff, not a working man's."
+
+[items.shores_hull]
+name = "shores"
+aliases = ["keel-blocks", "keel blocks", "hull", "plating"]
+location = "under_hold"
+scenery = true
+description = "Great baulks of timber propping her up on either side, and the keel resting on its blocks of oak, all down the dock."
+
+# ================================================================ the dock floor: the stern
+
+[items.rudder]
+name = "rudder"
+aliases = ["bossing", "stern", "empty bossing"]
+location = "under_stern"
+scenery = true
+description = "A great flat blade of iron, as high as a house, with the empty bossing below it where the propeller should be."
+
+[items.propeller]
+name = "propeller"
+aliases = ["blades", "bronze", "screw"]
+location = "under_stern"
+scenery = true
+container = true
+description = "Four blades of dull bronze, one of them bent back at its tip where she struck. It leaned against the dock wall, taller than a man."
+details = [ { when = "loc:coin_stern:propeller", text = "In the angle of the boss, where the blades met, lay a florin." } ]
+
+[items.coin_stern]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "propeller"
+coin = true
+description = "A florin."
+take_text = "I took the florin from the boss of the propeller."
+
+[items.caisson]
+name = "caisson"
+aliases = ["dock gate", "gate", "river", "thames", "iron caisson"]
+location = "under_stern"
+scenery = true
+description = "The iron dock gate, sweating, with the river higher than my head on the other side of it. I did not like to think what would happen if it gave."
+
+# ================================================================ the double bottom
+
+[items.frames]
+name = "frames"
+aliases = ["frame", "lightening-hole", "lightening holes", "iron", "skin", "cellar"]
+location = "double_bottom"
+scenery = true
+clue = "bottom_smears"
+description = "Iron frames every two feet, each with an oval hole to crawl through. By my lantern I saw that between the hole below and the manhole above, red lead had been smeared on the frames and the plating in a broad trail, as though something long and heavy had been dragged across, down from the manhole to the hole."
+
+[items.manhole_db]
+name = "manhole"
+aliases = ["round manhole", "ceiling"]
+location = "double_bottom"
+scenery = true
+description = "A round manhole in the inner bottom over my head, its cover unbolted and laid aside. The hold was above it."
+
+# ================================================================ No. 1 hold
+
+[items.tank_top]
+name = "tank top"
+aliases = ["floor", "plates", "rivets", "iron floor"]
+location = "no1_hold"
+scenery = true
+container = true
+description = "The iron floor of the hold, swept clean, studded with rivet-heads."
+details = [ { when = "loc:mate_lantern:tank_top|loc:cocoa_can:tank_top", text = "Near the manhole, where nobody had thought to look, stood a ship's hand-lantern and a tin can." } ]
+
+[items.mate_lantern]
+name = "hand-lantern"
+aliases = ["hand lantern", "ship's lantern", "his lantern", "mate's lantern"]
+location = "tank_top"
+clue = "lantern_dry"
+description = "A ship's hand-lantern, stamped MARGARET AINSLEY. It had burned until it was dry: the wick was charred to the collar, the glass black with soot. Somebody had set it down here alight, and left it to burn out."
+
+[items.cocoa_can]
+name = "cocoa can"
+aliases = ["can", "tin can", "cocoa", "tin"]
+location = "tank_top"
+clue = "cocoa_can"
+description = "A tin can with a wire handle, half full of cocoa, stone cold, with a skin on it. The pantry's, by the look of it."
+
+[items.rivet_gear]
+name = "riveters' gear"
+aliases = ["gear", "forge", "portable forge", "bag of rivets", "rivets", "tongs", "hammers", "hammer"]
+location = "no1_hold"
+scenery = true
+container = true
+clue = "hammer"
+description = "A portable forge, cold, a bag of rivets, tongs, and a row of hammers laid on a sack. One of them, a heavy snap-head hammer, lay apart from the rest, face down. I turned it over. The round face was as big as a florin; and in the angle of the head and the haft were two short fair hairs stuck in something dark."
+details = [ { when = "loc:coin_hold:rivet_gear", text = "Under the sack lay a florin." } ]
+
+[items.coin_hold]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "rivet_gear"
+coin = true
+description = "A florin."
+take_text = "I took the florin from under the sack."
+
+[items.hold_ladder]
+name = "ladder"
+aliases = ["iron ladder", "ribs", "bulkhead"]
+location = "no1_hold"
+scenery = true
+description = "An iron ladder straight up the forward bulkhead to the hatch, thirty feet. A man could carry a lantern up it, or a can of cocoa down it, but hardly a man."
+
+# ================================================================ the main deck
+
+[items.sentry_box]
+name = "sentry-box"
+aliases = ["sentry box", "box", "watchman's box"]
+location = "main_deck"
+scenery = true
+description = "A wooden box like a sentry's, lashed to the rail at the gangway head, with a stool in it, a lantern hanging from a hook, and a shelf with a book on it. From it the watchman can see the whole length of the gangway, and the whole of the main deck."
+
+[items.gangway_book]
+name = "gangway book"
+aliases = ["book", "watchman's book", "shelf"]
+location = "main_deck"
+scenery = true
+clue = "gangway_book"
+description = """
+The dock company's gangway book, in which the watchman writes every soul that comes aboard or goes ashore. For Thursday, 17th, and the night following:
+
+'6:10 p.m. Capt. Haldane (owners) ashore. 6:30 p.m. Painters ashore. 11:20 p.m. M. Laverty, late bosun, aboard, for his box. 11:50 p.m. M. Laverty ashore, with box. 6:00 a.m. Painters aboard.'
+
+Nothing else between.
+"""
+
+[items.casing]
+name = "casing"
+aliases = ["engine-room casing", "hose", "gear", "litter"]
+location = "main_deck"
+scenery = true
+description = "The engine-room casing, with its skylights, and the riveters' hoses coiled about it."
+
+# ================================================================ the foredeck
+
+[items.hatch]
+name = "No. 1 hatch"
+aliases = ["hatch", "hatch boards", "boards", "number one hatch"]
+location = "foredeck"
+scenery = true
+container = true
+description = "The hatch boards had been stacked to one side to let the light into the hold. The hatch was a great square well, thirty feet deep, with an iron ladder down its forward side."
+details = [ { when = "loc:coin_foredeck:hatch", text = "Between two of the stacked boards a florin had lodged." } ]
+
+[items.coin_foredeck]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "hatch"
+coin = true
+description = "A florin."
+take_text = "I worked the florin out from between the boards."
+
+# ================================================================ the forecastle head
+
+[items.windlass]
+name = "windlass"
+aliases = ["hawse-pipes", "hawse pipes", "hawse-pipe"]
+location = "forecastle_head"
+scenery = true
+description = "The steam windlass, cold, its gypsies empty, and the hawse-pipes yawning on either bow."
+
+[items.rail_gap]
+name = "gap in the rail"
+aliases = ["gap", "rope", "rail", "stanchions", "edge", "port rail"]
+location = "forecastle_head"
+scenery = true
+clue = "rail_gap"
+description = "A length of the port rail had been taken off, and a rope rove through two stanchions across the gap, at the height of a man's waist, made fast with a clove hitch at each end. The knots were hard and dry and had not been touched since they were made. Along the edge of the deck, in the gap, lay a fine film of rust-dust from the riveters' work, and in it there was no mark at all. Nobody had gone through that gap, or stood in it, since the rope was rigged."
+
+# ================================================================ the fo'c'sle
+
+[items.bunks]
+name = "bunks"
+aliases = ["bunk", "boards", "space", "dust", "table", "lamp", "hurricane lamp"]
+location = "fo_c_sle"
+scenery = true
+container = true
+description = "Bare bunks, two high. Under one, a clean square in the dust where a sea-chest or a ditty box had stood until lately."
+details = [ { when = "loc:coin_focsle:bunks", text = "On the edge of an upper bunk, where some seaman had forgotten it, lay a florin." } ]
+
+[items.coin_focsle]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "bunks"
+coin = true
+description = "A florin."
+take_text = "I took the florin from the edge of the bunk."
+
+# ================================================================ the saloon
+
+[items.saloon_table]
+name = "table"
+aliases = ["mahogany table", "chairs", "skylight", "swivel chairs"]
+location = "saloon"
+scenery = true
+description = "A long mahogany table with fiddles at its edges, and swivel chairs bolted to the deck."
+
+[items.sideboard]
+name = "sideboard"
+aliases = ["pantry", "hatch", "shelf"]
+location = "saloon"
+scenery = true
+container = true
+description = "A mahogany sideboard, and over it the hatch into the pantry, through which I could see the steward's stool, set where he could see the master's door across the saloon."
+details = [ { when = "loc:coin_saloon:sideboard", text = "In the fiddle-rail of the sideboard lay a florin." } ]
+
+[items.coin_saloon]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "sideboard"
+coin = true
+description = "A florin."
+take_text = "I took the florin from the sideboard."
+
+# ================================================================ the mate's cabin
+
+[items.mate_desk]
+name = "desk"
+aliases = ["shelf", "navigation books", "books"]
+location = "mate_cabin"
+scenery = true
+description = "A little desk with an inkstand, and over it Norie's Navigation, Raper, the Nautical Almanac, all very well thumbed."
+
+[items.watch_hook]
+name = "hook"
+aliases = ["bulkhead", "empty hook"]
+location = "mate_cabin"
+scenery = true
+description = "A brass hook screwed to the bulkhead beside the desk, at the height of a seated man's eye, such as a man might hang his watch on to have it before him while he wrote. It was empty."
+
+[items.bunk_drawers]
+name = "drawers"
+aliases = ["drawer", "bunk", "drawers under the bunk"]
+location = "mate_cabin"
+scenery = true
+clue = "empty_drawer"
+description = "Two drawers under the bunk. The first held his clothes, folded square. The second held his papers, discharges, certificates, letters, all in order; and in the front of it, among the dust of a voyage, a clean rectangle the size of a small book, where a small book had lain until lately."
+
+[items.photograph]
+name = "photograph"
+aliases = ["young woman", "frame", "picture"]
+location = "mate_cabin"
+scenery = true
+description = "A cabinet photograph of a pleasant-faced young woman, inscribed on the back, 'To Rob, from his Nell, until the day. Greenock, 1896.'"
+
+# ================================================================ the master's cabin
+
+[items.captain_things]
+name = "whisky"
+aliases = ["bottle", "sofa", "bunk", "desk", "glass"]
+location = "captain_cabin"
+scenery = true
+description = "An empty whisky bottle under the sofa and another half empty on the desk."
+
+# ================================================================ the chartroom
+
+[items.chart_table]
+name = "chart table"
+aliases = ["table", "lamp", "barometer"]
+location = "chartroom"
+scenery = true
+description = "A sloping chart table under a lamp, with the barometer over it."
+
+[items.chart]
+name = "chart"
+aliases = ["chart of the river plate", "rack", "charts", "river plate", "plate"]
+location = "chartroom"
+scenery = true
+clue = "chart"
+description = "In the rack I found the chart of the River Plate she had used. The ship's track down the river had been pencilled on it in the ordinary way, and then, for the night of the 8th and 9th of April, rubbed out with india-rubber. But a pencil leaves its furrow in the paper. I held the chart to the lamp and looked along it: the rubbed-out line ran straight and clear, from her position at two in the morning, on a course of S 62 W, plumb on to the Ortiz Bank."
+
+[items.log_book]
+name = "log book"
+aliases = ["log", "official log", "brass-bound case", "case"]
+location = "chartroom"
+scenery = true
+clue = "official_log"
+description = """
+The ship's official log, a fair copy in the master's hand. For 9 April 1897:
+
+'3:10 a.m. Vessel took the ground on the Ortiz Bank, owing to a strong current setting her to the southward of her course, unknown and unforeseen. Engines full astern. Floated 6:40 a.m. Making water in No. 1. S. Wedderburn, Master.'
+"""
+
+# ================================================================ the carpenter's shop
+
+[items.tools]
+name = "tools"
+aliases = ["bench", "vice", "saws", "adzes", "grindstone"]
+location = "carpenter_shop"
+scenery = true
+description = "The carpenter's tools, sharp and oiled, hung each in its place."
+
+[items.shavings]
+name = "shavings"
+aliases = ["shaving", "floor"]
+location = "carpenter_shop"
+scenery = true
+container = true
+description = "Pine shavings ankle-deep, smelling of resin."
+details = [ { when = "loc:coin_shop:shavings", text = "Among them, at the foot of the bench, glinted a florin." } ]
+
+[items.coin_shop]
+name = "florin"
+aliases = ["coin", "silver", "two shillings", "florin"]
+location = "shavings"
+coin = true
+description = "A florin."
+take_text = "I picked the florin out of the shavings."
+
+[items.section_model]
+name = "model"
+aliases = ["midship section", "model of the midship section", "pine model"]
+location = "carpenter_shop"
+scenery = true
+description = "A model of a slice through the ship, in pine: the outer bottom, the double bottom with its frames, the tank top over it, and the hold above. A child could see from it that a man in the dock who got through a hole in her bottom could climb up through the double bottom and come out in the hold."
+
+[items.lantern]
+name = "lantern"
+aliases = ["watchman's lantern", "my lantern", "light"]
+location = "main_deck"
+description = "The watchman's spare lantern, burning well."
+take_text = "I unhooked the spare lantern from the sentry-box, and Kerr nodded. \"Mind it below, sir. Them holds is dark as the grave.\""

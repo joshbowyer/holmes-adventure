@@ -1,0 +1,586 @@
+[case]
+id = "ainsley"
+title = "The Margaret Ainsley in Dry Dock"
+year = 1897
+order = 80
+start = "dock_gate"
+coin_name = "florin"
+coin_plural = "florins"
+hint_intro = "I gave Holmes a florin. He looked at the Queen's head on it as if she might have something to add, and put it in his pocket."
+hint_none = "\"You have the whole of her, Watson,\" said Holmes, \"keel to truck. ACCUSE, when you are ready.\""
+hint_broke = "I had no florin about me. \"Riggers drop their money in the oddest places,\" said Holmes. \"Look.\""
+intro = """
+The summer of 1897 was the summer of the Queen's Diamond Jubilee, and all London was hanging out flags for it; and I remember that we drove down to Rotherhithe, on the Friday before the great day, under more bunting than I had ever seen in my life, to look at a dead man in a dry dock.
+
+Lestrade's wire had been short and, for Lestrade, almost apologetic. The chief officer of the steamer Margaret Ainsley, a Mr Robert Fairlie, had been found at six that morning on the floor of Pellew's Dry Dock, under the bow of his own ship, with his skull broken. The police had a man in custody already, a paid-off boatswain who had threatened him and who had pawned the dead man's watch. "It is quite clear," the wire concluded, "but the owners wish everything done properly, and I thought Mr Holmes might care to see the place."
+
+"Lestrade is never so anxious to have me see a place," said Holmes, "as when he is quite sure there is nothing to see in it. Come, Watson. A ship in dry dock is a ship with her secrets out of the water. Let us see what this one has to show."
+"""
+intro_note = "[The ship stands in a dry dock: the gangway goes UP to her deck, the dock steps DOWN to the floor beneath her. Aboard and on the dock floor, the bow is north and the stern south (FORE and AFT work too). The holds are dark. Florins found while exploring buy hints from Holmes with HINT.]"
+
+[verbs]
+untie = ["untie", "unfasten", "cast off"]
+
+# ================================================================ clues
+
+[clues.found]
+text = "Lestrade's wire: Robert Fairlie, chief officer of the s.s. Margaret Ainsley, found at 6 a.m. on Friday 18 June on the floor of Pellew's Dry Dock, Rotherhithe, under his ship's bow, skull broken. A paid-off boatswain who threatened him and pawned his watch is in custody."
+
+[clues.ship_ways]
+text = "Holmes: up the gangway to the deck, down the dock steps to the floor beneath her. The bow is north, the stern south. The holds are dark; the watchman has a spare lantern."
+
+[clues.lestrade_case]
+text = "Lestrade's case: Laverty, logged and stopped by the mate at sea, said at the pay table, 'I'll see you in the dock, Mister.' Aboard from 11:20 to 11:50 on Thursday night (gangway book); pitched the mate off the forecastle head and took his watch."
+
+[clues.surgeon]
+text = "The divisional surgeon: skull broken by the fall; death between midnight and two in the morning."
+
+[clues.pawned]
+text = "Laverty pawned the mate's gold hunter at Brough's in Rotherhithe Street at 8 a.m. Friday; arrested at 10 in the Angel."
+
+[clues.laverty_story]
+text = "Laverty: came aboard for his ditty box, went aft to have words with the mate, found his cabin empty, lamp lit, watch on its hook, and took the watch. Never saw the mate. Went ashore past the watchman."
+
+[clues.laverty_grounding]
+text = "Laverty: there was no current the night of the grounding. The master came up at two bells and gave the helmsman a new course himself; the mate spoke sharply; an hour later she was on the bank at full speed. The mate wrote it all in his little black book."
+
+[clues.haldane_story]
+text = "Captain Haldane, the owners' superintendent: ashore by the gangway at 6:10 p.m. Thursday, dined at the Jerusalem, home to Greenwich, in bed by eleven (his wife was asleep); back at 9 a.m. Friday."
+
+[clues.gate]
+text = "Jessop, the gatekeeper: the gates are locked at ten; after that the only way in from the street is the wicket, which needs a pass-key. The watchman is aboard, not at the gate. On Friday at six the wicket was locked as he left it."
+
+[clues.pass_keys]
+text = "Jessop: four pass-keys to the wicket. No. 1, Hollis, the dockmaster (in Kent all week); No. 2, Sowerby, the painters' foreman; No. 3, Mr Dalziel of Lloyd's; No. 4, Captain Haldane, the owners' superintendent."
+
+[clues.red_lead]
+text = "Sowerby: red lead laid on the edges of the hole under No. 1 hold at 5:30 on Thursday; twelve hours or more to dry. Nobody could touch those edges that night without carrying it away on him."
+
+[clues.sowerby_alibi]
+text = "Sowerby was at home in Deptford with his wife and six children; his pass-key, No. 2, is on his watch-chain; he owns no coat but his paint-blotched overalls."
+
+[clues.damage]
+text = "Dalziel, of Lloyd's Register: the plates are set in evenly, fore and aft: a ship driven head-on on to a bank at speed in slack water, not set on sideways by a current."
+
+[clues.overinsured]
+text = "Dalziel: insured for £28,000; worth £15,000 at most. Had she sunk, Tolland & Marr would have done very well."
+
+[clues.dalziel_alibi]
+text = "Dalziel was at the Lloyd's Register dinner till eleven, then on the 11:50 to Liverpool with a dozen colleagues; his pass-key, No. 3, was in his bag."
+
+[clues.kerr_lantern]
+text = "Kerr, the watchman: after Laverty went ashore at 11:50, nobody came up or down the gangway till six. A little before one, he saw the mate's lantern go forward along the deck and down the ladder into No. 1 hold."
+
+[clues.cocoa]
+text = "Pennock, the steward: at 12:30 by the saloon clock the mate fetched a can of cocoa from the pantry and went forward with it and his lantern."
+
+[clues.captain_alibi]
+text = "Pennock: the master went to bed drunk at nine; Pennock sat up in the pantry till two, facing the master's door across the saloon; he never stirred."
+
+[clues.cheerful]
+text = "Pennock: the mate had been low since the Plate, then very cheerful the last day or two: 'I'll be married by Michaelmas after all.'"
+
+[clues.master_story]
+text = "Captain Wedderburn will say only that a current set her on the bank, as the log says."
+
+[clues.black_book]
+text = "Quayle, the second officer: the mate kept his own log of every course and order in a little black notebook, 'worth more than the ship', in the second drawer under his bunk. He hung his watch on the hook by his desk whenever he sat to write."
+
+[clues.unsigned]
+text = "Quayle: the master wrote up the official log in Montevideo; the mate would not sign it."
+
+[clues.rails]
+text = "Lindqvist, the carpenter: he took down the port rail on the forecastle head on Thursday morning and put a rope across with a hitch at each end; it is untouched."
+
+[clues.route]
+text = "Lindqvist: with four plates out of her bottom and the tank-top manhole open, a man can walk into her from the dock floor, up the staging, along the double bottom and up into No. 1 hold, unseen."
+
+[clues.fairlie_asked]
+text = "Lindqvist: on Thursday afternoon the mate asked whether the manhole in No. 1 was open, and went away whistling."
+
+[clues.body]
+text = "Fairlie's body: one heavy blow above the right ear, a round depressed fracture the size of a florin, as from a hammer. Red lead on the back of his jacket, the seat of his trousers and the heels of his boots; none on his front, his hands or his knees."
+
+[clues.coat]
+text = "In the coal box of the owners' hut, rolled up: a grey tweed overcoat with red lead on both cuffs and on the skirts at knee height, a three-cornered tear in the right cuff, and in the pocket the wicket pass-key No. 4."
+
+[clues.paint_book]
+text = "Sowerby's paint book: Thursday, 5:30 p.m., red lead to the edges of the opening under No. 1 hold, port; wet till morning."
+
+[clues.drag_marks]
+text = "Under the bow, the body lay on its back under the gap in the rail; from there a broad smear of red runs aft along the dock floor towards the hole in the ship's bottom."
+
+[clues.opening]
+text = "The hole under No. 1 hold: the red lead on its lower edge scraped away in a broad band, as if something heavy had been hauled out over it."
+
+[clues.tweed_shred]
+text = "Caught on a burr at the corner of the hole, stuck in the red lead: a three-cornered shred of good grey tweed."
+
+[clues.bottom_smears]
+text = "In the double bottom, a broad trail of red lead across the frames between the manhole above and the hole below, as of something long and heavy dragged through."
+
+[clues.lantern_dry]
+text = "On the tank top of No. 1 hold, by the manhole: a ship's hand-lantern, set down alight and left to burn dry."
+
+[clues.cocoa_can]
+text = "Beside it, a can of cocoa from the pantry, half full, cold, with a skin on it."
+
+[clues.hammer]
+text = "Among the riveters' gear in No. 1 hold, a heavy snap-head hammer lying apart, its round face the size of a florin, with two short fair hairs stuck in something dark at the head."
+
+[clues.gangway_book]
+text = "The gangway book: 6:10 p.m. Capt. Haldane ashore; 6:30 painters ashore; 11:20 M. Laverty aboard for his box; 11:50 Laverty ashore with box; 6:00 a.m. painters aboard. Nothing else."
+
+[clues.rail_gap]
+text = "The gap in the forecastle-head rail: the rope across it untouched, its hitches hard and dry, and the rust-dust at the deck edge unmarked. Nobody went through it."
+
+[clues.empty_drawer]
+text = "In the mate's second drawer, among his papers, a clean rectangle the size of a small book where one lay until lately."
+
+[clues.chart]
+text = "The chart of the River Plate: the ship's track for the night of 8 and 9 April has been rubbed out, but its furrow in the paper runs from her 2 a.m. position, on a course of S 62 W, straight on to the Ortiz Bank."
+
+[clues.official_log]
+text = "The official log, in the master's hand: at 3:10 a.m. on 9 April she took the ground on the Ortiz Bank 'owing to a strong current setting her to the southward of her course, unknown and unforeseen'."
+
+# ================================================================ actions
+
+[[actions]]
+id = "rope"
+verb = ["take", "untie", "use", "open"]
+target = "rail_gap"
+text = "I left the rope as it was. Lindqvist's hitches had a story to tell, and I did not mean to spoil it."
+
+[[actions]]
+id = "lift_body"
+verb = ["take", "use"]
+target = "body"
+text = "He was beyond my help, and Lestrade's constable would not have thanked me."
+
+# ================================================================ hints
+
+[[hints]]
+id = "ship"
+done = "clue:ship_ways"
+texts = [ "\"Learn your way about her before you go poking into her, Watson.\"" ]
+
+[[hints.parts]]
+done = "clue:ship_ways"
+text = "Go IN through the gate to the quay, TALK TO HOLMES and ASK HIM ABOUT THE SHIP."
+
+[[hints]]
+id = "lestrade"
+done = ["clue:lestrade_case", "clue:surgeon", "clue:pawned", "clue:body"]
+texts = [ "\"Hear Lestrade's case, Watson, and then look at the man it is about. You are the doctor.\"" ]
+
+[[hints.parts]]
+done = "clue:lestrade_case"
+text = "In the dock office (NORTH from the quay), TALK TO LESTRADE and ASK HIM ABOUT HIS CASE."
+
+[[hints.parts]]
+done = "clue:surgeon"
+text = "Ask Lestrade ABOUT THE SURGEON."
+
+[[hints.parts]]
+done = "clue:pawned"
+text = "Ask Lestrade ABOUT THE WATCH."
+
+[[hints.parts]]
+done = "clue:body"
+text = "In the dock office, EXAMINE THE BODY."
+
+[[hints]]
+id = "laverty"
+done = ["clue:laverty_story", "clue:laverty_grounding"]
+texts = [ "\"The man in the handcuffs has a story. Every man in handcuffs has. Hear it.\"" ]
+
+[[hints.parts]]
+done = "clue:laverty_story"
+text = "In the dock office, TALK TO LAVERTY and ASK HIM ABOUT THURSDAY NIGHT."
+
+[[hints.parts]]
+done = "clue:laverty_grounding"
+text = "Ask Laverty ABOUT THE GROUNDING."
+
+[[hints]]
+id = "gangway"
+done = ["clue:gangway_book", "clue:kerr_lantern"]
+texts = [ "\"The watchman says the gangway is the only way aboard, and he has written down everyone who used it.\"" ]
+
+[[hints.parts]]
+done = "clue:gangway_book"
+text = "Go UP the gangway from the quay and EXAMINE THE BOOK in the sentry-box."
+
+[[hints.parts]]
+done = "clue:kerr_lantern"
+text = "TALK TO KERR and ASK HIM ABOUT THURSDAY NIGHT."
+
+[[hints]]
+id = "pennock"
+done = ["clue:cocoa", "clue:captain_alibi", "clue:cheerful"]
+texts = [ "\"Who on board saw the mate alive last? Somebody gave him his supper, I dare say.\"" ]
+
+[[hints.parts]]
+done = "clue:cocoa"
+text = "From the main deck go IN to the saloon. TALK TO PENNOCK and ASK HIM ABOUT HIS COCOA."
+
+[[hints.parts]]
+done = "clue:captain_alibi"
+text = "Ask Pennock ABOUT THE CAPTAIN."
+
+[[hints.parts]]
+done = "clue:cheerful"
+text = "Ask Pennock ABOUT POOR MR FAIRLIE."
+
+[[hints]]
+id = "fall"
+done = ["clue:rail_gap", "clue:rails", "clue:drag_marks"]
+texts = [ "\"He is supposed to have fallen from her forecastle head. Go and look at the place he fell from, and the place he fell to.\"" ]
+
+[[hints.parts]]
+done = "clue:rail_gap"
+text = "From the main deck go FORE, then UP to the forecastle head, and EXAMINE THE GAP."
+
+[[hints.parts]]
+done = "clue:rails"
+text = "In the carpenter's shop (AFT from the main deck), TALK TO LINDQVIST and ASK HIM ABOUT THE RAILS."
+
+[[hints.parts]]
+done = "clue:drag_marks"
+text = "Go DOWN the dock steps from the quay and EXAMINE THE CHALK OUTLINE."
+
+[[hints]]
+id = "hold"
+when = "clue:kerr_lantern|clue:cocoa"
+done = ["clue:lantern_dry", "clue:cocoa_can", "clue:hammer"]
+texts = [ "\"The mate went down into No. 1 hold with a lantern and a can of cocoa. Did he come up again?\"" ]
+
+[[hints.parts]]
+done = "clue:lantern_dry|clue:cocoa_can"
+text = "TAKE THE LANTERN from the sentry-box, go FORE and DOWN into No. 1 hold, and EXAMINE THE TANK TOP."
+
+[[hints.parts]]
+done = "clue:lantern_dry"
+text = "In No. 1 hold, TAKE and EXAMINE THE HAND-LANTERN."
+
+[[hints.parts]]
+done = "clue:cocoa_can"
+text = "In No. 1 hold, TAKE and EXAMINE THE COCOA CAN."
+
+[[hints.parts]]
+done = "clue:hammer"
+text = "In No. 1 hold, EXAMINE THE RIVETERS' GEAR."
+
+[[hints]]
+id = "bottom"
+when = "visited:no1_hold|clue:route"
+done = ["clue:route", "clue:bottom_smears", "clue:opening", "clue:red_lead", "clue:paint_book"]
+texts = [ "\"There is a hole in that ship, Watson. Every ship in dry dock has one. Follow the paint.\"" ]
+
+[[hints.parts]]
+done = "clue:route"
+text = "In the carpenter's shop, ASK LINDQVIST ABOUT THE BOTTOM."
+
+[[hints.parts]]
+done = "clue:bottom_smears"
+text = "From No. 1 hold go DOWN the manhole into the double bottom and EXAMINE THE FRAMES."
+
+[[hints.parts]]
+done = "clue:opening"
+text = "On the dock floor go SOUTH from the bow to beneath No. 1 hold and EXAMINE THE HOLE."
+
+[[hints.parts]]
+done = "clue:paint_book|clue:red_lead"
+text = "In the painters' shed (WEST from the quay), EXAMINE THE PAINT BOOK."
+
+[[hints.parts]]
+done = "clue:red_lead"
+text = "TALK TO SOWERBY and ASK HIM ABOUT THE RED LEAD."
+
+[[hints]]
+id = "grounding"
+done = ["clue:black_book", "clue:empty_drawer", "clue:chart", "clue:damage"]
+texts = [ "\"There is an inquiry on Monday into how this ship came to be on a sandbank, and the man who knew most about it is dead. Coincidence is a word for people who have not looked.\"" ]
+
+[[hints.parts]]
+done = "clue:black_book"
+text = "Go UP from the main deck to the chartroom, TALK TO QUAYLE and ASK HIM ABOUT MR FAIRLIE'S BOOK."
+
+[[hints.parts]]
+done = "clue:empty_drawer"
+text = "In the mate's cabin (WEST off the saloon), EXAMINE THE DRAWERS."
+
+[[hints.parts]]
+done = "clue:chart"
+text = "In the chartroom, EXAMINE THE CHART."
+
+[[hints.parts]]
+done = "clue:damage"
+text = "On the dock floor under No. 1 hold, TALK TO DALZIEL and ASK HIM ABOUT THE DAMAGE."
+
+[[hints]]
+id = "gate"
+done = ["clue:gate", "clue:pass_keys"]
+texts = [ "\"If a man came aboard her without using the gangway, he had first to get into the dock yard. How?\"" ]
+
+[[hints.parts]]
+done = "clue:gate"
+text = "At the dock gate, TALK TO JESSOP and ASK HIM ABOUT THE GATE."
+
+[[hints.parts]]
+done = "clue:pass_keys"
+text = "Ask Jessop ABOUT THE KEYS."
+
+[[hints]]
+id = "keyholders"
+when = "clue:pass_keys"
+done = ["clue:sowerby_alibi", "clue:dalziel_alibi", "clue:haldane_story"]
+texts = [ "\"Four keys. Account for every one of them.\"" ]
+
+[[hints.parts]]
+done = "clue:sowerby_alibi"
+text = "In the painters' shed, ASK SOWERBY ABOUT WHERE HE WAS."
+
+[[hints.parts]]
+done = "clue:dalziel_alibi"
+text = "Under No. 1 hold, ASK DALZIEL ABOUT THURSDAY NIGHT."
+
+[[hints.parts]]
+done = "clue:haldane_story"
+text = "In the owners' hut (EAST from the quay), TALK TO HALDANE and ASK HIM ABOUT THURSDAY."
+
+[[hints]]
+id = "lynchpin"
+when = ["clue:opening", "clue:pass_keys"]
+done = ["clue:tweed_shred", "clue:coat"]
+texts = [
+  "\"Whoever came through that hole on Thursday night left something of himself on it, and took something of it away with him. Look closer at the hole; and then ask yourself where a man would hide what he took away.\"",
+]
+
+[[hints.parts]]
+done = "clue:tweed_shred"
+text = "Under No. 1 hold, EXAMINE THE BURR at the corner of the hole."
+
+[[hints.parts]]
+done = "clue:coat"
+text = "In the owners' hut, EXAMINE THE COAL BOX, TAKE THE COAT and EXAMINE it."
+
+[[hints]]
+id = "reckoning"
+texts = [
+  "\"Three questions, Watson, and none of them answers another. When was he alive last, and who was aboard then? Where did he die, and how did his body come to the dock floor? And who could have come and gone that night without passing the watchman?\"",
+  "\"Laverty went ashore at 11:50; the mate fetched his cocoa at 12:30 and went down into No. 1 with it. He died in that hold, by the hammer, and was dragged out on his back through the bottom, across wet red lead, and laid under the bow. Only a man from outside the ship came that way, and only four men could pass the wicket after ten.\"",
+  "\"The shred on the burr is grey tweed; the coat in the coal box is grey tweed, torn at the cuff, red to the knees, with pass-key No. 4 in its pocket. Captain Haldane came back by the bottom at one in the morning for the mate's black book, which would have sunk his owners at Monday's inquiry. Laverty only stole a watch. ACCUSE.\"",
+]
+
+# ================================================================ the reckoning
+
+[final]
+type = "accuse"
+intro = "I came up the dock steps into the sunshine with red lead on my knees, and found Holmes sitting on a bollard, waiting. \"Well, Watson?\""
+good = "solved"
+default_wrong = "wrong_tale"
+
+[[final.questions]]
+id = "who"
+prompt = "Who killed Robert Fairlie?"
+options = [
+  { id = "nobody", label = "Nobody: he fell from the forecastle head" },
+  { id = "laverty", label = "Michael Laverty, the boatswain", when = "met:laverty" },
+  { id = "wedderburn", label = "Captain Wedderburn, the master", when = "met:wedderburn" },
+  { id = "haldane", label = "Captain Haldane, the owners' superintendent", when = "met:haldane" },
+  { id = "kerr", label = "Kerr, the watchman", when = "met:kerr" },
+  { id = "sowerby", label = "Sowerby, the painters' foreman", when = "met:sowerby" },
+]
+
+[[final.questions]]
+id = "where"
+prompt = "Where did he die?"
+options = [
+  { id = "fall", label = "On the dock floor, falling from the forecastle head" },
+  { id = "cabin", label = "In his cabin", when = "visited:mate_cabin" },
+  { id = "hold", label = "In No. 1 hold", when = "visited:no1_hold" },
+  { id = "forecastle", label = "On the forecastle head, and was thrown over", when = "visited:forecastle_head" },
+]
+
+[[final.questions]]
+id = "route"
+prompt = "How did his murderer come to him, and go?"
+options = [
+  { id = "gangway", label = "Up and down the gangway, past the watchman" },
+  { id = "aboard", label = "He was aboard all night already", when = "clue:captain_alibi|clue:gangway_book" },
+  { id = "bottom", label = "From the dock floor, through the hole in her bottom and the double bottom", when = "clue:route|clue:opening" },
+  { id = "rope", label = "By a rope over the bow", when = "visited:forecastle_head" },
+]
+
+[[final.questions]]
+id = "when"
+prompt = "When was he killed?"
+options = [
+  { id = "early", label = "Early in the evening, before the watchman came on" },
+  { id = "laverty_time", label = "Between 11:20 and 11:50, while Laverty was aboard", when = "clue:gangway_book|clue:lestrade_case" },
+  { id = "after_cocoa", label = "Some time after 12:30, when he took his cocoa forward", when = "clue:cocoa" },
+]
+
+[[final.questions]]
+id = "why"
+prompt = "Why was he killed?"
+options = [
+  { id = "robbery", label = "For his gold watch" },
+  { id = "quarrel", label = "For logging a man at sea", when = "clue:lestrade_case" },
+  { id = "woman", label = "Over the young woman in Greenock", when = "visited:mate_cabin" },
+  { id = "log", label = "For his black book: the true account of the grounding, which would have damned the owners at the inquiry", when = "clue:black_book" },
+]
+
+[[final.questions]]
+id = "laverty"
+prompt = "What did Laverty do that night?"
+options = [
+  { id = "killed", label = "Killed the mate and took his watch" },
+  { id = "watch", label = "Took the mate's watch from his empty cabin, and nothing more", when = "clue:laverty_story" },
+  { id = "helped", label = "Let the murderer in", when = "met:laverty" },
+  { id = "found", label = "Found the watch on the body", when = "met:laverty" },
+]
+
+[final.solution]
+who = "haldane"
+where = "hold"
+route = "bottom"
+when = "after_cocoa"
+why = "log"
+laverty = "watch"
+
+[[final.wrong]]
+answers = { who = "nobody" }
+ending = "accident"
+
+[[final.wrong]]
+answers = { who = "laverty" }
+ending = "laverty_hanged"
+
+[[final.wrong]]
+answers = { who = "wedderburn" }
+ending = "master_taken"
+
+[[final.wrong]]
+answers = { who = "kerr" }
+ending = "kerr_taken"
+
+[[final.wrong]]
+answers = { who = "sowerby" }
+ending = "sowerby_taken"
+
+# ================================================================ endings
+
+[endings.solved]
+title = "Red Lead"
+text = """
+"Laverty took the watch," I said. "That is all he did. He went ashore at ten minutes to twelve, by the watchman's book, and at half past twelve the mate was alive and well in the pantry, asking Pennock for a can of cocoa. He took it forward with his lantern, and a little before one Kerr saw his light go down into No. 1 hold. He never came up again. His lantern is on the tank top still, burnt dry, and his cocoa beside it with a skin on it, and among the riveters' gear there is a hammer with his hair on it.
+
+"He did not fall from the forecastle head. Lindqvist's rope is as he left it, and the dust in the gap is unmarked. He was killed in the hold and taken out of the ship through her bottom: down the manhole, along the double bottom, out through the hole the riveters cut, and over the edges the painters had red-leaded at half past five, so that he went out on his back and has red lead from his shoulders to his heels and none at all on his hands. Then he was dragged along the dock floor and laid under the gap in the rail, to look like a fall. The smear runs aft from where he lay to the hole.
+
+"Only a man from outside the ship would come that way, Holmes, and after ten at night only four men could come into the dock yard at all. The dockmaster is in Kent. Sowerby was at home in Deptford with his six children and has no coat but his overalls. Dalziel was on the night mail to Liverpool. And the fourth man left a piece of his coat on the burr at the corner of the hole, and pushed the rest of it down to the bottom of the coal box in his own hut, with red lead on the cuffs and the knees and the pass-key in the pocket.
+
+"Captain Haldane went ashore by the gangway at ten past six, where the watchman would write him down; and came back at one in the morning by the bottom, where nobody would, to buy the mate's black book. Fairlie had written in it the course the master gave at two bells on the night of the grounding: S 62 W, straight on to the Ortiz Bank. She was insured for nearly twice her value, and meant to be lost; and on Monday the mate would have told the Board of Trade so, unless he was paid. I think he asked five hundred pounds, to be married on. Haldane took the book, and struck him with the first thing to hand."
+
+Holmes had listened with his eyes on the black hull below us.
+
+"The watchman's book was quite right, Watson," he said. "The gangway is the only way aboard a ship. It is only that a ship in dry dock has, for a week or two, another." He rose. "Lestrade will be disappointed. Let us go and disappoint him."
+
+Captain Haldane made no resistance. The black book was never found; he had burned it in his kitchen range at Greenwich before dawn, he said, and his wife had raked out the ashes. But the chart was enough, with the coat and the key and the shred of tweed, and Dalziel's evidence of the damage. Haldane was hanged at Newgate in the autumn. Captain Wedderburn lost his certificate at the inquiry, and Tolland & Marr their underwriters; and Michael Laverty, who took a watch from an empty cabin, got six months for it, and came out to find himself something of a hero along the Rotherhithe waterfront, for having been, as he put it, "very near hanged for a gentleman."
+"""
+
+[endings.wrong_tale]
+title = "The Only Way Aboard"
+text = """
+I told Holmes my story, and the name in it, and he heard me out with a long face.
+
+"You have the right man, Watson," he said, "and the wrong story. His counsel will take your story to pieces in an afternoon, and the right man will walk out of the Old Bailey on the pieces. The when, the where and the how must all be true, or none of them will be believed."
+
+He was right. Haldane was charged, and acquitted; and Michael Laverty, against whom nothing more could be proved, got six months for the watch. The Margaret Ainsley went back to sea in July, with a new mate, and was lost with all hands in the Bay of Biscay the following winter. She was very well insured.
+"""
+
+[endings.accident]
+title = "Fell From the Forecastle Head"
+text = """
+"He fell," I said. "In the dark, through the gap in the rail."
+
+"Through a rope that nobody untied," said Holmes, "and over dust that nobody disturbed, and landed with red lead on his back." But it was the inquest's verdict too: misadventure. The Board of Trade inquiry on Monday heard the master's account of the current, and found that the grounding was caused by an unknown and unforeseen set to the southward. Laverty got six months for the watch.
+"""
+
+[endings.laverty_hanged]
+title = "I'll See You in the Dock"
+text = """
+"Laverty," I said. "He threatened him, he was aboard, and he had the watch."
+
+Lestrade shook me warmly by the hand. Holmes did not.
+
+Michael Laverty was tried at the Old Bailey in September and hanged in October, protesting to the last that he had taken a watch from an empty cabin and never seen the mate at all. I have thought of him many times since. The Board of Trade inquiry, deprived of the chief officer's evidence, found that the Margaret Ainsley had been set on the Ortiz Bank by an unforeseen current.
+"""
+
+[endings.master_taken]
+title = "The Old Man"
+text = """
+"The master," I said. "He had every reason; it was his course that put her on the bank."
+
+"It was," said Holmes, "and he was snoring in his bunk with the steward sitting across his door till two in the morning. He is a scoundrel, Watson, but he is a drunken scoundrel, and he was drunk."
+
+Wedderburn was arrested and released within the week, and the man who did kill Robert Fairlie gave evidence at the inquiry on Monday, very gravely, on behalf of the owners.
+"""
+
+[endings.kerr_taken]
+title = "The Watchman"
+text = """
+"Kerr," I said. "He was awake, he was aboard, and he alone says nobody came."
+
+"Nobody came by his gangway, Watson," said Holmes. "That is precisely what is true." Kerr was held a night and released, and lost his place. The case against Laverty went forward.
+"""
+
+[endings.sowerby_taken]
+title = "The Painter"
+text = """
+"Sowerby," I said. "He had a key, and red lead is his trade."
+
+"And six children in Deptford who will swear to his snoring," said Holmes, "and no coat in the world that is not already red." Sowerby was not even arrested. The case against Laverty went forward.
+"""
+
+# ================================================================ tests (not shipped)
+
+[test]
+walkthrough = [
+  "examine bunting", "examine wicket", "examine gatehouse", "talk to jessop", "ask jessop about the gate",
+  "ask jessop about the keys", "ask jessop about thursday night", "n", "talk to holmes",
+  "ask holmes about the case", "ask holmes about the ship", "ask holmes about florins",
+  "examine dry dock", "examine steamer", "examine gangway", "examine steps", "n", "talk to lestrade",
+  "ask lestrade about my case", "ask lestrade about the surgeon", "ask lestrade about the watch",
+  "examine body", "talk to laverty", "ask laverty about thursday night", "ask laverty about the watch",
+  "ask laverty about him", "ask laverty about the grounding", "examine desk", "s", "w",
+  "talk to sowerby", "ask sowerby about found him", "ask sowerby about the red lead",
+  "ask sowerby about where i was", "examine paint book", "examine red lead", "examine paint-kegs",
+  "take florin", "e", "e", "talk to haldane", "ask haldane about thursday", "ask haldane about that man laverty",
+  "ask haldane about the grounding", "ask haldane about the inquiry", "examine plans",
+  "examine pegs", "examine stove", "w", "up", "talk to kerr", "ask kerr about my book",
+  "ask kerr about thursday night", "ask kerr about the mate", "examine book", "examine sentry-box",
+  "take lantern", "in", "talk to pennock", "ask pennock about his cocoa", "ask pennock about the captain",
+  "ask pennock about poor mr fairlie", "examine sideboard", "take florin", "w", "examine desk",
+  "examine hook", "examine drawers", "examine photograph", "out", "s", "talk to wedderburn",
+  "ask wedderburn about thursday", "ask wedderburn about fairlie", "ask wedderburn about the grounding",
+  "examine whisky", "out", "out", "up", "talk to quayle", "ask quayle about the grounding",
+  "ask quayle about mr fairlie's book", "ask quayle about the log", "examine chart",
+  "examine log book", "down", "s", "talk to lindqvist", "ask lindqvist about the rails",
+  "ask lindqvist about the bottom", "ask lindqvist about mr fairlie", "examine model",
+  "examine shavings", "take florin", "n", "n", "examine hatch", "take florin", "up",
+  "examine gap", "examine windlass", "down", "in", "examine bunks", "take florin", "out",
+  "down", "examine tank top", "take hand-lantern", "examine hand-lantern", "take can",
+  "examine can", "examine riveters' gear", "take florin", "examine ladder", "down", "examine frames",
+  "examine manhole", "down", "talk to dalziel", "ask dalziel about the damage", "ask dalziel about the insurance",
+  "ask dalziel about thursday night", "examine staging", "examine hole", "examine burr",
+  "examine shores", "s", "examine rudder", "examine propeller", "take florin", "examine caisson",
+  "n", "n", "examine outline", "examine anchors", "take florin", "examine bow", "up",
+  "e", "examine coal box", "take coat", "examine coat", "show coat to haldane", "w",
+  "hint", "y", "hint", "y", "hint", "y", "accuse", "haldane", "hold", "bottom", "cocoa",
+  "black book", "nothing more", "y",
+]
+wrong_path = [
+  "accuse", "nobody", "forecastle head", "gangway", "early", "watch", "killed", "y", "",
+]
