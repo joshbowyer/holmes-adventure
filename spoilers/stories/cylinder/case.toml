@@ -208,6 +208,12 @@ text = "I climbed into the cab, and the horse toiled back up the hill to Highgat
 effects = ["goto:gate"]
 
 [[actions]]
+id = "take_cabinet_cylinders"
+verb = ["take", "play", "use"]
+target = "cabinet"
+text = "I ran my eye along the labels in the pigeon-holes: lectures, experiments, letters to learned societies, going back to 'eighty-six, most of them years older than anything in this business. Only one was of this spring, Number 19; and four holes, Numbers 9, 14, 17 and 21, held nothing at all."
+
+[[actions]]
 id = "take_machine"
 verb = "take"
 target = ["old_machine", "orme_phonograph", "new_phonograph"]
