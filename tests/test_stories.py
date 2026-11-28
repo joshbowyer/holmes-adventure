@@ -190,6 +190,28 @@ class StoryTests(unittest.TestCase):
             with self.subTest(case=data["case"]["id"]):
                 self.assertEqual(undealt_times(data), [])
 
+    def test_cylinder_parts_are_verbatim(self):
+        """Every part of a questioned cylinder says exactly words found on the cylinder
+        it was copied from (user, 2026-11-27: a part began with a 'to' no source had).
+        Failures name the part id only."""
+        def norm(t):
+            return " ".join(re.sub(r"[^\w\s']", " ", t.lower()).split())
+        for d in build.source_dirs():
+            data = build.load_source(d)
+            spec = data["final"].get("cylinder")
+            if data["final"].get("type") != "cylinder":
+                continue
+            with self.subTest(case=data["case"]["id"]):
+                parts = {p["id"]: p for c in spec["cylinders"].values() for p in c["parts"]}
+                bad = []
+                for pid, cid in spec["answer"].items():
+                    words = norm(parts[pid].get("words", ""))
+                    source = norm(" ".join(p.get("words", "")
+                                           for p in spec["cylinders"][cid]["parts"]))
+                    if words and words not in source:
+                        bad.append(pid)
+                self.assertEqual(bad, [])
+
     def test_clock_times_use_colons(self):
         """Times are written 9:05, never the period-style 9.5 or 9.05 (user's request)."""
         def strings(v):

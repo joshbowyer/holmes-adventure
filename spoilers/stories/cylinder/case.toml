@@ -560,14 +560,14 @@ parts = [
 deal = "cyl_syndicate"
 label = "No. 17, Letter to the Columbian Syndicate, 12 Mar. 1894"
 parts = [
-  { id = "s1", voice = "vane", words = "My name is Cornelius Ashdown, of the Larches, Highgate. Gentlemen, I have your letter of the 2nd. I have asked Felix Quarrie, my faithful assistant, to send you the drawings. As to the terms, I leave the matter in your hands.", true_speed = 160, sounds = ["fork", "tick"], clue = "s1_true" },
+  { id = "s1", voice = "vane", words = "My name is Cornelius Ashdown, of the Larches, Highgate. Gentlemen, I have your letter of the 2nd. Please address yourselves henceforth to Felix Quarrie, my faithful assistant, who will send you the drawings. As to the terms, I leave the matter in your hands.", true_speed = 160, sounds = ["fork", "tick"], clue = "s1_true" },
 ]
 
 [final.cylinder.cylinders.orme_notes]
 deal = "cyl_orme"
 label = "No. 21, Notes for Quarrie, 20 Apr. 1894"
 parts = [
-  { id = "s2", voice = "vane", words = "Notes for Quarrie. Felix Quarrie, my faithful assistant, who has been a son to me in this laboratory, will find the new diaphragms in the second drawer. Everything I have learned of mica, he knows.", true_speed = 120, sounds = ["fork", "dynamo", "cough"], clue = "s2_true" },
+  { id = "s2", voice = "vane", words = "Notes for Quarrie. To Felix Quarrie, my faithful assistant, who has been a son to me in this laboratory: you will find the new diaphragms in the second drawer. Everything I have learned of mica, he knows.", true_speed = 120, sounds = ["fork", "dynamo", "cough"], clue = "s2_true" },
 ]
 
 [final.cylinder.cylinders.birthday]

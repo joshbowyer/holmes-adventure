@@ -44,7 +44,7 @@ each part to its source by speed and background, where words alone match two sou
 | S5 | Notes on the siren, February 1894 (in cabinet; reference only) | 160 | laboratory | fork, dynamo |
 
 Source texts share phrases on purpose (gaps): "My name is Cornelius Ashdown, of the
-Larches, Highgate" (S1, S4); "Felix Quarrie, my faithful assistant" (S1, S2); "I leave" (S1,
+Larches, Highgate" (S1, S4); "to Felix Quarrie, my faithful assistant" (S1, S2); "I leave" (S1,
 S4); "Everything I have" (S2, S3).
 
 **The will cylinder (W)**, true speeds when played: a fragment recorded at 160 and replayed
